@@ -18,8 +18,8 @@
 预驱芯片：EG2133&lt;br&gt;
 MOS：NEC6050&lt;br&gt;
 下载芯片：CH549G&lt;br&gt;
-电流检测：INA240A2&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cmfoc_postive.png&#34;
+电流检测：INA240A2&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cmfoc_postive.png&#34;
 	width=&#34;1366&#34;
 	height=&#34;911&#34;
 	srcset=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cmfoc_postive_hu10055792451874544564.png 480w, https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cmfoc_postive_hu10082314305775054254.png 1024w&#34;
@@ -48,7 +48,7 @@ MOS：NEC6050&lt;br&gt;
 	
 &gt;&lt;br&gt;
 2024-9-15 期待已久的FOC驱动器终于开工设计！设计完成PCB以及原理图。第一次设计双路的FOC驱动器，也是第一次是设计功率地与普通的GND隔离。&lt;/p&gt;
-&lt;p&gt;另外就是电流检测芯片选择的是TI的INA240A2，有点难以购买。每个芯片的价格在3元左右，属实有点成本爆炸。下次准备学习更换更为便宜的INA199或者其他国产方案。&lt;/p&gt;
+&lt;p&gt;另外就是电流检测芯片选择的是TI的INA240A2，有点难以购买qaq。每个芯片的价格在3元左右，属实有点成本爆炸。下次准备学习更换更为便宜的INA199或者其他国产方案。&lt;/p&gt;
 &lt;p&gt;2024-9-17 计划物料到货开始焊接&lt;/p&gt;
 </description>
         </item>
