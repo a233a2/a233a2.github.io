@@ -13,10 +13,10 @@
         <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/</guid>
-        <description>&lt;h3 id=&#34;臭猫foc驱动器设计日志&#34;&gt;臭猫FOC驱动器设计日志
-&lt;/h3&gt;&lt;p&gt;主控芯片：CH32V307VCT6&lt;br&gt;
-电机驱动：TB6612方案&lt;br&gt;
-下载芯片：CH549G&lt;br&gt;
+        <description>&lt;h3 id=&#34;ch32平衡车开发板设计&#34;&gt;CH32平衡车开发板设计
+&lt;/h3&gt;&lt;p&gt;主控芯片：CH32V307VCT6
+电机驱动：TB6612方案
+下载芯片：CH549G
 &lt;img src=&#34;https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/sim_mainboard.PNG&#34;
 	width=&#34;1468&#34;
 	height=&#34;1075&#34;
@@ -30,7 +30,7 @@
 		data-flex-grow=&#34;136&#34;
 		data-flex-basis=&#34;327px&#34;
 	
-&gt;&lt;br&gt;
+&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/mainboard.JPG&#34;
 	width=&#34;4032&#34;
 	height=&#34;2268&#34;
@@ -44,8 +44,8 @@
 		data-flex-grow=&#34;177&#34;
 		data-flex-basis=&#34;426px&#34;
 	
-&gt;&lt;br&gt;
-开源链接：https://github.com/a233a2/CH32_DC_BalanceCar&lt;br&gt;
+&gt;
+开源链接：https://github.com/a233a2/CH32_DC_BalanceCar
 PID平衡部分计划使用两种方案进行对比
 1 pid_1.c文件 即不通过控制角度来确定速度，通过将直立环PID的目标设为重力0点，来维持平衡，之后通过速度环调速。
 2 pid.c文件 通过控制角度来确定速度，速度环输出目标速度下的应得角度，直立环与速度环串级，直立环负责达到对应角度。&lt;/p&gt;
