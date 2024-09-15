@@ -285,7 +285,8 @@
       <ol>
         <li>
           <ol>
-            <li></li>
+            <li><a href="#此网站是sunjiyi的专属技术分析网站分享与记录一些控制理论方面的技术知识本人为qut控制科学方向的在读研究生此外本人也会在此网站分享自己的开源项目以及一些电子小制作希望你玩的开心">此网站是sunjiyi的专属技术分析网站！分享与记录一些控制理论方面的技术知识。本人为QUT控制科学方向的在读研究生。此外，本人也会在此网站分享自己的开源项目以及一些电子小制作。希望你玩的开心。</a></li>
+            <li><a href="#我的最近研究方向foc控制px4飞控设计px4飞控ysyx项目">我的最近研究方向：FOC控制/PX4飞控设计/PX4飞控/YSYX项目</a></li>
           </ol>
         </li>
       </ol>
@@ -349,9 +350,9 @@
     
     
     <h2 id="欢迎您访问此网站">欢迎您访问此网站！
-</h2><h5 id="此网站是sunjiyi的专属技术分析网站分享与记录一些控制理论方面的技术知识本人为qut控制科学方向的在读研究生此外本人也会在此网站分享自己的开源项目以及一些电子小制作希望你玩的开心">此网站是sunjiyi的专属技术分析网站！分享与记录一些控制理论方面的技术知识。本人为QUT控制科学方向的在读研究生。此外，本人也会在此网站分享自己的开源项目以及一些电子小制作。希望你玩的开心。
-</h5><h6 id="我的最近研究方向foc控制px4飞控设计px4飞控ysyx项目">我的最近研究方向：FOC控制/PX4飞控设计/PX4飞控/YSYX项目
-</h6><p>喜欢可以关注一下 <a class="link" href="https://space.bilibili.com/37767944"  target="_blank" rel="noopener"
+</h2><h4 id="此网站是sunjiyi的专属技术分析网站分享与记录一些控制理论方面的技术知识本人为qut控制科学方向的在读研究生此外本人也会在此网站分享自己的开源项目以及一些电子小制作希望你玩的开心">此网站是sunjiyi的专属技术分析网站！分享与记录一些控制理论方面的技术知识。本人为QUT控制科学方向的在读研究生。此外，本人也会在此网站分享自己的开源项目以及一些电子小制作。希望你玩的开心。
+</h4><h4 id="我的最近研究方向foc控制px4飞控设计px4飞控ysyx项目">我的最近研究方向：FOC控制/PX4飞控设计/PX4飞控/YSYX项目
+</h4><p>喜欢可以关注一下 <a class="link" href="https://space.bilibili.com/37767944"  target="_blank" rel="noopener"
     >bilibili</a>或者<a class="link" href="https://github.com/a233a2"  target="_blank" rel="noopener"
     >github</a>等。
 如果有任何问题请发邮件联系（原谅我不会弄评论区）：
@@ -412,6 +413,52 @@
      
     
         
+    <script src="https://utteranc.es/client.js" 
+        repo="a233a2/a233a2.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
     
 
     <footer class="site-footer">

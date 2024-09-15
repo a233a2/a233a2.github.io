@@ -406,13 +406,7 @@ MOS：NEC6050<br>
 2024-9-15 期待已久的FOC驱动器终于开工设计！设计完成PCB以及原理图。第一次设计双路的FOC驱动器，也是第一次是设计功率地与普通的GND隔离。</p>
 <p>另外就是电流检测芯片选择的是TI的INA240A2，有点难以购买。每个芯片的价格在3元左右，属实有点成本爆炸。下次准备学习更换更为便宜的INA199或者其他国产方案。</p>
 <p>2024-9-17 计划物料到货开始焊接</p>
-<script src="https://utteranc.es/client.js"
-        repo="[ENTER REPO HERE]"
-        issue-term="pathname"
-        theme="github-dark"
-        crossorigin="anonymous"
-        async>
-</script>
+
 </section>
 
 
@@ -474,6 +468,52 @@ MOS：NEC6050<br>
      
     
         
+    <script src="https://utteranc.es/client.js" 
+        repo="a233a2/a233a2.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
     
 
     <footer class="site-footer">

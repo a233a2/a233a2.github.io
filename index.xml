@@ -50,13 +50,7 @@ MOS：NEC6050&lt;br&gt;
 2024-9-15 期待已久的FOC驱动器终于开工设计！设计完成PCB以及原理图。第一次设计双路的FOC驱动器，也是第一次是设计功率地与普通的GND隔离。&lt;/p&gt;
 &lt;p&gt;另外就是电流检测芯片选择的是TI的INA240A2，有点难以购买。每个芯片的价格在3元左右，属实有点成本爆炸。下次准备学习更换更为便宜的INA199或者其他国产方案。&lt;/p&gt;
 &lt;p&gt;2024-9-17 计划物料到货开始焊接&lt;/p&gt;
-&lt;script src=&#34;https://utteranc.es/client.js&#34;
-        repo=&#34;[ENTER REPO HERE]&#34;
-        issue-term=&#34;pathname&#34;
-        theme=&#34;github-dark&#34;
-        crossorigin=&#34;anonymous&#34;
-        async&gt;
-&lt;/script&gt;</description>
+</description>
         </item>
         <item>
         <title>MyFirstBlog</title>
@@ -401,9 +395,9 @@ $$&lt;/p&gt;</description>
         
         <guid>https://a233a2.github.io/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;h2 id=&#34;欢迎您访问此网站&#34;&gt;欢迎您访问此网站！
-&lt;/h2&gt;&lt;h5 id=&#34;此网站是sunjiyi的专属技术分析网站分享与记录一些控制理论方面的技术知识本人为qut控制科学方向的在读研究生此外本人也会在此网站分享自己的开源项目以及一些电子小制作希望你玩的开心&#34;&gt;此网站是sunjiyi的专属技术分析网站！分享与记录一些控制理论方面的技术知识。本人为QUT控制科学方向的在读研究生。此外，本人也会在此网站分享自己的开源项目以及一些电子小制作。希望你玩的开心。
-&lt;/h5&gt;&lt;h6 id=&#34;我的最近研究方向foc控制px4飞控设计px4飞控ysyx项目&#34;&gt;我的最近研究方向：FOC控制/PX4飞控设计/PX4飞控/YSYX项目
-&lt;/h6&gt;&lt;p&gt;喜欢可以关注一下 &lt;a class=&#34;link&#34; href=&#34;https://space.bilibili.com/37767944&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h2&gt;&lt;h4 id=&#34;此网站是sunjiyi的专属技术分析网站分享与记录一些控制理论方面的技术知识本人为qut控制科学方向的在读研究生此外本人也会在此网站分享自己的开源项目以及一些电子小制作希望你玩的开心&#34;&gt;此网站是sunjiyi的专属技术分析网站！分享与记录一些控制理论方面的技术知识。本人为QUT控制科学方向的在读研究生。此外，本人也会在此网站分享自己的开源项目以及一些电子小制作。希望你玩的开心。
+&lt;/h4&gt;&lt;h4 id=&#34;我的最近研究方向foc控制px4飞控设计px4飞控ysyx项目&#34;&gt;我的最近研究方向：FOC控制/PX4飞控设计/PX4飞控/YSYX项目
+&lt;/h4&gt;&lt;p&gt;喜欢可以关注一下 &lt;a class=&#34;link&#34; href=&#34;https://space.bilibili.com/37767944&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;bilibili&lt;/a&gt;或者&lt;a class=&#34;link&#34; href=&#34;https://github.com/a233a2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;github&lt;/a&gt;等。
 如果有任何问题请发邮件联系（原谅我不会弄评论区）：

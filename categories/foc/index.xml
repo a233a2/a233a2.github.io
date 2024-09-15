@@ -50,13 +50,7 @@ MOS：NEC6050&lt;br&gt;
 2024-9-15 期待已久的FOC驱动器终于开工设计！设计完成PCB以及原理图。第一次设计双路的FOC驱动器，也是第一次是设计功率地与普通的GND隔离。&lt;/p&gt;
 &lt;p&gt;另外就是电流检测芯片选择的是TI的INA240A2，有点难以购买。每个芯片的价格在3元左右，属实有点成本爆炸。下次准备学习更换更为便宜的INA199或者其他国产方案。&lt;/p&gt;
 &lt;p&gt;2024-9-17 计划物料到货开始焊接&lt;/p&gt;
-&lt;script src=&#34;https://utteranc.es/client.js&#34;
-        repo=&#34;[ENTER REPO HERE]&#34;
-        issue-term=&#34;pathname&#34;
-        theme=&#34;github-dark&#34;
-        crossorigin=&#34;anonymous&#34;
-        async&gt;
-&lt;/script&gt;</description>
+</description>
         </item>
         
     </channel>
