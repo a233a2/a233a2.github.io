@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>FOC驱动器 on sunjiyi&#39;s Blogggg</title>
-        <link>https://a233a2.github.io/categories/foc/</link>
-        <description>Recent content in FOC驱动器 on sunjiyi&#39;s Blogggg</description>
+        <title>Control Theory on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/categories/control-theory/</link>
+        <description>Recent content in Control Theory on sunjiyi&#39;s Blogggg</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Sunjiyi Make and Design</copyright><atom:link href="https://a233a2.github.io/categories/foc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>Sunjiyi Make and Design</copyright><atom:link href="https://a233a2.github.io/categories/control-theory/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>CM_FOC驱动器</title>
         <link>https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
