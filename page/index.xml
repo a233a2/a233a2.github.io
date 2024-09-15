@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Pages on sunjiyi&#39;s Blogggg0.0</title>
-        <link>https://a233a2.github.io/Blog/page/</link>
-        <description>Recent content in Pages on sunjiyi&#39;s Blogggg0.0</description>
+        <title>Pages on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/page/</link>
+        <description>Recent content in Pages on sunjiyi&#39;s Blogggg</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Sunjiyi</copyright>
-        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/Blog/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>Sunjiyi Design and Make</copyright>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>归档</title>
-        <link>https://a233a2.github.io/Blog/archives/</link>
+        <link>https://a233a2.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/Blog/archives/</guid>
+        <guid>https://a233a2.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>https://a233a2.github.io/Blog/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://a233a2.github.io/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/Blog/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
-</description>
+        <guid>https://a233a2.github.io/%E5%85%B3%E4%BA%8E/</guid>
+        <description>&lt;h1 id=&#34;欢迎您访问此网站&#34;&gt;欢迎您访问此网站！
+&lt;/h1&gt;&lt;h2 id=&#34;此网站是sunjiyi的专属技术分析网站分享与记录一些控制理论方面的技术知识本人为qut控制科学方向的在读研究生此外本人也会在此网站分享自己的开源项目以及一些电子小制作希望你玩的开心&#34;&gt;此网站是sunjiyi的专属技术分析网站！分享与记录一些控制理论方面的技术知识。本人为QUT控制科学方向的在读研究生。此外，本人也会在此网站分享自己的开源项目以及一些电子小制作。希望你玩的开心。
+&lt;/h2&gt;&lt;h2 id=&#34;喜欢可以关注一下bilibili-或者-github等&#34;&gt;喜欢可以关注一下Bilibili 或者 Github等。
+&lt;/h2&gt;&lt;h3 id=&#34;如果有任何问题请发邮件联系&#34;&gt;如果有任何问题请发邮件联系：
+&lt;/h3&gt;&lt;h3 id=&#34;sunjiyi666foxmailcom--sunjiyi666gmailcom-qq同foxmail邮箱号有问题欢迎骚扰&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;mailto:sunjiyi666@foxmail.com&#34; &gt;sunjiyi666@foxmail.com&lt;/a&gt; / &lt;a class=&#34;link&#34; href=&#34;mailto:sunjiyi666@gmail.com&#34; &gt;sunjiyi666@gmail.com&lt;/a&gt; QQ同foxmail邮箱号，有问题欢迎骚扰。
+&lt;/h3&gt;</description>
         </item>
         <item>
         <title>链接</title>
-        <link>https://a233a2.github.io/Blog/%E9%93%BE%E6%8E%A5/</link>
+        <link>https://a233a2.github.io/%E9%93%BE%E6%8E%A5/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/Blog/%E9%93%BE%E6%8E%A5/</guid>
+        <guid>https://a233a2.github.io/%E9%93%BE%E6%8E%A5/</guid>
         <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
 &lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -61,10 +65,10 @@
         </item>
         <item>
         <title>搜索</title>
-        <link>https://a233a2.github.io/Blog/search/</link>
+        <link>https://a233a2.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/Blog/search/</guid>
+        <guid>https://a233a2.github.io/search/</guid>
         <description></description>
         </item>
         
