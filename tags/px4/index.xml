@@ -8,15 +8,15 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Sun, 15 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/px4/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>PX4开发</title>
-        <link>https://a233a2.github.io/p/px4%E5%BC%80%E5%8F%91/</link>
+        <title>PX4飞行控制器开发日志</title>
+        <link>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</link>
         <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/px4%E5%BC%80%E5%8F%91/</guid>
+        <guid>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</guid>
         <description>&lt;h3 id=&#34;px4飞控开发日志&#34;&gt;PX4飞控开发日志
 &lt;/h3&gt;&lt;p&gt;项目要求使用PX4来进行450mm无人机的设计。&lt;br&gt;
 设计上要求PCB设计出PX4飞控。&lt;br&gt;
-测试硬件采用PIXHAWK2.4.8的PX4官方支持硬件。地面站采用QGC。GPS采用微空M902。电机采用朗宇X2212v2-980kV&lt;br&gt;
+测试硬件采用PIXHAWK2.4.8的PX4官方支持硬件。地面站采用QGC，GPS采用微空M902，电机采用朗宇X2212v2-980kV&lt;br&gt;
 电调采用好盈天行者40A v2  桨叶为1047型号 遥控器为富斯i6x&lt;/p&gt;
 </description>
         </item>
