@@ -45,8 +45,9 @@
 		data-flex-basis=&#34;426px&#34;
 	
 &gt;
-开源链接：https://github.com/a233a2/CH32_DC_BalanceCar
-PID平衡部分计划使用两种方案进行对比
+开源链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/a233a2/CH32_DC_BalanceCar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/a233a2/CH32_DC_BalanceCar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;PID平衡部分计划使用两种方案进行对比
 1 pid_1.c文件 即不通过控制角度来确定速度，通过将直立环PID的目标设为重力0点，来维持平衡，之后通过速度环调速。
 2 pid.c文件 通过控制角度来确定速度，速度环输出目标速度下的应得角度，直立环与速度环串级，直立环负责达到对应角度。&lt;/p&gt;
 &lt;p&gt;某些地方还并不完善，比如PID参数方面还不尽完美。在之后我将从算法方面对其进行优化。从数学角度找找这两种方案的不同之处。&lt;/p&gt;

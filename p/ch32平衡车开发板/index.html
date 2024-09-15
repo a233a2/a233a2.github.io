@@ -10,7 +10,7 @@
 <meta property='og:description' content="两轮平衡车使用的开发板">
 <meta property='og:url' content='https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='DCM' /><meta property='article:tag' content='Balance' /><meta property='article:published_time' content='2024-07-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-07-15T00:00:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='直流电机方案' /><meta property='article:tag' content='Balance' /><meta property='article:published_time' content='2024-07-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-07-15T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="CH32平衡车开发板">
 <meta name="twitter:description" content="两轮平衡车使用的开发板">
     <link rel="shortcut icon" href="/static/favicon.ico" />
@@ -401,8 +401,9 @@
 		data-flex-basis="426px"
 	
 >
-开源链接：https://github.com/a233a2/CH32_DC_BalanceCar
-PID平衡部分计划使用两种方案进行对比
+开源链接：<a class="link" href="https://github.com/a233a2/CH32_DC_BalanceCar"  target="_blank" rel="noopener"
+    >https://github.com/a233a2/CH32_DC_BalanceCar</a></p>
+<p>PID平衡部分计划使用两种方案进行对比
 1 pid_1.c文件 即不通过控制角度来确定速度，通过将直立环PID的目标设为重力0点，来维持平衡，之后通过速度环调速。
 2 pid.c文件 通过控制角度来确定速度，速度环输出目标速度下的应得角度，直立环与速度环串级，直立环负责达到对应角度。</p>
 <p>某些地方还并不完善，比如PID参数方面还不尽完美。在之后我将从算法方面对其进行优化。从数学角度找找这两种方案的不同之处。</p>
@@ -414,7 +415,7 @@ PID平衡部分计划使用两种方案进行对比
     
     <section class="article-tags">
         
-            <a href="/tags/dcm/">DCM</a>
+            <a href="/tags/%E7%9B%B4%E6%B5%81%E7%94%B5%E6%9C%BA%E6%96%B9%E6%A1%88/">直流电机方案</a>
         
             <a href="/tags/balance/">Balance</a>
         
