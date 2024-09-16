@@ -14,7 +14,14 @@
         
         <guid>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h3 id=&#34;adrc课程笔记&#34;&gt;ADRC课程笔记
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;p&gt;本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些前馈控制的相关知识。&lt;/p&gt;
+&lt;h4 id=&#34;前馈控制&#34;&gt;前馈控制
+&lt;/h4&gt;&lt;h5 id=&#34;生理前馈系统&#34;&gt;生理前馈系统
+&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;在生理学上，前馈控制的例子是在实际体力活动之前，自主神经系统对心跳的正常预期调节。前馈控制可以比作对已知线索的预期反应（预测编码）。心跳的反馈调节为机体提供了进一步对运动的适应性。  &amp;ndash;wiki百科&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在前馈系统中，控制变量的调整不是以目标和回授之间的误差为基础，它是以过程&lt;strong&gt;数学模型&lt;/strong&gt;的知识和&lt;strong&gt;过程扰动&lt;/strong&gt;的知识或测量为基础。&lt;/p&gt;
+</description>
         </item>
         
     </channel>

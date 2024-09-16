@@ -14,7 +14,14 @@
         
         <guid>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</guid>
         <description>&lt;h3 id=&#34;adrc课程笔记&#34;&gt;ADRC课程笔记
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;p&gt;本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些前馈控制的相关知识。&lt;/p&gt;
+&lt;h4 id=&#34;前馈控制&#34;&gt;前馈控制
+&lt;/h4&gt;&lt;h5 id=&#34;生理前馈系统&#34;&gt;生理前馈系统
+&lt;/h5&gt;&lt;blockquote&gt;
+&lt;p&gt;在生理学上，前馈控制的例子是在实际体力活动之前，自主神经系统对心跳的正常预期调节。前馈控制可以比作对已知线索的预期反应（预测编码）。心跳的反馈调节为机体提供了进一步对运动的适应性。  &amp;ndash;wiki百科&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在前馈系统中，控制变量的调整不是以目标和回授之间的误差为基础，它是以过程&lt;strong&gt;数学模型&lt;/strong&gt;的知识和&lt;strong&gt;过程扰动&lt;/strong&gt;的知识或测量为基础。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>分数阶数学控制</title>
@@ -427,7 +434,7 @@ $$&lt;/p&gt;</description>
         
         <guid>https://a233a2.github.io/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;h2 id=&#34;欢迎您访问此网站&#34;&gt;欢迎您访问此网站！
-&lt;/h2&gt;&lt;h4 id=&#34;此网站是sunjiyi的专属技术分析网站分享与记录一些控制理论方面的技术知识本人为qut控制科学方向的在读研究生此外本人也会在此网站分享自己的开源项目以及一些电子小制作希望你玩的开心&#34;&gt;此网站是sunjiyi的专属技术分析网站！分享与记录一些控制理论方面的技术知识。本人为QUT控制科学方向的在读研究生。此外，本人也会在此网站分享自己的开源项目以及一些电子小制作。希望你玩的开心。
+&lt;/h2&gt;&lt;h4 id=&#34;此网站是sunjiyi的专属技术分析网站分享与记录一些控制理论方面的技术知识本人为控制科学方向的在读研究生此外本人也会在此网站分享自己的开源项目以及一些电子小制作希望你玩的开心&#34;&gt;此网站是sunjiyi的专属技术分析网站！分享与记录一些控制理论方面的技术知识。本人为控制科学方向的在读研究生。此外，本人也会在此网站分享自己的开源项目以及一些电子小制作。希望你玩的开心。
 &lt;/h4&gt;&lt;h4 id=&#34;我的最近研究方向foc控制px4飞控设计px4飞控ysyx项目&#34;&gt;我的最近研究方向：FOC控制/PX4飞控设计/PX4飞控/YSYX项目
 &lt;/h4&gt;&lt;p&gt;喜欢可以关注一下 &lt;a class=&#34;link&#34; href=&#34;https://space.bilibili.com/37767944&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;bilibili&lt;/a&gt;或者&lt;a class=&#34;link&#34; href=&#34;https://github.com/a233a2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
