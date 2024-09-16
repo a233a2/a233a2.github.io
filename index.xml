@@ -113,9 +113,8 @@ MOS：NEC6050&lt;br&gt;
 		data-flex-grow=&#34;177&#34;
 		data-flex-basis=&#34;426px&#34;
 	
-&gt;
-原理图：![[原理图.pdf]]
-开源链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/a233a2/CH32_DC_BalanceCar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&gt;&lt;/p&gt;
+&lt;p&gt;开源链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/a233a2/CH32_DC_BalanceCar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/a233a2/CH32_DC_BalanceCar&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;PID平衡部分计划使用两种方案进行对比
 1 pid_1.c文件 即不通过控制角度来确定速度，通过将直立环PID的目标设为重力0点，来维持平衡，之后通过速度环调速。
