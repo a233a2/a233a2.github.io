@@ -283,14 +283,11 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#臭猫foc驱动器设计日志">臭猫FOC驱动器设计日志</a>
-          <ol>
-            <li><a href="#开环foc驱动测试">开环FOC驱动测试</a></li>
-            <li><a href="#as5600磁编码器电机底板">AS5600磁编码器电机底板</a></li>
-            <li><a href="#as5600磁编码器数据读取">AS5600磁编码器数据读取</a></li>
-            <li><a href="#速度闭环测试">速度闭环测试</a></li>
-          </ol>
-        </li>
+        <li><a href="#臭猫foc驱动器设计日志">臭猫FOC驱动器设计日志</a></li>
+        <li><a href="#开环foc驱动测试">开环FOC驱动测试</a></li>
+        <li><a href="#as5600磁编码器电机底板">AS5600磁编码器电机底板</a></li>
+        <li><a href="#as5600磁编码器数据读取">AS5600磁编码器数据读取</a></li>
+        <li><a href="#速度闭环测试">速度闭环测试</a></li>
       </ol>
     </li>
   </ol>
@@ -444,8 +441,8 @@ MOS：NEC6050<br>
 这板子有一些bug，就是CH549G下载电路的供电有些问题。在使用DC-12v供电测试的时候，CH549G下载电路的供电不稳定。
 另外在开环测试的时候供电也不稳定。不知道是不是程序问题。
 接下来抽时间对驱动器进行软件开发</p>
-<h4 id="开环foc驱动测试">开环FOC驱动测试
-</h4><p>开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。
+<h3 id="开环foc驱动测试">开环FOC驱动测试
+</h3><p>开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。
 simpleFOC的开环速度代码如下
 参考了：https://github.com/haotianh9/DengFOC_on_STM32
 电压控制</p>
@@ -563,7 +560,7 @@ simpleFOC的开环速度代码如下
 </span></span><span class="line"><span class="cl">    <span class="n">u</span> <span class="o">=</span> <span class="n">tms</span> <span class="o">-</span> <span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">+</span> <span class="p">(</span><span class="n">u</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="n">tms</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="err">`【应该是获取运行时间的代码段。】</span> <span class="err">`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="o">//</span><span class="err">【应该是获取运行时间的代码段。】</span> 
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="ne">float</span> <span class="n">_electricalAngle</span><span class="p">(</span><span class="ne">float</span> <span class="n">shaft_angle</span><span class="p">,</span> <span class="ne">int</span> <span class="n">pole_pairs</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="n">shaft_angle</span> <span class="o">*</span> <span class="n">pole_pairs</span><span class="p">);</span>
@@ -641,10 +638,10 @@ simpleFOC的开环速度代码如下
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="as5600磁编码器电机底板">AS5600磁编码器电机底板
-</h4><h4 id="as5600磁编码器数据读取">AS5600磁编码器数据读取
-</h4><h4 id="速度闭环测试">速度闭环测试
-</h4>
+</div><h3 id="as5600磁编码器电机底板">AS5600磁编码器电机底板
+</h3><h3 id="as5600磁编码器数据读取">AS5600磁编码器数据读取
+</h3><h3 id="速度闭环测试">速度闭环测试
+</h3>
 </section>
 
 

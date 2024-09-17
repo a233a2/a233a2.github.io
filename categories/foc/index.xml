@@ -81,8 +81,8 @@ MOS：NEC6050&lt;br&gt;
 这板子有一些bug，就是CH549G下载电路的供电有些问题。在使用DC-12v供电测试的时候，CH549G下载电路的供电不稳定。
 另外在开环测试的时候供电也不稳定。不知道是不是程序问题。
 接下来抽时间对驱动器进行软件开发&lt;/p&gt;
-&lt;h4 id=&#34;开环foc驱动测试&#34;&gt;开环FOC驱动测试
-&lt;/h4&gt;&lt;p&gt;开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。
+&lt;h3 id=&#34;开环foc驱动测试&#34;&gt;开环FOC驱动测试
+&lt;/h3&gt;&lt;p&gt;开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。
 simpleFOC的开环速度代码如下
 参考了：https://github.com/haotianh9/DengFOC_on_STM32
 电压控制&lt;/p&gt;
@@ -200,7 +200,7 @@ simpleFOC的开环速度代码如下
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tms&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SysTick&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;VAL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tms&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;`【应该是获取运行时间的代码段。】&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;【应该是获取运行时间的代码段。】&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;ne&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_electricalAngle&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;ne&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;shaft_angle&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;ne&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pole_pairs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shaft_angle&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pole_pairs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
@@ -278,10 +278,10 @@ simpleFOC的开环速度代码如下
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;as5600磁编码器电机底板&#34;&gt;AS5600磁编码器电机底板
-&lt;/h4&gt;&lt;h4 id=&#34;as5600磁编码器数据读取&#34;&gt;AS5600磁编码器数据读取
-&lt;/h4&gt;&lt;h4 id=&#34;速度闭环测试&#34;&gt;速度闭环测试
-&lt;/h4&gt;</description>
+&lt;/div&gt;&lt;h3 id=&#34;as5600磁编码器电机底板&#34;&gt;AS5600磁编码器电机底板
+&lt;/h3&gt;&lt;h3 id=&#34;as5600磁编码器数据读取&#34;&gt;AS5600磁编码器数据读取
+&lt;/h3&gt;&lt;h3 id=&#34;速度闭环测试&#34;&gt;速度闭环测试
+&lt;/h3&gt;</description>
         </item>
         
     </channel>
