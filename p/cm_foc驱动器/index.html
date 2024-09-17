@@ -361,7 +361,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -445,8 +445,201 @@ MOS：NEC6050<br>
 另外在开环测试的时候供电也不稳定。不知道是不是程序问题。
 接下来抽时间对驱动器进行软件开发</p>
 <h4 id="开环foc驱动测试">开环FOC驱动测试
-</h4><p>开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。</p>
-<h4 id="as5600磁编码器电机底板">AS5600磁编码器电机底板
+</h4><p>开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。
+simpleFOC的开环速度代码如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">static</span> <span class="n">inline</span> <span class="n">uint32_t</span> <span class="n">LL_SYSTICK_IsActiveCounterFlag</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">((</span><span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">CTRL</span> <span class="o">&amp;</span> <span class="n">SysTick_CTRL_COUNTFLAG_Msk</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">SysTick_CTRL_COUNTFLAG_Msk</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">uint32_t</span> <span class="n">getCurrentMicros</span><span class="p">(</span><span class="n">void</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="o">/*</span> <span class="n">Ensure</span> <span class="n">COUNTFLAG</span> <span class="n">is</span> <span class="n">reset</span> <span class="n">by</span> <span class="n">reading</span> <span class="n">SysTick</span> <span class="n">control</span> <span class="ow">and</span> <span class="n">status</span> <span class="n">register</span> <span class="o">*/</span>
+</span></span><span class="line"><span class="cl">  <span class="n">LL_SYSTICK_IsActiveCounterFlag</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">uint32_t</span> <span class="n">m</span> <span class="o">=</span> <span class="n">HAL_GetTick</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">const</span> <span class="n">uint32_t</span> <span class="n">tms</span> <span class="o">=</span> <span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">LOAD</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">__IO</span> <span class="n">uint32_t</span> <span class="n">u</span> <span class="o">=</span> <span class="n">tms</span> <span class="o">-</span> <span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">LL_SYSTICK_IsActiveCounterFlag</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="n">HAL_GetTick</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">u</span> <span class="o">=</span> <span class="n">tms</span> <span class="o">-</span> <span class="n">SysTick</span><span class="o">-&gt;</span><span class="n">VAL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="mi">1000</span> <span class="o">+</span> <span class="p">(</span><span class="n">u</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="n">tms</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="err">`【应该是获取运行时间的代码段。】</span> <span class="err">`</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="ne">float</span> <span class="n">_electricalAngle</span><span class="p">(</span><span class="ne">float</span> <span class="n">shaft_angle</span><span class="p">,</span> <span class="ne">int</span> <span class="n">pole_pairs</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="n">shaft_angle</span> <span class="o">*</span> <span class="n">pole_pairs</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="ne">float</span> <span class="n">_normalizeAngle</span><span class="p">(</span><span class="ne">float</span> <span class="n">angle</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">  <span class="ne">float</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">fmod</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">M_PI</span><span class="p">);</span>   <span class="o">//</span><span class="err">取余运算可以用于归一化，列出特殊值例子算便知</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="err">?</span> <span class="n">a</span> <span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">M_PI</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">三目运算符。格式：</span><span class="n">condition</span> <span class="err">?</span> <span class="n">expr1</span> <span class="p">:</span> <span class="n">expr2</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">其中，</span><span class="n">condition</span> <span class="err">是要求值的条件表达式，如果条件成立，则返回</span> <span class="n">expr1</span> <span class="err">的值，否则返回</span> <span class="n">expr2</span> <span class="err">的值。</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">可以将三目运算符视为</span> <span class="k">if</span><span class="o">-</span><span class="k">else</span> <span class="err">语句的简化形式。</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="nb">fmod</span> <span class="err">函数的余数的符号与除数相同。因此，当</span> <span class="n">angle</span> <span class="err">的值为负数时，余数的符号将与</span> <span class="n">_2M_PI</span> <span class="err">的符号相反。</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">也就是说，如果</span> <span class="n">angle</span> <span class="err">的值小于</span> <span class="mi">0</span> <span class="err">且</span> <span class="n">_2M_PI</span> <span class="err">的值为正数，则</span> <span class="nb">fmod</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">_2M_PI</span><span class="p">)</span> <span class="err">的余数将为负数。</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">例如，当</span> <span class="n">angle</span> <span class="err">的值为</span> <span class="o">-</span><span class="n">M_PI</span><span class="o">/</span><span class="mi">2</span><span class="err">，</span><span class="n">_2M_PI</span> <span class="err">的值为</span> <span class="mi">2</span><span class="n">M_PI</span> <span class="err">时，</span><span class="nb">fmod</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">_2M_PI</span><span class="p">)</span> <span class="err">将返回一个负数。</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">在这种情况下，可以通过将负数的余数加上</span> <span class="n">_2M_PI</span> <span class="err">来将角度归一化到</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="n">M_PI</span><span class="p">]</span> <span class="err">的范围内，以确保角度的值始终为正数。</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">void</span> <span class="n">setPwm</span><span class="p">(</span><span class="ne">float</span> <span class="n">Ua</span><span class="p">,</span> <span class="ne">float</span> <span class="n">Ub</span><span class="p">,</span> <span class="ne">float</span> <span class="n">Uc</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span>	<span class="o">//</span> <span class="err">限制上限</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Ua</span> <span class="o">=</span> <span class="n">_constrain</span><span class="p">(</span><span class="n">Ua</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="n">voltage_limit</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Ub</span> <span class="o">=</span> <span class="n">_constrain</span><span class="p">(</span><span class="n">Ub</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="n">voltage_limit</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Uc</span> <span class="o">=</span> <span class="n">_constrain</span><span class="p">(</span><span class="n">Uc</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span><span class="p">,</span> <span class="n">voltage_limit</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="o">//</span> <span class="err">计算占空比</span>
+</span></span><span class="line"><span class="cl">	<span class="o">//</span> <span class="err">限制占空比从</span><span class="mi">0</span><span class="err">到</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">	<span class="n">dc_a</span> <span class="o">=</span> <span class="n">_constrain</span><span class="p">(</span><span class="n">Ua</span> <span class="o">/</span> <span class="n">voltage_power_supply</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span> <span class="p">,</span> <span class="mf">1.0</span><span class="n">f</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">dc_b</span> <span class="o">=</span> <span class="n">_constrain</span><span class="p">(</span><span class="n">Ub</span> <span class="o">/</span> <span class="n">voltage_power_supply</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span> <span class="p">,</span> <span class="mf">1.0</span><span class="n">f</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">dc_c</span> <span class="o">=</span> <span class="n">_constrain</span><span class="p">(</span><span class="n">Uc</span> <span class="o">/</span> <span class="n">voltage_power_supply</span><span class="p">,</span> <span class="mf">0.0</span><span class="n">f</span> <span class="p">,</span> <span class="mf">1.0</span><span class="n">f</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="o">//</span><span class="err">写入</span><span class="n">PWM到PWM</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="err">通道</span>
+</span></span><span class="line"><span class="cl">	<span class="n">TIM1</span><span class="o">-&gt;</span><span class="n">CCR1</span> <span class="o">=</span> <span class="p">(</span><span class="n">uint32_t</span><span class="p">)</span> <span class="n">roundf</span><span class="p">(</span><span class="n">dc_a</span><span class="o">*</span><span class="n">period</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">TIM1</span><span class="o">-&gt;</span><span class="n">CCR2</span> <span class="o">=</span> <span class="p">(</span><span class="n">uint32_t</span><span class="p">)</span> <span class="n">roundf</span><span class="p">(</span><span class="n">dc_b</span><span class="o">*</span><span class="n">period</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">TIM1</span><span class="o">-&gt;</span><span class="n">CCR3</span> <span class="o">=</span> <span class="p">(</span><span class="n">uint32_t</span><span class="p">)</span> <span class="n">roundf</span><span class="p">(</span><span class="n">dc_c</span><span class="o">*</span><span class="n">period</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">void</span> <span class="n">setPhaseVoltage</span><span class="p">(</span><span class="ne">float</span> <span class="n">Uq</span><span class="p">,</span><span class="ne">float</span> <span class="n">Ud</span><span class="p">,</span> <span class="ne">float</span> <span class="n">angle_el</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">angle_el</span> <span class="o">=</span> <span class="n">_normalizeAngle</span><span class="p">(</span><span class="n">angle_el</span> <span class="o">+</span> <span class="n">zero_electric_angle</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">帕克逆变换</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Ualpha</span> <span class="o">=</span>  <span class="o">-</span><span class="n">Uq</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">angle_el</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Ubeta</span> <span class="o">=</span>   <span class="n">Uq</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">angle_el</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">克拉克逆变换</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Ua</span> <span class="o">=</span> <span class="n">Ualpha</span> <span class="o">+</span> <span class="n">voltage_power_supply</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Ub</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">Ubeta</span><span class="o">-</span><span class="n">Ualpha</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">voltage_power_supply</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Uc</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">Ualpha</span><span class="o">-</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">Ubeta</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">voltage_power_supply</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">setPwm</span><span class="p">(</span><span class="n">Ua</span><span class="p">,</span><span class="n">Ub</span><span class="p">,</span><span class="n">Uc</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span><span class="err">开环速度函数</span>
+</span></span><span class="line"><span class="cl"><span class="ne">float</span> <span class="n">velocityOpenloop</span><span class="p">(</span><span class="ne">float</span> <span class="n">target_velocity</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span>	<span class="n">uint32_t</span> <span class="n">now_us</span> <span class="o">=</span> <span class="n">getCurrentMicros</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span>	<span class="n">uint32_t</span> <span class="n">now_us</span> <span class="o">=</span> <span class="n">HAL_GetTick</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span>  <span class="n">Provides</span> <span class="n">a</span> <span class="n">tick</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">microseconds</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">计算当前每个</span><span class="n">Loop的运行时间间隔</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span>  <span class="ne">float</span> <span class="n">Ts</span> <span class="o">=</span> <span class="p">(</span><span class="n">now_us</span> <span class="o">-</span> <span class="n">open_loop_timestamp</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-3</span><span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="ne">float</span> <span class="n">Ts</span><span class="o">=</span><span class="mf">5E-3</span><span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="err">通过乘以时间间隔和目标速度来计算需要转动的机械角度，存储在</span> <span class="n">shaft_angle</span> <span class="err">变量中。</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">在此之前，还需要对轴角度进行归一化，以确保其值在</span> <span class="mi">0</span> <span class="err">到</span> <span class="mi">2</span><span class="err">π</span> <span class="err">之间。</span>
+</span></span><span class="line"><span class="cl">  <span class="n">shaft_angle</span> <span class="o">=</span> <span class="n">_normalizeAngle</span><span class="p">(</span><span class="n">shaft_angle</span> <span class="o">+</span> <span class="n">target_velocity</span><span class="o">*</span><span class="n">Ts</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">以目标速度为</span> <span class="mi">10</span> <span class="n">rad</span><span class="o">/</span><span class="n">s</span> <span class="err">为例，如果时间间隔是</span> <span class="mi">1</span> <span class="err">秒，则在每个循环中需要增加</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">=</span> <span class="mi">10</span> <span class="err">弧度的角度变化量，才能使电机转动到目标速度。</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">如果时间间隔是</span> <span class="mf">0.1</span> <span class="err">秒，那么在每个循环中需要增加的角度变化量就是</span> <span class="mi">10</span> <span class="o">*</span> <span class="mf">0.1</span> <span class="o">=</span> <span class="mi">1</span> <span class="err">弧度，才能实现相同的目标速度。</span>
+</span></span><span class="line"><span class="cl">  <span class="o">//</span><span class="err">因此，电机轴的转动角度取决于目标速度和时间间隔的乘积。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="o">//</span> <span class="n">Uq</span> <span class="n">is</span> <span class="ow">not</span> <span class="n">related</span> <span class="n">to</span> <span class="n">voltage</span> <span class="n">limit</span>
+</span></span><span class="line"><span class="cl">  <span class="ne">float</span> <span class="n">Uq</span> <span class="o">=</span> <span class="mf">5.5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">setPhaseVoltage</span><span class="p">(</span><span class="n">Uq</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span> <span class="n">_electricalAngle</span><span class="p">(</span><span class="n">shaft_angle</span><span class="p">,</span> <span class="n">pole_pairs</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span>  <span class="n">open_loop_timestamp</span> <span class="o">=</span> <span class="n">now_us</span><span class="p">;</span>  <span class="o">//</span><span class="err">用于计算下一个时间间隔</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">Uq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="as5600磁编码器电机底板">AS5600磁编码器电机底板
 </h4><h4 id="as5600磁编码器数据读取">AS5600磁编码器数据读取
 </h4><h4 id="速度闭环测试">速度闭环测试
 </h4>
