@@ -49,8 +49,22 @@
 预驱芯片：EG2133&lt;br&gt;
 MOS：NEC6050&lt;br&gt;
 下载芯片：CH549G&lt;br&gt;
-电流检测：INA240A2&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cmfoc_postive.png&#34;
+电流检测：INA240A2
+&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cm_foc_sch.png&#34;
+	width=&#34;1909&#34;
+	height=&#34;796&#34;
+	srcset=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cm_foc_sch_hu14048912576208350118.png 480w, https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cm_foc_sch_hu16972929307900469238.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;原理图设计&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;239&#34;
+		data-flex-basis=&#34;575px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cmfoc_postive.png&#34;
 	width=&#34;1366&#34;
 	height=&#34;911&#34;
 	srcset=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cmfoc_postive_hu10055792451874544564.png 480w, https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cmfoc_postive_hu10082314305775054254.png 1024w&#34;
@@ -77,11 +91,33 @@ MOS：NEC6050&lt;br&gt;
 		data-flex-grow=&#34;151&#34;
 		data-flex-basis=&#34;362px&#34;
 	
-&gt;&lt;br&gt;
-2024-9-15 期待已久的FOC驱动器终于开工设计！设计完成PCB以及原理图。第一次设计双路的FOC驱动器，也是第一次是设计功率地与普通的GND隔离。&lt;/p&gt;
+&gt;&lt;/p&gt;
+&lt;p&gt;2024-9-15 期待已久的FOC驱动器终于开工设计！设计完成PCB以及原理图。第一次设计双路的FOC驱动器，也是第一次是设计功率地与普通的GND隔离。&lt;/p&gt;
 &lt;p&gt;另外就是电流检测芯片选择的是TI的INA240A2，有点难以购买qaq。每个芯片的价格在3元左右，属实有点成本爆炸。下次准备学习更换更为便宜的INA199或者其他国产方案。&lt;/p&gt;
 &lt;p&gt;2024-9-17 计划物料到货开始焊接&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cm_foc_real2.png&#34;
+	width=&#34;1056&#34;
+	height=&#34;672&#34;
+	srcset=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cm_foc_real2_hu14944489344752594435.png 480w, https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cm_foc_real2_hu11001479406849860967.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;焊接完成的实物图&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;157&#34;
+		data-flex-basis=&#34;377px&#34;
+	
+&gt;&lt;br&gt;
+这板子有一些bug，就是CH549G下载电路的供电有些问题。在使用DC-12v供电测试的时候，CH549G下载电路的供电不稳定。
+另外在开环测试的时候供电也不稳定。不知道是不是程序问题。
+接下来抽时间对驱动器进行软件开发&lt;/p&gt;
+&lt;h4 id=&#34;开环foc驱动测试&#34;&gt;开环FOC驱动测试
+&lt;/h4&gt;&lt;p&gt;开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。&lt;/p&gt;
+&lt;h4 id=&#34;as5600磁编码器电机底板&#34;&gt;AS5600磁编码器电机底板
+&lt;/h4&gt;&lt;h4 id=&#34;as5600磁编码器数据读取&#34;&gt;AS5600磁编码器数据读取
+&lt;/h4&gt;&lt;h4 id=&#34;速度闭环测试&#34;&gt;速度闭环测试
+&lt;/h4&gt;</description>
         </item>
         <item>
         <title>PX4飞行控制器开发日志</title>
