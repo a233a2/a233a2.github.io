@@ -114,7 +114,9 @@ MOS：NEC6050&lt;br&gt;
 接下来抽时间对驱动器进行软件开发&lt;/p&gt;
 &lt;h4 id=&#34;开环foc驱动测试&#34;&gt;开环FOC驱动测试
 &lt;/h4&gt;&lt;p&gt;开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。
-simpleFOC的开环速度代码如下&lt;/p&gt;
+simpleFOC的开环速度代码如下
+参考了：https://github.com/haotianh9/DengFOC_on_STM32
+电压控制&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
