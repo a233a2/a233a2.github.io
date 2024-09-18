@@ -18,7 +18,10 @@
 设计上要求PCB设计出PX4飞控。&lt;br&gt;
 测试硬件采用PIXHAWK2.4.8的PX4官方支持硬件。地面站采用QGC，GPS采用微空M902，电机采用朗宇X2212v2-980kV&lt;br&gt;
 电调采用好盈天行者40A v2  桨叶为朗宇的LEGO：1047型号 遥控器为富斯i6x&lt;/p&gt;
-</description>
+&lt;h3 id=&#34;px4工程文件解析&#34;&gt;PX4工程文件解析
+&lt;/h3&gt;&lt;p&gt;PX4飞控项目通常使用 &lt;strong&gt;NuttX&lt;/strong&gt; 作为其主要的实时操作系统（RTOS）。NuttX 是一个轻量级、可移植、符合 POSIX 标准的 RTOS，非常适合资源受限的嵌入式系统。&lt;/p&gt;
+&lt;h3 id=&#34;nuttxrtos&#34;&gt;NuttxRTOS
+&lt;/h3&gt;</description>
         </item>
         
     </channel>

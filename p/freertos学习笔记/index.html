@@ -286,6 +286,7 @@
         <li><a href="#freertos">FreeRTOS</a></li>
         <li><a href="#freertos核心机制">FreeRTOS核心机制</a></li>
         <li><a href="#freertos延时函数">FreeRTOS延时函数</a></li>
+        <li><a href="#freertos的部署">FreeRTOS的部署</a></li>
       </ol>
     </li>
   </ol>
@@ -372,7 +373,8 @@
     
     
     <h3 id="freertos">FreeRTOS
-</h3><p>FreeRTOS在嵌入式的开发中十分的重要，本人之前对于同一时间进行多种任务的做法普遍都是设置定时器中断程序。这样做或许能解决燃眉之急，但是在大型项目中便有一些捉襟见肘，尤其是使用这种方式对于MCU的任务调度十分的不明确，显得十分的乱。故对于FreeRTOS这种MCU操作系统的应用便显得尤为重要。</p>
+</h3><p>FreeRTOS在嵌入式的开发中十分的重要，本人之前对于同一时间进行多种任务的做法普遍都是设置定时器中断程序。这样做或许能解决燃眉之急，但是在大型项目中便有一些捉襟见肘，尤其是使用这种方式对于MCU的任务调度十分的不明确，显得十分的乱。故对于FreeRTOS这种MCU操作系统的应用便显得尤为重要。
+官方文档：https://freertos.org/zh-cn-cmn-s/Documentation/00-Overview</p>
 <h3 id="freertos核心机制">FreeRTOS核心机制
 </h3><p><strong>优先级调度</strong>
 高优先级的准备就绪后，直接抢占CPU。<br>
@@ -380,12 +382,14 @@
 同优先级，按照准备就绪的先后顺序执行。<br>
 <strong>时间片轮询</strong><br>
 有相同优先级的两个任务，其中一个一直没被抢占，则运行时间达到一个<strong>时间片</strong>则主动让出CPU。</p>
+<p>ps：低优先级的任务对时间的控制较为不精确。高优先级的任务可以做到时间精确控制。</p>
 <h3 id="freertos延时函数">FreeRTOS延时函数
 </h3><p><strong>vTaskDelay(ms);</strong><br>
 当前任务暂时暂停xx ms，程序进入<strong>阻塞态</strong>，其中暂时时间内可以执行其他任务。
 <strong>HAL_Delay(ms);</strong><br>
 CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。</p>
-
+<h3 id="freertos的部署">FreeRTOS的部署
+</h3>
 </section>
 
 
