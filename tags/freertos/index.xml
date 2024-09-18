@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>FreeRTOS on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/tags/freertos/</link>
+        <description>Recent content in FreeRTOS on sunjiyi&#39;s Blogggg</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Sunjiyi Make and Design</copyright>
+        <lastBuildDate>Wed, 18 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/freertos/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>FreeRTOS学习笔记</title>
+        <link>https://a233a2.github.io/p/freertos%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/freertos%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h3 id=&#34;freertos&#34;&gt;FreeRTOS
+&lt;/h3&gt;&lt;p&gt;FreeRTOS在嵌入式的开发中十分的重要，本人之前对于同一时间进行多种任务的做法普遍都是设置定时器中断程序。这样做或许能解决燃眉之急，但是在大型项目中便有一些捉襟见肘，尤其是使用这种方式对于MCU的任务调度十分的不明确，显得十分的乱。故对于FreeRTOS这种MCU操作系统的应用便显得尤为重要。&lt;/p&gt;
+&lt;h3 id=&#34;freertos核心机制&#34;&gt;FreeRTOS核心机制
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;优先级调度&lt;/strong&gt;
+高优先级的准备就绪后，直接抢占CPU。&lt;br&gt;
+&lt;strong&gt;FCFS(先来先服务)&lt;/strong&gt;&lt;br&gt;
+同优先级，按照准备就绪的先后顺序执行。&lt;br&gt;
+&lt;strong&gt;时间片轮询&lt;/strong&gt;&lt;br&gt;
+有相同优先级的两个任务，其中一个一直没被抢占，则运行时间达到一个&lt;strong&gt;时间片&lt;/strong&gt;则主动让出CPU。&lt;/p&gt;
+&lt;h3 id=&#34;freertos延时函数&#34;&gt;FreeRTOS延时函数
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;vTaskDelay(ms);&lt;/strong&gt;&lt;br&gt;
+当前任务暂时暂停xx ms，程序进入&lt;strong&gt;阻塞态&lt;/strong&gt;，其中暂时时间内可以执行其他任务。
+&lt;strong&gt;HAL_Delay(ms);&lt;/strong&gt;&lt;br&gt;
+CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
