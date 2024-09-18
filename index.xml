@@ -336,7 +336,8 @@ simpleFOC的开环速度代码如下
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;as5600磁编码器电机底板&#34;&gt;AS5600磁编码器电机底板
-&lt;/h3&gt;&lt;h3 id=&#34;as5600磁编码器数据读取&#34;&gt;AS5600磁编码器数据读取
+&lt;/h3&gt;&lt;p&gt;2024-9-18 PCB刚刚到货，准备抽时间进行焊接。再一次把CM_FOC的串口通信部分焊接完成，方便查看波形等。&lt;/p&gt;
+&lt;h3 id=&#34;as5600磁编码器数据读取&#34;&gt;AS5600磁编码器数据读取
 &lt;/h3&gt;&lt;h3 id=&#34;速度闭环测试&#34;&gt;速度闭环测试
 &lt;/h3&gt;</description>
         </item>
