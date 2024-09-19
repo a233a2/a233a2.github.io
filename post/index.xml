@@ -336,9 +336,25 @@ simpleFOC的开环速度代码如下
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;as5600磁编码器电机底板&#34;&gt;AS5600磁编码器电机底板
-&lt;/h3&gt;&lt;p&gt;2024-9-18 PCB刚刚到货，准备抽时间进行焊接。再一次把CM_FOC的串口通信部分焊接完成，方便查看波形等。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;2024-9-18 PCB刚刚到货，准备抽时间进行焊接。再一次把CM_FOC的串口通信部分焊接完成，方便查看波形等。
+SH1.25的接口画错了，属实是大意了。飞线暂时解决了问题。
+&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/AS5600.png&#34;
+	width=&#34;878&#34;
+	height=&#34;750&#34;
+	srcset=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/AS5600_hu13229294111363869236.png 480w, https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/AS5600_hu5402140284763159985.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;焊接完成的实物图&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;117&#34;
+		data-flex-basis=&#34;280px&#34;
+	
+&gt;&lt;/p&gt;
 &lt;h3 id=&#34;as5600磁编码器数据读取&#34;&gt;AS5600磁编码器数据读取
-&lt;/h3&gt;&lt;h3 id=&#34;速度闭环测试&#34;&gt;速度闭环测试
+&lt;/h3&gt;&lt;p&gt;AS5600是12位的霍尔磁编码器，它的地址是0x36，只需要读取0x0C、0x0D这两个寄存器就可以读出角度的原始数据，再将其乘以360，再除以4096，就可以获得角度值。&lt;/p&gt;
+&lt;h3 id=&#34;速度闭环测试&#34;&gt;速度闭环测试
 &lt;/h3&gt;</description>
         </item>
         <item>
