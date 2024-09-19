@@ -278,7 +278,70 @@ simpleFOC的开环速度代码如下
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;as5600磁编码器电机底板&#34;&gt;AS5600磁编码器电机底板
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu1.png&#34;
+	width=&#34;1361&#34;
+	height=&#34;599&#34;
+	srcset=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu1_hu16224531981041641098.png 480w, https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu1_hu13269779555929145551.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;开环波形图测试&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;227&#34;
+		data-flex-basis=&#34;545px&#34;
+	
+&gt;&lt;br&gt;
+波形图根据上述代码来生成的话有些错误。这导致电机不能正确转动。而发出固定的啸叫。&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu2.png&#34;
+	width=&#34;619&#34;
+	height=&#34;308&#34;
+	srcset=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu2_hu17172066795564663883.png 480w, https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu2_hu13474268925213810251.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;开环波形图测试&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;200&#34;
+		data-flex-basis=&#34;482px&#34;
+	
+&gt;&lt;br&gt;
+时间改为us后，波形图更加混乱。&lt;br&gt;
+将时间的获取改为定时器中断+全局变量后。首先设置1us生成波形图如下：
+&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu3.png&#34;
+	width=&#34;571&#34;
+	height=&#34;348&#34;
+	srcset=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu3_hu15768852527291425880.png 480w, https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu3_hu14758830256517561039.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;开环波形图测试&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;164&#34;
+		data-flex-basis=&#34;393px&#34;
+	
+&gt;&lt;br&gt;
+调整为200us时波形图如下：
+&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu4.png&#34;
+	width=&#34;582&#34;
+	height=&#34;432&#34;
+	srcset=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu4_hu7685689421622527875.png 480w, https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/boxingtu4_hu1797301697242372287.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;开环波形图测试&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;134&#34;
+		data-flex-basis=&#34;323px&#34;
+	
+&gt;&lt;br&gt;
+按理说这样运行开环已经可以完美运行，但是接入电脑5v-usb供电的时候电机依然跳动+啸叫。
+接入正常12v电源供电时，板子直接没了反应。。可能是设计的电源出现了问题。将电压降低到5v后板子可以正常上电启动，但是无法正常运行，整体是一种上电运行后，电机转动力巨大，然后系统死机重启陷入了死循环。
+电源设计还是不太过关。。。而且设计的有些混乱。。计划下一板改进，但是这种工程耗费时间太大了，下次进行工程实现之前应该提前做好功课。&lt;/p&gt;
+&lt;h3 id=&#34;as5600磁编码器电机底板&#34;&gt;AS5600磁编码器电机底板
 &lt;/h3&gt;&lt;p&gt;2024-9-18 PCB刚刚到货，准备抽时间进行焊接。再一次把CM_FOC的串口通信部分焊接完成，方便查看波形等。
 SH1.25的接口画错了，属实是大意了。飞线暂时解决了问题。
 &lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/AS5600.png&#34;
