@@ -156,20 +156,19 @@ commander.cpp：这是Commander模块的主文件，包含了飞行模式的&lt;
 &lt;/h5&gt;&lt;p&gt;**多旋翼飞行器（mc_pos_control）&lt;strong&gt;和&lt;/strong&gt;固定翼飞行器（fw_pos_control_l1）**的飞行模式控制。&lt;br&gt;
 在这些模块中，具体的飞行控制算法实现了如何根据不同的飞行模式，进行姿态、位置或速度控制。&lt;/p&gt;
 &lt;p&gt;飞行模式的状态机逻辑位于commander.cpp文件中。它根据用户输入、飞行器状态和环境条件来决定当前飞行模式。你需要熟悉这些状态之间的切换条件以及各模式的具体功能实现。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;定义新的飞行模式：&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;定义新的飞行模式：&lt;/strong&gt;&lt;br&gt;
 在commander_state.h文件中，添加新的飞行模式枚举。例如，如果你要创建一个自定义的“智能悬停模式”：
 VEHICLE_MODE_FLAG_SMART_HOVER
-&lt;strong&gt;实现飞行模式逻辑：&lt;/strong&gt;
+&lt;strong&gt;实现飞行模式逻辑：&lt;/strong&gt;&lt;br&gt;
 在commander.cpp文件中，添加或修改相应的飞行模式逻辑。
 你可以参考已有的飞行模式（如POSCTL或ALTCTL）的实现方式，将自定义逻辑嵌入其中。比如，你可以根据条件判断激活智能悬停模式：&lt;/p&gt;
-&lt;p&gt;if (user_input == CUSTOM_SMART_HOVER_CONDITION) {
-vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;
-}
-&amp;rsquo;&amp;rsquo;&#39;
-&lt;strong&gt;实现控制算法：&lt;/strong&gt;
+&lt;p&gt;if (user_input == CUSTOM_SMART_HOVER_CONDITION) {&lt;br&gt;
+vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;&lt;br&gt;
+}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;实现控制算法：&lt;/strong&gt;&lt;br&gt;
 根据自定义飞行模式的功能需求，你可能需要在姿态控制模块（mc_att_control）或位置控制模块（mc_pos_control）中添加自定义的控制算法。
 可以根据飞行器当前的状态、位置、高度等数据来设计智能悬停的控制算法，使其在特定条件下表现出不同的控制行为。
-&lt;strong&gt;测试飞行模式&lt;/strong&gt;
+&lt;strong&gt;测试飞行模式&lt;/strong&gt;&lt;br&gt;
 在模拟环境（如SITL）中对修改后的飞行模式进行测试。
 确保飞行模式在不同情况下能够正确切换和响应用户输入。&lt;/p&gt;
 </description>
