@@ -26,7 +26,7 @@
 &lt;p&gt;ps：低优先级的任务对时间的控制较为不精确。高优先级的任务可以做到时间精确控制。&lt;/p&gt;
 &lt;h3 id=&#34;freertos延时函数&#34;&gt;FreeRTOS延时函数
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;vTaskDelay(ms);&lt;/strong&gt;&lt;br&gt;
-当前任务暂时暂停xx ms，程序进入&lt;strong&gt;阻塞态&lt;/strong&gt;，其中暂时时间内可以执行其他任务。
+当前任务暂时暂停xx ms，程序进入&lt;strong&gt;阻塞态&lt;/strong&gt;，其中暂时时间内可以执行其他任务。&lt;br&gt;
 &lt;strong&gt;HAL_Delay(ms);&lt;/strong&gt;&lt;br&gt;
 CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&gt;
 &lt;h3 id=&#34;freertos的部署&#34;&gt;FreeRTOS的部署
