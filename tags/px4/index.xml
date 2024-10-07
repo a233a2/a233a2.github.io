@@ -145,7 +145,8 @@ PID控制器的参数通常在参数文件中定义，可以通过修改这些�
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;nuttxrtos&#34;&gt;NuttxRTOS
-&lt;/h3&gt;&lt;h3 id=&#34;mavlink协议&#34;&gt;MAVLink协议
+&lt;/h3&gt;&lt;p&gt;这应该是个很复杂的单片机实时系统。&lt;/p&gt;
+&lt;h3 id=&#34;mavlink协议&#34;&gt;MAVLink协议
 &lt;/h3&gt;&lt;p&gt;QGC地面站会通过MAVLink协议将QGC针对飞机的配置参数发送给飞控系统，而飞控系统则将这些参数存储在存储设备中。&lt;/p&gt;
 &lt;h3 id=&#34;对原有飞行模式修改与添加新的功能&#34;&gt;对原有飞行模式修改与添加新的功能
 &lt;/h3&gt;&lt;h4 id=&#34;px4中的飞行模式主要定义文件&#34;&gt;PX4中的飞行模式主要定义文件：
