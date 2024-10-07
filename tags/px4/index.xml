@@ -150,11 +150,11 @@ PID控制器的参数通常在参数文件中定义，可以通过修改这些�
 &lt;/h3&gt;&lt;p&gt;QGC地面站会通过MAVLink协议将QGC针对飞机的配置参数发送给飞控系统，而飞控系统则将这些参数存储在存储设备中。&lt;/p&gt;
 &lt;h3 id=&#34;对原有飞行模式修改与添加新的功能&#34;&gt;对原有飞行模式修改与添加新的功能
 &lt;/h3&gt;&lt;h4 id=&#34;px4中的飞行模式主要定义文件&#34;&gt;PX4中的飞行模式主要定义文件：
-&lt;/h4&gt;&lt;h5 id=&#34;commander模块srcmodulescommander&#34;&gt;Commander模块（src/modules/commander）：
-&lt;/h5&gt;&lt;p&gt;主要负责飞行模式的管理和状态机控制。&lt;br&gt;
-commander.cpp：这是Commander模块的主文件，包含了飞行模式的&lt;strong&gt;状态机&lt;/strong&gt;逻辑。commander_state.cpp：管理飞行模式的状态定义。&lt;/p&gt;
-&lt;h5 id=&#34;flight-mode-manager模块srcmodulesmc_pos_control-和-srcmodulesfw_pos_control_l1&#34;&gt;Flight Mode Manager模块（src/modules/mc_pos_control 和 src/modules/fw_pos_control_l1）：
-&lt;/h5&gt;&lt;p&gt;**多旋翼飞行器（mc_pos_control）&lt;strong&gt;和&lt;/strong&gt;固定翼飞行器（fw_pos_control_l1）**的飞行模式控制。&lt;br&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Commander模块（src/modules/commander）：&lt;/strong&gt;&lt;br&gt;
+主要负责飞行模式的管理和状态机控制。&lt;br&gt;
+commander.cpp：这是Commander模块的主文件，包含了飞行模式的&lt;strong&gt;状态机&lt;/strong&gt;逻辑。commander_state.cpp：管理飞行模式的状态定义。&lt;br&gt;
+&lt;strong&gt;Flight Mode Manager模块（src/modules/mc_pos_control 和 src/modules/fw_pos_control_l1）：&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;多旋翼飞行器（mc_pos_control）&lt;/strong&gt; 和 **固定翼飞行器（fw_pos_control_l1）**的飞行模式控制。&lt;br&gt;
 在这些模块中，具体的飞行控制算法实现了如何根据不同的飞行模式，进行姿态、位置或速度控制。&lt;/p&gt;
 &lt;p&gt;飞行模式的状态机逻辑位于commander.cpp文件中。它根据用户输入、飞行器状态和环境条件来决定当前飞行模式。你需要熟悉这些状态之间的切换条件以及各模式的具体功能实现。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;定义新的飞行模式：&lt;/strong&gt;&lt;br&gt;
