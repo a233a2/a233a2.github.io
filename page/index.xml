@@ -46,6 +46,20 @@
 		data-flex-grow=&#34;133&#34;
 		data-flex-basis=&#34;320px&#34;
 	
+&gt;
+&lt;img src=&#34;https://a233a2.github.io/%E5%85%B3%E4%BA%8E/avatar111.png&#34;
+	width=&#34;600&#34;
+	height=&#34;600&#34;
+	srcset=&#34;https://a233a2.github.io/%E5%85%B3%E4%BA%8E/avatar111_hu18178234430622473645.png 480w, https://a233a2.github.io/%E5%85%B3%E4%BA%8E/avatar111_hu13155440653352403661.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;头像文件&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;240px&#34;
+	
 &gt;&lt;/p&gt;
 </description>
         </item>

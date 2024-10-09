@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="KiCad学习与使用日记">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="KiCad学习与使用日记-Kicad version8.0">
 <title>KiCad学习日记</title>
 
 <link rel='canonical' href='https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="KiCad学习日记">
-<meta property='og:description' content="KiCad学习与使用日记">
+<meta property='og:description' content="KiCad学习与使用日记-Kicad version8.0">
 <meta property='og:url' content='https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='KiCad' /><meta property='article:published_time' content='2024-09-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-09-16T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="KiCad学习日记">
-<meta name="twitter:description" content="KiCad学习与使用日记">
+<meta name="twitter:description" content="KiCad学习与使用日记-Kicad version8.0">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     </head>
@@ -58,7 +58,7 @@
                     
                     
                         
-                        <img src="/img/avatar_hu14375516683844053408.png" width="300"
+                        <img src="/img/avatar_hu761840141679035503.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -283,7 +283,13 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#kicad学习日记">KiCad学习日记</a></li>
+        <li><a href="#kicad学习日记">KiCad学习日记</a>
+          <ol>
+            <li><a href="#导出gerber文件-jlc打样">导出Gerber文件-JLC打样</a></li>
+            <li><a href="#1-导出gerber的设置">1 导出Gerber的设置：</a></li>
+            <li><a href="#2-修改gerber文件使得">2 修改Gerber文件使得</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -318,7 +324,7 @@
     
         
         <h3 class="article-subtitle">
-            KiCad学习与使用日记
+            KiCad学习与使用日记-Kicad version8.0
         </h3>
         
     </div>
@@ -370,8 +376,55 @@
     
     
     <h3 id="kicad学习日记">KiCad学习日记
-</h3><p>2024-10-9 使用kicad8.0版本。</p>
-
+</h3><h4 id="导出gerber文件-jlc打样">导出Gerber文件-JLC打样
+</h4><h4 id="1-导出gerber的设置">1 导出Gerber的设置：
+</h4><p>生成gerber文件
+<img src="/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber.png"
+	width="955"
+	height="659"
+	srcset="/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber_hu10828970649862785695.png 480w, /p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber_hu7126881754566610571.png 1024w"
+	loading="lazy"
+	
+		alt="设置1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="144"
+		data-flex-basis="347px"
+	
+>
+生成钻孔文件
+<img src="/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/drl.png"
+	width="646"
+	height="642"
+	srcset="/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/drl_hu8296012404611126999.png 480w, /p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/drl_hu788600497471495553.png 1024w"
+	loading="lazy"
+	
+		alt="钻孔文件"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="100"
+		data-flex-basis="241px"
+	
+>
+生成的gerber文件最终结构如下：
+<img src="/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber2.png"
+	width="709"
+	height="351"
+	srcset="/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber2_hu3744387688987251164.png 480w, /p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber2_hu8854792936587114794.png 1024w"
+	loading="lazy"
+	
+		alt="设置2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="201"
+		data-flex-basis="484px"
+	
+></p>
+<h4 id="2-修改gerber文件使得">2 修改Gerber文件使得
+</h4>
 </section>
 
 

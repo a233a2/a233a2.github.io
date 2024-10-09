@@ -60,8 +60,55 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
         
         <guid>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
         <description>&lt;h3 id=&#34;kicad学习日记&#34;&gt;KiCad学习日记
-&lt;/h3&gt;&lt;p&gt;2024-10-9 使用kicad8.0版本。&lt;/p&gt;
-</description>
+&lt;/h3&gt;&lt;h4 id=&#34;导出gerber文件-jlc打样&#34;&gt;导出Gerber文件-JLC打样
+&lt;/h4&gt;&lt;h4 id=&#34;1-导出gerber的设置&#34;&gt;1 导出Gerber的设置：
+&lt;/h4&gt;&lt;p&gt;生成gerber文件
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber.png&#34;
+	width=&#34;955&#34;
+	height=&#34;659&#34;
+	srcset=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber_hu10828970649862785695.png 480w, https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber_hu7126881754566610571.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;设置1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;144&#34;
+		data-flex-basis=&#34;347px&#34;
+	
+&gt;
+生成钻孔文件
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/drl.png&#34;
+	width=&#34;646&#34;
+	height=&#34;642&#34;
+	srcset=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/drl_hu8296012404611126999.png 480w, https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/drl_hu788600497471495553.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;钻孔文件&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;241px&#34;
+	
+&gt;
+生成的gerber文件最终结构如下：
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber2.png&#34;
+	width=&#34;709&#34;
+	height=&#34;351&#34;
+	srcset=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber2_hu3744387688987251164.png 480w, https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber2_hu8854792936587114794.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;设置2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;201&#34;
+		data-flex-basis=&#34;484px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-修改gerber文件使得&#34;&gt;2 修改Gerber文件使得
+&lt;/h4&gt;</description>
         </item>
         <item>
         <title>YSYX学习日记</title>
@@ -597,12 +644,12 @@ commander.cpp：这是Commander模块的主文件，包含了飞行模式的&lt;
 &lt;/h3&gt;&lt;p&gt;在commander_state.h文件中，添加新的飞行模式枚举。例如，如果你要创建一个自定义的“智能悬停模式”：
 VEHICLE_MODE_FLAG_SMART_HOVER
 &lt;strong&gt;实现飞行模式逻辑：&lt;/strong&gt;&lt;br&gt;
-在commander.cpp文件中，添加或修改相应的飞行模式逻辑。
-你可以参考已有的飞行模式（如POSCTL或ALTCTL）的实现方式，将自定义逻辑嵌入其中。比如，你可以根据条件判断激活智能悬停模式：&lt;br&gt;
-&lt;code&gt;if (user_input == CUSTOM_SMART_HOVER_CONDITION) {   vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;   }  &lt;/code&gt;
+在commander.cpp文件中，添加或修改相应的飞行模式逻辑。&lt;br&gt;
+你可以参考已有的飞行模式（如POSCTL或ALTCTL）的实现方式，将自定义逻辑嵌入其中。比如，你可以根据条件判断激活智能悬停模式： &lt;br&gt;
+&lt;code&gt;    if (user_input == CUSTOM_SMART_HOVER_CONDITION) {   vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;   }     &lt;/code&gt; &lt;br&gt;
 &lt;strong&gt;实现控制算法：&lt;/strong&gt;&lt;br&gt;
 根据自定义飞行模式的功能需求，你可能需要在姿态控制模块（mc_att_control）或位置控制模块（mc_pos_control）中添加自定义的控制算法。
-可以根据飞行器当前的状态、位置、高度等数据来设计智能悬停的控制算法，使其在特定条件下表现出不同的控制行为。
+可以根据飞行器当前的状态、位置、高度等数据来设计智能悬停的控制算法，使其在特定条件下表现出不同的控制行为。 &lt;br&gt;
 &lt;strong&gt;测试飞行模式&lt;/strong&gt;&lt;br&gt;
 在模拟环境（如SITL）中对修改后的飞行模式进行测试。   确保飞行模式在不同情况下能够正确切换和响应用户输入。&lt;/p&gt;
 &lt;h3 id=&#34;px4工程的编译&#34;&gt;PX4工程的编译
@@ -706,6 +753,20 @@ VEHICLE_MODE_FLAG_SMART_HOVER
 		class=&#34;gallery-image&#34; 
 		data-flex-grow=&#34;133&#34;
 		data-flex-basis=&#34;320px&#34;
+	
+&gt;
+&lt;img src=&#34;https://a233a2.github.io/%E5%85%B3%E4%BA%8E/avatar111.png&#34;
+	width=&#34;600&#34;
+	height=&#34;600&#34;
+	srcset=&#34;https://a233a2.github.io/%E5%85%B3%E4%BA%8E/avatar111_hu18178234430622473645.png 480w, https://a233a2.github.io/%E5%85%B3%E4%BA%8E/avatar111_hu13155440653352403661.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;头像文件&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;240px&#34;
 	
 &gt;&lt;/p&gt;
 </description>
