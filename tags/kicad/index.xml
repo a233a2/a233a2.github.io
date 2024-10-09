@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>KiCad on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/tags/kicad/</link>
+        <description>Recent content in KiCad on sunjiyi&#39;s Blogggg</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Sunjiyi Make and Design</copyright>
+        <lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/kicad/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>KiCad学习日记</title>
+        <link>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
+        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
+        <description>&lt;h3 id=&#34;kicad学习日记&#34;&gt;KiCad学习日记
+&lt;/h3&gt;&lt;p&gt;2024-10-9 使用kicad8.0版本。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
