@@ -62,7 +62,7 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
         <description>&lt;h3 id=&#34;kicad学习日记&#34;&gt;KiCad学习日记
 &lt;/h3&gt;&lt;h4 id=&#34;导出gerber文件-jlc打样&#34;&gt;导出Gerber文件-JLC打样
 &lt;/h4&gt;&lt;h4 id=&#34;1-导出gerber的设置&#34;&gt;1 导出Gerber的设置：
-&lt;/h4&gt;&lt;p&gt;生成gerber文件
+&lt;/h4&gt;&lt;p&gt;生成gerber文件&lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber.png&#34;
 	width=&#34;955&#34;
 	height=&#34;659&#34;
@@ -76,8 +76,8 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 		data-flex-grow=&#34;144&#34;
 		data-flex-basis=&#34;347px&#34;
 	
-&gt;
-生成钻孔文件
+&gt;&lt;br&gt;
+生成钻孔文件&lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/drl.png&#34;
 	width=&#34;646&#34;
 	height=&#34;642&#34;
@@ -91,8 +91,8 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 		data-flex-grow=&#34;100&#34;
 		data-flex-basis=&#34;241px&#34;
 	
-&gt;
-生成的gerber文件最终结构如下：
+&gt;&lt;br&gt;
+生成的gerber文件最终结构如下：&lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber2.png&#34;
 	width=&#34;709&#34;
 	height=&#34;351&#34;
@@ -107,7 +107,7 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 		data-flex-basis=&#34;484px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h4 id=&#34;2-修改gerber文件使得&#34;&gt;2 修改Gerber文件使得
+&lt;h4 id=&#34;2-修改gerber文件使得可在jlc打样&#34;&gt;2 修改Gerber文件使得可在JLC打样
 &lt;/h4&gt;</description>
         </item>
         <item>
