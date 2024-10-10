@@ -297,6 +297,7 @@
           </ol>
         </li>
         <li><a href="#定义新的飞行模式">定义新的飞行模式：</a></li>
+        <li><a href="#pixhawk-248-的接线">Pixhawk 2.4.8 的接线</a></li>
         <li><a href="#px4工程的编译">PX4工程的编译</a>
           <ol>
             <li><a href="#bootloader烧录">Bootloader烧录</a></li>
@@ -545,6 +546,9 @@ VEHICLE_MODE_FLAG_SMART_HOVER
 可以根据飞行器当前的状态、位置、高度等数据来设计智能悬停的控制算法，使其在特定条件下表现出不同的控制行为。 <br>
 <strong>测试飞行模式</strong><br>
 在模拟环境（如SITL）中对修改后的飞行模式进行测试。   确保飞行模式在不同情况下能够正确切换和响应用户输入。</p>
+<h3 id="pixhawk-248-的接线">Pixhawk 2.4.8 的接线
+</h3><p>TELEM1/2 GPS接口的定义为 VCC TX RX TX1 RX1 GND<br>
+I2C接口的定义为 VCC SDA SCL GND</p>
 <h3 id="px4工程的编译">PX4工程的编译
 </h3><h4 id="bootloader烧录">Bootloader烧录
 </h4><h4 id="源文件编译与烧录">源文件编译与烧录
