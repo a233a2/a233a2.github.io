@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Wed, 18 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 10 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PX4</title>
+        <link>https://a233a2.github.io/categories/px4/</link>
+        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/categories/px4/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>变频器</title>
+        <link>https://a233a2.github.io/categories/%E5%8F%98%E9%A2%91%E5%99%A8/</link>
+        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/categories/%E5%8F%98%E9%A2%91%E5%99%A8/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>FreeRTOS</title>
         <link>https://a233a2.github.io/categories/freertos/</link>
         <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
@@ -54,14 +70,6 @@
         
         <guid>https://a233a2.github.io/categories/foc/</guid>
         <description>&lt;img src="https://a233a2.github.io/categories/foc/cm_foc.png" alt="Featured image of post FOC驱动器" /&gt;</description>
-        </item>
-        <item>
-        <title>PX4</title>
-        <link>https://a233a2.github.io/categories/px4/</link>
-        <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/px4/</guid>
-        <description></description>
         </item>
         <item>
         <title>直流电机方案</title>

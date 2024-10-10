@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Sun, 15 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/px4/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 10 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/px4/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PX4飞行控制器开发日志</title>
         <link>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</link>
-        <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</guid>
         <description>&lt;p&gt;7
@@ -174,7 +174,8 @@ VEHICLE_MODE_FLAG_SMART_HOVER
 &lt;/h3&gt;&lt;p&gt;TELEM1/2 GPS接口的定义为 VCC TX RX TX1 RX1 GND&lt;br&gt;
 I2C接口的定义为 VCC SDA SCL GND&lt;/p&gt;
 &lt;h3 id=&#34;px4工程的编译&#34;&gt;PX4工程的编译
-&lt;/h3&gt;&lt;h4 id=&#34;bootloader烧录&#34;&gt;Bootloader烧录
+&lt;/h3&gt;&lt;p&gt;git&lt;/p&gt;
+&lt;h4 id=&#34;bootloader烧录&#34;&gt;Bootloader烧录
 &lt;/h4&gt;&lt;h4 id=&#34;源文件编译与烧录&#34;&gt;源文件编译与烧录
 &lt;/h4&gt;</description>
         </item>
