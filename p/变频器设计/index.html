@@ -284,6 +284,7 @@
     <li>
       <ol>
         <li><a href="#变频器设计">变频器设计</a></li>
+        <li><a href="#异步电机">异步电机</a></li>
       </ol>
     </li>
   </ol>
@@ -370,7 +371,29 @@
     
     
     <h3 id="变频器设计">变频器设计
-</h3>
+</h3><p><a class="link" href="https://www.bilibili.com/video/BV1jg41117Mz/?spm_id_from=333.788&amp;vd_source=c07e49f2b08d68d3bb624651ee908d97"  target="_blank" rel="noopener"
+    >https://www.bilibili.com/video/BV1jg41117Mz/?spm_id_from=333.788&vd_source=c07e49f2b08d68d3bb624651ee908d97</a></p>
+<p>变频器就是可以改变交流电频率的一种装置，用它对交流电进行调速，就可以使得电机实现无级调速。<br>
+我国交流电工频为50Hz，通过变频器可以对交流电进行从0到几千甚至上万Hz之间任意调整。<br>
+主要对异步电机进行调速。</p>
+<h3 id="异步电机">异步电机
+</h3><p>直流电机结构复杂，维护保养困难，在电力拖动系统中，需要转速一定，调速性能要求不高的情况下用的都是交流电机。<br>
+交流电机没换向器 结构简单，维护方便，成本低。但是调速性能<strong>较差xxx特别差</strong>。<br>
+<strong>交流异步电机同步转速（旋转磁场转速）</strong>$n_1$ 表示<br>
+$$<br>
+n&lt;n_1=\frac{60f}{p}<br>
+$$<br>
+其中 $f$ 为交流电频率, $p$ 为电机的极对数。 $n$ 为电机的实际转速。<br>
+转差率$s$的定义为<br>
+$$<br>
+s=\frac{n_1-n}{n_1}\  \ \ \left( 0&lt;s&lt;=1 \right)
+$$<br>
+电机转速的变式：<br>
+$$<br>
+n=(1-s)n_1=\frac{60f}{p}<br>
+$$<br>
+要改变电机的转速就只能在这三个方面想办法。</p>
+
 </section>
 
 

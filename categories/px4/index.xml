@@ -174,7 +174,8 @@ VEHICLE_MODE_FLAG_SMART_HOVER
 &lt;/h3&gt;&lt;p&gt;TELEM1/2 GPS接口的定义为 VCC TX RX TX1 RX1 GND&lt;br&gt;
 I2C接口的定义为 VCC SDA SCL GND&lt;/p&gt;
 &lt;h3 id=&#34;px4工程的编译&#34;&gt;PX4工程的编译
-&lt;/h3&gt;&lt;p&gt;git&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;git
+1231313&lt;/p&gt;
 &lt;h4 id=&#34;bootloader烧录&#34;&gt;Bootloader烧录
 &lt;/h4&gt;&lt;h4 id=&#34;源文件编译与烧录&#34;&gt;源文件编译与烧录
 &lt;/h4&gt;</description>

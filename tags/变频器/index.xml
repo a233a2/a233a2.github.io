@@ -14,7 +14,29 @@
         
         <guid>https://a233a2.github.io/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1/</guid>
         <description>&lt;h3 id=&#34;变频器设计&#34;&gt;变频器设计
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1jg41117Mz/?spm_id_from=333.788&amp;amp;vd_source=c07e49f2b08d68d3bb624651ee908d97&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.bilibili.com/video/BV1jg41117Mz/?spm_id_from=333.788&amp;vd_source=c07e49f2b08d68d3bb624651ee908d97&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;变频器就是可以改变交流电频率的一种装置，用它对交流电进行调速，就可以使得电机实现无级调速。&lt;br&gt;
+我国交流电工频为50Hz，通过变频器可以对交流电进行从0到几千甚至上万Hz之间任意调整。&lt;br&gt;
+主要对异步电机进行调速。&lt;/p&gt;
+&lt;h3 id=&#34;异步电机&#34;&gt;异步电机
+&lt;/h3&gt;&lt;p&gt;直流电机结构复杂，维护保养困难，在电力拖动系统中，需要转速一定，调速性能要求不高的情况下用的都是交流电机。&lt;br&gt;
+交流电机没换向器 结构简单，维护方便，成本低。但是调速性能&lt;strong&gt;较差xxx特别差&lt;/strong&gt;。&lt;br&gt;
+&lt;strong&gt;交流异步电机同步转速（旋转磁场转速）&lt;/strong&gt;$n_1$ 表示&lt;br&gt;
+$$&lt;br&gt;
+n&amp;lt;n_1=\frac{60f}{p}&lt;br&gt;
+$$&lt;br&gt;
+其中 $f$ 为交流电频率, $p$ 为电机的极对数。 $n$ 为电机的实际转速。&lt;br&gt;
+转差率$s$的定义为&lt;br&gt;
+$$&lt;br&gt;
+s=\frac{n_1-n}{n_1}\  \ \ \left( 0&amp;lt;s&amp;lt;=1 \right)
+$$&lt;br&gt;
+电机转速的变式：&lt;br&gt;
+$$&lt;br&gt;
+n=(1-s)n_1=\frac{60f}{p}&lt;br&gt;
+$$&lt;br&gt;
+要改变电机的转速就只能在这三个方面想办法。&lt;/p&gt;
+</description>
         </item>
         
     </channel>
