@@ -113,16 +113,16 @@
 &lt;/h4&gt;</description>
         </item>
         <item>
-        <title>PX4飞行控制器开发日志</title>
-        <link>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</link>
+        <title>PX4飞行控制器开发日志PX4-1</title>
+        <link>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/</link>
         <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</guid>
+        <guid>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/</guid>
         <description>&lt;p&gt;先对PX4官网的Github文件进行解析：：：
-&lt;img src=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/px4_1.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_1.png&#34;
 	width=&#34;991&#34;
 	height=&#34;875&#34;
-	srcset=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/px4_1_hu10673573407330660024.png 480w, https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/px4_1_hu2873010366182178476.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_1_hu10673573407330660024.png 480w, https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_1_hu2873010366182178476.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;PX4工程文件1&#34;
@@ -169,10 +169,10 @@ ROMFS是只读文件系统，通常用于存储PX4固件中的静态数据，如
 服务定义文件，通常用于ROS系统中的服务（services），用于系统内不同节点之间的通信和请求/响应模式的交互。&lt;/p&gt;
 &lt;p&gt;18.test：
 包含测试代码和测试框架，用于对PX4功能进行单元测试和集成测试，确保各个模块功能的正确性和健壮性。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/px4_2.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_2.png&#34;
 	width=&#34;997&#34;
 	height=&#34;816&#34;
-	srcset=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/px4_2_hu5588688417697814020.png 480w, https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/px4_2_hu15962098568375647639.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_2_hu5588688417697814020.png 480w, https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_2_hu15962098568375647639.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;PX4工程文件2&#34;
@@ -278,12 +278,10 @@ VEHICLE_MODE_FLAG_SMART_HOVER
 &lt;h3 id=&#34;pixhawk-248-的接线&#34;&gt;Pixhawk 2.4.8 的接线
 &lt;/h3&gt;&lt;p&gt;TELEM1/2 GPS接口的定义为 VCC TX RX TX1 RX1 GND&lt;br&gt;
 I2C接口的定义为 VCC SDA SCL GND&lt;/p&gt;
-&lt;h3 id=&#34;px4工程的编译&#34;&gt;PX4工程的编译
-&lt;/h3&gt;&lt;p&gt;git
-1231313&lt;/p&gt;
-&lt;h4 id=&#34;bootloader烧录&#34;&gt;Bootloader烧录
-&lt;/h4&gt;&lt;h4 id=&#34;源文件编译与烧录&#34;&gt;源文件编译与烧录
-&lt;/h4&gt;</description>
+&lt;h3 id=&#34;添加光流以及gps模块的试飞&#34;&gt;添加光流以及GPS模块的试飞
+&lt;/h3&gt;&lt;p&gt;光流室内定点飞行测试：&lt;/p&gt;
+&lt;p&gt;GPS室外定点飞行测试：&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>变频器设计基础</title>

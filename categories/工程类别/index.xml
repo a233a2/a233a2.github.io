@@ -7,7 +7,283 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Thu, 10 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 14 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hugo博客的个人git部署工作流</title>
+        <link>https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+        <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+        <description>&lt;h3 id=&#34;hugo博客的个人git部署工作流&#34;&gt;Hugo博客的个人git部署工作流
+&lt;/h3&gt;&lt;h4 id=&#34;自动部署bat文件---auto-push&#34;&gt;自动部署BAT文件   (Auto Push)
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@echo off
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;::获取当前脚本路径
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd /d %~dp0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;::自动提交
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &amp;#34;Auto Push:%date:~10%,time:~0,8%&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:: git commit -m
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin main -f
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@echo 已完成
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;SET daoTime=60
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;:dao
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;set /a daoTime=daoTime-1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ping -n 2 -w 500 127.1&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cls
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;echo 上传git完成，倒计时退出：%daoTime%秒
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;if%daoTime%==0 (exit0) else (goto dao)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;git合并分支多端协作使用&#34;&gt;Git合并分支(多端协作使用)
+&lt;/h4&gt;&lt;p&gt;每次进行写博客时，都需要进行pull操作。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git reset --hard    //在需要合并的本地有修改导致冲突时 使用此语句。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull origin main
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;解决push以及pull超时错误的问题&#34;&gt;解决Push以及Pull超时错误的问题
+&lt;/h4&gt;&lt;p&gt;方法：将代理端口与Git端口设置为一致即可&lt;br&gt;
+本机代理设置如下所示：&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%A3%E7%90%86.png&#34;
+	width=&#34;612&#34;
+	height=&#34;500&#34;
+	srcset=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%A3%E7%90%86_hu311475432031950967.png 480w, https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%A3%E7%90%86_hu7606792941713173093.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;代理&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;122&#34;
+		data-flex-basis=&#34;293px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;之后将Git配置为一致的端口号以及地址：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global http.proxy http://127.0.0.1:7890
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global https.proxy http://127.0.0.1:7890
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>PX4二次开发以及仿真PX4-2</title>
+        <link>https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/</link>
+        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/</guid>
+        <description>&lt;h3 id=&#34;px4在linux环境下的编译make&#34;&gt;PX4在Linux环境下的编译（make）
+&lt;/h3&gt;&lt;p&gt;使用VM17虚拟机以及Ubuntu20.04对PX4项目进行编译。&lt;br&gt;
+参考了超维空间科技的文章：https://blog.csdn.net/qq_38768959/article/details/106041494&lt;/p&gt;
+&lt;h3 id=&#34;gazebo配合qgc地面站仿真&#34;&gt;Gazebo配合QGC地面站仿真
+&lt;/h3&gt;&lt;h4 id=&#34;linux-qgc的安装&#34;&gt;Linux-QGC的安装：
+&lt;/h4&gt;</description>
+        </item>
+        <item>
+        <title>PX4飞行控制器开发日志PX4-1</title>
+        <link>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/</link>
+        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/</guid>
+        <description>&lt;p&gt;先对PX4官网的Github文件进行解析：：：
+&lt;img src=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_1.png&#34;
+	width=&#34;991&#34;
+	height=&#34;875&#34;
+	srcset=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_1_hu10673573407330660024.png 480w, https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_1_hu2873010366182178476.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PX4工程文件1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;113&#34;
+		data-flex-basis=&#34;271px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;1.ci：
+这个目录通常包含与持续集成（CI）相关的配置文件，例如Jenkins、Travis CI或GitHub Actions的配置。它负责自动化编译、测试、部署等任务。&lt;/p&gt;
+&lt;p&gt;2.clusterfuzzlite：
+用于与ClusterFuzzLite相关的配置文件，这是一种自动化模糊测试框架，帮助发现代码中的安全漏洞。&lt;/p&gt;
+&lt;p&gt;3.devcontainer：
+包含VSCode开发容器的配置，用于在隔离的容器环境中开发PX4代码。方便开发人员在一致的开发环境中工作。&lt;/p&gt;
+&lt;p&gt;4.github：
+包含GitHub的配置文件，如GitHub Actions、Issue模板和Pull Request模板，用于自动化流程和优化项目管理。&lt;/p&gt;
+&lt;p&gt;5.vscode：
+包含Visual Studio Code的配置文件，定义了编译、调试和代码检查的工作流，以便开发人员在VSCode中更方便地开发PX4代码。&lt;/p&gt;
+&lt;p&gt;6.Documentation：
+包含项目的文档文件，帮助开发者和用户了解如何使用、配置和开发PX4飞控系统。通常包括用户指南、API文档、教程等。&lt;/p&gt;
+&lt;p&gt;7.ROMFS：
+ROMFS是只读文件系统，通常用于存储PX4固件中的静态数据，如参数文件、启动脚本等。&lt;/p&gt;
+&lt;p&gt;8.Tools：
+这个目录包含各种开发工具和脚本，常用于构建、测试、仿真和部署PX4代码。比如，可能包含用于自动化工具链配置的脚本。&lt;/p&gt;
+&lt;p&gt;9.boards：
+包含与各种硬件平台（如飞控板、传感器等）相关的定义和配置文件。每种硬件的特定启动配置和硬件抽象层都位于该目录中。&lt;/p&gt;
+&lt;p&gt;10.cmake：
+包含CMake构建系统的配置文件，用于定义如何编译PX4代码。CMake是一个跨平台的构建工具，管理依赖项和生成编译文件。&lt;/p&gt;
+&lt;p&gt;11.integrationtests/python_src/px4_it：
+包含集成测试相关的Python脚本，主要用于自动化测试PX4的不同模块和功能，以确保系统的稳定性和正确性。&lt;/p&gt;
+&lt;p&gt;12.launch：
+包含与ROS或仿真环境中的启动文件相关的配置，通常是用于启动PX4在仿真器或真实硬件上的配置文件。&lt;/p&gt;
+&lt;p&gt;13.msg：
+包含与PX4通信协议（如MAVLink）相关的消息定义文件，用于定义飞控系统与外部系统（如地面站、传感器等）之间的消息格式。&lt;/p&gt;
+&lt;p&gt;14.platforms：
+包含与不同硬件平台相关的底层代码和配置，如NuttX的初始化文件、硬件抽象层等。&lt;/p&gt;
+&lt;p&gt;15.posix-configs：
+包含POSIX系统（如Linux）上的配置文件，通常用于定义在仿真环境中运行PX4的配置。&lt;/p&gt;
+&lt;p&gt;//16.src：
+源代码目录，包含PX4的主要功能模块的实现代码，如飞行控制算法、传感器处理、姿态估计等。&lt;/p&gt;
+&lt;p&gt;17.srv：
+服务定义文件，通常用于ROS系统中的服务（services），用于系统内不同节点之间的通信和请求/响应模式的交互。&lt;/p&gt;
+&lt;p&gt;18.test：
+包含测试代码和测试框架，用于对PX4功能进行单元测试和集成测试，确保各个模块功能的正确性和健壮性。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_2.png&#34;
+	width=&#34;997&#34;
+	height=&#34;816&#34;
+	srcset=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_2_hu5588688417697814020.png 480w, https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_2_hu15962098568375647639.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PX4工程文件2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;122&#34;
+		data-flex-basis=&#34;293px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;19.test_data：
+包含测试所需的测试数据或测试脚本，用于集成测试和回归测试，以验证代码改动是否影响系统行为。&lt;/p&gt;
+&lt;p&gt;20.validation：
+包含验证代码、数据或测试的文件，确保PX4的各个部分在特定条件下的表现符合预期。&lt;/p&gt;
+&lt;p&gt;21.clang-tidy：
+Clang-Tidy是一个C++代码分析工具，这个文件包含其配置，用于代码的静态分析，发现潜在的错误和优化点。&lt;/p&gt;
+&lt;p&gt;22.editorconfig：
+EditorConfig配置文件，用于定义代码格式的规则，如缩进、换行符、字符编码等，确保不同开发者之间代码风格的一致性。&lt;/p&gt;
+&lt;p&gt;23.gitattributes、.gitignore：
+用于Git的配置文件。.gitattributes用于定义文件的特定处理方式，.gitignore则列出需要被Git忽略的文件和目录。&lt;/p&gt;
+&lt;p&gt;24.CMakeLists.txt：
+这是CMake项目的核心配置文件，定义了如何编译整个PX4项目，包括源文件的路径、依赖项、编译选项等。&lt;/p&gt;
+&lt;p&gt;25.CODE_OF_CONDUCT.md：
+项目的行为准则，规定了开发者在贡献代码和参与社区时需要遵守的行为规范。&lt;/p&gt;
+&lt;p&gt;26.CONTRIBUTING.md：
+为开发者提供的贡献指南，解释了如何参与项目开发、提交代码和报告问题等流程。&lt;/p&gt;
+&lt;p&gt;27.CTestConfig.cmake：
+CMake的测试配置文件，定义了如何运行项目的测试，并收集测试结果。&lt;/p&gt;
+&lt;p&gt;28.Jenkinsfile：
+Jenkins持续集成系统的配置文件，定义了在Jenkins上自动化构建和测试的流水线。&lt;/p&gt;
+&lt;p&gt;29.Kconfig：
+用于配置系统的文件，通常用于嵌入式系统中，定义了各个硬件模块或软件模块的配置选项。&lt;/p&gt;
+&lt;p&gt;30.LICENSE：
+项目的开源许可证文件，说明了PX4的使用和分发权限。&lt;/p&gt;
+&lt;p&gt;31.Makefile：
+传统的编译配置文件，定义了如何使用Make工具构建项目。对于不使用CMake的部分或平台，Makefile提供了另一种编译方式。&lt;/p&gt;
+&lt;p&gt;32.README.md：
+项目的概述和基本介绍，通常包括如何编译、安装和使用PX4飞控系统的基本信息。&lt;/p&gt;
+&lt;p&gt;33.SECURITY.md：
+有关安全漏洞报告和处理流程的文档，指导开发者如何报告和解决项目中的安全问题。&lt;/p&gt;
+&lt;p&gt;34.package.xml：
+通常用于ROS包，定义了包的元数据，如依赖项、版本号和维护者信息。&lt;/p&gt;
+&lt;h3 id=&#34;src文件解析&#34;&gt;SRC文件解析
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;src/modules/mc_att_control：
+这个目录包含与多旋翼无人机姿态控制相关的代码。姿态控制的核心就是通过PID控制器来调节无人机的滚转、俯仰和偏航角的稳定性。
+mc_att_control_main.cpp 是姿态控制的主要代码文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;src/modules/mc_pos_control：
+这个目录包含与多旋翼无人机位置控制相关的代码。PID控制器在此负责无人机的三维位置和高度控制。
+mc_pos_control_main.cpp 是位置控制的核心实现文件，包含位置控制的PID逻辑。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;src/lib/controllib：
+这个目录下包含PX4的控制库，其中定义了PID控制器的通用实现。这里的文件用于多个模块的控制需求。
+pid.cpp 是PID控制器的核心实现，定义了如何计算误差、比例项、积分项和微分项。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;src/modules/fw_att_control 和 src/modules/fw_pos_control：
+如果你关注的是固定翼无人机的PID控制，可以查看这两个目录。它们分别负责固定翼无人机的姿态控制和位置控制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;参数文件 (ROMFS)：
+PID控制器的参数通常在参数文件中定义，可以通过修改这些参数调整控制器的性能。可以在 ROMFS/px4fmu_common/init.d 目录中找到默认的参数文件，里面会定义PID控制器的增益值（如P、I、D系数）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;nuttxrtos&#34;&gt;NuttxRTOS
+&lt;/h3&gt;&lt;p&gt;这应该是个很复杂的单片机实时系统。&lt;/p&gt;
+&lt;h3 id=&#34;mavlink协议&#34;&gt;MAVLink协议
+&lt;/h3&gt;&lt;p&gt;QGC地面站会通过MAVLink协议将QGC针对飞机的配置参数发送给飞控系统，而飞控系统则将这些参数存储在存储设备中。
+暂时用不太上。&lt;/p&gt;
+&lt;h3 id=&#34;qgc地面站试飞&#34;&gt;QGC地面站试飞
+&lt;/h3&gt;&lt;p&gt;在QGC地面站对PX4飞控进行调试试飞，开始时抖动剧烈，随着将速度环PID参数特别是D项降低后抖动变小。但是只能在高度模式稳定飞行，在自稳以及特技等模式均不稳定。
+后续准备加入GPS自动飞行来测试稳定性。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;高度（Altitude）模式试飞视频&lt;/strong&gt;
+&lt;video src=&#34;试飞.mp4&#34;  poster=&#34;试飞图.png&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;h4 id=&#34;qgc地面站通信无线数传配置&#34;&gt;QGC地面站通信无线数传配置
+&lt;/h4&gt;&lt;p&gt;数传模块使用了LQ的无线串口模块。将SH1.25-6Pin接口与XH2.54杜邦线进行连接后，使用绝缘胶布进行绝缘处理。将SH1.25-6Pin接入飞控的TELEM1口进行配置。
+地面站中将TELEM1的波特率输出改为115200（LQ无线串口模块的BAUD），在QCG设置中添加一个数据连接接口。即可完成数传的配置。但是可能因为数据传输较大，距离在5m左右传输已经是极限了。&lt;/p&gt;
+&lt;h3 id=&#34;对原有飞行模式修改与添加新的功能&#34;&gt;对原有飞行模式修改与添加新的功能
+&lt;/h3&gt;&lt;h4 id=&#34;1px4中的飞行模式主要定义文件&#34;&gt;1、PX4中的飞行模式主要定义文件：
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Commander模块（src/modules/commander）：&lt;/strong&gt;&lt;br&gt;
+主要负责飞行模式的管理和状态机控制。&lt;br&gt;
+commander.cpp：这是Commander模块的主文件，包含了飞行模式的&lt;strong&gt;状态机&lt;/strong&gt;逻辑。commander_state.cpp：管理飞行模式的状态定义。&lt;br&gt;
+&lt;strong&gt;Flight Mode Manager模块（src/modules/mc_pos_control 和 src/modules/fw_pos_control_l1）：&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;多旋翼飞行器（mc_pos_control）&lt;/strong&gt; 和 **固定翼飞行器（fw_pos_control_l1）**的飞行模式控制。&lt;br&gt;
+在这些模块中，具体的飞行控制算法实现了如何根据不同的飞行模式，进行姿态、位置或速度控制。&lt;/p&gt;
+&lt;p&gt;飞行模式的状态机逻辑位于commander.cpp文件中。它根据用户输入、飞行器状态和环境条件来决定当前飞行模式。你需要熟悉这些状态之间的切换条件以及各模式的具体功能实现。&lt;/p&gt;
+&lt;h3 id=&#34;定义新的飞行模式&#34;&gt;定义新的飞行模式：
+&lt;/h3&gt;&lt;p&gt;在commander_state.h文件中，添加新的飞行模式枚举。例如，如果你要创建一个自定义的“智能悬停模式”：
+VEHICLE_MODE_FLAG_SMART_HOVER
+&lt;strong&gt;实现飞行模式逻辑：&lt;/strong&gt;&lt;br&gt;
+在commander.cpp文件中，添加或修改相应的飞行模式逻辑。&lt;br&gt;
+你可以参考已有的飞行模式（如POSCTL或ALTCTL）的实现方式，将自定义逻辑嵌入其中。比如，你可以根据条件判断激活智能悬停模式： &lt;br&gt;
+&lt;code&gt;    if (user_input == CUSTOM_SMART_HOVER_CONDITION) {   vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;   }     &lt;/code&gt; &lt;br&gt;
+&lt;strong&gt;实现控制算法：&lt;/strong&gt;&lt;br&gt;
+根据自定义飞行模式的功能需求，你可能需要在姿态控制模块（mc_att_control）或位置控制模块（mc_pos_control）中添加自定义的控制算法。
+可以根据飞行器当前的状态、位置、高度等数据来设计智能悬停的控制算法，使其在特定条件下表现出不同的控制行为。 &lt;br&gt;
+&lt;strong&gt;测试飞行模式&lt;/strong&gt;&lt;br&gt;
+在模拟环境（如SITL）中对修改后的飞行模式进行测试。   确保飞行模式在不同情况下能够正确切换和响应用户输入。&lt;/p&gt;
+&lt;h3 id=&#34;pixhawk-248-的接线&#34;&gt;Pixhawk 2.4.8 的接线
+&lt;/h3&gt;&lt;p&gt;TELEM1/2 GPS接口的定义为 VCC TX RX TX1 RX1 GND&lt;br&gt;
+I2C接口的定义为 VCC SDA SCL GND&lt;/p&gt;
+&lt;h3 id=&#34;添加光流以及gps模块的试飞&#34;&gt;添加光流以及GPS模块的试飞
+&lt;/h3&gt;&lt;p&gt;光流室内定点飞行测试：&lt;/p&gt;
+&lt;p&gt;GPS室外定点飞行测试：&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>变频器设计基础</title>
         <link>https://a233a2.github.io/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
@@ -552,6 +828,19 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 任意选择其中一个地址放入两个.py文件。之后点击工具-外部插件-刷新插件。出现新的插件即表示成功，注意文件编码为UTF-8，不然插件刷新不出来 &lt;br&gt;
 输出时候需要输出Gerber的时候在路径那里敲个./out，不然找不到文件。&lt;br&gt;
 然后点击插件即可输出JLC支持的Gerber文件！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>YSYX学习日记</title>
+        <link>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
+        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
+        <description>&lt;h3 id=&#34;ysyx学习日记&#34;&gt;YSYX学习日记
+&lt;/h3&gt;&lt;p&gt;学习记录： &lt;a class=&#34;link&#34; href=&#34;https://docs.qq.com/sheet/DQ0lRY2tNb2VIZWVB?newPad=1&amp;amp;newPadType=clone&amp;amp;tab=BB08J4&amp;amp;_t=1728471922939&amp;amp;u=555637143d844e0f8b3d1a7c9c34bebf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;学习记录&lt;/a&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;ubuntu安装&#34;&gt;Ubuntu安装
+&lt;/h4&gt;&lt;p&gt;测试赛&lt;/p&gt;
 </description>
         </item>
         <item>
