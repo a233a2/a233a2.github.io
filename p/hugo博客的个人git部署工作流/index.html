@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="ADRC课程笔记">
-<title>ADRC课程笔记</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="记录个人部署网站相关的，个人记录使用。">
+<title>Hugo博客的个人git部署工作流</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/'>
+<link rel='canonical' href='https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="ADRC课程笔记">
-<meta property='og:description' content="ADRC课程笔记">
-<meta property='og:url' content='https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Hugo博客的个人git部署工作流">
+<meta property='og:description' content="记录个人部署网站相关的，个人记录使用。">
+<meta property='og:url' content='https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ADRC' /><meta property='article:published_time' content='2024-09-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-09-16T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="ADRC课程笔记">
-<meta name="twitter:description" content="ADRC课程笔记">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Hugo' /><meta property='article:published_time' content='2024-10-14T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-14T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Hugo博客的个人git部署工作流">
+<meta name="twitter:description" content="记录个人部署网站相关的，个人记录使用。">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     </head>
@@ -283,13 +283,13 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#adrc课程笔记">ADRC课程笔记</a></li>
-        <li><a href="#前馈控制">前馈控制</a>
+        <li><a href="#hugo博客的个人git部署工作流">Hugo博客的个人git部署工作流</a>
           <ol>
-            <li><a href="#生理前馈系统">生理前馈系统</a></li>
+            <li><a href="#自动部署bat文件---auto-push">自动部署BAT文件   (Auto Push)</a></li>
+            <li><a href="#git合并分支多端协作使用">Git合并分支(多端协作使用)</a></li>
+            <li><a href="#解决push以及pull超时错误的问题">解决Push以及Pull超时错误的问题</a></li>
           </ol>
         </li>
-        <li><a href="#状态观测器">状态观测器</a></li>
       </ol>
     </li>
   </ol>
@@ -310,8 +310,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/adrc/" >
-                ADRC
+            <a href="/categories/hugo/" >
+                Hugo
             </a>
         
     </header>
@@ -319,12 +319,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">ADRC课程笔记</a>
+            <a href="/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/">Hugo博客的个人git部署工作流</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            ADRC课程笔记
+            记录个人部署网站相关的，个人记录使用。
         </h3>
         
     </div>
@@ -345,7 +345,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-09-16</time>
+                <time class="article-time--published">2024-10-14</time>
             </div>
         
 
@@ -375,20 +375,91 @@
     <section class="article-content">
     
     
-    <h3 id="adrc课程笔记">ADRC课程笔记
-</h3><p>本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些经典与现代控制理论方向的相关知识。</p>
-<h3 id="前馈控制">前馈控制
-</h3><p>前馈控制是一种<strong>基于对扰动的预测</strong>进行补偿的控制方法。它通过<strong>测量</strong>可能影响系统输出的扰动变量，并根据扰动变量与系统输出之间的关系，计算出所需的控制量，在<strong>扰动对系统产生影响之前</strong>就进行调节，以抵消扰动的影响。
-在自动控制系统理论中学习过，由传递函数理论数学推导，前馈的引入可以完全的消除系统的扰动误差。现在这显然并不是这么的简单，这需要对系统数学模型有着十分精确的掌握。</p>
-<h4 id="生理前馈系统">生理前馈系统
-</h4><blockquote>
-<p>在生理学上，前馈控制的例子是在实际体力活动之前，自主神经系统对心跳的正常预期调节。前馈控制可以比作对已知线索的预期反应（预测编码）。心跳的反馈调节为机体提供了进一步对运动的适应性。  &ndash;wiki百科</p>
-</blockquote>
-<p>在前馈系统中，控制变量的调整不是以目标和回授之间的误差为基础，它是以过程<strong>数学模型</strong>的知识和<strong>过程扰动</strong>的知识或测量为基础。</p>
-<p>所以对于数学模型的整体掌握是对系统扰动进行前馈消除的前提。</p>
-<p>正所谓要想系统稳得住，必须得有前馈引入。前馈控制在某些控制场合下是必须项。</p>
-<h3 id="状态观测器">状态观测器
-</h3>
+    <h3 id="hugo博客的个人git部署工作流">Hugo博客的个人git部署工作流
+</h3><h4 id="自动部署bat文件---auto-push">自动部署BAT文件   (Auto Push)
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@echo off
+</span></span><span class="line"><span class="cl">::获取当前脚本路径
+</span></span><span class="line"><span class="cl">cd /d %~dp0
+</span></span><span class="line"><span class="cl">::自动提交
+</span></span><span class="line"><span class="cl">git init 
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m &#34;Auto Push:%date:~10%,time:~0,8%&#34;
+</span></span><span class="line"><span class="cl">:: git commit -m
+</span></span><span class="line"><span class="cl">git push origin main -f
+</span></span><span class="line"><span class="cl">@echo 已完成
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">SET daoTime=60
+</span></span><span class="line"><span class="cl">:dao
+</span></span><span class="line"><span class="cl">set /a daoTime=daoTime-1
+</span></span><span class="line"><span class="cl">ping -n 2 -w 500 127.1&gt;
+</span></span><span class="line"><span class="cl">cls
+</span></span><span class="line"><span class="cl">echo 上传git完成，倒计时退出：%daoTime%秒
+</span></span><span class="line"><span class="cl">if%daoTime%==0 (exit0) else (goto dao)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="git合并分支多端协作使用">Git合并分支(多端协作使用)
+</h4><p>每次进行写博客时，都需要进行pull操作。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git reset --hard    //在需要合并的本地有修改导致冲突时 使用此语句。
+</span></span><span class="line"><span class="cl">git pull origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="解决push以及pull超时错误的问题">解决Push以及Pull超时错误的问题
+</h4><p>方法：将代理端口与Git端口设置为一致即可<br>
+本机代理设置如下所示：<br>
+<img src="/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%A3%E7%90%86.png"
+	width="612"
+	height="500"
+	srcset="/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%A3%E7%90%86_hu311475432031950967.png 480w, /p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E4%BB%A3%E7%90%86_hu7606792941713173093.png 1024w"
+	loading="lazy"
+	
+		alt="代理"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="122"
+		data-flex-basis="293px"
+	
+></p>
+<p>之后将Git配置为一致的端口号以及地址：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global http.proxy http://127.0.0.1:7890
+</span></span><span class="line"><span class="cl">git config --global https.proxy http://127.0.0.1:7890
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -396,7 +467,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/adrc/">ADRC</a>
+            <a href="/tags/hugo/">Hugo</a>
         
     </section>
 

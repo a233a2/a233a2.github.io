@@ -3,13 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://a233a2.github.io/</loc>
-    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/categories/</loc>
-    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/tags/hugo/</loc>
+    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/categories/hugo/</loc>
+    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
+    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/post/</loc>
-    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/tags/</loc>
+    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/px4/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
@@ -18,9 +30,6 @@
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97/</loc>
-    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/tags/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/%E5%8F%98%E9%A2%91%E5%99%A8/</loc>
@@ -40,15 +49,6 @@
   </url><url>
     <loc>https://a233a2.github.io/p/freertos%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/tags/adrc/</loc>
-    <lastmod>2024-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/adrc/</loc>
-    <lastmod>2024-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/kicad/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
