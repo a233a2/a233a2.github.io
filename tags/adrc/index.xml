@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>ADRC on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/tags/adrc/</link>
+        <description>Recent content in ADRC on sunjiyi&#39;s Blogggg</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Sunjiyi Make and Design</copyright>
+        <lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/adrc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ADRC课程笔记</title>
+        <link>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;h3 id=&#34;adrc课程笔记&#34;&gt;ADRC课程笔记
+&lt;/h3&gt;&lt;p&gt;本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些经典与现代控制理论方向的相关知识。&lt;/p&gt;
+&lt;h3 id=&#34;前馈控制&#34;&gt;前馈控制
+&lt;/h3&gt;&lt;p&gt;前馈控制是一种&lt;strong&gt;基于对扰动的预测&lt;/strong&gt;进行补偿的控制方法。它通过&lt;strong&gt;测量&lt;/strong&gt;可能影响系统输出的扰动变量，并根据扰动变量与系统输出之间的关系，计算出所需的控制量，在&lt;strong&gt;扰动对系统产生影响之前&lt;/strong&gt;就进行调节，以抵消扰动的影响。
+在自动控制系统理论中学习过，由传递函数理论数学推导，前馈的引入可以完全的消除系统的扰动误差。现在这显然并不是这么的简单，这需要对系统数学模型有着十分精确的掌握。&lt;/p&gt;
+&lt;h4 id=&#34;生理前馈系统&#34;&gt;生理前馈系统
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;在生理学上，前馈控制的例子是在实际体力活动之前，自主神经系统对心跳的正常预期调节。前馈控制可以比作对已知线索的预期反应（预测编码）。心跳的反馈调节为机体提供了进一步对运动的适应性。  &amp;ndash;wiki百科&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在前馈系统中，控制变量的调整不是以目标和回授之间的误差为基础，它是以过程&lt;strong&gt;数学模型&lt;/strong&gt;的知识和&lt;strong&gt;过程扰动&lt;/strong&gt;的知识或测量为基础。&lt;/p&gt;
+&lt;p&gt;所以对于数学模型的整体掌握是对系统扰动进行前馈消除的前提。&lt;/p&gt;
+&lt;p&gt;正所谓要想系统稳得住，必须得有前馈引入。前馈控制在某些控制场合下是必须项。&lt;/p&gt;
+&lt;h3 id=&#34;状态观测器&#34;&gt;状态观测器
+&lt;/h3&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
