@@ -279,8 +279,10 @@ VEHICLE_MODE_FLAG_SMART_HOVER
 &lt;/h3&gt;&lt;p&gt;TELEM1/2 GPS接口的定义为 VCC TX RX TX1 RX1 GND&lt;br&gt;
 I2C接口的定义为 VCC SDA SCL GND&lt;/p&gt;
 &lt;h3 id=&#34;添加光流以及gps模块的试飞&#34;&gt;添加光流以及GPS模块的试飞
-&lt;/h3&gt;&lt;p&gt;光流室内定点飞行测试：&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;光流室内定点飞行测试：&lt;br&gt;
+&lt;video src=&#34;试飞2.mp4&#34;  poster=&#34;试飞图.png&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
 &lt;p&gt;GPS室外定点飞行测试：&lt;/p&gt;
+&lt;p&gt;暂无&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -1199,6 +1201,53 @@ SH1.25的接口画错了，属实是大意了。飞线暂时解决了问题。
 &lt;p&gt;鸽了一段时间，等忙完就马上开始测试。在此之前还需要把电源修好、、、、悲&lt;/p&gt;
 &lt;h3 id=&#34;速度闭环测试&#34;&gt;速度闭环测试
 &lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>CH32平衡车开发板</title>
+        <link>https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/</link>
+        <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/</guid>
+        <description>&lt;h3 id=&#34;ch32平衡车开发板设计&#34;&gt;CH32平衡车开发板设计
+&lt;/h3&gt;&lt;p&gt;主控芯片：CH32V307VCT6
+电机驱动：TB6612方案
+下载芯片：CH549G
+&lt;img src=&#34;https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/sim_mainboard.PNG&#34;
+	width=&#34;1468&#34;
+	height=&#34;1075&#34;
+	srcset=&#34;https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/sim_mainboard_hu17761032324205966826.PNG 480w, https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/sim_mainboard_hu4468762052961259362.PNG 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PCB仿真图&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;136&#34;
+		data-flex-basis=&#34;327px&#34;
+	
+&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/mainboard.JPG&#34;
+	width=&#34;4032&#34;
+	height=&#34;2268&#34;
+	srcset=&#34;https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/mainboard_hu9198433958836975144.JPG 480w, https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/mainboard_hu2687507761598671974.JPG 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;实物图&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;开源链接：&lt;a class=&#34;link&#34; href=&#34;https://github.com/a233a2/CH32_DC_BalanceCar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/a233a2/CH32_DC_BalanceCar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;PID平衡部分计划使用两种方案进行对比
+1 pid_1.c文件 即不通过控制角度来确定速度，通过将直立环PID的目标设为重力0点，来维持平衡，之后通过速度环调速。
+2 pid.c文件 通过控制角度来确定速度，速度环输出目标速度下的应得角度，直立环与速度环串级，直立环负责达到对应角度。&lt;/p&gt;
+&lt;p&gt;某些地方还并不完善，比如PID参数方面还不尽完美。在之后我将从算法方面对其进行优化。从数学角度找找这两种方案的不同之处。&lt;/p&gt;
+&lt;p&gt;测试 新设备推送设置&lt;/p&gt;
+</description>
         </item>
         
     </channel>

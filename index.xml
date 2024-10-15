@@ -279,8 +279,10 @@ VEHICLE_MODE_FLAG_SMART_HOVER
 &lt;/h3&gt;&lt;p&gt;TELEM1/2 GPS接口的定义为 VCC TX RX TX1 RX1 GND&lt;br&gt;
 I2C接口的定义为 VCC SDA SCL GND&lt;/p&gt;
 &lt;h3 id=&#34;添加光流以及gps模块的试飞&#34;&gt;添加光流以及GPS模块的试飞
-&lt;/h3&gt;&lt;p&gt;光流室内定点飞行测试：&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;光流室内定点飞行测试：&lt;br&gt;
+&lt;video src=&#34;试飞2.mp4&#34;  poster=&#34;试飞图.png&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
 &lt;p&gt;GPS室外定点飞行测试：&lt;/p&gt;
+&lt;p&gt;暂无&lt;/p&gt;
 </description>
         </item>
         <item>
