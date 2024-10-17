@@ -308,7 +308,7 @@ $$  s=\frac{n_1-n}{n_1}\  \ \ \left( 0&amp;lt;s&amp;lt;=1 \right) $$&lt;br&gt;
 电机转速的变式：&lt;br&gt;
 $$  n=(1-s)n_1=\frac{60f}{p}  $$&lt;br&gt;
 要改变电机的转速就只能在 $f$  $p$  $s$ 这三个方面想办法。&lt;br&gt;
-变频器就是通过改变频率 $f$ 来对电机进行调速的器件。&lt;/p&gt;
+&lt;strong&gt;变频器就是通过改变频率 $f$ 来对电机进行调速的器件。&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;异步电动机的vf控制开环控制简单粗暴&#34;&gt;异步电动机的VF控制（开环控制简单粗暴）
 &lt;/h4&gt;&lt;p&gt;单独改变频率是不行的 还需要同时对电压进行改变。&lt;br&gt;
 V/f控制就是保证&lt;strong&gt;输出电压&lt;/strong&gt;跟&lt;strong&gt;频率&lt;/strong&gt;成正比的控制，使电动机的&lt;strong&gt;磁通&lt;/strong&gt;保持一定，避免弱磁和磁饱和现象的产生，多用于风机、泵类节能型变频器用压控振荡器。&lt;/p&gt;
@@ -919,7 +919,8 @@ MOS：NEC6050&lt;br&gt;
 这板子有一些bug，就是CH549G下载电路的供电有些问题。在使用DC-12v供电测试的时候，CH549G下载电路的供电不稳定。
 另外在开环测试的时候供电也不稳定。不知道是不是程序问题。
 接下来抽时间对驱动器进行软件开发&lt;/p&gt;
-&lt;h3 id=&#34;开环foc驱动测试&#34;&gt;开环FOC驱动测试
+&lt;h3 id=&#34;方波驱动测试&#34;&gt;方波驱动测试
+&lt;/h3&gt;&lt;h3 id=&#34;开环foc驱动测试&#34;&gt;开环FOC驱动测试
 &lt;/h3&gt;&lt;p&gt;开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。
 simpleFOC的开环速度代码如下
 参考了：https://github.com/haotianh9/DengFOC_on_STM32
@@ -1199,8 +1200,7 @@ SH1.25的接口画错了，属实是大意了。飞线暂时解决了问题。
 &lt;h3 id=&#34;as5600磁编码器数据读取&#34;&gt;AS5600磁编码器数据读取
 &lt;/h3&gt;&lt;p&gt;AS5600是12位的霍尔磁编码器，它的地址是0x36，只需要读取0x0C、0x0D这两个寄存器就可以读出角度的原始数据，再将其乘以360，再除以4096，就可以获得角度值。&lt;/p&gt;
 &lt;p&gt;鸽了一段时间，等忙完就马上开始测试。在此之前还需要把电源修好、、、、悲&lt;/p&gt;
-&lt;h3 id=&#34;速度闭环测试&#34;&gt;速度闭环测试
-&lt;/h3&gt;</description>
+</description>
         </item>
         <item>
         <title>CH32平衡车开发板</title>

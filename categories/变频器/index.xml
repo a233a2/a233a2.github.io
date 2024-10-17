@@ -30,7 +30,7 @@ $$  s=\frac{n_1-n}{n_1}\  \ \ \left( 0&amp;lt;s&amp;lt;=1 \right) $$&lt;br&gt;
 电机转速的变式：&lt;br&gt;
 $$  n=(1-s)n_1=\frac{60f}{p}  $$&lt;br&gt;
 要改变电机的转速就只能在 $f$  $p$  $s$ 这三个方面想办法。&lt;br&gt;
-变频器就是通过改变频率 $f$ 来对电机进行调速的器件。&lt;/p&gt;
+&lt;strong&gt;变频器就是通过改变频率 $f$ 来对电机进行调速的器件。&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;异步电动机的vf控制开环控制简单粗暴&#34;&gt;异步电动机的VF控制（开环控制简单粗暴）
 &lt;/h4&gt;&lt;p&gt;单独改变频率是不行的 还需要同时对电压进行改变。&lt;br&gt;
 V/f控制就是保证&lt;strong&gt;输出电压&lt;/strong&gt;跟&lt;strong&gt;频率&lt;/strong&gt;成正比的控制，使电动机的&lt;strong&gt;磁通&lt;/strong&gt;保持一定，避免弱磁和磁饱和现象的产生，多用于风机、泵类节能型变频器用压控振荡器。&lt;/p&gt;
