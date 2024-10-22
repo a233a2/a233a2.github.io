@@ -110,7 +110,23 @@
 参考了超维空间科技的文章：https://blog.csdn.net/qq_38768959/article/details/106041494&lt;/p&gt;
 &lt;h3 id=&#34;gazebo配合qgc地面站仿真&#34;&gt;Gazebo配合QGC地面站仿真
 &lt;/h3&gt;&lt;h4 id=&#34;linux-qgc的安装&#34;&gt;Linux-QGC的安装：
-&lt;/h4&gt;</description>
+&lt;/h4&gt;&lt;p&gt;QGC官网指导下进行配置，之后下载AppImage文件运行QGC地面站即可。 &lt;br&gt;
+仿真中：&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/px4&amp;#43;gazebo.png&#34;
+	width=&#34;2560&#34;
+	height=&#34;1549&#34;
+	srcset=&#34;https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/px4&amp;#43;gazebo_hu16359290037193365331.png 480w, https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/px4&amp;#43;gazebo_hu11163092954185164344.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PX4工程文件1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;165&#34;
+		data-flex-basis=&#34;396px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>PX4飞行控制器开发日志PX4-1</title>
@@ -118,7 +134,7 @@
         <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/</guid>
-        <description>&lt;p&gt;先对PX4官网的Github文件进行解析：：：
+        <description>&lt;p&gt;先对PX4官网的Github文件进行解析：
 &lt;img src=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E5%BC%80%E5%8F%91%E6%97%A5%E5%BF%97px4-1/px4_1.png&#34;
 	width=&#34;991&#34;
 	height=&#34;875&#34;
@@ -283,6 +299,34 @@ I2C接口的定义为 VCC SDA SCL GND&lt;/p&gt;
 &lt;video src=&#34;试飞2.mp4&#34;  poster=&#34;试飞图.png&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
 &lt;p&gt;GPS室外定点飞行测试：&lt;/p&gt;
 &lt;p&gt;暂无&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>XTdrone仿真环境</title>
+        <link>https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</link>
+        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</guid>
+        <description>&lt;h3 id=&#34;xtdrone仿真环境搭建&#34;&gt;XTdrone仿真环境搭建
+&lt;/h3&gt;&lt;p&gt;使用了XTdrone推荐的自动配置，开发环境是Ubuntu 22.04&lt;br&gt;
+下午时花了两个小时手动配置没配置好，弄这种大工程还是得新系统比较好一点。&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg&#34;
+	width=&#34;1920&#34;
+	height=&#34;1080&#34;
+	srcset=&#34;https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu18099202995669554499.jpg 480w, https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu2642333738181242516.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;111&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;br&gt;
+另外作者太牛逼了&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.yuque.com/xtdrone/manual_cn/install_scripts&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.yuque.com/xtdrone/manual_cn/install_scripts&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -920,7 +964,8 @@ MOS：NEC6050&lt;br&gt;
 另外在开环测试的时候供电也不稳定。不知道是不是程序问题。
 接下来抽时间对驱动器进行软件开发&lt;/p&gt;
 &lt;h3 id=&#34;方波驱动测试&#34;&gt;方波驱动测试
-&lt;/h3&gt;&lt;h3 id=&#34;开环foc驱动测试&#34;&gt;开环FOC驱动测试
+&lt;/h3&gt;&lt;p&gt;在每个换相周期内，定子绕组中的电流被切换为高或低两个状态，形成矩形波。通常采用六步换向法，即每60度电角度换相一次，从而产生转矩。&lt;/p&gt;
+&lt;h3 id=&#34;开环foc驱动测试&#34;&gt;开环FOC驱动测试
 &lt;/h3&gt;&lt;p&gt;开环运行即根据系统时间为索引，根据时间固定生成三相的正弦波。需要涉及Clark变换以及Park变换。
 simpleFOC的开环速度代码如下
 参考了：https://github.com/haotianh9/DengFOC_on_STM32

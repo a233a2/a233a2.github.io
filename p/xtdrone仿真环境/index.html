@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="变频器设计日志，记录变频器的设计过程">
-<title>变频器设计基础</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PX4 in XTdrone sitl">
+<title>XTdrone仿真环境</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/'>
+<link rel='canonical' href='https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="变频器设计基础">
-<meta property='og:description' content="变频器设计日志，记录变频器的设计过程">
-<meta property='og:url' content='https://a233a2.github.io/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="XTdrone仿真环境">
+<meta property='og:description' content="PX4 in XTdrone sitl">
+<meta property='og:url' content='https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='变频器' /><meta property='article:published_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-10T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="变频器设计基础">
-<meta name="twitter:description" content="变频器设计日志，记录变频器的设计过程">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-10T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="XTdrone仿真环境">
+<meta name="twitter:description" content="PX4 in XTdrone sitl">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     </head>
@@ -283,13 +283,7 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#变频器设计基础">变频器设计基础</a></li>
-        <li><a href="#异步电机">异步电机</a>
-          <ol>
-            <li><a href="#异步电动机的vf控制开环控制简单粗暴">异步电动机的VF控制（开环控制简单粗暴）</a></li>
-            <li><a href="#异步电动机矢量控制">异步电动机矢量控制</a></li>
-          </ol>
-        </li>
+        <li><a href="#xtdrone仿真环境搭建">XTdrone仿真环境搭建</a></li>
       </ol>
     </li>
   </ol>
@@ -310,8 +304,16 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E5%8F%98%E9%A2%91%E5%99%A8/" >
-                变频器
+            <a href="/categories/px4/" >
+                PX4
+            </a>
+        
+            <a href="/categories/xtdrone/" >
+                XTdrone
+            </a>
+        
+            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/" >
+                学术类别
             </a>
         
             <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" >
@@ -323,12 +325,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/">变频器设计基础</a>
+            <a href="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/">XTdrone仿真环境</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            变频器设计日志，记录变频器的设计过程
+            PX4 in XTdrone sitl
         </h3>
         
     </div>
@@ -364,7 +366,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -379,128 +381,27 @@
     <section class="article-content">
     
     
-    <h3 id="变频器设计基础">变频器设计基础
-</h3><p><a class="link" href="https://www.bilibili.com/video/BV1jg41117Mz/?spm_id_from=333.788&amp;vd_source=c07e49f2b08d68d3bb624651ee908d97"  target="_blank" rel="noopener"
-    >https://www.bilibili.com/video/BV1jg41117Mz/?spm_id_from=333.788&vd_source=c07e49f2b08d68d3bb624651ee908d97</a></p>
-<p>变频器就是可以改变交流电频率的一种装置，用它对交流电进行调速，就可以使得电机实现无级调速。<br>
-我国交流电工频为50Hz，通过变频器可以对交流电进行从0到几千甚至上万Hz之间任意调整。<br>
-主要对异步电机进行调速。</p>
-<h3 id="异步电机">异步电机
-</h3><p>直流电机结构复杂，维护保养困难，在电力拖动系统中，需要转速一定，调速性能要求不高的情况下用的都是交流电机。<br>
-交流电机没换向器 结构简单，维护方便，成本低。但是调速性能<strong>较差xxx特别差</strong>。<br>
-<strong>交流异步电机同步转速（旋转磁场转速）</strong>$n_1$ 表示<br>
-$$  n&lt;n_1=\frac{60f}{p}  $$<br>
-其中 $f$ 为交流电频率, $p$ 为电机的极对数。 $n$ 为电机的实际转速。<br>
-转差率$s$的定义为<br>
-$$  s=\frac{n_1-n}{n_1}\  \ \ \left( 0&lt;s&lt;=1 \right) $$<br>
-电机转速的变式：<br>
-$$  n=(1-s)n_1=\frac{60f}{p}  $$<br>
-要改变电机的转速就只能在 $f$  $p$  $s$ 这三个方面想办法。<br>
-<strong>变频器就是通过改变频率 $f$ 来对电机进行调速的器件。</strong></p>
-<h4 id="异步电动机的vf控制开环控制简单粗暴">异步电动机的VF控制（开环控制简单粗暴）
-</h4><p>单独改变频率是不行的 还需要同时对电压进行改变。<br>
-V/f控制就是保证<strong>输出电压</strong>跟<strong>频率</strong>成正比的控制，使电动机的<strong>磁通</strong>保持一定，避免弱磁和磁饱和现象的产生，多用于风机、泵类节能型变频器用压控振荡器。</p>
-<p>解释：<br>
-电机运行时自感电动势 $E$
-$$E\propto f\varPhi $$<br>
-$\varPhi$为电机的磁通。<br>
-电源电压$U$和自感电动势$E$在额定负载时差不多一致。<br>
-定子电路简化图如下：
-<img src="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E5%AE%9A%E5%AD%90%E7%94%B5%E8%B7%AF%E7%AE%80%E5%8C%96%E5%9B%BE.png"
-	width="358"
-	height="293"
-	srcset="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E5%AE%9A%E5%AD%90%E7%94%B5%E8%B7%AF%E7%AE%80%E5%8C%96%E5%9B%BE_hu3485793299139043918.png 480w, /p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E5%AE%9A%E5%AD%90%E7%94%B5%E8%B7%AF%E7%AE%80%E5%8C%96%E5%9B%BE_hu8310689611233903813.png 1024w"
+    <h3 id="xtdrone仿真环境搭建">XTdrone仿真环境搭建
+</h3><p>使用了XTdrone推荐的自动配置，开发环境是Ubuntu 22.04<br>
+下午时花了两个小时手动配置没配置好，弄这种大工程还是得新系统比较好一点。<br>
+<img src="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg"
+	width="1920"
+	height="1080"
+	srcset="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu18099202995669554499.jpg 480w, /p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu2642333738181242516.jpg 1024w"
 	loading="lazy"
 	
-		alt="定子电路"
+		alt="111"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="122"
-		data-flex-basis="293px"
+		data-flex-grow="177"
+		data-flex-basis="426px"
 	
 ><br>
-r与x为漏磁阻抗。其之间的关系为：<br>
-$$U= E+I(r+jx)$$<br>
-额定频率时，漏磁阻抗上的电压很小。所以电源电压$U$和自感电动势$E$在额定负载时差不多一致。则可以得到：<br>
-$$U\propto f\varPhi $$<br>
-$$\varPhi\propto U/f $$ <br>
-所以可以得到电机的磁通，与电机电压成正比，与频率成反比关系。使用变频器时，使得频率降低，电压不变的话。则磁通会升高。磁通的增加会导致xxx<br>
-<strong>磁化曲线：电机磁通大小与励磁电流的关系曲线。<br>
-<img src="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E7%94%B5%E6%9C%BA%E7%9A%84%E7%A3%81%E5%8C%96%E6%9B%B2%E7%BA%BF.png"
-	width="1092"
-	height="625"
-	srcset="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E7%94%B5%E6%9C%BA%E7%9A%84%E7%A3%81%E5%8C%96%E6%9B%B2%E7%BA%BF_hu4351716662551082168.png 480w, /p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E7%94%B5%E6%9C%BA%E7%9A%84%E7%A3%81%E5%8C%96%E6%9B%B2%E7%BA%BF_hu11483614282570224195.png 1024w"
-	loading="lazy"
-	
-		alt="电机的磁化曲线"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="174"
-		data-flex-basis="419px"
-	
-><br>
-<img src="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E7%94%B5%E6%9C%BA%E7%9A%84%E7%A3%81%E5%8C%96%E6%9B%B2%E7%BA%BF2.png"
-	width="679"
-	height="542"
-	srcset="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E7%94%B5%E6%9C%BA%E7%9A%84%E7%A3%81%E5%8C%96%E6%9B%B2%E7%BA%BF2_hu3783860709681581336.png 480w, /p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E7%94%B5%E6%9C%BA%E7%9A%84%E7%A3%81%E5%8C%96%E6%9B%B2%E7%BA%BF2_hu12076396234299590579.png 1024w"
-	loading="lazy"
-	
-		alt="电机的磁化曲线2"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="125"
-		data-flex-basis="300px"
-	
-><br>
-磁通增加会导致磁通到达B区域，使得电流波形尖锐。<strong>所以只变频不变压的话，电机磁通会增加，电机铁芯出现深度饱和。励磁电流急剧增加，使得电机损耗增加，可能出现电机过热烧毁。</strong><br>
-所以在改变频率时，必须保证磁通不变，为一个恒定值。<br>
-$$\varPhi\propto U/f $$ <br>
-即保持电压和频率的比值不变。同步降低与升高。得到如下</strong>基本的UF曲线**。 <br>
-<img src="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E5%9F%BA%E6%9C%ACUF%E6%9B%B2%E7%BA%BF.png"
-	width="493"
-	height="405"
-	srcset="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E5%9F%BA%E6%9C%ACUF%E6%9B%B2%E7%BA%BF_hu916882079457959991.png 480w, /p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E5%9F%BA%E6%9C%ACUF%E6%9B%B2%E7%BA%BF_hu14754261497441329462.png 1024w"
-	loading="lazy"
-	
-		alt="基本UF曲线"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="121"
-		data-flex-basis="292px"
-	
-><br>
-而别忘了！ U是代替E而出现的。 在额定频率也就是曲线右上角一部分下，漏磁阻抗所占分压很少，所以U可以很近似E。但是在此点一下，即轻载或者空载条件下，低频区域U便不能再代替E了。  （反电动势E在电源电压U中所占比例变小了）。这时还按照这个曲线控制电机就不行了。因为 <br>
-$$U= E+I(r+jx)$$<br>
-$I(r+jx)$所占比例高了。不能再近似处理了 E小了很多。而我们还按照 <br>
-$$\varPhi\propto U/f $$ <br>
-这时磁通会变小  因为实际是  ：
-$$\varPhi\propto E/f $$ <br>
-因此低频时，电机的转矩会变小！！<br>
-这时需要对低频情况下的UF曲线进行补偿得到下图补偿uf曲线：<br>
-<img src="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E8%A1%A5%E5%81%BFUF%E6%9B%B2%E7%BA%BF.png"
-	width="557"
-	height="457"
-	srcset="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E8%A1%A5%E5%81%BFUF%E6%9B%B2%E7%BA%BF_hu2094454276579082488.png 480w, /p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/%E8%A1%A5%E5%81%BFUF%E6%9B%B2%E7%BA%BF_hu3955636692084644254.png 1024w"
-	loading="lazy"
-	
-		alt="补偿UF曲线"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="121"
-		data-flex-basis="292px"
-	
-><br>
-通过改变UF比值来控制电机的方法就叫做变频器的V/F控制。UF曲线是依据负载特性 事先选定好的。</p>
-<p>直白点说，V／F控制其实就是开环控制，在这种模式下，变频器按照给定指令输出一定幅值和频率的电压，至于电机到底是运行多少转速、什么状态变频器是不关心的。因为变频器此时没有对电机的状态进行反馈及控制。
-而矢量控制则不同，一般我们都是采用带转速反馈的矢量控制模式，这是一种真正意义上的闭环控制方式。在这种控制模式下，变频器对电机的运行转速进行精确控制，它会根据转速指令的大小实时控制电机实际转速。
-V／F控制一般用于要求不太高的场合，对于电机转速控制精度没有什么要求的应用。而矢量控制是一种通用性极强的控制模式，几乎没有什么缺点，凡是要求控制精度较高时，用矢量控制肯定是没什么问题的。另外，尤其是提升应用时，尤其推荐带转速反馈的矢量控制模式。</p>
-<h4 id="异步电动机矢量控制">异步电动机矢量控制
-</h4>
+另外作者太牛逼了<br>
+<a class="link" href="https://www.yuque.com/xtdrone/manual_cn/install_scripts"  target="_blank" rel="noopener"
+    >https://www.yuque.com/xtdrone/manual_cn/install_scripts</a></p>
+
 </section>
 
 
@@ -508,7 +409,7 @@ V／F控制一般用于要求不太高的场合，对于电机转速控制精度
     
     <section class="article-tags">
         
-            <a href="/tags/%E5%8F%98%E9%A2%91%E5%99%A8/">变频器</a>
+            <a href="/tags/px4/">PX4</a>
         
     </section>
 
@@ -566,19 +467,6 @@ V／F控制一般用于要求不太高的场合，对于电机转速控制精度
             
                 
 <article class="">
-    <a href="/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Hugo博客的个人git部署工作流</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/">
         
         
@@ -605,12 +493,12 @@ V／F控制一般用于要求不太高的场合，对于电机转速控制精度
             
                 
 <article class="">
-    <a href="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/">
+    <a href="/p/ysyx%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">XTdrone仿真环境</h2>
+            <h2 class="article-title">YSYX学习日记</h2>
         </div>
     </a>
 </article>
@@ -618,12 +506,25 @@ V／F控制一般用于要求不太高的场合，对于电机转速控制精度
             
                 
 <article class="">
-    <a href="/p/freertos%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <a href="/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">FreeRTOS学习笔记</h2>
+            <h2 class="article-title">Hugo博客的个人git部署工作流</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">变频器设计基础</h2>
         </div>
     </a>
 </article>
