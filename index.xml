@@ -33,6 +33,9 @@
 另外作者太牛逼了&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://www.yuque.com/xtdrone/manual_cn/install_scripts&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.yuque.com/xtdrone/manual_cn/install_scripts&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;后续使用引言&#34;&gt;后续使用引言
+&lt;/h3&gt;&lt;p&gt;打算在其之上二次开发PX4的程序。XTdrone提供了风场生成的插件。但是如何在PX4原版代码上修改是一个大问题。  &lt;br&gt;
+为了简化可以搭载机载电脑，然后运行ROS系统，在ROS系统上检测风场并进行稳态控制。这是一个方法。但是无疑会造成设备增多，复杂度增加。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -325,8 +328,13 @@ I2C接口的定义为 VCC SDA SCL GND&lt;/p&gt;
 &lt;h3 id=&#34;添加光流以及gps模块的试飞&#34;&gt;添加光流以及GPS模块的试飞
 &lt;/h3&gt;&lt;p&gt;光流室内定点飞行测试：&lt;br&gt;
 &lt;video src=&#34;试飞2.mp4&#34;  poster=&#34;试飞图.png&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;p&gt;GPS室外定点飞行测试：&lt;/p&gt;
-&lt;p&gt;暂无&lt;/p&gt;
+&lt;h3 id=&#34;室外光流定点以及更换大机架大电机的飞行&#34;&gt;室外光流定点以及更换大机架大电机的飞行
+&lt;/h3&gt;&lt;p&gt;更换了1.2m的大机架。然后电机采用的好盈H6M 130Kv 植保机用大功率电机。电池12s。 &lt;br&gt;
+PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳定一些。参数不太好调，所以先将就用下。  &lt;br&gt;
+&lt;video src=&#34;试飞3.mp4&#34;  poster=&#34;试飞图.png&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;h3 id=&#34;gps室外定点飞行测试&#34;&gt;GPS室外定点飞行测试：
+&lt;/h3&gt;&lt;p&gt;暂无，GPS一直没调通。不知道什么问题。可能是口烧了？或者是模块有问题，但是换了两个模块了。&lt;br&gt;
+下次排除问题可以试试把GPS口换为TELEM口再试一下。这样可以确定口烧没。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -473,8 +481,8 @@ V／F控制一般用于要求不太高的场合，对于电机转速控制精度
 &lt;strong&gt;FCFS(先来先服务)&lt;/strong&gt;&lt;br&gt;
 同优先级，按照准备就绪的先后顺序执行。&lt;br&gt;
 &lt;strong&gt;时间片轮询&lt;/strong&gt;&lt;br&gt;
-有相同优先级的两个任务，其中一个一直没被抢占，则运行时间达到一个&lt;strong&gt;时间片&lt;/strong&gt;则主动让出CPU。&lt;/p&gt;
-&lt;p&gt;ps：低优先级的任务对时间的控制较为不精确。高优先级的任务可以做到时间精确控制。&lt;/p&gt;
+有相同优先级的两个任务，其中一个一直没被抢占，则运行时间达到一个&lt;strong&gt;时间片&lt;/strong&gt;则主动让出CPU。&lt;br&gt;
+ps：低优先级的任务对时间的控制较为不精确。高优先级的任务可以做到时间精确控制。&lt;/p&gt;
 &lt;h3 id=&#34;freertos延时函数&#34;&gt;FreeRTOS延时函数
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;vTaskDelay(ms);&lt;/strong&gt;&lt;br&gt;
 当前任务暂时暂停xx ms，程序进入&lt;strong&gt;阻塞态&lt;/strong&gt;，其中暂时时间内可以执行其他任务。&lt;br&gt;
@@ -1294,9 +1302,8 @@ SH1.25的接口画错了，属实是大意了。飞线暂时解决了问题。
         <pubDate>Sat, 14 Sep 2024 22:20:23 +0800</pubDate>
         
         <guid>https://a233a2.github.io/p/%E4%B8%AA%E4%BA%BA%E6%9D%82%E8%AE%B0/</guid>
-        <description>&lt;p&gt;13123123132133啊实打实的&lt;/p&gt;
-&lt;h3 id=&#34;猪锅&#34;&gt;猪锅
-&lt;/h3&gt;&lt;p&gt;&lt;video src=&#34;朱泽华被说是挂，笑死我了.mp4&#34;  poster=&#34;choumao.PNG&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
+        <description>&lt;h4 id=&#34;2024-10-23&#34;&gt;2024-10-23
+&lt;/h4&gt;&lt;p&gt;首次写下个人纪。&lt;/p&gt;
 </description>
         </item>
         <item>

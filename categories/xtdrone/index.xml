@@ -33,6 +33,9 @@
 另外作者太牛逼了&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://www.yuque.com/xtdrone/manual_cn/install_scripts&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.yuque.com/xtdrone/manual_cn/install_scripts&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;后续使用引言&#34;&gt;后续使用引言
+&lt;/h3&gt;&lt;p&gt;打算在其之上二次开发PX4的程序。XTdrone提供了风场生成的插件。但是如何在PX4原版代码上修改是一个大问题。  &lt;br&gt;
+为了简化可以搭载机载电脑，然后运行ROS系统，在ROS系统上检测风场并进行稳态控制。这是一个方法。但是无疑会造成设备增多，复杂度增加。&lt;/p&gt;
 </description>
         </item>
         
