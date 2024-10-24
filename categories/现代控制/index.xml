@@ -8,6 +8,16 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>DRCAN-Learn-Blog-Advance</title>
+        <link>https://a233a2.github.io/p/drcan-learn-blog-advance/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/drcan-learn-blog-advance/</guid>
+        <description>&lt;p&gt;此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。&lt;/p&gt;
+&lt;h3 id=&#34;状态空间表达&#34;&gt;状态空间表达
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>DRCAN-Learn-Blog-Basic</title>
         <link>https://a233a2.github.io/p/drcan-learn-blog-basic/</link>
         <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
@@ -44,6 +54,17 @@ $$L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\le
 &gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;拉普拉斯变换&#34;&gt;拉普拉斯变换
+&lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>DRCAN-Learn-Blog-OPT</title>
+        <link>https://a233a2.github.io/p/drcan-learn-blog-opt/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/drcan-learn-blog-opt/</guid>
+        <description>&lt;p&gt;此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。&lt;/p&gt;
+&lt;h3 id=&#34;lqr&#34;&gt;LQR
+&lt;/h3&gt;&lt;h3 id=&#34;mpc&#34;&gt;MPC
 &lt;/h3&gt;</description>
         </item>
         
