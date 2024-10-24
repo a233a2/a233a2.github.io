@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="ODRCAN-视频学习笔记">
-<title>DRCAN-Learn-Blog</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="ODRCAN-视频学习笔记-基础篇（数学基础以及控制基础）">
+<title>DRCAN-Learn-Blog-Basic</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/drcan-learn-blog/'>
+<link rel='canonical' href='https://a233a2.github.io/p/drcan-learn-blog-basic/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="DRCAN-Learn-Blog">
-<meta property='og:description' content="ODRCAN-视频学习笔记">
-<meta property='og:url' content='https://a233a2.github.io/p/drcan-learn-blog/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="DRCAN-Learn-Blog-Basic">
+<meta property='og:description' content="ODRCAN-视频学习笔记-基础篇（数学基础以及控制基础）">
+<meta property='og:url' content='https://a233a2.github.io/p/drcan-learn-blog-basic/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='DRCAN' /><meta property='article:published_time' content='2024-10-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-23T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="DRCAN-Learn-Blog">
-<meta name="twitter:description" content="ODRCAN-视频学习笔记">
+<meta name="twitter:title" content="DRCAN-Learn-Blog-Basic">
+<meta name="twitter:description" content="ODRCAN-视频学习笔记-基础篇（数学基础以及控制基础）">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     </head>
@@ -283,7 +283,8 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#动态系统的建模与分析">动态系统的建模与分析</a></li>
+        <li><a href="#卷积定理">卷积定理</a></li>
+        <li><a href="#拉普拉斯变换">拉普拉斯变换</a></li>
       </ol>
     </li>
   </ol>
@@ -325,12 +326,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/drcan-learn-blog/">DRCAN-Learn-Blog</a>
+            <a href="/p/drcan-learn-blog-basic/">DRCAN-Learn-Blog-Basic</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            ODRCAN-视频学习笔记
+            ODRCAN-视频学习笔记-基础篇（数学基础以及控制基础）
         </h3>
         
     </div>
@@ -382,7 +383,7 @@
     
     
     <p>此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。</p>
-<h3 id="动态系统的建模与分析">动态系统的建模与分析
+<h3 id="卷积定理">卷积定理
 </h3><ol>
 <li>卷积操作<br>
 $$L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\left( s \right) $$</li>
@@ -396,10 +397,10 @@ $$L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\le
 这在处理线性时不变系统时非常有用，特别是当我们<strong>有系统的输入和系统的脉冲响应时，
 利用卷积定理可以将输入信号和系统的响应进行频域分析。</strong><br>
 数学证明：<br>
-<img src="/p/drcan-learn-blog/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E.jpg"
+<img src="/p/drcan-learn-blog-basic/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E.jpg"
 	width="1079"
 	height="1527"
-	srcset="/p/drcan-learn-blog/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu12515043388887547171.jpg 480w, /p/drcan-learn-blog/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu3113174287893646857.jpg 1024w"
+	srcset="/p/drcan-learn-blog-basic/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu12515043388887547171.jpg 480w, /p/drcan-learn-blog-basic/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu3113174287893646857.jpg 1024w"
 	loading="lazy"
 	
 		alt="设置1"
@@ -411,7 +412,8 @@ $$L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\le
 	
 ></li>
 </ol>
-
+<h3 id="拉普拉斯变换">拉普拉斯变换
+</h3>
 </section>
 
 

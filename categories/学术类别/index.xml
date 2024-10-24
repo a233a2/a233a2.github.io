@@ -8,13 +8,13 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>DRCAN-Learn-Blog</title>
-        <link>https://a233a2.github.io/p/drcan-learn-blog/</link>
+        <title>DRCAN-Learn-Blog-Basic</title>
+        <link>https://a233a2.github.io/p/drcan-learn-blog-basic/</link>
         <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/drcan-learn-blog/</guid>
+        <guid>https://a233a2.github.io/p/drcan-learn-blog-basic/</guid>
         <description>&lt;p&gt;此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。&lt;/p&gt;
-&lt;h3 id=&#34;动态系统的建模与分析&#34;&gt;动态系统的建模与分析
+&lt;h3 id=&#34;卷积定理&#34;&gt;卷积定理
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;卷积操作&lt;br&gt;
 $$L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\left( s \right) $$&lt;/li&gt;
@@ -28,10 +28,10 @@ $$L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\le
 这在处理线性时不变系统时非常有用，特别是当我们&lt;strong&gt;有系统的输入和系统的脉冲响应时，
 利用卷积定理可以将输入信号和系统的响应进行频域分析。&lt;/strong&gt;&lt;br&gt;
 数学证明：&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-basic/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E.jpg&#34;
 	width=&#34;1079&#34;
 	height=&#34;1527&#34;
-	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu12515043388887547171.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu3113174287893646857.jpg 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-basic/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu12515043388887547171.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-basic/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu3113174287893646857.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;设置1&#34;
@@ -43,7 +43,8 @@ $$L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\le
 	
 &gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
+&lt;h3 id=&#34;拉普拉斯变换&#34;&gt;拉普拉斯变换
+&lt;/h3&gt;</description>
         </item>
         <item>
         <title>XTdrone仿真环境</title>
