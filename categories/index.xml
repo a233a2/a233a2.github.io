@@ -7,7 +7,39 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Tue, 22 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Matlab</title>
+        <link>https://a233a2.github.io/categories/matlab/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/categories/matlab/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>现代控制</title>
+        <link>https://a233a2.github.io/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>学术类别</title>
+        <link>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>自控原理</title>
+        <link>https://a233a2.github.io/categories/%E8%87%AA%E6%8E%A7%E5%8E%9F%E7%90%86/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/categories/%E8%87%AA%E6%8E%A7%E5%8E%9F%E7%90%86/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>PX4</title>
         <link>https://a233a2.github.io/categories/px4/</link>
         <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
@@ -29,14 +61,6 @@
         <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>学术类别</title>
-        <link>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</link>
-        <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</guid>
         <description></description>
         </item>
         <item>
