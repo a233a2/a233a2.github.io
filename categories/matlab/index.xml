@@ -34,7 +34,7 @@ $$L[{f(t)*g(t)}]=F(s)​G(s)$$&lt;/p&gt;
 &lt;p&gt;拉普拉斯变换&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;$$L\left{ f\left( t \right) \right} =F\left( s \right) =\int_0^{\infty}{f\left( t \right)}e^{-st}dt$$&lt;/p&gt;
+&lt;p&gt;$$L{ f(t) } = F(s) = \int_0^{\infty} f(t) e^{-st} , dt$$&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;卷积定理（拉普拉斯域）&lt;br&gt;
 卷积定理指出，在时间域中两个函数的卷积，在拉普拉斯变换后相当于它们的拉普拉斯变换的乘积。&lt;br&gt;
