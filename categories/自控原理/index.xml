@@ -17,19 +17,13 @@
 &lt;h3 id=&#34;动态系统的建模与分析&#34;&gt;动态系统的建模与分析
 &lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;卷积操作&lt;br&gt;
-$$
-L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\left( s \right)
-$$&lt;/li&gt;
+$$L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\left( s \right) $$&lt;/li&gt;
 &lt;li&gt;拉普拉斯变换&lt;br&gt;
-$$
-L\left{ f\left( t \right) \right} =F\left( s \right) =\int_0^{\infty}{f\left( t \right) e^{−st}dt}​
-$$&lt;/li&gt;
+$$L\left{ f\left( t \right) \right} =F\left( s \right) =\int_0^{\infty}{f\left( t \right) e^{−st}dt}​$$&lt;/li&gt;
 &lt;li&gt;卷积定理（拉普拉斯域）&lt;br&gt;
 卷积定理指出，在时间域中两个函数的卷积，在拉普拉斯变换后相当于它们的拉普拉斯变换的乘积。&lt;br&gt;
 如果$f(t)$和$g(t)$的拉氏变换分别为$F(s)$和$G(s)$,那么：&lt;br&gt;
-$$
-L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\left( s \right)
-$$
+$$L\left{ f\left( t \right) ∗g\left( t \right) \right} =F\left( s \right) G\left( s \right) $$
 这意味着在时间域中复杂的卷积操作可以通过拉普拉斯变换简化为频域中的简单乘法。
 这在处理线性时不变系统时非常有用，特别是当我们&lt;strong&gt;有系统的输入和系统的脉冲响应时，
 利用卷积定理可以将输入信号和系统的响应进行频域分析。&lt;/strong&gt;&lt;br&gt;
