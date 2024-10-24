@@ -56,7 +56,7 @@
 &gt;
 状态空间表达与传递函数之间的关系：包括转换方程，以及重要结论：&lt;strong&gt;|SI-A|矩阵的特征值就是传递函数的极点！&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-状态空间方程的解&#34;&gt;2-状态空间方程的解
-&lt;/h3&gt;&lt;p&gt;有点难以推导且认为推导过程不太重要
+&lt;/h3&gt;&lt;p&gt;有点难以推导且认为推导过程不太重要&lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/21.png&#34;
 	width=&#34;2182&#34;
 	height=&#34;3086&#34;
@@ -99,7 +99,107 @@
 		data-flex-basis=&#34;169px&#34;
 	
 &gt;&lt;/p&gt;
-</description>
+&lt;h3 id=&#34;3-相图-相轨迹&#34;&gt;3-相图-相轨迹
+&lt;/h3&gt;&lt;p&gt;相轨迹是系统的状态随时间变化的轨迹。当时间变化时，系统的状态点在状态空间中移动，这条移动的轨迹就是相轨迹。&lt;/p&gt;
+&lt;p&gt;对于一个阻尼摆，系统的能量会逐渐衰减，最终趋于静止。其相轨迹不会形成闭合的曲线，而是一个逐渐收缩的螺旋，最终收敛到平衡点（摆静止的位置）。这说明系统是稳定的，且有能量损失。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/31.png&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/31_hu425951968313780383.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/31_hu16643900213948508456.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;br&gt;
+可以通过分析导数正负来判别该点的稳定性，后面结论重要一些。&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/32.png&#34;
+	width=&#34;2201&#34;
+	height=&#34;1299&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/32_hu1485192269137500098.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/32_hu9250088313912901889.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;169&#34;
+		data-flex-basis=&#34;406px&#34;
+	
+&gt;&lt;br&gt;
+特殊的一种鞍点。在此令了上述x与y的导来确定x的输出？这个有些复杂。应该是用到了线性代数的坐标变换 看不太懂。。看特征值直观点。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/33.png&#34;
+	width=&#34;2039&#34;
+	height=&#34;973&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/33_hu10825206731962301851.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/33_hu10146504456115275453.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;209&#34;
+		data-flex-basis=&#34;502px&#34;
+	
+&gt;&lt;br&gt;
+对于复数的，而实部为0的特征值。是一个椭圆，Fixed Point为Center。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/34.png&#34;
+	width=&#34;2176&#34;
+	height=&#34;891&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/34_hu6089759772534058434.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/34_hu14925947017838707856.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;244&#34;
+		data-flex-basis=&#34;586px&#34;
+	
+&gt;&lt;br&gt;
+特征值复数但是实部不为0的时候。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/35.png&#34;
+	width=&#34;2154&#34;
+	height=&#34;1163&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/35_hu16777777308420433622.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/35_hu7477347720013798291.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;185&#34;
+		data-flex-basis=&#34;444px&#34;
+	
+&gt;&lt;br&gt;
+总结上述情况。&lt;/p&gt;
+&lt;h3 id=&#34;35-连续系统的离散化&#34;&gt;3.5-连续系统的离散化
+&lt;/h3&gt;&lt;p&gt;采样频率至少要为原系统频率的两倍，这样才能重建出原信号。否则可能出现混叠现象，不能复现原系统变化趋势。（2倍只是下限理论值，实际工程中选取5-10倍） &lt;br&gt;
+Zero Order Hold （ZOH零阶保持器），使得控制量在一个控制周期内保持不变。&lt;/p&gt;
+&lt;p&gt;采样周期要与数据处理控制时间相匹配。若数据读入处理需要50ms，则小于50ms的采样周期将变得没有意义。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/3.5-1.png&#34;
+	width=&#34;1874&#34;
+	height=&#34;1214&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/3.5-1_hu3054599139696670051.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/3.5-1_hu17887664043837265195.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;154&#34;
+		data-flex-basis=&#34;370px&#34;
+	
+&gt;&lt;br&gt;
+Error   ：G(T) = ∫(0,T) exp(Aτ) dτ·B
+状态空间的解输出，在离散系统下的表达形式。离散系统下不关心t，而着重与每个周期。系统输入u在一个周期内可以看作一个常数（ZOH的作用）。所以可以提取出来。。&lt;/p&gt;
+&lt;p&gt;使用软件将连续系统转化为离散系统 指令&lt;strong&gt;c2d(sys,f)&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;相图-相轨迹动态系统分析phase-portrait爱情故事&#34;&gt;相图-相轨迹动态系统分析Phase Portrait爱情故事
+&lt;/h3&gt;</description>
         </item>
         <item>
         <title>DRCAN-Learn-Blog-Basic</title>
