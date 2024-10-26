@@ -74,7 +74,7 @@ $$e=−dt/dλ$$ &lt;br&gt;
 		data-flex-grow=&#34;103&#34;
 		data-flex-basis=&#34;249px&#34;
 	
-&gt;    &lt;br&gt;
+&gt;        &lt;br&gt;
 电磁转矩另外可以理解为电机中磁场储能对机械角度的偏导数。（来源于教材）
 这种理解来源于电机中的能量转换原理，即电磁能量的变化会推动转子旋转，形成电磁转矩。&lt;/p&gt;
 &lt;h5 id=&#34;磁场储能公式&#34;&gt;磁场储能公式
@@ -91,7 +91,7 @@ $$e=−dt/dλ$$ &lt;br&gt;
 		data-flex-grow=&#34;138&#34;
 		data-flex-basis=&#34;331px&#34;
 	
-&gt;  &lt;br&gt;
+&gt;      &lt;br&gt;
 教材中有电流转置，是因为电流需要加一个转置符号通常是因为在电机控制和矩阵运算中，电流和磁链通常表示为向量，而磁场储能计算涉及向量之间的点积或矩阵乘法。为了进行这些运算，需要确保维度匹配，这就是为什么需要将电流向量进行转置。&lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/5.png&#34;
 	width=&#34;738&#34;
@@ -106,7 +106,7 @@ $$e=−dt/dλ$$ &lt;br&gt;
 		data-flex-grow=&#34;120&#34;
 		data-flex-basis=&#34;289px&#34;
 	
-&gt;   &lt;br&gt;
+&gt;      &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/6.png&#34;
 	width=&#34;724&#34;
 	height=&#34;426&#34;
@@ -135,7 +135,7 @@ $$e=−dt/dλ$$ &lt;br&gt;
 		data-flex-grow=&#34;196&#34;
 		data-flex-basis=&#34;470px&#34;
 	
-&gt;&lt;br&gt;
+&gt;   &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/8.png&#34;
 	width=&#34;735&#34;
 	height=&#34;360&#34;
@@ -185,7 +185,9 @@ $$e=−dt/dλ$$ &lt;br&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h5 id=&#34;反park变换&#34;&gt;反Park变换
-&lt;/h5&gt;</description>
+&lt;/h5&gt;&lt;p&gt;反Park变换（Inverse Park Transform）是Park变换的逆过程，用于将旋转坐标系中的直流信号（$d$ 和 $q$ 分量）转换回三相交流信号（通常是电流或电压）。反Park变换在电机控制中非常重要
+，因为它可以将控制算法输出的信号转换为实际电机所需的三相信号，以便控制电机的运行。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>工程数学基础</title>
@@ -1732,9 +1734,17 @@ SH1.25的接口画错了，属实是大意了。飞线暂时解决了问题。
         <pubDate>Sat, 14 Sep 2024 22:20:23 +0800</pubDate>
         
         <guid>https://a233a2.github.io/p/%E4%B8%AA%E4%BA%BA%E6%9D%82%E8%AE%B0/</guid>
-        <description>&lt;h4 id=&#34;2024-10-23&#34;&gt;2024-10-23
-&lt;/h4&gt;&lt;p&gt;首次写下个人纪。&lt;/p&gt;
-</description>
+        <description>&lt;h3 id=&#34;个人分享&#34;&gt;个人分享
+&lt;/h3&gt;&lt;h3 id=&#34;谈人生篇&#34;&gt;谈人生篇
+&lt;/h3&gt;&lt;h4 id=&#34;2024-10-23&#34;&gt;2024-10-23
+&lt;/h4&gt;&lt;p&gt;&lt;del&gt;逐渐明白了很多的道理，人生对于我来说确是一块旷野。也不能说从小到现在又明白了多少人生真理，只能说在我人生的不同阶段，对我自己而言有着不同的感悟。&lt;br&gt;
+在小学中学时期，害怕着各种条条框框，又时不时享受着突破条条框框的快感。到大学阶段，依然是这样。曾经也把推进人类的发展当自己的毕生目标，之后才明白自己的力量是多么的渺小。自己儿时许下的愿望又是多么的好笑。
+看到其他的成功人士，我会绝望，绝望的是我无法复制他人的成功道路，而又找不到一个属于自己的道路。&lt;br&gt;
+就其所以，何为成功呢？&lt;br&gt;
+先谈一下责任为何。是从良好的家风家教中? 亦或是自己天生就有的 一种优秀品质吧。不想让别人为我担心，不想让别人为我付出什么。这便是我。 &lt;br&gt;
+所以我认为的成功，是首先不让父母所担心，而来再不让爱我之人所担心。但是这一切都需要一定的经济基础，在可预见的四五年之内我恐怕做不出什么进展，至少需要拼搏一下才能。。所以悲伤。&lt;/del&gt;&lt;/p&gt;
+&lt;h3 id=&#34;谈爱情篇&#34;&gt;谈爱情篇
+&lt;/h3&gt;</description>
         </item>
         <item>
         <title>CH32平衡车开发板</title>
