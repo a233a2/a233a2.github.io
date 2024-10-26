@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>PMSM on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/tags/pmsm/</link>
+        <description>Recent content in PMSM on sunjiyi&#39;s Blogggg</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Sunjiyi Make and Design</copyright>
+        <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/pmsm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PMSM原理加控制方法以及仿真</title>
+        <link>https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/</link>
+        <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/</guid>
+        <description>&lt;h3 id=&#34;pmsm的数学建模&#34;&gt;PMSM的数学建模
+&lt;/h3&gt;&lt;p&gt;自然坐标系下PMSM的三相电压方程以及磁链方程。&lt;/p&gt;
+&lt;h4 id=&#34;磁链flux-linkage&#34;&gt;磁链（Flux Linkage）
+&lt;/h4&gt;&lt;p&gt;是描述电磁现象的一个物理量，它表示穿过某个回路的磁场的总效应。
+在电机中，磁链通常用来描述&lt;strong&gt;电流与磁场&lt;/strong&gt;之间的关系。磁链的概念在电机控制和电磁学中非常重要。
+在永磁同步电机（PMSM）和其他电机中，磁链是分析电压、电流和转矩的关键因素。
+&lt;strong&gt;根据电磁感应定律，磁链的变化会在导体中产生感应电动势（电压）。&lt;/strong&gt;
+在控制系统中，通过控制磁链的大小和方向，可以间接控制电机的转矩和转速。
+磁链的定义为：穿过导体线圈的磁通量与线圈匝数的乘积。
+数学表达式为：&lt;br&gt;
+$$𝜆=𝑁⋅Φ$$&lt;br&gt;
+$𝜆$表示磁链（Flux Linkage），单位为韦伯（Wb）。&lt;br&gt;
+$N$为线圈的匝数。&lt;br&gt;
+$Φ$为磁通量（Flux），表示穿过线圈的磁场强度的总量，单位也是韦伯（Wb）。&lt;/p&gt;
+&lt;p&gt;电流产生的磁链：当电流通过线圈时，会产生一个环绕线圈的磁场，这个磁场的磁通量在线圈中累积，形成磁链。永磁体产生的磁链：在永磁同步电机中，转子上的永磁体产生的磁场也会在定子绕组中产生磁链，这个磁链通常称为“转子磁链”或“永磁体磁链”。
+根据法拉第电磁感应定律，磁链的变化率决定了感应电动势的大小，数学表达为：    &lt;br&gt;
+$$e=−dt/dλ$$ &lt;br&gt;
+因此，磁链的变化直接影响电机的电压方程和控制策略。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/1.png&#34;
+	width=&#34;572&#34;
+	height=&#34;731&#34;
+	srcset=&#34;https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/1_hu14482969820617815494.png 480w, https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/1_hu10734826967438136706.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;定子电路&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;78&#34;
+		data-flex-basis=&#34;187px&#34;
+	
+&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/2.png&#34;
+	width=&#34;766&#34;
+	height=&#34;478&#34;
+	srcset=&#34;https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/2_hu12685289176442870170.png 480w, https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/2_hu8060460029259028813.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;定子电路&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;160&#34;
+		data-flex-basis=&#34;384px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
