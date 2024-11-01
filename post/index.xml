@@ -380,8 +380,139 @@ Zero Order Hold （ZOH零阶保持器），使得控制量在一个控制周期�
 Error   ：G(T) = ∫(0,T) exp(Aτ) dτ·B
 状态空间的解输出，在离散系统下的表达形式。离散系统下不关心t，而着重与每个周期。系统输入u在一个周期内可以看作一个常数（ZOH的作用）。所以可以提取出来。。&lt;/p&gt;
 &lt;p&gt;使用软件将连续系统转化为离散系统 指令&lt;strong&gt;c2d(sys,f)&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;相图-相轨迹动态系统分析phase-portrait爱情故事&#34;&gt;相图-相轨迹动态系统分析Phase Portrait爱情故事
-&lt;/h3&gt;</description>
+&lt;h3 id=&#34;4-相图-相轨迹动态系统分析phase-portrait爱情故事&#34;&gt;4-相图-相轨迹动态系统分析Phase Portrait爱情故事
+&lt;/h3&gt;&lt;p&gt;相轨迹&lt;/p&gt;
+&lt;h3 id=&#34;5-系统的可控性&#34;&gt;5-系统的可控性
+&lt;/h3&gt;&lt;p&gt;讲解了对于状态空间表达的秩判据的相关内容。秩判据的相关数学证明: &lt;br&gt;
+另外讲解了定义的可控性是何种意义上的可控性。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/51.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;2569&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/51_hu14473934175636827000.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/51_hu1429475142258959569.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;84&#34;
+		data-flex-basis=&#34;203px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;6-李雅普诺夫稳定性&#34;&gt;6-李雅普诺夫稳定性
+&lt;/h3&gt;&lt;p&gt;讲解了李雅普诺夫稳定性的严禁数学定义。以及对于状态转移矩阵A矩阵特征值的几种形式来定义李雅普诺夫的集中稳定性。 &lt;br&gt;
+针对非线性系统，区别于传统解微分方程，采用李雅普诺夫第二法进行解决，在此处进行了简单的介绍。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/61.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/61_hu5641696737157067.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/61_hu2161642686435310383.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/62.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;1475&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/62_hu8693756144219456126.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/62_hu16010987264924604746.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;355px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;7-线性控制器设计&#34;&gt;7-线性控制器设计
+&lt;/h3&gt;&lt;p&gt;这部分便是之前现代控制理论方面的根据期望的特征值来确定系统的不同k增益的输入。
+令u=kx，对期望的$\lambda$列出闭环矩阵Acl，对Acl求特征值?（应该是 太久远了 有点遗忘）
+列出以$\lambda$为未知量的方程，结合期望$\lambda$的特征值方程对应相等。求得k矩阵。
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/71.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/71_hu12605214141889279940.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/71_hu13337817652409191429.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/72.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;2716&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/72_hu14034203957898177910.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/72_hu13401945833860414619.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;80&#34;
+		data-flex-basis=&#34;192px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;8-lqr控制liner-quadratic-regulator&#34;&gt;8-LQR控制（Liner Quadratic Regulator）
+&lt;/h3&gt;&lt;p&gt;线性二次型调节器。是一种对控制系统的目标$\lambda$进行确定的最优控制算法。 &lt;br&gt;
+其设置了一种惩罚函数J，通过求得MinJ来确定系统最优的$\lambda$。进而进行线性控制器的设计。
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/81.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;1475&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/81_hu16155908660427802456.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/81_hu303810490908243574.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;355px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;9-状态观测器设计luenberger为例&#34;&gt;9-状态观测器设计（Luenberger为例）
+&lt;/h3&gt;&lt;p&gt;LQR控制等线性控制u=-kx的前提是状态x全部可测。而对于状态不可测的系统需要观测器Observer &lt;br&gt;
+也是之前现代控制理论的必做题类型。观测器建立了一个新的反馈系统目标是使得观测值与实际值相差的err为0.   &lt;br&gt;
+观测器也就是 根据系统现有的输入和输出 来估计系统的状态。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/91.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/91_hu17671702461150397579.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/91_hu3864620464621549933.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;另外根据之前的阻尼器-弹簧-质量块经典系统进行了观测器设计，设定两个特征值期望为-1 -1. &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/92.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;2448&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/92_hu1447313957454599147.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/92_hu10687051141730272077.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;89&#34;
+		data-flex-basis=&#34;213px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>DRCAN-Learn-Blog-Basic</title>

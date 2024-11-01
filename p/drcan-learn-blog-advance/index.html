@@ -287,7 +287,12 @@
         <li><a href="#2-状态空间方程的解">2-状态空间方程的解</a></li>
         <li><a href="#3-相图-相轨迹">3-相图-相轨迹</a></li>
         <li><a href="#35-连续系统的离散化">3.5-连续系统的离散化</a></li>
-        <li><a href="#相图-相轨迹动态系统分析phase-portrait爱情故事">相图-相轨迹动态系统分析Phase Portrait爱情故事</a></li>
+        <li><a href="#4-相图-相轨迹动态系统分析phase-portrait爱情故事">4-相图-相轨迹动态系统分析Phase Portrait爱情故事</a></li>
+        <li><a href="#5-系统的可控性">5-系统的可控性</a></li>
+        <li><a href="#6-李雅普诺夫稳定性">6-李雅普诺夫稳定性</a></li>
+        <li><a href="#7-线性控制器设计">7-线性控制器设计</a></li>
+        <li><a href="#8-lqr控制liner-quadratic-regulator">8-LQR控制（Liner Quadratic Regulator）</a></li>
+        <li><a href="#9-状态观测器设计luenberger为例">9-状态观测器设计（Luenberger为例）</a></li>
       </ol>
     </li>
   </ol>
@@ -370,7 +375,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 3 分钟
                 </time>
             </div>
         
@@ -561,8 +566,139 @@ Zero Order Hold （ZOH零阶保持器），使得控制量在一个控制周期�
 Error   ：G(T) = ∫(0,T) exp(Aτ) dτ·B
 状态空间的解输出，在离散系统下的表达形式。离散系统下不关心t，而着重与每个周期。系统输入u在一个周期内可以看作一个常数（ZOH的作用）。所以可以提取出来。。</p>
 <p>使用软件将连续系统转化为离散系统 指令<strong>c2d(sys,f)</strong>。</p>
-<h3 id="相图-相轨迹动态系统分析phase-portrait爱情故事">相图-相轨迹动态系统分析Phase Portrait爱情故事
-</h3>
+<h3 id="4-相图-相轨迹动态系统分析phase-portrait爱情故事">4-相图-相轨迹动态系统分析Phase Portrait爱情故事
+</h3><p>相轨迹</p>
+<h3 id="5-系统的可控性">5-系统的可控性
+</h3><p>讲解了对于状态空间表达的秩判据的相关内容。秩判据的相关数学证明: <br>
+另外讲解了定义的可控性是何种意义上的可控性。 <br>
+<img src="/p/drcan-learn-blog-advance/51.jpg"
+	width="2182"
+	height="2569"
+	srcset="/p/drcan-learn-blog-advance/51_hu14473934175636827000.jpg 480w, /p/drcan-learn-blog-advance/51_hu1429475142258959569.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="84"
+		data-flex-basis="203px"
+	
+></p>
+<h3 id="6-李雅普诺夫稳定性">6-李雅普诺夫稳定性
+</h3><p>讲解了李雅普诺夫稳定性的严禁数学定义。以及对于状态转移矩阵A矩阵特征值的几种形式来定义李雅普诺夫的集中稳定性。 <br>
+针对非线性系统，区别于传统解微分方程，采用李雅普诺夫第二法进行解决，在此处进行了简单的介绍。 <br>
+<img src="/p/drcan-learn-blog-advance/61.jpg"
+	width="2182"
+	height="3086"
+	srcset="/p/drcan-learn-blog-advance/61_hu5641696737157067.jpg 480w, /p/drcan-learn-blog-advance/61_hu2161642686435310383.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="70"
+		data-flex-basis="169px"
+	
+><br>
+<img src="/p/drcan-learn-blog-advance/62.jpg"
+	width="2182"
+	height="1475"
+	srcset="/p/drcan-learn-blog-advance/62_hu8693756144219456126.jpg 480w, /p/drcan-learn-blog-advance/62_hu16010987264924604746.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="147"
+		data-flex-basis="355px"
+	
+></p>
+<h3 id="7-线性控制器设计">7-线性控制器设计
+</h3><p>这部分便是之前现代控制理论方面的根据期望的特征值来确定系统的不同k增益的输入。
+令u=kx，对期望的$\lambda$列出闭环矩阵Acl，对Acl求特征值?（应该是 太久远了 有点遗忘）
+列出以$\lambda$为未知量的方程，结合期望$\lambda$的特征值方程对应相等。求得k矩阵。
+<img src="/p/drcan-learn-blog-advance/71.jpg"
+	width="2182"
+	height="3086"
+	srcset="/p/drcan-learn-blog-advance/71_hu12605214141889279940.jpg 480w, /p/drcan-learn-blog-advance/71_hu13337817652409191429.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="70"
+		data-flex-basis="169px"
+	
+> <br>
+<img src="/p/drcan-learn-blog-advance/72.jpg"
+	width="2182"
+	height="2716"
+	srcset="/p/drcan-learn-blog-advance/72_hu14034203957898177910.jpg 480w, /p/drcan-learn-blog-advance/72_hu13401945833860414619.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="80"
+		data-flex-basis="192px"
+	
+></p>
+<h3 id="8-lqr控制liner-quadratic-regulator">8-LQR控制（Liner Quadratic Regulator）
+</h3><p>线性二次型调节器。是一种对控制系统的目标$\lambda$进行确定的最优控制算法。 <br>
+其设置了一种惩罚函数J，通过求得MinJ来确定系统最优的$\lambda$。进而进行线性控制器的设计。
+<img src="/p/drcan-learn-blog-advance/81.jpg"
+	width="2182"
+	height="1475"
+	srcset="/p/drcan-learn-blog-advance/81_hu16155908660427802456.jpg 480w, /p/drcan-learn-blog-advance/81_hu303810490908243574.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="147"
+		data-flex-basis="355px"
+	
+></p>
+<h3 id="9-状态观测器设计luenberger为例">9-状态观测器设计（Luenberger为例）
+</h3><p>LQR控制等线性控制u=-kx的前提是状态x全部可测。而对于状态不可测的系统需要观测器Observer <br>
+也是之前现代控制理论的必做题类型。观测器建立了一个新的反馈系统目标是使得观测值与实际值相差的err为0.   <br>
+观测器也就是 根据系统现有的输入和输出 来估计系统的状态。 <br>
+<img src="/p/drcan-learn-blog-advance/91.jpg"
+	width="2182"
+	height="3086"
+	srcset="/p/drcan-learn-blog-advance/91_hu17671702461150397579.jpg 480w, /p/drcan-learn-blog-advance/91_hu3864620464621549933.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="70"
+		data-flex-basis="169px"
+	
+></p>
+<p>另外根据之前的阻尼器-弹簧-质量块经典系统进行了观测器设计，设定两个特征值期望为-1 -1. <br>
+<img src="/p/drcan-learn-blog-advance/92.jpg"
+	width="2182"
+	height="2448"
+	srcset="/p/drcan-learn-blog-advance/92_hu1447313957454599147.jpg 480w, /p/drcan-learn-blog-advance/92_hu10687051141730272077.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="89"
+		data-flex-basis="213px"
+	
+></p>
+
 </section>
 
 
