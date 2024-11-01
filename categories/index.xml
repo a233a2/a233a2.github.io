@@ -8,14 +8,6 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Sat, 26 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>PMSM</title>
-        <link>https://a233a2.github.io/categories/pmsm/</link>
-        <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/pmsm/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>工程类别</title>
         <link>https://a233a2.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/</link>
         <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
@@ -24,124 +16,20 @@
         <description></description>
         </item>
         <item>
-        <title>Math</title>
-        <link>https://a233a2.github.io/categories/math/</link>
-        <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/math/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Matlab</title>
-        <link>https://a233a2.github.io/categories/matlab/</link>
-        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/matlab/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>现代控制</title>
-        <link>https://a233a2.github.io/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6/</link>
-        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>学术类别</title>
         <link>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</link>
-        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</guid>
         <description></description>
         </item>
         <item>
-        <title>自控原理</title>
-        <link>https://a233a2.github.io/categories/%E8%87%AA%E6%8E%A7%E5%8E%9F%E7%90%86/</link>
-        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/%E8%87%AA%E6%8E%A7%E5%8E%9F%E7%90%86/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>PX4</title>
-        <link>https://a233a2.github.io/categories/px4/</link>
-        <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/px4/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>XTdrone</title>
-        <link>https://a233a2.github.io/categories/xtdrone/</link>
-        <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/xtdrone/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Hugo</title>
-        <link>https://a233a2.github.io/categories/hugo/</link>
+        <title>其他类别</title>
+        <link>https://a233a2.github.io/categories/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%88%AB/</link>
         <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/categories/hugo/</guid>
+        <guid>https://a233a2.github.io/categories/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%88%AB/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>变频器</title>
-        <link>https://a233a2.github.io/categories/%E5%8F%98%E9%A2%91%E5%99%A8/</link>
-        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/%E5%8F%98%E9%A2%91%E5%99%A8/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>FreeRTOS</title>
-        <link>https://a233a2.github.io/categories/freertos/</link>
-        <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/freertos/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>ADRC</title>
-        <link>https://a233a2.github.io/categories/adrc/</link>
-        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/adrc/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>KiCad</title>
-        <link>https://a233a2.github.io/categories/kicad/</link>
-        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/kicad/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>YSYX</title>
-        <link>https://a233a2.github.io/categories/ysyx/</link>
-        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/ysyx/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>分数阶</title>
-        <link>https://a233a2.github.io/categories/%E5%88%86%E6%95%B0%E9%98%B6/</link>
-        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/%E5%88%86%E6%95%B0%E9%98%B6/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>FOC驱动器</title>
-        <link>https://a233a2.github.io/categories/foc/</link>
-        <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/categories/foc/</guid>
-        <description>&lt;img src="https://a233a2.github.io/categories/foc/cm_foc.png" alt="Featured image of post FOC驱动器" /&gt;</description>
         </item>
         <item>
         <title>直流电机方案</title>
@@ -150,6 +38,14 @@
         
         <guid>https://a233a2.github.io/categories/%E7%9B%B4%E6%B5%81%E7%94%B5%E6%9C%BA%E6%96%B9%E6%A1%88/</guid>
         <description></description>
+        </item>
+        <item>
+        <title>FOC驱动器</title>
+        <link>https://a233a2.github.io/categories/foc/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/categories/foc/</guid>
+        <description>&lt;img src="https://a233a2.github.io/categories/foc/cm_foc.png" alt="Featured image of post FOC驱动器" /&gt;</description>
         </item>
         <item>
         <title>控制理论</title>

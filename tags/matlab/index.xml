@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Matlab on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/tags/matlab/</link>
+        <description>Recent content in Matlab on sunjiyi&#39;s Blogggg</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Sunjiyi Make and Design</copyright>
+        <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/matlab/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>DRCAN-Learn-Blog-Advance</title>
+        <link>https://a233a2.github.io/p/drcan-learn-blog-advance/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/drcan-learn-blog-advance/</guid>
+        <description>&lt;p&gt;此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。&lt;/p&gt;
+&lt;h3 id=&#34;1-状态空间表达&#34;&gt;1-状态空间表达
+&lt;/h3&gt;&lt;p&gt;以一个质量块-弹簧-阻尼器系统来进行分析：&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/1-1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/1-1_hu7229884839809532162.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/1-1_hu1691059223504960444.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;   &lt;br&gt;
+状态空间表达是即为：&lt;strong&gt;系统输入输出状态变量的一个集合，用一阶微分方程的形式表达出来。&lt;/strong&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/1-2.png&#34;
+	width=&#34;2182&#34;
+	height=&#34;1753&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/1-2_hu1484246055524713960.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/1-2_hu12410177076624011512.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;124&#34;
+		data-flex-basis=&#34;298px&#34;
+	
+&gt;
+状态空间表达与传递函数之间的关系：包括转换方程，以及重要结论：&lt;strong&gt;|SI-A|矩阵的特征值就是传递函数的极点！&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-状态空间方程的解&#34;&gt;2-状态空间方程的解
+&lt;/h3&gt;&lt;p&gt;有点难以推导且认为推导过程不太重要&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/21.png&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/21_hu9857301536328584946.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/21_hu17728875442273112032.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/22.png&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/22_hu7424707334767718386.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/22_hu4360937834505168880.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/23.png&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/23_hu17122972239720574622.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/23_hu13650029549609199388.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-相图-相轨迹&#34;&gt;3-相图-相轨迹
+&lt;/h3&gt;&lt;p&gt;相轨迹是系统的状态随时间变化的轨迹。当时间变化时，系统的状态点在状态空间中移动，这条移动的轨迹就是相轨迹。&lt;/p&gt;
+&lt;p&gt;对于一个阻尼摆，系统的能量会逐渐衰减，最终趋于静止。其相轨迹不会形成闭合的曲线，而是一个逐渐收缩的螺旋，最终收敛到平衡点（摆静止的位置）。这说明系统是稳定的，且有能量损失。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/31.png&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/31_hu425951968313780383.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/31_hu16643900213948508456.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;br&gt;
+可以通过分析导数正负来判别该点的稳定性，后面结论重要一些。&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/32.png&#34;
+	width=&#34;2201&#34;
+	height=&#34;1299&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/32_hu1485192269137500098.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/32_hu9250088313912901889.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;169&#34;
+		data-flex-basis=&#34;406px&#34;
+	
+&gt;&lt;br&gt;
+特殊的一种鞍点。在此令了上述x与y的导来确定x的输出？这个有些复杂。应该是用到了线性代数的坐标变换 看不太懂。。看特征值直观点。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/33.png&#34;
+	width=&#34;2039&#34;
+	height=&#34;973&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/33_hu10825206731962301851.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/33_hu10146504456115275453.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;209&#34;
+		data-flex-basis=&#34;502px&#34;
+	
+&gt;&lt;br&gt;
+对于复数的，而实部为0的特征值。是一个椭圆，Fixed Point为Center。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/34.png&#34;
+	width=&#34;2176&#34;
+	height=&#34;891&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/34_hu6089759772534058434.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/34_hu14925947017838707856.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;244&#34;
+		data-flex-basis=&#34;586px&#34;
+	
+&gt;&lt;br&gt;
+特征值复数但是实部不为0的时候。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/35.png&#34;
+	width=&#34;2154&#34;
+	height=&#34;1163&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/35_hu16777777308420433622.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/35_hu7477347720013798291.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;185&#34;
+		data-flex-basis=&#34;444px&#34;
+	
+&gt;&lt;br&gt;
+总结上述情况。&lt;/p&gt;
+&lt;h3 id=&#34;35-连续系统的离散化&#34;&gt;3.5-连续系统的离散化
+&lt;/h3&gt;&lt;p&gt;采样频率至少要为原系统频率的两倍，这样才能重建出原信号。否则可能出现混叠现象，不能复现原系统变化趋势。（2倍只是下限理论值，实际工程中选取5-10倍） &lt;br&gt;
+Zero Order Hold （ZOH零阶保持器），使得控制量在一个控制周期内保持不变。&lt;/p&gt;
+&lt;p&gt;采样周期要与数据处理控制时间相匹配。若数据读入处理需要50ms，则小于50ms的采样周期将变得没有意义。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/3.5-1.png&#34;
+	width=&#34;1874&#34;
+	height=&#34;1214&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/3.5-1_hu3054599139696670051.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/3.5-1_hu17887664043837265195.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;154&#34;
+		data-flex-basis=&#34;370px&#34;
+	
+&gt;&lt;br&gt;
+Error   ：G(T) = ∫(0,T) exp(Aτ) dτ·B
+状态空间的解输出，在离散系统下的表达形式。离散系统下不关心t，而着重与每个周期。系统输入u在一个周期内可以看作一个常数（ZOH的作用）。所以可以提取出来。。&lt;/p&gt;
+&lt;p&gt;使用软件将连续系统转化为离散系统 指令&lt;strong&gt;c2d(sys,f)&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;4-相图-相轨迹动态系统分析phase-portrait爱情故事&#34;&gt;4-相图-相轨迹动态系统分析Phase Portrait爱情故事
+&lt;/h3&gt;&lt;p&gt;相轨迹&lt;/p&gt;
+&lt;h3 id=&#34;5-系统的可控性&#34;&gt;5-系统的可控性
+&lt;/h3&gt;&lt;p&gt;讲解了对于状态空间表达的秩判据的相关内容。秩判据的相关数学证明: &lt;br&gt;
+另外讲解了定义的可控性是何种意义上的可控性。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/51.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;2569&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/51_hu14473934175636827000.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/51_hu1429475142258959569.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;84&#34;
+		data-flex-basis=&#34;203px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;6-李雅普诺夫稳定性&#34;&gt;6-李雅普诺夫稳定性
+&lt;/h3&gt;&lt;p&gt;讲解了李雅普诺夫稳定性的严禁数学定义。以及对于状态转移矩阵A矩阵特征值的几种形式来定义李雅普诺夫的集中稳定性。 &lt;br&gt;
+针对非线性系统，区别于传统解微分方程，采用李雅普诺夫第二法进行解决，在此处进行了简单的介绍。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/61.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/61_hu5641696737157067.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/61_hu2161642686435310383.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/62.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;1475&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/62_hu8693756144219456126.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/62_hu16010987264924604746.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;355px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;7-线性控制器设计&#34;&gt;7-线性控制器设计
+&lt;/h3&gt;&lt;p&gt;这部分便是之前现代控制理论方面的根据期望的特征值来确定系统的不同k增益的输入。
+令u=kx，对期望的$\lambda$列出闭环矩阵Acl，对Acl求特征值?（应该是 太久远了 有点遗忘）
+列出以$\lambda$为未知量的方程，结合期望$\lambda$的特征值方程对应相等。求得k矩阵。
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/71.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/71_hu12605214141889279940.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/71_hu13337817652409191429.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/72.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;2716&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/72_hu14034203957898177910.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/72_hu13401945833860414619.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;80&#34;
+		data-flex-basis=&#34;192px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;8-lqr控制liner-quadratic-regulator&#34;&gt;8-LQR控制（Liner Quadratic Regulator）
+&lt;/h3&gt;&lt;p&gt;线性二次型调节器。是一种对控制系统的目标$\lambda$进行确定的最优控制算法。 &lt;br&gt;
+其设置了一种惩罚函数J，通过求得MinJ来确定系统最优的$\lambda$。进而进行线性控制器的设计。
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/81.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;1475&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/81_hu16155908660427802456.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/81_hu303810490908243574.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;147&#34;
+		data-flex-basis=&#34;355px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;9-状态观测器设计luenberger为例&#34;&gt;9-状态观测器设计（Luenberger为例）
+&lt;/h3&gt;&lt;p&gt;LQR控制等线性控制u=-kx的前提是状态x全部可测。而对于状态不可测的系统需要观测器Observer &lt;br&gt;
+也是之前现代控制理论的必做题类型。观测器建立了一个新的反馈系统目标是使得观测值与实际值相差的err为0.   &lt;br&gt;
+观测器也就是 根据系统现有的输入和输出 来估计系统的状态。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/91.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/91_hu17671702461150397579.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/91_hu3864620464621549933.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;另外根据之前的阻尼器-弹簧-质量块经典系统进行了观测器设计，设定两个特征值期望为-1 -1. &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/92.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;2448&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/92_hu1447313957454599147.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/92_hu10687051141730272077.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;89&#34;
+		data-flex-basis=&#34;213px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;10-可观测性与分离原理&#34;&gt;10-可观测性与分离原理
+&lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>DRCAN-Learn-Blog-Basic</title>
+        <link>https://a233a2.github.io/p/drcan-learn-blog-basic/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/drcan-learn-blog-basic/</guid>
+        <description>&lt;p&gt;此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。&lt;/p&gt;
+&lt;h3 id=&#34;卷积定理&#34;&gt;卷积定理
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;卷积操作&lt;br&gt;
+$$L[{f(t)*g(t)}]=F(s)​G(s)$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;拉普拉斯变换&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$L{ f(t) } = F(s) = \int_0^{\infty} f(t) e^{-st} , dt$$&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;卷积定理（拉普拉斯域）&lt;br&gt;
+卷积定理指出，在时间域中两个函数的卷积，在拉普拉斯变换后相当于它们的拉普拉斯变换的乘积。&lt;br&gt;
+如果$f(t)$和$g(t)$的拉氏变换分别为$F(s)$和$G(s)$,那么：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;$$ L[{f(t) ∗g(t)}] =F( s ) G( s) $$&lt;/p&gt;
+&lt;p&gt;这意味着在时间域中复杂的卷积操作可以通过拉普拉斯变换简化为频域中的简单乘法。
+这在处理线性时不变系统时非常有用，特别是当我们&lt;strong&gt;有系统的输入和系统的脉冲响应时，
+利用卷积定理可以将输入信号和系统的响应进行频域分析。&lt;/strong&gt;&lt;br&gt;
+数学证明：&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-basic/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E.jpg&#34;
+	width=&#34;1079&#34;
+	height=&#34;1527&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-basic/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu12515043388887547171.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-basic/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%95%B0%E5%AD%A6%E8%AF%81%E6%98%8E_hu3113174287893646857.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;设置1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;拉普拉斯变换&#34;&gt;拉普拉斯变换
+&lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>DRCAN-Learn-Blog-OPT</title>
+        <link>https://a233a2.github.io/p/drcan-learn-blog-opt/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/drcan-learn-blog-opt/</guid>
+        <description>&lt;p&gt;此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。&lt;/p&gt;
+&lt;h3 id=&#34;lqr&#34;&gt;LQR
+&lt;/h3&gt;&lt;h3 id=&#34;mpc&#34;&gt;MPC
+&lt;/h3&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

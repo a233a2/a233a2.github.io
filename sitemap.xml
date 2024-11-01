@@ -11,9 +11,6 @@
     <loc>https://a233a2.github.io/tags/pmsm/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/pmsm/</loc>
-    <lastmod>2024-10-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://a233a2.github.io/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
   </url><url>
@@ -29,10 +26,10 @@
     <loc>https://a233a2.github.io/tags/math/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/math/</loc>
+    <loc>https://a233a2.github.io/p/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/p/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</loc>
     <lastmod>2024-10-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/drcan/</loc>
@@ -47,25 +44,19 @@
     <loc>https://a233a2.github.io/p/drcan-learn-blog-opt/</loc>
     <lastmod>2024-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/matlab/</loc>
+    <loc>https://a233a2.github.io/tags/matlab/</loc>
     <lastmod>2024-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6/</loc>
+    <loc>https://a233a2.github.io/tags/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6/</loc>
     <lastmod>2024-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</loc>
-    <lastmod>2024-10-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/%E8%87%AA%E6%8E%A7%E5%8E%9F%E7%90%86/</loc>
+    <loc>https://a233a2.github.io/tags/%E8%87%AA%E6%8E%A7%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2024-10-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/px4/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/px4/</loc>
-    <lastmod>2024-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/xtdrone/</loc>
+    <loc>https://a233a2.github.io/tags/xtdrone/</loc>
     <lastmod>2024-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</loc>
@@ -74,10 +65,10 @@
     <loc>https://a233a2.github.io/tags/hugo/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/hugo/</loc>
+    <loc>https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
+    <loc>https://a233a2.github.io/categories/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%88%AB/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/</loc>
@@ -89,16 +80,10 @@
     <loc>https://a233a2.github.io/tags/%E5%8F%98%E9%A2%91%E5%99%A8/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/%E5%8F%98%E9%A2%91%E5%99%A8/</loc>
-    <lastmod>2024-10-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://a233a2.github.io/p/%E5%8F%98%E9%A2%91%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/freertos/</loc>
-    <lastmod>2024-09-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/freertos/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/freertos%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
@@ -107,16 +92,10 @@
     <loc>https://a233a2.github.io/tags/adrc/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/adrc/</loc>
-    <lastmod>2024-09-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/kicad/</loc>
-    <lastmod>2024-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/kicad/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
@@ -125,16 +104,10 @@
     <loc>https://a233a2.github.io/tags/ysyx/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/categories/ysyx/</loc>
-    <lastmod>2024-09-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/%E5%88%86%E6%95%B0%E9%98%B6/</loc>
-    <lastmod>2024-09-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/%E5%88%86%E6%95%B0%E9%98%B6/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/%E5%88%86%E6%95%B0%E9%98%B6%E6%95%B0%E5%AD%A6%E6%8E%A7%E5%88%B6/</loc>
@@ -144,9 +117,6 @@
     <lastmod>2024-09-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/foc/</loc>
-    <lastmod>2024-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/foc/</loc>
     <lastmod>2024-09-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/%E4%B8%AA%E4%BA%BA%E4%BB%BB%E5%8A%A1%E6%B5%81/</loc>
@@ -169,6 +139,8 @@
   </url><url>
     <loc>https://a233a2.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/categories/foc/</loc>
   </url><url>
     <loc>https://a233a2.github.io/%E5%85%B3%E4%BA%8E/</loc>
   </url><url>
