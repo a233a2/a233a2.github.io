@@ -290,7 +290,7 @@ Error   ：G(T) = ∫(0,T) exp(Aτ) dτ·B
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;9-状态观测器设计luenberger为例&#34;&gt;9-状态观测器设计（Luenberger为例）
 &lt;/h3&gt;&lt;p&gt;LQR控制等线性控制u=-kx的前提是状态x全部可测。而对于状态不可测的系统需要观测器Observer &lt;br&gt;
-也是之前现代控制理论的必做题类型。观测器建立了一个新的反馈系统目标是使得观测值与实际值相差的err为0.   &lt;br&gt;
+也是之前现代控制理论的必做题类型。观测器建立了一个新的反馈系统目标是使得观测值与实际值相差的err为0。      &lt;br&gt;
 观测器也就是 根据系统现有的输入和输出 来估计系统的状态。 &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/91.jpg&#34;
 	width=&#34;2182&#34;
@@ -306,7 +306,7 @@ Error   ：G(T) = ∫(0,T) exp(Aτ) dτ·B
 		data-flex-basis=&#34;169px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;另外根据之前的阻尼器-弹簧-质量块经典系统进行了观测器设计，设定两个特征值期望为-1 -1. &lt;br&gt;
+&lt;p&gt;另外根据之前的阻尼器-弹簧-质量块经典系统进行了观测器设计，设定两个特征值期望为-1 -1。 &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/92.jpg&#34;
 	width=&#34;2182&#34;
 	height=&#34;2448&#34;
@@ -319,6 +319,21 @@ Error   ：G(T) = ∫(0,T) exp(Aτ) dτ·B
 		class=&#34;gallery-image&#34; 
 		data-flex-grow=&#34;89&#34;
 		data-flex-basis=&#34;213px&#34;
+	
+&gt; &lt;br&gt;
+Simulink仿真 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/93.jpg&#34;
+	width=&#34;1644&#34;
+	height=&#34;1102&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/93_hu10858130551705957268.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/93_hu7284049849754470848.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;149&#34;
+		data-flex-basis=&#34;358px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;10-可观测性与分离原理&#34;&gt;10-可观测性与分离原理
