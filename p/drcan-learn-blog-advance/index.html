@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="ODRCAN-视频学习笔记-进阶篇">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="DRCAN-视频学习笔记-进阶篇">
 <title>DRCAN-Learn-Blog-Advance</title>
 
 <link rel='canonical' href='https://a233a2.github.io/p/drcan-learn-blog-advance/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="DRCAN-Learn-Blog-Advance">
-<meta property='og:description' content="ODRCAN-视频学习笔记-进阶篇">
+<meta property='og:description' content="DRCAN-视频学习笔记-进阶篇">
 <meta property='og:url' content='https://a233a2.github.io/p/drcan-learn-blog-advance/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='DRCAN' /><meta property='article:tag' content='自控原理' /><meta property='article:tag' content='现代控制' /><meta property='article:tag' content='Matlab' /><meta property='article:published_time' content='2024-10-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-23T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="DRCAN-Learn-Blog-Advance">
-<meta name="twitter:description" content="ODRCAN-视频学习笔记-进阶篇">
+<meta name="twitter:description" content="DRCAN-视频学习笔记-进阶篇">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     </head>
@@ -328,7 +328,7 @@
     
         
         <h3 class="article-subtitle">
-            ODRCAN-视频学习笔记-进阶篇
+            DRCAN-视频学习笔记-进阶篇
         </h3>
         
     </div>
@@ -364,7 +364,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -700,6 +700,24 @@ Simulink仿真 <br>
 		class="gallery-image" 
 		data-flex-grow="149"
 		data-flex-basis="358px"
+	
+> <br>
+观测器状态空间是目标$\lambda$=-1 -1求解出来的。
+Z2状态不可测，直接运行时，估计值与真实值完全重合。
+在Z2hat估计值的地方对z2估计值进行赋初值为1的操作时，可以认为z2开始时估计值与真实值有了偏差。 <br>
+此时，系统的输出图像有了偏差，z1与z2估计值有关，所以两个图像全部出现了偏差。且能够在后续过程中完成跟随观测。
+<img src="/p/drcan-learn-blog-advance/94.jpg"
+	width="1543"
+	height="786"
+	srcset="/p/drcan-learn-blog-advance/94_hu10379666068161534470.jpg 480w, /p/drcan-learn-blog-advance/94_hu6326178576858594335.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="196"
+		data-flex-basis="471px"
 	
 ></p>
 <h3 id="10-可观测性与分离原理">10-可观测性与分离原理

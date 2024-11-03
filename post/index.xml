@@ -526,6 +526,24 @@ Simulink仿真 &lt;br&gt;
 		data-flex-grow=&#34;149&#34;
 		data-flex-basis=&#34;358px&#34;
 	
+&gt; &lt;br&gt;
+观测器状态空间是目标$\lambda$=-1 -1求解出来的。
+Z2状态不可测，直接运行时，估计值与真实值完全重合。
+在Z2hat估计值的地方对z2估计值进行赋初值为1的操作时，可以认为z2开始时估计值与真实值有了偏差。 &lt;br&gt;
+此时，系统的输出图像有了偏差，z1与z2估计值有关，所以两个图像全部出现了偏差。且能够在后续过程中完成跟随观测。
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/94.jpg&#34;
+	width=&#34;1543&#34;
+	height=&#34;786&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/94_hu10379666068161534470.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/94_hu6326178576858594335.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;196&#34;
+		data-flex-basis=&#34;471px&#34;
+	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;10-可观测性与分离原理&#34;&gt;10-可观测性与分离原理
 &lt;/h3&gt;</description>
@@ -583,7 +601,8 @@ $$L[{f(t)*g(t)}]=F(s)​G(s)$$&lt;/p&gt;
         <guid>https://a233a2.github.io/p/drcan-learn-blog-opt/</guid>
         <description>&lt;p&gt;此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。&lt;/p&gt;
 &lt;h3 id=&#34;lqr&#34;&gt;LQR
-&lt;/h3&gt;&lt;h3 id=&#34;mpc&#34;&gt;MPC
+&lt;/h3&gt;&lt;p&gt;线性二次型调节器，在Advance教程中有提及到。&lt;/p&gt;
+&lt;h3 id=&#34;mpc&#34;&gt;MPC
 &lt;/h3&gt;</description>
         </item>
         <item>
