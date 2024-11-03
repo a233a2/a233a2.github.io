@@ -195,7 +195,7 @@ $$e=−dt/dλ$$ &lt;br&gt;
         <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</guid>
-        <description>&lt;h3 id=&#34;xtdrone仿真环境搭建&#34;&gt;XTdrone仿真环境搭建
+        <description>&lt;img src="https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg" alt="Featured image of post XTdrone仿真环境" /&gt;&lt;h3 id=&#34;xtdrone仿真环境搭建&#34;&gt;XTdrone仿真环境搭建
 &lt;/h3&gt;&lt;p&gt;使用了XTdrone推荐的自动配置，开发环境是Ubuntu 22.04&lt;br&gt;
 下午时花了两个小时手动配置没配置好，弄这种大工程还是得新系统比较好一点。&lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg&#34;
@@ -404,7 +404,7 @@ PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳�
         <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/</guid>
-        <description>&lt;h3 id=&#34;px4在linux环境下的编译make&#34;&gt;PX4在Linux环境下的编译（make）
+        <description>&lt;img src="https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/fengmian.png" alt="Featured image of post PX4二次开发以及仿真PX4-2" /&gt;&lt;h3 id=&#34;px4在linux环境下的编译make&#34;&gt;PX4在Linux环境下的编译（make）
 &lt;/h3&gt;&lt;p&gt;使用VM17虚拟机以及Ubuntu20.04对PX4项目进行编译。&lt;br&gt;
 参考了超维空间科技的文章:&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_38768959/article/details/106041494&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;超维空间科技的文章&lt;/a&gt; &lt;br&gt;
@@ -1067,7 +1067,7 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
         <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/</guid>
-        <description>&lt;h3 id=&#34;臭猫foc驱动器设计日志&#34;&gt;臭猫FOC驱动器设计日志
+        <description>&lt;img src="https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cm_foc_real2.png" alt="Featured image of post CM_FOC驱动器" /&gt;&lt;h3 id=&#34;臭猫foc驱动器设计日志&#34;&gt;臭猫FOC驱动器设计日志
 &lt;/h3&gt;&lt;p&gt;主控芯片：WCH-CH32V307VCT6&lt;br&gt;
 预驱芯片：EG2133&lt;br&gt;
 MOS：NEC6050&lt;br&gt;
@@ -1425,7 +1425,7 @@ SH1.25的接口画错了，属实是大意了。飞线暂时解决了问题。
         <pubDate>Mon, 15 Jul 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/</guid>
-        <description>&lt;h3 id=&#34;ch32平衡车开发板设计&#34;&gt;CH32平衡车开发板设计
+        <description>&lt;img src="https://a233a2.github.io/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/mainboard.JPG" alt="Featured image of post CH32平衡车开发板" /&gt;&lt;h3 id=&#34;ch32平衡车开发板设计&#34;&gt;CH32平衡车开发板设计
 &lt;/h3&gt;&lt;p&gt;主控芯片：CH32V307VCT6
 电机驱动：TB6612方案
 下载芯片：CH549G

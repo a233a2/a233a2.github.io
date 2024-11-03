@@ -22,7 +22,7 @@
         <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/drcan-learn-blog-advance/</guid>
-        <description>&lt;p&gt;此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。&lt;/p&gt;
+        <description>&lt;img src="https://a233a2.github.io/p/drcan-learn-blog-advance/1-1.jpg" alt="Featured image of post DRCAN-Learn-Blog-Advance" /&gt;&lt;p&gt;此Blog记录了本人按照DRCAN视频推荐的学习顺序来系统学习DRCAN发表的控制相关视频。博客作为笔记使用。&lt;/p&gt;
 &lt;h3 id=&#34;1-状态空间表达&#34;&gt;1-状态空间表达
 &lt;/h3&gt;&lt;p&gt;以一个质量块-弹簧-阻尼器系统来进行分析：&lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/1-1.jpg&#34;
@@ -429,7 +429,7 @@ $$L[{f(t)*g(t)}]=F(s)​G(s)$$&lt;/p&gt;
         <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</guid>
-        <description>&lt;h3 id=&#34;xtdrone仿真环境搭建&#34;&gt;XTdrone仿真环境搭建
+        <description>&lt;img src="https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg" alt="Featured image of post XTdrone仿真环境" /&gt;&lt;h3 id=&#34;xtdrone仿真环境搭建&#34;&gt;XTdrone仿真环境搭建
 &lt;/h3&gt;&lt;p&gt;使用了XTdrone推荐的自动配置，开发环境是Ubuntu 22.04&lt;br&gt;
 下午时花了两个小时手动配置没配置好，弄这种大工程还是得新系统比较好一点。&lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg&#34;
@@ -460,7 +460,7 @@ $$L[{f(t)*g(t)}]=F(s)​G(s)$$&lt;/p&gt;
         <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/</guid>
-        <description>&lt;h3 id=&#34;px4在linux环境下的编译make&#34;&gt;PX4在Linux环境下的编译（make）
+        <description>&lt;img src="https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/fengmian.png" alt="Featured image of post PX4二次开发以及仿真PX4-2" /&gt;&lt;h3 id=&#34;px4在linux环境下的编译make&#34;&gt;PX4在Linux环境下的编译（make）
 &lt;/h3&gt;&lt;p&gt;使用VM17虚拟机以及Ubuntu20.04对PX4项目进行编译。&lt;br&gt;
 参考了超维空间科技的文章:&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_38768959/article/details/106041494&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;超维空间科技的文章&lt;/a&gt; &lt;br&gt;
