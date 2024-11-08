@@ -7,14 +7,33 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Thu, 24 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 08 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>算法挖坑填坑</title>
+        <link>https://a233a2.github.io/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/</link>
+        <pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/</guid>
+        <description>&lt;h3 id=&#34;卡尔曼滤波算法&#34;&gt;卡尔曼滤波算法
+&lt;/h3&gt;&lt;h3 id=&#34;扩展卡尔曼滤波算法ekf&#34;&gt;扩展卡尔曼滤波算法（EKF）
+&lt;/h3&gt;&lt;h3 id=&#34;傅里叶变换&#34;&gt;傅里叶变换
+&lt;/h3&gt;&lt;h3 id=&#34;快速傅里叶变换法&#34;&gt;快速傅里叶变换法
+&lt;/h3&gt;&lt;h3 id=&#34;反步法&#34;&gt;反步法
+&lt;/h3&gt;&lt;h3 id=&#34;滑膜算法&#34;&gt;滑膜算法
+&lt;/h3&gt;&lt;h3 id=&#34;模糊pid算法&#34;&gt;模糊PID算法
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>工程数学基础</title>
         <link>https://a233a2.github.io/p/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;h2 id=&#34;矩阵&#34;&gt;矩阵
-&lt;/h2&gt;</description>
+        <description>&lt;h2 id=&#34;一些概念&#34;&gt;一些概念
+&lt;/h2&gt;&lt;h3 id=&#34;范数&#34;&gt;范数
+&lt;/h3&gt;&lt;h3 id=&#34;高斯函数&#34;&gt;高斯函数
+&lt;/h3&gt;&lt;h3 id=&#34;最小二乘法&#34;&gt;最小二乘法
+&lt;/h3&gt;&lt;h3 id=&#34;最小二乘-矩阵形式推导&#34;&gt;最小二乘-矩阵形式推导
+&lt;/h3&gt;</description>
         </item>
         <item>
         <title>DRCAN-Learn-Blog-Advance</title>
