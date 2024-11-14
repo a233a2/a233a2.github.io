@@ -825,6 +825,20 @@ $$L[{f(t)*g(t)}]=F(s)​G(s)$$&lt;/p&gt;
 &lt;/h3&gt;</description>
         </item>
         <item>
+        <title>Simulink-PX4仿真</title>
+        <link>https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/</link>
+        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/</guid>
+        <description>&lt;img src="https://a233a2.github.io/fengmian.png" alt="Featured image of post Simulink-PX4仿真" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置&#34;&gt;PX4-Simulink联合环境配置
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1gF411T7st?spm_id_from=333.788.recommend_more_video.1&amp;amp;vd_source=c07e49f2b08d68d3bb624651ee908d97&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;基于Simulink的ROS2下PX4无人机控制框架-入门篇&lt;/a&gt;
+PX4版本：群里的版本1.13？
+Matlab版本：2022b&lt;/p&gt;
+&lt;h3 id=&#34;四旋翼数学模型的推导&#34;&gt;四旋翼数学模型的推导
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>ADRC课程笔记</title>
         <link>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
