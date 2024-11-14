@@ -414,43 +414,85 @@
 		data-flex-basis="271px"
 	
 ></p>
-<p>1.ci：
-这个目录通常包含与持续集成（CI）相关的配置文件，例如Jenkins、Travis CI或GitHub Actions的配置。它负责自动化编译、测试、部署等任务。</p>
-<p>2.clusterfuzzlite：
-用于与ClusterFuzzLite相关的配置文件，这是一种自动化模糊测试框架，帮助发现代码中的安全漏洞。</p>
-<p>3.devcontainer：
-包含VSCode开发容器的配置，用于在隔离的容器环境中开发PX4代码。方便开发人员在一致的开发环境中工作。</p>
-<p>4.github：
-包含GitHub的配置文件，如GitHub Actions、Issue模板和Pull Request模板，用于自动化流程和优化项目管理。</p>
-<p>5.vscode：
-包含Visual Studio Code的配置文件，定义了编译、调试和代码检查的工作流，以便开发人员在VSCode中更方便地开发PX4代码。</p>
-<p>6.Documentation：
-包含项目的文档文件，帮助开发者和用户了解如何使用、配置和开发PX4飞控系统。通常包括用户指南、API文档、教程等。</p>
-<p>7.ROMFS：
-ROMFS是只读文件系统，通常用于存储PX4固件中的静态数据，如参数文件、启动脚本等。</p>
-<p>8.Tools：
-这个目录包含各种开发工具和脚本，常用于构建、测试、仿真和部署PX4代码。比如，可能包含用于自动化工具链配置的脚本。</p>
-<p>9.boards：
-包含与各种硬件平台（如飞控板、传感器等）相关的定义和配置文件。每种硬件的特定启动配置和硬件抽象层都位于该目录中。</p>
-<p>10.cmake：
-包含CMake构建系统的配置文件，用于定义如何编译PX4代码。CMake是一个跨平台的构建工具，管理依赖项和生成编译文件。</p>
-<p>11.integrationtests/python_src/px4_it：
-包含集成测试相关的Python脚本，主要用于自动化测试PX4的不同模块和功能，以确保系统的稳定性和正确性。</p>
-<p>12.launch：
-包含与ROS或仿真环境中的启动文件相关的配置，通常是用于启动PX4在仿真器或真实硬件上的配置文件。</p>
-<p>13.msg：
-包含与PX4通信协议（如MAVLink）相关的消息定义文件，用于定义飞控系统与外部系统（如地面站、传感器等）之间的消息格式。</p>
-<p>14.platforms：
-包含与不同硬件平台相关的底层代码和配置，如NuttX的初始化文件、硬件抽象层等。</p>
-<p>15.posix-configs：
-包含POSIX系统（如Linux）上的配置文件，通常用于定义在仿真环境中运行PX4的配置。</p>
-<p>//16.src：
-源代码目录，包含PX4的主要功能模块的实现代码，如飞行控制算法、传感器处理、姿态估计等。</p>
-<p>17.srv：
-服务定义文件，通常用于ROS系统中的服务（services），用于系统内不同节点之间的通信和请求/响应模式的交互。</p>
-<p>18.test：
-包含测试代码和测试框架，用于对PX4功能进行单元测试和集成测试，确保各个模块功能的正确性和健壮性。</p>
-<p><img src="/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1/px4_2.png"
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1.ci：
+</span></span><span class="line"><span class="cl">这个目录通常包含与持续集成（CI）相关的配置文件，例如Jenkins、Travis CI或GitHub Actions的配置。它负责自动化编译、测试、部署等任务。
+</span></span><span class="line"><span class="cl">2.clusterfuzzlite：
+</span></span><span class="line"><span class="cl">用于与ClusterFuzzLite相关的配置文件，这是一种自动化模糊测试框架，帮助发现代码中的安全漏洞。
+</span></span><span class="line"><span class="cl">3.devcontainer：
+</span></span><span class="line"><span class="cl">包含VSCode开发容器的配置，用于在隔离的容器环境中开发PX4代码。方便开发人员在一致的开发环境中工作。
+</span></span><span class="line"><span class="cl">4.github：
+</span></span><span class="line"><span class="cl">包含GitHub的配置文件，如GitHub Actions、Issue模板和Pull Request模板，用于自动化流程和优化项目管理。
+</span></span><span class="line"><span class="cl">5.vscode：
+</span></span><span class="line"><span class="cl">包含Visual Studio Code的配置文件，定义了编译、调试和代码检查的工作流，以便开发人员在VSCode中更方便地开发PX4代码。
+</span></span><span class="line"><span class="cl">6.Documentation：
+</span></span><span class="line"><span class="cl">包含项目的文档文件，帮助开发者和用户了解如何使用、配置和开发PX4飞控系统。通常包括用户指南、API文档、教程等。
+</span></span><span class="line"><span class="cl">7.ROMFS：
+</span></span><span class="line"><span class="cl">ROMFS是只读文件系统，通常用于存储PX4固件中的静态数据，如参数文件、启动脚本等。
+</span></span><span class="line"><span class="cl">8.Tools：
+</span></span><span class="line"><span class="cl">这个目录包含各种开发工具和脚本，常用于构建、测试、仿真和部署PX4代码。比如，可能包含用于自动化工具链配置的脚本。
+</span></span><span class="line"><span class="cl">9.boards：
+</span></span><span class="line"><span class="cl">包含与各种硬件平台（如飞控板、传感器等）相关的定义和配置文件。每种硬件的特定启动配置和硬件抽象层都位于该目录中。
+</span></span><span class="line"><span class="cl">10.cmake：
+</span></span><span class="line"><span class="cl">包含CMake构建系统的配置文件，用于定义如何编译PX4代码。CMake是一个跨平台的构建工具，管理依赖项和生成编译文件。
+</span></span><span class="line"><span class="cl">11.integrationtests/python_src/px4_it：
+</span></span><span class="line"><span class="cl">包含集成测试相关的Python脚本，主要用于自动化测试PX4的不同模块和功能，以确保系统的稳定性和正确性。
+</span></span><span class="line"><span class="cl">12.launch：
+</span></span><span class="line"><span class="cl">包含与ROS或仿真环境中的启动文件相关的配置，通常是用于启动PX4在仿真器或真实硬件上的配置文件。
+</span></span><span class="line"><span class="cl">13.msg：
+</span></span><span class="line"><span class="cl">包含与PX4通信协议（如MAVLink）相关的消息定义文件，用于定义飞控系统与外部系统（如地面站、传感器等）之间的消息格式。
+</span></span><span class="line"><span class="cl">14.platforms：
+</span></span><span class="line"><span class="cl">包含与不同硬件平台相关的底层代码和配置，如NuttX的初始化文件、硬件抽象层等。
+</span></span><span class="line"><span class="cl">15.posix-configs：
+</span></span><span class="line"><span class="cl">包含POSIX系统（如Linux）上的配置文件，通常用于定义在仿真环境中运行PX4的配置。
+</span></span><span class="line"><span class="cl">//16.src：
+</span></span><span class="line"><span class="cl">源代码目录，包含PX4的主要功能模块的实现代码，如飞行控制算法、传感器处理、姿态估计等。
+</span></span><span class="line"><span class="cl">17.srv：
+</span></span><span class="line"><span class="cl">服务定义文件，通常用于ROS系统中的服务（services），用于系统内不同节点之间的通信和请求/响应模式的交互。
+</span></span><span class="line"><span class="cl">18.test：
+</span></span><span class="line"><span class="cl">包含测试代码和测试框架，用于对PX4功能进行单元测试和集成测试，确保各个模块功能的正确性和健壮性。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1/px4_2.png"
 	width="997"
 	height="816"
 	srcset="/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1/px4_2_hu5588688417697814020.png 480w, /p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1/px4_2_hu15962098568375647639.png 1024w"
@@ -464,65 +506,110 @@ ROMFS是只读文件系统，通常用于存储PX4固件中的静态数据，如
 		data-flex-basis="293px"
 	
 ></p>
-<p>19.test_data：
-包含测试所需的测试数据或测试脚本，用于集成测试和回归测试，以验证代码改动是否影响系统行为。</p>
-<p>20.validation：
-包含验证代码、数据或测试的文件，确保PX4的各个部分在特定条件下的表现符合预期。</p>
-<p>21.clang-tidy：
-Clang-Tidy是一个C++代码分析工具，这个文件包含其配置，用于代码的静态分析，发现潜在的错误和优化点。</p>
-<p>22.editorconfig：
-EditorConfig配置文件，用于定义代码格式的规则，如缩进、换行符、字符编码等，确保不同开发者之间代码风格的一致性。</p>
-<p>23.gitattributes、.gitignore：
-用于Git的配置文件。.gitattributes用于定义文件的特定处理方式，.gitignore则列出需要被Git忽略的文件和目录。</p>
-<p>24.CMakeLists.txt：
-这是CMake项目的核心配置文件，定义了如何编译整个PX4项目，包括源文件的路径、依赖项、编译选项等。</p>
-<p>25.CODE_OF_CONDUCT.md：
-项目的行为准则，规定了开发者在贡献代码和参与社区时需要遵守的行为规范。</p>
-<p>26.CONTRIBUTING.md：
-为开发者提供的贡献指南，解释了如何参与项目开发、提交代码和报告问题等流程。</p>
-<p>27.CTestConfig.cmake：
-CMake的测试配置文件，定义了如何运行项目的测试，并收集测试结果。</p>
-<p>28.Jenkinsfile：
-Jenkins持续集成系统的配置文件，定义了在Jenkins上自动化构建和测试的流水线。</p>
-<p>29.Kconfig：
-用于配置系统的文件，通常用于嵌入式系统中，定义了各个硬件模块或软件模块的配置选项。</p>
-<p>30.LICENSE：
-项目的开源许可证文件，说明了PX4的使用和分发权限。</p>
-<p>31.Makefile：
-传统的编译配置文件，定义了如何使用Make工具构建项目。对于不使用CMake的部分或平台，Makefile提供了另一种编译方式。</p>
-<p>32.README.md：
-项目的概述和基本介绍，通常包括如何编译、安装和使用PX4飞控系统的基本信息。</p>
-<p>33.SECURITY.md：
-有关安全漏洞报告和处理流程的文档，指导开发者如何报告和解决项目中的安全问题。</p>
-<p>34.package.xml：
-通常用于ROS包，定义了包的元数据，如依赖项、版本号和维护者信息。</p>
-<h3 id="src文件解析">SRC文件解析
-</h3><ol>
-<li>
-<p>src/modules/mc_att_control：
-这个目录包含与多旋翼无人机姿态控制相关的代码。姿态控制的核心就是通过PID控制器来调节无人机的滚转、俯仰和偏航角的稳定性。
-mc_att_control_main.cpp 是姿态控制的主要代码文件。</p>
-</li>
-<li>
-<p>src/modules/mc_pos_control：
-这个目录包含与多旋翼无人机位置控制相关的代码。PID控制器在此负责无人机的三维位置和高度控制。
-mc_pos_control_main.cpp 是位置控制的核心实现文件，包含位置控制的PID逻辑。</p>
-</li>
-<li>
-<p>src/lib/controllib：
-这个目录下包含PX4的控制库，其中定义了PID控制器的通用实现。这里的文件用于多个模块的控制需求。
-pid.cpp 是PID控制器的核心实现，定义了如何计算误差、比例项、积分项和微分项。</p>
-</li>
-<li>
-<p>src/modules/fw_att_control 和 src/modules/fw_pos_control：
-如果你关注的是固定翼无人机的PID控制，可以查看这两个目录。它们分别负责固定翼无人机的姿态控制和位置控制。</p>
-</li>
-<li>
-<p>参数文件 (ROMFS)：
-PID控制器的参数通常在参数文件中定义，可以通过修改这些参数调整控制器的性能。可以在 ROMFS/px4fmu_common/init.d 目录中找到默认的参数文件，里面会定义PID控制器的增益值（如P、I、D系数）。</p>
-</li>
-</ol>
-<h3 id="nuttxrtos">NuttxRTOS
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">19.test_data：
+</span></span><span class="line"><span class="cl">包含测试所需的测试数据或测试脚本，用于集成测试和回归测试，以验证代码改动是否影响系统行为。
+</span></span><span class="line"><span class="cl">20.validation：
+</span></span><span class="line"><span class="cl">包含验证代码、数据或测试的文件，确保PX4的各个部分在特定条件下的表现符合预期。
+</span></span><span class="line"><span class="cl">21.clang-tidy：
+</span></span><span class="line"><span class="cl">Clang-Tidy是一个C++代码分析工具，这个文件包含其配置，用于代码的静态分析，发现潜在的错误和优化点。
+</span></span><span class="line"><span class="cl">22.editorconfig：
+</span></span><span class="line"><span class="cl">EditorConfig配置文件，用于定义代码格式的规则，如缩进、换行符、字符编码等，确保不同开发者之间代码风格的一致性。
+</span></span><span class="line"><span class="cl">23.gitattributes、.gitignore：
+</span></span><span class="line"><span class="cl">用于Git的配置文件。.gitattributes用于定义文件的特定处理方式，.gitignore则列出需要被Git忽略的文件和目录。
+</span></span><span class="line"><span class="cl">24.CMakeLists.txt：
+</span></span><span class="line"><span class="cl">这是CMake项目的核心配置文件，定义了如何编译整个PX4项目，包括源文件的路径、依赖项、编译选项等。
+</span></span><span class="line"><span class="cl">25.CODE_OF_CONDUCT.md：
+</span></span><span class="line"><span class="cl">项目的行为准则，规定了开发者在贡献代码和参与社区时需要遵守的行为规范。
+</span></span><span class="line"><span class="cl">26.CONTRIBUTING.md：
+</span></span><span class="line"><span class="cl">为开发者提供的贡献指南，解释了如何参与项目开发、提交代码和报告问题等流程。
+</span></span><span class="line"><span class="cl">27.CTestConfig.cmake：
+</span></span><span class="line"><span class="cl">CMake的测试配置文件，定义了如何运行项目的测试，并收集测试结果。
+</span></span><span class="line"><span class="cl">28.Jenkinsfile：
+</span></span><span class="line"><span class="cl">Jenkins持续集成系统的配置文件，定义了在Jenkins上自动化构建和测试的流水线。
+</span></span><span class="line"><span class="cl">29.Kconfig：
+</span></span><span class="line"><span class="cl">用于配置系统的文件，通常用于嵌入式系统中，定义了各个硬件模块或软件模块的配置选项。
+</span></span><span class="line"><span class="cl">30.LICENSE：
+</span></span><span class="line"><span class="cl">项目的开源许可证文件，说明了PX4的使用和分发权限。
+</span></span><span class="line"><span class="cl">31.Makefile：
+</span></span><span class="line"><span class="cl">传统的编译配置文件，定义了如何使用Make工具构建项目。对于不使用CMake的部分或平台，Makefile提供了另一种编译方式。
+</span></span><span class="line"><span class="cl">32.README.md：
+</span></span><span class="line"><span class="cl">项目的概述和基本介绍，通常包括如何编译、安装和使用PX4飞控系统的基本信息。
+</span></span><span class="line"><span class="cl">33.SECURITY.md：
+</span></span><span class="line"><span class="cl">有关安全漏洞报告和处理流程的文档，指导开发者如何报告和解决项目中的安全问题。
+</span></span><span class="line"><span class="cl">34.package.xml：
+</span></span><span class="line"><span class="cl">通常用于ROS包，定义了包的元数据，如依赖项、版本号和维护者信息。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="src文件解析">SRC文件解析
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. src/modules/mc_att_control：
+</span></span><span class="line"><span class="cl">这个目录包含与多旋翼无人机姿态控制相关的代码。姿态控制的核心就是通过PID控制器来调节无人机的滚转、俯仰和偏航角的稳定性。
+</span></span><span class="line"><span class="cl">mc_att_control_main.cpp 是姿态控制的主要代码文件。
+</span></span><span class="line"><span class="cl">2. src/modules/mc_pos_control：
+</span></span><span class="line"><span class="cl">这个目录包含与多旋翼无人机位置控制相关的代码。PID控制器在此负责无人机的三维位置和高度控制。
+</span></span><span class="line"><span class="cl">mc_pos_control_main.cpp 是位置控制的核心实现文件，包含位置控制的PID逻辑。
+</span></span><span class="line"><span class="cl">3. src/lib/controllib：
+</span></span><span class="line"><span class="cl">这个目录下包含PX4的控制库，其中定义了PID控制器的通用实现。这里的文件用于多个模块的控制需求。
+</span></span><span class="line"><span class="cl">pid.cpp 是PID控制器的核心实现，定义了如何计算误差、比例项、积分项和微分项。
+</span></span><span class="line"><span class="cl">4. src/modules/fw_att_control 和 src/modules/fw_pos_control：
+</span></span><span class="line"><span class="cl">如果你关注的是固定翼无人机的PID控制，可以查看这两个目录。它们分别负责固定翼无人机的姿态控制和位置控制。
+</span></span><span class="line"><span class="cl">5. 参数文件 (ROMFS)：
+</span></span><span class="line"><span class="cl">PID控制器的参数通常在参数文件中定义，可以通过修改这些参数调整控制器的性能。可以在 ROMFS/px4fmu_common/init.d 目录中找到默认的参数文件，里面会定义PID控制器的增益值（如P、I、D系数）。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="nuttxrtos">NuttxRTOS
 </h3><p>这应该是个很复杂的单片机实时系统。</p>
 <h3 id="mavlink协议">MAVLink协议
 </h3><p>QGC地面站会通过MAVLink协议将QGC针对飞机的配置参数发送给飞控系统，而飞控系统则将这些参数存储在存储设备中。

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>NeruNet on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/tags/nerunet/</link>
+        <description>Recent content in NeruNet on sunjiyi&#39;s Blogggg</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Sunjiyi Make and Design</copyright>
+        <lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/nerunet/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>神经网络基础</title>
+        <link>https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+        <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;h2 id=&#34;基础&#34;&gt;基础
+&lt;/h2&gt;&lt;h3 id=&#34;两层神经网络分析为例&#34;&gt;两层神经网络分析为例
+&lt;/h3&gt;&lt;p&gt;摘自zhihu：&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/65472471&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;神经网络15分钟入门！足够通俗易懂了吧&lt;/a&gt;    &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png&#34;
+	width=&#34;891&#34;
+	height=&#34;562&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu5277222655574983243.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu1044721732596226.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;两层神经网络典型结构&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;158&#34;
+		data-flex-basis=&#34;380px&#34;
+	
+&gt; &lt;br&gt;
+任务描述：在坐标系中，给出一个坐标系，使用神经网络进行分类象限。&lt;/p&gt;
+&lt;h4 id=&#34;输入层&#34;&gt;输入层
+&lt;/h4&gt;&lt;p&gt;在我们的例子中，输入层是坐标值，例如（1,1），这是一个包含两个元素的数组，
+也可以看作是一个1&lt;em&gt;2的矩阵。输入层的元素维度与输入量的特征息息相关，如果输
+入的是一张32&lt;/em&gt;32像素的灰度图像，那么输入层的维度就是32*32。&lt;/p&gt;
+&lt;h4 id=&#34;输入层到隐藏层&#34;&gt;输入层到隐藏层
+&lt;/h4&gt;&lt;p&gt;连接输入层和隐藏层的是W1和b1。由X计算得到H十分简单，就是矩阵运算： &lt;br&gt;
+$$ H=X&lt;em&gt;W1+b1 $$ &lt;br&gt;
+如上图中所示，在设定隐藏层为50维（也可以理解成50个神经元）之后，矩阵H的大小为（1&lt;/em&gt;50）的矩阵。&lt;/p&gt;
+&lt;h4 id=&#34;隐藏层到输出层&#34;&gt;隐藏层到输出层
+&lt;/h4&gt;&lt;p&gt;连接隐藏层和输出层的是W2和b2。同样是通过矩阵运算进行的： &lt;br&gt;
+$$ Y=H*W2+b2 $$ &lt;br&gt;
+通过上述两个线性方程的计算，我们就能得到最终的输出Y了，但是如果你还对线性代数的计算有印象的话，应该会知道：一系列线性方程的运算最终都可以用一个线性方程表示。也就是说，上述两个式子联立后可以用一个线性方程表达。对于两次神经网络是这样，就算网络深度加到100层，也依然是这样。这样的话神经网络就失去了意义。&lt;/p&gt;
+&lt;h4 id=&#34;激活层&#34;&gt;激活层
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;神经网络中的激活层（Activation Layer）主要负责为网络中的每一层神经元引入非线性因素。没有激活函数，神经网络就只能执行线性变换，而线性变换无法表达复杂的模式和特征。因此，激活函数是神经网络能够处理非线性问题、进行更复杂计算的关键。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;简而言之，激活层是为矩阵运算的结果添加非线性的。常用的激活函数有三种，分别是阶跃函数、Sigmoid和ReLU。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%BF%80%E6%B4%BB%E5%B1%82%E5%87%BD%E6%95%B0%E5%9B%BE.png&#34;
+	width=&#34;854&#34;
+	height=&#34;321&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%BF%80%E6%B4%BB%E5%B1%82%E5%87%BD%E6%95%B0%E5%9B%BE_hu13585017930976706445.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%BF%80%E6%B4%BB%E5%B1%82%E5%87%BD%E6%95%B0%E5%9B%BE_hu12689560312530861627.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;激活层函数图&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;266&#34;
+		data-flex-basis=&#34;638px&#34;
+	
+&gt; &lt;br&gt;
+其中，阶跃函数输出值是跳变的，且只有二值，较少使用；Sigmoid函数在当x的绝对值较大时，曲线的斜率变化很小（梯度消失），并且计算较复杂；ReLU是当前较为常用的激活函数。  &lt;br&gt;
+激活函数具体是怎么计算的呢？ &lt;br&gt;
+假如经过公式H=X*W1+b1计算得到的H值为：(1,-2,3,-4,7&amp;hellip;)，那么经过阶跃函数激活层后就会变为(1,0,1,0,1&amp;hellip;)，经过ReLU激活层之后会变为(1,0,3,0,7&amp;hellip;)。 &lt;br&gt;
+需要注意的是，&lt;strong&gt;每个隐藏层计算（矩阵线性运算）之后，都需要加一层激活层，要不然该层线性计算是没有意义的。&lt;/strong&gt;   &lt;br&gt;
+神经网络之所以能够处理复杂的任务，正是因为非线性激活函数的存在。激活函数将线性变换的输出“扭曲”成非线性，从而让网络能够捕捉数据中的非线性关系，例如在图像、语音、文本等复杂场景中。&lt;/p&gt;
+&lt;h4 id=&#34;输出的正规化&#34;&gt;输出的正规化
+&lt;/h4&gt;&lt;p&gt;现在我们的输出Y的值可能会是(3,1,0.1,0.5)这样的矩阵，诚然我们可以找到里边的最大值“3”，从而找到对应的分类为I，但是这并不直观。我们想让最终的输出为概率，也就是说可以生成像(90%,5%,2%,3%)这样的结果，这样做不仅可以找到最大概率的分类，而且可以知道各个分类计算的概率值。&lt;/p&gt;
+&lt;h5 id=&#34;softmax正规化&#34;&gt;Softmax正规化
+&lt;/h5&gt;&lt;p&gt;$$ S_i=\frac{e^i}{\sum{_je^j}} $$ &lt;br&gt;
+简单来说分三步进行：（1）以e为底对所有元素求指数幂；（2）将所有指数幂求和；（3）分别将这些指数幂与该和做商。这样求出的结果中，所有元素的和一定为1，而每个元素可以代表概率值。  &lt;br&gt;
+我们将使用这个计算公式做输出结果正规化处理的层叫做“Softmax”层。此时的神经网络将变成如上图所示：&lt;/p&gt;
+&lt;h4 id=&#34;衡量输出的好坏&#34;&gt;衡量输出的好坏
+&lt;/h4&gt;&lt;p&gt;通过Softmax层之后，我们得到了I，II，III和IV这四个类别分别对应的概率，但是要注意，这是神经网络计算得到的概率值结果，而非真实的情况。&lt;/p&gt;
+&lt;p&gt;比如，Softmax输出的结果是(90%,5%,3%,2%)，真实的结果是(100%,0,0,0)。虽然输出的结果可以正确分类，但是与真实结果之间是有差距的，一个优秀的网络对结果的预测要无限接近于100%，为此，我们需要将Softmax输出结果的好坏程度做一个“量化”。  &lt;br&gt;
+一种直观的解决方法，是用1减去Softmax输出的概率，比如1-90%=0.1。不过更为常用且巧妙的方法是，求对数的负数。   &lt;br&gt;
+还是用90%举例，对数的负数就是：-log0.9=0.046  &lt;br&gt;
+&lt;strong&gt;可以想见，概率越接近100%，该计算结果值越接近于0，说明结果越准确，该输出叫做“交叉熵损失（Cross Entropy Error）”。&lt;/strong&gt;     &lt;br&gt;
+我们训练神经网络的目的，就是尽可能地减少这个“交叉熵损失”。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png&#34;
+	width=&#34;891&#34;
+	height=&#34;562&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu5277222655574983243.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu1044721732596226.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;两层神经网络典型结构&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;158&#34;
+		data-flex-basis=&#34;380px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;反向传播与参数优化&#34;&gt;反向传播与参数优化
+&lt;/h4&gt;&lt;p&gt;上边的1~4节，讲述了神经网络的正向传播过程。一句话复习一下：神经网络的传播都是形如Y=WX+b的矩阵运算；为了给矩阵运算加入非线性，需要在隐藏层中加入激活层；输出层结果需要经过Softmax层处理为概率值，并通过交叉熵损失来量化当前网络的优劣。 &lt;br&gt;
+算出交叉熵损失后，就要开始反向传播了。其实反向传播就是一个参数优化的过程，优化对象就是网络中的所有W和b（因为其他所有参数都是确定的）。 &lt;br&gt;
+神经网络的神奇之处，就在于它可以自动做W和b的优化，在深度学习中，参数的数量有时会上亿，不过其优化的原理和我们这个两层神经网络是一样的。&lt;/p&gt;
+&lt;h4 id=&#34;迭代&#34;&gt;迭代
+&lt;/h4&gt;&lt;p&gt;神经网络需要反复迭代。 &lt;br&gt;
+如上述例子中，第一次计算得到的概率是90%，交叉熵损失值是0.046；将该损失值反向传播，使W1,b1,W2,b2做相应微调；再做第二次运算，此时的概率可能就会提高到92%，相应地，损失值也会下降，然后再反向传播损失值，微调参数W1,b1,W2,b2。依次类推，损失值越来越小，直到我们满意为止。 &lt;br&gt;
+此时我们就得到了理想的W1,b1,W2,b2。 &lt;br&gt;
+此时如果将任意一组坐标作为输入，利用图4或图5的流程，就能得到分类结果。&lt;/p&gt;
+&lt;h2 id=&#34;各类型神经网络&#34;&gt;各类型神经网络
+&lt;/h2&gt;&lt;h3 id=&#34;cnn卷积神经网络30分钟入门&#34;&gt;CNN卷积神经网络30分钟入门
+&lt;/h3&gt;&lt;p&gt;摘自：&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/635438713&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【深度学习-第2篇】CNN卷积神经网络30分钟入门！足够通俗易懂了吧（图解）&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;从前馈神经网络到cnn&#34;&gt;从前馈神经网络到CNN
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;前馈神经网络（Feedforward Neural Networks）&lt;strong&gt;是最基础的神经网络模型，也被称为&lt;/strong&gt;多层感知机（MLP）。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;它由多个神经元组成，每个神经元与前一层的所有神经元相连，形成一个“全连接”的结构。每个神经元会对其输入数据进行线性变换（通过权重矩阵），然后通过一个非线性函数（如ReLU或Sigmoid）进行激活。这就是前馈神经网络的基本操作。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png&#34;
+	width=&#34;891&#34;
+	height=&#34;562&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu5277222655574983243.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu1044721732596226.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;前馈神经网络结构示意&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;158&#34;
+		data-flex-basis=&#34;380px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;卷积神经网络（Convolutional Neural Network, 简称CNN）开始。很大程度上，是由于CNN的基本组成部分与前馈神经网络有很紧密的关联，甚至可以说，CNN就是一种特殊的前馈神经网络。 &lt;br&gt;
+这两者的主要区别在于，CNN在前馈神经网络的基础上加入了&lt;strong&gt;卷积层&lt;/strong&gt;和&lt;strong&gt;池化层&lt;/strong&gt;（下边会讲到），以便&lt;strong&gt;更好地处理图像等具有空间结构的数据。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;现在画图说明一下。对于前馈神经网络，我们可以将简化后的网络结构如下图表示： &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E5%8C%96.png&#34;
+	width=&#34;617&#34;
+	height=&#34;445&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E5%8C%96_hu9534132991121884414.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E5%8C%96_hu12127138679068705312.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;前馈神经网络的简易表示&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;138&#34;
+		data-flex-basis=&#34;332px&#34;
+	
+&gt;    &lt;br&gt;
+当然，【全连接层-ReLU】可以有多个，此时网络结构可以表示为： &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%A4%9A%E5%85%A8%E9%93%BE%E6%8E%A5%E5%B1%82%E7%9A%84%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png&#34;
+	width=&#34;880&#34;
+	height=&#34;574&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%A4%9A%E5%85%A8%E9%93%BE%E6%8E%A5%E5%B1%82%E7%9A%84%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_hu17755815143800048140.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%A4%9A%E5%85%A8%E9%93%BE%E6%8E%A5%E5%B1%82%E7%9A%84%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_hu4776322760612417449.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;多全链接层的前馈神经网络&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;153&#34;
+		data-flex-basis=&#34;367px&#34;
+	
+&gt;    &lt;br&gt;
+简单地说，CNN就是在此基础上，将全连接层换成卷积层，并在ReLU层之后加入池化层（非必须），那么一个基本的CNN结构就可以表示成这样： &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/N%E5%B1%82%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png&#34;
+	width=&#34;879&#34;
+	height=&#34;557&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/N%E5%B1%82%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_hu14598001535105996045.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/N%E5%B1%82%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_hu11187312952505986625.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;N层卷积神经网络&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;157&#34;
+		data-flex-basis=&#34;378px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;卷积层&#34;&gt;卷积层
+&lt;/h4&gt;&lt;p&gt;使用卷积是为了更好的处理图像等信息。若使用全连接前馈神经网络来处理图像，会使得参数太多、不利于表达空间上的结构。另外难以反应平移不变性。CNN由于权重共享，可以无论特征在何处出现都能被检测到，从而提供了一种平移不变性。另外难以表征抽象层级。CNN通过多个卷积层和池化层的叠加，可以从低级的边缘和纹理特征逐渐抽取出高级的语义特征。这个特性使得CNN非常适合于处理图像等需要多层抽象表示的数据。  &lt;br&gt;
+卷积的过程，其实是一种滤波的过程，所以卷积核（Convolution Kernel）还有一个别名叫做Filter，也就是滤波器。     &lt;br&gt;
+&lt;strong&gt;当一组数像滑窗一样滑过另外一组数时，将对应的数据相乘并求和得到一组新的数，这个过程必然和卷积有着莫大的关系。&lt;/strong&gt; &lt;br&gt;
+其中权重系数都为1/3，也就是均值滤波的过程。变换不同的权重系数，滤波器将展现出不同的滤波特性。所以我们又可以得到一个结论：当权重系数（卷积核）的参数改变时，它可以提取的特征类型也会改变。所以训练卷积神经网络时，实质上训练的是卷积核的参数。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%8D%B7%E7%A7%AF%E6%A0%B8%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B-%E4%BA%8C%E7%BB%B4png.png&#34;
+	width=&#34;607&#34;
+	height=&#34;440&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%8D%B7%E7%A7%AF%E6%A0%B8%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B-%E4%BA%8C%E7%BB%B4png_hu3303549474147394459.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%8D%B7%E7%A7%AF%E6%A0%B8%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B-%E4%BA%8C%E7%BB%B4png_hu7281252247270003854.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;卷积核运算过程-二维&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;137&#34;
+		data-flex-basis=&#34;331px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1.定义一个卷积核：卷积核是一个小的矩阵（例如3x3或5x5），包含一些数字。这个卷积核的作用是在图像中识别特定类型的特征，例如边缘、线条等，也可能是难以描述的抽象特征。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2.卷积核滑过图像：卷积操作开始时，卷积核会被放置在图像的左上角。然后，它会按照一定的步长（stride）在图像上滑动，可以是从左到右，也可以是从上到下。步长定义了卷积核每次移动的距离。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3.计算点积：在卷积核每个位置，都会计算卷积核和图像对应部分的点积。这就是将卷积核中的每个元素与图像中对应位置的像素值相乘，然后将所有乘积相加。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4.生成新的特征图：每次计算的点积结果被用来构建一个新的图像，也称为特征图或卷积图。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5.重复以上过程：通常在一个 CNN 中，我们会有多个不同的卷积核同时进行卷积操作。这意味着我们会得到多个特征图，每个特征图捕捉了原始图像中的不同特征。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;relu在cnn中的位置&#34;&gt;ReLU在CNN中的位置
+&lt;/h4&gt;&lt;p&gt;卷积层和全连接一样，也是一种线性变换，无论进行多少次这样的操作，都只能获得输入数据的线性组合。如果没有非线性的激活函数，那么即使是多层的神经网络，在理论上也可以被一个单层的神经网络所表达，这极大地限制了网络的表达能力。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ReLU函数是一个非线性函数，只保留正数元素，将负数元素设置为0。这种简单的修正线性单元具有许多优点，例如，它能够缓解梯度消失问题，计算速度快，同时ReLU的输出是稀疏的，这有助于模型的正则化。ReLU的响应函数图像如下： &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/RELU.png&#34;
+	width=&#34;390&#34;
+	height=&#34;305&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/RELU_hu4507551843322250478.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/RELU_hu15126746602982748460.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;RELU&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;127&#34;
+		data-flex-basis=&#34;306px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;化繁为简的池化层&#34;&gt;化繁为简的池化层
+&lt;/h4&gt;&lt;p&gt;ReLU激活层之后就是池化层。 &lt;br&gt;
+池化层的主要作用是对非线性激活后的结果进行降采样，以减少参数的数量，避免过拟合，并提高模型的处理速度。 &lt;br&gt;
+池化层主要采用最大池化（Max Pooling）、平均池化（Average Pooling）等方式，对特征图进行操作。以最常见的最大池化为例，我们选择一个窗口（比如 2x2）在特征图上滑动，每次选取窗口中的最大值作为输出，这就是最大池化的工作方式： &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%B1%A0%E5%8C%96%E5%B1%82.png&#34;
+	width=&#34;516&#34;
+	height=&#34;300&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%B1%A0%E5%8C%96%E5%B1%82_hu1649860995526684222.png 480w, https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%B1%A0%E5%8C%96%E5%B1%82_hu6459201957639587312.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;池化层&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;172&#34;
+		data-flex-basis=&#34;412px&#34;
+	
+&gt;&lt;br&gt;
+大致可以看出，经过池化计算后的图像，基本就是左侧特征图的“低像素版”结果。也就是说池化运算能够保留最强烈的特征，并大大降低数据体量。&lt;/p&gt;
+&lt;p&gt;到现在，“卷积层→ReLU→池化层”这样一个CNN网络中的基本组成单元的基础概念就讲完了。但是需要注意，卷积层、ReLU和池化层的组合是一种常见模式，但不是唯一的方式。比如池化层作为降低网络复杂程度的计算环节，在算力硬件条件越来越好的当下，有些时候是可以减少采用次数的，也就是池化层可以在部分层设置、部分层不设置。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/CNN%e5%85%a8%e9%83%a8123.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CNN123&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;关于输出层&#34;&gt;关于输出层
+&lt;/h4&gt;&lt;p&gt;在卷积神经网络中，最后一层（或者说最后一部分）通常被称为输出层。这个层的作用是将之前所有层的信息集合起来，产生最终的预测结果。&lt;/p&gt;
+&lt;p&gt;对于CNN进行分类任务时，输出部分的网络结构通常是一个或多个全连接层，然后连接Softmax。&lt;/p&gt;
+&lt;p&gt;当然，如果想要从卷积层过渡到全连接层，你需要对卷积层的输出进行“展平”处理，简而言之就是将二维数据逐行串起来，变成一维数据。&lt;/p&gt;
+&lt;p&gt;由于此时数据经过多层卷积和池化操作，数据量已大大减少，所以全连接层设计的参数就不会有那么多了。&lt;/p&gt;
+&lt;h4 id=&#34;由基础模块搭建摩天大楼&#34;&gt;由基础模块搭建摩天大楼
+&lt;/h4&gt;&lt;p&gt;在实际应用中，CNN网络往往是由多个卷积层构成，后续再缀接卷积层，则就是将上一层的输出作为后续的输入，然后重复“输入层→卷积层→ReLU→池化层”这个过程，当然池化层是非必须的。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="自编写神经网络笔记用">
+<title>神经网络基础</title>
+
+<link rel='canonical' href='https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="神经网络基础">
+<meta property='og:description' content="自编写神经网络笔记用">
+<meta property='og:url' content='https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/'>
+<meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='NeruNet' /><meta property='article:published_time' content='2024-11-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-13T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="神经网络基础">
+<meta name="twitter:description" content="自编写神经网络笔记用">
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu761840141679035503.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍊</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">sunjiyi&#39;s Blogggg</a></h1>
+            <h2 class="site-description">欢迎你来到这里！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/37767944'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/a233a2'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/ZKOGn7v98o48240'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#基础">基础</a>
+      <ol>
+        <li><a href="#两层神经网络分析为例">两层神经网络分析为例</a>
+          <ol>
+            <li><a href="#输入层">输入层</a></li>
+            <li><a href="#输入层到隐藏层">输入层到隐藏层</a></li>
+            <li><a href="#隐藏层到输出层">隐藏层到输出层</a></li>
+            <li><a href="#激活层">激活层</a></li>
+            <li><a href="#输出的正规化">输出的正规化</a></li>
+            <li><a href="#衡量输出的好坏">衡量输出的好坏</a></li>
+            <li><a href="#反向传播与参数优化">反向传播与参数优化</a></li>
+            <li><a href="#迭代">迭代</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#各类型神经网络">各类型神经网络</a>
+      <ol>
+        <li><a href="#cnn卷积神经网络30分钟入门">CNN卷积神经网络30分钟入门</a>
+          <ol>
+            <li><a href="#从前馈神经网络到cnn">从前馈神经网络到CNN</a></li>
+            <li><a href="#卷积层">卷积层</a></li>
+            <li><a href="#relu在cnn中的位置">ReLU在CNN中的位置</a></li>
+            <li><a href="#化繁为简的池化层">化繁为简的池化层</a></li>
+            <li><a href="#关于输出层">关于输出层</a></li>
+            <li><a href="#由基础模块搭建摩天大楼">由基础模块搭建摩天大楼</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/" style="background-color: #ff99ff; color: #000;">
+                学术类别
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">神经网络基础</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            自编写神经网络笔记用
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024-11-13</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 9 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="基础">基础
+</h2><h3 id="两层神经网络分析为例">两层神经网络分析为例
+</h3><p>摘自zhihu：<a class="link" href="https://zhuanlan.zhihu.com/p/65472471"  target="_blank" rel="noopener"
+    >神经网络15分钟入门！足够通俗易懂了吧</a>    <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png"
+	width="891"
+	height="562"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu5277222655574983243.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu1044721732596226.png 1024w"
+	loading="lazy"
+	
+		alt="两层神经网络典型结构"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="158"
+		data-flex-basis="380px"
+	
+> <br>
+任务描述：在坐标系中，给出一个坐标系，使用神经网络进行分类象限。</p>
+<h4 id="输入层">输入层
+</h4><p>在我们的例子中，输入层是坐标值，例如（1,1），这是一个包含两个元素的数组，
+也可以看作是一个1<em>2的矩阵。输入层的元素维度与输入量的特征息息相关，如果输
+入的是一张32</em>32像素的灰度图像，那么输入层的维度就是32*32。</p>
+<h4 id="输入层到隐藏层">输入层到隐藏层
+</h4><p>连接输入层和隐藏层的是W1和b1。由X计算得到H十分简单，就是矩阵运算： <br>
+$$ H=X<em>W1+b1 $$ <br>
+如上图中所示，在设定隐藏层为50维（也可以理解成50个神经元）之后，矩阵H的大小为（1</em>50）的矩阵。</p>
+<h4 id="隐藏层到输出层">隐藏层到输出层
+</h4><p>连接隐藏层和输出层的是W2和b2。同样是通过矩阵运算进行的： <br>
+$$ Y=H*W2+b2 $$ <br>
+通过上述两个线性方程的计算，我们就能得到最终的输出Y了，但是如果你还对线性代数的计算有印象的话，应该会知道：一系列线性方程的运算最终都可以用一个线性方程表示。也就是说，上述两个式子联立后可以用一个线性方程表达。对于两次神经网络是这样，就算网络深度加到100层，也依然是这样。这样的话神经网络就失去了意义。</p>
+<h4 id="激活层">激活层
+</h4><p><strong>神经网络中的激活层（Activation Layer）主要负责为网络中的每一层神经元引入非线性因素。没有激活函数，神经网络就只能执行线性变换，而线性变换无法表达复杂的模式和特征。因此，激活函数是神经网络能够处理非线性问题、进行更复杂计算的关键。</strong></p>
+<p>简而言之，激活层是为矩阵运算的结果添加非线性的。常用的激活函数有三种，分别是阶跃函数、Sigmoid和ReLU。  <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%BF%80%E6%B4%BB%E5%B1%82%E5%87%BD%E6%95%B0%E5%9B%BE.png"
+	width="854"
+	height="321"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%BF%80%E6%B4%BB%E5%B1%82%E5%87%BD%E6%95%B0%E5%9B%BE_hu13585017930976706445.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%BF%80%E6%B4%BB%E5%B1%82%E5%87%BD%E6%95%B0%E5%9B%BE_hu12689560312530861627.png 1024w"
+	loading="lazy"
+	
+		alt="激活层函数图"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="266"
+		data-flex-basis="638px"
+	
+> <br>
+其中，阶跃函数输出值是跳变的，且只有二值，较少使用；Sigmoid函数在当x的绝对值较大时，曲线的斜率变化很小（梯度消失），并且计算较复杂；ReLU是当前较为常用的激活函数。  <br>
+激活函数具体是怎么计算的呢？ <br>
+假如经过公式H=X*W1+b1计算得到的H值为：(1,-2,3,-4,7&hellip;)，那么经过阶跃函数激活层后就会变为(1,0,1,0,1&hellip;)，经过ReLU激活层之后会变为(1,0,3,0,7&hellip;)。 <br>
+需要注意的是，<strong>每个隐藏层计算（矩阵线性运算）之后，都需要加一层激活层，要不然该层线性计算是没有意义的。</strong>   <br>
+神经网络之所以能够处理复杂的任务，正是因为非线性激活函数的存在。激活函数将线性变换的输出“扭曲”成非线性，从而让网络能够捕捉数据中的非线性关系，例如在图像、语音、文本等复杂场景中。</p>
+<h4 id="输出的正规化">输出的正规化
+</h4><p>现在我们的输出Y的值可能会是(3,1,0.1,0.5)这样的矩阵，诚然我们可以找到里边的最大值“3”，从而找到对应的分类为I，但是这并不直观。我们想让最终的输出为概率，也就是说可以生成像(90%,5%,2%,3%)这样的结果，这样做不仅可以找到最大概率的分类，而且可以知道各个分类计算的概率值。</p>
+<h5 id="softmax正规化">Softmax正规化
+</h5><p>$$ S_i=\frac{e^i}{\sum{_je^j}} $$ <br>
+简单来说分三步进行：（1）以e为底对所有元素求指数幂；（2）将所有指数幂求和；（3）分别将这些指数幂与该和做商。这样求出的结果中，所有元素的和一定为1，而每个元素可以代表概率值。  <br>
+我们将使用这个计算公式做输出结果正规化处理的层叫做“Softmax”层。此时的神经网络将变成如上图所示：</p>
+<h4 id="衡量输出的好坏">衡量输出的好坏
+</h4><p>通过Softmax层之后，我们得到了I，II，III和IV这四个类别分别对应的概率，但是要注意，这是神经网络计算得到的概率值结果，而非真实的情况。</p>
+<p>比如，Softmax输出的结果是(90%,5%,3%,2%)，真实的结果是(100%,0,0,0)。虽然输出的结果可以正确分类，但是与真实结果之间是有差距的，一个优秀的网络对结果的预测要无限接近于100%，为此，我们需要将Softmax输出结果的好坏程度做一个“量化”。  <br>
+一种直观的解决方法，是用1减去Softmax输出的概率，比如1-90%=0.1。不过更为常用且巧妙的方法是，求对数的负数。   <br>
+还是用90%举例，对数的负数就是：-log0.9=0.046  <br>
+<strong>可以想见，概率越接近100%，该计算结果值越接近于0，说明结果越准确，该输出叫做“交叉熵损失（Cross Entropy Error）”。</strong>     <br>
+我们训练神经网络的目的，就是尽可能地减少这个“交叉熵损失”。  <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png"
+	width="891"
+	height="562"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu5277222655574983243.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu1044721732596226.png 1024w"
+	loading="lazy"
+	
+		alt="两层神经网络典型结构"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="158"
+		data-flex-basis="380px"
+	
+></p>
+<h4 id="反向传播与参数优化">反向传播与参数优化
+</h4><p>上边的1~4节，讲述了神经网络的正向传播过程。一句话复习一下：神经网络的传播都是形如Y=WX+b的矩阵运算；为了给矩阵运算加入非线性，需要在隐藏层中加入激活层；输出层结果需要经过Softmax层处理为概率值，并通过交叉熵损失来量化当前网络的优劣。 <br>
+算出交叉熵损失后，就要开始反向传播了。其实反向传播就是一个参数优化的过程，优化对象就是网络中的所有W和b（因为其他所有参数都是确定的）。 <br>
+神经网络的神奇之处，就在于它可以自动做W和b的优化，在深度学习中，参数的数量有时会上亿，不过其优化的原理和我们这个两层神经网络是一样的。</p>
+<h4 id="迭代">迭代
+</h4><p>神经网络需要反复迭代。 <br>
+如上述例子中，第一次计算得到的概率是90%，交叉熵损失值是0.046；将该损失值反向传播，使W1,b1,W2,b2做相应微调；再做第二次运算，此时的概率可能就会提高到92%，相应地，损失值也会下降，然后再反向传播损失值，微调参数W1,b1,W2,b2。依次类推，损失值越来越小，直到我们满意为止。 <br>
+此时我们就得到了理想的W1,b1,W2,b2。 <br>
+此时如果将任意一组坐标作为输入，利用图4或图5的流程，就能得到分类结果。</p>
+<h2 id="各类型神经网络">各类型神经网络
+</h2><h3 id="cnn卷积神经网络30分钟入门">CNN卷积神经网络30分钟入门
+</h3><p>摘自：<a class="link" href="https://zhuanlan.zhihu.com/p/635438713"  target="_blank" rel="noopener"
+    >【深度学习-第2篇】CNN卷积神经网络30分钟入门！足够通俗易懂了吧（图解）</a></p>
+<h4 id="从前馈神经网络到cnn">从前馈神经网络到CNN
+</h4><p><strong>前馈神经网络（Feedforward Neural Networks）<strong>是最基础的神经网络模型，也被称为</strong>多层感知机（MLP）。</strong></p>
+<p>它由多个神经元组成，每个神经元与前一层的所有神经元相连，形成一个“全连接”的结构。每个神经元会对其输入数据进行线性变换（通过权重矩阵），然后通过一个非线性函数（如ReLU或Sigmoid）进行激活。这就是前馈神经网络的基本操作。 <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png"
+	width="891"
+	height="562"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu5277222655574983243.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84_hu1044721732596226.png 1024w"
+	loading="lazy"
+	
+		alt="前馈神经网络结构示意"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="158"
+		data-flex-basis="380px"
+	
+></p>
+<p>卷积神经网络（Convolutional Neural Network, 简称CNN）开始。很大程度上，是由于CNN的基本组成部分与前馈神经网络有很紧密的关联，甚至可以说，CNN就是一种特殊的前馈神经网络。 <br>
+这两者的主要区别在于，CNN在前馈神经网络的基础上加入了<strong>卷积层</strong>和<strong>池化层</strong>（下边会讲到），以便<strong>更好地处理图像等具有空间结构的数据。</strong></p>
+<p>现在画图说明一下。对于前馈神经网络，我们可以将简化后的网络结构如下图表示： <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E5%8C%96.png"
+	width="617"
+	height="445"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E5%8C%96_hu9534132991121884414.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E5%8C%96_hu12127138679068705312.png 1024w"
+	loading="lazy"
+	
+		alt="前馈神经网络的简易表示"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="138"
+		data-flex-basis="332px"
+	
+>    <br>
+当然，【全连接层-ReLU】可以有多个，此时网络结构可以表示为： <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%A4%9A%E5%85%A8%E9%93%BE%E6%8E%A5%E5%B1%82%E7%9A%84%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png"
+	width="880"
+	height="574"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%A4%9A%E5%85%A8%E9%93%BE%E6%8E%A5%E5%B1%82%E7%9A%84%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_hu17755815143800048140.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%A4%9A%E5%85%A8%E9%93%BE%E6%8E%A5%E5%B1%82%E7%9A%84%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_hu4776322760612417449.png 1024w"
+	loading="lazy"
+	
+		alt="多全链接层的前馈神经网络"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="153"
+		data-flex-basis="367px"
+	
+>    <br>
+简单地说，CNN就是在此基础上，将全连接层换成卷积层，并在ReLU层之后加入池化层（非必须），那么一个基本的CNN结构就可以表示成这样： <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/N%E5%B1%82%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png"
+	width="879"
+	height="557"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/N%E5%B1%82%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_hu14598001535105996045.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/N%E5%B1%82%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C_hu11187312952505986625.png 1024w"
+	loading="lazy"
+	
+		alt="N层卷积神经网络"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="157"
+		data-flex-basis="378px"
+	
+></p>
+<h4 id="卷积层">卷积层
+</h4><p>使用卷积是为了更好的处理图像等信息。若使用全连接前馈神经网络来处理图像，会使得参数太多、不利于表达空间上的结构。另外难以反应平移不变性。CNN由于权重共享，可以无论特征在何处出现都能被检测到，从而提供了一种平移不变性。另外难以表征抽象层级。CNN通过多个卷积层和池化层的叠加，可以从低级的边缘和纹理特征逐渐抽取出高级的语义特征。这个特性使得CNN非常适合于处理图像等需要多层抽象表示的数据。  <br>
+卷积的过程，其实是一种滤波的过程，所以卷积核（Convolution Kernel）还有一个别名叫做Filter，也就是滤波器。     <br>
+<strong>当一组数像滑窗一样滑过另外一组数时，将对应的数据相乘并求和得到一组新的数，这个过程必然和卷积有着莫大的关系。</strong> <br>
+其中权重系数都为1/3，也就是均值滤波的过程。变换不同的权重系数，滤波器将展现出不同的滤波特性。所以我们又可以得到一个结论：当权重系数（卷积核）的参数改变时，它可以提取的特征类型也会改变。所以训练卷积神经网络时，实质上训练的是卷积核的参数。  <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%8D%B7%E7%A7%AF%E6%A0%B8%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B-%E4%BA%8C%E7%BB%B4png.png"
+	width="607"
+	height="440"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%8D%B7%E7%A7%AF%E6%A0%B8%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B-%E4%BA%8C%E7%BB%B4png_hu3303549474147394459.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%8D%B7%E7%A7%AF%E6%A0%B8%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B-%E4%BA%8C%E7%BB%B4png_hu7281252247270003854.png 1024w"
+	loading="lazy"
+	
+		alt="卷积核运算过程-二维"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="137"
+		data-flex-basis="331px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1.定义一个卷积核：卷积核是一个小的矩阵（例如3x3或5x5），包含一些数字。这个卷积核的作用是在图像中识别特定类型的特征，例如边缘、线条等，也可能是难以描述的抽象特征。
+</span></span><span class="line"><span class="cl">2.卷积核滑过图像：卷积操作开始时，卷积核会被放置在图像的左上角。然后，它会按照一定的步长（stride）在图像上滑动，可以是从左到右，也可以是从上到下。步长定义了卷积核每次移动的距离。
+</span></span><span class="line"><span class="cl">3.计算点积：在卷积核每个位置，都会计算卷积核和图像对应部分的点积。这就是将卷积核中的每个元素与图像中对应位置的像素值相乘，然后将所有乘积相加。
+</span></span><span class="line"><span class="cl">4.生成新的特征图：每次计算的点积结果被用来构建一个新的图像，也称为特征图或卷积图。
+</span></span><span class="line"><span class="cl">5.重复以上过程：通常在一个 CNN 中，我们会有多个不同的卷积核同时进行卷积操作。这意味着我们会得到多个特征图，每个特征图捕捉了原始图像中的不同特征。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="relu在cnn中的位置">ReLU在CNN中的位置
+</h4><p>卷积层和全连接一样，也是一种线性变换，无论进行多少次这样的操作，都只能获得输入数据的线性组合。如果没有非线性的激活函数，那么即使是多层的神经网络，在理论上也可以被一个单层的神经网络所表达，这极大地限制了网络的表达能力。</p>
+<blockquote>
+<p>ReLU函数是一个非线性函数，只保留正数元素，将负数元素设置为0。这种简单的修正线性单元具有许多优点，例如，它能够缓解梯度消失问题，计算速度快，同时ReLU的输出是稀疏的，这有助于模型的正则化。ReLU的响应函数图像如下： <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/RELU.png"
+	width="390"
+	height="305"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/RELU_hu4507551843322250478.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/RELU_hu15126746602982748460.png 1024w"
+	loading="lazy"
+	
+		alt="RELU"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="127"
+		data-flex-basis="306px"
+	
+></p>
+</blockquote>
+<h4 id="化繁为简的池化层">化繁为简的池化层
+</h4><p>ReLU激活层之后就是池化层。 <br>
+池化层的主要作用是对非线性激活后的结果进行降采样，以减少参数的数量，避免过拟合，并提高模型的处理速度。 <br>
+池化层主要采用最大池化（Max Pooling）、平均池化（Average Pooling）等方式，对特征图进行操作。以最常见的最大池化为例，我们选择一个窗口（比如 2x2）在特征图上滑动，每次选取窗口中的最大值作为输出，这就是最大池化的工作方式： <br>
+<img src="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%B1%A0%E5%8C%96%E5%B1%82.png"
+	width="516"
+	height="300"
+	srcset="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%B1%A0%E5%8C%96%E5%B1%82_hu1649860995526684222.png 480w, /p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%B1%A0%E5%8C%96%E5%B1%82_hu6459201957639587312.png 1024w"
+	loading="lazy"
+	
+		alt="池化层"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="172"
+		data-flex-basis="412px"
+	
+><br>
+大致可以看出，经过池化计算后的图像，基本就是左侧特征图的“低像素版”结果。也就是说池化运算能够保留最强烈的特征，并大大降低数据体量。</p>
+<p>到现在，“卷积层→ReLU→池化层”这样一个CNN网络中的基本组成单元的基础概念就讲完了。但是需要注意，卷积层、ReLU和池化层的组合是一种常见模式，但不是唯一的方式。比如池化层作为降低网络复杂程度的计算环节，在算力硬件条件越来越好的当下，有些时候是可以减少采用次数的，也就是池化层可以在部分层设置、部分层不设置。 <br>
+<img src="/CNN%e5%85%a8%e9%83%a8123.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="CNN123"
+	
+	
+></p>
+<h4 id="关于输出层">关于输出层
+</h4><p>在卷积神经网络中，最后一层（或者说最后一部分）通常被称为输出层。这个层的作用是将之前所有层的信息集合起来，产生最终的预测结果。</p>
+<p>对于CNN进行分类任务时，输出部分的网络结构通常是一个或多个全连接层，然后连接Softmax。</p>
+<p>当然，如果想要从卷积层过渡到全连接层，你需要对卷积层的输出进行“展平”处理，简而言之就是将二维数据逐行串起来，变成一维数据。</p>
+<p>由于此时数据经过多层卷积和池化操作，数据量已大大减少，所以全连接层设计的参数就不会有那么多了。</p>
+<h4 id="由基础模块搭建摩天大楼">由基础模块搭建摩天大楼
+</h4><p>在实际应用中，CNN网络往往是由多个卷积层构成，后续再缀接卷积层，则就是将上一层的输出作为后续的输入，然后重复“输入层→卷积层→ReLU→池化层”这个过程，当然池化层是非必须的。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/nerunet/">NeruNet</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed MIT OR GPL3.0 WHATEVERS ON GITHUB_PAGE SHOW YOU</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">算法挖坑填坑</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">工程数学基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/drcan-learn-blog-advance/">
+        
+        
+            <div class="article-image">
+                <img src="/p/drcan-learn-blog-advance/1-1.2e9be13a68b73fbbf13f6f6ab9df10b4_hu2362776656510232683.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post DRCAN-Learn-Blog-Advance"
+                        
+                        data-hash="md5-LpvhOmi3P7vxP29qud8QtA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DRCAN-Learn-Blog-Advance</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/drcan-learn-blog-basic/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DRCAN-Learn-Blog-Basic</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/drcan-learn-blog-opt/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DRCAN-Learn-Blog-OPT</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="a233a2/a233a2.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 Sunjiyi Make and Design
+    </section>
+    
+    <section class="powerby">
+        
+            祝你开心 事事顺意 <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
