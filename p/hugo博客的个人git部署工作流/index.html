@@ -461,8 +461,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="2024-11-14错误记录">2024-11-14错误记录
-</h4><p>引用gif文件时，出现编译错误： <br>
-引用格式：! [ASD] (ASD.GIF) <br>
+</h4><p>引用gif文件时，出现编译错误：配置项被弃用以及主题模板中可能存在的无限递归问题 <br>
+使用到的引用格式：! [ASD] (ASD.GIF)  <br>
 <img src="/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95-gif.png"
 	width="1601"
 	height="525"
@@ -476,7 +476,17 @@
 		data-flex-grow="304"
 		data-flex-basis="731px"
 	
-></p>
+>      <br>
+更换HTML标签渲染后问题解决。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;img src=&#34;路径/文件名.gif&#34; alt=&#34;描述文字&#34; width=&#34;500&#34; height=&#34;auto&#34;&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>分析：可能是这个主题不支持GIF？？？</p>
 
 </section>
 

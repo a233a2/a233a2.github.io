@@ -1272,8 +1272,8 @@ PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;2024-11-14错误记录&#34;&gt;2024-11-14错误记录
-&lt;/h4&gt;&lt;p&gt;引用gif文件时，出现编译错误： &lt;br&gt;
-引用格式：! [ASD] (ASD.GIF) &lt;br&gt;
+&lt;/h4&gt;&lt;p&gt;引用gif文件时，出现编译错误：配置项被弃用以及主题模板中可能存在的无限递归问题 &lt;br&gt;
+使用到的引用格式：! [ASD] (ASD.GIF)  &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95-gif.png&#34;
 	width=&#34;1601&#34;
 	height=&#34;525&#34;
@@ -1287,7 +1287,17 @@ PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳�
 		data-flex-grow=&#34;304&#34;
 		data-flex-basis=&#34;731px&#34;
 	
-&gt;&lt;/p&gt;
+&gt;      &lt;br&gt;
+更换HTML标签渲染后问题解决。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;img src=&amp;#34;路径/文件名.gif&amp;#34; alt=&amp;#34;描述文字&amp;#34; width=&amp;#34;500&amp;#34; height=&amp;#34;auto&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;分析：可能是这个主题不支持GIF？？？&lt;/p&gt;
 </description>
         </item>
         <item>
