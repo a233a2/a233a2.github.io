@@ -97,7 +97,24 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git config --global https.proxy http://127.0.0.1:7890
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h4 id=&#34;2024-11-14错误记录&#34;&gt;2024-11-14错误记录
+&lt;/h4&gt;&lt;p&gt;引用gif文件时，出现编译错误： &lt;br&gt;
+引用格式：! [ASD] (ASD.GIF) &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95-gif.png&#34;
+	width=&#34;1601&#34;
+	height=&#34;525&#34;
+	srcset=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95-gif_hu9677638897366035929.png 480w, https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/%E9%94%99%E8%AF%AF%E8%AE%B0%E5%BD%95-gif_hu13325861873499381987.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;错误记录&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;304&#34;
+		data-flex-basis=&#34;731px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
         </item>
         
     </channel>
