@@ -3,10 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://a233a2.github.io/</loc>
-    <lastmod>2024-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/categories/</loc>
-    <lastmod>2024-11-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/tags/just_for_fun/</loc>
+    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/post/</loc>
+    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/tags/</loc>
+    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/categories/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%88%AB/</loc>
+    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/p/%E4%B8%93%E5%B1%9E%E7%A9%BA%E8%B0%83%E6%88%BF/</loc>
+    <lastmod>2024-11-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/fpv/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
@@ -18,12 +33,6 @@
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/nerunet/</loc>
-    <lastmod>2024-11-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/post/</loc>
-    <lastmod>2024-11-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/tags/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/</loc>
@@ -87,9 +96,6 @@
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/</loc>
-    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%88%AB/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/</loc>

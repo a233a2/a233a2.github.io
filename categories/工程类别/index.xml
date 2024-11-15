@@ -609,7 +609,7 @@ PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳�
         <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/</guid>
-        <description>&lt;img src="https://a233a2.github.io/fengmian.png" alt="Featured image of post Simulink-PX4仿真" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置&#34;&gt;PX4-Simulink联合环境配置
+        <description>&lt;img src="https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/fengmian.png" alt="Featured image of post Simulink-PX4仿真" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置&#34;&gt;PX4-Simulink联合环境配置
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1gF411T7st?spm_id_from=333.788.recommend_more_video.1&amp;amp;vd_source=c07e49f2b08d68d3bb624651ee908d97&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;基于Simulink的ROS2下PX4无人机控制框架-入门篇&lt;/a&gt;
 PX4版本：群里的版本1.13？
