@@ -124,6 +124,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;分析：可能是这个主题不支持GIF？？？&lt;/p&gt;
+&lt;h4 id=&#34;解决网站域名转发时自动部署删除cname文件的问题&#34;&gt;解决网站域名转发时自动部署删除CNAME文件的问题
+&lt;/h4&gt;&lt;p&gt;在网站域名转发时，在github.io这个工程仓库下创建了CNAME文件，但是每次部署网站都会自动的删除掉。这使得我的网站无法打开。&lt;br&gt;
+最后将CNAME文件放到了网站文件夹目录下的static文件下。重新上传后CNAME文件便一直都在了。&lt;/p&gt;
 </description>
         </item>
         

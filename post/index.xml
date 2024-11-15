@@ -13,7 +13,9 @@
         <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/%E4%B8%93%E5%B1%9E%E7%A9%BA%E8%B0%83%E6%88%BF/</guid>
-        <description>&lt;iframe height=&#34;740&#34; src=&#34;https://loquacious-bienenstitch-58539b.netlify.app/&#34;&gt;&lt;/iframe&gt;</description>
+        <description>&lt;p&gt;凉快吗？&lt;/p&gt;
+&lt;iframe height=&#34;1200&#34; src=&#34;https://loquacious-bienenstitch-58539b.netlify.app/&#34;&gt;&lt;/iframe&gt;    
+&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=2636640305&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;    </description>
         </item>
         <item>
         <title>INAV无人机搭建</title>
@@ -1306,6 +1308,9 @@ PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;分析：可能是这个主题不支持GIF？？？&lt;/p&gt;
+&lt;h4 id=&#34;解决网站域名转发时自动部署删除cname文件的问题&#34;&gt;解决网站域名转发时自动部署删除CNAME文件的问题
+&lt;/h4&gt;&lt;p&gt;在网站域名转发时，在github.io这个工程仓库下创建了CNAME文件，但是每次部署网站都会自动的删除掉。这使得我的网站无法打开。&lt;br&gt;
+最后将CNAME文件放到了网站文件夹目录下的static文件下。重新上传后CNAME文件便一直都在了。&lt;/p&gt;
 </description>
         </item>
         <item>
