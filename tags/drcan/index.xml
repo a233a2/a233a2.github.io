@@ -413,9 +413,117 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;13-不变性原理&#34;&gt;13-不变性原理
-&lt;/h3&gt;&lt;h3 id=&#34;14-非线性稳定性设计&#34;&gt;14-非线性稳定性设计
-&lt;/h3&gt;&lt;h3 id=&#34;15-非线性反步法设计&#34;&gt;15-非线性反步法设计
-&lt;/h3&gt;&lt;h3 id=&#34;16-非线性自适应控制器&#34;&gt;16-非线性自适应控制器
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/13.1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/13.1_hu11392919047860221812.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/13.1_hu9436036872624217216.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;14-非线性稳定性设计&#34;&gt;14-非线性稳定性设计
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/14.1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/14.1_hu7550965999035877927.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/14.1_hu14867590210017360200.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;br&gt;
+设计如下的非线性系统。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/14.2.jpg&#34;
+	width=&#34;606&#34;
+	height=&#34;463&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/14.2_hu1399004960012830589.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/14.2_hu2155581303139813249.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;130&#34;
+		data-flex-basis=&#34;314px&#34;
+	
+&gt;&lt;br&gt;
+将三种u的处理方式整合成三个子系统。 &lt;br&gt;
+1 直接线性化处理。 2 李雅普诺夫直接法设计  3 李雅普诺夫直接法直接消除非ND项。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/14.3.jpg&#34;
+	width=&#34;521&#34;
+	height=&#34;518&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/14.3_hu1171698137704150032.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/14.3_hu14012392669276592536.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;241px&#34;
+	
+&gt;&lt;br&gt;
+设定仿真时间10s，x初始值为10； &lt;br&gt;
+输出状态变量为右图所示，输入为左图所示。 &lt;br&gt;
+1黄色线条 直接线性化处理。 2橙色线条 李雅普诺夫直接法设计  3蓝色线条 李雅普诺夫直接法直接消除非ND项。
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/14.4.jpg&#34;
+	width=&#34;1399&#34;
+	height=&#34;639&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/14.4_hu8779065921020863191.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/14.4_hu3667027648305391904.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;218&#34;
+		data-flex-basis=&#34;525px&#34;
+	
+&gt;&lt;br&gt;
+可以看到直接线性化处理的方式简单粗暴，因为输入存在x的三次方所以导致开始时输入值非常大。这是难以实现的。 &lt;br&gt;
+对于李雅普诺夫直接法设计的输入以及输出较为合理。 &lt;br&gt;
+李雅普诺夫分析后直接消除非ND项的做法较直接线性化处理有一定优势，但是稳态效果不好。&lt;/p&gt;
+&lt;h3 id=&#34;15-非线性反步法设计-important&#34;&gt;15-非线性反步法设计-Important
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.1_hu10678219543084000214.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/15.1_hu7128712128322331439.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;br&gt;
+对两个引入的状态进行稳定性分析。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.2.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;1508&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.2_hu17337528155372937008.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/15.2_hu2897981912637891707.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;144&#34;
+		data-flex-basis=&#34;347px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;16-非线性自适应控制器&#34;&gt;16-非线性自适应控制器
 &lt;/h3&gt;&lt;h3 id=&#34;16-非线性滑膜控制器&#34;&gt;16-非线性滑膜控制器
 &lt;/h3&gt;</description>
         </item>

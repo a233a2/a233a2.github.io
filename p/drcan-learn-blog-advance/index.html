@@ -298,7 +298,7 @@
         <li><a href="#12-非线性理论基础">12-非线性理论基础</a></li>
         <li><a href="#13-不变性原理">13-不变性原理</a></li>
         <li><a href="#14-非线性稳定性设计">14-非线性稳定性设计</a></li>
-        <li><a href="#15-非线性反步法设计">15-非线性反步法设计</a></li>
+        <li><a href="#15-非线性反步法设计-important">15-非线性反步法设计-Important</a></li>
         <li><a href="#16-非线性自适应控制器">16-非线性自适应控制器</a></li>
         <li><a href="#16-非线性滑膜控制器">16-非线性滑膜控制器</a></li>
       </ol>
@@ -383,7 +383,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 4 分钟
+                    阅读时长: 5 分钟
                 </time>
             </div>
         
@@ -798,9 +798,117 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 	
 ></p>
 <h3 id="13-不变性原理">13-不变性原理
-</h3><h3 id="14-非线性稳定性设计">14-非线性稳定性设计
-</h3><h3 id="15-非线性反步法设计">15-非线性反步法设计
-</h3><h3 id="16-非线性自适应控制器">16-非线性自适应控制器
+</h3><p><img src="/p/drcan-learn-blog-advance/13.1.jpg"
+	width="2182"
+	height="3086"
+	srcset="/p/drcan-learn-blog-advance/13.1_hu11392919047860221812.jpg 480w, /p/drcan-learn-blog-advance/13.1_hu9436036872624217216.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="70"
+		data-flex-basis="169px"
+	
+></p>
+<h3 id="14-非线性稳定性设计">14-非线性稳定性设计
+</h3><p><img src="/p/drcan-learn-blog-advance/14.1.jpg"
+	width="2182"
+	height="3086"
+	srcset="/p/drcan-learn-blog-advance/14.1_hu7550965999035877927.jpg 480w, /p/drcan-learn-blog-advance/14.1_hu14867590210017360200.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="70"
+		data-flex-basis="169px"
+	
+><br>
+设计如下的非线性系统。 <br>
+<img src="/p/drcan-learn-blog-advance/14.2.jpg"
+	width="606"
+	height="463"
+	srcset="/p/drcan-learn-blog-advance/14.2_hu1399004960012830589.jpg 480w, /p/drcan-learn-blog-advance/14.2_hu2155581303139813249.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="130"
+		data-flex-basis="314px"
+	
+><br>
+将三种u的处理方式整合成三个子系统。 <br>
+1 直接线性化处理。 2 李雅普诺夫直接法设计  3 李雅普诺夫直接法直接消除非ND项。 <br>
+<img src="/p/drcan-learn-blog-advance/14.3.jpg"
+	width="521"
+	height="518"
+	srcset="/p/drcan-learn-blog-advance/14.3_hu1171698137704150032.jpg 480w, /p/drcan-learn-blog-advance/14.3_hu14012392669276592536.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="100"
+		data-flex-basis="241px"
+	
+><br>
+设定仿真时间10s，x初始值为10； <br>
+输出状态变量为右图所示，输入为左图所示。 <br>
+1黄色线条 直接线性化处理。 2橙色线条 李雅普诺夫直接法设计  3蓝色线条 李雅普诺夫直接法直接消除非ND项。
+<img src="/p/drcan-learn-blog-advance/14.4.jpg"
+	width="1399"
+	height="639"
+	srcset="/p/drcan-learn-blog-advance/14.4_hu8779065921020863191.jpg 480w, /p/drcan-learn-blog-advance/14.4_hu3667027648305391904.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="218"
+		data-flex-basis="525px"
+	
+><br>
+可以看到直接线性化处理的方式简单粗暴，因为输入存在x的三次方所以导致开始时输入值非常大。这是难以实现的。 <br>
+对于李雅普诺夫直接法设计的输入以及输出较为合理。 <br>
+李雅普诺夫分析后直接消除非ND项的做法较直接线性化处理有一定优势，但是稳态效果不好。</p>
+<h3 id="15-非线性反步法设计-important">15-非线性反步法设计-Important
+</h3><p><img src="/p/drcan-learn-blog-advance/15.1.jpg"
+	width="2182"
+	height="3086"
+	srcset="/p/drcan-learn-blog-advance/15.1_hu10678219543084000214.jpg 480w, /p/drcan-learn-blog-advance/15.1_hu7128712128322331439.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="70"
+		data-flex-basis="169px"
+	
+><br>
+对两个引入的状态进行稳定性分析。 <br>
+<img src="/p/drcan-learn-blog-advance/15.2.jpg"
+	width="2182"
+	height="1508"
+	srcset="/p/drcan-learn-blog-advance/15.2_hu17337528155372937008.jpg 480w, /p/drcan-learn-blog-advance/15.2_hu2897981912637891707.jpg 1024w"
+	loading="lazy"
+	
+		alt="2"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="144"
+		data-flex-basis="347px"
+	
+></p>
+<h3 id="16-非线性自适应控制器">16-非线性自适应控制器
 </h3><h3 id="16-非线性滑膜控制器">16-非线性滑膜控制器
 </h3>
 </section>
