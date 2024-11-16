@@ -32,7 +32,13 @@
 		data-flex-grow=&#34;224&#34;
 		data-flex-basis=&#34;538px&#34;
 	
-&gt;
+&gt; &lt;br&gt;
+$$ &lt;br&gt;
+{\begin{array}{l}
+\dot{x}_1=f(x_1) +g( x_1 ) x_2\
+\dot{x}_2=u\
+\end{array}
+$$ &lt;br&gt;
 控制目标：使系统控制到原点处。（如果要控制在别的地方，先进行方程的坐标变换到原点即可）&lt;/p&gt;
 &lt;p&gt;对于二阶系统的反步法，我们对两个方程分别分两步设计进行：
 第一步，对第一个方程，将$x_2$看作输入。设计一个反馈控制率$x_2=\phi \left( x_1 \right)$ ，使得第一个方程稳定； &lt;br&gt;
@@ -41,12 +47,6 @@
 &lt;h5 id=&#34;step1-设计x2使得x1稳定&#34;&gt;Step1 设计X2使得X1稳定
 &lt;/h5&gt;&lt;p&gt;$$
 \varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
-$$&lt;/p&gt;
-&lt;p&gt;$$
-\left{ \begin{array}{l}
-\dot{x}_1=f\left( x_1 \right) +g\left( x_1 \right) x_2\
-\dot{x}_2=u\
-\end{array} \right.
 $$&lt;/p&gt;
 &lt;h3 id=&#34;卡尔曼滤波算法&#34;&gt;卡尔曼滤波算法
 &lt;/h3&gt;&lt;h3 id=&#34;扩展卡尔曼滤波算法ekf&#34;&gt;扩展卡尔曼滤波算法（EKF）

@@ -355,6 +355,68 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;10-可观测性与分离原理&#34;&gt;10-可观测性与分离原理
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/10.1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/10.1_hu11389514122240884104.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/10.1_hu7757880031523196896.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/10.2.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;1039&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/10.2_hu10640356901182428119.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/10.2_hu1059086410672742270.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;210&#34;
+		data-flex-basis=&#34;504px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;12-非线性理论基础&#34;&gt;12-非线性理论基础
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/12.1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/12.1_hu7957498413738984835.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/12.1_hu12130442345961354058.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/12.2.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/12.2_hu5828067736462640113.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/12.2_hu4104943686041735830.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;13-不变性原理&#34;&gt;13-不变性原理
+&lt;/h3&gt;&lt;h3 id=&#34;14-非线性稳定性设计&#34;&gt;14-非线性稳定性设计
+&lt;/h3&gt;&lt;h3 id=&#34;15-非线性反步法设计&#34;&gt;15-非线性反步法设计
+&lt;/h3&gt;&lt;h3 id=&#34;16-非线性自适应控制器&#34;&gt;16-非线性自适应控制器
+&lt;/h3&gt;&lt;h3 id=&#34;16-非线性滑膜控制器&#34;&gt;16-非线性滑膜控制器
 &lt;/h3&gt;</description>
         </item>
         <item>
