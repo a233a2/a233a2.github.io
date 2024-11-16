@@ -17,8 +17,14 @@
 &lt;/h3&gt;&lt;p&gt;本质上也是利用&lt;strong&gt;李雅普诺夫第二方法&lt;/strong&gt;对系统的控制器进行状态反馈设计。通过对系统的每一个状态方程依次进行迭代设计，最终串联成一个控制方案。 &lt;br&gt;
 反步法(Backsteping method)又称为后推法，是一种由前往后递推的设计方法，该方法所对应的系统是通过串联形成的非线性系统，最初由科克托维奇(Kokotovic)于1991年提出，该方法的提出最初是用于线性系统，随着研究的深入发现它针对非线性系统也有很好的控制。    &lt;br&gt;
 它的设计思想是将复杂的系统分解成若干个不超过原系统阶数的子系统，然后根据Lyapunov稳定性定理，针对每个子系统设计出中间的虚拟控制量，一直“反推”至整个系统，从而设计出系统的总控制律。 &lt;br&gt;
-对于一个简单的二阶非线性系统： &lt;br&gt;
-$$ \left{ \begin{array}{l}\dot{x}_1=f\left( x_1 \right) +g\left( x_1 \right) x_2\\dot{x}_2=u\\end{array} \right. $$&lt;/p&gt;
+对于一个简单的二阶非线性系统：   &lt;br&gt;
+$$
+\left{ \begin{array}{l}
+\dot{x}_1=f\left( x_1 \right) +g\left( x_1 \right) x_2\
+\dot{x}_2=u\
+\end{array} \right.
+$$
+控制目标：使系统控制到原点处。（如果要控制在别的地方，先进行方程的坐标变换到原点即可）&lt;/p&gt;
 &lt;h3 id=&#34;卡尔曼滤波算法&#34;&gt;卡尔曼滤波算法
 &lt;/h3&gt;&lt;h3 id=&#34;扩展卡尔曼滤波算法ekf&#34;&gt;扩展卡尔曼滤波算法（EKF）
 &lt;/h3&gt;&lt;h3 id=&#34;傅里叶变换&#34;&gt;傅里叶变换
