@@ -19,14 +19,36 @@
 它的设计思想是将复杂的系统分解成若干个不超过原系统阶数的子系统，然后根据Lyapunov稳定性定理，针对每个子系统设计出中间的虚拟控制量，一直“反推”至整个系统，从而设计出系统的总控制律。&lt;/p&gt;
 &lt;h4 id=&#34;简单的二阶非线性系统&#34;&gt;简单的二阶非线性系统
 &lt;/h4&gt;&lt;p&gt;对于一个简单的二阶非线性系统：   &lt;br&gt;
-${\begin{array}{l}\dot{x}_1=f(x_1) +g(x_1) x_2\\dot{x}_2=u\\end{array}$  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/%E5%8F%8D%E6%AD%A5%E6%B3%951.bmp&#34;
+	width=&#34;314&#34;
+	height=&#34;140&#34;
+	srcset=&#34;https://a233a2.github.io/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/%E5%8F%8D%E6%AD%A5%E6%B3%951_hu11078211995131865912.bmp 480w, https://a233a2.github.io/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/%E5%8F%8D%E6%AD%A5%E6%B3%951_hu14187467472633476988.bmp 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;反步法1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;224&#34;
+		data-flex-basis=&#34;538px&#34;
+	
+&gt;
 控制目标：使系统控制到原点处。（如果要控制在别的地方，先进行方程的坐标变换到原点即可）&lt;/p&gt;
 &lt;p&gt;对于二阶系统的反步法，我们对两个方程分别分两步设计进行：
 第一步，对第一个方程，将$x_2$看作输入。设计一个反馈控制率$x_2=\phi \left( x_1 \right)$ ，使得第一个方程稳定； &lt;br&gt;
 第二步，对第二个方程，将$u$看做输入，设计一个反馈控制率，使得第二个方程也稳定；&lt;br&gt;
 最后，得到的最终反馈控制率$u$，可以使得整个系统稳定。&lt;/p&gt;
 &lt;h5 id=&#34;step1-设计x2使得x1稳定&#34;&gt;Step1 设计X2使得X1稳定
-&lt;/h5&gt;&lt;h3 id=&#34;卡尔曼滤波算法&#34;&gt;卡尔曼滤波算法
+&lt;/h5&gt;&lt;p&gt;$$
+\varphi = 1+\frac{1} {1+\frac{1} {1+\frac{1} {1+\cdots} } }
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\left{ \begin{array}{l}
+\dot{x}_1=f\left( x_1 \right) +g\left( x_1 \right) x_2\
+\dot{x}_2=u\
+\end{array} \right.
+$$&lt;/p&gt;
+&lt;h3 id=&#34;卡尔曼滤波算法&#34;&gt;卡尔曼滤波算法
 &lt;/h3&gt;&lt;h3 id=&#34;扩展卡尔曼滤波算法ekf&#34;&gt;扩展卡尔曼滤波算法（EKF）
 &lt;/h3&gt;&lt;h3 id=&#34;傅里叶变换&#34;&gt;傅里叶变换
 &lt;/h3&gt;&lt;h3 id=&#34;快速傅里叶变换法&#34;&gt;快速傅里叶变换法
