@@ -7,7 +7,61 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 19 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Simulink-PX4仿真</title>
+        <link>https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/</link>
+        <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/fengmian.png" alt="Featured image of post Simulink-PX4仿真" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置&#34;&gt;PX4-Simulink联合环境配置
+&lt;/h3&gt;&lt;p&gt;参考如下教学： &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV18P4y1T7UH&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PX4与Simulink联合仿真-入门篇&lt;/a&gt;        &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV13S4y1P7QK&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PX4与Simulink联合仿真-进阶篇&lt;/a&gt;  &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1sj42197TH&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;使用Pixhawk2.4.8基于Simulink进行入门级飞控算法自主开发的操作&lt;/a&gt;  &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1nm4y1475s&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;基于Simulink的PX4飞控算法的开发实践（1.硬件支持包配置）&lt;/a&gt;  &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1gF411T7st&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;基于Simulink的ROS2下PX4无人机控制框架-入门篇&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;PX4版本：适配matlab 2022b的v1.12.3 &lt;br&gt;
+Matlab版本：2022b &lt;br&gt;
+windows：Windows11家庭版&lt;/p&gt;
+&lt;h3 id=&#34;开发环境的配置&#34;&gt;开发环境的配置
+&lt;/h3&gt;&lt;p&gt;遇到的错误：在编译时一直提示找不到.px4文件的错误如下图： &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1.jpg&#34;
+	width=&#34;852&#34;
+	height=&#34;639&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu2102160675909218636.jpg 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu10570373229207981760.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;错误1找不到px4文件&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2.jpg&#34;
+	width=&#34;1345&#34;
+	height=&#34;854&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu2972160481222992229.jpg 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu7119989339237306091.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;错误1找不到px4文件&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;157&#34;
+		data-flex-basis=&#34;377px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;四旋翼数学模型的推导&#34;&gt;四旋翼数学模型的推导
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>专属空调房</title>
         <link>https://a233a2.github.io/p/%E4%B8%93%E5%B1%9E%E7%A9%BA%E8%B0%83%E6%88%BF/</link>
         <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
@@ -1033,10 +1087,154 @@ Dr.Can设计的Simulink仿真模型。 &lt;br&gt;
 		data-flex-grow=&#34;155&#34;
 		data-flex-basis=&#34;372px&#34;
 	
+&gt;&lt;br&gt;
+对例题进行分析 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.4.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.4_hu2176705203236782246.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/15.4_hu2396978591001888174.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.5.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;959&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.5_hu15441917180270956965.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/15.5_hu5027431554718673641.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;227&#34;
+		data-flex-basis=&#34;546px&#34;
+	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;16-非线性自适应控制器&#34;&gt;16-非线性自适应控制器
-&lt;/h3&gt;&lt;h3 id=&#34;16-非线性滑膜控制器&#34;&gt;16-非线性滑膜控制器
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.1_hu5061890813754158188.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/16.1_hu13324598345828524263.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt; &lt;br&gt;
+对经典弹簧系统进行非线性自适应控制器的设计 &lt;br&gt;
+自己做的有点错误 &lt;br&gt;
+标准答案如下图片 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.2.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.2_hu15789441608688984371.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/16.2_hu15813796769467803928.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;17-非线性滑膜控制器&#34;&gt;17-非线性滑膜控制器
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.1_hu1499857284783875841.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.1_hu9927858859803883763.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.2.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.2_hu11561626687153324929.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.2_hu16203061386306202606.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.3.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.3_hu9117547256349787586.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.3_hu7805912238490529829.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.4.jpg&#34;
+	width=&#34;810&#34;
+	height=&#34;671&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.4_hu12348265309963556556.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.4_hu7246052337841657702.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;120&#34;
+		data-flex-basis=&#34;289px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.5.png&#34;
+	width=&#34;3000&#34;
+	height=&#34;1457&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.5_hu1684519565462834997.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.5_hu5328053693850226919.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;205&#34;
+		data-flex-basis=&#34;494px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.6.png&#34;
+	width=&#34;3000&#34;
+	height=&#34;1457&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.6_hu9185021091418649597.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.6_hu1484279808355957790.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;205&#34;
+		data-flex-basis=&#34;494px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>DRCAN-Learn-Blog-Basic</title>
@@ -1615,20 +1813,6 @@ PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳�
 &lt;/h3&gt;&lt;p&gt;下面以Manual-Position飞行模式为例子对PX4原有的飞行模式进行分析，以便我们写出自己的飞行模式。 &lt;br&gt;
 但是在飞行模式中，可以看出并没有PID相关的直接控制。在这些控制代码中，更多的是作为一种高级控制。分析摇杆输入等混合输入，来对SetPoint进行赋值，分发给更底层的PID控制机构。&lt;/p&gt;
 &lt;h3 id=&#34;四旋翼数学模型推导&#34;&gt;四旋翼数学模型推导
-&lt;/h3&gt;</description>
-        </item>
-        <item>
-        <title>Simulink-PX4仿真</title>
-        <link>https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/</link>
-        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/fengmian.png" alt="Featured image of post Simulink-PX4仿真" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置&#34;&gt;PX4-Simulink联合环境配置
-&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1gF411T7st?spm_id_from=333.788.recommend_more_video.1&amp;amp;vd_source=c07e49f2b08d68d3bb624651ee908d97&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;基于Simulink的ROS2下PX4无人机控制框架-入门篇&lt;/a&gt;
-PX4版本：群里的版本1.13？
-Matlab版本：2022b&lt;/p&gt;
-&lt;h3 id=&#34;四旋翼数学模型的推导&#34;&gt;四旋翼数学模型的推导
 &lt;/h3&gt;</description>
         </item>
         <item>

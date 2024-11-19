@@ -542,10 +542,154 @@ Dr.Can设计的Simulink仿真模型。 &lt;br&gt;
 		data-flex-grow=&#34;155&#34;
 		data-flex-basis=&#34;372px&#34;
 	
+&gt;&lt;br&gt;
+对例题进行分析 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.4.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.4_hu2176705203236782246.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/15.4_hu2396978591001888174.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.5.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;959&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.5_hu15441917180270956965.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/15.5_hu5027431554718673641.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;227&#34;
+		data-flex-basis=&#34;546px&#34;
+	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;16-非线性自适应控制器&#34;&gt;16-非线性自适应控制器
-&lt;/h3&gt;&lt;h3 id=&#34;16-非线性滑膜控制器&#34;&gt;16-非线性滑膜控制器
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.1_hu5061890813754158188.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/16.1_hu13324598345828524263.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt; &lt;br&gt;
+对经典弹簧系统进行非线性自适应控制器的设计 &lt;br&gt;
+自己做的有点错误 &lt;br&gt;
+标准答案如下图片 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.2.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.2_hu15789441608688984371.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/16.2_hu15813796769467803928.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;17-非线性滑膜控制器&#34;&gt;17-非线性滑膜控制器
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.1.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.1_hu1499857284783875841.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.1_hu9927858859803883763.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.2.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.2_hu11561626687153324929.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.2_hu16203061386306202606.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.3.jpg&#34;
+	width=&#34;2182&#34;
+	height=&#34;3086&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.3_hu9117547256349787586.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.3_hu7805912238490529829.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;70&#34;
+		data-flex-basis=&#34;169px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.4.jpg&#34;
+	width=&#34;810&#34;
+	height=&#34;671&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.4_hu12348265309963556556.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.4_hu7246052337841657702.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;120&#34;
+		data-flex-basis=&#34;289px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.5.png&#34;
+	width=&#34;3000&#34;
+	height=&#34;1457&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.5_hu1684519565462834997.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.5_hu5328053693850226919.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;205&#34;
+		data-flex-basis=&#34;494px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.6.png&#34;
+	width=&#34;3000&#34;
+	height=&#34;1457&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.6_hu9185021091418649597.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.6_hu1484279808355957790.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;205&#34;
+		data-flex-basis=&#34;494px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>DRCAN-Learn-Blog-Basic</title>

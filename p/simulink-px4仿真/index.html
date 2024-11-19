@@ -10,7 +10,7 @@
 <meta property='og:description' content="基于Simulink的PX4仿真系统搭建，以及在仿真上部署算法，或者硬件在环。">
 <meta property='og:url' content='https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/fengmian.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-11-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-19T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/fengmian.png' />
 <meta name="twitter:title" content="Simulink-PX4仿真">
 <meta name="twitter:description" content="基于Simulink的PX4仿真系统搭建，以及在仿真上部署算法，或者硬件在环。"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/fengmian.png' />
@@ -285,6 +285,7 @@
     <li>
       <ol>
         <li><a href="#px4-simulink联合环境配置">PX4-Simulink联合环境配置</a></li>
+        <li><a href="#开发环境的配置">开发环境的配置</a></li>
         <li><a href="#四旋翼数学模型的推导">四旋翼数学模型的推导</a></li>
       </ol>
     </li>
@@ -357,7 +358,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-10-10</time>
+                <time class="article-time--published">2024-11-19</time>
             </div>
         
 
@@ -388,10 +389,50 @@
     
     
     <h3 id="px4-simulink联合环境配置">PX4-Simulink联合环境配置
-</h3><p><a class="link" href="https://www.bilibili.com/video/BV1gF411T7st?spm_id_from=333.788.recommend_more_video.1&amp;vd_source=c07e49f2b08d68d3bb624651ee908d97"  target="_blank" rel="noopener"
-    >基于Simulink的ROS2下PX4无人机控制框架-入门篇</a>
-PX4版本：群里的版本1.13？
-Matlab版本：2022b</p>
+</h3><p>参考如下教学： <br>
+<a class="link" href="https://www.bilibili.com/video/BV18P4y1T7UH"  target="_blank" rel="noopener"
+    >PX4与Simulink联合仿真-入门篇</a>        <br>
+<a class="link" href="https://www.bilibili.com/video/BV13S4y1P7QK"  target="_blank" rel="noopener"
+    >PX4与Simulink联合仿真-进阶篇</a>  <br>
+<a class="link" href="https://www.bilibili.com/video/BV1sj42197TH"  target="_blank" rel="noopener"
+    >使用Pixhawk2.4.8基于Simulink进行入门级飞控算法自主开发的操作</a>  <br>
+<a class="link" href="https://www.bilibili.com/video/BV1nm4y1475s"  target="_blank" rel="noopener"
+    >基于Simulink的PX4飞控算法的开发实践（1.硬件支持包配置）</a>  <br>
+<a class="link" href="https://www.bilibili.com/video/BV1gF411T7st"  target="_blank" rel="noopener"
+    >基于Simulink的ROS2下PX4无人机控制框架-入门篇</a></p>
+<p>PX4版本：适配matlab 2022b的v1.12.3 <br>
+Matlab版本：2022b <br>
+windows：Windows11家庭版</p>
+<h3 id="开发环境的配置">开发环境的配置
+</h3><p>遇到的错误：在编译时一直提示找不到.px4文件的错误如下图： <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1.jpg"
+	width="852"
+	height="639"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu2102160675909218636.jpg 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu10570373229207981760.jpg 1024w"
+	loading="lazy"
+	
+		alt="错误1找不到px4文件"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="320px"
+	
+> <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2.jpg"
+	width="1345"
+	height="854"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu2972160481222992229.jpg 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu7119989339237306091.jpg 1024w"
+	loading="lazy"
+	
+		alt="错误1找不到px4文件"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="157"
+		data-flex-basis="377px"
+	
+></p>
 <h3 id="四旋翼数学模型的推导">四旋翼数学模型的推导
 </h3>
 </section>
