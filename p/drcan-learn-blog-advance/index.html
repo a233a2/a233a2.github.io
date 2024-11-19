@@ -753,8 +753,8 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 		data-flex-grow="70"
 		data-flex-basis="169px"
 	
-> <br>
-<img src="/p/drcan-learn-blog-advance/10.2.jpg"
+></p>
+<p><img src="/p/drcan-learn-blog-advance/10.2.jpg"
 	width="2182"
 	height="1039"
 	srcset="/p/drcan-learn-blog-advance/10.2_hu10640356901182428119.jpg 480w, /p/drcan-learn-blog-advance/10.2_hu1059086410672742270.jpg 1024w"
@@ -771,18 +771,19 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 <h3 id="12-非线性理论基础">12-非线性理论基础
 </h3><p><img src="/p/drcan-learn-blog-advance/12.1.jpg"
 	width="2182"
-	height="3086"
-	srcset="/p/drcan-learn-blog-advance/12.1_hu7957498413738984835.jpg 480w, /p/drcan-learn-blog-advance/12.1_hu12130442345961354058.jpg 1024w"
+	height="2658"
+	srcset="/p/drcan-learn-blog-advance/12.1_hu18315314502710110412.jpg 480w, /p/drcan-learn-blog-advance/12.1_hu15574820486102920819.jpg 1024w"
 	loading="lazy"
 	
 		alt="2"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="70"
-		data-flex-basis="169px"
+		data-flex-grow="82"
+		data-flex-basis="197px"
 	
 ><br>
+&hellip;.介绍了正定 半正定 负定 半负定的各种函数。 <br>
 <img src="/p/drcan-learn-blog-advance/12.2.jpg"
 	width="2182"
 	height="3086"
@@ -796,7 +797,8 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 		data-flex-grow="70"
 		data-flex-basis="169px"
 	
-></p>
+><br>
+此处在设计Lyapunov函数的时候使用到了物理上的能量概念，动能与重力势能相结合搞出来了一个真正的能量函数V(x)</p>
 <h3 id="13-不变性原理">13-不变性原理
 </h3><p><img src="/p/drcan-learn-blog-advance/13.1.jpg"
 	width="2182"
@@ -811,7 +813,8 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 		data-flex-grow="70"
 		data-flex-basis="169px"
 	
-></p>
+><br>
+对Lyapunov的稳定性判定分了很多的类，抽时间再整理一下。</p>
 <h3 id="14-非线性稳定性设计">14-非线性稳定性设计
 </h3><p><img src="/p/drcan-learn-blog-advance/14.1.jpg"
 	width="2182"
@@ -879,7 +882,9 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 对于李雅普诺夫直接法设计的输入以及输出较为合理。 <br>
 李雅普诺夫分析后直接消除非ND项的做法较直接线性化处理有一定优势，但是稳态效果不好。</p>
 <h3 id="15-非线性反步法设计-important">15-非线性反步法设计-Important
-</h3><p><img src="/p/drcan-learn-blog-advance/15.1.jpg"
+</h3><p>反步法设计可以说是<strong>非线性链式系统</strong>的通用设计方法。 <br>
+如下图，输入可以直接控制X2的状态，但是输入无法直接影响状态X1。  <br>
+<img src="/p/drcan-learn-blog-advance/15.1.jpg"
 	width="2182"
 	height="3086"
 	srcset="/p/drcan-learn-blog-advance/15.1_hu10678219543084000214.jpg 480w, /p/drcan-learn-blog-advance/15.1_hu7128712128322331439.jpg 1024w"
@@ -906,6 +911,21 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 		class="gallery-image" 
 		data-flex-grow="144"
 		data-flex-basis="347px"
+	
+><br>
+Dr.Can设计的Simulink仿真模型。 <br>
+<img src="/p/drcan-learn-blog-advance/15.3.jpg"
+	width="1709"
+	height="1100"
+	srcset="/p/drcan-learn-blog-advance/15.3_hu1036969065662031353.jpg 480w, /p/drcan-learn-blog-advance/15.3_hu10041066303553636064.jpg 1024w"
+	loading="lazy"
+	
+		alt="Dr.Can设计的Simulink仿真模型"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="155"
+		data-flex-basis="372px"
 	
 ></p>
 <h3 id="16-非线性自适应控制器">16-非线性自适应控制器

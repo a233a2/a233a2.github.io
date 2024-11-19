@@ -653,8 +653,8 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 		data-flex-grow=&#34;70&#34;
 		data-flex-basis=&#34;169px&#34;
 	
-&gt; &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/10.2.jpg&#34;
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/10.2.jpg&#34;
 	width=&#34;2182&#34;
 	height=&#34;1039&#34;
 	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/10.2_hu10640356901182428119.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/10.2_hu1059086410672742270.jpg 1024w&#34;
@@ -671,18 +671,19 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 &lt;h3 id=&#34;12-非线性理论基础&#34;&gt;12-非线性理论基础
 &lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/12.1.jpg&#34;
 	width=&#34;2182&#34;
-	height=&#34;3086&#34;
-	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/12.1_hu7957498413738984835.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/12.1_hu12130442345961354058.jpg 1024w&#34;
+	height=&#34;2658&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/12.1_hu18315314502710110412.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/12.1_hu15574820486102920819.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;2&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;70&#34;
-		data-flex-basis=&#34;169px&#34;
+		data-flex-grow=&#34;82&#34;
+		data-flex-basis=&#34;197px&#34;
 	
 &gt;&lt;br&gt;
+&amp;hellip;.介绍了正定 半正定 负定 半负定的各种函数。 &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/12.2.jpg&#34;
 	width=&#34;2182&#34;
 	height=&#34;3086&#34;
@@ -696,7 +697,8 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 		data-flex-grow=&#34;70&#34;
 		data-flex-basis=&#34;169px&#34;
 	
-&gt;&lt;/p&gt;
+&gt;&lt;br&gt;
+此处在设计Lyapunov函数的时候使用到了物理上的能量概念，动能与重力势能相结合搞出来了一个真正的能量函数V(x)&lt;/p&gt;
 &lt;h3 id=&#34;13-不变性原理&#34;&gt;13-不变性原理
 &lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/13.1.jpg&#34;
 	width=&#34;2182&#34;
@@ -711,7 +713,8 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 		data-flex-grow=&#34;70&#34;
 		data-flex-basis=&#34;169px&#34;
 	
-&gt;&lt;/p&gt;
+&gt;&lt;br&gt;
+对Lyapunov的稳定性判定分了很多的类，抽时间再整理一下。&lt;/p&gt;
 &lt;h3 id=&#34;14-非线性稳定性设计&#34;&gt;14-非线性稳定性设计
 &lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/14.1.jpg&#34;
 	width=&#34;2182&#34;
@@ -779,7 +782,9 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 对于李雅普诺夫直接法设计的输入以及输出较为合理。 &lt;br&gt;
 李雅普诺夫分析后直接消除非ND项的做法较直接线性化处理有一定优势，但是稳态效果不好。&lt;/p&gt;
 &lt;h3 id=&#34;15-非线性反步法设计-important&#34;&gt;15-非线性反步法设计-Important
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.1.jpg&#34;
+&lt;/h3&gt;&lt;p&gt;反步法设计可以说是&lt;strong&gt;非线性链式系统&lt;/strong&gt;的通用设计方法。 &lt;br&gt;
+如下图，输入可以直接控制X2的状态，但是输入无法直接影响状态X1。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.1.jpg&#34;
 	width=&#34;2182&#34;
 	height=&#34;3086&#34;
 	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.1_hu10678219543084000214.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/15.1_hu7128712128322331439.jpg 1024w&#34;
@@ -806,6 +811,21 @@ Z2状态不可测，直接运行时，估计值与真实值完全重合。
 		class=&#34;gallery-image&#34; 
 		data-flex-grow=&#34;144&#34;
 		data-flex-basis=&#34;347px&#34;
+	
+&gt;&lt;br&gt;
+Dr.Can设计的Simulink仿真模型。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.3.jpg&#34;
+	width=&#34;1709&#34;
+	height=&#34;1100&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/15.3_hu1036969065662031353.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/15.3_hu10041066303553636064.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Dr.Can设计的Simulink仿真模型&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;155&#34;
+		data-flex-basis=&#34;372px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;16-非线性自适应控制器&#34;&gt;16-非线性自适应控制器
