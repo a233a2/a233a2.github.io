@@ -18,6 +18,28 @@
     &gt;PADS简易教程&lt;/a&gt; &lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;http://www.edahelper.com/edahelper/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;EDAHelper&lt;/a&gt;&amp;ndash;EDA增强工具支持多款EDA 可以支持滚轮缩放+右键拖动&lt;/p&gt;
+&lt;h3 id=&#34;eda增强工具&#34;&gt;EDA增强工具
+&lt;/h3&gt;&lt;p&gt;针对PADS(支持各种版本logic, pcb)：&lt;br&gt;
+1. 向上滚动滚轮 &amp;ndash;&amp;gt; 放大，相当于PageUp&lt;br&gt;
+2. 向下滚动滚轮 &amp;ndash;&amp;gt; 缩小，相当于PageDown&lt;br&gt;
+3. 按住鼠标右键移动，可移动工作区&lt;br&gt;
+4. 鼠标中键点击 &amp;ndash;&amp;gt; 切换图层，相当于F4，原中键点击功能废弃 &lt;br&gt;
+5. 按左键拖目标 &amp;ndash;&amp;gt; 再按右键可旋转，相当于TAB键的功能，在布局时非常好用，请留意&lt;br&gt;
+6. 空格旋转器件 &amp;ndash;&amp;gt; 按CTRL+ALT+R，打开或者关闭空格旋转，按空格相当于CTRL+R，这个功能不能保存，每次打开软件时默认关闭状态 &lt;br&gt;
+7. 键盘左上角的波浪号(~)键替换为回车，方便左手操作&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>PADS学习日记</title>
+        <link>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
+        <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
+        <description>&lt;h3 id=&#34;pads学习日记&#34;&gt;PADS学习日记
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1px41177gM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PADS简易教程&lt;/a&gt; &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://www.edahelper.com/edahelper/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EDAHelper&lt;/a&gt;&amp;ndash;EDA增强工具支持多款EDA 可以支持滚轮缩放+右键拖动&lt;/p&gt;
 &lt;h3 id=&#34;heading&#34;&gt;
 &lt;/h3&gt;</description>
         </item>

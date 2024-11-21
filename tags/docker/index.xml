@@ -146,7 +146,39 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;docker部署深度学习项目实例&#34;&gt;Docker部署深度学习项目实例
-&lt;/h2&gt;</description>
+&lt;/h2&gt;&lt;p&gt;先鸽了&lt;/p&gt;
+&lt;h2 id=&#34;docker部署px4开发环境实例&#34;&gt;Docker部署PX4开发环境实例
+&lt;/h2&gt;&lt;p&gt;Docker的PX4容器项目地址：https://github.com/PX4/PX4-containers&lt;/p&gt;
+&lt;h4 id=&#34;1-克隆项目到本地&#34;&gt;1 克隆项目到本地
+&lt;/h4&gt;&lt;h4 id=&#34;2-执行&#34;&gt;2 执行
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cd docker
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker build -t px4io/px4-dev-ros-melodic -f Dockerfile_ros-melodic .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;构建完成镜像大小为6.5GB左右&lt;/p&gt;
+&lt;h4 id=&#34;3-构建firmware时使用docker环境&#34;&gt;3 构建Firmware时使用Docker环境？
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/px4-1.png&#34;
+	width=&#34;875&#34;
+	height=&#34;335&#34;
+	srcset=&#34;https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/px4-1_hu1988442857751559209.png 480w, https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/px4-1_hu15054254506839230310.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;构建Firmware时使用Docker环境&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;261&#34;
+		data-flex-basis=&#34;626px&#34;
+	
+&gt; &lt;br&gt;
+3这个还没试过&lt;/p&gt;
+</description>
         </item>
         
     </channel>

@@ -300,6 +300,17 @@
     <li><a href="#dockerdesktop的使用">DockerDesktop的使用</a></li>
     <li><a href="#docker-compose">Docker Compose</a></li>
     <li><a href="#docker部署深度学习项目实例">Docker部署深度学习项目实例</a></li>
+    <li><a href="#docker部署px4开发环境实例">Docker部署PX4开发环境实例</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#1-克隆项目到本地">1 克隆项目到本地</a></li>
+            <li><a href="#2-执行">2 执行</a></li>
+            <li><a href="#3-构建firmware时使用docker环境">3 构建Firmware时使用Docker环境？</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -528,7 +539,39 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="docker部署深度学习项目实例">Docker部署深度学习项目实例
-</h2>
+</h2><p>先鸽了</p>
+<h2 id="docker部署px4开发环境实例">Docker部署PX4开发环境实例
+</h2><p>Docker的PX4容器项目地址：https://github.com/PX4/PX4-containers</p>
+<h4 id="1-克隆项目到本地">1 克隆项目到本地
+</h4><h4 id="2-执行">2 执行
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd docker
+</span></span><span class="line"><span class="cl">docker build -t px4io/px4-dev-ros-melodic -f Dockerfile_ros-melodic .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>构建完成镜像大小为6.5GB左右</p>
+<h4 id="3-构建firmware时使用docker环境">3 构建Firmware时使用Docker环境？
+</h4><p><img src="/p/docker%E5%9F%BA%E7%A1%80/px4-1.png"
+	width="875"
+	height="335"
+	srcset="/p/docker%E5%9F%BA%E7%A1%80/px4-1_hu1988442857751559209.png 480w, /p/docker%E5%9F%BA%E7%A1%80/px4-1_hu15054254506839230310.png 1024w"
+	loading="lazy"
+	
+		alt="构建Firmware时使用Docker环境"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="261"
+		data-flex-basis="626px"
+	
+> <br>
+3这个还没试过</p>
+
 </section>
 
 
@@ -606,6 +649,19 @@
 
             
                 
+<article class="">
+    <a href="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PADS学习日记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
 <article class="has-image">
     <a href="/p/simulink-px4%E4%BB%BF%E7%9C%9F/">
         
@@ -661,30 +717,6 @@
 
         <div class="article-details">
             <h2 class="article-title">PMSM原理加控制方法以及仿真</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/">
-        
-        
-            <div class="article-image">
-                <img src="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.4999c796245c45e6072bdb0d4846e9bd_hu11837448296042111343.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post XTdrone仿真环境"
-                        
-                        data-hash="md5-SZnHliRcReYHK9sNSEbpvQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">XTdrone仿真环境</h2>
         </div>
     </a>
 </article>
