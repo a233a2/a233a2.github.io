@@ -7,7 +7,21 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PADS学习日记</title>
+        <link>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
+        <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
+        <description>&lt;h3 id=&#34;pads学习日记&#34;&gt;PADS学习日记
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1px41177gM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PADS简易教程&lt;/a&gt; &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;http://www.edahelper.com/edahelper/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EDAHelper&lt;/a&gt;&amp;ndash;EDA增强工具支持多款EDA 可以支持滚轮缩放+右键拖动&lt;/p&gt;
+&lt;h3 id=&#34;heading&#34;&gt;
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>Docker基础</title>
         <link>https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
