@@ -912,7 +912,19 @@ Dr.Can设计的Simulink仿真模型。 &lt;br&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;16-非线性自适应控制器&#34;&gt;16-非线性自适应控制器
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.1.jpg&#34;
+&lt;/h3&gt;&lt;p&gt;自认为的自适应控制器简化设计步骤： &lt;br&gt;
+自适应控制器是处理a参数未知的情况。通过设计一个估计值，再引入估计误差。 &lt;br&gt;
+估计误差的导数因为a参数缓慢变化，所以a的导数为0。但是不禁让人思考a变化迅速的时候呢？    &lt;br&gt;
+对估计误差与原本控制误差进行联合Lyapunov稳定行为分析。设计u使得李函数的导数为ND。   &lt;br&gt;
+在之前认为a参数已知的反馈线性化的设计过程中，把a换为a的估计值，带入到u中。&lt;/p&gt;
+&lt;p&gt;处理联合的李函数，通过设计a的估计使得难以负定的项为0。得到a估计的导的Hope值。 &lt;br&gt;
+此时把a积分，再带回反馈系统线性化设计的u。设计完成。&lt;/p&gt;
+&lt;p&gt;此时联合李函数是NSD的。&lt;strong&gt;不能说a估计和e趋近于0，只能说他们是稳定的。&lt;/strong&gt;  &lt;br&gt;
+需要引入Lyapunov-like lemma。证明一下。&lt;/p&gt;
+&lt;p&gt;g导数=2kee点，肯定是有界的 &lt;br&gt;
+①当dot V为NSD时，x=0是Lyapunov稳定点，说明x1和x2有界；      &lt;br&gt;
+②又因为dot V只是NSD，不是ND，所以NSD并不代表x1和x2都→0,即不是Asymptotically Stable.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.1.jpg&#34;
 	width=&#34;2182&#34;
 	height=&#34;3086&#34;
 	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.1_hu5061890813754158188.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/16.1_hu13324598345828524263.jpg 1024w&#34;
@@ -926,25 +938,26 @@ Dr.Can设计的Simulink仿真模型。 &lt;br&gt;
 		data-flex-basis=&#34;169px&#34;
 	
 &gt; &lt;br&gt;
-对经典弹簧系统进行非线性自适应控制器的设计 &lt;br&gt;
-自己做的有点错误 &lt;br&gt;
+对经典弹簧系统进行非线性自适应控制器的设计&lt;/p&gt;
+&lt;p&gt;自己做的有点错误 &lt;br&gt;
 标准答案如下图片 &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.2.jpg&#34;
-	width=&#34;2182&#34;
-	height=&#34;3086&#34;
-	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.2_hu15789441608688984371.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/16.2_hu15813796769467803928.jpg 1024w&#34;
+	width=&#34;1220&#34;
+	height=&#34;1461&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.2_hu4954459544782785366.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/16.2_hu14239506101412178476.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;2&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;70&#34;
-		data-flex-basis=&#34;169px&#34;
+		data-flex-grow=&#34;83&#34;
+		data-flex-basis=&#34;200px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;17-非线性滑膜控制器&#34;&gt;17-非线性滑膜控制器
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.1.jpg&#34;
+&lt;/h3&gt;&lt;p&gt;鲁棒控制相关可以看山东科技大学的周克敏教授视频：https://space.bilibili.com/615075414  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.1.jpg&#34;
 	width=&#34;2182&#34;
 	height=&#34;3086&#34;
 	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.1_hu1499857284783875841.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.1_hu9927858859803883763.jpg 1024w&#34;
