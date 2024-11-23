@@ -1331,7 +1331,38 @@ Dr.Can设计的Simulink仿真模型。 &lt;br&gt;
 		data-flex-basis=&#34;169px&#34;
 	
 &gt; &lt;br&gt;
-对经典弹簧系统进行非线性自适应控制器的设计&lt;/p&gt;
+对经典弹簧系统进行非线性自适应控制器的设计 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.3.jpg&#34;
+	width=&#34;1530&#34;
+	height=&#34;891&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.3_hu6765899608876502882.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/16.3_hu5436791327526401788.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;171&#34;
+		data-flex-basis=&#34;412px&#34;
+	
+&gt;  &lt;br&gt;
+参考他人分享的Simulink设计，设计如下的系统。 &lt;br&gt;
+Xd改为变化量，a改为变化量。在k等于20的情况下跟踪性能也还行。 &lt;br&gt;
+k太小不行。k小的时候x根本无法完成跟踪。k大小和跟踪性能的关系还有待分析。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.4.png&#34;
+	width=&#34;3200&#34;
+	height=&#34;1769&#34;
+	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.4_hu8220659023791264729.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/16.4_hu2737523474660313422.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;180&#34;
+		data-flex-basis=&#34;434px&#34;
+	
+&gt;&lt;/p&gt;
 &lt;p&gt;自己做的有点错误 &lt;br&gt;
 标准答案如下图片 &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/16.2.jpg&#34;
