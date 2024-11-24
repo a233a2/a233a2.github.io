@@ -300,7 +300,12 @@
         <li><a href="#14-非线性稳定性设计">14-非线性稳定性设计</a></li>
         <li><a href="#15-非线性反步法设计-important">15-非线性反步法设计-Important</a></li>
         <li><a href="#16-非线性自适应控制器">16-非线性自适应控制器</a></li>
-        <li><a href="#17-非线性滑膜控制器">17-非线性滑膜控制器</a></li>
+        <li><a href="#17-非线性鲁棒控制器">17-非线性鲁棒控制器</a>
+          <ol>
+            <li><a href="#17-1-滑膜控制器">17-1 滑膜控制器</a></li>
+            <li><a href="#17-2-其他两种鲁棒控制-高增益高频">17-2 其他两种鲁棒控制 高增益/高频</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -383,7 +388,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 6 分钟
+                    阅读时长: 7 分钟
                 </time>
             </div>
         
@@ -572,7 +577,7 @@ Zero Order Hold （ZOH零阶保持器），使得控制量在一个控制周期�
 	
 ><br>
 Error   ：G(T) = ∫(0,T) exp(Aτ) dτ·B
-状态空间的解输出，在离散系统下的表达形式。离散系统下不关心t，而着重与每个周期。系统输入u在一个周期内可以看作一个常数（ZOH的作用）。所以可以提取出来。。</p>
+状态空间的解输出，在离散系统下的表达形式。离散系统下不关心t，而着重与每个周期。系统输入u在一个周期内可以看作一个常数（ZOH的作用）。所以可以提取出来。</p>
 <p>使用软件将连续系统转化为离散系统 指令<strong>c2d(sys,f)</strong>。</p>
 <h3 id="4-相图-相轨迹动态系统分析phase-portrait爱情故事">4-相图-相轨迹动态系统分析Phase Portrait爱情故事
 </h3><p>相轨迹</p>
@@ -964,12 +969,10 @@ Dr.Can设计的Simulink仿真模型。 <br>
 对估计误差与原本控制误差进行联合Lyapunov稳定行为分析。设计u使得李函数的导数为ND。   <br>
 在之前认为a参数已知的反馈线性化的设计过程中，把a换为a的估计值，带入到u中。</p>
 <p>处理联合的李函数，通过设计a的估计使得难以负定的项为0。得到a估计的导的Hope值。 <br>
-此时把a积分，再带回反馈系统线性化设计的u。设计完成。</p>
+此时把a积分，再带回反馈系统线性化设计的u。设计完成。  <br>
+（貌似这些设计的步骤都是通用的，都类似反步法的设计步骤）</p>
 <p>此时联合李函数是NSD的。<strong>不能说a估计和e趋近于0，只能说他们是稳定的。</strong>  <br>
 需要引入Lyapunov-like lemma。证明一下。</p>
-<p>g导数=2kee点，肯定是有界的 <br>
-①当dot V为NSD时，x=0是Lyapunov稳定点，说明x1和x2有界；      <br>
-②又因为dot V只是NSD，不是ND，所以NSD并不代表x1和x2都→0,即不是Asymptotically Stable.</p>
 <p><img src="/p/drcan-learn-blog-advance/16.1.jpg"
 	width="2182"
 	height="3086"
@@ -984,7 +987,7 @@ Dr.Can设计的Simulink仿真模型。 <br>
 		data-flex-basis="169px"
 	
 > <br>
-对经典弹簧系统进行非线性自适应控制器的设计 <br>
+参考DrCan以及其他学员分享的Simulink设计，设计如下的系统。     <br>
 <img src="/p/drcan-learn-blog-advance/16.3.jpg"
 	width="1530"
 	height="891"
@@ -999,24 +1002,41 @@ Dr.Can设计的Simulink仿真模型。 <br>
 		data-flex-basis="412px"
 	
 >  <br>
-参考他人分享的Simulink设计，设计如下的系统。 <br>
-Xd改为变化量，a改为变化量。在k等于20的情况下跟踪性能也还行。 <br>
-k太小不行。k小的时候x根本无法完成跟踪。k大小和跟踪性能的关系还有待分析。 <br>
+Xd改为变化量，a改为变化量。在k等于20的情况下跟踪性能也还行。</p>
+<p>k太小不行。k小的时候x根本无法完成跟踪。k必须很大才能很好的跟踪。
+但是k太大的话会导致u变得十分的抽象，显然是难以实现u的输出 不符合实际工程的运用。  <br>
+下图为k为20的跟踪情况，感觉已经非常不错了！     <br>
 <img src="/p/drcan-learn-blog-advance/16.4.png"
 	width="3200"
 	height="1769"
 	srcset="/p/drcan-learn-blog-advance/16.4_hu8220659023791264729.png 480w, /p/drcan-learn-blog-advance/16.4_hu2737523474660313422.png 1024w"
 	loading="lazy"
 	
-		alt="2"
+		alt="k为20的跟踪情况"
 	
 	
 		class="gallery-image" 
 		data-flex-grow="180"
 		data-flex-basis="434px"
 	
+> <br>
+下图为k为20的输入u的情况。可以看到已经有点抽象了，幅度跨度很大。也可能是我这个系统的a变化幅度太大，以及目标值太过苛刻。不知道实际工程中的使用情况是如何的？      <br>
+<img src="/p/drcan-learn-blog-advance/16.5.png"
+	width="1191"
+	height="618"
+	srcset="/p/drcan-learn-blog-advance/16.5_hu1876342014172403373.png 480w, /p/drcan-learn-blog-advance/16.5_hu17529427337839311296.png 1024w"
+	loading="lazy"
+	
+		alt="k为20的输入u的情况"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="192"
+		data-flex-basis="462px"
+	
 ></p>
-<p>自己做的有点错误 <br>
+<p>课后题：对经典弹簧系统进行非线性自适应控制器的设计
+自己做的有点错误 <br>
 标准答案如下图片 <br>
 <img src="/p/drcan-learn-blog-advance/16.2.jpg"
 	width="1220"
@@ -1032,9 +1052,10 @@ k太小不行。k小的时候x根本无法完成跟踪。k大小和跟踪性能�
 		data-flex-basis="200px"
 	
 ></p>
-<h3 id="17-非线性滑膜控制器">17-非线性滑膜控制器
-</h3><p>鲁棒控制相关可以看山东科技大学的周克敏教授视频：https://space.bilibili.com/615075414  <br>
-<img src="/p/drcan-learn-blog-advance/17.1.jpg"
+<h3 id="17-非线性鲁棒控制器">17-非线性鲁棒控制器
+</h3><p>鲁棒控制相关可以看山东科技大学的周克敏教授视频：https://space.bilibili.com/615075414</p>
+<h4 id="17-1-滑膜控制器">17-1 滑膜控制器
+</h4><p><img src="/p/drcan-learn-blog-advance/17.1.jpg"
 	width="2182"
 	height="3086"
 	srcset="/p/drcan-learn-blog-advance/17.1_hu1499857284783875841.jpg 480w, /p/drcan-learn-blog-advance/17.1_hu9927858859803883763.jpg 1024w"
@@ -1047,8 +1068,27 @@ k太小不行。k小的时候x根本无法完成跟踪。k大小和跟踪性能�
 		data-flex-grow="70"
 		data-flex-basis="169px"
 	
-></p>
-<p><img src="/p/drcan-learn-blog-advance/17.2.jpg"
+><br>
+这里滑模控制的形式就是使得 <br>
+$$ <br>
+u=ke+\dot{x}_d+\rho \frac{|e|}{e} <br>
+$$ <br>
+<strong>而e的项是一个类似符号函数sgn(e)的东西。</strong><br>
+<strong>而$\rho$是一个大于fx的绝对值的一个函数。</strong> <br>
+将u的形式代回到e导中，画出e和e导的状态图相轨迹。可以看到一个面-滑模面，系统状态就在这个面上趋近于0。  <br>
+部分摘自：<a class="link" href="https://zhuanlan.zhihu.com/p/463230163"  target="_blank" rel="noopener"
+    >滑膜控制的简单理解-知乎</a>   <br>
+上图右侧是证明过程，在此用到了一个数学手法，对微分方程的不等式的证明，引入了一个松弛变量来变为等式。最终通过微分方程的通解的方式解出李函数在经过放缩，得出李函数小于某值。       <br>
+<strong>接着将李函数反带回这个不等式</strong>，直接解出e的状态是小于xx值的，最后得出这个状态e是指数渐进稳定的。这个证明手法确实巧妙。</p>
+<h4 id="17-2-其他两种鲁棒控制-高增益高频">17-2 其他两种鲁棒控制 高增益/高频
+</h4><p>在Drcan的视频中解释鲁棒控制的u通式都是   <br>
+$$ <br>
+u=ke+\dot{x}<em>d+u</em>{aux}<br>
+$$ <br>
+$u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不同。  <br>
+下图给出了其他两种鲁棒控制的$u_{aux}$形式。另外给出了证明过程。都是与滑膜的证明过程相似的过程。可以好好学习一下。 <br>
+可以简单的理解 高增益控制方式就是使用
+<img src="/p/drcan-learn-blog-advance/17.2.jpg"
 	width="2182"
 	height="3086"
 	srcset="/p/drcan-learn-blog-advance/17.2_hu11561626687153324929.jpg 480w, /p/drcan-learn-blog-advance/17.2_hu16203061386306202606.jpg 1024w"
@@ -1061,8 +1101,8 @@ k太小不行。k小的时候x根本无法完成跟踪。k大小和跟踪性能�
 		data-flex-grow="70"
 		data-flex-basis="169px"
 	
-></p>
-<p><img src="/p/drcan-learn-blog-advance/17.3.jpg"
+>  <br>
+<img src="/p/drcan-learn-blog-advance/17.3.jpg"
 	width="2182"
 	height="3086"
 	srcset="/p/drcan-learn-blog-advance/17.3_hu9117547256349787586.jpg 480w, /p/drcan-learn-blog-advance/17.3_hu7805912238490529829.jpg 1024w"
