@@ -13,13 +13,62 @@
         <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/pads.jpg" alt="Featured image of post PADS学习日记" /&gt;&lt;h3 id=&#34;pads学习日记&#34;&gt;PADS学习日记
-&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1px41177gM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/pads.jpg" alt="Featured image of post PADS学习日记" /&gt;&lt;h2 id=&#34;pads学习日记&#34;&gt;PADS学习日记
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1px41177gM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;PADS简易教程&lt;/a&gt; &lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;http://www.edahelper.com/edahelper/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;EDAHelper&lt;/a&gt;&amp;ndash;EDA增强工具支持多款EDA 可以支持滚轮缩放+右键拖动&lt;/p&gt;
-&lt;h3 id=&#34;详细&#34;&gt;详细
-&lt;/h3&gt;</description>
+    &gt;EDAHelper&lt;/a&gt;&amp;ndash;EDA增强工具       &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1qZ4y1x77m&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;教程 | 24小时教会使用PADS进行PCB设计&lt;/a&gt;  &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/xile_5/article/details/142998751&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PADS 入门教程（一）&lt;/a&gt; &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1D4411r7G3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PADS VX系列 全套零基础入门PCB Layout设计实战视频教程PCB设计培训凡亿教育&lt;/a&gt; &lt;br&gt;
+PADS Layout：封装
+PADS Logic：原理图
+PADS Router：布线&lt;/p&gt;
+&lt;h3 id=&#34;绘制板框&#34;&gt;绘制板框
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E7%BB%98%E5%88%B6%E6%9D%BF%E6%A1%86.jpg&#34;
+	width=&#34;1122&#34;
+	height=&#34;962&#34;
+	srcset=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E7%BB%98%E5%88%B6%E6%9D%BF%E6%A1%86_hu3023615212182053352.jpg 480w, https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E7%BB%98%E5%88%B6%E6%9D%BF%E6%A1%86_hu6781904545866951342.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;绘制板框&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;116&#34;
+		data-flex-basis=&#34;279px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在Layout页面右下角可以切换mm或者mil单位。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;全选画的线，右键选择特性，类型选择板框。另外i有DXF文件也可以导入DXF文件来确定板框。&lt;/p&gt;
+&lt;h3 id=&#34;原理图转pcb&#34;&gt;原理图转PCB
+&lt;/h3&gt;&lt;p&gt;原理图与PCB通过Logic连接。点击发送网表即可。也可以在PCB页面手动导入网表（.asc文件）  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E5%8E%9F%E7%90%86%E5%9B%BE%E8%BD%ACPCB%E6%93%8D%E4%BD%9C1.jpg&#34;
+	width=&#34;1189&#34;
+	height=&#34;569&#34;
+	srcset=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E5%8E%9F%E7%90%86%E5%9B%BE%E8%BD%ACPCB%E6%93%8D%E4%BD%9C1_hu12167032678976006006.jpg 480w, https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E5%8E%9F%E7%90%86%E5%9B%BE%E8%BD%ACPCB%E6%93%8D%E4%BD%9C1_hu6802570703601031848.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;原理图转PCB操作1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;208&#34;
+		data-flex-basis=&#34;501px&#34;
+	
+&gt;  &lt;br&gt;
+然后在原理图中勾选部分元件，在PCB上右键勾选的元件，点击“分散”即可将元件分散开，方便之后布局。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PS：在原理图选择后，在PCB上高亮。快捷键&lt;strong&gt;Ctrl+E&lt;/strong&gt;可以快速选择移动。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;layout&#34;&gt;Layout
+&lt;/h3&gt;&lt;p&gt;布局位置确定后，可以右键器件选择特性，勾选胶粘G。可以防止误移。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Docker基础</title>
