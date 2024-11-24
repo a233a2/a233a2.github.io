@@ -680,9 +680,9 @@ Xd改为变化量，a改为变化量。在k等于20的情况下跟踪性能也�
 	
 &gt;&lt;br&gt;
 这里滑模控制的形式就是使得 &lt;br&gt;
-[
+$$
 u=ke+\dot{x}_d+\rho \frac{\left| e \right|}{e}
-] &lt;br&gt;
+$$
 &lt;strong&gt;而e的项是一个类似符号函数sgn(e)的东西。&lt;/strong&gt;&lt;br&gt;
 &lt;strong&gt;而$\rho$是一个大于fx的绝对值的一个函数。&lt;/strong&gt; &lt;br&gt;
 将u的形式代回到e导中，画出e和e导的状态图相轨迹。可以看到一个面-滑模面，系统状态就在这个面上趋近于0。  &lt;br&gt;
@@ -692,9 +692,9 @@ u=ke+\dot{x}_d+\rho \frac{\left| e \right|}{e}
 &lt;strong&gt;接着将李函数反带回这个不等式&lt;/strong&gt;，直接解出e的状态是小于xx值的，最后得出这个状态e是指数渐进稳定的。这个证明手法确实巧妙。&lt;/p&gt;
 &lt;h4 id=&#34;17-2-其他两种鲁棒控制-高增益高频&#34;&gt;17-2 其他两种鲁棒控制 高增益/高频
 &lt;/h4&gt;&lt;p&gt;在Drcan的视频中解释鲁棒控制的u通式都是   &lt;br&gt;
-[
+$$
 u=ke+\dot{x}&lt;em&gt;d+u&lt;/em&gt;{aux}
-] &lt;br&gt;
+$$
 $u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不同。  &lt;br&gt;
 下图给出了其他两种鲁棒控制的$u_{aux}$形式。另外给出了证明过程。都是与滑膜的证明过程相似的过程。可以好好学习一下。 &lt;br&gt;
 可以简单的理解 高增益控制方式就是使用
