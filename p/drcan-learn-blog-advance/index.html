@@ -388,7 +388,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 7 分钟
+                    阅读时长: 8 分钟
                 </time>
             </div>
         
@@ -1087,7 +1087,8 @@ u=ke+\dot{x}<em>d+u</em>{aux}
 $$
 $u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不同。  <br>
 下图给出了其他两种鲁棒控制的$u_{aux}$形式。另外给出了证明过程。都是与滑膜的证明过程相似的过程。可以好好学习一下。 <br>
-可以简单的理解 高增益控制方式就是使用
+可以简单的理解 高增益控制方式就是使用足够大的输入去抵消不确定性。 <br>
+而高频的控制方式就是滑膜的一种变式，通过设置参数使得其相较于滑模控制更为平和。  <br>
 <img src="/p/drcan-learn-blog-advance/17.2.jpg"
 	width="2182"
 	height="3086"
@@ -1115,8 +1116,9 @@ $u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不�
 		data-flex-grow="70"
 		data-flex-basis="169px"
 	
-></p>
-<p><img src="/p/drcan-learn-blog-advance/17.4.jpg"
+> <br>
+以下是对三种控制方式进行建模分析。对滑膜控制分一个子系统，对其他两种分别不同的参数大小分别设置4个子系统如下图：  <br>
+<img src="/p/drcan-learn-blog-advance/17.4.jpg"
 	width="810"
 	height="671"
 	srcset="/p/drcan-learn-blog-advance/17.4_hu12348265309963556556.jpg 480w, /p/drcan-learn-blog-advance/17.4_hu7246052337841657702.jpg 1024w"
@@ -1129,8 +1131,10 @@ $u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不�
 		data-flex-grow="120"
 		data-flex-basis="289px"
 	
-></p>
-<p><img src="/p/drcan-learn-blog-advance/17.5.png"
+> <br>
+运行结果： <br>
+首先是四个系统的误差消除情况如下图：  <br>
+<img src="/p/drcan-learn-blog-advance/17.5.png"
 	width="3000"
 	height="1457"
 	srcset="/p/drcan-learn-blog-advance/17.5_hu1684519565462834997.png 480w, /p/drcan-learn-blog-advance/17.5_hu5328053693850226919.png 1024w"
@@ -1143,8 +1147,9 @@ $u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不�
 		data-flex-grow="205"
 		data-flex-basis="494px"
 	
-></p>
-<p><img src="/p/drcan-learn-blog-advance/17.6.png"
+> <br>
+接着是四个系统的输入情况：  <br>
+<img src="/p/drcan-learn-blog-advance/17.6.png"
 	width="3000"
 	height="1457"
 	srcset="/p/drcan-learn-blog-advance/17.6_hu9185021091418649597.png 480w, /p/drcan-learn-blog-advance/17.6_hu1484279808355957790.png 1024w"

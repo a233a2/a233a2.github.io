@@ -1036,7 +1036,8 @@ u=ke+\dot{x}&lt;em&gt;d+u&lt;/em&gt;{aux}
 $$
 $u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不同。  &lt;br&gt;
 下图给出了其他两种鲁棒控制的$u_{aux}$形式。另外给出了证明过程。都是与滑膜的证明过程相似的过程。可以好好学习一下。 &lt;br&gt;
-可以简单的理解 高增益控制方式就是使用
+可以简单的理解 高增益控制方式就是使用足够大的输入去抵消不确定性。 &lt;br&gt;
+而高频的控制方式就是滑膜的一种变式，通过设置参数使得其相较于滑模控制更为平和。  &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.2.jpg&#34;
 	width=&#34;2182&#34;
 	height=&#34;3086&#34;
@@ -1064,8 +1065,9 @@ $u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不�
 		data-flex-grow=&#34;70&#34;
 		data-flex-basis=&#34;169px&#34;
 	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.4.jpg&#34;
+&gt; &lt;br&gt;
+以下是对三种控制方式进行建模分析。对滑膜控制分一个子系统，对其他两种分别不同的参数大小分别设置4个子系统如下图：  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.4.jpg&#34;
 	width=&#34;810&#34;
 	height=&#34;671&#34;
 	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.4_hu12348265309963556556.jpg 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.4_hu7246052337841657702.jpg 1024w&#34;
@@ -1078,8 +1080,10 @@ $u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不�
 		data-flex-grow=&#34;120&#34;
 		data-flex-basis=&#34;289px&#34;
 	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.5.png&#34;
+&gt; &lt;br&gt;
+运行结果： &lt;br&gt;
+首先是四个系统的误差消除情况如下图：  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.5.png&#34;
 	width=&#34;3000&#34;
 	height=&#34;1457&#34;
 	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.5_hu1684519565462834997.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.5_hu5328053693850226919.png 1024w&#34;
@@ -1092,8 +1096,9 @@ $u_{aux}$是辅助用的。针对不同的鲁棒控制，仅仅是$u_{aux}$不�
 		data-flex-grow=&#34;205&#34;
 		data-flex-basis=&#34;494px&#34;
 	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.6.png&#34;
+&gt; &lt;br&gt;
+接着是四个系统的输入情况：  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.6.png&#34;
 	width=&#34;3000&#34;
 	height=&#34;1457&#34;
 	srcset=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.6_hu9185021091418649597.png 480w, https://a233a2.github.io/p/drcan-learn-blog-advance/17.6_hu1484279808355957790.png 1024w&#34;
