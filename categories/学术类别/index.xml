@@ -1081,8 +1081,8 @@ $$
 		data-flex-basis=&#34;289px&#34;
 	
 &gt; &lt;br&gt;
-运行结果： &lt;br&gt;
-首先是四个系统的误差消除情况如下图：  &lt;br&gt;
+运行结果：&lt;/p&gt;
+&lt;p&gt;首先是四个系统的误差消除情况如下图：&lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/drcan-learn-blog-advance/17.5.png&#34;
 	width=&#34;3000&#34;
 	height=&#34;1457&#34;
@@ -1111,7 +1111,13 @@ $$
 		data-flex-grow=&#34;205&#34;
 		data-flex-basis=&#34;494px&#34;
 	
-&gt;&lt;/p&gt;
+&gt; &lt;br&gt;
+分析：   &lt;br&gt;
+滑膜：输入极为抽象，控制效果中规中矩。    &lt;br&gt;
+高增益0.1：输入在开始时很大，很抽象，但后续很平滑，收敛速度也最快。    &lt;br&gt;
+高增益1：都差不多。
+高频0.1：都差不多。   &lt;br&gt;
+高频1：都差不多，收敛效果最差。&lt;/p&gt;
 </description>
         </item>
         <item>
