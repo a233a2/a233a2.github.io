@@ -287,6 +287,7 @@
         <li><a href="#绘制板框">绘制板框</a></li>
         <li><a href="#原理图转pcb">原理图转PCB</a></li>
         <li><a href="#layout">Layout</a></li>
+        <li><a href="#得到pcb和sch工程后如何建库关联">得到PCB和SCH工程后如何建库关联</a></li>
       </ol>
     </li>
   </ol>
@@ -369,7 +370,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -439,6 +440,113 @@ PADS Router：布线</p>
 </blockquote>
 <h3 id="layout">Layout
 </h3><p>布局位置确定后，可以右键器件选择特性，勾选胶粘G。可以防止误移。</p>
+<h3 id="得到pcb和sch工程后如何建库关联">得到PCB和SCH工程后如何建库关联
+</h3><p>原理就是新建一个库，把所有现存的封装都加进去，然后就可以了，十分简单。  <br>
+首先新建一个库，将其放到最开始。这样索引的时候可以最先索引。  <br>
+<img src="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU1.jpg"
+	width="1038"
+	height="564"
+	srcset="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU1_hu8641262108592335651.jpg 480w, /p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU1_hu11451226848775082603.jpg 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="184"
+		data-flex-basis="441px"
+	
+>   <br>
+选择原理图中的元件，只选原件。 <br>
+<img src="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU2.jpg"
+	width="391"
+	height="184"
+	srcset="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU2_hu17357695908021216071.jpg 480w, /p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU2_hu12432707854507435797.jpg 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="212"
+		data-flex-basis="510px"
+	
+>   <br>
+选中后，右键选择保存到库中。 <br>
+<img src="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU3.jpg"
+	width="228"
+	height="563"
+	srcset="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU3_hu16369428397798094695.jpg 480w, /p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU3_hu9421198882916521207.jpg 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="40"
+		data-flex-basis="97px"
+	
+>   <br>
+全选-确定。提示有重复的话直接覆盖就可以。 <br>
+<img src="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU4.jpg"
+	width="484"
+	height="369"
+	srcset="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU4_hu12247231685969874010.jpg 480w, /p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU4_hu2443301842834407098.jpg 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="314px"
+	
+>   <br>
+PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选中元件，在空白处右键选择筛选条件，把胶粘元件勾选上。 <br>
+<img src="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU5.jpg"
+	width="722"
+	height="750"
+	srcset="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU5_hu11573299968405666016.jpg 480w, /p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU5_hu14814800864286323510.jpg 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="96"
+		data-flex-basis="231px"
+	
+>   <br>
+一样的操作，全选，覆盖。  <br>
+<img src="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU6.jpg"
+	width="476"
+	height="427"
+	srcset="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU6_hu4407418903685517316.jpg 480w, /p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU6_hu16727521390919493808.jpg 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="111"
+		data-flex-basis="267px"
+	
+>   <br>
+<img src="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU7.jpg"
+	width="619"
+	height="502"
+	srcset="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU7_hu7764243823913273141.jpg 480w, /p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU7_hu7423666496937989267.jpg 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="123"
+		data-flex-basis="295px"
+	
+>   <br>
+之后PCB和原理图中的封装就对应起来了。可以进行二次开发了。</p>
 
 </section>
 

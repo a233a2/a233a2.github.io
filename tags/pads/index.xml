@@ -68,6 +68,113 @@ PADS Router：布线&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;layout&#34;&gt;Layout
 &lt;/h3&gt;&lt;p&gt;布局位置确定后，可以右键器件选择特性，勾选胶粘G。可以防止误移。&lt;/p&gt;
+&lt;h3 id=&#34;得到pcb和sch工程后如何建库关联&#34;&gt;得到PCB和SCH工程后如何建库关联
+&lt;/h3&gt;&lt;p&gt;原理就是新建一个库，把所有现存的封装都加进去，然后就可以了，十分简单。  &lt;br&gt;
+首先新建一个库，将其放到最开始。这样索引的时候可以最先索引。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU1.jpg&#34;
+	width=&#34;1038&#34;
+	height=&#34;564&#34;
+	srcset=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU1_hu8641262108592335651.jpg 480w, https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU1_hu11451226848775082603.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;184&#34;
+		data-flex-basis=&#34;441px&#34;
+	
+&gt;   &lt;br&gt;
+选择原理图中的元件，只选原件。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU2.jpg&#34;
+	width=&#34;391&#34;
+	height=&#34;184&#34;
+	srcset=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU2_hu17357695908021216071.jpg 480w, https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU2_hu12432707854507435797.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;212&#34;
+		data-flex-basis=&#34;510px&#34;
+	
+&gt;   &lt;br&gt;
+选中后，右键选择保存到库中。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU3.jpg&#34;
+	width=&#34;228&#34;
+	height=&#34;563&#34;
+	srcset=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU3_hu16369428397798094695.jpg 480w, https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU3_hu9421198882916521207.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;40&#34;
+		data-flex-basis=&#34;97px&#34;
+	
+&gt;   &lt;br&gt;
+全选-确定。提示有重复的话直接覆盖就可以。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU4.jpg&#34;
+	width=&#34;484&#34;
+	height=&#34;369&#34;
+	srcset=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU4_hu12247231685969874010.jpg 480w, https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU4_hu2443301842834407098.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;131&#34;
+		data-flex-basis=&#34;314px&#34;
+	
+&gt;   &lt;br&gt;
+PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选中元件，在空白处右键选择筛选条件，把胶粘元件勾选上。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU5.jpg&#34;
+	width=&#34;722&#34;
+	height=&#34;750&#34;
+	srcset=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU5_hu11573299968405666016.jpg 480w, https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU5_hu14814800864286323510.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;96&#34;
+		data-flex-basis=&#34;231px&#34;
+	
+&gt;   &lt;br&gt;
+一样的操作，全选，覆盖。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU6.jpg&#34;
+	width=&#34;476&#34;
+	height=&#34;427&#34;
+	srcset=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU6_hu4407418903685517316.jpg 480w, https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU6_hu16727521390919493808.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;111&#34;
+		data-flex-basis=&#34;267px&#34;
+	
+&gt;   &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU7.jpg&#34;
+	width=&#34;619&#34;
+	height=&#34;502&#34;
+	srcset=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU7_hu7764243823913273141.jpg 480w, https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU7_hu7423666496937989267.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;123&#34;
+		data-flex-basis=&#34;295px&#34;
+	
+&gt;   &lt;br&gt;
+之后PCB和原理图中的封装就对应起来了。可以进行二次开发了。&lt;/p&gt;
 </description>
         </item>
         
