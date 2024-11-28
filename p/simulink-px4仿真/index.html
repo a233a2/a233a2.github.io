@@ -373,7 +373,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -402,9 +402,8 @@
     >基于Simulink的ROS2下PX4无人机控制框架-入门篇</a></p>
 <p>PX4版本：适配matlab 2022b的v1.12.3 <br>
 Matlab版本：2022b <br>
-windows：Windows11家庭版</p>
-<h3 id="开发环境的配置">开发环境的配置
-</h3><p>遇到的错误：在编译时一直提示找不到.px4文件的错误如下图： <br>
+windows：Windows11家庭版 <br>
+遇到的错误：在编译时一直提示找不到.px4文件的错误如下图： <br>
 <img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1.jpg"
 	width="852"
 	height="639"
@@ -431,6 +430,173 @@ windows：Windows11家庭版</p>
 		class="gallery-image" 
 		data-flex-grow="157"
 		data-flex-basis="377px"
+	
+></p>
+<h3 id="开发环境的配置">开发环境的配置
+</h3><p>更换各部件版本如下 <br>
+PX4版本：适配matlab 2024b的v1.14  <br>
+Matlab版本：2024b <br>
+windows：Windows11专业版  <br>
+首先安装如下的几个必须，再安装这个工具箱。 <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.1.png"
+	width="1701"
+	height="803"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.1_hu12392321823255843053.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.1_hu13223946072881756379.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="211"
+		data-flex-basis="508px"
+	
+>   <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.2.png"
+	width="1459"
+	height="751"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.2_hu12544048464941708540.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.2_hu15976501811470307073.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="194"
+		data-flex-basis="466px"
+	
+>  <br>
+安装的附加功能如下  <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.3.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.3_hu5059666396372819954.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.3_hu3441771254088437205.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+>  <br>
+此时在WSL中没有Ubuntu系统，需要安装一下22.04的ubuntu <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.4.png"
+	width="1541"
+	height="850"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.4_hu7145337591455828640.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.4_hu12722085826844152182.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="181"
+		data-flex-basis="435px"
+	
+>  <br>
+安装完后显示这个错误，是因为我的设置导致新应用安装到了D盘，需要更改以下Ubuntu的位置到C盘 <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.5.png"
+	width="813"
+	height="323"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.5_hu3205335716765804787.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.5_hu6150862383122471301.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="251"
+		data-flex-basis="604px"
+	
+>  <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.6.png"
+	width="763"
+	height="244"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.6_hu3244700270406763681.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.6_hu13086226503054537163.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="312"
+		data-flex-basis="750px"
+	
+>  <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.7.png"
+	width="964"
+	height="832"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.7_hu11609410260455348585.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.7_hu8680261712960838858.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="115"
+		data-flex-basis="278px"
+	
+>  <br>
+卸载重装是不行的，需要选择移动到C盘才可以。。。  <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.8.png"
+	width="419"
+	height="275"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.8_hu16267979081412599716.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.8_hu1231501318832381547.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="152"
+		data-flex-basis="365px"
+	
+>  <br>
+之后成功安装了Ubuntu系统 <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.9.png"
+	width="1311"
+	height="644"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.9_hu1301976172320377721.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.9_hu9845882592285961753.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="203"
+		data-flex-basis="488px"
+	
+>  <br>
+但是仍然打开工具箱后无法跳转到下一步，按照社区给的指示操作如下。  <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.10.png"
+	width="1117"
+	height="455"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.10_hu5591185037548155260.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.10_hu16691275526587925201.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="245"
+		data-flex-basis="589px"
+	
+>  <br>
+更改以下系统的类型到专业版，方便后续更改电脑的语言。  <br>
+<img src="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.11.png"
+	width="866"
+	height="454"
+	srcset="/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.11_hu11089777017923828415.png 480w, /p/simulink-px4%E4%BB%BF%E7%9C%9F/1.11_hu489684266309319646.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="190"
+		data-flex-basis="457px"
 	
 ></p>
 <h3 id="四旋翼数学模型的推导">四旋翼数学模型的推导
