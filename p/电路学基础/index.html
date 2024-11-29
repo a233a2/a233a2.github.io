@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。">
-<title>PX4二次开发以及仿真PX4-2</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="补充一些电路方面的知识，以及各种经典电源等应用电路。">
+<title>电路学基础</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/'>
+<link rel='canonical' href='https://a233a2.github.io/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="PX4二次开发以及仿真PX4-2">
-<meta property='og:description' content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。">
-<meta property='og:url' content='https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="电路学基础">
+<meta property='og:description' content="补充一些电路方面的知识，以及各种经典电源等应用电路。">
+<meta property='og:url' content='https://a233a2.github.io/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/fengmian.png' />
-<meta name="twitter:title" content="PX4二次开发以及仿真PX4-2">
-<meta name="twitter:description" content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://a233a2.github.io/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/fengmian.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='电路学基础' /><meta property='article:published_time' content='2024-11-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-29T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="电路学基础">
+<meta name="twitter:description" content="补充一些电路方面的知识，以及各种经典电源等应用电路。">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     </head>
@@ -284,19 +283,28 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#px4在linux环境下的编译make">PX4在Linux环境下的编译（make）</a></li>
-        <li><a href="#gazebo配合qgc地面站仿真">Gazebo配合QGC地面站仿真</a>
+        <li><a href="#电分基础定理">电分基础定理</a>
           <ol>
-            <li><a href="#linux-qgc的安装">Linux-QGC的安装：</a></li>
+            <li><a href="#基尔霍夫电流定律kcl">基尔霍夫电流定律（KCL）</a></li>
+            <li><a href="#基尔霍夫电压定律kvl">基尔霍夫电压定律（KVL）</a></li>
+            <li><a href="#路的等效分析方法">路的等效分析方法</a></li>
           </ol>
         </li>
-        <li><a href="#新建飞行任务antiwindtask">新建飞行任务AntiWindTask</a>
+        <li><a href="#元器件电路分析">元器件电路分析</a>
           <ol>
-            <li><a href="#newflighttask分析">NewFlightTask分析：</a></li>
+            <li><a href="#二极管">二极管</a></li>
+            <li><a href="#三极管">三极管</a></li>
+            <li><a href="#场效应管">场效应管</a></li>
+            <li><a href="#运算放大器">运算放大器</a></li>
           </ol>
         </li>
-        <li><a href="#manual-position飞行模式分析">Manual-Position飞行模式分析</a></li>
-        <li><a href="#四旋翼数学模型推导">四旋翼数学模型推导</a></li>
+        <li><a href="#阻抗匹配">阻抗匹配</a>
+          <ol>
+            <li><a href="#电路元件的阻抗">电路元件的阻抗</a></li>
+            <li><a href="#传输线的特征阻抗">传输线的特征阻抗</a></li>
+            <li><a href="#传输线上的反射">传输线上的反射</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -310,20 +318,8 @@
 
 
             <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/">
-                <img src="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/fengmian_hu14663244668032120646.png"
-                        srcset="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/fengmian_hu14663244668032120646.png 800w, /p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/fengmian_hu12712973619492501656.png 1600w"
-                        width="800" 
-                        height="514" 
-                        loading="lazy"
-                        alt="Featured image of post PX4二次开发以及仿真PX4-2" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
@@ -333,21 +329,17 @@
                 学术类别
             </a>
         
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
-            </a>
-        
     </header>
     
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/">PX4二次开发以及仿真PX4-2</a>
+            <a href="/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/">电路学基础</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。
+            补充一些电路方面的知识，以及各种经典电源等应用电路。
         </h3>
         
     </div>
@@ -368,7 +360,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-10-10</time>
+                <time class="article-time--published">2024-11-29</time>
             </div>
         
 
@@ -398,103 +390,41 @@
     <section class="article-content">
     
     
-    <h3 id="px4在linux环境下的编译make">PX4在Linux环境下的编译（make）
-</h3><p>使用VM17虚拟机以及Ubuntu20.04对PX4项目进行编译。<br>
-参考了超维空间科技的文章:<a class="link" href="https://blog.csdn.net/qq_38768959/article/details/106041494"  target="_blank" rel="noopener"
-    >超维空间科技的文章</a> <br>
-后续配置参考了Xtdrone仿真平台的一键配置，更为简单:<a class="link" href="https://www.yuque.com/xtdrone/manual_cn"  target="_blank" rel="noopener"
-    >Xtdrone仿真平台文档</a></p>
-<h3 id="gazebo配合qgc地面站仿真">Gazebo配合QGC地面站仿真
-</h3><h4 id="linux-qgc的安装">Linux-QGC的安装：
-</h4><p>QGC官网指导下进行配置，之后下载AppImage文件运行QGC地面站即可。 <br>
-仿真中：<br>
-<img src="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/px4&#43;gazebo.png"
-	width="2560"
-	height="1549"
-	srcset="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/px4&#43;gazebo_hu16359290037193365331.png 480w, /p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/px4&#43;gazebo_hu11163092954185164344.png 1024w"
-	loading="lazy"
-	
-		alt="PX4工程文件1"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="165"
-		data-flex-basis="396px"
-	
-></p>
-<h3 id="新建飞行任务antiwindtask">新建飞行任务AntiWindTask
-</h3><p>按照PX4官方指导文档新建自己的一个飞行任务 <a class="link" href="https://docs.px4.io/v1.14/en/"  target="_blank" rel="noopener"
-    >官方新建任务指导</a></p>
-<p>最终参考了1.14版本的指导文件，一开始看的main指导文件去配置了XTdrone自动配置的1.13的PX4工程，发现在moduls文件下根本没有飞行任务配置。。。接着去使用1.15的PX4工程，但是在CMakeList文件中有所不同，在每一个版本中都有不同之处。1.15版本也会有bug存在。<br>
-最后使用1.14版本，参考了1.14的指导文档，依然是CmakeList那里不对，文档中的放置位置在官方代码1.14.4版本中根本就没有。</p>
-<p>1.14.4版本中最后无奈我放到了一个差不多的位置。如下： <br>
-<img src="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/1.png"
-	width="595"
-	height="182"
-	srcset="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/1_hu18098538440630685739.png 480w, /p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/1_hu7742442885986621283.png 1024w"
-	loading="lazy"
-	
-		alt="Error"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="326"
-		data-flex-basis="784px"
-	
-></p>
-<p>但是在进行FMU-V2构建烧录代码时也会一直出现bug如下，但是很奇怪使用PX4-SITL构建仿真时便没有错误出现，1.15也是如此： <br>
-<img src="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/2.png"
-	width="751"
-	height="507"
-	srcset="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/2_hu10717576958982321655.png 480w, /p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/2_hu8964904137106437533.png 1024w"
-	loading="lazy"
-	
-		alt="1"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="148"
-		data-flex-basis="355px"
-	
-></p>
-<p>最后在github工程发表了issues，最终我更换了FMU-V3来构建，这个错误便消除了。最终成功执行了任务。在QGC地面站也可以正常识别。<br>
-<img src="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/AntiWind.png"
-	width="1117"
-	height="579"
-	srcset="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/AntiWind_hu8455000950526164640.png 480w, /p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/AntiWind_hu2756004170727178923.png 1024w"
-	loading="lazy"
-	
-		alt="AntiWind"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="192"
-		data-flex-basis="463px"
-	
-></p>
-<h4 id="newflighttask分析">NewFlightTask分析：
-</h4><p>在指导文件中，其让我们修改了MPC_POS_MOD这个参数，很确定的是此参数决定了飞机在手动-Position定点飞行模式时要执行的实际代码中的任务模式。在源工程中有4中，但只能选择一种。 <br>
-这也在侧面看出PX4的代码很庞大，实际运行只有那么一点。但是要真正简化这个系统也是很麻烦且没必要。<br>
-指导文件默认的效果是控制台输出一段文字。然后实际飞机并不会升高。<br>
-<img src="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%9C%80%E5%88%9D%E4%BB%BF%E7%9C%9F%E6%95%88%E6%9E%9C.png"
-	width="1553"
-	height="977"
-	srcset="/p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%9C%80%E5%88%9D%E4%BB%BF%E7%9C%9F%E6%95%88%E6%9E%9C_hu16148123657284509088.png 480w, /p/px4%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9Fpx4-2/%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%9C%80%E5%88%9D%E4%BB%BF%E7%9C%9F%E6%95%88%E6%9E%9C_hu15306114322350412902.png 1024w"
-	loading="lazy"
-	
-		alt="飞行模式最初仿真效果"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="158"
-		data-flex-basis="381px"
-	
-></p>
-<h3 id="manual-position飞行模式分析">Manual-Position飞行模式分析
-</h3><p>下面以Manual-Position飞行模式为例子对PX4原有的飞行模式进行分析，以便我们写出自己的飞行模式。 <br>
-但是在飞行模式中，可以看出并没有PID相关的直接控制。在这些控制代码中，更多的是作为一种高级控制。分析摇杆输入等混合输入，来对SetPoint进行赋值，分发给更底层的PID控制机构。</p>
-<h3 id="四旋翼数学模型推导">四旋翼数学模型推导
-</h3>
+    <p>非电子专业自用知识点，水平低下请见谅。</p>
+<h3 id="电分基础定理">电分基础定理
+</h3><h4 id="基尔霍夫电流定律kcl">基尔霍夫电流定律（KCL）
+</h4><p>基尔霍夫电流定律：简写为KCL，可描述为对任一集总参数电路，在任一时刻，流入（或“流出”）任一结点的电流的代数和等于零。 <br>
+在任何一个节点处，所有进入该节点的电流之和等于所有离开该节点的电流之和。</p>
+<h4 id="基尔霍夫电压定律kvl">基尔霍夫电压定律（KVL）
+</h4><p>基尔霍夫电压定律：简写为KVL，其可表述为对任一集总参数电路，在任一时刻，环绕任一回路（可自行假定为逆时针环绕或者顺时针环绕）,所有支路电压降（或“电压升”）的代数和等于零。 <br>
+在一个封闭回路中，总电压降等于总电动势。</p>
+<h4 id="路的等效分析方法">路的等效分析方法
+</h4><p>戴维南定理：电路可以替代为一个电压源和一个电阻构成的等效电路。其中求等效电阻时将电压源短路，电流源断路。</p>
+<p>诺顿定理：线性二端电路可以由电流源IN和与之并联的电阻RN构成的等效电路替代，其中IN为流过端口的短路电流，RN为独立电流源关闭时端口的输入电阻（或等效）电阻。</p>
+<h3 id="元器件电路分析">元器件电路分析
+</h3><h4 id="二极管">二极管
+</h4><h4 id="三极管">三极管
+</h4><h4 id="场效应管">场效应管
+</h4><h4 id="运算放大器">运算放大器
+</h4><h3 id="阻抗匹配">阻抗匹配
+</h3><p>具有电阻、电感和电容的电路里，对交流电所起的阻碍作用叫做阻抗。阻抗常用Z表示。阻抗由电阻、感抗和容抗三者组成，但不是三者简单相加。阻抗的单位是欧。</p>
+<h4 id="电路元件的阻抗">电路元件的阻抗
+</h4><p>如果将元件在正弦稳态时电压相量与电流相量之比定义为该元件的阻抗Z，则有：
+$$
+Z=\frac{\overset{\bullet}{U}}{\overset{\bullet}{I}}
+$$</p>
+<p>$$
+Z_R=R
+$$</p>
+<p>$$
+Z_C=\frac{1}{j\omega C}
+$$</p>
+<p>$$
+Z_L=j\omega L
+$$</p>
+<h4 id="传输线的特征阻抗">传输线的特征阻抗
+</h4><h4 id="传输线上的反射">传输线上的反射
+</h4>
 </section>
 
 
@@ -502,7 +432,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/px4/">PX4</a>
+            <a href="/tags/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/">电路学基础</a>
         
     </section>
 
@@ -583,24 +513,13 @@
 
             
                 
-<article class="has-image">
-    <a href="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/">
+<article class="">
+    <a href="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
         
-        
-            <div class="article-image">
-                <img src="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.4999c796245c45e6072bdb0d4846e9bd_hu11837448296042111343.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post XTdrone仿真环境"
-                        
-                        data-hash="md5-SZnHliRcReYHK9sNSEbpvQ==">
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">XTdrone仿真环境</h2>
+            <h2 class="article-title">神经网络基础</h2>
         </div>
     </a>
 </article>
@@ -608,36 +527,12 @@
             
                 
 <article class="">
-    <a href="/p/ysyx%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">
+    <a href="/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">YSYX学习日记</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1/">
-        
-        
-            <div class="article-image">
-                <img src="/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1/fengmian.deb6cb9406c642256ecc3694b96a4413_hu15560785966631107734.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post PX4飞行控制器配置日志PX4-1"
-                        
-                        data-hash="md5-3rbLlAbGQiVuzDaUuWpEEw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">PX4飞行控制器配置日志PX4-1</h2>
+            <h2 class="article-title">算法挖坑填坑</h2>
         </div>
     </a>
 </article>
@@ -645,12 +540,36 @@
             
                 
 <article class="">
-    <a href="/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+    <a href="/p/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">电路学基础</h2>
+            <h2 class="article-title">工程数学基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/drcan-learn-blog-advance/">
+        
+        
+            <div class="article-image">
+                <img src="/p/drcan-learn-blog-advance/1-1.2e9be13a68b73fbbf13f6f6ab9df10b4_hu2362776656510232683.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post DRCAN-Learn-Blog-Advance"
+                        
+                        data-hash="md5-LpvhOmi3P7vxP29qud8QtA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DRCAN-Learn-Blog-Advance</h2>
         </div>
     </a>
 </article>
