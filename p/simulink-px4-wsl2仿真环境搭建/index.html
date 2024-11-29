@@ -2,18 +2,18 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="基于Simulink的PX4仿真系统搭建，以及在仿真上部署算法，或者硬件在环。">
-<title>Simulink-PX4-WSL2仿真</title>
+<title>Simulink-PX4-WSL2仿真环境搭建</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/'>
+<link rel='canonical' href='https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Simulink-PX4-WSL2仿真">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Simulink-PX4-WSL2仿真环境搭建">
 <meta property='og:description' content="基于Simulink的PX4仿真系统搭建，以及在仿真上部署算法，或者硬件在环。">
-<meta property='og:url' content='https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/'>
+<meta property='og:url' content='https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-11-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-19T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/fengmian.png' />
-<meta name="twitter:title" content="Simulink-PX4-WSL2仿真">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-11-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-19T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian.png' />
+<meta name="twitter:title" content="Simulink-PX4-WSL2仿真环境搭建">
 <meta name="twitter:description" content="基于Simulink的PX4仿真系统搭建，以及在仿真上部署算法，或者硬件在环。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/fengmian.png' />
+    <meta name="twitter:image" content='https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian.png' />
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     </head>
@@ -316,13 +316,13 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/">
-                <img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/fengmian_hu14663244668032120646.png"
-                        srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/fengmian_hu14663244668032120646.png 800w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/fengmian_hu12712973619492501656.png 1600w"
+            <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+                <img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian_hu14663244668032120646.png"
+                        srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian_hu14663244668032120646.png 800w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian_hu12712973619492501656.png 1600w"
                         width="800" 
                         height="514" 
                         loading="lazy"
-                        alt="Featured image of post Simulink-PX4-WSL2仿真" />
+                        alt="Featured image of post Simulink-PX4-WSL2仿真环境搭建" />
                 
             </a>
         </div>
@@ -345,7 +345,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/">Simulink-PX4-WSL2仿真</a>
+            <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Simulink-PX4-WSL2仿真环境搭建</a>
         </h2>
     
         
@@ -417,10 +417,10 @@
 Matlab版本：2022b <br>
 windows：Windows11家庭版 <br>
 遇到的错误：在编译时一直提示找不到.px4文件的错误如下图： <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1.jpg"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1.jpg"
 	width="852"
 	height="639"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu2102160675909218636.jpg 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu10570373229207981760.jpg 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu2102160675909218636.jpg 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu10570373229207981760.jpg 1024w"
 	loading="lazy"
 	
 		alt="错误1找不到px4文件"
@@ -431,10 +431,10 @@ windows：Windows11家庭版 <br>
 		data-flex-basis="320px"
 	
 > <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2.jpg"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2.jpg"
 	width="1345"
 	height="854"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu2972160481222992229.jpg 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu7119989339237306091.jpg 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu2972160481222992229.jpg 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu7119989339237306091.jpg 1024w"
 	loading="lazy"
 	
 		alt="错误1找不到px4文件"
@@ -454,10 +454,10 @@ windows：Windows11家庭版 <br>
 <strong>Matlab版本：2024b</strong>       <br>
 <strong>windows：Windows11专业版-24H2版本（现改的）</strong>       <br>
 首先安装如下的几个必须的依赖，再安装这个工具箱。   <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.1.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.1.png"
 	width="1701"
 	height="803"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.1_hu12392321823255843053.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.1_hu13223946072881756379.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.1_hu12392321823255843053.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.1_hu13223946072881756379.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -469,10 +469,10 @@ windows：Windows11家庭版 <br>
 	
 > <br>
 安装的附加功能如下 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.2.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.2.png"
 	width="1459"
 	height="751"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.2_hu12544048464941708540.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.2_hu15976501811470307073.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.2_hu12544048464941708540.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.2_hu15976501811470307073.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -484,10 +484,10 @@ windows：Windows11家庭版 <br>
 	
 ></p>
 <h4 id="wsl2的安装">WSL2的安装
-</h4><p><img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.3.png"
+</h4><p><img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.3.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.3_hu5059666396372819954.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.3_hu3441771254088437205.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.3_hu5059666396372819954.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.3_hu3441771254088437205.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -502,10 +502,10 @@ windows：Windows11家庭版 <br>
 不知道为啥这win11用wsl命令一直下载不下来，卡在0%半天不动。网上说是系统更新的原因。。。网上建议去手动下载，或者是Store里面下载，但是我Store也是打不开，所以手动下载地址如下： <br>
 下载地址：<a class="link" href="https://learn.microsoft.com/en-us/windows/wsl/install-manual"  target="_blank" rel="noopener"
     >Manual installation steps for older versions of WSL</a>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.4.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.4.png"
 	width="1541"
 	height="850"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.4_hu7145337591455828640.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.4_hu12722085826844152182.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.4_hu7145337591455828640.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.4_hu12722085826844152182.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -517,10 +517,10 @@ windows：Windows11家庭版 <br>
 	
 >  <br>
 安装完后显示这个错误，是因为我的设置导致新应用安装到了D盘，需要更改以下Ubuntu的位置到C盘。 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.5.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.5.png"
 	width="813"
 	height="323"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.5_hu3205335716765804787.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.5_hu6150862383122471301.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.5_hu3205335716765804787.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.5_hu6150862383122471301.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -532,10 +532,10 @@ windows：Windows11家庭版 <br>
 	
 >  <br>
 卸载重装一般是没用的，这个貌似是默认安装在你选择的默认安装位置，所以需要更改默认安装位置再安装或者是直接移动App。
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.6.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.6.png"
 	width="763"
 	height="244"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.6_hu3244700270406763681.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.6_hu13086226503054537163.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.6_hu3244700270406763681.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.6_hu13086226503054537163.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -546,10 +546,10 @@ windows：Windows11家庭版 <br>
 		data-flex-basis="750px"
 	
 >  <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.7.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.7.png"
 	width="964"
 	height="832"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.7_hu11609410260455348585.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.7_hu8680261712960838858.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.7_hu11609410260455348585.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.7_hu8680261712960838858.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -561,10 +561,10 @@ windows：Windows11家庭版 <br>
 	
 >  <br>
 卸载重装是不行的，需要选择移动到C盘才可以。。。  <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.8.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.8.png"
 	width="419"
 	height="275"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.8_hu16267979081412599716.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.8_hu1231501318832381547.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.8_hu16267979081412599716.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.8_hu1231501318832381547.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -576,10 +576,10 @@ windows：Windows11家庭版 <br>
 	
 >  <br>
 之后成功安装了Ubuntu系统 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.9.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.9.png"
 	width="1311"
 	height="644"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.9_hu1301976172320377721.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.9_hu9845882592285961753.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.9_hu1301976172320377721.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.9_hu9845882592285961753.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -591,10 +591,10 @@ windows：Windows11家庭版 <br>
 	
 >  <br>
 但是仍然打开工具箱后无法跳转到下一步，按照社区给的指示操作如下。  <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.10.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.10.png"
 	width="1117"
 	height="455"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.10_hu5591185037548155260.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.10_hu16691275526587925201.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.10_hu5591185037548155260.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.10_hu16691275526587925201.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -606,10 +606,10 @@ windows：Windows11家庭版 <br>
 	
 >  <br>
 更改以下系统的类型到专业版，方便后续更改电脑的语言。  <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.11.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.11.png"
 	width="866"
 	height="454"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.11_hu11089777017923828415.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.11_hu489684266309319646.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.11_hu11089777017923828415.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.11_hu489684266309319646.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -623,10 +623,10 @@ windows：Windows11家庭版 <br>
 弄到这我也是服了，这b win11语言一直下载不下来，网上尝试了各种办法都特么不行。  <br>
 然后重启了几次，显示更新xxx，结果重新打开matlab之后便可以进行到下一步了。。。。。我特么！       <br>
 在这里怀疑一个很大的原因是没有设置默认WSL启动为ubuntu，可以按照matlab文档里面设置一下，就CMD一个命令。然后重启打开Matlab。   <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.12.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.12.png"
 	width="1158"
 	height="389"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.12_hu8050547961484618296.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.12_hu6705824296584664120.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.12_hu8050547961484618296.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.12_hu6705824296584664120.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -638,10 +638,10 @@ windows：Windows11家庭版 <br>
 	
 >   <br>
 PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。。。 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.13.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.13.png"
 	width="717"
 	height="540"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.13_hu9172440049590154358.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.13_hu477707506300006298.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.13_hu9172440049590154358.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/1.13_hu477707506300006298.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -657,10 +657,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 配置参考：https://blog.csdn.net/weixin_29062909/article/details/138366879</p>
 <h4 id="px4源码下载">PX4源码下载
 </h4><p>这里选择Python地址来验证。没有尝试过他的自动下载，也不建议自动。   <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.1.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.1.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.1_hu3503500589365043191.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.1_hu11270688530267380052.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.1_hu3503500589365043191.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.1_hu11270688530267380052.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -671,10 +671,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 		data-flex-basis="315px"
 	
 >  <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.2.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.2.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.2_hu6907946394142797639.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.2_hu9351085116771548061.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.2_hu6907946394142797639.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.2_hu9351085116771548061.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -686,10 +686,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 	
 ><br>
 这里去下载PX4的源码，2024B系列Matlab支持的是PX4 v1.14版本   <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.3.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.3.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.3_hu12194445723150881954.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.3_hu10434937542253657819.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.3_hu12194445723150881954.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.3_hu10434937542253657819.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -726,10 +726,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 </div>
 </div><p>这里出现了个没有分支的错误，我们创建一个。不创建也问题不大，这里官方文档中并没有这一步。       <br>
 <code>git switch -c &lt;v1.14&gt;</code>  <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.4.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.4.png"
 	width="1428"
 	height="846"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.4_hu4823104706033983364.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.4_hu947481727666233015.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.4_hu4823104706033983364.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.4_hu947481727666233015.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -743,10 +743,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 接下来就是漫长的下载submodule时间。。。。     <br>
 下载完成后，对上面的硬件设置窗口，点击下一步。
 在文件资源管理器中，可以找到Linux的地址，一般是home下，找到地址复制过去。验证。ok！       <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.5.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.5.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.5_hu8600963017281551406.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.5_hu15062007257873190132.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.5_hu8600963017281551406.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.5_hu15062007257873190132.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -760,10 +760,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 <h4 id="px4-toolchain下载以及编译程序">PX4 ToolChain下载以及编译程序
 </h4><p><a class="link" href="https://www.mathworks.com/help/releases/R2024b/uav/px4/ug/setup-px4-toolchain-wsl.html"  target="_blank" rel="noopener"
     >https://www.mathworks.com/help/releases/R2024b/uav/px4/ug/setup-px4-toolchain-wsl.html</a> <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.6.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.6.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.6_hu8471520688831279319.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.6_hu14909120768150997860.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.6_hu8471520688831279319.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.6_hu14909120768150997860.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -776,10 +776,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 >   <br>
 跟着官网教程进入目录 运行脚本下载即可。这些都是前人为我们铺好的路。    <br>
 此处时间较长可以给自己弄杯咖啡等着。。。。      <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.7.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.7.png"
 	width="891"
 	height="400"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.7_hu8398917425637616604.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.7_hu6683703686010267224.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.7_hu8398917425637616604.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.7_hu6683703686010267224.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -797,10 +797,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
     >编译时报错：The CMAKE_CXX_COMPILER arm-none-eabi is not a full path and was not found in the PATH.的问题解决方法</a>   <br>
 <strong>重启之后，之前的错误居然没了。成功编译。</strong>   <br>
 <strong>这里与我之前ubuntu下配置一样。我不禁思考我在配置ubuntu时，是不是重启一下也能解决呢？</strong>    <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.17.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.17.png"
 	width="1770"
 	height="860"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.17_hu16997201460425813699.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.17_hu12799007071577083375.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.17_hu16997201460425813699.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.17_hu12799007071577083375.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -814,10 +814,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 <h4 id="配置引导页面">配置引导页面
 </h4><p>重启之后，这个导引窗口也没了安装工具链那一步了。   <br>
 让我们确认 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.8.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.8.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.8_hu12392464714543525311.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.8_hu1916538534931999217.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.8_hu12392464714543525311.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.8_hu1916538534931999217.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -831,10 +831,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 翻译如下： <br>
 应该是问你是否要自己设计控制器，自己要设计控制器的话，勾选，后续可能需要自己搭建。  <br>
 我们此处选项勾选。不勾选的以后再试试。 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.9.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.9.png"
 	width="998"
 	height="316"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.9_hu1028811525643049630.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.9_hu2782220874188437244.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.9_hu1028811525643049630.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.9_hu2782220874188437244.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -846,10 +846,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 	
 >  <br>
 下一步，选择我们的F427老爷飞控。 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.10.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.10.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.10_hu88830415785951226.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.10_hu7695263967922851881.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.10_hu88830415785951226.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.10_hu7695263967922851881.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -862,10 +862,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 ></p>
 <p>应该是选自启动脚本。第一个是选择在PX4自身中的默认启动脚本。第二个是选择在SD卡中的用户编辑的脚本。 <br>
 CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.11.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.11.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.11_hu5130083431921392830.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.11_hu2635437029414843679.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.11_hu5130083431921392830.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.11_hu2635437029414843679.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -877,10 +877,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 	
 >  <br>
 确定QGC地面站的位置
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.12.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.12.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.12_hu6887665629392010366.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.12_hu10826375924642105334.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.12_hu6887665629392010366.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.12_hu10826375924642105334.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -892,10 +892,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 	
 >  <br>
 这一步，应该是让我们在QGC中选择鸡架,先下一步吧。Mavlink还没连接上应该也选择不了。     <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.13.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.13.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.13_hu14054420945367697598.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.13_hu8881078652929401010.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.13_hu14054420945367697598.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.13_hu8881078652929401010.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -906,10 +906,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 		data-flex-basis="315px"
 	
 >  <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.14.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.14.png"
 	width="873"
 	height="660"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.14_hu7874636493472439894.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.14_hu17356952423967788561.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.14_hu7874636493472439894.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.14_hu17356952423967788561.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -922,10 +922,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 >  <br>
 编译工程。我们勾选删除所有目标xxxx。
 我们之前人工make构建了一次，这里再点一次，直接秒成功了。可能是检测到了之前构建产生的px4文件。     <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.15.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.15.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.15_hu8959458783853012479.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.15_hu18289187392287690985.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.15_hu8959458783853012479.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.15_hu18289187392287690985.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -936,10 +936,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 		data-flex-basis="315px"
 	
 >   <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.16.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.16.png"
 	width="895"
 	height="674"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.16_hu13804082635297511670.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.16_hu5836626613681670843.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.16_hu13804082635297511670.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.16_hu5836626613681670843.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -951,10 +951,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 	
 >  <br>
 再次在matlab中构建，依然成功。      <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.18.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.18.png"
 	width="1886"
 	height="1008"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.18_hu2819577710398766650.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.18_hu5936057356784082145.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.18_hu2819577710398766650.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.18_hu5936057356784082145.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -966,10 +966,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 	
 >  <br>
 这里叫我们测试硬件连接。这里我拿之前焊的PX4进行连接。     <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.19.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.19.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.19_hu17597975201896906330.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.19_hu10450376912133636386.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.19_hu17597975201896906330.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.19_hu10450376912133636386.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -981,10 +981,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 	
 >  <br>
 连接上之后烧录固件。如果开着QGC，需要关掉。否则串口占用没法下载 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.20.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.20.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.20_hu8033912639577804052.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.20_hu8919082258311748557.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.20_hu8033912639577804052.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.20_hu8919082258311748557.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -995,10 +995,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 		data-flex-basis="315px"
 	
 >  <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.21.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.21.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.21_hu6420353265200942833.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.21_hu4600758646255870251.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.21_hu6420353265200942833.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.21_hu4600758646255870251.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -1010,10 +1010,10 @@ CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
 	
 >   <br>
 Matlab页面显示下载烧录完成。 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.22.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.22.png"
 	width="1500"
 	height="527"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.22_hu6582037571552414102.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.22_hu709748018014863100.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.22_hu6582037571552414102.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.22_hu709748018014863100.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -1025,10 +1025,10 @@ Matlab页面显示下载烧录完成。 <br>
 	
 >  <br>
 可以验证以下陀螺仪加速度数据。可以看到我这里能正常读取数据。 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.23.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.23.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.23_hu10969259294965943255.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.23_hu17646620901564631131.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.23_hu10969259294965943255.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.23_hu17646620901564631131.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -1039,10 +1039,10 @@ Matlab页面显示下载烧录完成。 <br>
 		data-flex-basis="315px"
 	
 > <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.24.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.24.png"
 	width="886"
 	height="673"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.24_hu6906112546459142599.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.24_hu14897153651047231012.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.24_hu6906112546459142599.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/2.24_hu14897153651047231012.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -1058,10 +1058,10 @@ Matlab页面显示下载烧录完成。 <br>
     >Getting Started with Connected I/O for PX4 Host Target</a>   <br>
 这可以作为我们的第一个开发程序。  <br>
 在simulink建模中，模型设置，按照官方给出的指导设置如下。 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.1.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.1.png"
 	width="1169"
 	height="932"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.1_hu2597594565418993502.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.1_hu1723478543046409014.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.1_hu2597594565418993502.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.1_hu1723478543046409014.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -1073,10 +1073,10 @@ Matlab页面显示下载烧录完成。 <br>
 	
 > <br>
 Simulink建立一个这样的简单读取数据的模型。 <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.4.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.4.png"
 	width="1115"
 	height="530"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.4_hu12112659681198270706.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.4_hu16927198575323324948.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.4_hu12112659681198270706.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.4_hu16927198575323324948.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -1088,10 +1088,10 @@ Simulink建立一个这样的简单读取数据的模型。 <br>
 	
 > <br>
 可以看到可以成功读取到数据，仿真10秒。之前我没动，后面动了两下。实在是太开心了。     <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.2.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.2.png"
 	width="3200"
 	height="1770"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.2_hu2905663731322904229.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.2_hu146840046534853001.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.2_hu2905663731322904229.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.2_hu146840046534853001.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -1103,10 +1103,10 @@ Simulink建立一个这样的简单读取数据的模型。 <br>
 	
 ><br>
 再来一张吧  <br>
-<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.3.png"
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.3.png"
 	width="3200"
 	height="1770"
-	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.3_hu12403613813153061445.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.3_hu15346697323627802678.png 1024w"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.3_hu12403613813153061445.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/3.3_hu15346697323627802678.png 1024w"
 	loading="lazy"
 	
 		alt="1"
@@ -1245,6 +1245,19 @@ Simulink建立一个这样的简单读取数据的模型。 <br>
 
             
                 
+<article class="">
+    <a href="/p/simulink-px4-wsl%E5%BC%80%E5%8F%91/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Simulink-PX4-WSL开发</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
 <article class="has-image">
     <a href="/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1/">
         
@@ -1263,19 +1276,6 @@ Simulink建立一个这样的简单读取数据的模型。 <br>
 
         <div class="article-details">
             <h2 class="article-title">PX4飞行控制器配置日志PX4-1</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">电路学基础</h2>
         </div>
     </a>
 </article>
