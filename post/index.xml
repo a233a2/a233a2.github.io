@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 30 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Simulink-PX4-WSL2仿真环境搭建</title>
         <link>https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
         <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
@@ -2844,18 +2844,6 @@ $$L[{f(t)*g(t)}]=F(s)​G(s)$$&lt;/p&gt;
 &lt;/h3&gt;</description>
         </item>
         <item>
-        <title>Simulink-PX4-WSL开发</title>
-        <link>https://a233a2.github.io/p/simulink-px4-wsl%E5%BC%80%E5%8F%91/</link>
-        <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/simulink-px4-wsl%E5%BC%80%E5%8F%91/</guid>
-        <description>&lt;p&gt;前面已经完成了环境配置：&lt;a class=&#34;link&#34; href=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%e4%bb%bf%e7%9c%9f%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;simulink-px4-wsl2仿真环境搭建&lt;/a&gt;    &lt;br&gt;
-接下来使用这个开发环境进行特殊算法的部署，记录在这个页面。&lt;/p&gt;
-&lt;h3 id=&#34;simulink电机转动模型&#34;&gt;Simulink电机转动模型
-&lt;/h3&gt;</description>
-        </item>
-        <item>
         <title>XTdrone仿真环境</title>
         <link>https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</link>
         <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
@@ -3363,7 +3351,7 @@ PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳�
         <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/fengmian.png" alt="Featured image of post PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶" /&gt;&lt;h3 id=&#34;px4在linux环境下的编译make&#34;&gt;PX4在Linux环境下的编译（make）
+        <description>&lt;img src="https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png" alt="Featured image of post PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶" /&gt;&lt;h3 id=&#34;px4在linux环境下的编译make&#34;&gt;PX4在Linux环境下的编译（make）
 &lt;/h3&gt;&lt;p&gt;使用VM17虚拟机以及Ubuntu20.04对PX4项目进行编译。&lt;br&gt;
 参考了超维空间科技的文章:&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_38768959/article/details/106041494&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;超维空间科技的文章&lt;/a&gt; &lt;br&gt;
