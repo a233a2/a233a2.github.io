@@ -351,12 +351,12 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 </description>
         </item>
         <item>
-        <title>Simulink-PX4仿真</title>
-        <link>https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/</link>
+        <title>Simulink-PX4-WSL2仿真</title>
+        <link>https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/</link>
         <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/fengmian.png" alt="Featured image of post Simulink-PX4仿真" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置&#34;&gt;PX4-Simulink联合环境配置
+        <guid>https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/fengmian.png" alt="Featured image of post Simulink-PX4-WSL2仿真" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置&#34;&gt;PX4-Simulink联合环境配置
 &lt;/h3&gt;&lt;p&gt;参考如下教学： &lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV18P4y1T7UH&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;PX4与Simulink联合仿真-入门篇&lt;/a&gt;        &lt;br&gt;
@@ -372,10 +372,10 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 Matlab版本：2022b &lt;br&gt;
 windows：Windows11家庭版 &lt;br&gt;
 遇到的错误：在编译时一直提示找不到.px4文件的错误如下图： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1.jpg&#34;
 	width=&#34;852&#34;
 	height=&#34;639&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu2102160675909218636.jpg 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu10570373229207981760.jpg 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu2102160675909218636.jpg 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-1_hu10570373229207981760.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;错误1找不到px4文件&#34;
@@ -386,10 +386,10 @@ windows：Windows11家庭版 &lt;br&gt;
 		data-flex-basis=&#34;320px&#34;
 	
 &gt; &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2.jpg&#34;
 	width=&#34;1345&#34;
 	height=&#34;854&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu2972160481222992229.jpg 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu7119989339237306091.jpg 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu2972160481222992229.jpg 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/%E9%94%99%E8%AF%AF1%E6%89%BE%E4%B8%8D%E5%88%B0.px4%E6%96%87%E4%BB%B6-2_hu7119989339237306091.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;错误1找不到px4文件&#34;
@@ -409,10 +409,10 @@ windows：Windows11家庭版 &lt;br&gt;
 &lt;strong&gt;Matlab版本：2024b&lt;/strong&gt;       &lt;br&gt;
 &lt;strong&gt;windows：Windows11专业版-24H2版本（现改的）&lt;/strong&gt;       &lt;br&gt;
 首先安装如下的几个必须的依赖，再安装这个工具箱。   &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.1.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.1.png&#34;
 	width=&#34;1701&#34;
 	height=&#34;803&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.1_hu12392321823255843053.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.1_hu13223946072881756379.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.1_hu12392321823255843053.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.1_hu13223946072881756379.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -424,10 +424,10 @@ windows：Windows11家庭版 &lt;br&gt;
 	
 &gt; &lt;br&gt;
 安装的附加功能如下 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.2.png&#34;
 	width=&#34;1459&#34;
 	height=&#34;751&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.2_hu12544048464941708540.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.2_hu15976501811470307073.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.2_hu12544048464941708540.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.2_hu15976501811470307073.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -439,10 +439,10 @@ windows：Windows11家庭版 &lt;br&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;wsl2的安装&#34;&gt;WSL2的安装
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.3.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.3.png&#34;
 	width=&#34;886&#34;
 	height=&#34;673&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.3_hu5059666396372819954.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.3_hu3441771254088437205.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.3_hu5059666396372819954.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.3_hu3441771254088437205.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -457,10 +457,10 @@ windows：Windows11家庭版 &lt;br&gt;
 不知道为啥这win11用wsl命令一直下载不下来，卡在0%半天不动。网上说是系统更新的原因。。。网上建议去手动下载，或者是Store里面下载，但是我Store也是打不开，所以手动下载地址如下： &lt;br&gt;
 下载地址：&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/en-us/windows/wsl/install-manual&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Manual installation steps for older versions of WSL&lt;/a&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.4.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.4.png&#34;
 	width=&#34;1541&#34;
 	height=&#34;850&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.4_hu7145337591455828640.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.4_hu12722085826844152182.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.4_hu7145337591455828640.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.4_hu12722085826844152182.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -472,10 +472,10 @@ windows：Windows11家庭版 &lt;br&gt;
 	
 &gt;  &lt;br&gt;
 安装完后显示这个错误，是因为我的设置导致新应用安装到了D盘，需要更改以下Ubuntu的位置到C盘。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.5.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.5.png&#34;
 	width=&#34;813&#34;
 	height=&#34;323&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.5_hu3205335716765804787.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.5_hu6150862383122471301.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.5_hu3205335716765804787.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.5_hu6150862383122471301.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -487,10 +487,10 @@ windows：Windows11家庭版 &lt;br&gt;
 	
 &gt;  &lt;br&gt;
 卸载重装一般是没用的，这个貌似是默认安装在你选择的默认安装位置，所以需要更改默认安装位置再安装或者是直接移动App。
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.6.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.6.png&#34;
 	width=&#34;763&#34;
 	height=&#34;244&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.6_hu3244700270406763681.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.6_hu13086226503054537163.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.6_hu3244700270406763681.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.6_hu13086226503054537163.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -501,10 +501,10 @@ windows：Windows11家庭版 &lt;br&gt;
 		data-flex-basis=&#34;750px&#34;
 	
 &gt;  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.7.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.7.png&#34;
 	width=&#34;964&#34;
 	height=&#34;832&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.7_hu11609410260455348585.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.7_hu8680261712960838858.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.7_hu11609410260455348585.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.7_hu8680261712960838858.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -516,10 +516,10 @@ windows：Windows11家庭版 &lt;br&gt;
 	
 &gt;  &lt;br&gt;
 卸载重装是不行的，需要选择移动到C盘才可以。。。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.8.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.8.png&#34;
 	width=&#34;419&#34;
 	height=&#34;275&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.8_hu16267979081412599716.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.8_hu1231501318832381547.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.8_hu16267979081412599716.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.8_hu1231501318832381547.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -531,10 +531,10 @@ windows：Windows11家庭版 &lt;br&gt;
 	
 &gt;  &lt;br&gt;
 之后成功安装了Ubuntu系统 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.9.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.9.png&#34;
 	width=&#34;1311&#34;
 	height=&#34;644&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.9_hu1301976172320377721.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.9_hu9845882592285961753.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.9_hu1301976172320377721.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.9_hu9845882592285961753.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -546,10 +546,10 @@ windows：Windows11家庭版 &lt;br&gt;
 	
 &gt;  &lt;br&gt;
 但是仍然打开工具箱后无法跳转到下一步，按照社区给的指示操作如下。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.10.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.10.png&#34;
 	width=&#34;1117&#34;
 	height=&#34;455&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.10_hu5591185037548155260.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.10_hu16691275526587925201.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.10_hu5591185037548155260.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.10_hu16691275526587925201.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -561,10 +561,10 @@ windows：Windows11家庭版 &lt;br&gt;
 	
 &gt;  &lt;br&gt;
 更改以下系统的类型到专业版，方便后续更改电脑的语言。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.11.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.11.png&#34;
 	width=&#34;866&#34;
 	height=&#34;454&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.11_hu11089777017923828415.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.11_hu489684266309319646.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.11_hu11089777017923828415.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.11_hu489684266309319646.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -578,10 +578,10 @@ windows：Windows11家庭版 &lt;br&gt;
 弄到这我也是服了，这b win11语言一直下载不下来，网上尝试了各种办法都特么不行。  &lt;br&gt;
 然后重启了几次，显示更新xxx，结果重新打开matlab之后便可以进行到下一步了。。。。。我特么！       &lt;br&gt;
 在这里怀疑一个很大的原因是没有设置默认WSL启动为ubuntu，可以按照matlab文档里面设置一下，就CMD一个命令。然后重启打开Matlab。   &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.12.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.12.png&#34;
 	width=&#34;1158&#34;
 	height=&#34;389&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.12_hu8050547961484618296.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.12_hu6705824296584664120.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.12_hu8050547961484618296.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.12_hu6705824296584664120.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -593,10 +593,10 @@ windows：Windows11家庭版 &lt;br&gt;
 	
 &gt;   &lt;br&gt;
 PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。。。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.13.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.13.png&#34;
 	width=&#34;717&#34;
 	height=&#34;540&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.13_hu9172440049590154358.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/1.13_hu477707506300006298.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.13_hu9172440049590154358.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/1.13_hu477707506300006298.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -612,10 +612,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 配置参考：https://blog.csdn.net/weixin_29062909/article/details/138366879&lt;/p&gt;
 &lt;h4 id=&#34;px4源码下载&#34;&gt;PX4源码下载
 &lt;/h4&gt;&lt;p&gt;这里选择Python地址来验证。没有尝试过他的自动下载，也不建议自动。   &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.1.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.1.png&#34;
 	width=&#34;886&#34;
 	height=&#34;673&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.1_hu3503500589365043191.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.1_hu11270688530267380052.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.1_hu3503500589365043191.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.1_hu11270688530267380052.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -626,10 +626,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 		data-flex-basis=&#34;315px&#34;
 	
 &gt;  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.2.png&#34;
 	width=&#34;886&#34;
 	height=&#34;673&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.2_hu6907946394142797639.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.2_hu9351085116771548061.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.2_hu6907946394142797639.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.2_hu9351085116771548061.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -641,10 +641,10 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 	
 &gt;&lt;br&gt;
 这里去下载PX4的源码，2024B系列Matlab支持的是PX4 v1.14版本   &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.3.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.3.png&#34;
 	width=&#34;886&#34;
 	height=&#34;673&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.3_hu12194445723150881954.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.3_hu10434937542253657819.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.3_hu12194445723150881954.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.3_hu10434937542253657819.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -679,12 +679,12 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git submodule update --init --recursive
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;这里出现了个没有分支的错误，我们创建一个。 &lt;br&gt;
+&lt;/div&gt;&lt;p&gt;这里出现了个没有分支的错误，我们创建一个。不创建也问题不大，这里官方文档中并没有这一步。       &lt;br&gt;
 &lt;code&gt;git switch -c &amp;lt;v1.14&amp;gt;&lt;/code&gt;  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.4.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.4.png&#34;
 	width=&#34;1428&#34;
 	height=&#34;846&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.4_hu4823104706033983364.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.4_hu947481727666233015.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.4_hu4823104706033983364.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.4_hu947481727666233015.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -695,13 +695,13 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 		data-flex-basis=&#34;405px&#34;
 	
 &gt;    &lt;br&gt;
-接下来就是漫长的下载submodule时间。可以给自己弄杯咖啡等着。。。。  &lt;br&gt;
+接下来就是漫长的下载submodule时间。。。。     &lt;br&gt;
 下载完成后，对上面的硬件设置窗口，点击下一步。
 在文件资源管理器中，可以找到Linux的地址，一般是home下，找到地址复制过去。验证。ok！       &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.5.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.5.png&#34;
 	width=&#34;886&#34;
 	height=&#34;673&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.5_hu8600963017281551406.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.5_hu15062007257873190132.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.5_hu8600963017281551406.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.5_hu15062007257873190132.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -713,10 +713,12 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;px4-toolchain下载&#34;&gt;PX4 ToolChain下载
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.6.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.mathworks.com/help/releases/R2024b/uav/px4/ug/setup-px4-toolchain-wsl.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.mathworks.com/help/releases/R2024b/uav/px4/ug/setup-px4-toolchain-wsl.html&lt;/a&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.6.png&#34;
 	width=&#34;886&#34;
 	height=&#34;673&#34;
-	srcset=&#34;https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.6_hu8471520688831279319.png 480w, https://a233a2.github.io/p/simulink-px4%E4%BB%BF%E7%9C%9F/2.6_hu14909120768150997860.png 1024w&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.6_hu8471520688831279319.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.6_hu14909120768150997860.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;1&#34;
@@ -726,7 +728,24 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 		data-flex-grow=&#34;131&#34;
 		data-flex-basis=&#34;315px&#34;
 	
-&gt;&lt;/p&gt;
+&gt;   &lt;br&gt;
+跟着官网教程进入目录 运行脚本下载即可。这些都是前人为我们铺好的路。    &lt;br&gt;
+此处时间较长可以给自己弄杯咖啡等着。。。。      &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.7.png&#34;
+	width=&#34;891&#34;
+	height=&#34;400&#34;
+	srcset=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.7_hu8398917425637616604.png 480w, https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.7_hu6683703686010267224.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;222&#34;
+		data-flex-basis=&#34;534px&#34;
+	
+&gt;  &lt;br&gt;
+下面检验下工具链的安装是否正确。&lt;/p&gt;
 &lt;h3 id=&#34;四旋翼数学模型的推导&#34;&gt;四旋翼数学模型的推导
 &lt;/h3&gt;</description>
         </item>
