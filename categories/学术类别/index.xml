@@ -8,51 +8,9 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>电路学基础</title>
-        <link>https://a233a2.github.io/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
-        <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;p&gt;非电子专业自用知识点，水平低下请见谅。&lt;/p&gt;
-&lt;h3 id=&#34;电分基础定理&#34;&gt;电分基础定理
-&lt;/h3&gt;&lt;h4 id=&#34;基尔霍夫电流定律kcl&#34;&gt;基尔霍夫电流定律（KCL）
-&lt;/h4&gt;&lt;p&gt;基尔霍夫电流定律：简写为KCL，可描述为对任一集总参数电路，在任一时刻，流入（或“流出”）任一结点的电流的代数和等于零。 &lt;br&gt;
-在任何一个节点处，所有进入该节点的电流之和等于所有离开该节点的电流之和。&lt;/p&gt;
-&lt;h4 id=&#34;基尔霍夫电压定律kvl&#34;&gt;基尔霍夫电压定律（KVL）
-&lt;/h4&gt;&lt;p&gt;基尔霍夫电压定律：简写为KVL，其可表述为对任一集总参数电路，在任一时刻，环绕任一回路（可自行假定为逆时针环绕或者顺时针环绕）,所有支路电压降（或“电压升”）的代数和等于零。 &lt;br&gt;
-在一个封闭回路中，总电压降等于总电动势。&lt;/p&gt;
-&lt;h4 id=&#34;路的等效分析方法&#34;&gt;路的等效分析方法
-&lt;/h4&gt;&lt;p&gt;戴维南定理：电路可以替代为一个电压源和一个电阻构成的等效电路。其中求等效电阻时将电压源短路，电流源断路。&lt;/p&gt;
-&lt;p&gt;诺顿定理：线性二端电路可以由电流源IN和与之并联的电阻RN构成的等效电路替代，其中IN为流过端口的短路电流，RN为独立电流源关闭时端口的输入电阻（或等效）电阻。&lt;/p&gt;
-&lt;h3 id=&#34;元器件电路分析&#34;&gt;元器件电路分析
-&lt;/h3&gt;&lt;h4 id=&#34;二极管&#34;&gt;二极管
-&lt;/h4&gt;&lt;h4 id=&#34;三极管&#34;&gt;三极管
-&lt;/h4&gt;&lt;h4 id=&#34;场效应管&#34;&gt;场效应管
-&lt;/h4&gt;&lt;h4 id=&#34;运算放大器&#34;&gt;运算放大器
-&lt;/h4&gt;&lt;h3 id=&#34;阻抗匹配&#34;&gt;阻抗匹配
-&lt;/h3&gt;&lt;p&gt;具有电阻、电感和电容的电路里，对交流电所起的阻碍作用叫做阻抗。阻抗常用Z表示。阻抗由电阻、感抗和容抗三者组成，但不是三者简单相加。阻抗的单位是欧。&lt;/p&gt;
-&lt;h4 id=&#34;电路元件的阻抗&#34;&gt;电路元件的阻抗
-&lt;/h4&gt;&lt;p&gt;如果将元件在正弦稳态时电压相量与电流相量之比定义为该元件的阻抗Z，则有：
-$$
-Z=\frac{\overset{\bullet}{U}}{\overset{\bullet}{I}}
-$$&lt;/p&gt;
-&lt;p&gt;$$
-Z_R=R
-$$&lt;/p&gt;
-&lt;p&gt;$$
-Z_C=\frac{1}{j\omega C}
-$$&lt;/p&gt;
-&lt;p&gt;$$
-Z_L=j\omega L
-$$&lt;/p&gt;
-&lt;h4 id=&#34;传输线的特征阻抗&#34;&gt;传输线的特征阻抗
-&lt;/h4&gt;&lt;h4 id=&#34;传输线上的反射&#34;&gt;传输线上的反射
-&lt;/h4&gt;</description>
-        </item>
-        <item>
         <title>Simulink-PX4-WSL2仿真环境搭建</title>
         <link>https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
-        <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+        <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
         <description>&lt;img src="https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian.png" alt="Featured image of post Simulink-PX4-WSL2仿真环境搭建" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置&#34;&gt;PX4-Simulink联合环境配置
@@ -774,6 +732,48 @@ Simulink建立一个这样的简单读取数据的模型。 &lt;br&gt;
 &lt;h3 id=&#34;配合可视化平台进行仿真&#34;&gt;配合可视化平台进行仿真
 &lt;/h3&gt;&lt;h3 id=&#34;四旋翼数学模型的推导&#34;&gt;四旋翼数学模型的推导
 &lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>电路学基础</title>
+        <link>https://a233a2.github.io/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
+        <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
+        <description>&lt;p&gt;非电子专业自用知识点，水平低下请见谅。&lt;/p&gt;
+&lt;h3 id=&#34;电分基础定理&#34;&gt;电分基础定理
+&lt;/h3&gt;&lt;h4 id=&#34;基尔霍夫电流定律kcl&#34;&gt;基尔霍夫电流定律（KCL）
+&lt;/h4&gt;&lt;p&gt;基尔霍夫电流定律：简写为KCL，可描述为对任一集总参数电路，在任一时刻，流入（或“流出”）任一结点的电流的代数和等于零。 &lt;br&gt;
+在任何一个节点处，所有进入该节点的电流之和等于所有离开该节点的电流之和。&lt;/p&gt;
+&lt;h4 id=&#34;基尔霍夫电压定律kvl&#34;&gt;基尔霍夫电压定律（KVL）
+&lt;/h4&gt;&lt;p&gt;基尔霍夫电压定律：简写为KVL，其可表述为对任一集总参数电路，在任一时刻，环绕任一回路（可自行假定为逆时针环绕或者顺时针环绕）,所有支路电压降（或“电压升”）的代数和等于零。 &lt;br&gt;
+在一个封闭回路中，总电压降等于总电动势。&lt;/p&gt;
+&lt;h4 id=&#34;路的等效分析方法&#34;&gt;路的等效分析方法
+&lt;/h4&gt;&lt;p&gt;戴维南定理：电路可以替代为一个电压源和一个电阻构成的等效电路。其中求等效电阻时将电压源短路，电流源断路。&lt;/p&gt;
+&lt;p&gt;诺顿定理：线性二端电路可以由电流源IN和与之并联的电阻RN构成的等效电路替代，其中IN为流过端口的短路电流，RN为独立电流源关闭时端口的输入电阻（或等效）电阻。&lt;/p&gt;
+&lt;h3 id=&#34;元器件电路分析&#34;&gt;元器件电路分析
+&lt;/h3&gt;&lt;h4 id=&#34;二极管&#34;&gt;二极管
+&lt;/h4&gt;&lt;h4 id=&#34;三极管&#34;&gt;三极管
+&lt;/h4&gt;&lt;h4 id=&#34;场效应管&#34;&gt;场效应管
+&lt;/h4&gt;&lt;h4 id=&#34;运算放大器&#34;&gt;运算放大器
+&lt;/h4&gt;&lt;h3 id=&#34;阻抗匹配&#34;&gt;阻抗匹配
+&lt;/h3&gt;&lt;p&gt;具有电阻、电感和电容的电路里，对交流电所起的阻碍作用叫做阻抗。阻抗常用Z表示。阻抗由电阻、感抗和容抗三者组成，但不是三者简单相加。阻抗的单位是欧。&lt;/p&gt;
+&lt;h4 id=&#34;电路元件的阻抗&#34;&gt;电路元件的阻抗
+&lt;/h4&gt;&lt;p&gt;如果将元件在正弦稳态时电压相量与电流相量之比定义为该元件的阻抗Z，则有：
+$$
+Z=\frac{\overset{\bullet}{U}}{\overset{\bullet}{I}}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+Z_R=R
+$$&lt;/p&gt;
+&lt;p&gt;$$
+Z_C=\frac{1}{j\omega C}
+$$&lt;/p&gt;
+&lt;p&gt;$$
+Z_L=j\omega L
+$$&lt;/p&gt;
+&lt;h4 id=&#34;传输线的特征阻抗&#34;&gt;传输线的特征阻抗
+&lt;/h4&gt;&lt;h4 id=&#34;传输线上的反射&#34;&gt;传输线上的反射
+&lt;/h4&gt;</description>
         </item>
         <item>
         <title>神经网络基础</title>
