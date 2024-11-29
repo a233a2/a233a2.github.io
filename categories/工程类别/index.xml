@@ -1009,7 +1009,8 @@ Matlab页面显示下载烧录完成。 &lt;br&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;获取陀螺仪数据的simulink实例程序&#34;&gt;获取陀螺仪数据的Simulink实例程序
-&lt;/h3&gt;&lt;p&gt;官方教程地址：https://www.mathworks.com/help/releases/R2024b/uav/px4/ref/getting-started-with-connectedio.html &lt;br&gt;
+&lt;/h3&gt;&lt;p&gt;官方教程地址：&lt;a class=&#34;link&#34; href=&#34;https://www.mathworks.com/help/releases/R2024b/uav/px4/ref/getting-started-with-connectedio.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Getting Started with Connected I/O for PX4 Host Target&lt;/a&gt;   &lt;br&gt;
 这可以作为我们的第一个开发程序。  &lt;br&gt;
 在simulink建模中，模型设置，按照官方给出的指导设置如下。 &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.1.png&#34;
