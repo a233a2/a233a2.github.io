@@ -293,9 +293,12 @@
         <li><a href="#开发环境的配置2">开发环境的配置2</a>
           <ol>
             <li><a href="#px4源码下载">PX4源码下载</a></li>
-            <li><a href="#px4-toolchain下载">PX4 ToolChain下载</a></li>
+            <li><a href="#px4-toolchain下载以及编译程序">PX4 ToolChain下载以及编译程序</a></li>
+            <li><a href="#配置引导页面">配置引导页面</a></li>
           </ol>
         </li>
+        <li><a href="#获取陀螺仪数据的simulink实例程序">获取陀螺仪数据的Simulink实例程序</a></li>
+        <li><a href="#配合可视化平台进行仿真">配合可视化平台进行仿真</a></li>
         <li><a href="#四旋翼数学模型的推导">四旋翼数学模型的推导</a></li>
       </ol>
     </li>
@@ -383,7 +386,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 4 分钟
+                    阅读时长: 5 分钟
                 </time>
             </div>
         
@@ -754,7 +757,7 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 		data-flex-basis="315px"
 	
 ></p>
-<h4 id="px4-toolchain下载">PX4 ToolChain下载
+<h4 id="px4-toolchain下载以及编译程序">PX4 ToolChain下载以及编译程序
 </h4><p><a class="link" href="https://www.mathworks.com/help/releases/R2024b/uav/px4/ug/setup-px4-toolchain-wsl.html"  target="_blank" rel="noopener"
     >https://www.mathworks.com/help/releases/R2024b/uav/px4/ug/setup-px4-toolchain-wsl.html</a> <br>
 <img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.6.png"
@@ -787,8 +790,319 @@ PS:折腾了半天，win11的语言包终于能下载了，不过也没用了。
 		data-flex-basis="534px"
 	
 >  <br>
-下面检验下工具链的安装是否正确。</p>
-<h3 id="四旋翼数学模型的推导">四旋翼数学模型的推导
+下面检验下工具链的安装是否正确。   <br>
+在PX4-Autopilot目录下运行了make px4_fmu-v3_default   <br>
+出现了在ubuntu配置时以前遇到过的缺少STM32在Linux下开发工具的错误。    <br>
+之前的解决方法：<a class="link" href="https://blog.csdn.net/weixin_46430470/article/details/123938016"  target="_blank" rel="noopener"
+    >编译时报错：The CMAKE_CXX_COMPILER arm-none-eabi is not a full path and was not found in the PATH.的问题解决方法</a>   <br>
+<strong>重启之后，之前的错误居然没了。成功编译。</strong>   <br>
+<strong>这里与我之前ubuntu下配置一样。我不禁思考我在配置ubuntu时，是不是重启一下也能解决呢？</strong>    <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.17.png"
+	width="1770"
+	height="860"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.17_hu16997201460425813699.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.17_hu12799007071577083375.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="205"
+		data-flex-basis="493px"
+	
+></p>
+<h4 id="配置引导页面">配置引导页面
+</h4><p>重启之后，这个导引窗口也没了安装工具链那一步了。   <br>
+让我们确认 <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.8.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.8_hu12392464714543525311.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.8_hu1916538534931999217.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+>  <br>
+翻译如下： <br>
+应该是问你是否要自己设计控制器，自己要设计控制器的话，勾选，后续可能需要自己搭建。  <br>
+我们此处选项勾选。不勾选的以后再试试。 <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.9.png"
+	width="998"
+	height="316"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.9_hu1028811525643049630.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.9_hu2782220874188437244.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="315"
+		data-flex-basis="757px"
+	
+>  <br>
+下一步，选择我们的F427老爷飞控。 <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.10.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.10_hu88830415785951226.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.10_hu7695263967922851881.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+></p>
+<p>应该是选自启动脚本。第一个是选择在PX4自身中的默认启动脚本。第二个是选择在SD卡中的用户编辑的脚本。 <br>
+CSDN博主说选择第二个较为繁琐，那我们选第一个。 <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.11.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.11_hu5130083431921392830.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.11_hu2635437029414843679.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+>  <br>
+确定QGC地面站的位置
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.12.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.12_hu6887665629392010366.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.12_hu10826375924642105334.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+>  <br>
+这一步，应该是让我们在QGC中选择鸡架,先下一步吧。Mavlink还没连接上应该也选择不了。     <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.13.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.13_hu14054420945367697598.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.13_hu8881078652929401010.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+>  <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.14.png"
+	width="873"
+	height="660"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.14_hu7874636493472439894.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.14_hu17356952423967788561.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="132"
+		data-flex-basis="317px"
+	
+>  <br>
+编译工程。我们勾选删除所有目标xxxx。
+我们之前人工make构建了一次，这里再点一次，直接秒成功了。可能是检测到了之前构建产生的px4文件。     <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.15.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.15_hu8959458783853012479.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.15_hu18289187392287690985.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+>   <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.16.png"
+	width="895"
+	height="674"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.16_hu13804082635297511670.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.16_hu5836626613681670843.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="132"
+		data-flex-basis="318px"
+	
+>  <br>
+再次在matlab中构建，依然成功。      <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.18.png"
+	width="1886"
+	height="1008"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.18_hu2819577710398766650.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.18_hu5936057356784082145.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="187"
+		data-flex-basis="449px"
+	
+>  <br>
+这里叫我们测试硬件连接。这里我拿之前焊的PX4进行连接。     <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.19.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.19_hu17597975201896906330.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.19_hu10450376912133636386.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+>  <br>
+连接上之后烧录固件。如果开着QGC，需要关掉。否则串口占用没法下载 <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.20.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.20_hu8033912639577804052.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.20_hu8919082258311748557.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+>  <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.21.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.21_hu6420353265200942833.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.21_hu4600758646255870251.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+>   <br>
+Matlab页面显示下载烧录完成。 <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.22.png"
+	width="1500"
+	height="527"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.22_hu6582037571552414102.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.22_hu709748018014863100.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="284"
+		data-flex-basis="683px"
+	
+>  <br>
+可以验证以下陀螺仪加速度数据。可以看到我这里能正常读取数据。 <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.23.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.23_hu10969259294965943255.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.23_hu17646620901564631131.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+> <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.24.png"
+	width="886"
+	height="673"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.24_hu6906112546459142599.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/2.24_hu14897153651047231012.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="131"
+		data-flex-basis="315px"
+	
+></p>
+<h3 id="获取陀螺仪数据的simulink实例程序">获取陀螺仪数据的Simulink实例程序
+</h3><p>官方教程地址：https://www.mathworks.com/help/releases/R2024b/uav/px4/ref/getting-started-with-connectedio.html <br>
+这可以作为我们的第一个开发程序。  <br>
+在simulink建模中，模型设置，按照官方给出的指导设置如下。 <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.1.png"
+	width="1169"
+	height="932"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.1_hu2597594565418993502.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.1_hu1723478543046409014.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="125"
+		data-flex-basis="301px"
+	
+> <br>
+可以看到可以成功读取到数据，仿真10秒。之前我没动，后面动了两下。实在是太开心了。     <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.2.png"
+	width="3200"
+	height="1770"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.2_hu2905663731322904229.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.2_hu146840046534853001.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="180"
+		data-flex-basis="433px"
+	
+><br>
+再来一张吧  <br>
+<img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.3.png"
+	width="3200"
+	height="1770"
+	srcset="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.3_hu12403613813153061445.png 480w, /p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F/3.3_hu15346697323627802678.png 1024w"
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="180"
+		data-flex-basis="433px"
+	
+></p>
+<h3 id="配合可视化平台进行仿真">配合可视化平台进行仿真
+</h3><h3 id="四旋翼数学模型的推导">四旋翼数学模型的推导
 </h3>
 </section>
 
