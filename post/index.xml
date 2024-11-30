@@ -8,6 +8,18 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Sat, 30 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Simulink-PX4-WSL开发</title>
+        <link>https://a233a2.github.io/p/simulink-px4-wsl%E5%BC%80%E5%8F%91/</link>
+        <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/simulink-px4-wsl%E5%BC%80%E5%8F%91/</guid>
+        <description>&lt;p&gt;前面已经完成了环境配置：&lt;a class=&#34;link&#34; href=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%e4%bb%bf%e7%9c%9f%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;simulink-px4-wsl2仿真环境搭建&lt;/a&gt;    &lt;br&gt;
+接下来使用这个开发环境进行特殊算法的部署，记录在这个页面。&lt;/p&gt;
+&lt;h3 id=&#34;simulink电机转动模型&#34;&gt;Simulink电机转动模型
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>Simulink-PX4-WSL2仿真环境搭建</title>
         <link>https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
         <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
@@ -780,7 +792,7 @@ $$&lt;/p&gt;
         <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/pads.jpg" alt="Featured image of post PADS学习日记" /&gt;&lt;h2 id=&#34;pads学习日记&#34;&gt;PADS学习日记
+        <description>&lt;img src="https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/pads.jpg" alt="Featured image of post PADS学习日记" /&gt;&lt;h2 id=&#34;基础操作&#34;&gt;基础操作
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1px41177gM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;PADS简易教程&lt;/a&gt; &lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;http://www.edahelper.com/edahelper/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -4402,22 +4414,37 @@ SH1.25的接口画错了，属实是大意了。飞线暂时解决了问题。
         <pubDate>Sat, 14 Sep 2024 22:20:23 +0800</pubDate>
         
         <guid>https://a233a2.github.io/p/%E4%B8%AA%E4%BA%BA%E4%BB%BB%E5%8A%A1%E6%B5%81/</guid>
-        <description>&lt;p&gt;md ADHD症状和我现在一模一样，自从考研结束之后尤为重要。非常痛苦。&lt;br&gt;
-遂再次列出个人工作整体计划以及工作进度情况，仅供个人使用。&lt;/p&gt;
-&lt;h2 id=&#34;目前主要工作流&#34;&gt;目前主要工作流：
-&lt;/h2&gt;&lt;h3 id=&#34;drcan视频学习-数学以及控制基础补习&#34;&gt;Drcan视频学习-数学以及控制基础补习
-&lt;/h3&gt;&lt;p&gt;2024-10-28 Advance视频看到了5还是6
-2024-11-1 Advance视频看到了9&lt;/p&gt;
-&lt;h3 id=&#34;ros&#34;&gt;ROS
-&lt;/h3&gt;&lt;p&gt;2024-10-28 刚开始入门。&lt;/p&gt;
-&lt;h3 id=&#34;pmsm-变频器&#34;&gt;PMSM-变频器
-&lt;/h3&gt;&lt;p&gt;2024-10-28 跟着书学习了一下PMSM数学建模部分，下一步准备学之后的坐标变换以及仿真搭建。&lt;/p&gt;
-&lt;h3 id=&#34;px4&#34;&gt;PX4
-&lt;/h3&gt;&lt;p&gt;2024-10-28 暂时挂起，有时间读一下那个论文，但是感觉复刻成功率不高。&lt;/p&gt;
-&lt;h3 id=&#34;stm32卷积神经网络复刻&#34;&gt;STM32卷积神经网络复刻
-&lt;/h3&gt;&lt;p&gt;2024-10-28 这两天打板子 然后开始搭建环境。主要是学一个搭建环境以及原理开发。&lt;/p&gt;
-&lt;h3 id=&#34;foc&#34;&gt;FOC
-&lt;/h3&gt;&lt;p&gt;2024-10-28 ？鸽太久了。。。。画的第一板电源有问题，另外驱动也有问题，计划下一步画一个单路驱动的简单版很或者是拿IPM 集成三相逆变器来做。&lt;/p&gt;
+        <description>&lt;p&gt;+++
+author = &amp;ldquo;sunjiyi&amp;rdquo;
+title = &amp;ldquo;个人&amp;rdquo;
+date = &amp;ldquo;2024-11-15&amp;rdquo;
+description = &amp;ldquo;记录&amp;rdquo;
+categories = [
+&amp;ldquo;其他类别&amp;rdquo;
+]
+tags = [
+&amp;ldquo;just_for_fun&amp;rdquo;
+]
++++&lt;/p&gt;
+
+
+
+
+
+
+    
+
+
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe src=&#34;https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;bvid=BV15TBiYbE3A&#34;
+            scrolling=&#34;no&#34;
+            frameborder=&#34;no&#34;
+            framespacing=&#34;0&#34;
+            allowfullscreen=&#34;true&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+
 </description>
         </item>
         <item>

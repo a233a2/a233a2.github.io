@@ -7,7 +7,19 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/px4/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 30 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/px4/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Simulink-PX4-WSL开发</title>
+        <link>https://a233a2.github.io/p/simulink-px4-wsl%E5%BC%80%E5%8F%91/</link>
+        <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/simulink-px4-wsl%E5%BC%80%E5%8F%91/</guid>
+        <description>&lt;p&gt;前面已经完成了环境配置：&lt;a class=&#34;link&#34; href=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%e4%bb%bf%e7%9c%9f%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;simulink-px4-wsl2仿真环境搭建&lt;/a&gt;    &lt;br&gt;
+接下来使用这个开发环境进行特殊算法的部署，记录在这个页面。&lt;/p&gt;
+&lt;h3 id=&#34;simulink电机转动模型&#34;&gt;Simulink电机转动模型
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>Simulink-PX4-WSL2仿真环境搭建</title>
         <link>https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
         <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
