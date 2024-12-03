@@ -7,7 +7,61 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 30 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>YOLO学习随笔</title>
+        <link>https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/</link>
+        <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/</guid>
+        <description>&lt;p&gt;YOLO（You Only Look Once）是一种流行的实时目标检测算法，它将目标检测任务作为一个回归问题来处理，直接预测图像中所有目标的位置和类别。与传统的目标检测方法（例如 R-CNN 系列）不同，YOLO 通过一个单一的神经网络在一次前向传播中同时进行目标识别和定位，因此非常高效，能够在实时应用中使用。&lt;/p&gt;
+&lt;h2 id=&#34;yolo-v11-环境配置&#34;&gt;YOLO v11 环境配置
+&lt;/h2&gt;&lt;p&gt;环境：Win11专业版24H2版本  &lt;br&gt;
+CPU GPU：i7 14650HX + RTX4060 Laptop &lt;br&gt;
+Driver Version: 566.14 CUDA Version:12.7 &lt;br&gt;
+参考教程：
+&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/2401_87734564/article/details/143926961&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;YOLO环境配置&lt;/a&gt;&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Edward1027/article/details/142703627&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Anaconda的安装与环境设置&lt;/a&gt;  &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Edward1027/article/details/142722503&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CUDA、Pytorch、Pycharm的安装与配置&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;采用Anaconda管理，使用Conda创建虚拟环境。类似Docker，感觉相比Docker更容易上手。    &lt;br&gt;
+首先下载了Anaconda 2024-6-1版本，内置Conda版本为25.   &lt;br&gt;
+安装了Pytorch2.4.1，基于CUDA 12.4.&lt;/p&gt;
+&lt;p&gt;Conda创建了虚拟环境。名为yolo_env 安装了Pytorch。下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1.png&#34;
+	width=&#34;1024&#34;
+	height=&#34;843&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu917135031923065012.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu11271068069900868733.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Pycharm配置&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;121&#34;
+		data-flex-basis=&#34;291px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;YOLO Example：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;ultralytics&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;YOLO&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;YOLO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;yolo11n.pt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;results&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;H:\Computer Vision\yolov11\pra\pra1\ice_skating.mp4&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;save&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;参考YOLO官方仓库，安装ultralytics：https://github.com/ultralytics/ultralytics&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Simulink-PX4-WSL2仿真环境搭建</title>
         <link>https://a233a2.github.io/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
         <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>

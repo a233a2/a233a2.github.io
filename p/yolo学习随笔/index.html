@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="机器学习基础">
-<title>机器学习基础</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在此记录本人在学习yolo时遇到的难题与解决方式。">
+<title>YOLO学习随笔</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/'>
+<link rel='canonical' href='https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="机器学习基础">
-<meta property='og:description' content="机器学习基础">
-<meta property='og:url' content='https://a233a2.github.io/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="YOLO学习随笔">
+<meta property='og:description' content="在此记录本人在学习yolo时遇到的难题与解决方式。">
+<meta property='og:url' content='https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='机器学习' /><meta property='article:published_time' content='2024-11-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-13T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="机器学习基础">
-<meta name="twitter:description" content="机器学习基础">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='YOLO' /><meta property='article:published_time' content='2024-11-30T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-30T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="YOLO学习随笔">
+<meta name="twitter:description" content="在此记录本人在学习yolo时遇到的难题与解决方式。">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     </head>
@@ -281,20 +281,7 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#机器学习分类">机器学习分类</a>
-      <ol>
-        <li><a href="#无监督学习">无监督学习</a>
-          <ol>
-            <li><a href="#聚类问题">聚类问题</a></li>
-            <li><a href="#监督学习">监督学习</a></li>
-            <li><a href="#回归问题">回归问题</a></li>
-            <li><a href="#分类问题">分类问题</a></li>
-            <li><a href="#强化学习">强化学习</a></li>
-            <li><a href="#无监督学习-1">无监督学习</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
+    <li><a href="#yolo-v11-环境配置">YOLO v11 环境配置</a></li>
   </ol>
 </nav>
         </div>
@@ -317,17 +304,21 @@
                 学术类别
             </a>
         
+            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
+                工程类别
+            </a>
+        
     </header>
     
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/">机器学习基础</a>
+            <a href="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/">YOLO学习随笔</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            机器学习基础
+            在此记录本人在学习yolo时遇到的难题与解决方式。
         </h3>
         
     </div>
@@ -348,7 +339,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-11-13</time>
+                <time class="article-time--published">2024-11-30</time>
             </div>
         
 
@@ -363,7 +354,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 1 分钟
+                    阅读时长: 2 分钟
                 </time>
             </div>
         
@@ -378,15 +369,53 @@
     <section class="article-content">
     
     
-    <h2 id="机器学习分类">机器学习分类
-</h2><h3 id="无监督学习">无监督学习
-</h3><h4 id="聚类问题">聚类问题
-</h4><h4 id="监督学习">监督学习
-</h4><h4 id="回归问题">回归问题
-</h4><h4 id="分类问题">分类问题
-</h4><h4 id="强化学习">强化学习
-</h4><h4 id="无监督学习-1">无监督学习
-</h4>
+    <p>YOLO（You Only Look Once）是一种流行的实时目标检测算法，它将目标检测任务作为一个回归问题来处理，直接预测图像中所有目标的位置和类别。与传统的目标检测方法（例如 R-CNN 系列）不同，YOLO 通过一个单一的神经网络在一次前向传播中同时进行目标识别和定位，因此非常高效，能够在实时应用中使用。</p>
+<h2 id="yolo-v11-环境配置">YOLO v11 环境配置
+</h2><p>环境：Win11专业版24H2版本  <br>
+CPU GPU：i7 14650HX + RTX4060 Laptop <br>
+Driver Version: 566.14 CUDA Version:12.7 <br>
+参考教程：
+<a class="link" href="https://blog.csdn.net/2401_87734564/article/details/143926961"  target="_blank" rel="noopener"
+    >YOLO环境配置</a><br>
+<a class="link" href="https://blog.csdn.net/Edward1027/article/details/142703627"  target="_blank" rel="noopener"
+    >Anaconda的安装与环境设置</a>  <br>
+<a class="link" href="https://blog.csdn.net/Edward1027/article/details/142722503"  target="_blank" rel="noopener"
+    >CUDA、Pytorch、Pycharm的安装与配置</a></p>
+<p>采用Anaconda管理，使用Conda创建虚拟环境。类似Docker，感觉相比Docker更容易上手。    <br>
+首先下载了Anaconda 2024-6-1版本，内置Conda版本为25.   <br>
+安装了Pytorch2.4.1，基于CUDA 12.4.</p>
+<p>Conda创建了虚拟环境。名为yolo_env 安装了Pytorch。下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1.png"
+	width="1024"
+	height="843"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu917135031923065012.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu11271068069900868733.png 1024w"
+	loading="lazy"
+	
+		alt="Pycharm配置"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="121"
+		data-flex-basis="291px"
+	
+></p>
+<p>YOLO Example：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">=</span><span class="n">YOLO</span><span class="p">(</span><span class="s2">&#34;yolo11n.pt&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">results</span><span class="o">=</span><span class="n">model</span><span class="p">(</span><span class="s2">&#34;H:\Computer Vision\yolov11\pra\pra1\ice_skating.mp4&#34;</span><span class="p">,</span><span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">show</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>参考YOLO官方仓库，安装ultralytics：https://github.com/ultralytics/ultralytics</p>
+
 </section>
 
 
@@ -394,7 +423,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>
+            <a href="/tags/yolo/">YOLO</a>
         
     </section>
 
@@ -451,19 +480,6 @@
         <div class="flex article-list--tile">
             
                 
-<article class="">
-    <a href="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">YOLO学习随笔</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
 <article class="has-image">
     <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
         
@@ -488,13 +504,67 @@
 
             
                 
-<article class="">
-    <a href="/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+<article class="has-image">
+    <a href="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/">
         
+        
+            <div class="article-image">
+                <img src="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.4999c796245c45e6072bdb0d4846e9bd_hu11837448296042111343.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post XTdrone仿真环境"
+                        
+                        data-hash="md5-SZnHliRcReYHK9sNSEbpvQ==">
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">电路学基础</h2>
+            <h2 class="article-title">XTdrone仿真环境</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9F-2/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/fengmian.png" loading="lazy" data-key="" data-hash="/fengmian.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PX4在Ubuntu下的二次开发以及可视化仿真-2</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/">
+        
+        
+            <div class="article-image">
+                <img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.7feead8e10ef1500ffda6e72e1a5e94f_hu12193654545303556376.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶"
+                        
+                        data-hash="md5-f&#43;6tjhDvFQD/2m5y4aXpTw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶</h2>
         </div>
     </a>
 </article>
@@ -502,25 +572,12 @@
             
                 
 <article class="">
-    <a href="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+    <a href="/p/ysyx%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">神经网络基础</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">算法挖坑填坑</h2>
+            <h2 class="article-title">YSYX学习日记</h2>
         </div>
     </a>
 </article>
