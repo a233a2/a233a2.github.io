@@ -58,7 +58,9 @@ Driver Version: 566.14 CUDA Version:12.7 &lt;br&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;results&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;H:\Computer Vision\yolov11\pra\pra1\ice_skating.mp4&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;save&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;参考YOLO官方仓库，安装ultralytics：https://github.com/ultralytics/ultralytics&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;参考YOLO官方仓库，安装ultralytics：https://github.com/ultralytics/ultralytics   &lt;br&gt;
+Python中引用地址可能存在转义错误，在地址前加r即可。即保持字符原始值的意思。如&lt;strong&gt;r&amp;quot;H:\Computer Vision\yolov11\pra\pra1\ice_skating.mp4&amp;quot;&lt;/strong&gt;    &lt;br&gt;
+PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 </description>
         </item>
         <item>
