@@ -3790,9 +3790,229 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 一个控制系统要使输出迅速跟踪给定值有两个途径: 1) 高带宽; 2) 前馈. 但是在工业上, 带宽就是成本.高带宽虽然能使跟踪速度提高, 但也带来很多问题:1) 对执行机构的品质要求提高; 2) 激励了对象的高频动态使控制问题复杂化; 3) 闭环系统的稳定裕度下降,对相位滞后和时间延迟更敏感; 4) 对传感器噪声更敏感, 等等.高带宽的成本在20世 50年代就有专门、详细的讨论, 比如文献[46], 但是至今没能在理论界引起重视, 乃至高增益控制器、观测器的文章比比皆是, 而能用上的却寥寥无几. 这反映了不考虑成本的研究, 在工程上是没有多少意义的。&lt;br&gt;
 工程师们在实践中基于对系统物理特性的知识发现了前馈这个办法. 这种独立于反馈回路拟合出的控制量通常是结合参考输入, 以数据或图表形式表示的,常常在控制信号中占主要部分. 同时也使用PID反馈控制器, 发挥微调、纠错的作用. 因此, 工业上的PID控制器常常是与前馈控制结合使用的。&lt;br&gt;
 以上总结的是控制论的基本原理, 是从事自动控制的人们在长期的工程实践中发现、挖掘出来的, 是控制论继续发展的基石. 要系统地、科学地建立和发展一套完整的理论体系, 就需要对基本原理进行提炼、抽象和升华, 使得工程控制的实践能够更加系统,并不断进入更高的层次, 从而“下学而上达”。&lt;/p&gt;
-&lt;h3 id=&#34;状态观测器&#34;&gt;状态观测器
-&lt;/h3&gt;&lt;h3 id=&#34;扩张状态观测器&#34;&gt;扩张状态观测器
-&lt;/h3&gt;</description>
+&lt;h2 id=&#34;从pid到adrc&#34;&gt;从PID到ADRC
+&lt;/h2&gt;&lt;h3 id=&#34;积分控制器&#34;&gt;积分控制器
+&lt;/h3&gt;&lt;h3 id=&#34;三种矫正网络&#34;&gt;三种矫正网络
+&lt;/h3&gt;&lt;p&gt;超前校正网络 滞后矫正网络 超前-滞后矫正网络 &lt;br&gt;
+这些都要配合BODE图去确定频率指标 设计较为复古，较为原始。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;wc剪切频率处的中频段宽度对闭环系统特性有至关重要的影响。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;更进一步---pid控制器&#34;&gt;更进一步&amp;mdash;PID控制器
+&lt;/h3&gt;&lt;p&gt;1 极点配置方法调节PID参数  &lt;br&gt;
+确定极点位置来对闭环系统的Kp Ki进行确定。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.1.png&#34;
+	width=&#34;1151&#34;
+	height=&#34;517&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.1_hu10269262814976199036.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.1_hu4049888892670275730.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;222&#34;
+		data-flex-basis=&#34;534px&#34;
+	
+&gt;  &lt;br&gt;
+这里极点配置 根据一阶系统 二阶系统 的阶跃响应曲线来根据期望的TS调节时间根据经验选取。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.2.png&#34;
+	width=&#34;1779&#34;
+	height=&#34;814&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.2_hu14351087955849085006.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.2_hu9137489313196015855.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;218&#34;
+		data-flex-basis=&#34;524px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.3.png&#34;
+	width=&#34;1815&#34;
+	height=&#34;865&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.3_hu17968363271565746773.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.3_hu16428400260910357936.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;209&#34;
+		data-flex-basis=&#34;503px&#34;
+	
+&gt;&lt;br&gt;
+2 ZN方法调节PID参数&lt;/p&gt;
+&lt;p&gt;3 经验方法&lt;/p&gt;
+&lt;h3 id=&#34;积分串联型控制&#34;&gt;积分串联型控制
+&lt;/h3&gt;&lt;h4 id=&#34;简单理想发动机转速控制模型&#34;&gt;简单理想发动机转速控制模型：
+&lt;/h4&gt;&lt;p&gt;从扭矩 或者电压调整转速 这属于一阶系统。采用比例控制即可很好的进行控制 如下图所示设计控制过程。     &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.5.png&#34;
+	width=&#34;1825&#34;
+	height=&#34;952&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.5_hu9665986568057792478.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.5_hu15754768471575321250.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;191&#34;
+		data-flex-basis=&#34;460px&#34;
+	
+&gt;  &lt;br&gt;
+从力矩到转速这属于&lt;strong&gt;积分环节&lt;/strong&gt;：如下 &lt;br&gt;
+$$
+J\dot{\omega}=M
+$$ &lt;br&gt;
+J是转动惯量，转速由w的导数表示。M为力矩。  &lt;br&gt;
+则可以得到w与M的关系如下   &lt;br&gt;
+$$
+\frac{\omega}{M}=\frac{1}{Js}
+$$ &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.6.png&#34;
+	width=&#34;1812&#34;
+	height=&#34;787&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.6_hu18079763904850754434.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.6_hu4505354780124216289.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;230&#34;
+		data-flex-basis=&#34;552px&#34;
+	
+&gt;   &lt;br&gt;
+设计如下： &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.4.png&#34;
+	width=&#34;1730&#34;
+	height=&#34;856&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.4_hu9452243933163173335.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.4_hu4194715068227505264.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;202&#34;
+		data-flex-basis=&#34;485px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;简单理想发动机转角控制模型&#34;&gt;简单理想发动机转角控制模型：
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.7.png&#34;
+	width=&#34;1722&#34;
+	height=&#34;797&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.7_hu17997254894681136591.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.7_hu17148721237527046695.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;216&#34;
+		data-flex-basis=&#34;518px&#34;
+	
+&gt;     &lt;br&gt;
+$$
+\frac{\theta}{M}=\frac{1}{Js^2}
+$$ &lt;br&gt;
+设计比例微分PD控制器。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.8.png&#34;
+	width=&#34;1611&#34;
+	height=&#34;806&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.8_hu13925477184332766670.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.8_hu8744498845827557427.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;199&#34;
+		data-flex-basis=&#34;479px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;现实世界中，几乎没有上述两种理想系统。 &lt;br&gt;
+一阶系统有摩擦存在时，二阶系统有摩擦存在时，传统控制方法适用性不再好。 &lt;br&gt;
+积分串联型真的好很容易控制，但是实际系统没有。我们ADRC需要构造这种系统。&lt;/p&gt;
+&lt;h3 id=&#34;误差积分被动补偿-创造理想系统&#34;&gt;误差积分被动补偿-创造理想系统
+&lt;/h3&gt;&lt;p&gt;传统引入积分控制，便是提高了系统的型别。但是不一定会好用。&lt;/p&gt;
+&lt;p&gt;传统发动机控制电脑中，会有几千个PID参数表，用于对应不同的发动机工作环境。&lt;/p&gt;
+&lt;h3 id=&#34;总扰动的概念&#34;&gt;总扰动的概念
+&lt;/h3&gt;&lt;h3 id=&#34;扩张状态观测器eso-估计总扰动&#34;&gt;扩张状态观测器ESO-估计总扰动
+&lt;/h3&gt;&lt;p&gt;个人理解：&lt;strong&gt;扩张状态观测器，即在原本观测器的基础上，加入积分环节（一个积分环节对应一个状态，也就是直观的扩张出来了一个状态）。使得总扰动的估计能够消除稳态误差。&lt;/strong&gt;   &lt;br&gt;
+系统类似下图，使用Simulink模块简单画一下，表示一下  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.13.png&#34;
+	width=&#34;1449&#34;
+	height=&#34;781&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.13_hu768143299608609054.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.13_hu345135468321982598.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;185&#34;
+		data-flex-basis=&#34;445px&#34;
+	
+&gt;  &lt;br&gt;
+果然反步法的设计过程是重要的，这样看来也有一定相似之处。&lt;br&gt;
+观测器，观察每一个状态的演变过程，所以用导数。也就是状态方程。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.9.png&#34;
+	width=&#34;1495&#34;
+	height=&#34;656&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.9_hu18425909879960956759.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.9_hu2567641182661525668.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;227&#34;
+		data-flex-basis=&#34;546px&#34;
+	
+&gt;  &lt;br&gt;
+总扰动f的导不知道，先写一个h。 &lt;br&gt;
+&lt;strong&gt;观测器使用测量的偏差与估计的偏差。分别矫正了所有状态的微分方程。只要参数β123调节好，就可以准确估计总扰动。便可以改造出积分串联型理想系统。进而可以很好的控制系统。&lt;/strong&gt;          &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.10.png&#34;
+	width=&#34;1517&#34;
+	height=&#34;757&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.10_hu5348141790698783647.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.10_hu6708596636840344498.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;200&#34;
+		data-flex-basis=&#34;480px&#34;
+	
+&gt; &lt;br&gt;
+这样原本Y的二阶导只等于U0 &lt;br&gt;
+此时U0采用比例微分控制即可实现完全控制。&lt;/p&gt;
+&lt;h3 id=&#34;扩张状态观测器eso-如何选择β123&#34;&gt;扩张状态观测器ESO-如何选择β123？
+&lt;/h3&gt;&lt;p&gt;对于 &lt;br&gt;
+$$
+\dot{y}=ay+bu
+$$ &lt;br&gt;
+给定一个阶跃信号，决定系统调节速度的是a。 &lt;br&gt;
+证明：写出传递函数如下： &lt;br&gt;
+$$
+\frac{Y}{U}=\frac{b}{s+a}
+$$ &lt;br&gt;
+a决定极点的位置。所以很明显决定系统稳定以及收敛速度的是a。 &lt;br&gt;
+对状态空间表达式x导=Ax+bu也是如此。A决定系统稳定性以及各种性能。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.11.png&#34;
+	width=&#34;1342&#34;
+	height=&#34;716&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.11_hu3281354280974862363.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.11_hu2660969319556577069.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;187&#34;
+		data-flex-basis=&#34;449px&#34;
+	
+&gt;   &lt;br&gt;
+特征值决定了状态空间中，每一个状态演变的快与慢。特征值也就是传递函数的极点。这是一个普遍且重要的理论。     &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.12.png&#34;
+	width=&#34;1356&#34;
+	height=&#34;719&#34;
+	srcset=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.12_hu4624747078338198503.png 480w, https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.12_hu1451067880457626574.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;188&#34;
+		data-flex-basis=&#34;452px&#34;
+	
+&gt;   &lt;br&gt;
+如何调整特征值？ &lt;br&gt;
+A矩阵写出行列式$A-\lambda$。 令行列式等于0得到特征方程。 令特征方程等于 &lt;br&gt;
+$$
+\left( \lambda +\omega _0 \right) ^3=0
+$$ &lt;br&gt;
+对应相等即可求出β123。&lt;/p&gt;
+&lt;h2 id=&#34;从adrc到mpc&#34;&gt;从ADRC到MPC
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>KiCad学习日记</title>
