@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PX4 in XTdrone SITL">
-<title>XTdrone仿真环境</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="对PX4控制系统进行解释与学习">
+<title>PX4控制系统</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/'>
+<link rel='canonical' href='https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="XTdrone仿真环境">
-<meta property='og:description' content="PX4 in XTdrone SITL">
-<meta property='og:url' content='https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="PX4控制系统">
+<meta property='og:description' content="对PX4控制系统进行解释与学习">
+<meta property='og:url' content='https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:tag' content='XTdrone' /><meta property='article:published_time' content='2024-10-22T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg' />
-<meta name="twitter:title" content="XTdrone仿真环境">
-<meta name="twitter:description" content="PX4 in XTdrone SITL"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-10-22T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-22T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg' />
+<meta name="twitter:title" content="PX4控制系统">
+<meta name="twitter:description" content="对PX4控制系统进行解释与学习"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg' />
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
     </head>
@@ -282,12 +282,18 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
+    <li><a href="#多旋翼的控制架构">多旋翼的控制架构</a>
       <ol>
-        <li><a href="#xtdrone仿真环境搭建">XTdrone仿真环境搭建</a></li>
-        <li><a href="#后续使用引言">后续使用引言</a></li>
+        <li><a href="#多旋翼角速率控制器">多旋翼角速率控制器</a></li>
+        <li><a href="#多旋翼姿态控制器">多旋翼姿态控制器</a></li>
+        <li><a href="#多旋翼加速度到推力和姿态设定点的转换">多旋翼加速度到推力和姿态设定点的转换</a></li>
+        <li><a href="#多旋翼速度控制器">多旋翼速度控制器</a></li>
+        <li><a href="#旋翼位置控制器">旋翼位置控制器</a></li>
+        <li><a href="#静态力矩-pi-缩放补偿">静态力矩 (PI) 缩放补偿</a></li>
       </ol>
     </li>
+    <li><a href="#固定翼的控制架构">固定翼的控制架构</a></li>
+    <li><a href="#vtol的控制架构">VTOL的控制架构</a></li>
   </ol>
 </nav>
         </div>
@@ -302,13 +308,13 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/">
-                <img src="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu10273543966048372303.jpg"
-                        srcset="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu10273543966048372303.jpg 800w, /p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu8451541348211466847.jpg 1600w"
+            <a href="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/">
+                <img src="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu10273543966048372303.jpg"
+                        srcset="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu10273543966048372303.jpg 800w, /p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu8451541348211466847.jpg 1600w"
                         width="800" 
                         height="450" 
                         loading="lazy"
-                        alt="Featured image of post XTdrone仿真环境" />
+                        alt="Featured image of post PX4控制系统" />
                 
             </a>
         </div>
@@ -331,12 +337,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/">XTdrone仿真环境</a>
+            <a href="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/">PX4控制系统</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            PX4 in XTdrone SITL
+            对PX4控制系统进行解释与学习
         </h3>
         
     </div>
@@ -387,30 +393,51 @@
     <section class="article-content">
     
     
-    <h3 id="xtdrone仿真环境搭建">XTdrone仿真环境搭建
-</h3><p>使用了XTdrone推荐的自动配置，开发环境是Ubuntu 22.04<br>
-下午时花了两个小时手动配置没配置好，弄这种大工程还是得新系统比较好一点。<br>
-<img src="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg"
-	width="1920"
-	height="1080"
-	srcset="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu18099202995669554499.jpg 480w, /p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu2642333738181242516.jpg 1024w"
+    <p>参考：<a class="link" href="https://docs.px4.io/main/zh/flight_stack/controller_diagrams.html#%E5%A4%9A%E6%97%8B%E7%BF%BC%E7%9A%84%E6%8E%A7%E5%88%B6%E6%9E%B6%E6%9E%84"  target="_blank" rel="noopener"
+    >控制器图解-PX4-Guide-main</a>      <br>
+本节包括PX4主要控制器的图解。</p>
+<h2 id="多旋翼的控制架构">多旋翼的控制架构
+</h2><p><img src="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.1.png"
+	width="875"
+	height="330"
+	srcset="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.1_hu11232776530582396061.png 480w, /p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.1_hu13557608474372701465.png 1024w"
 	loading="lazy"
-	
-		alt="111"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="177"
-		data-flex-basis="426px"
+		data-flex-grow="265"
+		data-flex-basis="636px"
 	
-><br>
-另外作者太牛逼了<br>
-<a class="link" href="https://www.yuque.com/xtdrone/manual_cn/install_scripts"  target="_blank" rel="noopener"
-    >https://www.yuque.com/xtdrone/manual_cn/install_scripts</a></p>
-<h3 id="后续使用引言">后续使用引言
-</h3><p>打算在其之上二次开发PX4的程序。XTdrone提供了风场生成的插件。但是如何在PX4原版代码上修改是一个大问题。  <br>
-为了简化可以搭载机载电脑，然后运行ROS系统，在ROS系统上检测风场并进行稳态控制。这是一个方法。但是无疑会造成设备增多，复杂度增加。</p>
-
+> <br>
+这是一个标准的级联控制架构。<br>
+控制器采用P和PID控制的组合方式。<br>
+Estimates come from EKF2.<br>
+在某些模式下，外环(位置回路) 可能会被绕过 (在图中表示为外环之后增加一个多路开关)。 只有在位置保持模式或某轴无速度请求时，位置回路才会发挥作用。</p>
+<h3 id="多旋翼角速率控制器">多旋翼角速率控制器
+</h3><p><img src="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.2.png"
+	width="887"
+	height="322"
+	srcset="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.2_hu9656227243214053023.png 480w, /p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.2_hu242159725078663650.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="275"
+		data-flex-basis="661px"
+	
+> <br>
+采用K-PID控制器。  <br>
+为了防止积分饱和，积分环节的权重是受限的，
+输出受到限制（在控制分配模块中），通常为 -1 和 1。 <br>
+低通滤波器 (LPF) 用于导数路径以减少噪声（陀螺仪驱动器向控制器提供滤波后的导数）。</p>
+<h3 id="多旋翼姿态控制器">多旋翼姿态控制器
+</h3><h3 id="多旋翼加速度到推力和姿态设定点的转换">多旋翼加速度到推力和姿态设定点的转换
+</h3><h3 id="多旋翼速度控制器">多旋翼速度控制器
+</h3><h3 id="旋翼位置控制器">旋翼位置控制器
+</h3><h3 id="静态力矩-pi-缩放补偿">静态力矩 (PI) 缩放补偿
+</h3><h2 id="固定翼的控制架构">固定翼的控制架构
+</h2><h2 id="vtol的控制架构">VTOL的控制架构
+</h2>
 </section>
 
 
@@ -419,8 +446,6 @@
     <section class="article-tags">
         
             <a href="/tags/px4/">PX4</a>
-        
-            <a href="/tags/xtdrone/">XTdrone</a>
         
     </section>
 

@@ -26,8 +26,8 @@
         
         <guid>https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/</guid>
         <description>&lt;p&gt;YOLO（You Only Look Once）是一种流行的实时目标检测算法，它将目标检测任务作为一个回归问题来处理，直接预测图像中所有目标的位置和类别。与传统的目标检测方法（例如 R-CNN 系列）不同，YOLO 通过一个单一的神经网络在一次前向传播中同时进行目标识别和定位，因此非常高效，能够在实时应用中使用。&lt;/p&gt;
-&lt;h2 id=&#34;yolo-v11-环境配置&#34;&gt;YOLO v11 环境配置
-&lt;/h2&gt;&lt;p&gt;环境：Win11专业版24H2版本  &lt;br&gt;
+&lt;h3 id=&#34;yolo-v11-环境配置&#34;&gt;YOLO v11 环境配置
+&lt;/h3&gt;&lt;p&gt;环境：Win11专业版24H2版本  &lt;br&gt;
 CPU GPU：i7 14650HX + RTX4060 Laptop &lt;br&gt;
 Driver Version: 566.14 CUDA Version:12.7 &lt;br&gt;
 参考教程：
@@ -43,19 +43,22 @@ Driver Version: 566.14 CUDA Version:12.7 &lt;br&gt;
 &lt;p&gt;Conda创建了虚拟环境。名为yolo_env 安装了Pytorch。下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1.png&#34;
 	width=&#34;1024&#34;
-	height=&#34;843&#34;
-	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu917135031923065012.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu11271068069900868733.png 1024w&#34;
+	height=&#34;398&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu2379520568260527909.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu7647368616623563681.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
-		alt=&#34;Pycharm配置&#34;
+		alt=&#34;Pycharm配置1&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;121&#34;
-		data-flex-basis=&#34;291px&#34;
+		data-flex-grow=&#34;257&#34;
+		data-flex-basis=&#34;617px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;YOLO Example：&lt;/p&gt;
+&lt;h3 id=&#34;yolo-架构与原理&#34;&gt;YOLO 架构与原理
+&lt;/h3&gt;&lt;p&gt;ultralytics发布了最新的作品YOLOv11，这一次YOLOv11的变化相对于ultralytics公司的上一代作品YOLOv8变化不是很大的（YOLOv9、YOLOv10均不是ultralytics公司作品），其中改变的位置涉及到C2f变为C3K2，在SPPF后面加了一层类似于注意力机制的C2PSA，还有一个变化大家从yaml文件是看不出来的就是它的检测头内部替换了两个DWConv，以及模型的深度和宽度参数进行了大幅度调整，但是在损失函数方面就没有变化还是采用的CIoU作为边界框回归损失。&lt;/p&gt;
+&lt;h3 id=&#34;yolo-v11-demo&#34;&gt;YOLO v11 Demo
+&lt;/h3&gt;&lt;p&gt;YOLO Example：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -71,8 +74,12 @@ Driver Version: 566.14 CUDA Version:12.7 &lt;br&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;参考YOLO官方仓库，安装ultralytics：https://github.com/ultralytics/ultralytics   &lt;br&gt;
-Python中引用地址可能存在转义错误，在地址前加r即可。即保持字符原始值的意思。如&lt;strong&gt;r&amp;quot;H:\Computer Vision\yolov11\pra\pra1\ice_skating.mp4&amp;quot;&lt;/strong&gt;    &lt;br&gt;
+Python中引用地址可能存在转义错误，在地址前加r即可。即保持字符原始值的意思。  &lt;br&gt;
+如&lt;strong&gt;r&amp;quot;H:\Computer Vision\yolov11\pra\pra1\ice_skating.mp4&amp;quot;&lt;/strong&gt;       &lt;br&gt;
 PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
+&lt;h3 id=&#34;自己训练数据并完成任务-打僵尸为例子&#34;&gt;自己训练数据并完成任务-打僵尸为例子
+&lt;/h3&gt;&lt;p&gt;参考教程：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV18S411N7MU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;yolo 锁头 教程&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -1418,35 +1425,56 @@ $$e=−dt/dλ$$ &lt;br&gt;
 </description>
         </item>
         <item>
-        <title>XTdrone仿真环境</title>
-        <link>https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</link>
+        <title>PX4控制系统</title>
+        <link>https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/</link>
         <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg" alt="Featured image of post XTdrone仿真环境" /&gt;&lt;h3 id=&#34;xtdrone仿真环境搭建&#34;&gt;XTdrone仿真环境搭建
-&lt;/h3&gt;&lt;p&gt;使用了XTdrone推荐的自动配置，开发环境是Ubuntu 22.04&lt;br&gt;
-下午时花了两个小时手动配置没配置好，弄这种大工程还是得新系统比较好一点。&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg&#34;
-	width=&#34;1920&#34;
-	height=&#34;1080&#34;
-	srcset=&#34;https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu18099202995669554499.jpg 480w, https://a233a2.github.io/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE_hu2642333738181242516.jpg 1024w&#34;
+        <guid>https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg" alt="Featured image of post PX4控制系统" /&gt;&lt;p&gt;参考：&lt;a class=&#34;link&#34; href=&#34;https://docs.px4.io/main/zh/flight_stack/controller_diagrams.html#%E5%A4%9A%E6%97%8B%E7%BF%BC%E7%9A%84%E6%8E%A7%E5%88%B6%E6%9E%B6%E6%9E%84&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;控制器图解-PX4-Guide-main&lt;/a&gt;      &lt;br&gt;
+本节包括PX4主要控制器的图解。&lt;/p&gt;
+&lt;h2 id=&#34;多旋翼的控制架构&#34;&gt;多旋翼的控制架构
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.1.png&#34;
+	width=&#34;875&#34;
+	height=&#34;330&#34;
+	srcset=&#34;https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.1_hu11232776530582396061.png 480w, https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.1_hu13557608474372701465.png 1024w&#34;
 	loading=&#34;lazy&#34;
-	
-		alt=&#34;111&#34;
 	
 	
 		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;177&#34;
-		data-flex-basis=&#34;426px&#34;
+		data-flex-grow=&#34;265&#34;
+		data-flex-basis=&#34;636px&#34;
 	
-&gt;&lt;br&gt;
-另外作者太牛逼了&lt;br&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://www.yuque.com/xtdrone/manual_cn/install_scripts&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.yuque.com/xtdrone/manual_cn/install_scripts&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;后续使用引言&#34;&gt;后续使用引言
-&lt;/h3&gt;&lt;p&gt;打算在其之上二次开发PX4的程序。XTdrone提供了风场生成的插件。但是如何在PX4原版代码上修改是一个大问题。  &lt;br&gt;
-为了简化可以搭载机载电脑，然后运行ROS系统，在ROS系统上检测风场并进行稳态控制。这是一个方法。但是无疑会造成设备增多，复杂度增加。&lt;/p&gt;
-</description>
+&gt; &lt;br&gt;
+这是一个标准的级联控制架构。&lt;br&gt;
+控制器采用P和PID控制的组合方式。&lt;br&gt;
+Estimates come from EKF2.&lt;br&gt;
+在某些模式下，外环(位置回路) 可能会被绕过 (在图中表示为外环之后增加一个多路开关)。 只有在位置保持模式或某轴无速度请求时，位置回路才会发挥作用。&lt;/p&gt;
+&lt;h3 id=&#34;多旋翼角速率控制器&#34;&gt;多旋翼角速率控制器
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.2.png&#34;
+	width=&#34;887&#34;
+	height=&#34;322&#34;
+	srcset=&#34;https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.2_hu9656227243214053023.png 480w, https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.2_hu242159725078663650.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;275&#34;
+		data-flex-basis=&#34;661px&#34;
+	
+&gt; &lt;br&gt;
+采用K-PID控制器。  &lt;br&gt;
+为了防止积分饱和，积分环节的权重是受限的，
+输出受到限制（在控制分配模块中），通常为 -1 和 1。 &lt;br&gt;
+低通滤波器 (LPF) 用于导数路径以减少噪声（陀螺仪驱动器向控制器提供滤波后的导数）。&lt;/p&gt;
+&lt;h3 id=&#34;多旋翼姿态控制器&#34;&gt;多旋翼姿态控制器
+&lt;/h3&gt;&lt;h3 id=&#34;多旋翼加速度到推力和姿态设定点的转换&#34;&gt;多旋翼加速度到推力和姿态设定点的转换
+&lt;/h3&gt;&lt;h3 id=&#34;多旋翼速度控制器&#34;&gt;多旋翼速度控制器
+&lt;/h3&gt;&lt;h3 id=&#34;旋翼位置控制器&#34;&gt;旋翼位置控制器
+&lt;/h3&gt;&lt;h3 id=&#34;静态力矩-pi-缩放补偿&#34;&gt;静态力矩 (PI) 缩放补偿
+&lt;/h3&gt;&lt;h2 id=&#34;固定翼的控制架构&#34;&gt;固定翼的控制架构
+&lt;/h2&gt;&lt;h2 id=&#34;vtol的控制架构&#34;&gt;VTOL的控制架构
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>PX4飞行控制器配置日志PX4-1基础</title>

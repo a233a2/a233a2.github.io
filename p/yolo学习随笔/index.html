@@ -281,7 +281,14 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#yolo-v11-环境配置">YOLO v11 环境配置</a></li>
+    <li>
+      <ol>
+        <li><a href="#yolo-v11-环境配置">YOLO v11 环境配置</a></li>
+        <li><a href="#yolo-架构与原理">YOLO 架构与原理</a></li>
+        <li><a href="#yolo-v11-demo">YOLO v11 Demo</a></li>
+        <li><a href="#自己训练数据并完成任务-打僵尸为例子">自己训练数据并完成任务-打僵尸为例子</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -370,8 +377,8 @@
     
     
     <p>YOLO（You Only Look Once）是一种流行的实时目标检测算法，它将目标检测任务作为一个回归问题来处理，直接预测图像中所有目标的位置和类别。与传统的目标检测方法（例如 R-CNN 系列）不同，YOLO 通过一个单一的神经网络在一次前向传播中同时进行目标识别和定位，因此非常高效，能够在实时应用中使用。</p>
-<h2 id="yolo-v11-环境配置">YOLO v11 环境配置
-</h2><p>环境：Win11专业版24H2版本  <br>
+<h3 id="yolo-v11-环境配置">YOLO v11 环境配置
+</h3><p>环境：Win11专业版24H2版本  <br>
 CPU GPU：i7 14650HX + RTX4060 Laptop <br>
 Driver Version: 566.14 CUDA Version:12.7 <br>
 参考教程：
@@ -387,19 +394,22 @@ Driver Version: 566.14 CUDA Version:12.7 <br>
 <p>Conda创建了虚拟环境。名为yolo_env 安装了Pytorch。下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     <br>
 <img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1.png"
 	width="1024"
-	height="843"
-	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu917135031923065012.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu11271068069900868733.png 1024w"
+	height="398"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu2379520568260527909.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu7647368616623563681.png 1024w"
 	loading="lazy"
 	
-		alt="Pycharm配置"
+		alt="Pycharm配置1"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="121"
-		data-flex-basis="291px"
+		data-flex-grow="257"
+		data-flex-basis="617px"
 	
 ></p>
-<p>YOLO Example：</p>
+<h3 id="yolo-架构与原理">YOLO 架构与原理
+</h3><p>ultralytics发布了最新的作品YOLOv11，这一次YOLOv11的变化相对于ultralytics公司的上一代作品YOLOv8变化不是很大的（YOLOv9、YOLOv10均不是ultralytics公司作品），其中改变的位置涉及到C2f变为C3K2，在SPPF后面加了一层类似于注意力机制的C2PSA，还有一个变化大家从yaml文件是看不出来的就是它的检测头内部替换了两个DWConv，以及模型的深度和宽度参数进行了大幅度调整，但是在损失函数方面就没有变化还是采用的CIoU作为边界框回归损失。</p>
+<h3 id="yolo-v11-demo">YOLO v11 Demo
+</h3><p>YOLO Example：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -415,8 +425,12 @@ Driver Version: 566.14 CUDA Version:12.7 <br>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>参考YOLO官方仓库，安装ultralytics：https://github.com/ultralytics/ultralytics   <br>
-Python中引用地址可能存在转义错误，在地址前加r即可。即保持字符原始值的意思。如<strong>r&quot;H:\Computer Vision\yolov11\pra\pra1\ice_skating.mp4&quot;</strong>    <br>
+Python中引用地址可能存在转义错误，在地址前加r即可。即保持字符原始值的意思。  <br>
+如<strong>r&quot;H:\Computer Vision\yolov11\pra\pra1\ice_skating.mp4&quot;</strong>       <br>
 PS 也可以替换为双反斜杠，替换为正斜杠。</p>
+<h3 id="自己训练数据并完成任务-打僵尸为例子">自己训练数据并完成任务-打僵尸为例子
+</h3><p>参考教程：<a class="link" href="https://www.bilibili.com/video/BV18S411N7MU"  target="_blank" rel="noopener"
+    >yolo 锁头 教程</a></p>
 
 </section>
 
@@ -507,15 +521,15 @@ PS 也可以替换为双反斜杠，替换为正斜杠。</p>
             
                 
 <article class="has-image">
-    <a href="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/">
+    <a href="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/">
         
         
             <div class="article-image">
-                <img src="/p/xtdrone%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.4999c796245c45e6072bdb0d4846e9bd_hu11837448296042111343.jpg" 
+                <img src="/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.4999c796245c45e6072bdb0d4846e9bd_hu11837448296042111343.jpg" 
                         width="250" 
                         height="150" 
                         loading="lazy"
-                        alt="Featured image of post XTdrone仿真环境"
+                        alt="Featured image of post PX4控制系统"
                         
                         data-hash="md5-SZnHliRcReYHK9sNSEbpvQ==">
                 
@@ -523,7 +537,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。</p>
         
 
         <div class="article-details">
-            <h2 class="article-title">XTdrone仿真环境</h2>
+            <h2 class="article-title">PX4控制系统</h2>
         </div>
     </a>
 </article>
