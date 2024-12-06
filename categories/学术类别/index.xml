@@ -15,20 +15,24 @@
         <guid>https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/</guid>
         <description>&lt;p&gt;YOLO（You Only Look Once）是一种流行的实时目标检测算法，它将目标检测任务作为一个回归问题来处理，直接预测图像中所有目标的位置和类别。与传统的目标检测方法（例如 R-CNN 系列）不同，YOLO 通过一个单一的神经网络在一次前向传播中同时进行目标识别和定位，因此非常高效，能够在实时应用中使用。&lt;/p&gt;
 &lt;h3 id=&#34;yolo-v11-环境配置&#34;&gt;YOLO v11 环境配置
-&lt;/h3&gt;&lt;p&gt;环境：Win11专业版24H2版本  &lt;br&gt;
-CPU GPU：i7 14650HX + RTX4060 Laptop &lt;br&gt;
-Driver Version: 566.14 CUDA Version:12.7 &lt;br&gt;
-参考教程：
+&lt;/h3&gt;&lt;p&gt;参考教程：
 &lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/2401_87734564/article/details/143926961&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;YOLO环境配置&lt;/a&gt;&lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Edward1027/article/details/142703627&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Anaconda的安装与环境设置&lt;/a&gt;  &lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Edward1027/article/details/142722503&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;CUDA、Pytorch、Pycharm的安装与配置&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;采用Anaconda管理，使用Conda创建虚拟环境。类似Docker，感觉相比Docker更容易上手。    &lt;br&gt;
+&lt;h4 id=&#34;我的操作环境&#34;&gt;我的操作环境
+&lt;/h4&gt;&lt;p&gt;环境：Win11专业版24H2版本  &lt;br&gt;
+CPU GPU：i7 14650HX + RTX4060 Laptop &lt;br&gt;
+Driver Version: 566.14 CUDA Version:12.7&lt;/p&gt;
+&lt;h4 id=&#34;conda创建虚拟环境&#34;&gt;Conda创建虚拟环境
+&lt;/h4&gt;&lt;p&gt;采用Anaconda管理，使用Conda创建虚拟环境。类似Docker，感觉相比Docker更容易上手。    &lt;br&gt;
 首先下载了Anaconda 2024-6-1版本，内置Conda版本为25.   &lt;br&gt;
-安装了Pytorch2.4.1，基于CUDA 12.4.&lt;/p&gt;
-&lt;p&gt;Conda创建了虚拟环境。名为yolo_env 安装了Pytorch。下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     &lt;br&gt;
+Conda创建了虚拟环境。名为yolo_env
+&lt;strong&gt;首先创建并激活虚拟环境。&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;pycharm配置虚拟环境&#34;&gt;Pycharm配置虚拟环境
+&lt;/h4&gt;&lt;p&gt;下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1.png&#34;
 	width=&#34;1024&#34;
 	height=&#34;398&#34;
@@ -42,7 +46,220 @@ Driver Version: 566.14 CUDA Version:12.7 &lt;br&gt;
 		data-flex-grow=&#34;257&#34;
 		data-flex-basis=&#34;617px&#34;
 	
+&gt; &lt;br&gt;
+在Pycharm中新建项目，选择之前创建的虚拟环境。  &lt;br&gt;
+后在这个虚拟环境中安装Pytorch。&lt;/p&gt;
+&lt;h4 id=&#34;虚拟环境中pytorch的安装&#34;&gt;虚拟环境中Pytorch的安装
+&lt;/h4&gt;&lt;p&gt;Pytorch的安装：https://pytorch.org/get-started/locally/  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.3.png&#34;
+	width=&#34;1119&#34;
+	height=&#34;474&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.3_hu2779265196618068458.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.3_hu6387028331320895510.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;236&#34;
+		data-flex-basis=&#34;566px&#34;
+	
+&gt;   &lt;br&gt;
+选择如上的版本号。在Pycharm终端中输入即可在对于环境中安装。&lt;/p&gt;
+&lt;h4 id=&#34;cuda安装&#34;&gt;CUDA安装
+&lt;/h4&gt;&lt;p&gt;首先安装CUDA toolkit       &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.5.png&#34;
+	width=&#34;1722&#34;
+	height=&#34;948&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.5_hu2108748904475043748.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.5_hu10671056170047144328.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;181&#34;
+		data-flex-basis=&#34;435px&#34;
+	
+&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2.png&#34;
+	width=&#34;1738&#34;
+	height=&#34;1076&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2_hu4727122040321732727.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2_hu4844006185790304742.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;161&#34;
+		data-flex-basis=&#34;387px&#34;
+	
+&gt; &lt;br&gt;
+这里我选了12.6.2。因为没看见最新版&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PS:cuda安装
+安装cuda时，第一次会让设置临时解压目录，第二次会让设置安装目录；
+临时解压路径，建议默认即可，也可以自定义。安装结束后，临时解压文件夹会自动删除；
+安装目录，建议默认即可；
+注意：临时解压目录千万不要和cuda的安装路径设置成一样的，否则安装结束，会找不到安装目录的！！！
+选择自定义安装
+安装完成后，配置cuda的环境变量；
+命令行中，测试是否安装成功；
+双击“exe文件”，选择下载路径（推荐默认路径）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.4.png&#34;
+	width=&#34;584&#34;
+	height=&#34;399&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.4_hu11851250273544745873.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.4_hu5269262616103807612.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;146&#34;
+		data-flex-basis=&#34;351px&#34;
+	
+&gt;      &lt;br&gt;
+之后选择自定义安装，精简版本是下载好所有组件，并且会覆盖原有驱动，所以在这里推荐自定义下载   &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.6.png&#34;
+	width=&#34;770&#34;
+	height=&#34;582&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.6_hu7099234248510839262.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.6_hu4921506323022510362.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;132&#34;
+		data-flex-basis=&#34;317px&#34;
+	
+&gt;      &lt;br&gt;
+网上都建议将Visual Studio Integration选项取消（在CUDA选项下），其没什么用而且会影响下载    &lt;br&gt;
+确定安装路径（可以修改，最好记住）  &lt;br&gt;
+安装完成后查看一下是否有环境变量，没有自己手动添加（9.0之后的版本环境变量是自动配置的，无需添加） &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.8.png&#34;
+	width=&#34;784&#34;
+	height=&#34;579&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.8_hu1817023984047208062.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.8_hu5281293639617150659.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;135&#34;
+		data-flex-basis=&#34;324px&#34;
+	
+&gt;   &lt;br&gt;
+一共需要4个环境变量，网上说只自动生成了前两个，再手动添加一下上图中下面那两个。&lt;/p&gt;
+&lt;h4 id=&#34;cudnn安装&#34;&gt;CUDNN安装
+&lt;/h4&gt;&lt;p&gt;cuDNN 其实就是 CUDA 的一个补丁而已，专为深度学习运算进行优化的。然后再参加环境变量 &lt;br&gt;
+下载后发现其实cudnn不是一个exe文件，而是一个压缩包，解压后，有三个文件夹，把三个文件夹拷贝到cuda的安装目录下。  &lt;br&gt;
+拷贝时看到，CUDA 的安装目录中，有和 cuDNN 解压缩后的同名文件夹，这里注意，不需要担心，直接复制即可。cuDNN 解压缩后的同名文件夹中的配置文件会添加到 CUDA安装目录中的同名文件夹中。【此处还是建议还是分别把文件夹的内容复制到对应文件夹中去】     &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.9.png&#34;
+	width=&#34;937&#34;
+	height=&#34;1207&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.9_hu2692728058471020184.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.9_hu9870300747949658482.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;77&#34;
+		data-flex-basis=&#34;186px&#34;
+	
+&gt;   &lt;br&gt;
+在系统变量-Paht中添加环境变量  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.10.png&#34;
+	width=&#34;1420&#34;
+	height=&#34;1060&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.10_hu2984456407754083979.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.10_hu7945047987505704312.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;321px&#34;
+	
 &gt;&lt;/p&gt;
+&lt;p&gt;如何测试环境是否安装成功？   &lt;br&gt;
+打开cmd，输入nvcc -V查看cuda版本   &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.7.png&#34;
+	width=&#34;737&#34;
+	height=&#34;312&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.7_hu6252951849357350586.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.7_hu2419870915123251608.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;236&#34;
+		data-flex-basis=&#34;566px&#34;
+	
+&gt;  &lt;br&gt;
+使用Torch验证CUDA是否可用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# yolo detect train data=data/data.yaml model=yolo11n.pt epochs=10 batch=4 imgsz=640 device=0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;torch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 检查 CUDA 是否可用&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sa&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;CUDA available: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cuda&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;is_available&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 如果 CUDA 可用，打印当前设备名称&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cuda&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;is_available&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sa&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Current device: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cuda&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_device_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 获取 CUDA 版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cuda_version&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cuda&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sa&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;CUDA Version: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cuda_version&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 获取 cuDNN 版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;cudnn_version&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;torch&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;backends&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cudnn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;sa&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cuDNN Version: &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cudnn_version&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;不可用的运行结果&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CUDA available: False
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CUDA Version: None
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cuDNN Version: None
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;可用的运行结果&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CUDA available: False
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CUDA Version: None
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cuDNN Version: None
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;torch安装&#34;&gt;torch安装
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;pip install torch&lt;/strong&gt;即可  &lt;br&gt;
+Torch 和 PyTorch 是两个不同的深度学习框架。 &lt;br&gt;
+1、Torch 是一个用 Lua 编程语言编写的深度学习框架，而 PyTorch 是一个用 Python 编程语言编写的深度学习框架。 &lt;br&gt;
+2、Torch 是由 Facebook 的研究团队开发的，而 PyTorch 是由 Facebook AI Research（FAIR）团队开发的。 &lt;br&gt;
+3、PyTorch 的设计更加灵活和易于使用，提供了更多高级接口和功能，使得用户可以更方便地构建、训练和部署深度学习模型。 &lt;br&gt;
+4、Torch 在一些方面比 PyTorch 更早成为流行的深度学习框架，但 PyTorch 在近年来逐渐取代了 Torch，成为了研究和工业界广泛使用的深度学习框架之一。&lt;/p&gt;
 &lt;h3 id=&#34;yolo-架构与原理&#34;&gt;YOLO 架构与原理
 &lt;/h3&gt;&lt;p&gt;ultralytics发布了最新的作品YOLOv11，这一次YOLOv11的变化相对于ultralytics公司的上一代作品YOLOv8变化不是很大的（YOLOv9、YOLOv10均不是ultralytics公司作品），其中改变的位置涉及到C2f变为C3K2，在SPPF后面加了一层类似于注意力机制的C2PSA，还有一个变化大家从yaml文件是看不出来的就是它的检测头内部替换了两个DWConv，以及模型的深度和宽度参数进行了大幅度调整，但是在损失函数方面就没有变化还是采用的CIoU作为边界框回归损失。&lt;/p&gt;
 &lt;h3 id=&#34;yolo-v11-demo&#34;&gt;YOLO v11 Demo
@@ -84,7 +301,8 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 &gt;     &lt;br&gt;
 下一步就是先自己玩一把，然后录屏，截图出300张左右的数据集。&lt;/p&gt;
 &lt;h4 id=&#34;数据标注&#34;&gt;数据标注
-&lt;/h4&gt;&lt;h4 id=&#34;训练数据&#34;&gt;训练数据
+&lt;/h4&gt;&lt;p&gt;先使用教学视频中UP给出的数据集压缩包进行自己的训练，后续有时间再试试自己标注数据集。&lt;/p&gt;
+&lt;h4 id=&#34;训练数据&#34;&gt;训练数据
 &lt;/h4&gt;</description>
         </item>
         <item>

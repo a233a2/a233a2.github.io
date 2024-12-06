@@ -283,7 +283,17 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#yolo-v11-环境配置">YOLO v11 环境配置</a></li>
+        <li><a href="#yolo-v11-环境配置">YOLO v11 环境配置</a>
+          <ol>
+            <li><a href="#我的操作环境">我的操作环境</a></li>
+            <li><a href="#conda创建虚拟环境">Conda创建虚拟环境</a></li>
+            <li><a href="#pycharm配置虚拟环境">Pycharm配置虚拟环境</a></li>
+            <li><a href="#虚拟环境中pytorch的安装">虚拟环境中Pytorch的安装</a></li>
+            <li><a href="#cuda安装">CUDA安装</a></li>
+            <li><a href="#cudnn安装">CUDNN安装</a></li>
+            <li><a href="#torch安装">torch安装</a></li>
+          </ol>
+        </li>
         <li><a href="#yolo-架构与原理">YOLO 架构与原理</a></li>
         <li><a href="#yolo-v11-demo">YOLO v11 Demo</a></li>
         <li><a href="#自己训练数据并完成任务-打僵尸为例子">自己训练数据并完成任务-打僵尸为例子</a>
@@ -367,7 +377,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 2 分钟
+                    阅读时长: 5 分钟
                 </time>
             </div>
         
@@ -384,20 +394,24 @@
     
     <p>YOLO（You Only Look Once）是一种流行的实时目标检测算法，它将目标检测任务作为一个回归问题来处理，直接预测图像中所有目标的位置和类别。与传统的目标检测方法（例如 R-CNN 系列）不同，YOLO 通过一个单一的神经网络在一次前向传播中同时进行目标识别和定位，因此非常高效，能够在实时应用中使用。</p>
 <h3 id="yolo-v11-环境配置">YOLO v11 环境配置
-</h3><p>环境：Win11专业版24H2版本  <br>
-CPU GPU：i7 14650HX + RTX4060 Laptop <br>
-Driver Version: 566.14 CUDA Version:12.7 <br>
-参考教程：
+</h3><p>参考教程：
 <a class="link" href="https://blog.csdn.net/2401_87734564/article/details/143926961"  target="_blank" rel="noopener"
     >YOLO环境配置</a><br>
 <a class="link" href="https://blog.csdn.net/Edward1027/article/details/142703627"  target="_blank" rel="noopener"
     >Anaconda的安装与环境设置</a>  <br>
 <a class="link" href="https://blog.csdn.net/Edward1027/article/details/142722503"  target="_blank" rel="noopener"
     >CUDA、Pytorch、Pycharm的安装与配置</a></p>
-<p>采用Anaconda管理，使用Conda创建虚拟环境。类似Docker，感觉相比Docker更容易上手。    <br>
+<h4 id="我的操作环境">我的操作环境
+</h4><p>环境：Win11专业版24H2版本  <br>
+CPU GPU：i7 14650HX + RTX4060 Laptop <br>
+Driver Version: 566.14 CUDA Version:12.7</p>
+<h4 id="conda创建虚拟环境">Conda创建虚拟环境
+</h4><p>采用Anaconda管理，使用Conda创建虚拟环境。类似Docker，感觉相比Docker更容易上手。    <br>
 首先下载了Anaconda 2024-6-1版本，内置Conda版本为25.   <br>
-安装了Pytorch2.4.1，基于CUDA 12.4.</p>
-<p>Conda创建了虚拟环境。名为yolo_env 安装了Pytorch。下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     <br>
+Conda创建了虚拟环境。名为yolo_env
+<strong>首先创建并激活虚拟环境。</strong></p>
+<h4 id="pycharm配置虚拟环境">Pycharm配置虚拟环境
+</h4><p>下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     <br>
 <img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1.png"
 	width="1024"
 	height="398"
@@ -411,7 +425,220 @@ Driver Version: 566.14 CUDA Version:12.7 <br>
 		data-flex-grow="257"
 		data-flex-basis="617px"
 	
+> <br>
+在Pycharm中新建项目，选择之前创建的虚拟环境。  <br>
+后在这个虚拟环境中安装Pytorch。</p>
+<h4 id="虚拟环境中pytorch的安装">虚拟环境中Pytorch的安装
+</h4><p>Pytorch的安装：https://pytorch.org/get-started/locally/  <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.3.png"
+	width="1119"
+	height="474"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.3_hu2779265196618068458.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.3_hu6387028331320895510.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="236"
+		data-flex-basis="566px"
+	
+>   <br>
+选择如上的版本号。在Pycharm终端中输入即可在对于环境中安装。</p>
+<h4 id="cuda安装">CUDA安装
+</h4><p>首先安装CUDA toolkit       <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.5.png"
+	width="1722"
+	height="948"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.5_hu2108748904475043748.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.5_hu10671056170047144328.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="181"
+		data-flex-basis="435px"
+	
+> <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2.png"
+	width="1738"
+	height="1076"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2_hu4727122040321732727.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2_hu4844006185790304742.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="161"
+		data-flex-basis="387px"
+	
+> <br>
+这里我选了12.6.2。因为没看见最新版</p>
+<blockquote>
+<p>PS:cuda安装
+安装cuda时，第一次会让设置临时解压目录，第二次会让设置安装目录；
+临时解压路径，建议默认即可，也可以自定义。安装结束后，临时解压文件夹会自动删除；
+安装目录，建议默认即可；
+注意：临时解压目录千万不要和cuda的安装路径设置成一样的，否则安装结束，会找不到安装目录的！！！
+选择自定义安装
+安装完成后，配置cuda的环境变量；
+命令行中，测试是否安装成功；
+双击“exe文件”，选择下载路径（推荐默认路径）</p>
+</blockquote>
+<p><img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.4.png"
+	width="584"
+	height="399"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.4_hu11851250273544745873.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.4_hu5269262616103807612.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="146"
+		data-flex-basis="351px"
+	
+>      <br>
+之后选择自定义安装，精简版本是下载好所有组件，并且会覆盖原有驱动，所以在这里推荐自定义下载   <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.6.png"
+	width="770"
+	height="582"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.6_hu7099234248510839262.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.6_hu4921506323022510362.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="132"
+		data-flex-basis="317px"
+	
+>      <br>
+网上都建议将Visual Studio Integration选项取消（在CUDA选项下），其没什么用而且会影响下载    <br>
+确定安装路径（可以修改，最好记住）  <br>
+安装完成后查看一下是否有环境变量，没有自己手动添加（9.0之后的版本环境变量是自动配置的，无需添加） <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.8.png"
+	width="784"
+	height="579"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.8_hu1817023984047208062.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.8_hu5281293639617150659.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="135"
+		data-flex-basis="324px"
+	
+>   <br>
+一共需要4个环境变量，网上说只自动生成了前两个，再手动添加一下上图中下面那两个。</p>
+<h4 id="cudnn安装">CUDNN安装
+</h4><p>cuDNN 其实就是 CUDA 的一个补丁而已，专为深度学习运算进行优化的。然后再参加环境变量 <br>
+下载后发现其实cudnn不是一个exe文件，而是一个压缩包，解压后，有三个文件夹，把三个文件夹拷贝到cuda的安装目录下。  <br>
+拷贝时看到，CUDA 的安装目录中，有和 cuDNN 解压缩后的同名文件夹，这里注意，不需要担心，直接复制即可。cuDNN 解压缩后的同名文件夹中的配置文件会添加到 CUDA安装目录中的同名文件夹中。【此处还是建议还是分别把文件夹的内容复制到对应文件夹中去】     <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.9.png"
+	width="937"
+	height="1207"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.9_hu2692728058471020184.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.9_hu9870300747949658482.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="77"
+		data-flex-basis="186px"
+	
+>   <br>
+在系统变量-Paht中添加环境变量  <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.10.png"
+	width="1420"
+	height="1060"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.10_hu2984456407754083979.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.10_hu7945047987505704312.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="133"
+		data-flex-basis="321px"
+	
 ></p>
+<p>如何测试环境是否安装成功？   <br>
+打开cmd，输入nvcc -V查看cuda版本   <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.7.png"
+	width="737"
+	height="312"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.7_hu6252951849357350586.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.7_hu2419870915123251608.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="236"
+		data-flex-basis="566px"
+	
+>  <br>
+使用Torch验证CUDA是否可用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># yolo detect train data=data/data.yaml model=yolo11n.pt epochs=10 batch=4 imgsz=640 device=0</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查 CUDA 是否可用</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;CUDA available: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果 CUDA 可用，打印当前设备名称</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Current device: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">get_device_name</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 获取 CUDA 版本</span>
+</span></span><span class="line"><span class="cl"><span class="n">cuda_version</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">version</span><span class="o">.</span><span class="n">cuda</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;CUDA Version: </span><span class="si">{</span><span class="n">cuda_version</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 获取 cuDNN 版本</span>
+</span></span><span class="line"><span class="cl"><span class="n">cudnn_version</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">cudnn</span><span class="o">.</span><span class="n">version</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;cuDNN Version: </span><span class="si">{</span><span class="n">cudnn_version</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不可用的运行结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">CUDA available: False
+</span></span><span class="line"><span class="cl">CUDA Version: None
+</span></span><span class="line"><span class="cl">cuDNN Version: None
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可用的运行结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">CUDA available: False
+</span></span><span class="line"><span class="cl">CUDA Version: None
+</span></span><span class="line"><span class="cl">cuDNN Version: None
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="torch安装">torch安装
+</h4><p><strong>pip install torch</strong>即可  <br>
+Torch 和 PyTorch 是两个不同的深度学习框架。 <br>
+1、Torch 是一个用 Lua 编程语言编写的深度学习框架，而 PyTorch 是一个用 Python 编程语言编写的深度学习框架。 <br>
+2、Torch 是由 Facebook 的研究团队开发的，而 PyTorch 是由 Facebook AI Research（FAIR）团队开发的。 <br>
+3、PyTorch 的设计更加灵活和易于使用，提供了更多高级接口和功能，使得用户可以更方便地构建、训练和部署深度学习模型。 <br>
+4、Torch 在一些方面比 PyTorch 更早成为流行的深度学习框架，但 PyTorch 在近年来逐渐取代了 Torch，成为了研究和工业界广泛使用的深度学习框架之一。</p>
 <h3 id="yolo-架构与原理">YOLO 架构与原理
 </h3><p>ultralytics发布了最新的作品YOLOv11，这一次YOLOv11的变化相对于ultralytics公司的上一代作品YOLOv8变化不是很大的（YOLOv9、YOLOv10均不是ultralytics公司作品），其中改变的位置涉及到C2f变为C3K2，在SPPF后面加了一层类似于注意力机制的C2PSA，还有一个变化大家从yaml文件是看不出来的就是它的检测头内部替换了两个DWConv，以及模型的深度和宽度参数进行了大幅度调整，但是在损失函数方面就没有变化还是采用的CIoU作为边界框回归损失。</p>
 <h3 id="yolo-v11-demo">YOLO v11 Demo
@@ -453,7 +680,8 @@ PS 也可以替换为双反斜杠，替换为正斜杠。</p>
 >     <br>
 下一步就是先自己玩一把，然后录屏，截图出300张左右的数据集。</p>
 <h4 id="数据标注">数据标注
-</h4><h4 id="训练数据">训练数据
+</h4><p>先使用教学视频中UP给出的数据集压缩包进行自己的训练，后续有时间再试试自己标注数据集。</p>
+<h4 id="训练数据">训练数据
 </h4>
 </section>
 
