@@ -68,7 +68,24 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 &lt;h3 id=&#34;自己训练数据并完成任务-打僵尸为例子&#34;&gt;自己训练数据并完成任务-打僵尸为例子
 &lt;/h3&gt;&lt;p&gt;参考教程：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV18S411N7MU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;yolo 锁头 教程&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;h4 id=&#34;数据集获取&#34;&gt;数据集获取
+&lt;/h4&gt;&lt;p&gt;首先下载一个植物大战僵尸经典版本。这个属实是难倒我了。。。最后在植物大战僵尸吧找到了资源,并下载了完美存档。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/2.1.png&#34;
+	width=&#34;806&#34;
+	height=&#34;635&#34;
+	srcset=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/2.1_hu133780691302435498.png 480w, https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/2.1_hu441190166218995831.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;126&#34;
+		data-flex-basis=&#34;304px&#34;
+	
+&gt;     &lt;br&gt;
+下一步就是先自己玩一把，然后录屏，截图出300张左右的数据集。&lt;/p&gt;
+&lt;h4 id=&#34;数据标注&#34;&gt;数据标注
+&lt;/h4&gt;&lt;h4 id=&#34;训练数据&#34;&gt;训练数据
+&lt;/h4&gt;</description>
         </item>
         
     </channel>
