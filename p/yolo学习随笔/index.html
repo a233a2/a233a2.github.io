@@ -287,11 +287,12 @@
           <ol>
             <li><a href="#我的操作环境">我的操作环境</a></li>
             <li><a href="#conda创建虚拟环境">Conda创建虚拟环境</a></li>
-            <li><a href="#pycharm配置虚拟环境">Pycharm配置虚拟环境</a></li>
             <li><a href="#虚拟环境中pytorch的安装">虚拟环境中Pytorch的安装</a></li>
-            <li><a href="#cuda安装">CUDA安装</a></li>
+            <li><a href="#cuda安装-不是安装在虚拟环境">CUDA安装-不是安装在虚拟环境</a></li>
+            <li><a href="#卸载cuda">卸载CUDA</a></li>
             <li><a href="#cudnn安装">CUDNN安装</a></li>
             <li><a href="#torch安装">torch安装</a></li>
+            <li><a href="#pycharm配置虚拟环境">Pycharm配置虚拟环境</a></li>
           </ol>
         </li>
         <li><a href="#yolo-架构与原理">YOLO 架构与原理</a></li>
@@ -301,6 +302,7 @@
             <li><a href="#数据集获取">数据集获取</a></li>
             <li><a href="#数据标注">数据标注</a></li>
             <li><a href="#训练数据">训练数据</a></li>
+            <li><a href="#运行程序">运行程序</a></li>
           </ol>
         </li>
       </ol>
@@ -377,7 +379,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 5 分钟
+                    阅读时长: 7 分钟
                 </time>
             </div>
         
@@ -409,25 +411,7 @@ Driver Version: 566.14 CUDA Version:12.7</p>
 </h4><p>采用Anaconda管理，使用Conda创建虚拟环境。类似Docker，感觉相比Docker更容易上手。    <br>
 首先下载了Anaconda 2024-6-1版本，内置Conda版本为25.   <br>
 Conda创建了虚拟环境。名为yolo_env
-<strong>首先创建并激活虚拟环境。</strong></p>
-<h4 id="pycharm配置虚拟环境">Pycharm配置虚拟环境
-</h4><p>下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     <br>
-<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1.png"
-	width="1024"
-	height="398"
-	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu2379520568260527909.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu7647368616623563681.png 1024w"
-	loading="lazy"
-	
-		alt="Pycharm配置1"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="257"
-		data-flex-basis="617px"
-	
-> <br>
-在Pycharm中新建项目，选择之前创建的虚拟环境。  <br>
-后在这个虚拟环境中安装Pytorch。</p>
+<strong>首先创建并激活虚拟环境。在Anaconda Navagator中操作即可。</strong></p>
 <h4 id="虚拟环境中pytorch的安装">虚拟环境中Pytorch的安装
 </h4><p>Pytorch的安装：https://pytorch.org/get-started/locally/  <br>
 <img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.3.png"
@@ -443,7 +427,7 @@ Conda创建了虚拟环境。名为yolo_env
 	
 >   <br>
 选择如上的版本号。在Pycharm终端中输入即可在对于环境中安装。</p>
-<h4 id="cuda安装">CUDA安装
+<h4 id="cuda安装-不是安装在虚拟环境">CUDA安装-不是安装在虚拟环境
 </h4><p>首先安装CUDA toolkit       <br>
 <img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.5.png"
 	width="1722"
@@ -458,18 +442,18 @@ Conda创建了虚拟环境。名为yolo_env
 	
 > <br>
 <img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2.png"
-	width="1738"
-	height="1076"
-	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2_hu4727122040321732727.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2_hu4844006185790304742.png 1024w"
+	width="1326"
+	height="887"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2_hu14675443904684269685.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2_hu8630480697976033153.png 1024w"
 	loading="lazy"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="161"
-		data-flex-basis="387px"
+		data-flex-grow="149"
+		data-flex-basis="358px"
 	
 > <br>
-这里我选了12.6.2。因为没看见最新版</p>
+这里我选了12.4 与Pytorch对应起来。</p>
 <blockquote>
 <p>PS:cuda安装
 安装cuda时，第一次会让设置临时解压目录，第二次会让设置安装目录；
@@ -493,22 +477,13 @@ Conda创建了虚拟环境。名为yolo_env
 		data-flex-basis="351px"
 	
 >      <br>
-之后选择自定义安装，精简版本是下载好所有组件，并且会覆盖原有驱动，所以在这里推荐自定义下载   <br>
-<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.6.png"
-	width="770"
-	height="582"
-	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.6_hu7099234248510839262.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.6_hu4921506323022510362.png 1024w"
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="132"
-		data-flex-basis="317px"
-	
->      <br>
-网上都建议将Visual Studio Integration选项取消（在CUDA选项下），其没什么用而且会影响下载    <br>
-确定安装路径（可以修改，最好记住）  <br>
-安装完成后查看一下是否有环境变量，没有自己手动添加（9.0之后的版本环境变量是自动配置的，无需添加） <br>
+之后选择自定义安装，精简版本是下载好所有组件，并且会覆盖原有驱动，所以在这里推荐自定义下载</p>
+<p>网上都建议将Visual Studio Integration选项取消（在CUDA选项下），其没什么用而且会影响下载    <br>
+确定安装路径（可以修改，最好记住）</p>
+<blockquote>
+<p>注意事项：取消勾选Visual Studio Integration（这里解释一下，这个模块是对VS编译的支持，没有安装VS无法征常工作，而需要VS辅助则是需要编译cuda程序，这种编译不建议在Windows下进行，一般Windows下能跑深度学习原生框架的代码就行），其余全部勾选。</p>
+</blockquote>
+<p>安装完成后查看一下是否有环境变量，没有自己手动添加（9.0之后的版本环境变量是自动配置的，无需添加） <br>
 <img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.8.png"
 	width="784"
 	height="579"
@@ -522,6 +497,39 @@ Conda创建了虚拟环境。名为yolo_env
 	
 >   <br>
 一共需要4个环境变量，网上说只自动生成了前两个，再手动添加一下上图中下面那两个。</p>
+<h4 id="卸载cuda">卸载CUDA
+</h4><p>参考：https://www.jianshu.com/p/c184e270b8d4     <br>
+<strong>保留如下的红色框选 删除其他的 删除顺序任意</strong>      <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.11.png"
+	width="1071"
+	height="1002"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.11_hu4930659081037111073.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.11_hu15535192257107066208.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="106"
+		data-flex-basis="256px"
+	
+>   <br>
+把Nsight CUDA toolkit删除了 先不删除了 其他的和这个古老教程对应不起来</p>
+<blockquote>
+<p>还是使用Docker配置简单一些，但是不知道Docker能否配置CUDA？或者Nvidia有专门的Docker仓库。？</p>
+</blockquote>
+<p>再次安装CUDA时发现CUDA安装失败。    <br>
+在网上查资料发现是驱动错误导致的，之前我是GameReady驱动，现在换成Studio系列。在这个驱动管理软件下能直接更换。  <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.12.png"
+	width="2119"
+	height="727"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.12_hu166916261429254250.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.12_hu14915704953979029103.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="291"
+		data-flex-basis="699px"
+	
+></p>
 <h4 id="cudnn安装">CUDNN安装
 </h4><p>cuDNN 其实就是 CUDA 的一个补丁而已，专为深度学习运算进行优化的。然后再参加环境变量 <br>
 下载后发现其实cudnn不是一个exe文件，而是一个压缩包，解压后，有三个文件夹，把三个文件夹拷贝到cuda的安装目录下。  <br>
@@ -639,10 +647,50 @@ Torch 和 PyTorch 是两个不同的深度学习框架。 <br>
 2、Torch 是由 Facebook 的研究团队开发的，而 PyTorch 是由 Facebook AI Research（FAIR）团队开发的。 <br>
 3、PyTorch 的设计更加灵活和易于使用，提供了更多高级接口和功能，使得用户可以更方便地构建、训练和部署深度学习模型。 <br>
 4、Torch 在一些方面比 PyTorch 更早成为流行的深度学习框架，但 PyTorch 在近年来逐渐取代了 Torch，成为了研究和工业界广泛使用的深度学习框架之一。</p>
+<h4 id="pycharm配置虚拟环境">Pycharm配置虚拟环境
+</h4><p>下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1.png"
+	width="1024"
+	height="398"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu2379520568260527909.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1_hu7647368616623563681.png 1024w"
+	loading="lazy"
+	
+		alt="Pycharm配置1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="257"
+		data-flex-basis="617px"
+	
+> <br>
+在Pycharm中新建项目，选择之前创建的虚拟环境。  <br>
+后在这个虚拟环境中安装Pytorch。</p>
 <h3 id="yolo-架构与原理">YOLO 架构与原理
 </h3><p>ultralytics发布了最新的作品YOLOv11，这一次YOLOv11的变化相对于ultralytics公司的上一代作品YOLOv8变化不是很大的（YOLOv9、YOLOv10均不是ultralytics公司作品），其中改变的位置涉及到C2f变为C3K2，在SPPF后面加了一层类似于注意力机制的C2PSA，还有一个变化大家从yaml文件是看不出来的就是它的检测头内部替换了两个DWConv，以及模型的深度和宽度参数进行了大幅度调整，但是在损失函数方面就没有变化还是采用的CIoU作为边界框回归损失。</p>
 <h3 id="yolo-v11-demo">YOLO v11 Demo
-</h3><p>YOLO Example：</p>
+</h3><p>安装ultralytics。运行时提示缺少package的错误就是没安装这个。<br>
+按照官方教程使用Conda安装即可 如下图 <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.13.png"
+	width="1033"
+	height="714"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.13_hu7048371502978688053.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.13_hu11011406988372546784.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="144"
+		data-flex-basis="347px"
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span><span class="p">::</span><span class="n">ultralytics</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>YOLO Example：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -682,7 +730,93 @@ PS 也可以替换为双反斜杠，替换为正斜杠。</p>
 <h4 id="数据标注">数据标注
 </h4><p>先使用教学视频中UP给出的数据集压缩包进行自己的训练，后续有时间再试试自己标注数据集。</p>
 <h4 id="训练数据">训练数据
-</h4>
+</h4><p>设置训练了500次 实际训练了200+次数</p>
+<h4 id="运行程序">运行程序
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>  <span class="c1">#导入</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pyautogui</span> <span class="k">as</span> <span class="nn">pt</span>  <span class="c1"># 控制鼠标点击的一个Python库</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pygetwindow</span>      <span class="c1"># 导入pygetwindow库，用于获取窗口信息</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>   <span class="c1"># 导入numpy库，用于数组和矩阵操作</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cv2</span> <span class="k">as</span> <span class="nn">cv</span>    <span class="c1"># 导入OpenCV库，用于图像处理</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>   <span class="c1"># 导入PyTorch库，用于深度学习操作</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">ImageGrab</span>   <span class="c1"># 从Pillow库中导入ImageGrab，用于屏幕截图</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&#34;best.pt&#34;</span><span class="p">)</span>  <span class="c1"># 加载YOLO模型，使用训练好的&#34;best.pt&#34;权重文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">window_title</span> <span class="o">=</span> <span class="s2">&#34;植物大战僵尸中文版&#34;</span>  <span class="c1"># 设置目标窗口标题为“植物大战僵尸中文版”</span>
+</span></span><span class="line"><span class="cl"><span class="n">window</span> <span class="o">=</span> <span class="n">pygetwindow</span><span class="o">.</span><span class="n">getWindowsWithTitle</span><span class="p">(</span><span class="n">window_title</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 获取该窗口的窗口对象</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&#34;cuda:0&#34;</span><span class="p">)</span>  <span class="c1"># 设置设备为GPU（CUDA），确保YOLO模型在GPU上运行</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># 将模型加载到GPU上</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">window</span><span class="p">:</span>   <span class="c1"># 检查目标窗口是否存在</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span>   <span class="c1"># 获取窗口的位置信息和大小</span>
+</span></span><span class="line"><span class="cl">        <span class="n">screenshot</span> <span class="o">=</span> <span class="n">ImageGrab</span><span class="o">.</span><span class="n">grab</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">])</span>   <span class="c1"># 对窗口进行截图</span>
+</span></span><span class="line"><span class="cl">        <span class="n">image_src</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">screenshot</span><span class="p">),</span> <span class="n">cv</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">)</span>    <span class="c1"># 将截图转换为OpenCV支持的BGR格式</span>
+</span></span><span class="line"><span class="cl">        <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span> <span class="o">=</span> <span class="n">image_src</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image_src</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>     <span class="c1"># 获取截图的宽度和高度</span>
+</span></span><span class="line"><span class="cl">        <span class="n">image_det</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image_src</span><span class="p">,</span> <span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">640</span><span class="p">))</span>   <span class="c1"># 将截图调整为YOLO模型需要的输入大小（640x640）</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">image_det</span><span class="p">,</span> <span class="n">imgsz</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>     <span class="c1"># 使用YOLO模型进行目标检测</span>
+</span></span><span class="line"><span class="cl">        <span class="n">boxes</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">xywhn</span>    <span class="c1"># 获取检测框的中心点和宽高（归一化坐标）</span>
+</span></span><span class="line"><span class="cl">        <span class="n">boxes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>    <span class="c1"># 按检测框的x坐标从左到右排序</span>
+</span></span><span class="line"><span class="cl">        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>   <span class="c1"># 初始化计数器，用于限制点击次数</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">box</span> <span class="ow">in</span> <span class="n">boxes</span><span class="p">:</span>  <span class="c1"># 遍历每个检测框     # 在截图中绘制检测框</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cv</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">image_src</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">box</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">size_x</span><span class="p">),</span> <span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">box</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">size_y</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">                         <span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">box</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">size_x</span><span class="p">),</span> <span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">box</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">size_y</span><span class="p">)),</span> 
+</span></span><span class="line"><span class="cl">                         <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">pt</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span> <span class="o">+</span> <span class="n">box</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span> <span class="o">+</span> <span class="n">box</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">size_y</span><span class="p">)</span>    <span class="c1"># 模拟鼠标点击检测框中心</span>
+</span></span><span class="line"><span class="cl">            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>   <span class="c1"># 如果点击次数超过4次，退出循环</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cv</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&#34;frame&#34;</span><span class="p">,</span> <span class="n">image_src</span><span class="p">)</span>     <span class="c1"># 显示实时处理后的图像，窗口名称为“frame”</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">cv</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">):</span>     <span class="c1"># 检测键盘按键，如果按下‘q’，退出程序</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
