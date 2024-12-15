@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Sat, 30 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Latex</title>
+        <link>https://a233a2.github.io/tags/latex/</link>
+        <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/tags/latex/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>PX4</title>
         <link>https://a233a2.github.io/tags/px4/</link>
         <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>

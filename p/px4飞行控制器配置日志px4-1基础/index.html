@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1%E5%9F%BA%E7%A1%80/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="PX4飞行控制器配置日志PX4-1基础">
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="PX4飞行控制器配置日志PX4-1基础">
 <meta property='og:description' content="PX4飞行控制器的配置教程，配置各种地面站与实际飞机各部分。">
 <meta property='og:url' content='https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1%E5%9F%BA%E7%A1%80/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
@@ -15,6 +15,9 @@
 <meta name="twitter:description" content="PX4飞行控制器的配置教程，配置各种地面站与实际飞机各部分。"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1%E5%9F%BA%E7%A1%80/fengmian.png' />
     <link rel="shortcut icon" href="/static/favicon.ico" />
+
+  
+
 
     </head>
     <body class="
@@ -637,7 +640,7 @@ VEHICLE_MODE_FLAG_SMART_HOVER
 <strong>实现飞行模式逻辑：</strong><br>
 在commander.cpp文件中，添加或修改相应的飞行模式逻辑。<br>
 你可以参考已有的飞行模式（如POSCTL或ALTCTL）的实现方式，将自定义逻辑嵌入其中。比如，你可以根据条件判断激活智能悬停模式： <br>
-<code>    if (user_input == CUSTOM_SMART_HOVER_CONDITION) {   vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;   }     </code> <br>
+<code>    if (user_input == CUSTOM_SMART_HOVER_CONDITION) {   vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;   }     </code> <br>
 <strong>实现控制算法：</strong><br>
 根据自定义飞行模式的功能需求，你可能需要在姿态控制模块（mc_att_control）或位置控制模块（mc_pos_control）中添加自定义的控制算法。
 可以根据飞行器当前的状态、位置、高度等数据来设计智能悬停的控制算法，使其在特定条件下表现出不同的控制行为。 <br>

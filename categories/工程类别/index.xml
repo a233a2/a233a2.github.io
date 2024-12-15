@@ -2087,7 +2087,7 @@ VEHICLE_MODE_FLAG_SMART_HOVER
 &lt;strong&gt;实现飞行模式逻辑：&lt;/strong&gt;&lt;br&gt;
 在commander.cpp文件中，添加或修改相应的飞行模式逻辑。&lt;br&gt;
 你可以参考已有的飞行模式（如POSCTL或ALTCTL）的实现方式，将自定义逻辑嵌入其中。比如，你可以根据条件判断激活智能悬停模式： &lt;br&gt;
-&lt;code&gt;    if (user_input == CUSTOM_SMART_HOVER_CONDITION) {   vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;   }     &lt;/code&gt; &lt;br&gt;
+&lt;code&gt;    if (user_input == CUSTOM_SMART_HOVER_CONDITION) {   vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;   }     &lt;/code&gt; &lt;br&gt;
 &lt;strong&gt;实现控制算法：&lt;/strong&gt;&lt;br&gt;
 根据自定义飞行模式的功能需求，你可能需要在姿态控制模块（mc_att_control）或位置控制模块（mc_pos_control）中添加自定义的控制算法。
 可以根据飞行器当前的状态、位置、高度等数据来设计智能悬停的控制算法，使其在特定条件下表现出不同的控制行为。 &lt;br&gt;
