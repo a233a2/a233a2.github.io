@@ -7,7 +7,27 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>YSYX学习-1-Linux系统安装和基本使用</title>
+        <link>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+        <description>&lt;h3 id=&#34;ysyx学习日记&#34;&gt;YSYX学习日记
+&lt;/h3&gt;&lt;p&gt;学习记录： &lt;a class=&#34;link&#34; href=&#34;https://docs.qq.com/sheet/DQ0lRY2tNb2VIZWVB?newPad=1&amp;amp;newPadType=clone&amp;amp;tab=BB08J4&amp;amp;_t=1728471922939&amp;amp;u=555637143d844e0f8b3d1a7c9c34bebf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;学习记录&lt;/a&gt;。 &lt;br&gt;
+内容：&lt;a class=&#34;link&#34; href=&#34;https://missing-semester-cn.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;The Missing Semester of Your CS Education 中文版&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;linux系统安装和基本使用&#34;&gt;Linux系统安装和基本使用
+&lt;/h2&gt;&lt;h3 id=&#34;课程概览与shell&#34;&gt;课程概览与shell
+&lt;/h3&gt;&lt;h3 id=&#34;shell工具和脚本&#34;&gt;Shell工具和脚本
+&lt;/h3&gt;&lt;h3 id=&#34;编辑器-vim&#34;&gt;编辑器 (Vim)
+&lt;/h3&gt;&lt;h3 id=&#34;数据整理&#34;&gt;数据整理
+&lt;/h3&gt;&lt;h3 id=&#34;命令行环境&#34;&gt;命令行环境
+&lt;/h3&gt;&lt;h3 id=&#34;版本控制git&#34;&gt;版本控制(Git)
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>Latex笔记</title>
         <link>https://a233a2.github.io/p/latex%E7%AC%94%E8%AE%B0/</link>
         <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
@@ -3355,26 +3375,6 @@ $$ &lt;br&gt;
 对应相等即可求出β123。&lt;/p&gt;
 &lt;h2 id=&#34;从adrc到mpc&#34;&gt;从ADRC到MPC
 &lt;/h2&gt;</description>
-        </item>
-        <item>
-        <title>YSYX学习-1-Linux系统安装和基本使用</title>
-        <link>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
-        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
-        <description>&lt;h3 id=&#34;ysyx学习日记&#34;&gt;YSYX学习日记
-&lt;/h3&gt;&lt;p&gt;学习记录： &lt;a class=&#34;link&#34; href=&#34;https://docs.qq.com/sheet/DQ0lRY2tNb2VIZWVB?newPad=1&amp;amp;newPadType=clone&amp;amp;tab=BB08J4&amp;amp;_t=1728471922939&amp;amp;u=555637143d844e0f8b3d1a7c9c34bebf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;学习记录&lt;/a&gt;。 &lt;br&gt;
-内容：&lt;a class=&#34;link&#34; href=&#34;https://missing-semester-cn.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;The Missing Semester of Your CS Education 中文版&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;linux系统安装和基本使用&#34;&gt;Linux系统安装和基本使用
-&lt;/h2&gt;&lt;h3 id=&#34;课程概览与shell&#34;&gt;课程概览与shell
-&lt;/h3&gt;&lt;h3 id=&#34;shell工具和脚本&#34;&gt;Shell工具和脚本
-&lt;/h3&gt;&lt;h3 id=&#34;编辑器-vim&#34;&gt;编辑器 (Vim)
-&lt;/h3&gt;&lt;h3 id=&#34;数据整理&#34;&gt;数据整理
-&lt;/h3&gt;&lt;h3 id=&#34;命令行环境&#34;&gt;命令行环境
-&lt;/h3&gt;&lt;h3 id=&#34;版本控制git&#34;&gt;版本控制(Git)
-&lt;/h3&gt;</description>
         </item>
         
     </channel>
