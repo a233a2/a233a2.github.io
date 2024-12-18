@@ -3828,6 +3828,15 @@ PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳�
 </description>
         </item>
         <item>
+        <title>2024年终总结</title>
+        <link>https://a233a2.github.io/p/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
+        <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
+        <description>&lt;h3 id=&#34;hugo博客的个人git部署工作流&#34;&gt;Hugo博客的个人git部署工作流
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>Hugo博客的个人git部署工作流</title>
         <link>https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
         <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
@@ -4852,17 +4861,24 @@ $$ &lt;br&gt;
 </description>
         </item>
         <item>
-        <title>YSYX学习日记</title>
-        <link>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
+        <title>YSYX学习-1-Linux系统安装和基本使用</title>
+        <link>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
+        <guid>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
         <description>&lt;h3 id=&#34;ysyx学习日记&#34;&gt;YSYX学习日记
 &lt;/h3&gt;&lt;p&gt;学习记录： &lt;a class=&#34;link&#34; href=&#34;https://docs.qq.com/sheet/DQ0lRY2tNb2VIZWVB?newPad=1&amp;amp;newPadType=clone&amp;amp;tab=BB08J4&amp;amp;_t=1728471922939&amp;amp;u=555637143d844e0f8b3d1a7c9c34bebf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;学习记录&lt;/a&gt;。&lt;/p&gt;
-&lt;h4 id=&#34;ubuntu安装&#34;&gt;Ubuntu安装
-&lt;/h4&gt;&lt;p&gt;测试赛&lt;/p&gt;
-</description>
+    &gt;学习记录&lt;/a&gt;。 &lt;br&gt;
+内容：&lt;a class=&#34;link&#34; href=&#34;https://missing-semester-cn.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;The Missing Semester of Your CS Education 中文版&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;linux系统安装和基本使用&#34;&gt;Linux系统安装和基本使用
+&lt;/h2&gt;&lt;h3 id=&#34;课程概览与shell&#34;&gt;课程概览与shell
+&lt;/h3&gt;&lt;h3 id=&#34;shell工具和脚本&#34;&gt;Shell工具和脚本
+&lt;/h3&gt;&lt;h3 id=&#34;编辑器-vim&#34;&gt;编辑器 (Vim)
+&lt;/h3&gt;&lt;h3 id=&#34;数据整理&#34;&gt;数据整理
+&lt;/h3&gt;&lt;h3 id=&#34;命令行环境&#34;&gt;命令行环境
+&lt;/h3&gt;&lt;h3 id=&#34;版本控制git&#34;&gt;版本控制(Git)
+&lt;/h3&gt;</description>
         </item>
         <item>
         <title>CM_FOC驱动器</title>
