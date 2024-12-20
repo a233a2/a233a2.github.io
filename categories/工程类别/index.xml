@@ -133,12 +133,12 @@ WSL2下查看笔记本电量。虚拟机无此数据，无法查看。  &lt;br&g
 		data-flex-basis=&#34;679px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h3 id=&#34;shell工具和脚本&#34;&gt;Shell工具和脚本
-&lt;/h3&gt;&lt;h3 id=&#34;编辑器-vim&#34;&gt;编辑器 (Vim)
-&lt;/h3&gt;&lt;h3 id=&#34;数据整理&#34;&gt;数据整理
-&lt;/h3&gt;&lt;h3 id=&#34;命令行环境&#34;&gt;命令行环境
-&lt;/h3&gt;&lt;h3 id=&#34;版本控制git&#34;&gt;版本控制(Git)
-&lt;/h3&gt;</description>
+&lt;h2 id=&#34;shell工具和脚本&#34;&gt;Shell工具和脚本
+&lt;/h2&gt;&lt;h2 id=&#34;编辑器-vim&#34;&gt;编辑器 (Vim)
+&lt;/h2&gt;&lt;h2 id=&#34;数据整理&#34;&gt;数据整理
+&lt;/h2&gt;&lt;h2 id=&#34;命令行环境&#34;&gt;命令行环境
+&lt;/h2&gt;&lt;h2 id=&#34;版本控制git&#34;&gt;版本控制(Git)
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>YSYX学习-2-C语言</title>
