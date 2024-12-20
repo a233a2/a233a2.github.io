@@ -284,14 +284,10 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
+    <li><a href="#linuxbasic">LinuxBasic</a></li>
+    <li><a href="#linux基础课程概览与shell">Linux基础课程概览与shell</a>
       <ol>
-        <li><a href="#ysyx学习日记">YSYX学习日记</a></li>
-      </ol>
-    </li>
-    <li><a href="#linux系统安装和基本使用">Linux系统安装和基本使用</a>
-      <ol>
-        <li><a href="#课程概览与shell">课程概览与shell</a>
+        <li>
           <ol>
             <li><a href="#echo命令">echo命令</a></li>
             <li><a href="#which命令">which命令</a></li>
@@ -388,7 +384,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 4 分钟
+                    阅读时长: 5 分钟
                 </time>
             </div>
         
@@ -403,14 +399,63 @@
     <section class="article-content">
     
     
-    <h3 id="ysyx学习日记">YSYX学习日记
-</h3><p>学习记录： <a class="link" href="https://docs.qq.com/sheet/DQ0lRY2tNb2VIZWVB?newPad=1&amp;newPadType=clone&amp;tab=BB08J4&amp;_t=1728471922939&amp;u=555637143d844e0f8b3d1a7c9c34bebf"  target="_blank" rel="noopener"
+    <p>学习记录： <a class="link" href="https://docs.qq.com/sheet/DQ0lRY2tNb2VIZWVB?newPad=1&amp;newPadType=clone&amp;tab=BB08J4&amp;_t=1728471922939&amp;u=555637143d844e0f8b3d1a7c9c34bebf"  target="_blank" rel="noopener"
     >学习记录</a>。 <br>
 内容：<a class="link" href="https://missing-semester-cn.github.io/"  target="_blank" rel="noopener"
     >The Missing Semester of Your CS Education 中文版</a></p>
-<h2 id="linux系统安装和基本使用">Linux系统安装和基本使用
-</h2><h3 id="课程概览与shell">课程概览与shell
-</h3><div class="highlight"><div class="chroma">
+<h2 id="linuxbasic">LinuxBasic
+</h2><p>GUI和CLI是两种用户与计算机进行交互的方式。 <br>
+GUI（Graphical User Interface，图形用户界面）：GUI是一种基于图形化界面的操作系统用户界面。    <br>
+CLI（Command Line Interface，命令行界面）：CLI是一种通过在命令行或终端界面输入命令来与计算机进行交互的用户界面。  <br>
+安装PA所需工具</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt-get install build-essential    <span class="c1"># build-essential packages, include binary utilities, gcc, make, and so on</span>
+</span></span><span class="line"><span class="cl">apt-get install man                <span class="c1"># on-line reference manual</span>
+</span></span><span class="line"><span class="cl">apt-get install gcc-doc            <span class="c1"># on-line reference manual for gcc</span>
+</span></span><span class="line"><span class="cl">apt-get install gdb                <span class="c1"># GNU debugger</span>
+</span></span><span class="line"><span class="cl">apt-get install git                <span class="c1"># revision control system</span>
+</span></span><span class="line"><span class="cl">apt-get install libreadline-dev    <span class="c1"># a library used later</span>
+</span></span><span class="line"><span class="cl">apt-get install libsdl2-dev        <span class="c1"># a library used later</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ubuntu 中安装中文输入法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#安装框架</span>
+</span></span><span class="line"><span class="cl">sudo apt install ibus
+</span></span><span class="line"><span class="cl"><span class="c1">#切换框架</span>
+</span></span><span class="line"><span class="cl">im-config -s ibus
+</span></span><span class="line"><span class="cl"><span class="c1">#由于Ubuntu Desktop 20.04使用的是GNOME桌面，所以需要安装相应的平台支持包</span>
+</span></span><span class="line"><span class="cl">sudo apt install ibus-gtk ibus-gtk3
+</span></span><span class="line"><span class="cl"><span class="c1">#选择简体拼音输入法，完成安装</span>
+</span></span><span class="line"><span class="cl">sudo apt install ibus-pinyin
+</span></span><span class="line"><span class="cl"><span class="c1">#完成安装后，将中文输入法添加到输入源选项中</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以上摘录自：https://blog.csdn.net/Aimonii/article/details/141260938</p>
+<h2 id="linux基础课程概览与shell">Linux基础课程概览与shell
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
