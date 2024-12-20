@@ -28,12 +28,17 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;missing:~$ 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;$ 符号表示您现在的身份不是 root 用户,位置是 ~ (表示 “home”)。         &lt;br&gt;
-&lt;strong&gt;echo命令&lt;/strong&gt;：‌echo命令是Linux中用于在终端输出字符串的命令，常用于脚本编程、调试和显示变量值。     &lt;br&gt;
-&lt;strong&gt;which命令&lt;/strong&gt;用于定位执行文件的路径。当输入一个命令时，which 会在环境变量 PATH 所指定的路径中搜索每个目录，以查找指定的可执行文件。 可以使用 which 程序。通过直接指定需要执行的程序的路径来执行该程序。           &lt;br&gt;
-&lt;strong&gt;pwd命令&lt;/strong&gt;：获取当前工作目录。      &lt;br&gt;
-&lt;strong&gt;cd命令&lt;/strong&gt;：切换目录 . 表示的是当前目录，而 .. 表示上级目录       &lt;br&gt;
-&lt;strong&gt;ls命令&lt;/strong&gt;：查看指定目录下包含哪些文件 利用第一个参数指定目录，否则 ls 会打印当前目录下的文件。       &lt;br&gt;
+&lt;/div&gt;&lt;p&gt;$ 符号表示您现在的身份不是 root 用户,位置是 ~ (表示 “home”)。&lt;/p&gt;
+&lt;h4 id=&#34;echo命令&#34;&gt;echo命令
+&lt;/h4&gt;&lt;p&gt;‌echo命令是Linux中用于在终端输出字符串的命令，常用于脚本编程、调试和显示变量值。&lt;/p&gt;
+&lt;h4 id=&#34;which命令&#34;&gt;which命令
+&lt;/h4&gt;&lt;p&gt;用于定位执行文件的路径。当输入一个命令时，which 会在环境变量 PATH 所指定的路径中搜索每个目录，以查找指定的可执行文件。 可以使用 which 程序。通过直接指定需要执行的程序的路径来执行该程序。&lt;/p&gt;
+&lt;h4 id=&#34;pwd命令&#34;&gt;pwd命令
+&lt;/h4&gt;&lt;p&gt;获取当前工作目录。&lt;/p&gt;
+&lt;h4 id=&#34;cd命令&#34;&gt;cd命令
+&lt;/h4&gt;&lt;p&gt;切换目录 . 表示的是当前目录，而 .. 表示上级目录&lt;/p&gt;
+&lt;h4 id=&#34;ls命令&#34;&gt;ls命令
+&lt;/h4&gt;&lt;p&gt;查看指定目录下包含哪些文件 利用第一个参数指定目录，否则 ls 会打印当前目录下的文件。       &lt;br&gt;
 通常，在执行程序时使用 -h 或 &amp;ndash;help 标记可以打印帮助信息，以便了解有哪些可用的标记或选项。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;ls: List directory contents
@@ -42,24 +47,30 @@ dir: Verbosely list directory contents
 dircolors: Color setup for ls&lt;/p&gt;
 &lt;p&gt;ls -l是Linux和unix命令，意思指以长格式的形式查看当前目录下所有可见文件的详细属性。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;man命令&lt;/strong&gt; 它会接受一个程序名作为参数，然后将它的文档（用户手册）展现给您。注意，使用 q 可以退出该程序。
-&lt;strong&gt;cat命令&lt;/strong&gt;‌cat命令是Linux系统中用于查看、创建和合并文件内容的工具。‌它源自英文单词“concatenate”，意为“连接”。cat命令的基本功能是将多个文件的内容串联起来显示在标准输出（通常是终端）上。&lt;/p&gt;
+&lt;h4 id=&#34;man命令&#34;&gt;man命令
+&lt;/h4&gt;&lt;p&gt;它会接受一个程序名作为参数，然后将它的文档（用户手册）展现给您。注意，使用 q 可以退出该程序。&lt;/p&gt;
+&lt;h4 id=&#34;cat命令&#34;&gt;cat命令
+&lt;/h4&gt;&lt;p&gt;cat命令是Linux系统中用于查看、创建和合并文件内容的工具。‌它源自英文单词“concatenate”，意为“连接”。cat命令的基本功能是将多个文件的内容串联起来显示在标准输出（通常是终端）上。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;查看单个文件的内容‌：使用命令 cat filename。
 创建新文件并输入内容‌：使用命令 cat &amp;gt; newfile，用户可以在终端中输入内容，然后使用Ctrl+D保存文件。
 ‌合并多个文件的内容‌：使用命令 cat file1 file2，这将合并file1和file2的内容并显示在终端上。
 ‌重定向输出‌：可以将命令的输出重定向到文件中，使用 &amp;gt; 符号创建新文件，使用 &amp;raquo; 符号将内容附加到现有文件。‌&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;touch命令&lt;/strong&gt; 创建一个文件。       &lt;br&gt;
-&lt;strong&gt;mkdir命令&lt;/strong&gt; 创建新文件夹          &lt;br&gt;
-&lt;strong&gt;rm命令&lt;/strong&gt;  删除指定的文件。&lt;strong&gt;谨慎使用&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;touch命令&#34;&gt;touch命令
+&lt;/h4&gt;&lt;p&gt;创建一个文件。&lt;/p&gt;
+&lt;h4 id=&#34;mkdir命令&#34;&gt;mkdir命令
+&lt;/h4&gt;&lt;p&gt;创建新文件夹&lt;/p&gt;
+&lt;h4 id=&#34;rm命令&#34;&gt;rm命令
+&lt;/h4&gt;&lt;p&gt;删除指定的文件。&lt;strong&gt;谨慎使用&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;rm &amp;lt;文件名&amp;gt;：删除指定的文件。
 rm -r &amp;lt;目录名&amp;gt;：递归删除指定目录下的所有文件和子目录。
 rm -f &amp;lt;文件名&amp;gt;：强制删除，不进行确认提示。
 rm -i &amp;lt;文件名&amp;gt;：在删除前进行确认提示。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;重定向输入输出流&lt;/strong&gt;&lt;code&gt;&amp;lt; file&lt;/code&gt;和&lt;code&gt; &amp;gt; file&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;重定向输入输出流&#34;&gt;重定向输入输出流
+&lt;/h4&gt;&lt;p&gt;&lt;code&gt;&amp;lt; file&lt;/code&gt;和&lt;code&gt; &amp;gt; file&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -68,9 +79,11 @@ rm -i &amp;lt;文件名&amp;gt;：在删除前进行确认提示。&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; hello &amp;gt; hello.txt  
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;给hello.txt里面写入hello。         &lt;br&gt;
-&lt;strong&gt;sudo&lt;/strong&gt;:root提升权限。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;chmod命令&lt;/strong&gt; chmod（change mode）命令是用于控制用户对文件的权限的命令。     &lt;br&gt;
+&lt;/div&gt;&lt;p&gt;给hello.txt里面写入hello。&lt;/p&gt;
+&lt;h4 id=&#34;sudo&#34;&gt;sudo
+&lt;/h4&gt;&lt;p&gt;root提升权限。&lt;/p&gt;
+&lt;h4 id=&#34;chmod命令&#34;&gt;chmod命令
+&lt;/h4&gt;&lt;p&gt;chmod（change mode）命令是用于控制用户对文件的权限的命令。     &lt;br&gt;
 Linux/Unix 的文件调用权限分为三级 : 文件所有者（Owner）、用户组（Group）、其它用户（Other Users）如下：  &lt;br&gt;
 &lt;img src=&#34;https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/1.1.png&#34;
 	width=&#34;784&#34;
@@ -96,8 +109,9 @@ Linux/Unix 的文件调用权限分为三级 : 文件所有者（Owner）、用�
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod &lt;span class=&#34;m&#34;&gt;764&lt;/span&gt; file//表示User、Group、及Other的权限分别为rwx、rw-、r--
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;以上摘录自：https://blog.csdn.net/qq_52836452/article/details/129642664          &lt;br&gt;
-&lt;strong&gt;sh命令&lt;/strong&gt;   sh是linux中运行shell的命令，是shell的解释器，shell脚本是linux中壳层与命令行界面，用户可以在shell脚本输入命令来执行各种各样的任务。
+&lt;/div&gt;&lt;p&gt;以上摘录自：https://blog.csdn.net/qq_52836452/article/details/129642664&lt;/p&gt;
+&lt;h4 id=&#34;sh命令&#34;&gt;sh命令
+&lt;/h4&gt;&lt;p&gt;sh是linux中运行shell的命令，是shell的解释器，shell脚本是linux中壳层与命令行界面，用户可以在shell脚本输入命令来执行各种各样的任务。
 shell程序必须以“#!/bin/sh”开始。shell中#一般表示注释的意思，所以很多时候认为&amp;quot;#!&amp;ldquo;也是注释，但实际上并不是。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;PS
