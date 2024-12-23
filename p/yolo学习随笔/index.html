@@ -308,6 +308,14 @@
             <li><a href="#运行程序">运行程序</a></li>
           </ol>
         </li>
+        <li><a href="#僵尸水族馆">僵尸水族馆</a>
+          <ol>
+            <li><a href="#数据集制作">数据集制作</a></li>
+            <li><a href="#roboflow平台数据集标注">RoboFlow平台数据集标注</a></li>
+            <li><a href="#本地训练">本地训练</a></li>
+            <li><a href="#运行程序-1">运行程序</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -382,7 +390,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 7 分钟
+                    阅读时长: 10 分钟
                 </time>
             </div>
         
@@ -729,11 +737,47 @@ PS 也可以替换为双反斜杠，替换为正斜杠。</p>
 		data-flex-basis="304px"
 	
 >     <br>
-下一步就是先自己玩一把，然后录屏，截图出300张左右的数据集。</p>
+下一步就是先自己玩一把，然后录屏，截图出300张左右的数据集。 <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/2.2.png"
+	width="1921"
+	height="1034"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/2.2_hu11316825672838697295.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/2.2_hu18332761969205549804.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="185"
+		data-flex-basis="445px"
+	
+></p>
 <h4 id="数据标注">数据标注
 </h4><p>先使用教学视频中UP给出的数据集压缩包进行自己的训练，后续有时间再试试自己标注数据集。</p>
 <h4 id="训练数据">训练数据
-</h4><p>设置训练了500次 实际训练了200+次数</p>
+</h4><p>设置训练了500次 实际训练了200+次数  <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/3.1.png"
+	width="1790"
+	height="473"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/3.1_hu7528966773342848545.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/3.1_hu6426174995177434373.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="378"
+		data-flex-basis="908px"
+	
+>   <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/3.2.png"
+	width="1532"
+	height="569"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/3.2_hu8430074936866366991.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/3.2_hu16458972861604176833.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="269"
+		data-flex-basis="646px"
+	
+></p>
 <h4 id="运行程序">运行程序
 </h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -817,6 +861,283 @@ PS 也可以替换为双反斜杠，替换为正斜杠。</p>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">cv</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">):</span>     <span class="c1"># 检测键盘按键，如果按下‘q’，退出程序</span>
 </span></span><span class="line"><span class="cl">            <span class="k">break</span>
 </span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="僵尸水族馆">僵尸水族馆
+</h3><p>实现自动收集阳光，自动购买僵尸，自动喂食僵尸三个功能。</p>
+<h4 id="数据集制作">数据集制作
+</h4><p>OBS录屏，使用Python中的CV库进行处理，截图120张左右。人工筛选出带有阳光的100张左右图片。  <br>
+以下是，使用Python对视频进行截图的程序：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cv2</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置视频文件路径</span>
+</span></span><span class="line"><span class="cl"><span class="n">video_path</span> <span class="o">=</span> <span class="s1">&#39;textttt.mp4&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">output_folder</span> <span class="o">=</span> <span class="s1">&#39;raw_picture&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建输出文件夹，如果不存在的话</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_folder</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_folder</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 打开视频文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">cap</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">VideoCapture</span><span class="p">(</span><span class="n">video_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 获取视频的帧率（FPS）</span>
+</span></span><span class="line"><span class="cl"><span class="n">fps</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FPS</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 获取视频的总帧数</span>
+</span></span><span class="line"><span class="cl"><span class="n">frame_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">cap</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_FRAME_COUNT</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 循环读取视频帧</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">frame_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">frame_count</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">fps</span><span class="p">)):</span>  <span class="c1"># 每秒截图一次</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cap</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">CAP_PROP_POS_FRAMES</span><span class="p">,</span> <span class="n">frame_num</span><span class="p">)</span>  <span class="c1"># 设置当前帧的位置</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ret</span><span class="p">,</span> <span class="n">frame</span> <span class="o">=</span> <span class="n">cap</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># 读取当前帧</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">ret</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 保存帧为图片</span>
+</span></span><span class="line"><span class="cl">        <span class="n">frame_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;frame_</span><span class="si">{</span><span class="n">frame_num</span><span class="si">}</span><span class="s1">.jpg&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">frame_filename</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 释放视频文件</span>
+</span></span><span class="line"><span class="cl"><span class="n">cap</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;已完成截图，截图保存在 &#39;</span><span class="si">{</span><span class="n">output_folder</span><span class="si">}</span><span class="s2">&#39; 文件夹中。&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后使用RoboFlow平台进行在线标注。</p>
+<h4 id="roboflow平台数据集标注">RoboFlow平台数据集标注
+</h4><p>上传图片到RoboFlow平台，选择人工标注。这里可以选自动标注与平台帮你。这里我们选自己标注。  <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.1.png"
+	width="456"
+	height="554"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.1_hu15336913672061604463.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.1_hu110521706247903599.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="82"
+		data-flex-basis="197px"
+	
+>  <br>
+图片总数100.这里可以团队分工。  <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.2.png"
+	width="446"
+	height="439"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.2_hu5974985921395271184.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.2_hu8382269691323597835.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="101"
+		data-flex-basis="243px"
+	
+>  <br>
+在线标注平台   <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.3.png"
+	width="1871"
+	height="919"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.3_hu5033788490568535246.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.3_hu17606843050578336069.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="203"
+		data-flex-basis="488px"
+	
+><br>
+标注完成后，选择分别用于训练，验证，以及测试的比例。 <br>
+训练即训练模型用的图片，验证则为在训练中验证的图片。以反馈训练效果。测试即训练完成后的测试。  <br>
+这里选择常用比例7：2：1   <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.4.png"
+	width="447"
+	height="526"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.4_hu5255113259450907719.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.4_hu2866467401997151968.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="84"
+		data-flex-basis="203px"
+	
+><br>
+最终如下，有4张图片没有标注，也就是图片中没有目标。  <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.4.png"
+	width="447"
+	height="526"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.4_hu5255113259450907719.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.4_hu2866467401997151968.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="84"
+		data-flex-basis="203px"
+	
+></p>
+<h4 id="本地训练">本地训练
+</h4><p>训练同上 <br>
+<img src="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.6.png"
+	width="1466"
+	height="1031"
+	srcset="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.6_hu6398840262009950845.png 480w, /p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.6_hu14232352911508452209.png 1024w"
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="142"
+		data-flex-basis="341px"
+	
+></p>
+<h4 id="运行程序-1">运行程序
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ultralytics</span> <span class="kn">import</span> <span class="n">YOLO</span>  <span class="c1"># 导入YOLO模型</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pyautogui</span> <span class="k">as</span> <span class="nn">pt</span>  <span class="c1"># 控制鼠标点击的Python库</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pygetwindow</span>      <span class="c1"># 导入pygetwindow库，用于获取窗口信息</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>   <span class="c1"># 导入numpy库，用于数组和矩阵操作</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cv2</span> <span class="k">as</span> <span class="nn">cv</span>    <span class="c1"># 导入OpenCV库，用于图像处理</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>   <span class="c1"># 导入PyTorch库，用于深度学习操作</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">ImageGrab</span>   <span class="c1"># 从Pillow库中导入ImageGrab，用于屏幕截图</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>   <span class="c1"># 导入time库，用于控制点击间隔</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 加载YOLO模型</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">YOLO</span><span class="p">(</span><span class="s2">&#34;best.pt&#34;</span><span class="p">)</span>  <span class="c1"># 加载训练好的模型权重文件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置目标窗口标题</span>
+</span></span><span class="line"><span class="cl"><span class="n">window_title</span> <span class="o">=</span> <span class="s2">&#34;植物大战僵尸中文版&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">window</span> <span class="o">=</span> <span class="n">pygetwindow</span><span class="o">.</span><span class="n">getWindowsWithTitle</span><span class="p">(</span><span class="n">window_title</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 获取窗口对象</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置设备为GPU</span>
+</span></span><span class="line"><span class="cl"><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&#34;cuda:0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>  <span class="c1"># 将模型加载到GPU上</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置点击目标的坐标</span>
+</span></span><span class="line"><span class="cl"><span class="n">buy_zombie_position</span> <span class="o">=</span> <span class="p">(</span><span class="n">window</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="mi">110</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">top</span> <span class="o">+</span> <span class="mi">70</span><span class="p">)</span>  <span class="c1"># 右上角位置</span>
+</span></span><span class="line"><span class="cl"><span class="n">feed_zombie_position1</span> <span class="o">=</span> <span class="p">(</span><span class="n">window</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">top</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># 中间空白区域</span>
+</span></span><span class="line"><span class="cl"><span class="n">feed_zombie_position2</span> <span class="o">=</span> <span class="p">(</span><span class="n">window</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">top</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># 中间空白区域</span>
+</span></span><span class="line"><span class="cl"><span class="n">feed_zombie_position3</span> <span class="o">=</span> <span class="p">(</span><span class="n">window</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">top</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># 中间空白区域</span>
+</span></span><span class="line"><span class="cl"><span class="n">feed_zombie_position4</span> <span class="o">=</span> <span class="p">(</span><span class="n">window</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">100</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">top</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 中间空白区域</span>
+</span></span><span class="line"><span class="cl"><span class="n">feed_zombie_position5</span> <span class="o">=</span> <span class="p">(</span><span class="n">window</span><span class="o">.</span><span class="n">left</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">top</span> <span class="o">+</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># 中间空白区域</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 控制点击间隔时间</span>
+</span></span><span class="line"><span class="cl"><span class="n">click_interval</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># 每秒点击一次</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">window</span><span class="p">:</span>   <span class="c1"># 检查目标窗口是否存在</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">top</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">window</span><span class="o">.</span><span class="n">height</span>  <span class="c1"># 获取窗口的位置信息和大小</span>
+</span></span><span class="line"><span class="cl">        <span class="n">screenshot</span> <span class="o">=</span> <span class="n">ImageGrab</span><span class="o">.</span><span class="n">grab</span><span class="p">(</span><span class="n">bbox</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">])</span>  <span class="c1"># 对窗口进行截图</span>
+</span></span><span class="line"><span class="cl">        <span class="n">image_src</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">screenshot</span><span class="p">),</span> <span class="n">cv</span><span class="o">.</span><span class="n">COLOR_RGB2BGR</span><span class="p">)</span>  <span class="c1"># 转换为BGR格式</span>
+</span></span><span class="line"><span class="cl">        <span class="n">size_x</span><span class="p">,</span> <span class="n">size_y</span> <span class="o">=</span> <span class="n">image_src</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image_src</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># 获取截图的宽度和高度</span>
+</span></span><span class="line"><span class="cl">        <span class="n">image_det</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image_src</span><span class="p">,</span> <span class="p">(</span><span class="mi">640</span><span class="p">,</span> <span class="mi">640</span><span class="p">))</span>  <span class="c1"># 调整为YOLO模型需要的输入大小</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="n">image_det</span><span class="p">,</span> <span class="n">imgsz</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span> <span class="n">conf</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># 使用YOLO模型进行目标检测</span>
+</span></span><span class="line"><span class="cl">        <span class="n">boxes</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">boxes</span><span class="o">.</span><span class="n">xywhn</span>  <span class="c1"># 获取检测框</span>
+</span></span><span class="line"><span class="cl">        <span class="n">boxes</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 按x坐标排序   </span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 在右上角购买僵尸</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># pt.click(buy_zombie_position)  # 模拟点击右上角购买僵尸</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># pt.click(feed_zombie_position1)  # 模拟点击中间位置喂食僵尸</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># pt.click(feed_zombie_position2)  # 模拟点击中间位置喂食僵尸</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># pt.click(feed_zombie_position3)  # 模拟点击中间位置喂食僵尸</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># pt.click(feed_zombie_position4)  # 模拟点击中间位置喂食僵尸</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># pt.click(feed_zombie_position5)  # 模拟点击中间位置喂食僵尸</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 遍历每个检测框</span>
+</span></span><span class="line"><span class="cl">        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">box</span> <span class="ow">in</span> <span class="n">boxes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 在截图中绘制检测框</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cv</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">image_src</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                         <span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">box</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">size_x</span><span class="p">),</span> <span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">box</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">size_y</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">                         <span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">box</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">size_x</span><span class="p">),</span> <span class="nb">int</span><span class="p">((</span><span class="n">box</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">box</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">size_y</span><span class="p">)),</span> 
+</span></span><span class="line"><span class="cl">                         <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 在检测框中心点击</span>
+</span></span><span class="line"><span class="cl">            <span class="n">pt</span><span class="o">.</span><span class="n">click</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span> <span class="o">+</span> <span class="n">box</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">size_x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span> <span class="o">+</span> <span class="n">box</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">size_y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># 如果点击次数超过4次，退出循环</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 显示实时图像</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cv</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&#34;frame&#34;</span><span class="p">,</span> <span class="n">image_src</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 如果按下‘q’键，退出程序 不知道为什么 不起作用</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">cv</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl"><span class="n">cv</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>  <span class="c1"># 关闭OpenCV显示窗口</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
