@@ -146,6 +146,179 @@
 &lt;h4 id=&#34;解决网站域名转发时自动部署删除cname文件的问题&#34;&gt;解决网站域名转发时自动部署删除CNAME文件的问题
 &lt;/h4&gt;&lt;p&gt;在网站域名转发时，在github.io这个工程仓库下创建了CNAME文件，但是每次部署网站都会自动的删除掉。这使得我的网站无法打开。&lt;br&gt;
 最后将CNAME文件放到了网站文件夹目录下的static文件下。重新上传后CNAME文件便一直都在了。&lt;/p&gt;
+&lt;h3 id=&#34;基于hugo-githubpages的新站建站记录&#34;&gt;基于Hugo-GithubPages的新站建站记录
+&lt;/h3&gt;&lt;p&gt;首先下载Hugo
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.1.png&#34;
+	width=&#34;779&#34;
+	height=&#34;120&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;649&#34;
+		data-flex-basis=&#34;1558px&#34;
+	
+&gt; &lt;br&gt;
+hugo目录下，使用&lt;code&gt;Hugo new site name&lt;/code&gt;命令，创建一个Hugo站点文件夹。&lt;br&gt;
+构建完成后，hugo提示了接下来的任务。首先就是更换目录。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.2.png&#34;
+	width=&#34;1136&#34;
+	height=&#34;516&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;220&#34;
+		data-flex-basis=&#34;528px&#34;
+	
+&gt; &lt;br&gt;
+创建完后，应该是如下的内容结构。这个目录下缺少hugo.exe，我们复制一个进来。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.3.png&#34;
+	width=&#34;1111&#34;
+	height=&#34;774&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;143&#34;
+		data-flex-basis=&#34;344px&#34;
+	
+&gt; &lt;br&gt;
+使用如下命令，来构建网站。这里没有主题，构建完后应该是什么都没有。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.4.png&#34;
+	width=&#34;641&#34;
+	height=&#34;51&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;1256&#34;
+		data-flex-basis=&#34;3016px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;选择一个主题，这里我选择下图这个主题。&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.5.png&#34;
+	width=&#34;1099&#34;
+	height=&#34;445&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;246&#34;
+		data-flex-basis=&#34;592px&#34;
+	
+&gt; &lt;br&gt;
+主题下载到本地文件，hugo中这个themes目录下。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.6.png&#34;
+	width=&#34;974&#34;
+	height=&#34;286&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;340&#34;
+		data-flex-basis=&#34;817px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这里是&lt;strong&gt;网站文章&lt;/strong&gt;的主要存放文件，我们需要把这两个复制出来。复制到dev目录下。 &lt;br&gt;
+toml文件为主题的主要设置文件，有的主题中为yaml文件。 content为文章的内容。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.7.png&#34;
+	width=&#34;944&#34;
+	height=&#34;512&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;184&#34;
+		data-flex-basis=&#34;442px&#34;
+	
+&gt; &lt;br&gt;
+需要注意下，toml设置文件中，主题的名字需要和themes目录下这个文件一样，所以我们改一下让这两个地方名字一致即可。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.8.1.png&#34;
+	width=&#34;822&#34;
+	height=&#34;171&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;480&#34;
+		data-flex-basis=&#34;1153px&#34;
+	
+&gt; &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.8.png&#34;
+	width=&#34;480&#34;
+	height=&#34;125&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;384&#34;
+		data-flex-basis=&#34;921px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;现在创建一个仓库，用来存放dev主目录下的文件。这个最好设置为Private私人仓库。     &lt;br&gt;
+再创建一个仓库，用来存放dev\public下的构建完后的网站文件。这个可以创建为Public公开。     &lt;br&gt;
+我创建的如下： &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/10.1.png&#34;
+	width=&#34;837&#34;
+	height=&#34;216&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;387&#34;
+		data-flex-basis=&#34;930px&#34;
+	
+&gt; &lt;br&gt;
+这里我两个网站合并到一个主目录下了。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/10.2.png&#34;
+	width=&#34;710&#34;
+	height=&#34;164&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;432&#34;
+		data-flex-basis=&#34;1039px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;hugo主目录下 设置一下别都上传。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/3.1.png&#34;
+	width=&#34;1635&#34;
+	height=&#34;849&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;192&#34;
+		data-flex-basis=&#34;462px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这里手动PUSH一下。把两个仓库先推上去试试。推之前最好本地&lt;code&gt;hugo server -D &lt;/code&gt;构建一下试试，先能构建出来。      &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/2.9.png&#34;
+	width=&#34;1276&#34;
+	height=&#34;755&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;169&#34;
+		data-flex-basis=&#34;405px&#34;
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         
