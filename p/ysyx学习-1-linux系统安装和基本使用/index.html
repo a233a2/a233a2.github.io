@@ -384,7 +384,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 5 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
@@ -569,7 +569,54 @@ WSL2下查看笔记本电量。虚拟机无此数据，无法查看。  <br>
 	
 ></p>
 <h2 id="shell工具和脚本">Shell工具和脚本
-</h2><h2 id="编辑器-vim">编辑器 (Vim)
+</h2><p>&lsquo;xx&rsquo;与&quot;xx&quot;符号的区别</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">foo</span><span class="o">=</span>bar
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$foo</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 打印 bar</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;$foo&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 打印 $foo</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>bash支持函数操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mcd <span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    mkdir -p <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里 $1 是脚本的第一个参数。与其他脚本语言不同的是，bash 使用了很多特殊的变量来表示参数、错误代码和相关变量。</p>
+<ul>
+<li><code>$0</code> - 脚本名</li>
+<li><code>$1</code> 到 <code>$9</code> - 脚本的参数。 <code>$1</code> 是第一个参数，依此类推。</li>
+<li><code>$@</code> - 所有参数</li>
+<li><code>$#</code> - 参数个数</li>
+<li><code>$?</code> - 前一个命令的返回值</li>
+<li><code>$$</code> - 当前脚本的进程识别码</li>
+<li><code>!!</code> - 完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 <code>sudo !!</code> 再尝试一次。</li>
+<li><code>$_</code> - 上一条命令的最后一个参数。如果你正在使用的是交互式 shell，你可以通过按下 <code>Esc</code> 之后键入 . 来获取这个值
+命令通常使用 <code>STDOUT</code> 来返回输出值，使用 <code>STDERR</code> 来返回错误及错误码，便于脚本以更加友好的方式报告错误。
+返回码或退出状态是脚本/命令之间交流执行状态的方式。返回值 0 表示正常执行，其他所有非 0 的返回值都表示有错误发生。</li>
+</ul>
+<p>退出码可以搭配 <code>&amp;&amp;</code>（与操作符）和 <code>||</code>（或操作符）使用，用来进行条件判断，决定是否执行其他程序。它们都属于短路 <a class="link" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation"  target="_blank" rel="noopener"
+    >运算符</a>（short-circuiting） 同一行的多个命令可以用 <code>;</code> 分隔。程序 <code>true</code> 的返回码永远是 <code>0</code>，<code>false</code> 的返回码永远是 <code>1</code>。</p>
+<h2 id="编辑器-vim">编辑器 (Vim)
 </h2><h2 id="数据整理">数据整理
 </h2><h2 id="命令行环境">命令行环境
 </h2><h2 id="版本控制git">版本控制(Git)

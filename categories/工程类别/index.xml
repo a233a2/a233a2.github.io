@@ -183,7 +183,54 @@ WSL2下查看笔记本电量。虚拟机无此数据，无法查看。  &lt;br&g
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;shell工具和脚本&#34;&gt;Shell工具和脚本
-&lt;/h2&gt;&lt;h2 id=&#34;编辑器-vim&#34;&gt;编辑器 (Vim)
+&lt;/h2&gt;&lt;p&gt;&amp;lsquo;xx&amp;rsquo;与&amp;quot;xx&amp;quot;符号的区别&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;bar
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$foo&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 打印 bar&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;$foo&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 打印 $foo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;bash支持函数操作&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mcd &lt;span class=&#34;o&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    mkdir -p &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$1&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里 $1 是脚本的第一个参数。与其他脚本语言不同的是，bash 使用了很多特殊的变量来表示参数、错误代码和相关变量。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$0&lt;/code&gt; - 脚本名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$1&lt;/code&gt; 到 &lt;code&gt;$9&lt;/code&gt; - 脚本的参数。 &lt;code&gt;$1&lt;/code&gt; 是第一个参数，依此类推。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$@&lt;/code&gt; - 所有参数&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$#&lt;/code&gt; - 参数个数&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$?&lt;/code&gt; - 前一个命令的返回值&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$$&lt;/code&gt; - 当前脚本的进程识别码&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;!!&lt;/code&gt; - 完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 &lt;code&gt;sudo !!&lt;/code&gt; 再尝试一次。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$_&lt;/code&gt; - 上一条命令的最后一个参数。如果你正在使用的是交互式 shell，你可以通过按下 &lt;code&gt;Esc&lt;/code&gt; 之后键入 . 来获取这个值
+命令通常使用 &lt;code&gt;STDOUT&lt;/code&gt; 来返回输出值，使用 &lt;code&gt;STDERR&lt;/code&gt; 来返回错误及错误码，便于脚本以更加友好的方式报告错误。
+返回码或退出状态是脚本/命令之间交流执行状态的方式。返回值 0 表示正常执行，其他所有非 0 的返回值都表示有错误发生。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;退出码可以搭配 &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;（与操作符）和 &lt;code&gt;||&lt;/code&gt;（或操作符）使用，用来进行条件判断，决定是否执行其他程序。它们都属于短路 &lt;a class=&#34;link&#34; href=&#34;https://en.wikipedia.org/wiki/Short-circuit_evaluation&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;运算符&lt;/a&gt;（short-circuiting） 同一行的多个命令可以用 &lt;code&gt;;&lt;/code&gt; 分隔。程序 &lt;code&gt;true&lt;/code&gt; 的返回码永远是 &lt;code&gt;0&lt;/code&gt;，&lt;code&gt;false&lt;/code&gt; 的返回码永远是 &lt;code&gt;1&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;编辑器-vim&#34;&gt;编辑器 (Vim)
 &lt;/h2&gt;&lt;h2 id=&#34;数据整理&#34;&gt;数据整理
 &lt;/h2&gt;&lt;h2 id=&#34;命令行环境&#34;&gt;命令行环境
 &lt;/h2&gt;&lt;h2 id=&#34;版本控制git&#34;&gt;版本控制(Git)
@@ -195,9 +242,49 @@ WSL2下查看笔记本电量。虚拟机无此数据，无法查看。  &lt;br&g
         <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-2-c%E8%AF%AD%E8%A8%80/</guid>
-        <description>&lt;h2 id=&#34;linux下-c语言实验记录&#34;&gt;Linux下-C语言实验记录
-&lt;/h2&gt;&lt;h3 id=&#34;heading&#34;&gt;
-&lt;/h3&gt;</description>
+        <description>&lt;h2 id=&#34;编译器基础&#34;&gt;编译器基础
+&lt;/h2&gt;&lt;p&gt;###运行一个编译后的c程序。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ./ex1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Hello world.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make ex1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# or this one too&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nv&#34;&gt;CFLAGS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;-Wall&amp;#34;&lt;/span&gt; make ex1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;所以它会给make通常使用的cc命令添加-Wall选项。这行命令告诉cc编译器要报告所有的警告（然而实际上不可能报告所有警告）。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-makefile&#34; data-lang=&#34;makefile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CFLAGS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-Wall -g
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;clean&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    rm -f ex1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;将文件在你的当前文件夹上保存为Makefile。Make会自动假设当前文件夹中有一个叫做Makefile的文件，并且会执行它。此外，一定要注意：确保你只输入了 TAB 字符，而不是空格和 TAB 的混合。 &lt;br&gt;
+Makefile向你展示了make的一些新功能。首先我们在文件中设置CFLAGS，所以之后就不用再设置了。并且，我们添加了-g标识来获取调试信息。接着我们写了一个叫做clean的部分，它告诉make如何清理我们的小项目。 &lt;br&gt;
+注意makefile只能写入TAB 不可写入空格?&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Simulink-PX4-WSL开发</title>

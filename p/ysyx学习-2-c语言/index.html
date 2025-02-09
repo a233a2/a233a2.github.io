@@ -284,11 +284,7 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#linux下-c语言实验记录">Linux下-C语言实验记录</a>
-      <ol>
-        <li><a href="#heading"></a></li>
-      </ol>
-    </li>
+    <li><a href="#编译器基础">编译器基础</a></li>
   </ol>
 </nav>
         </div>
@@ -376,9 +372,49 @@
     <section class="article-content">
     
     
-    <h2 id="linux下-c语言实验记录">Linux下-C语言实验记录
-</h2><h3 id="heading">
-</h3>
+    <h2 id="编译器基础">编译器基础
+</h2><p>###运行一个编译后的c程序。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ ./ex1
+</span></span><span class="line"><span class="cl">Hello world.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ make ex1
+</span></span><span class="line"><span class="cl"><span class="c1"># or this one too</span>
+</span></span><span class="line"><span class="cl">$ <span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&#34;-Wall&#34;</span> make ex1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>所以它会给make通常使用的cc命令添加-Wall选项。这行命令告诉cc编译器要报告所有的警告（然而实际上不可能报告所有警告）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-makefile" data-lang="makefile"><span class="line"><span class="cl"><span class="nv">CFLAGS</span><span class="o">=</span>-Wall -g
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">clean</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    rm -f ex1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将文件在你的当前文件夹上保存为Makefile。Make会自动假设当前文件夹中有一个叫做Makefile的文件，并且会执行它。此外，一定要注意：确保你只输入了 TAB 字符，而不是空格和 TAB 的混合。 <br>
+Makefile向你展示了make的一些新功能。首先我们在文件中设置CFLAGS，所以之后就不用再设置了。并且，我们添加了-g标识来获取调试信息。接着我们写了一个叫做clean的部分，它告诉make如何清理我们的小项目。 <br>
+注意makefile只能写入TAB 不可写入空格?</p>
+
 </section>
 
 
