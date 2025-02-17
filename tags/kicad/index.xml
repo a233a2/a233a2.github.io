@@ -8,18 +8,18 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/kicad/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>KiCad学习日记</title>
-        <link>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
+        <title>KiCad学习小记</title>
+        <link>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
+        <guid>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/</guid>
         <description>&lt;h3 id=&#34;kicad学习日记&#34;&gt;KiCad学习日记
 &lt;/h3&gt;&lt;h4 id=&#34;导出gerber文件-jlc打样&#34;&gt;导出Gerber文件-JLC打样
 &lt;/h4&gt;&lt;h4 id=&#34;1-导出gerber的设置&#34;&gt;1 导出Gerber的设置：
 &lt;/h4&gt;&lt;p&gt;从b站搬运：https://www.bilibili.com/read/cv22773523/?spm_id_from=333.976.0.0 &lt;br&gt;
 （KiCAD设计使用立创免费打样的方法及KiCAD插件） &lt;br&gt;
 生成gerber文件&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/gerber.png&#34;
 	width=&#34;955&#34;
 	height=&#34;659&#34;
 	
@@ -34,7 +34,7 @@
 	
 &gt;&lt;br&gt;
 生成钻孔文件&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/drl.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/drl.png&#34;
 	width=&#34;646&#34;
 	height=&#34;642&#34;
 	
@@ -49,7 +49,7 @@
 	
 &gt;&lt;br&gt;
 生成的gerber文件最终结构如下：&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/gerber2.png&#34;
 	width=&#34;709&#34;
 	height=&#34;351&#34;
 	
@@ -65,7 +65,7 @@
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;2-修改gerber文件使得可在jlc打样&#34;&gt;2 修改Gerber文件使得可在JLC打样
 &lt;/h4&gt;&lt;p&gt;创建两个文件  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E6%96%87%E4%BB%B6%E5%9B%BE.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E6%96%87%E4%BB%B6%E5%9B%BE.png&#34;
 	width=&#34;667&#34;
 	height=&#34;145&#34;
 	
@@ -381,7 +381,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;对源文件进行替换，把标*的行之上换为自己的工程的。&lt;/p&gt;
 &lt;p&gt;在Kicad的脚本控制台中输入如下：来引入脚本  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E8%84%9A%E6%9C%AC.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E8%84%9A%E6%9C%AC.png&#34;
 	width=&#34;1009&#34;
 	height=&#34;681&#34;
 	

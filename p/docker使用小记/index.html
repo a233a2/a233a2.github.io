@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。">
-<title>PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Docker基础知识笔记 以及个人使用笔记">
+<title>Docker使用小记</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/'>
+<link rel='canonical' href='https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/'>
 
-<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶">
-<meta property='og:description' content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。">
-<meta property='og:url' content='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/'>
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Docker使用小记">
+<meta property='og:description' content="Docker基础知识笔记 以及个人使用笔记">
+<meta property='og:url' content='https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png' />
-<meta name="twitter:title" content="PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶">
-<meta name="twitter:description" content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Docker' /><meta property='article:published_time' content='2024-11-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-20T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.jpg' />
+<meta name="twitter:title" content="Docker使用小记">
+<meta name="twitter:description" content="Docker基础知识笔记 以及个人使用笔记"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.jpg' />
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
   
@@ -285,21 +285,33 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
+    <li><a href="#docker基础的几个概念">Docker基础的几个概念</a>
       <ol>
-        <li><a href="#px4在linux环境下的编译make">PX4在Linux环境下的编译（make）</a></li>
-        <li><a href="#gazebo配合qgc地面站仿真">Gazebo配合QGC地面站仿真</a>
+        <li><a href="#镜像-image">镜像 Image</a></li>
+        <li><a href="#容器-container">容器 Container</a></li>
+        <li><a href="#容器和镜像的关系">容器和镜像的关系</a>
           <ol>
-            <li><a href="#linux-qgc的安装">Linux-QGC的安装：</a></li>
+            <li><a href="#dockerfile">Dockerfile</a></li>
+            <li><a href="#docker-仓库-docker-repository">Docker 仓库-Docker Repository</a></li>
           </ol>
         </li>
-        <li><a href="#新建飞行任务antiwindtask">新建飞行任务AntiWindTask</a>
+      </ol>
+    </li>
+    <li><a href="#docker容器化">Docker容器化</a></li>
+    <li><a href="#docker简单hellodocker实践">Docker简单HelloDocker实践</a></li>
+    <li><a href="#docker命令小计">Docker命令小计</a></li>
+    <li><a href="#dockerdesktop的使用">DockerDesktop的使用</a></li>
+    <li><a href="#docker-compose">Docker Compose</a></li>
+    <li><a href="#docker部署深度学习项目实例">Docker部署深度学习项目实例</a></li>
+    <li><a href="#docker部署px4开发环境实例">Docker部署PX4开发环境实例</a>
+      <ol>
+        <li>
           <ol>
-            <li><a href="#newflighttask分析">NewFlightTask分析：</a></li>
+            <li><a href="#1-克隆项目到本地">1 克隆项目到本地</a></li>
+            <li><a href="#2-执行">2 执行</a></li>
+            <li><a href="#3-构建firmware时使用docker环境">3 构建Firmware时使用Docker环境？</a></li>
           </ol>
         </li>
-        <li><a href="#manual-position飞行模式分析">Manual-Position飞行模式分析</a></li>
-        <li><a href="#飞行日志分析">飞行日志分析</a></li>
       </ol>
     </li>
   </ol>
@@ -316,13 +328,13 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/">
-                <img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png"
+            <a href="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/">
+                <img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.jpg"
                         
-                        width="2560" 
-                        height="1549" 
+                        width="628" 
+                        height="308" 
                         loading="lazy"
-                        alt="Featured image of post PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶" />
+                        alt="Featured image of post Docker使用小记" />
                 
             </a>
         </div>
@@ -331,10 +343,6 @@
     <div class="article-details">
     
     <header class="article-category">
-        
-            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/" style="background-color: #ff99ff; color: #000;">
-                学术类别
-            </a>
         
             <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
                 工程类别
@@ -345,12 +353,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/">PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶</a>
+            <a href="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/">Docker使用小记</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。
+            Docker基础知识笔记 以及个人使用笔记
         </h3>
         
     </div>
@@ -371,7 +379,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-10-10</time>
+                <time class="article-time--published">2024-11-20</time>
             </div>
         
 
@@ -401,104 +409,171 @@
     <section class="article-content">
     
     
-    <h3 id="px4在linux环境下的编译make">PX4在Linux环境下的编译（make）
-</h3><p>使用VM17虚拟机以及Ubuntu20.04对PX4项目进行编译。<br>
-参考了超维空间科技的文章:<a class="link" href="https://blog.csdn.net/qq_38768959/article/details/106041494"  target="_blank" rel="noopener"
-    >超维空间科技的文章</a> <br>
-后续配置参考了Xtdrone仿真平台的一键配置，更为简单:<a class="link" href="https://www.yuque.com/xtdrone/manual_cn"  target="_blank" rel="noopener"
-    >Xtdrone仿真平台文档</a></p>
-<h3 id="gazebo配合qgc地面站仿真">Gazebo配合QGC地面站仿真
-</h3><h4 id="linux-qgc的安装">Linux-QGC的安装：
-</h4><p>QGC官网指导下进行配置，之后下载AppImage文件运行QGC地面站即可。 <br>
-仿真中：<br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png"
-	width="2560"
-	height="1549"
+    <p>参考：
+<a class="link" href="https://yeasy.gitbook.io/docker_practice"  target="_blank" rel="noopener"
+    >Docker-从入门到实践</a>&mdash;一本书 <br>
+<a class="link" href="https://juejin.cn/post/7021006271818137630?share_token=878fa440-84d9-4d8a-980e-aaba73440daf#heading-4_"  target="_blank" rel="noopener"
+    >求求你了，用Docker吧</a>&mdash;某博客    <br>
+<a class="link" href="https://docs.docker.com/get-started/get-docker/"  target="_blank" rel="noopener"
+    >Docker安装教程</a>&mdash;官方安装教程     <br>
+<a class="link" href="https://www.bilibili.com/video/BV14s4y1i7Vf"  target="_blank" rel="noopener"
+    >GeekHour-30分钟Docker入门教程</a>&mdash;特别棒</p>
+<h2 id="docker基础的几个概念">Docker基础的几个概念
+</h2><h3 id="镜像-image">镜像 Image
+</h3><p>理解为一个虚拟机的快照，内部包含要部署的应用程序以及他所关联的所有库。 <br>
+是一个包含有文件系统的面向Docker引擎的只读模板。镜像是一个模板,装了一些系统的配置文件, 我们可以通过镜像建立更多的容器, 容器从镜像启动时,Docker在镜像的上层创建一个可写层, 镜像本身不变。</p>
+<h3 id="容器-container">容器 Container
+</h3><p>通过镜像Image，可以创建许多不同的容器Container。容器可以比喻为一台台运行起来的虚拟机，容器中运行着要部署的程序。每个容器相互独立运行，互不影响。       <br>
+容器是基于镜像创建, 相互隔离的, 可以理解为小型虚拟机，真正的执行单元。<br>
+相当于每一个实例。<br>
+一台计算机上可以运行几个虚拟机，但是可以运行几百个容器。</p>
+<h3 id="容器和镜像的关系">容器和镜像的关系
+</h3><p>镜像和容器的关系就像java中类和实例的关系一样（我也没学过java..抄的） <br>
+镜像就类似一个食谱，容器就是根据食谱做出来的一道菜。</p>
+<h4 id="dockerfile">Dockerfile
+</h4><p>自动化脚本，用以创建镜像。<br>
+<img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/dockerfile.jpg"
+	width="360"
+	height="447"
 	
 	loading="lazy"
 	
-		alt="PX4工程文件1"
+		alt="dockerfile.jpg"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="165"
-		data-flex-basis="396px"
+		data-flex-grow="80"
+		data-flex-basis="193px"
 	
 ></p>
-<h3 id="新建飞行任务antiwindtask">新建飞行任务AntiWindTask
-</h3><p>按照PX4官方指导文档新建自己的一个飞行任务 <a class="link" href="https://docs.px4.io/v1.14/en/"  target="_blank" rel="noopener"
-    >官方新建任务指导</a></p>
-<p>最终参考了1.14版本的指导文件，一开始看的main指导文件去配置了XTdrone自动配置的1.13的PX4工程，发现在moduls文件下根本没有飞行任务配置。。。接着去使用1.15的PX4工程，但是在CMakeList文件中有所不同，在每一个版本中都有不同之处。1.15版本也会有bug存在。<br>
-最后使用1.14版本，参考了1.14的指导文档，依然是CmakeList那里不对，文档中的放置位置在官方代码1.14.4版本中根本就没有。</p>
-<p>1.14.4版本中最后无奈我放到了一个差不多的位置。如下： <br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/1.png"
-	width="595"
-	height="182"
+<h4 id="docker-仓库-docker-repository">Docker 仓库-Docker Repository
+</h4><p>存放镜像的仓库 <br>
+最流行的是DockerHub，是一个公共仓库，集中存储和管理Docker镜像。另外还有Harbor</p>
+<h2 id="docker容器化">Docker容器化
+</h2><p>将应用程序打包成容器，然后在容器中运行程序的过程。 <br>
+1# 创建Dockerfile 告诉Docker构建应用程序镜像所需的步骤以及配置。     <br>
+2# 使用Dockerfile构建镜像。 <br>
+3# 使用镜像创建和运行容器。</p>
+<h2 id="docker简单hellodocker实践">Docker简单HelloDocker实践
+</h2><p>创建HelloDocker文件，创建node.js文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">console.log(&#34;欢迎来到Docker！&#34;)     
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Dockerfile中写入如下的运行流程，交给Docker自动运行。 <br>
+<img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/dockfile1.jpg"
+	width="639"
+	height="330"
 	
 	loading="lazy"
 	
-		alt="Error"
+		alt="dockerfile1.jpg"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="326"
-		data-flex-basis="784px"
+		data-flex-grow="193"
+		data-flex-basis="464px"
 	
-></p>
-<p>但是在进行FMU-V2构建烧录代码时也会一直出现bug如下，但是很奇怪使用PX4-SITL构建仿真时便没有错误出现，1.15也是如此： <br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/2.png"
-	width="751"
-	height="507"
+>   <br>
+项目根目录创建名为Dockerfile的文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FROM node:14-alpine
+</span></span><span class="line"><span class="cl">COPY index.js /index.js
+</span></span><span class="line"><span class="cl">CMD [&#34;node&#34;,&#34;/index.js&#34;]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出结果： <br>
+<img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/dockerrun-1.jpg"
+	width="1557"
+	height="1094"
 	
 	loading="lazy"
 	
-		alt="1"
+		alt="输出结果："
 	
 	
 		class="gallery-image" 
-		data-flex-grow="148"
-		data-flex-basis="355px"
+		data-flex-grow="142"
+		data-flex-basis="341px"
 	
-></p>
-<p>最后在github工程发表了issues，最终我更换了FMU-V3来构建，这个错误便消除了。最终成功执行了任务。在QGC地面站也可以正常识别。<br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/AntiWind.png"
-	width="1117"
-	height="579"
+>   <br>
+有个小Warning,暂时不清楚原因。</p>
+<p>play with docker网站 在线运行docker镜像 <br>
+<a class="link" href="https://labs.play-with-docker.com/"  target="_blank" rel="noopener"
+    >https://labs.play-with-docker.com/</a></p>
+<h2 id="docker命令小计">Docker命令小计
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker images        #查看安装的镜像
+</span></span><span class="line"><span class="cl">docker image ls      #查看安装的镜像
+</span></span><span class="line"><span class="cl">docker run 镜像名称   #运行程序
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">docker pull xxx   #获取镜像
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dockerdesktop的使用">DockerDesktop的使用
+</h2><p>DockerDesktop集成了容器日常使用与管理的各种常用功能</p>
+<h2 id="docker-compose">Docker Compose
+</h2><p>统筹各个容器，形成一个项目。 <br>
+使用一个yml文件定义，使用一条命令来自动安装各种依赖以及配置环境。然后在本地运行项目。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ docker compose up
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="docker部署深度学习项目实例">Docker部署深度学习项目实例
+</h2><p>先鸽了</p>
+<h2 id="docker部署px4开发环境实例">Docker部署PX4开发环境实例
+</h2><p>Docker的PX4容器项目地址：https://github.com/PX4/PX4-containers</p>
+<h4 id="1-克隆项目到本地">1 克隆项目到本地
+</h4><h4 id="2-执行">2 执行
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd docker
+</span></span><span class="line"><span class="cl">docker build -t px4io/px4-dev-ros-melodic -f Dockerfile_ros-melodic .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>构建完成镜像大小为6.5GB左右</p>
+<h4 id="3-构建firmware时使用docker环境">3 构建Firmware时使用Docker环境？
+</h4><p><img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/px4-1.png"
+	width="875"
+	height="335"
 	
 	loading="lazy"
 	
-		alt="AntiWind"
+		alt="构建Firmware时使用Docker环境"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="192"
-		data-flex-basis="463px"
+		data-flex-grow="261"
+		data-flex-basis="626px"
 	
-></p>
-<h4 id="newflighttask分析">NewFlightTask分析：
-</h4><p>在指导文件中，其让我们修改了MPC_POS_MOD这个参数，很确定的是此参数决定了飞机在手动-Position定点飞行模式时要执行的实际代码中的任务模式。在源工程中有4中，但只能选择一种。 <br>
-这也在侧面看出PX4的代码很庞大，实际运行只有那么一点。但是要真正简化这个系统也是很麻烦且没必要。<br>
-指导文件默认的效果是控制台输出一段文字。然后实际飞机并不会升高。<br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%9C%80%E5%88%9D%E4%BB%BF%E7%9C%9F%E6%95%88%E6%9E%9C.png"
-	width="1553"
-	height="977"
-	
-	loading="lazy"
-	
-		alt="飞行模式最初仿真效果"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="158"
-		data-flex-basis="381px"
-	
-></p>
-<h3 id="manual-position飞行模式分析">Manual-Position飞行模式分析
-</h3><p>下面以Manual-Position飞行模式为例子对PX4原有的飞行模式进行分析，以便我们写出自己的飞行模式。 <br>
-但是在飞行模式中，可以看出并没有PID相关的直接控制。在这些控制代码中，更多的是作为一种高级控制。分析摇杆输入等混合输入，来对SetPoint进行赋值，分发给更底层的PID控制机构。</p>
-<h3 id="飞行日志分析">飞行日志分析
-</h3><p>可以使用PX4的在线FlightReview。方便快速查看飞行数据。 <br>
-更详细的可以使用PX4开发的pyulog的Python处理库，可以转为CSV文件，使用Matlab分析。</p>
+> <br>
+3这个还没试过</p>
 
 </section>
 
@@ -507,7 +582,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/px4/">PX4</a>
+            <a href="/tags/docker/">Docker</a>
         
     </section>
 
@@ -564,30 +639,6 @@
         <div class="flex article-list--tile">
             
                 
-<article class="has-image">
-    <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-        
-        
-            <div class="article-image">
-                <img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian.deb6cb9406c642256ecc3694b96a4413.png" 
-                        width="828" 
-                        height="532" 
-                        loading="lazy"
-                        alt="Featured image of post Simulink-PX4-WSL2仿真环境搭建"
-                        
-                        data-hash="md5-3rbLlAbGQiVuzDaUuWpEEw==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Simulink-PX4-WSL2仿真环境搭建</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
 <article class="">
     <a href="/p/linux/">
         
@@ -614,13 +665,24 @@
 
             
                 
-<article class="">
-    <a href="/p/latex%E7%AC%94%E8%AE%B0/">
+<article class="has-image">
+    <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
         
+        
+            <div class="article-image">
+                <img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian.deb6cb9406c642256ecc3694b96a4413.png" 
+                        width="828" 
+                        height="532" 
+                        loading="lazy"
+                        alt="Featured image of post Simulink-PX4-WSL2仿真环境搭建"
+                        
+                        data-hash="md5-3rbLlAbGQiVuzDaUuWpEEw==">
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">Latex笔记</h2>
+            <h2 class="article-title">Simulink-PX4-WSL2仿真环境搭建</h2>
         </div>
     </a>
 </article>
@@ -645,6 +707,19 @@
 
         <div class="article-details">
             <h2 class="article-title">PADS学习日记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PMSM原理加控制方法以及仿真</h2>
         </div>
     </a>
 </article>

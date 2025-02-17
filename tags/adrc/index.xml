@@ -8,11 +8,11 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Mon, 16 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/adrc/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>ADRC课程笔记</title>
-        <link>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</link>
+        <title>ADRC小记</title>
+        <link>https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/</guid>
         <description>&lt;h3 id=&#34;adrc课程笔记&#34;&gt;ADRC课程笔记
 &lt;/h3&gt;&lt;p&gt;本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些经典与现代控制理论方向的相关知识。&lt;/p&gt;
 &lt;h4 id=&#34;生理前馈系统&#34;&gt;生理前馈系统
@@ -41,7 +41,7 @@
 &lt;h3 id=&#34;更进一步---pid控制器&#34;&gt;更进一步&amp;mdash;PID控制器
 &lt;/h3&gt;&lt;p&gt;1 极点配置方法调节PID参数  &lt;br&gt;
 确定极点位置来对闭环系统的Kp Ki进行确定。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.1.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.1.png&#34;
 	width=&#34;1151&#34;
 	height=&#34;517&#34;
 	
@@ -54,7 +54,7 @@
 	
 &gt;  &lt;br&gt;
 这里极点配置 根据一阶系统 二阶系统 的阶跃响应曲线来根据期望的TS调节时间根据经验选取。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.2.png&#34;
 	width=&#34;1779&#34;
 	height=&#34;814&#34;
 	
@@ -66,7 +66,7 @@
 		data-flex-basis=&#34;524px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.3.png&#34;
 	width=&#34;1815&#34;
 	height=&#34;865&#34;
 	
@@ -83,7 +83,7 @@
 &lt;h3 id=&#34;积分串联型控制&#34;&gt;积分串联型控制
 &lt;/h3&gt;&lt;h4 id=&#34;简单理想发动机转速控制模型&#34;&gt;简单理想发动机转速控制模型：
 &lt;/h4&gt;&lt;p&gt;从扭矩 或者电压调整转速 这属于一阶系统。采用比例控制即可很好的进行控制 如下图所示设计控制过程。     &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.5.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.5.png&#34;
 	width=&#34;1825&#34;
 	height=&#34;952&#34;
 	
@@ -104,7 +104,7 @@ J是转动惯量，转速由w的导数表示。M为力矩。  &lt;br&gt;
 $$
 \frac{\omega}{M}=\frac{1}{Js}
 $$ &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.6.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.6.png&#34;
 	width=&#34;1812&#34;
 	height=&#34;787&#34;
 	
@@ -117,7 +117,7 @@ $$ &lt;br&gt;
 	
 &gt;   &lt;br&gt;
 设计如下： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.4.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.4.png&#34;
 	width=&#34;1730&#34;
 	height=&#34;856&#34;
 	
@@ -130,7 +130,7 @@ $$ &lt;br&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;简单理想发动机转角控制模型&#34;&gt;简单理想发动机转角控制模型：
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.7.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.7.png&#34;
 	width=&#34;1722&#34;
 	height=&#34;797&#34;
 	
@@ -146,7 +146,7 @@ $$
 \frac{\theta}{M}=\frac{1}{Js^2}
 $$ &lt;br&gt;
 设计比例微分PD控制器。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.8.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.8.png&#34;
 	width=&#34;1611&#34;
 	height=&#34;806&#34;
 	
@@ -168,7 +168,7 @@ $$ &lt;br&gt;
 &lt;/h3&gt;&lt;h3 id=&#34;扩张状态观测器eso-估计总扰动&#34;&gt;扩张状态观测器ESO-估计总扰动
 &lt;/h3&gt;&lt;p&gt;个人理解：&lt;strong&gt;扩张状态观测器，即在原本观测器的基础上，加入积分环节（一个积分环节对应一个状态，也就是直观的扩张出来了一个状态）。使得总扰动的估计能够消除稳态误差。&lt;/strong&gt;   &lt;br&gt;
 系统类似下图，使用Simulink模块简单画一下，表示一下  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.13.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.13.png&#34;
 	width=&#34;1449&#34;
 	height=&#34;781&#34;
 	
@@ -182,7 +182,7 @@ $$ &lt;br&gt;
 &gt;  &lt;br&gt;
 果然反步法的设计过程是重要的，这样看来也有一定相似之处。&lt;br&gt;
 观测器，观察每一个状态的演变过程，所以用导数。也就是状态方程。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.9.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.9.png&#34;
 	width=&#34;1495&#34;
 	height=&#34;656&#34;
 	
@@ -196,7 +196,7 @@ $$ &lt;br&gt;
 &gt;  &lt;br&gt;
 总扰动f的导不知道，先写一个h。 &lt;br&gt;
 &lt;strong&gt;观测器使用测量的偏差与估计的偏差。分别矫正了所有状态的微分方程。只要参数β123调节好，就可以准确估计总扰动。便可以改造出积分串联型理想系统。进而可以很好的控制系统。&lt;/strong&gt;          &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.10.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.10.png&#34;
 	width=&#34;1517&#34;
 	height=&#34;757&#34;
 	
@@ -222,7 +222,7 @@ $$
 $$ &lt;br&gt;
 a决定极点的位置。所以很明显决定系统稳定以及收敛速度的是a。 &lt;br&gt;
 对状态空间表达式x导=Ax+bu也是如此。A决定系统稳定性以及各种性能。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.11.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.11.png&#34;
 	width=&#34;1342&#34;
 	height=&#34;716&#34;
 	
@@ -235,7 +235,7 @@ a决定极点的位置。所以很明显决定系统稳定以及收敛速度的�
 	
 &gt;   &lt;br&gt;
 特征值决定了状态空间中，每一个状态演变的快与慢。特征值也就是传递函数的极点。这是一个普遍且重要的理论。     &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.12.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.12.png&#34;
 	width=&#34;1356&#34;
 	height=&#34;719&#34;
 	

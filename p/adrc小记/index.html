@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。">
-<title>PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="ADRC课程笔记，结合PID从原理入手分析。">
+<title>ADRC小记</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/'>
+<link rel='canonical' href='https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/'>
 
-<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶">
-<meta property='og:description' content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。">
-<meta property='og:url' content='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/'>
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="ADRC小记">
+<meta property='og:description' content="ADRC课程笔记，结合PID从原理入手分析。">
+<meta property='og:url' content='https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png' />
-<meta name="twitter:title" content="PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶">
-<meta name="twitter:description" content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ADRC' /><meta property='article:published_time' content='2024-09-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-09-16T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="ADRC小记">
+<meta name="twitter:description" content="ADRC课程笔记，结合PID从原理入手分析。">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
   
@@ -287,21 +286,36 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#px4在linux环境下的编译make">PX4在Linux环境下的编译（make）</a></li>
-        <li><a href="#gazebo配合qgc地面站仿真">Gazebo配合QGC地面站仿真</a>
+        <li><a href="#adrc课程笔记">ADRC课程笔记</a>
           <ol>
-            <li><a href="#linux-qgc的安装">Linux-QGC的安装：</a></li>
+            <li><a href="#生理前馈系统">生理前馈系统</a></li>
           </ol>
         </li>
-        <li><a href="#新建飞行任务antiwindtask">新建飞行任务AntiWindTask</a>
+        <li><a href="#前馈控制">前馈控制</a>
           <ol>
-            <li><a href="#newflighttask分析">NewFlightTask分析：</a></li>
+            <li></li>
           </ol>
         </li>
-        <li><a href="#manual-position飞行模式分析">Manual-Position飞行模式分析</a></li>
-        <li><a href="#飞行日志分析">飞行日志分析</a></li>
       </ol>
     </li>
+    <li><a href="#从pid到adrc">从PID到ADRC</a>
+      <ol>
+        <li><a href="#积分控制器">积分控制器</a></li>
+        <li><a href="#三种矫正网络">三种矫正网络</a></li>
+        <li><a href="#更进一步---pid控制器">更进一步&mdash;PID控制器</a></li>
+        <li><a href="#积分串联型控制">积分串联型控制</a>
+          <ol>
+            <li><a href="#简单理想发动机转速控制模型">简单理想发动机转速控制模型：</a></li>
+            <li><a href="#简单理想发动机转角控制模型">简单理想发动机转角控制模型：</a></li>
+          </ol>
+        </li>
+        <li><a href="#误差积分被动补偿-创造理想系统">误差积分被动补偿-创造理想系统</a></li>
+        <li><a href="#总扰动的概念">总扰动的概念</a></li>
+        <li><a href="#扩张状态观测器eso-估计总扰动">扩张状态观测器ESO-估计总扰动</a></li>
+        <li><a href="#扩张状态观测器eso-如何选择β123">扩张状态观测器ESO-如何选择β123？</a></li>
+      </ol>
+    </li>
+    <li><a href="#从adrc到mpc">从ADRC到MPC</a></li>
   </ol>
 </nav>
         </div>
@@ -313,20 +327,8 @@
 
 
             <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/">
-                <img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png"
-                        
-                        width="2560" 
-                        height="1549" 
-                        loading="lazy"
-                        alt="Featured image of post PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
@@ -336,21 +338,17 @@
                 学术类别
             </a>
         
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
-            </a>
-        
     </header>
     
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/">PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶</a>
+            <a href="/p/adrc%E5%B0%8F%E8%AE%B0/">ADRC小记</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。
+            ADRC课程笔记，结合PID从原理入手分析。
         </h3>
         
     </div>
@@ -371,7 +369,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-10-10</time>
+                <time class="article-time--published">2024-09-16</time>
             </div>
         
 
@@ -386,7 +384,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
@@ -401,105 +399,248 @@
     <section class="article-content">
     
     
-    <h3 id="px4在linux环境下的编译make">PX4在Linux环境下的编译（make）
-</h3><p>使用VM17虚拟机以及Ubuntu20.04对PX4项目进行编译。<br>
-参考了超维空间科技的文章:<a class="link" href="https://blog.csdn.net/qq_38768959/article/details/106041494"  target="_blank" rel="noopener"
-    >超维空间科技的文章</a> <br>
-后续配置参考了Xtdrone仿真平台的一键配置，更为简单:<a class="link" href="https://www.yuque.com/xtdrone/manual_cn"  target="_blank" rel="noopener"
-    >Xtdrone仿真平台文档</a></p>
-<h3 id="gazebo配合qgc地面站仿真">Gazebo配合QGC地面站仿真
-</h3><h4 id="linux-qgc的安装">Linux-QGC的安装：
-</h4><p>QGC官网指导下进行配置，之后下载AppImage文件运行QGC地面站即可。 <br>
-仿真中：<br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png"
-	width="2560"
-	height="1549"
+    <h3 id="adrc课程笔记">ADRC课程笔记
+</h3><p>本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些经典与现代控制理论方向的相关知识。</p>
+<h4 id="生理前馈系统">生理前馈系统
+</h4><blockquote>
+<p>在生理学上，前馈控制的例子是在实际体力活动之前，自主神经系统对心跳的正常预期调节。前馈控制可以比作对已知线索的预期反应（预测编码）。心跳的反馈调节为机体提供了进一步对运动的适应性。  &ndash;wiki百科</p>
+</blockquote>
+<p>在前馈系统中，控制变量的调整不是以目标和回授之间的误差为基础，它是以过程<strong>数学模型</strong>的知识和<strong>过程扰动</strong>的知识或测量为基础。</p>
+<p>所以对于数学模型的整体掌握是对系统扰动进行前馈消除的前提。</p>
+<p>正所谓要想系统稳得住，必须得有前馈引入。前馈控制在某些控制场合下是必须项。</p>
+<h3 id="前馈控制">前馈控制
+</h3><h6 id="摘自高志强-自抗扰控制思想探究">摘自《高志强: 自抗扰控制思想探究》
+</h6><p>前馈控制是一种<strong>基于对扰动的预测</strong>进行补偿的控制方法。它通过<strong>测量</strong>可能影响系统输出的扰动变量，并根据扰动变量与系统输出之间的关系，计算出所需的控制量，在<strong>扰动对系统产生影响之前</strong>就进行调节，以抵消扰动的影响。<br>
+在自动控制系统理论中学习过，由传递函数理论数学推导，前馈的引入可以完全的消除系统的扰动误差。现在这显然并不是这么的简单，这需要对系统数学模型有着十分精确的掌握。<br>
+前馈控制在工业界用途广泛, 但是学术界对它很少关心, 认为是开环控制, 没有什么理论可言. 前馈的使用方式主要有两种: 一种是<strong>根据参考输入和对象模型的逆</strong>而得到的控制量, 不依赖对象的实时信息,暂且称之为A类前馈; 另外一种前馈, 是<strong>根据被控量之外的对象信息</strong>所产生的控制量, 即B类前馈。<br>
+前馈控制提出的本意是要区别于上面提到的狭义的反馈控制, 表示控制量的一部分甚至全部都可以完全独立于被控量的量测. Black定义的反馈(feedback)本来就是针对前馈(feedforward)而言的, 表示信号流向反转, 由输出到输入. 这里信号的走向一正一反, 概念很清楚。<br>
+可是当反馈这个通讯工程的概念被借用到控制工程时, 它的反义词前馈的含义便有了两种解释. 比如上面说的A类前馈明显是开环控制, 控制量完全独立于对象的实时信息. 可是B类前馈则不然, 它依赖的还是对象信息, 实际上是前面提到的广义反馈, 只不过反馈的不是输出量而已. B类前馈在文献中也被称为扰动前馈, 它是基于对象扰动信息的实时提取, 就像指南车. 可是同样是基于对象信息的提取, 指南车为什么会被称为开环控制呢？其实B类前馈属于广义反馈, 不应称其为前馈或开环控制. 鉴于前馈的概念和用法前后重叠, 为了概念的清晰, 建议今后可把B类前馈归入抗扰原理讨论; 把前馈狭义地定义为A类前馈.那么这样的前馈有什么意义呢？为什么它的用途这么广呢？主要原因是它降低了快速跟踪的成本。<br>
+一个控制系统要使输出迅速跟踪给定值有两个途径: 1) 高带宽; 2) 前馈. 但是在工业上, 带宽就是成本.高带宽虽然能使跟踪速度提高, 但也带来很多问题:1) 对执行机构的品质要求提高; 2) 激励了对象的高频动态使控制问题复杂化; 3) 闭环系统的稳定裕度下降,对相位滞后和时间延迟更敏感; 4) 对传感器噪声更敏感, 等等.高带宽的成本在20世 50年代就有专门、详细的讨论, 比如文献[46], 但是至今没能在理论界引起重视, 乃至高增益控制器、观测器的文章比比皆是, 而能用上的却寥寥无几. 这反映了不考虑成本的研究, 在工程上是没有多少意义的。<br>
+工程师们在实践中基于对系统物理特性的知识发现了前馈这个办法. 这种独立于反馈回路拟合出的控制量通常是结合参考输入, 以数据或图表形式表示的,常常在控制信号中占主要部分. 同时也使用PID反馈控制器, 发挥微调、纠错的作用. 因此, 工业上的PID控制器常常是与前馈控制结合使用的。<br>
+以上总结的是控制论的基本原理, 是从事自动控制的人们在长期的工程实践中发现、挖掘出来的, 是控制论继续发展的基石. 要系统地、科学地建立和发展一套完整的理论体系, 就需要对基本原理进行提炼、抽象和升华, 使得工程控制的实践能够更加系统,并不断进入更高的层次, 从而“下学而上达”。</p>
+<h2 id="从pid到adrc">从PID到ADRC
+</h2><h3 id="积分控制器">积分控制器
+</h3><h3 id="三种矫正网络">三种矫正网络
+</h3><p>超前校正网络 滞后矫正网络 超前-滞后矫正网络 <br>
+这些都要配合BODE图去确定频率指标 设计较为复古，较为原始。</p>
+<p><strong>wc剪切频率处的中频段宽度对闭环系统特性有至关重要的影响。</strong></p>
+<h3 id="更进一步---pid控制器">更进一步&mdash;PID控制器
+</h3><p>1 极点配置方法调节PID参数  <br>
+确定极点位置来对闭环系统的Kp Ki进行确定。 <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.1.png"
+	width="1151"
+	height="517"
 	
 	loading="lazy"
 	
-		alt="PX4工程文件1"
-	
 	
 		class="gallery-image" 
-		data-flex-grow="165"
-		data-flex-basis="396px"
+		data-flex-grow="222"
+		data-flex-basis="534px"
 	
-></p>
-<h3 id="新建飞行任务antiwindtask">新建飞行任务AntiWindTask
-</h3><p>按照PX4官方指导文档新建自己的一个飞行任务 <a class="link" href="https://docs.px4.io/v1.14/en/"  target="_blank" rel="noopener"
-    >官方新建任务指导</a></p>
-<p>最终参考了1.14版本的指导文件，一开始看的main指导文件去配置了XTdrone自动配置的1.13的PX4工程，发现在moduls文件下根本没有飞行任务配置。。。接着去使用1.15的PX4工程，但是在CMakeList文件中有所不同，在每一个版本中都有不同之处。1.15版本也会有bug存在。<br>
-最后使用1.14版本，参考了1.14的指导文档，依然是CmakeList那里不对，文档中的放置位置在官方代码1.14.4版本中根本就没有。</p>
-<p>1.14.4版本中最后无奈我放到了一个差不多的位置。如下： <br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/1.png"
-	width="595"
-	height="182"
+>  <br>
+这里极点配置 根据一阶系统 二阶系统 的阶跃响应曲线来根据期望的TS调节时间根据经验选取。 <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.2.png"
+	width="1779"
+	height="814"
 	
 	loading="lazy"
 	
-		alt="Error"
-	
 	
 		class="gallery-image" 
-		data-flex-grow="326"
-		data-flex-basis="784px"
+		data-flex-grow="218"
+		data-flex-basis="524px"
 	
 ></p>
-<p>但是在进行FMU-V2构建烧录代码时也会一直出现bug如下，但是很奇怪使用PX4-SITL构建仿真时便没有错误出现，1.15也是如此： <br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/2.png"
-	width="751"
-	height="507"
+<p><img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.3.png"
+	width="1815"
+	height="865"
 	
 	loading="lazy"
 	
-		alt="1"
-	
 	
 		class="gallery-image" 
-		data-flex-grow="148"
-		data-flex-basis="355px"
+		data-flex-grow="209"
+		data-flex-basis="503px"
 	
-></p>
-<p>最后在github工程发表了issues，最终我更换了FMU-V3来构建，这个错误便消除了。最终成功执行了任务。在QGC地面站也可以正常识别。<br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/AntiWind.png"
-	width="1117"
-	height="579"
+><br>
+2 ZN方法调节PID参数</p>
+<p>3 经验方法</p>
+<h3 id="积分串联型控制">积分串联型控制
+</h3><h4 id="简单理想发动机转速控制模型">简单理想发动机转速控制模型：
+</h4><p>从扭矩 或者电压调整转速 这属于一阶系统。采用比例控制即可很好的进行控制 如下图所示设计控制过程。     <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.5.png"
+	width="1825"
+	height="952"
 	
 	loading="lazy"
 	
-		alt="AntiWind"
-	
 	
 		class="gallery-image" 
-		data-flex-grow="192"
-		data-flex-basis="463px"
+		data-flex-grow="191"
+		data-flex-basis="460px"
 	
-></p>
-<h4 id="newflighttask分析">NewFlightTask分析：
-</h4><p>在指导文件中，其让我们修改了MPC_POS_MOD这个参数，很确定的是此参数决定了飞机在手动-Position定点飞行模式时要执行的实际代码中的任务模式。在源工程中有4中，但只能选择一种。 <br>
-这也在侧面看出PX4的代码很庞大，实际运行只有那么一点。但是要真正简化这个系统也是很麻烦且没必要。<br>
-指导文件默认的效果是控制台输出一段文字。然后实际飞机并不会升高。<br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%9C%80%E5%88%9D%E4%BB%BF%E7%9C%9F%E6%95%88%E6%9E%9C.png"
-	width="1553"
-	height="977"
+>  <br>
+从力矩到转速这属于<strong>积分环节</strong>：如下 <br>
+$$
+J\dot{\omega}=M
+$$ <br>
+J是转动惯量，转速由w的导数表示。M为力矩。  <br>
+则可以得到w与M的关系如下   <br>
+$$
+\frac{\omega}{M}=\frac{1}{Js}
+$$ <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.6.png"
+	width="1812"
+	height="787"
 	
 	loading="lazy"
 	
-		alt="飞行模式最初仿真效果"
+	
+		class="gallery-image" 
+		data-flex-grow="230"
+		data-flex-basis="552px"
+	
+>   <br>
+设计如下： <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.4.png"
+	width="1730"
+	height="856"
+	
+	loading="lazy"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="158"
-		data-flex-basis="381px"
+		data-flex-grow="202"
+		data-flex-basis="485px"
 	
 ></p>
-<h3 id="manual-position飞行模式分析">Manual-Position飞行模式分析
-</h3><p>下面以Manual-Position飞行模式为例子对PX4原有的飞行模式进行分析，以便我们写出自己的飞行模式。 <br>
-但是在飞行模式中，可以看出并没有PID相关的直接控制。在这些控制代码中，更多的是作为一种高级控制。分析摇杆输入等混合输入，来对SetPoint进行赋值，分发给更底层的PID控制机构。</p>
-<h3 id="飞行日志分析">飞行日志分析
-</h3><p>可以使用PX4的在线FlightReview。方便快速查看飞行数据。 <br>
-更详细的可以使用PX4开发的pyulog的Python处理库，可以转为CSV文件，使用Matlab分析。</p>
-
+<h4 id="简单理想发动机转角控制模型">简单理想发动机转角控制模型：
+</h4><p><img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.7.png"
+	width="1722"
+	height="797"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="216"
+		data-flex-basis="518px"
+	
+>     <br>
+$$
+\frac{\theta}{M}=\frac{1}{Js^2}
+$$ <br>
+设计比例微分PD控制器。</p>
+<p><img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.8.png"
+	width="1611"
+	height="806"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="199"
+		data-flex-basis="479px"
+	
+></p>
+<p>现实世界中，几乎没有上述两种理想系统。 <br>
+一阶系统有摩擦存在时，二阶系统有摩擦存在时，传统控制方法适用性不再好。 <br>
+积分串联型真的好很容易控制，但是实际系统没有。我们ADRC需要构造这种系统。</p>
+<h3 id="误差积分被动补偿-创造理想系统">误差积分被动补偿-创造理想系统
+</h3><p>传统引入积分控制，便是提高了系统的型别。但是不一定会好用。</p>
+<p>传统发动机控制电脑中，会有几千个PID参数表，用于对应不同的发动机工作环境。</p>
+<h3 id="总扰动的概念">总扰动的概念
+</h3><h3 id="扩张状态观测器eso-估计总扰动">扩张状态观测器ESO-估计总扰动
+</h3><p>个人理解：<strong>扩张状态观测器，即在原本观测器的基础上，加入积分环节（一个积分环节对应一个状态，也就是直观的扩张出来了一个状态）。使得总扰动的估计能够消除稳态误差。</strong>   <br>
+系统类似下图，使用Simulink模块简单画一下，表示一下  <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.13.png"
+	width="1449"
+	height="781"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="185"
+		data-flex-basis="445px"
+	
+>  <br>
+果然反步法的设计过程是重要的，这样看来也有一定相似之处。<br>
+观测器，观察每一个状态的演变过程，所以用导数。也就是状态方程。  <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.9.png"
+	width="1495"
+	height="656"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="227"
+		data-flex-basis="546px"
+	
+>  <br>
+总扰动f的导不知道，先写一个h。 <br>
+<strong>观测器使用测量的偏差与估计的偏差。分别矫正了所有状态的微分方程。只要参数β123调节好，就可以准确估计总扰动。便可以改造出积分串联型理想系统。进而可以很好的控制系统。</strong>          <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.10.png"
+	width="1517"
+	height="757"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="200"
+		data-flex-basis="480px"
+	
+> <br>
+这样原本Y的二阶导只等于U0 <br>
+此时U0采用比例微分控制即可实现完全控制。</p>
+<h3 id="扩张状态观测器eso-如何选择β123">扩张状态观测器ESO-如何选择β123？
+</h3><p>对于 <br>
+$$
+\dot{y}=ay+bu
+$$ <br>
+给定一个阶跃信号，决定系统调节速度的是a。 <br>
+证明：写出传递函数如下： <br>
+$$
+\frac{Y}{U}=\frac{b}{s+a}
+$$ <br>
+a决定极点的位置。所以很明显决定系统稳定以及收敛速度的是a。 <br>
+对状态空间表达式x导=Ax+bu也是如此。A决定系统稳定性以及各种性能。 <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.11.png"
+	width="1342"
+	height="716"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="187"
+		data-flex-basis="449px"
+	
+>   <br>
+特征值决定了状态空间中，每一个状态演变的快与慢。特征值也就是传递函数的极点。这是一个普遍且重要的理论。     <br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.12.png"
+	width="1356"
+	height="719"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="188"
+		data-flex-basis="452px"
+	
+>   <br>
+如何调整特征值？ <br>
+A矩阵写出行列式$A-\lambda$。 令行列式等于0得到特征方程。 令特征方程等于 <br>
+$$
+\left( \lambda +\omega _0 \right) ^3=0
+$$ <br>
+对应相等即可求出β123。</p>
+<h2 id="从adrc到mpc">从ADRC到MPC
+</h2>
 </section>
 
 
@@ -507,7 +648,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/px4/">PX4</a>
+            <a href="/tags/adrc/">ADRC</a>
         
     </section>
 
@@ -564,6 +705,45 @@
         <div class="flex article-list--tile">
             
                 
+<article class="">
+    <a href="/p/linux/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/latex%E7%AC%94%E8%AE%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Latex笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">YOLO学习随笔</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
 <article class="has-image">
     <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
         
@@ -589,62 +769,12 @@
             
                 
 <article class="">
-    <a href="/p/linux/">
+    <a href="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">YOLO学习随笔</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/latex%E7%AC%94%E8%AE%B0/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Latex笔记</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">
-        
-        
-            <div class="article-image">
-                <img src="/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/pads.03e7c6b02900484b0fe404c4db2794f7.jpg" 
-                        width="720" 
-                        height="424" 
-                        loading="lazy"
-                        alt="Featured image of post PADS学习日记"
-                        
-                        data-hash="md5-A&#43;fGsCkASEsP5ATE2yeU9w==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">PADS学习日记</h2>
+            <h2 class="article-title">神经网络基础</h2>
         </div>
     </a>
 </article>

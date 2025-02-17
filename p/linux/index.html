@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。">
-<title>PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在此记录本人在学习YSYX项目时遇到的难题与解决方式。">
+<title>Linux</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/'>
+<link rel='canonical' href='https://a233a2.github.io/p/linux/'>
 
-<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶">
-<meta property='og:description' content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。">
-<meta property='og:url' content='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/'>
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Linux">
+<meta property='og:description' content="在此记录本人在学习YSYX项目时遇到的难题与解决方式。">
+<meta property='og:url' content='https://a233a2.github.io/p/linux/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-10T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png' />
-<meta name="twitter:title" content="PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶">
-<meta name="twitter:description" content="PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='YSYX' /><meta property='article:published_time' content='2024-12-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-16T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Linux">
+<meta name="twitter:description" content="在此记录本人在学习YSYX项目时遇到的难题与解决方式。">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
   
@@ -285,23 +284,34 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
+    <li><a href="#linuxbasic">LinuxBasic</a></li>
+    <li><a href="#linux基础课程概览与shell">Linux基础课程概览与shell</a>
       <ol>
-        <li><a href="#px4在linux环境下的编译make">PX4在Linux环境下的编译（make）</a></li>
-        <li><a href="#gazebo配合qgc地面站仿真">Gazebo配合QGC地面站仿真</a>
+        <li>
           <ol>
-            <li><a href="#linux-qgc的安装">Linux-QGC的安装：</a></li>
+            <li><a href="#echo命令">echo命令</a></li>
+            <li><a href="#which命令">which命令</a></li>
+            <li><a href="#pwd命令">pwd命令</a></li>
+            <li><a href="#cd命令">cd命令</a></li>
+            <li><a href="#ls命令">ls命令</a></li>
+            <li><a href="#man命令">man命令</a></li>
+            <li><a href="#cat命令">cat命令</a></li>
+            <li><a href="#touch命令">touch命令</a></li>
+            <li><a href="#mkdir命令">mkdir命令</a></li>
+            <li><a href="#rm命令">rm命令</a></li>
+            <li><a href="#重定向输入输出流">重定向输入输出流</a></li>
+            <li><a href="#sudo">sudo</a></li>
+            <li><a href="#chmod命令">chmod命令</a></li>
+            <li><a href="#sh命令">sh命令</a></li>
           </ol>
         </li>
-        <li><a href="#新建飞行任务antiwindtask">新建飞行任务AntiWindTask</a>
-          <ol>
-            <li><a href="#newflighttask分析">NewFlightTask分析：</a></li>
-          </ol>
-        </li>
-        <li><a href="#manual-position飞行模式分析">Manual-Position飞行模式分析</a></li>
-        <li><a href="#飞行日志分析">飞行日志分析</a></li>
       </ol>
     </li>
+    <li><a href="#shell工具和脚本">Shell工具和脚本</a></li>
+    <li><a href="#编辑器-vim">编辑器 (Vim)</a></li>
+    <li><a href="#数据整理">数据整理</a></li>
+    <li><a href="#命令行环境">命令行环境</a></li>
+    <li><a href="#版本控制git">版本控制(Git)</a></li>
   </ol>
 </nav>
         </div>
@@ -313,20 +323,8 @@
 
 
             <main class="main full-width">
-    <article class="has-image main-article">
+    <article class="main-article">
     <header class="article-header">
-        <div class="article-image">
-            <a href="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/">
-                <img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png"
-                        
-                        width="2560" 
-                        height="1549" 
-                        loading="lazy"
-                        alt="Featured image of post PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶" />
-                
-            </a>
-        </div>
-    
 
     <div class="article-details">
     
@@ -345,12 +343,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/">PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶</a>
+            <a href="/p/linux/">Linux</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            PX4的二次开发记录，以及在PX4基础上的仿真记录。最终实现自己的飞行任务实现特定功能。
+            在此记录本人在学习YSYX项目时遇到的难题与解决方式。
         </h3>
         
     </div>
@@ -371,7 +369,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-10-10</time>
+                <time class="article-time--published">2024-12-16</time>
             </div>
         
 
@@ -386,7 +384,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 6 分钟
                 </time>
             </div>
         
@@ -401,105 +399,220 @@
     <section class="article-content">
     
     
-    <h3 id="px4在linux环境下的编译make">PX4在Linux环境下的编译（make）
-</h3><p>使用VM17虚拟机以及Ubuntu20.04对PX4项目进行编译。<br>
-参考了超维空间科技的文章:<a class="link" href="https://blog.csdn.net/qq_38768959/article/details/106041494"  target="_blank" rel="noopener"
-    >超维空间科技的文章</a> <br>
-后续配置参考了Xtdrone仿真平台的一键配置，更为简单:<a class="link" href="https://www.yuque.com/xtdrone/manual_cn"  target="_blank" rel="noopener"
-    >Xtdrone仿真平台文档</a></p>
-<h3 id="gazebo配合qgc地面站仿真">Gazebo配合QGC地面站仿真
-</h3><h4 id="linux-qgc的安装">Linux-QGC的安装：
-</h4><p>QGC官网指导下进行配置，之后下载AppImage文件运行QGC地面站即可。 <br>
-仿真中：<br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png"
-	width="2560"
-	height="1549"
+    <p>学习记录： <a class="link" href="https://docs.qq.com/sheet/DQ0lRY2tNb2VIZWVB?newPad=1&amp;newPadType=clone&amp;tab=BB08J4&amp;_t=1728471922939&amp;u=555637143d844e0f8b3d1a7c9c34bebf"  target="_blank" rel="noopener"
+    >学习记录</a>。 <br>
+内容：<a class="link" href="https://missing-semester-cn.github.io/"  target="_blank" rel="noopener"
+    >The Missing Semester of Your CS Education 中文版</a></p>
+<h2 id="linuxbasic">LinuxBasic
+</h2><p>GUI和CLI是两种用户与计算机进行交互的方式。 <br>
+GUI（Graphical User Interface，图形用户界面）：GUI是一种基于图形化界面的操作系统用户界面。    <br>
+CLI（Command Line Interface，命令行界面）：CLI是一种通过在命令行或终端界面输入命令来与计算机进行交互的用户界面。  <br>
+安装PA所需工具</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt-get install build-essential    <span class="c1"># build-essential packages, include binary utilities, gcc, make, and so on</span>
+</span></span><span class="line"><span class="cl">apt-get install man                <span class="c1"># on-line reference manual</span>
+</span></span><span class="line"><span class="cl">apt-get install gcc-doc            <span class="c1"># on-line reference manual for gcc</span>
+</span></span><span class="line"><span class="cl">apt-get install gdb                <span class="c1"># GNU debugger</span>
+</span></span><span class="line"><span class="cl">apt-get install git                <span class="c1"># revision control system</span>
+</span></span><span class="line"><span class="cl">apt-get install libreadline-dev    <span class="c1"># a library used later</span>
+</span></span><span class="line"><span class="cl">apt-get install libsdl2-dev        <span class="c1"># a library used later</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Ubuntu 中安装中文输入法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#安装框架</span>
+</span></span><span class="line"><span class="cl">sudo apt install ibus
+</span></span><span class="line"><span class="cl"><span class="c1">#切换框架</span>
+</span></span><span class="line"><span class="cl">im-config -s ibus
+</span></span><span class="line"><span class="cl"><span class="c1">#由于Ubuntu Desktop 20.04使用的是GNOME桌面，所以需要安装相应的平台支持包</span>
+</span></span><span class="line"><span class="cl">sudo apt install ibus-gtk ibus-gtk3
+</span></span><span class="line"><span class="cl"><span class="c1">#选择简体拼音输入法，完成安装</span>
+</span></span><span class="line"><span class="cl">sudo apt install ibus-pinyin
+</span></span><span class="line"><span class="cl"><span class="c1">#完成安装后，将中文输入法添加到输入源选项中</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以上摘录自：https://blog.csdn.net/Aimonii/article/details/141260938</p>
+<h2 id="linux基础课程概览与shell">Linux基础课程概览与shell
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">missing:~$ 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>$ 符号表示您现在的身份不是 root 用户,位置是 ~ (表示 “home”)。</p>
+<h4 id="echo命令">echo命令
+</h4><p>‌echo命令是Linux中用于在终端输出字符串的命令，常用于脚本编程、调试和显示变量值。</p>
+<h4 id="which命令">which命令
+</h4><p>用于定位执行文件的路径。当输入一个命令时，which 会在环境变量 PATH 所指定的路径中搜索每个目录，以查找指定的可执行文件。 可以使用 which 程序。通过直接指定需要执行的程序的路径来执行该程序。</p>
+<h4 id="pwd命令">pwd命令
+</h4><p>获取当前工作目录。</p>
+<h4 id="cd命令">cd命令
+</h4><p>切换目录 . 表示的是当前目录，而 .. 表示上级目录</p>
+<h4 id="ls命令">ls命令
+</h4><p>查看指定目录下包含哪些文件 利用第一个参数指定目录，否则 ls 会打印当前目录下的文件。       <br>
+通常，在执行程序时使用 -h 或 &ndash;help 标记可以打印帮助信息，以便了解有哪些可用的标记或选项。</p>
+<blockquote>
+<p>ls: List directory contents
+dir: Briefly list directory contents
+dir: Verbosely list directory contents
+dircolors: Color setup for ls</p>
+<p>ls -l是Linux和unix命令，意思指以长格式的形式查看当前目录下所有可见文件的详细属性。</p>
+</blockquote>
+<h4 id="man命令">man命令
+</h4><p>它会接受一个程序名作为参数，然后将它的文档（用户手册）展现给您。注意，使用 q 可以退出该程序。</p>
+<h4 id="cat命令">cat命令
+</h4><p>cat命令是Linux系统中用于查看、创建和合并文件内容的工具。‌它源自英文单词“concatenate”，意为“连接”。cat命令的基本功能是将多个文件的内容串联起来显示在标准输出（通常是终端）上。</p>
+<blockquote>
+<p>查看单个文件的内容‌：使用命令 cat filename。
+创建新文件并输入内容‌：使用命令 cat &gt; newfile，用户可以在终端中输入内容，然后使用Ctrl+D保存文件。
+‌合并多个文件的内容‌：使用命令 cat file1 file2，这将合并file1和file2的内容并显示在终端上。
+‌重定向输出‌：可以将命令的输出重定向到文件中，使用 &gt; 符号创建新文件，使用 &raquo; 符号将内容附加到现有文件。‌</p>
+</blockquote>
+<h4 id="touch命令">touch命令
+</h4><p>创建一个文件。</p>
+<h4 id="mkdir命令">mkdir命令
+</h4><p>创建新文件夹</p>
+<h4 id="rm命令">rm命令
+</h4><p>删除指定的文件。<strong>谨慎使用</strong></p>
+<blockquote>
+<p>rm &lt;文件名&gt;：删除指定的文件。
+rm -r &lt;目录名&gt;：递归删除指定目录下的所有文件和子目录。
+rm -f &lt;文件名&gt;：强制删除，不进行确认提示。
+rm -i &lt;文件名&gt;：在删除前进行确认提示。</p>
+</blockquote>
+<h4 id="重定向输入输出流">重定向输入输出流
+</h4><p><code>&lt; file</code>和<code> &gt; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> hello &gt; hello.txt  
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>给hello.txt里面写入hello。</p>
+<h4 id="sudo">sudo
+</h4><p>root提升权限。</p>
+<h4 id="chmod命令">chmod命令
+</h4><p>chmod（change mode）命令是用于控制用户对文件的权限的命令。     <br>
+Linux/Unix 的文件调用权限分为三级 : 文件所有者（Owner）、用户组（Group）、其它用户（Other Users）如下：  <br>
+<img src="/1.1.png"
+	
+	
 	
 	loading="lazy"
 	
-		alt="PX4工程文件1"
+	
+>   <br>
+只有文件所有者和超级用户可以修改文件或目录的权限。可以使用绝对模式（八进制数字模式），符号模式指定文件的权限，而使用权限则为所有使用者。   <br>
+<code>chmod 777 file</code> 给全部权限打开。读 + 写 + 执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">777</span> file//表示User、Group、及Other的权限都设为rwx
+</span></span><span class="line"><span class="cl">chmod <span class="m">764</span> file//表示User、Group、及Other的权限分别为rwx、rw-、r--
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以上摘录自：https://blog.csdn.net/qq_52836452/article/details/129642664</p>
+<h4 id="sh命令">sh命令
+</h4><p>sh是linux中运行shell的命令，是shell的解释器，shell脚本是linux中壳层与命令行界面，用户可以在shell脚本输入命令来执行各种各样的任务。
+shell程序必须以“#!/bin/sh”开始。shell中#一般表示注释的意思，所以很多时候认为&quot;#!&ldquo;也是注释，但实际上并不是。</p>
+<blockquote>
+<p>PS
+&ldquo;#!/bin/sh&quot;是对shell的声明，说明你所用的是哪种类型的shell及其路径所在。     <br>
+#!/bin/是指此脚本使用.bin/sh来执行。    <br>
+#!是特殊的表示符，其后面跟的是解释此脚本的shell的路径，如果没有声明，则脚本将在默认的shell中执行，默认shell是由用户所在的系统定义为执行shell脚本，如果脚本被编写为在Kornshell ksh中运行，而默认运行shell脚本的为C shell csh,则脚本在执行过程中很可能失败。所以建议大家就把&rdquo;#!/bin/sh&quot;当成C 语言的main函数一样，写shell必须有，以使shell程序更严密。</p>
+</blockquote>
+<p>以上摘录自：https://blog.csdn.net/mrsgflmx/article/details/143429498          <br>
+WSL2下查看笔记本电量。虚拟机无此数据，无法查看。  <br>
+<img src="/1.2.png"
 	
 	
-		class="gallery-image" 
-		data-flex-grow="165"
-		data-flex-basis="396px"
-	
-></p>
-<h3 id="新建飞行任务antiwindtask">新建飞行任务AntiWindTask
-</h3><p>按照PX4官方指导文档新建自己的一个飞行任务 <a class="link" href="https://docs.px4.io/v1.14/en/"  target="_blank" rel="noopener"
-    >官方新建任务指导</a></p>
-<p>最终参考了1.14版本的指导文件，一开始看的main指导文件去配置了XTdrone自动配置的1.13的PX4工程，发现在moduls文件下根本没有飞行任务配置。。。接着去使用1.15的PX4工程，但是在CMakeList文件中有所不同，在每一个版本中都有不同之处。1.15版本也会有bug存在。<br>
-最后使用1.14版本，参考了1.14的指导文档，依然是CmakeList那里不对，文档中的放置位置在官方代码1.14.4版本中根本就没有。</p>
-<p>1.14.4版本中最后无奈我放到了一个差不多的位置。如下： <br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/1.png"
-	width="595"
-	height="182"
-	
-	loading="lazy"
-	
-		alt="Error"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="326"
-		data-flex-basis="784px"
-	
-></p>
-<p>但是在进行FMU-V2构建烧录代码时也会一直出现bug如下，但是很奇怪使用PX4-SITL构建仿真时便没有错误出现，1.15也是如此： <br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/2.png"
-	width="751"
-	height="507"
 	
 	loading="lazy"
 	
-		alt="1"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="148"
-		data-flex-basis="355px"
 	
 ></p>
-<p>最后在github工程发表了issues，最终我更换了FMU-V3来构建，这个错误便消除了。最终成功执行了任务。在QGC地面站也可以正常识别。<br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/AntiWind.png"
-	width="1117"
-	height="579"
-	
-	loading="lazy"
-	
-		alt="AntiWind"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="192"
-		data-flex-basis="463px"
-	
-></p>
-<h4 id="newflighttask分析">NewFlightTask分析：
-</h4><p>在指导文件中，其让我们修改了MPC_POS_MOD这个参数，很确定的是此参数决定了飞机在手动-Position定点飞行模式时要执行的实际代码中的任务模式。在源工程中有4中，但只能选择一种。 <br>
-这也在侧面看出PX4的代码很庞大，实际运行只有那么一点。但是要真正简化这个系统也是很麻烦且没必要。<br>
-指导文件默认的效果是控制台输出一段文字。然后实际飞机并不会升高。<br>
-<img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%9C%80%E5%88%9D%E4%BB%BF%E7%9C%9F%E6%95%88%E6%9E%9C.png"
-	width="1553"
-	height="977"
-	
-	loading="lazy"
-	
-		alt="飞行模式最初仿真效果"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="158"
-		data-flex-basis="381px"
-	
-></p>
-<h3 id="manual-position飞行模式分析">Manual-Position飞行模式分析
-</h3><p>下面以Manual-Position飞行模式为例子对PX4原有的飞行模式进行分析，以便我们写出自己的飞行模式。 <br>
-但是在飞行模式中，可以看出并没有PID相关的直接控制。在这些控制代码中，更多的是作为一种高级控制。分析摇杆输入等混合输入，来对SetPoint进行赋值，分发给更底层的PID控制机构。</p>
-<h3 id="飞行日志分析">飞行日志分析
-</h3><p>可以使用PX4的在线FlightReview。方便快速查看飞行数据。 <br>
-更详细的可以使用PX4开发的pyulog的Python处理库，可以转为CSV文件，使用Matlab分析。</p>
-
+<h2 id="shell工具和脚本">Shell工具和脚本
+</h2><p>&lsquo;xx&rsquo;与&quot;xx&quot;符号的区别</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">foo</span><span class="o">=</span>bar
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$foo</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 打印 bar</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;$foo&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 打印 $foo</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>bash支持函数操作</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mcd <span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    mkdir -p <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">cd</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里 $1 是脚本的第一个参数。与其他脚本语言不同的是，bash 使用了很多特殊的变量来表示参数、错误代码和相关变量。</p>
+<ul>
+<li><code>$0</code> - 脚本名</li>
+<li><code>$1</code> 到 <code>$9</code> - 脚本的参数。 <code>$1</code> 是第一个参数，依此类推。</li>
+<li><code>$@</code> - 所有参数</li>
+<li><code>$#</code> - 参数个数</li>
+<li><code>$?</code> - 前一个命令的返回值</li>
+<li><code>$$</code> - 当前脚本的进程识别码</li>
+<li><code>!!</code> - 完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 <code>sudo !!</code> 再尝试一次。</li>
+<li><code>$_</code> - 上一条命令的最后一个参数。如果你正在使用的是交互式 shell，你可以通过按下 <code>Esc</code> 之后键入 . 来获取这个值
+命令通常使用 <code>STDOUT</code> 来返回输出值，使用 <code>STDERR</code> 来返回错误及错误码，便于脚本以更加友好的方式报告错误。
+返回码或退出状态是脚本/命令之间交流执行状态的方式。返回值 0 表示正常执行，其他所有非 0 的返回值都表示有错误发生。</li>
+</ul>
+<p>退出码可以搭配 <code>&amp;&amp;</code>（与操作符）和 <code>||</code>（或操作符）使用，用来进行条件判断，决定是否执行其他程序。它们都属于短路 <a class="link" href="https://en.wikipedia.org/wiki/Short-circuit_evaluation"  target="_blank" rel="noopener"
+    >运算符</a>（short-circuiting） 同一行的多个命令可以用 <code>;</code> 分隔。程序 <code>true</code> 的返回码永远是 <code>0</code>，<code>false</code> 的返回码永远是 <code>1</code>。</p>
+<h2 id="编辑器-vim">编辑器 (Vim)
+</h2><h2 id="数据整理">数据整理
+</h2><h2 id="命令行环境">命令行环境
+</h2><h2 id="版本控制git">版本控制(Git)
+</h2>
 </section>
 
 
@@ -507,7 +620,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/px4/">PX4</a>
+            <a href="/tags/ysyx/">YSYX</a>
         
     </section>
 
@@ -564,6 +677,19 @@
         <div class="flex article-list--tile">
             
                 
+<article class="">
+    <a href="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">YOLO学习随笔</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
 <article class="has-image">
     <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
         
@@ -588,26 +714,24 @@
 
             
                 
-<article class="">
-    <a href="/p/linux/">
+<article class="has-image">
+    <a href="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/">
         
         
-
-        <div class="article-details">
-            <h2 class="article-title">Linux</h2>
-        </div>
-    </a>
-</article>
-
-            
+            <div class="article-image">
+                <img src="/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.7feead8e10ef1500ffda6e72e1a5e94f.png" 
+                        width="2560" 
+                        height="1549" 
+                        loading="lazy"
+                        alt="Featured image of post PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶"
+                        
+                        data-hash="md5-f&#43;6tjhDvFQD/2m5y4aXpTw==">
                 
-<article class="">
-    <a href="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/">
-        
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">YOLO学习随笔</h2>
+            <h2 class="article-title">PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶</h2>
         </div>
     </a>
 </article>

@@ -8,11 +8,11 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>YSYX学习-1-Linux系统安装和基本使用</title>
-        <link>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+        <title>Linux</title>
+        <link>https://a233a2.github.io/p/linux/</link>
         <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+        <guid>https://a233a2.github.io/p/linux/</guid>
         <description>&lt;p&gt;学习记录： &lt;a class=&#34;link&#34; href=&#34;https://docs.qq.com/sheet/DQ0lRY2tNb2VIZWVB?newPad=1&amp;amp;newPadType=clone&amp;amp;tab=BB08J4&amp;amp;_t=1728471922939&amp;amp;u=555637143d844e0f8b3d1a7c9c34bebf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;学习记录&lt;/a&gt;。 &lt;br&gt;
 内容：&lt;a class=&#34;link&#34; href=&#34;https://missing-semester-cn.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -134,16 +134,12 @@ rm -i &amp;lt;文件名&amp;gt;：在删除前进行确认提示。&lt;/p&gt;
 &lt;h4 id=&#34;chmod命令&#34;&gt;chmod命令
 &lt;/h4&gt;&lt;p&gt;chmod（change mode）命令是用于控制用户对文件的权限的命令。     &lt;br&gt;
 Linux/Unix 的文件调用权限分为三级 : 文件所有者（Owner）、用户组（Group）、其它用户（Other Users）如下：  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/1.1.png&#34;
-	width=&#34;784&#34;
-	height=&#34;340&#34;
+&lt;img src=&#34;https://a233a2.github.io/1.1.png&#34;
+	
+	
 	
 	loading=&#34;lazy&#34;
 	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;230&#34;
-		data-flex-basis=&#34;553px&#34;
 	
 &gt;   &lt;br&gt;
 只有文件所有者和超级用户可以修改文件或目录的权限。可以使用绝对模式（八进制数字模式），符号模式指定文件的权限，而使用权限则为所有使用者。   &lt;br&gt;
@@ -170,16 +166,12 @@ shell程序必须以“#!/bin/sh”开始。shell中#一般表示注释的意思
 &lt;/blockquote&gt;
 &lt;p&gt;以上摘录自：https://blog.csdn.net/mrsgflmx/article/details/143429498          &lt;br&gt;
 WSL2下查看笔记本电量。虚拟机无此数据，无法查看。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-1-linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E5%92%8C%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/1.2.png&#34;
-	width=&#34;1093&#34;
-	height=&#34;386&#34;
+&lt;img src=&#34;https://a233a2.github.io/1.2.png&#34;
+	
+	
 	
 	loading=&#34;lazy&#34;
 	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;283&#34;
-		data-flex-basis=&#34;679px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;shell工具和脚本&#34;&gt;Shell工具和脚本
@@ -235,56 +227,6 @@ WSL2下查看笔记本电量。虚拟机无此数据，无法查看。  &lt;br&g
 &lt;/h2&gt;&lt;h2 id=&#34;命令行环境&#34;&gt;命令行环境
 &lt;/h2&gt;&lt;h2 id=&#34;版本控制git&#34;&gt;版本控制(Git)
 &lt;/h2&gt;</description>
-        </item>
-        <item>
-        <title>YSYX学习-2-C语言</title>
-        <link>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-2-c%E8%AF%AD%E8%A8%80/</link>
-        <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/ysyx%E5%AD%A6%E4%B9%A0-2-c%E8%AF%AD%E8%A8%80/</guid>
-        <description>&lt;h2 id=&#34;编译器基础&#34;&gt;编译器基础
-&lt;/h2&gt;&lt;p&gt;###运行一个编译后的c程序。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ ./ex1
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Hello world.
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ make ex1
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# or this one too&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ &lt;span class=&#34;nv&#34;&gt;CFLAGS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;-Wall&amp;#34;&lt;/span&gt; make ex1
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;所以它会给make通常使用的cc命令添加-Wall选项。这行命令告诉cc编译器要报告所有的警告（然而实际上不可能报告所有警告）。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-makefile&#34; data-lang=&#34;makefile&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CFLAGS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-Wall -g
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;clean&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    rm -f ex1
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;将文件在你的当前文件夹上保存为Makefile。Make会自动假设当前文件夹中有一个叫做Makefile的文件，并且会执行它。此外，一定要注意：确保你只输入了 TAB 字符，而不是空格和 TAB 的混合。 &lt;br&gt;
-Makefile向你展示了make的一些新功能。首先我们在文件中设置CFLAGS，所以之后就不用再设置了。并且，我们添加了-g标识来获取调试信息。接着我们写了一个叫做clean的部分，它告诉make如何清理我们的小项目。 &lt;br&gt;
-注意makefile只能写入TAB 不可写入空格?&lt;/p&gt;
-</description>
         </item>
         <item>
         <title>Latex笔记</title>
@@ -416,18 +358,6 @@ Makefile向你展示了make的一些新功能。首先我们在文件中设置CF
 	
 &gt;&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>Simulink-PX4-WSL开发</title>
-        <link>https://a233a2.github.io/p/simulink-px4-wsl%E5%BC%80%E5%8F%91/</link>
-        <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/simulink-px4-wsl%E5%BC%80%E5%8F%91/</guid>
-        <description>&lt;p&gt;前面已经完成了环境配置：&lt;a class=&#34;link&#34; href=&#34;https://a233a2.github.io/p/simulink-px4-wsl2%e4%bb%bf%e7%9c%9f%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;simulink-px4-wsl2仿真环境搭建&lt;/a&gt;    &lt;br&gt;
-接下来使用这个开发环境进行特殊算法的部署，记录在这个页面。&lt;/p&gt;
-&lt;h3 id=&#34;simulink电机转动模型&#34;&gt;Simulink电机转动模型
-&lt;/h3&gt;</description>
         </item>
         <item>
         <title>YOLO学习随笔</title>
@@ -1976,48 +1906,6 @@ Simulink建立一个这样的简单读取数据的模型。 &lt;br&gt;
 </description>
         </item>
         <item>
-        <title>电路学基础</title>
-        <link>https://a233a2.github.io/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
-        <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/%E7%94%B5%E8%B7%AF%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;p&gt;非电子专业自用知识点，水平低下请见谅。&lt;/p&gt;
-&lt;h3 id=&#34;电分基础定理&#34;&gt;电分基础定理
-&lt;/h3&gt;&lt;h4 id=&#34;基尔霍夫电流定律kcl&#34;&gt;基尔霍夫电流定律（KCL）
-&lt;/h4&gt;&lt;p&gt;基尔霍夫电流定律：简写为KCL，可描述为对任一集总参数电路，在任一时刻，流入（或“流出”）任一结点的电流的代数和等于零。 &lt;br&gt;
-在任何一个节点处，所有进入该节点的电流之和等于所有离开该节点的电流之和。&lt;/p&gt;
-&lt;h4 id=&#34;基尔霍夫电压定律kvl&#34;&gt;基尔霍夫电压定律（KVL）
-&lt;/h4&gt;&lt;p&gt;基尔霍夫电压定律：简写为KVL，其可表述为对任一集总参数电路，在任一时刻，环绕任一回路（可自行假定为逆时针环绕或者顺时针环绕）,所有支路电压降（或“电压升”）的代数和等于零。 &lt;br&gt;
-在一个封闭回路中，总电压降等于总电动势。&lt;/p&gt;
-&lt;h4 id=&#34;路的等效分析方法&#34;&gt;路的等效分析方法
-&lt;/h4&gt;&lt;p&gt;戴维南定理：电路可以替代为一个电压源和一个电阻构成的等效电路。其中求等效电阻时将电压源短路，电流源断路。&lt;/p&gt;
-&lt;p&gt;诺顿定理：线性二端电路可以由电流源IN和与之并联的电阻RN构成的等效电路替代，其中IN为流过端口的短路电流，RN为独立电流源关闭时端口的输入电阻（或等效）电阻。&lt;/p&gt;
-&lt;h3 id=&#34;元器件电路分析&#34;&gt;元器件电路分析
-&lt;/h3&gt;&lt;h4 id=&#34;二极管&#34;&gt;二极管
-&lt;/h4&gt;&lt;h4 id=&#34;三极管&#34;&gt;三极管
-&lt;/h4&gt;&lt;h4 id=&#34;场效应管&#34;&gt;场效应管
-&lt;/h4&gt;&lt;h4 id=&#34;运算放大器&#34;&gt;运算放大器
-&lt;/h4&gt;&lt;h3 id=&#34;阻抗匹配&#34;&gt;阻抗匹配
-&lt;/h3&gt;&lt;p&gt;具有电阻、电感和电容的电路里，对交流电所起的阻碍作用叫做阻抗。阻抗常用Z表示。阻抗由电阻、感抗和容抗三者组成，但不是三者简单相加。阻抗的单位是欧。&lt;/p&gt;
-&lt;h4 id=&#34;电路元件的阻抗&#34;&gt;电路元件的阻抗
-&lt;/h4&gt;&lt;p&gt;如果将元件在正弦稳态时电压相量与电流相量之比定义为该元件的阻抗Z，则有：
-$$
-Z=\frac{\overset{\bullet}{U}}{\overset{\bullet}{I}}
-$$&lt;/p&gt;
-&lt;p&gt;$$
-Z_R=R
-$$&lt;/p&gt;
-&lt;p&gt;$$
-Z_C=\frac{1}{j\omega C}
-$$&lt;/p&gt;
-&lt;p&gt;$$
-Z_L=j\omega L
-$$&lt;/p&gt;
-&lt;h4 id=&#34;传输线的特征阻抗&#34;&gt;传输线的特征阻抗
-&lt;/h4&gt;&lt;h4 id=&#34;传输线上的反射&#34;&gt;传输线上的反射
-&lt;/h4&gt;</description>
-        </item>
-        <item>
         <title>PADS学习日记</title>
         <link>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
         <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
@@ -2188,12 +2076,12 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 </description>
         </item>
         <item>
-        <title>Docker基础</title>
-        <link>https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/</link>
+        <title>Docker使用小记</title>
+        <link>https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/11.jpg" alt="Featured image of post Docker基础" /&gt;&lt;p&gt;参考：
+        <guid>https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.jpg" alt="Featured image of post Docker使用小记" /&gt;&lt;p&gt;参考：
 &lt;a class=&#34;link&#34; href=&#34;https://yeasy.gitbook.io/docker_practice&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Docker-从入门到实践&lt;/a&gt;&amp;mdash;一本书 &lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://juejin.cn/post/7021006271818137630?share_token=878fa440-84d9-4d8a-980e-aaba73440daf#heading-4_&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -2216,7 +2104,7 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 镜像就类似一个食谱，容器就是根据食谱做出来的一道菜。&lt;/p&gt;
 &lt;h4 id=&#34;dockerfile&#34;&gt;Dockerfile
 &lt;/h4&gt;&lt;p&gt;自动化脚本，用以创建镜像。&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/dockerfile.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/dockerfile.jpg&#34;
 	width=&#34;360&#34;
 	height=&#34;447&#34;
 	
@@ -2249,7 +2137,7 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;Dockerfile中写入如下的运行流程，交给Docker自动运行。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/dockfile1.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/dockfile1.jpg&#34;
 	width=&#34;639&#34;
 	height=&#34;330&#34;
 	
@@ -2277,7 +2165,7 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;输出结果： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/dockerrun-1.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/dockerrun-1.jpg&#34;
 	width=&#34;1557&#34;
 	height=&#34;1094&#34;
 	
@@ -2343,7 +2231,7 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;构建完成镜像大小为6.5GB左右&lt;/p&gt;
 &lt;h4 id=&#34;3-构建firmware时使用docker环境&#34;&gt;3 构建Firmware时使用Docker环境？
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/docker%E5%9F%BA%E7%A1%80/px4-1.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/px4-1.png&#34;
 	width=&#34;875&#34;
 	height=&#34;335&#34;
 	
@@ -2359,46 +2247,6 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 &gt; &lt;br&gt;
 3这个还没试过&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>专属空调房</title>
-        <link>https://a233a2.github.io/p/%E4%B8%93%E5%B1%9E%E7%A9%BA%E8%B0%83%E6%88%BF/</link>
-        <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/%E4%B8%93%E5%B1%9E%E7%A9%BA%E8%B0%83%E6%88%BF/</guid>
-        <description>&lt;p&gt;凉快&lt;/p&gt;
-&lt;iframe height=&#34;740&#34; src=&#34;https://loquacious-bienenstitch-58539b.netlify.app/&#34;&gt;&lt;/iframe&gt;    
-&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=330 height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=2636640305&amp;auto=1&amp;height=66&#34;&gt;&lt;/iframe&gt;    </description>
-        </item>
-        <item>
-        <title>INAV无人机搭建</title>
-        <link>https://a233a2.github.io/p/inav%E6%97%A0%E4%BA%BA%E6%9C%BA%E6%90%AD%E5%BB%BA/</link>
-        <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/inav%E6%97%A0%E4%BA%BA%E6%9C%BA%E6%90%AD%E5%BB%BA/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/inav%E6%97%A0%E4%BA%BA%E6%9C%BA%E6%90%AD%E5%BB%BA/INAV1.png" alt="Featured image of post INAV无人机搭建" /&gt;&lt;h3 id=&#34;inav无人机搭建&#34;&gt;INAV无人机搭建
-&lt;/h3&gt;&lt;p&gt;飞控：重山AT32 F435VIM7&lt;br&gt;
-电调：&lt;br&gt;
-电机：2004-1750kv电机&lt;br&gt;
-机架：5寸-牙签机架 &lt;br&gt;
-图传：&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>机器学习基础</title>
-        <link>https://a233a2.github.io/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/</link>
-        <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;h2 id=&#34;机器学习分类&#34;&gt;机器学习分类
-&lt;/h2&gt;&lt;h3 id=&#34;无监督学习&#34;&gt;无监督学习
-&lt;/h3&gt;&lt;h4 id=&#34;聚类问题&#34;&gt;聚类问题
-&lt;/h4&gt;&lt;h4 id=&#34;监督学习&#34;&gt;监督学习
-&lt;/h4&gt;&lt;h4 id=&#34;回归问题&#34;&gt;回归问题
-&lt;/h4&gt;&lt;h4 id=&#34;分类问题&#34;&gt;分类问题
-&lt;/h4&gt;&lt;h4 id=&#34;强化学习&#34;&gt;强化学习
-&lt;/h4&gt;&lt;h4 id=&#34;无监督学习-1&#34;&gt;无监督学习
-&lt;/h4&gt;</description>
         </item>
         <item>
         <title>神经网络基础</title>
@@ -3259,19 +3107,6 @@ $$e=−dt/dλ$$ &lt;br&gt;
 </description>
         </item>
         <item>
-        <title>工程数学基础</title>
-        <link>https://a233a2.github.io/p/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
-        <pubDate>Thu, 24 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/%E5%B7%A5%E7%A8%8B%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;h2 id=&#34;一些概念&#34;&gt;一些概念
-&lt;/h2&gt;&lt;h3 id=&#34;范数&#34;&gt;范数
-&lt;/h3&gt;&lt;h3 id=&#34;高斯函数&#34;&gt;高斯函数
-&lt;/h3&gt;&lt;h3 id=&#34;最小二乘法&#34;&gt;最小二乘法
-&lt;/h3&gt;&lt;h3 id=&#34;最小二乘-矩阵形式推导&#34;&gt;最小二乘-矩阵形式推导
-&lt;/h3&gt;</description>
-        </item>
-        <item>
         <title>DRCAN-Learn-Blog-Advance</title>
         <link>https://a233a2.github.io/p/drcan-learn-blog-advance/</link>
         <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
@@ -4103,323 +3938,6 @@ $$L[{f(t)*g(t)}]=F(s)​G(s)$$&lt;/p&gt;
 &lt;/h3&gt;</description>
         </item>
         <item>
-        <title>PX4控制系统</title>
-        <link>https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/</link>
-        <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/%E9%85%8D%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%9B%BE.jpg" alt="Featured image of post PX4控制系统" /&gt;&lt;p&gt;参考：&lt;a class=&#34;link&#34; href=&#34;https://docs.px4.io/main/zh/flight_stack/controller_diagrams.html#%E5%A4%9A%E6%97%8B%E7%BF%BC%E7%9A%84%E6%8E%A7%E5%88%B6%E6%9E%B6%E6%9E%84&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;控制器图解-PX4-Guide-main&lt;/a&gt;      &lt;br&gt;
-本节包括PX4主要控制器的图解。&lt;/p&gt;
-&lt;h2 id=&#34;多旋翼的控制架构&#34;&gt;多旋翼的控制架构
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.1.png&#34;
-	width=&#34;875&#34;
-	height=&#34;330&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;265&#34;
-		data-flex-basis=&#34;636px&#34;
-	
-&gt; &lt;br&gt;
-这是一个标准的级联控制架构。&lt;br&gt;
-控制器采用P和PID控制的组合方式。&lt;br&gt;
-Estimates come from EKF2.&lt;br&gt;
-在某些模式下，外环(位置回路) 可能会被绕过 (在图中表示为外环之后增加一个多路开关)。 只有在位置保持模式或某轴无速度请求时，位置回路才会发挥作用。&lt;/p&gt;
-&lt;h3 id=&#34;多旋翼角速率控制器&#34;&gt;多旋翼角速率控制器
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/px4%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/1.2.png&#34;
-	width=&#34;887&#34;
-	height=&#34;322&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;275&#34;
-		data-flex-basis=&#34;661px&#34;
-	
-&gt; &lt;br&gt;
-采用K-PID控制器。  &lt;br&gt;
-为了防止积分饱和，积分环节的权重是受限的，
-输出受到限制（在控制分配模块中），通常为 -1 和 1。 &lt;br&gt;
-低通滤波器 (LPF) 用于导数路径以减少噪声（陀螺仪驱动器向控制器提供滤波后的导数）。&lt;/p&gt;
-&lt;h3 id=&#34;多旋翼姿态控制器&#34;&gt;多旋翼姿态控制器
-&lt;/h3&gt;&lt;h3 id=&#34;多旋翼加速度到推力和姿态设定点的转换&#34;&gt;多旋翼加速度到推力和姿态设定点的转换
-&lt;/h3&gt;&lt;h3 id=&#34;多旋翼速度控制器&#34;&gt;多旋翼速度控制器
-&lt;/h3&gt;&lt;h3 id=&#34;旋翼位置控制器&#34;&gt;旋翼位置控制器
-&lt;/h3&gt;&lt;h3 id=&#34;静态力矩-pi-缩放补偿&#34;&gt;静态力矩 (PI) 缩放补偿
-&lt;/h3&gt;&lt;h2 id=&#34;固定翼的控制架构&#34;&gt;固定翼的控制架构
-&lt;/h2&gt;&lt;h2 id=&#34;vtol的控制架构&#34;&gt;VTOL的控制架构
-&lt;/h2&gt;</description>
-        </item>
-        <item>
-        <title>PX4飞行控制器配置日志PX4-1基础</title>
-        <link>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1%E5%9F%BA%E7%A1%80/</link>
-        <pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1%E5%9F%BA%E7%A1%80/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1%E5%9F%BA%E7%A1%80/fengmian.png" alt="Featured image of post PX4飞行控制器配置日志PX4-1基础" /&gt;&lt;p&gt;对PX4官网的Github文件进行解析：
-&lt;img src=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1%E5%9F%BA%E7%A1%80/px4_1.png&#34;
-	width=&#34;991&#34;
-	height=&#34;875&#34;
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;PX4工程文件1&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;113&#34;
-		data-flex-basis=&#34;271px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1.ci：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这个目录通常包含与持续集成（CI）相关的配置文件，例如Jenkins、Travis CI或GitHub Actions的配置。它负责自动化编译、测试、部署等任务。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2.clusterfuzzlite：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;用于与ClusterFuzzLite相关的配置文件，这是一种自动化模糊测试框架，帮助发现代码中的安全漏洞。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3.devcontainer：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含VSCode开发容器的配置，用于在隔离的容器环境中开发PX4代码。方便开发人员在一致的开发环境中工作。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4.github：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含GitHub的配置文件，如GitHub Actions、Issue模板和Pull Request模板，用于自动化流程和优化项目管理。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5.vscode：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含Visual Studio Code的配置文件，定义了编译、调试和代码检查的工作流，以便开发人员在VSCode中更方便地开发PX4代码。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;6.Documentation：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含项目的文档文件，帮助开发者和用户了解如何使用、配置和开发PX4飞控系统。通常包括用户指南、API文档、教程等。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;7.ROMFS：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ROMFS是只读文件系统，通常用于存储PX4固件中的静态数据，如参数文件、启动脚本等。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;8.Tools：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这个目录包含各种开发工具和脚本，常用于构建、测试、仿真和部署PX4代码。比如，可能包含用于自动化工具链配置的脚本。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;9.boards：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含与各种硬件平台（如飞控板、传感器等）相关的定义和配置文件。每种硬件的特定启动配置和硬件抽象层都位于该目录中。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;10.cmake：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含CMake构建系统的配置文件，用于定义如何编译PX4代码。CMake是一个跨平台的构建工具，管理依赖项和生成编译文件。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;11.integrationtests/python_src/px4_it：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含集成测试相关的Python脚本，主要用于自动化测试PX4的不同模块和功能，以确保系统的稳定性和正确性。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;12.launch：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含与ROS或仿真环境中的启动文件相关的配置，通常是用于启动PX4在仿真器或真实硬件上的配置文件。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13.msg：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含与PX4通信协议（如MAVLink）相关的消息定义文件，用于定义飞控系统与外部系统（如地面站、传感器等）之间的消息格式。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;14.platforms：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含与不同硬件平台相关的底层代码和配置，如NuttX的初始化文件、硬件抽象层等。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;15.posix-configs：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含POSIX系统（如Linux）上的配置文件，通常用于定义在仿真环境中运行PX4的配置。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;//16.src：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;源代码目录，包含PX4的主要功能模块的实现代码，如飞行控制算法、传感器处理、姿态估计等。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;17.srv：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;服务定义文件，通常用于ROS系统中的服务（services），用于系统内不同节点之间的通信和请求/响应模式的交互。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;18.test：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含测试代码和测试框架，用于对PX4功能进行单元测试和集成测试，确保各个模块功能的正确性和健壮性。
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/px4%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%99%A8%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97px4-1%E5%9F%BA%E7%A1%80/px4_2.png&#34;
-	width=&#34;997&#34;
-	height=&#34;816&#34;
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;PX4工程文件2&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;122&#34;
-		data-flex-basis=&#34;293px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;19.test_data：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含测试所需的测试数据或测试脚本，用于集成测试和回归测试，以验证代码改动是否影响系统行为。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;20.validation：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;包含验证代码、数据或测试的文件，确保PX4的各个部分在特定条件下的表现符合预期。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;21.clang-tidy：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Clang-Tidy是一个C++代码分析工具，这个文件包含其配置，用于代码的静态分析，发现潜在的错误和优化点。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;22.editorconfig：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;EditorConfig配置文件，用于定义代码格式的规则，如缩进、换行符、字符编码等，确保不同开发者之间代码风格的一致性。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;23.gitattributes、.gitignore：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;用于Git的配置文件。.gitattributes用于定义文件的特定处理方式，.gitignore则列出需要被Git忽略的文件和目录。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;24.CMakeLists.txt：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这是CMake项目的核心配置文件，定义了如何编译整个PX4项目，包括源文件的路径、依赖项、编译选项等。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;25.CODE_OF_CONDUCT.md：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;项目的行为准则，规定了开发者在贡献代码和参与社区时需要遵守的行为规范。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;26.CONTRIBUTING.md：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;为开发者提供的贡献指南，解释了如何参与项目开发、提交代码和报告问题等流程。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;27.CTestConfig.cmake：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CMake的测试配置文件，定义了如何运行项目的测试，并收集测试结果。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;28.Jenkinsfile：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Jenkins持续集成系统的配置文件，定义了在Jenkins上自动化构建和测试的流水线。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;29.Kconfig：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;用于配置系统的文件，通常用于嵌入式系统中，定义了各个硬件模块或软件模块的配置选项。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;30.LICENSE：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;项目的开源许可证文件，说明了PX4的使用和分发权限。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;31.Makefile：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;传统的编译配置文件，定义了如何使用Make工具构建项目。对于不使用CMake的部分或平台，Makefile提供了另一种编译方式。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;32.README.md：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;项目的概述和基本介绍，通常包括如何编译、安装和使用PX4飞控系统的基本信息。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;33.SECURITY.md：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;有关安全漏洞报告和处理流程的文档，指导开发者如何报告和解决项目中的安全问题。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;34.package.xml：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;通常用于ROS包，定义了包的元数据，如依赖项、版本号和维护者信息。
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;src文件解析&#34;&gt;SRC文件解析
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. src/modules/mc_att_control：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这个目录包含与多旋翼无人机姿态控制相关的代码。姿态控制的核心就是通过PID控制器来调节无人机的滚转、俯仰和偏航角的稳定性。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mc_att_control_main.cpp 是姿态控制的主要代码文件。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. src/modules/mc_pos_control：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这个目录包含与多旋翼无人机位置控制相关的代码。PID控制器在此负责无人机的三维位置和高度控制。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mc_pos_control_main.cpp 是位置控制的核心实现文件，包含位置控制的PID逻辑。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. src/lib/controllib：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这个目录下包含PX4的控制库，其中定义了PID控制器的通用实现。这里的文件用于多个模块的控制需求。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pid.cpp 是PID控制器的核心实现，定义了如何计算误差、比例项、积分项和微分项。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. src/modules/fw_att_control 和 src/modules/fw_pos_control：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;如果你关注的是固定翼无人机的PID控制，可以查看这两个目录。它们分别负责固定翼无人机的姿态控制和位置控制。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5. 参数文件 (ROMFS)：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;PID控制器的参数通常在参数文件中定义，可以通过修改这些参数调整控制器的性能。可以在 ROMFS/px4fmu_common/init.d 目录中找到默认的参数文件，里面会定义PID控制器的增益值（如P、I、D系数）。
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;nuttxrtos&#34;&gt;NuttxRTOS
-&lt;/h3&gt;&lt;p&gt;这应该是个很复杂的单片机实时系统。&lt;/p&gt;
-&lt;h3 id=&#34;mavlink协议&#34;&gt;MAVLink协议
-&lt;/h3&gt;&lt;p&gt;QGC地面站会通过MAVLink协议将QGC针对飞机的配置参数发送给飞控系统，而飞控系统则将这些参数存储在存储设备中。
-暂时用不太上。&lt;/p&gt;
-&lt;h3 id=&#34;qgc地面站试飞&#34;&gt;QGC地面站试飞
-&lt;/h3&gt;&lt;p&gt;在QGC地面站对PX4飞控进行调试试飞，开始时抖动剧烈，随着将速度环PID参数特别是D项降低后抖动变小。但是只能在高度模式稳定飞行，在自稳以及特技等模式均不稳定。
-后续准备加入GPS自动飞行来测试稳定性。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;高度（Altitude）模式试飞视频&lt;/strong&gt;
-&lt;video src=&#34;试飞.mp4&#34;  poster=&#34;试飞图.png&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;h4 id=&#34;qgc地面站通信无线数传配置&#34;&gt;QGC地面站通信无线数传配置
-&lt;/h4&gt;&lt;p&gt;数传模块使用了LQ的无线串口模块。将SH1.25-6Pin接口与XH2.54杜邦线进行连接后，使用绝缘胶布进行绝缘处理。将SH1.25-6Pin接入飞控的TELEM1口进行配置。
-地面站中将TELEM1的波特率输出改为115200（LQ无线串口模块的BAUD），在QCG设置中添加一个数据连接接口。即可完成数传的配置。但是可能因为数据传输较大，距离在5m左右传输已经是极限了。&lt;/p&gt;
-&lt;h3 id=&#34;对原有飞行模式修改与添加新的功能&#34;&gt;对原有飞行模式修改与添加新的功能
-&lt;/h3&gt;&lt;h4 id=&#34;1px4中的飞行模式主要定义文件&#34;&gt;1、PX4中的飞行模式主要定义文件：
-&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;Commander模块（src/modules/commander）：&lt;/strong&gt;&lt;br&gt;
-主要负责飞行模式的管理和状态机控制。&lt;br&gt;
-commander.cpp：这是Commander模块的主文件，包含了飞行模式的&lt;strong&gt;状态机&lt;/strong&gt;逻辑。commander_state.cpp：管理飞行模式的状态定义。&lt;br&gt;
-&lt;strong&gt;Flight Mode Manager模块（src/modules/mc_pos_control 和 src/modules/fw_pos_control_l1）：&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;多旋翼飞行器（mc_pos_control）&lt;/strong&gt; 和 **固定翼飞行器（fw_pos_control_l1）**的飞行模式控制。&lt;br&gt;
-在这些模块中，具体的飞行控制算法实现了如何根据不同的飞行模式，进行姿态、位置或速度控制。&lt;/p&gt;
-&lt;p&gt;飞行模式的状态机逻辑位于commander.cpp文件中。它根据用户输入、飞行器状态和环境条件来决定当前飞行模式。你需要熟悉这些状态之间的切换条件以及各模式的具体功能实现。&lt;/p&gt;
-&lt;h3 id=&#34;定义新的飞行模式&#34;&gt;定义新的飞行模式：
-&lt;/h3&gt;&lt;p&gt;在commander_state.h文件中，添加新的飞行模式枚举。例如，如果你要创建一个自定义的“智能悬停模式”：
-VEHICLE_MODE_FLAG_SMART_HOVER
-&lt;strong&gt;实现飞行模式逻辑：&lt;/strong&gt;&lt;br&gt;
-在commander.cpp文件中，添加或修改相应的飞行模式逻辑。&lt;br&gt;
-你可以参考已有的飞行模式（如POSCTL或ALTCTL）的实现方式，将自定义逻辑嵌入其中。比如，你可以根据条件判断激活智能悬停模式： &lt;br&gt;
-&lt;code&gt;    if (user_input == CUSTOM_SMART_HOVER_CONDITION) {   vehicle_status_s = VEHICLE_MODE_FLAG_SMART_HOVER;   }     &lt;/code&gt; &lt;br&gt;
-&lt;strong&gt;实现控制算法：&lt;/strong&gt;&lt;br&gt;
-根据自定义飞行模式的功能需求，你可能需要在姿态控制模块（mc_att_control）或位置控制模块（mc_pos_control）中添加自定义的控制算法。
-可以根据飞行器当前的状态、位置、高度等数据来设计智能悬停的控制算法，使其在特定条件下表现出不同的控制行为。 &lt;br&gt;
-&lt;strong&gt;测试飞行模式&lt;/strong&gt;&lt;br&gt;
-在模拟环境（如SITL）中对修改后的飞行模式进行测试。   确保飞行模式在不同情况下能够正确切换和响应用户输入。&lt;/p&gt;
-&lt;h3 id=&#34;pixhawk-248-的接线&#34;&gt;Pixhawk 2.4.8 的接线
-&lt;/h3&gt;&lt;p&gt;TELEM1/2 GPS接口的定义为 VCC TX RX TX1 RX1 GND&lt;br&gt;
-I2C接口的定义为 VCC SDA SCL GND&lt;/p&gt;
-&lt;h3 id=&#34;添加光流以及gps模块的试飞&#34;&gt;添加光流以及GPS模块的试飞
-&lt;/h3&gt;&lt;p&gt;光流室内定点飞行测试：&lt;br&gt;
-&lt;video src=&#34;试飞2.mp4&#34;  poster=&#34;试飞图.png&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;h3 id=&#34;室外光流定点以及更换大机架大电机的飞行&#34;&gt;室外光流定点以及更换大机架大电机的飞行
-&lt;/h3&gt;&lt;p&gt;更换了1.2m的大机架。然后电机采用的好盈H6M 130Kv 植保机用大功率电机。电池12s。 &lt;br&gt;
-PID参数只是调小了一点，其余与小飞机一致。大飞机天生稳定一些。参数不太好调，所以先将就用下。  &lt;br&gt;
-&lt;video src=&#34;试飞3.mp4&#34;  poster=&#34;试飞图.png&#34; width=&#34;848px&#34; height=&#34;480px&#34;   controls=&#34;controls&#34;&gt;&lt;/video&gt;&lt;/p&gt;
-&lt;h3 id=&#34;gps室外定点飞行测试&#34;&gt;GPS室外定点飞行测试：
-&lt;/h3&gt;&lt;p&gt;暂无，GPS一直没调通。不知道什么问题。可能是口烧了？或者是模块有问题，但是换了两个模块了。&lt;br&gt;
-下次排除问题可以试试把GPS口换为TELEM口再试一下。这样可以确定口烧没。&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>2024年终总结</title>
         <link>https://a233a2.github.io/p/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
         <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
@@ -4959,11 +4477,11 @@ V／F控制一般用于要求不太高的场合，对于电机转速控制精度
 &lt;/h4&gt;</description>
         </item>
         <item>
-        <title>FreeRTOS学习笔记</title>
-        <link>https://a233a2.github.io/p/freertos%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <title>FreeRTOS学习小记</title>
+        <link>https://a233a2.github.io/p/freertos%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/freertos%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://a233a2.github.io/p/freertos%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/</guid>
         <description>&lt;h3 id=&#34;freertos&#34;&gt;FreeRTOS
 &lt;/h3&gt;&lt;p&gt;FreeRTOS在嵌入式的开发中十分的重要，本人之前对于同一时间进行多种任务的做法普遍都是设置定时器中断程序。这样做或许能解决燃眉之急，但是在大型项目中便有一些捉襟见肘，尤其是使用这种方式对于MCU的任务调度十分的不明确，显得十分的乱。故对于FreeRTOS这种MCU操作系统的应用便显得尤为重要。
 官方文档：https://freertos.org/zh-cn-cmn-s/Documentation/00-Overview&lt;/p&gt;
@@ -4984,11 +4502,11 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 &lt;/h3&gt;</description>
         </item>
         <item>
-        <title>ADRC课程笔记</title>
-        <link>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</link>
+        <title>ADRC小记</title>
+        <link>https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/</guid>
+        <guid>https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/</guid>
         <description>&lt;h3 id=&#34;adrc课程笔记&#34;&gt;ADRC课程笔记
 &lt;/h3&gt;&lt;p&gt;本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些经典与现代控制理论方向的相关知识。&lt;/p&gt;
 &lt;h4 id=&#34;生理前馈系统&#34;&gt;生理前馈系统
@@ -5017,7 +4535,7 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 &lt;h3 id=&#34;更进一步---pid控制器&#34;&gt;更进一步&amp;mdash;PID控制器
 &lt;/h3&gt;&lt;p&gt;1 极点配置方法调节PID参数  &lt;br&gt;
 确定极点位置来对闭环系统的Kp Ki进行确定。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.1.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.1.png&#34;
 	width=&#34;1151&#34;
 	height=&#34;517&#34;
 	
@@ -5030,7 +4548,7 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 	
 &gt;  &lt;br&gt;
 这里极点配置 根据一阶系统 二阶系统 的阶跃响应曲线来根据期望的TS调节时间根据经验选取。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.2.png&#34;
 	width=&#34;1779&#34;
 	height=&#34;814&#34;
 	
@@ -5042,7 +4560,7 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 		data-flex-basis=&#34;524px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.3.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.3.png&#34;
 	width=&#34;1815&#34;
 	height=&#34;865&#34;
 	
@@ -5059,7 +4577,7 @@ CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&
 &lt;h3 id=&#34;积分串联型控制&#34;&gt;积分串联型控制
 &lt;/h3&gt;&lt;h4 id=&#34;简单理想发动机转速控制模型&#34;&gt;简单理想发动机转速控制模型：
 &lt;/h4&gt;&lt;p&gt;从扭矩 或者电压调整转速 这属于一阶系统。采用比例控制即可很好的进行控制 如下图所示设计控制过程。     &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.5.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.5.png&#34;
 	width=&#34;1825&#34;
 	height=&#34;952&#34;
 	
@@ -5080,7 +4598,7 @@ J是转动惯量，转速由w的导数表示。M为力矩。  &lt;br&gt;
 $$
 \frac{\omega}{M}=\frac{1}{Js}
 $$ &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.6.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.6.png&#34;
 	width=&#34;1812&#34;
 	height=&#34;787&#34;
 	
@@ -5093,7 +4611,7 @@ $$ &lt;br&gt;
 	
 &gt;   &lt;br&gt;
 设计如下： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.4.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.4.png&#34;
 	width=&#34;1730&#34;
 	height=&#34;856&#34;
 	
@@ -5106,7 +4624,7 @@ $$ &lt;br&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;简单理想发动机转角控制模型&#34;&gt;简单理想发动机转角控制模型：
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.7.png&#34;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.7.png&#34;
 	width=&#34;1722&#34;
 	height=&#34;797&#34;
 	
@@ -5122,7 +4640,7 @@ $$
 \frac{\theta}{M}=\frac{1}{Js^2}
 $$ &lt;br&gt;
 设计比例微分PD控制器。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.8.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.8.png&#34;
 	width=&#34;1611&#34;
 	height=&#34;806&#34;
 	
@@ -5144,7 +4662,7 @@ $$ &lt;br&gt;
 &lt;/h3&gt;&lt;h3 id=&#34;扩张状态观测器eso-估计总扰动&#34;&gt;扩张状态观测器ESO-估计总扰动
 &lt;/h3&gt;&lt;p&gt;个人理解：&lt;strong&gt;扩张状态观测器，即在原本观测器的基础上，加入积分环节（一个积分环节对应一个状态，也就是直观的扩张出来了一个状态）。使得总扰动的估计能够消除稳态误差。&lt;/strong&gt;   &lt;br&gt;
 系统类似下图，使用Simulink模块简单画一下，表示一下  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.13.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.13.png&#34;
 	width=&#34;1449&#34;
 	height=&#34;781&#34;
 	
@@ -5158,7 +4676,7 @@ $$ &lt;br&gt;
 &gt;  &lt;br&gt;
 果然反步法的设计过程是重要的，这样看来也有一定相似之处。&lt;br&gt;
 观测器，观察每一个状态的演变过程，所以用导数。也就是状态方程。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.9.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.9.png&#34;
 	width=&#34;1495&#34;
 	height=&#34;656&#34;
 	
@@ -5172,7 +4690,7 @@ $$ &lt;br&gt;
 &gt;  &lt;br&gt;
 总扰动f的导不知道，先写一个h。 &lt;br&gt;
 &lt;strong&gt;观测器使用测量的偏差与估计的偏差。分别矫正了所有状态的微分方程。只要参数β123调节好，就可以准确估计总扰动。便可以改造出积分串联型理想系统。进而可以很好的控制系统。&lt;/strong&gt;          &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.10.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.10.png&#34;
 	width=&#34;1517&#34;
 	height=&#34;757&#34;
 	
@@ -5198,7 +4716,7 @@ $$
 $$ &lt;br&gt;
 a决定极点的位置。所以很明显决定系统稳定以及收敛速度的是a。 &lt;br&gt;
 对状态空间表达式x导=Ax+bu也是如此。A决定系统稳定性以及各种性能。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.11.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.11.png&#34;
 	width=&#34;1342&#34;
 	height=&#34;716&#34;
 	
@@ -5211,7 +4729,7 @@ a决定极点的位置。所以很明显决定系统稳定以及收敛速度的�
 	
 &gt;   &lt;br&gt;
 特征值决定了状态空间中，每一个状态演变的快与慢。特征值也就是传递函数的极点。这是一个普遍且重要的理论。     &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1.12.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.12.png&#34;
 	width=&#34;1356&#34;
 	height=&#34;719&#34;
 	
@@ -5233,18 +4751,18 @@ $$ &lt;br&gt;
 &lt;/h2&gt;</description>
         </item>
         <item>
-        <title>KiCad学习日记</title>
-        <link>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
+        <title>KiCad学习小记</title>
+        <link>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
+        <guid>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/</guid>
         <description>&lt;h3 id=&#34;kicad学习日记&#34;&gt;KiCad学习日记
 &lt;/h3&gt;&lt;h4 id=&#34;导出gerber文件-jlc打样&#34;&gt;导出Gerber文件-JLC打样
 &lt;/h4&gt;&lt;h4 id=&#34;1-导出gerber的设置&#34;&gt;1 导出Gerber的设置：
 &lt;/h4&gt;&lt;p&gt;从b站搬运：https://www.bilibili.com/read/cv22773523/?spm_id_from=333.976.0.0 &lt;br&gt;
 （KiCAD设计使用立创免费打样的方法及KiCAD插件） &lt;br&gt;
 生成gerber文件&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/gerber.png&#34;
 	width=&#34;955&#34;
 	height=&#34;659&#34;
 	
@@ -5259,7 +4777,7 @@ $$ &lt;br&gt;
 	
 &gt;&lt;br&gt;
 生成钻孔文件&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/drl.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/drl.png&#34;
 	width=&#34;646&#34;
 	height=&#34;642&#34;
 	
@@ -5274,7 +4792,7 @@ $$ &lt;br&gt;
 	
 &gt;&lt;br&gt;
 生成的gerber文件最终结构如下：&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/gerber2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/gerber2.png&#34;
 	width=&#34;709&#34;
 	height=&#34;351&#34;
 	
@@ -5290,7 +4808,7 @@ $$ &lt;br&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;2-修改gerber文件使得可在jlc打样&#34;&gt;2 修改Gerber文件使得可在JLC打样
 &lt;/h4&gt;&lt;p&gt;创建两个文件  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E6%96%87%E4%BB%B6%E5%9B%BE.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E6%96%87%E4%BB%B6%E5%9B%BE.png&#34;
 	width=&#34;667&#34;
 	height=&#34;145&#34;
 	
@@ -5606,7 +5124,7 @@ $$ &lt;br&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;对源文件进行替换，把标*的行之上换为自己的工程的。&lt;/p&gt;
 &lt;p&gt;在Kicad的脚本控制台中输入如下：来引入脚本  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E8%84%9A%E6%9C%AC.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/%E8%84%9A%E6%9C%AC.png&#34;
 	width=&#34;1009&#34;
 	height=&#34;681&#34;
 	
@@ -5981,33 +5499,6 @@ SH1.25的接口画错了，属实是大意了。飞线暂时解决了问题。
 &lt;h3 id=&#34;as5600磁编码器数据读取&#34;&gt;AS5600磁编码器数据读取
 &lt;/h3&gt;&lt;p&gt;AS5600是12位的霍尔磁编码器，它的地址是0x36，只需要读取0x0C、0x0D这两个寄存器就可以读出角度的原始数据，再将其乘以360，再除以4096，就可以获得角度值。&lt;/p&gt;
 &lt;p&gt;鸽了一段时间，等忙完就马上开始测试。在此之前还需要把电源修好、、、、悲&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>个人记</title>
-        <link>https://a233a2.github.io/p/%E4%B8%AA%E4%BA%BA%E8%AE%B0/</link>
-        <pubDate>Sat, 14 Sep 2024 22:20:23 +0800</pubDate>
-        
-        <guid>https://a233a2.github.io/p/%E4%B8%AA%E4%BA%BA%E8%AE%B0/</guid>
-        <description>
-
-
-
-
-
-    
-
-
-&lt;div class=&#34;video-wrapper&#34;&gt;
-    &lt;iframe src=&#34;https://player.bilibili.com/player.html?as_wide=1&amp;amp;high_quality=1&amp;amp;page=1&amp;bvid=BV15TBiYbE3A&#34;
-            scrolling=&#34;no&#34;
-            frameborder=&#34;no&#34;
-            framespacing=&#34;0&#34;
-            allowfullscreen=&#34;true&#34;
-    &gt;
-    &lt;/iframe&gt;
-&lt;/div&gt;
-
 </description>
         </item>
         <item>
