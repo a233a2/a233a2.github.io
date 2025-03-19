@@ -3,39 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://a233a2.github.io/</loc>
-    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/categories/</loc>
-    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/p/linux/</loc>
-    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/post/</loc>
-    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/tags/</loc>
-    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/tags/ysyx/</loc>
-    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/</loc>
-    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</loc>
-    <lastmod>2024-12-16T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/latex/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/p/latex%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://a233a2.github.io/p/latex%E5%B0%8F%E8%AE%B0/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/post/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/tags/</loc>
+    <lastmod>2024-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/</loc>
     <lastmod>2024-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/yolo/</loc>
     <lastmod>2024-11-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/</loc>
+    <loc>https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2024-11-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/</loc>
     <lastmod>2024-11-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/px4/</loc>
@@ -47,7 +41,7 @@
     <loc>https://a233a2.github.io/tags/pads/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
+    <loc>https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/</loc>
     <lastmod>2024-11-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/docker/</loc>
@@ -56,17 +50,11 @@
     <loc>https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/</loc>
     <lastmod>2024-11-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/</loc>
+    <lastmod>2024-11-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://a233a2.github.io/tags/nerunet/</loc>
     <lastmod>2024-11-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2024-11-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/tags/math/</loc>
-    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/</loc>
-    <lastmod>2024-11-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/pmsm/</loc>
     <lastmod>2024-10-26T00:00:00+00:00</lastmod>
@@ -78,12 +66,6 @@
     <lastmod>2024-10-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/drcan-learn-blog-advance/</loc>
-    <lastmod>2024-10-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/p/drcan-learn-blog-basic/</loc>
-    <lastmod>2024-10-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://a233a2.github.io/p/drcan-learn-blog-opt/</loc>
     <lastmod>2024-10-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/matlab/</loc>
@@ -122,7 +104,7 @@
     <loc>https://a233a2.github.io/tags/freertos/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/p/freertos%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/</loc>
+    <loc>https://a233a2.github.io/p/freertos%E5%B0%8F%E8%AE%B0/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/tags/adrc/</loc>
@@ -134,7 +116,7 @@
     <loc>https://a233a2.github.io/tags/kicad/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://a233a2.github.io/p/kicad%E5%AD%A6%E4%B9%A0%E5%B0%8F%E8%AE%B0/</loc>
+    <loc>https://a233a2.github.io/p/kicad%E5%B0%8F%E8%AE%B0/</loc>
     <lastmod>2024-09-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/</loc>
@@ -157,6 +139,10 @@
   </url><url>
     <loc>https://a233a2.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://a233a2.github.io/p/linux/</loc>
+  </url><url>
+    <loc>https://a233a2.github.io/tags/ysyx/</loc>
   </url><url>
     <loc>https://a233a2.github.io/%E5%85%B3%E4%BA%8E/</loc>
   </url><url>

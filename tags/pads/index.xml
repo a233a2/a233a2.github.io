@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/pads/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>PADS学习日记</title>
-        <link>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</link>
+        <title>PADS小记</title>
+        <link>https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/pads.jpg" alt="Featured image of post PADS学习日记" /&gt;&lt;h2 id=&#34;基础操作&#34;&gt;基础操作
+        <guid>https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/pads.jpg" alt="Featured image of post PADS小记" /&gt;&lt;h2 id=&#34;基础操作&#34;&gt;基础操作
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1px41177gM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;PADS简易教程&lt;/a&gt; &lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;http://www.edahelper.com/edahelper/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -28,7 +28,7 @@ PADS Layout：封装
 PADS Logic：原理图
 PADS Router：布线&lt;/p&gt;
 &lt;h3 id=&#34;绘制板框&#34;&gt;绘制板框
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E7%BB%98%E5%88%B6%E6%9D%BF%E6%A1%86.jpg&#34;
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/%E7%BB%98%E5%88%B6%E6%9D%BF%E6%A1%86.jpg&#34;
 	width=&#34;1122&#34;
 	height=&#34;962&#34;
 	
@@ -48,7 +48,7 @@ PADS Router：布线&lt;/p&gt;
 &lt;p&gt;全选画的线，右键选择特性，类型选择板框。另外i有DXF文件也可以导入DXF文件来确定板框。&lt;/p&gt;
 &lt;h3 id=&#34;原理图转pcb&#34;&gt;原理图转PCB
 &lt;/h3&gt;&lt;p&gt;原理图与PCB通过Logic连接。点击发送网表即可。也可以在PCB页面手动导入网表（.asc文件）  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/%E5%8E%9F%E7%90%86%E5%9B%BE%E8%BD%ACPCB%E6%93%8D%E4%BD%9C1.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/%E5%8E%9F%E7%90%86%E5%9B%BE%E8%BD%ACPCB%E6%93%8D%E4%BD%9C1.jpg&#34;
 	width=&#34;1189&#34;
 	height=&#34;569&#34;
 	
@@ -71,7 +71,7 @@ PADS Router：布线&lt;/p&gt;
 &lt;h3 id=&#34;得到pcb和sch工程后如何建库关联&#34;&gt;得到PCB和SCH工程后如何建库关联
 &lt;/h3&gt;&lt;p&gt;原理就是新建一个库，把所有现存的封装都加进去，然后就可以了，十分简单。  &lt;br&gt;
 首先新建一个库，将其放到最开始。这样索引的时候可以最先索引。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU1.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/KU1.jpg&#34;
 	width=&#34;1038&#34;
 	height=&#34;564&#34;
 	
@@ -86,7 +86,7 @@ PADS Router：布线&lt;/p&gt;
 	
 &gt;   &lt;br&gt;
 选择原理图中的元件，只选原件。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU2.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/KU2.jpg&#34;
 	width=&#34;391&#34;
 	height=&#34;184&#34;
 	
@@ -101,7 +101,7 @@ PADS Router：布线&lt;/p&gt;
 	
 &gt;   &lt;br&gt;
 选中后，右键选择保存到库中。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU3.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/KU3.jpg&#34;
 	width=&#34;228&#34;
 	height=&#34;563&#34;
 	
@@ -116,7 +116,7 @@ PADS Router：布线&lt;/p&gt;
 	
 &gt;   &lt;br&gt;
 全选-确定。提示有重复的话直接覆盖就可以。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU4.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/KU4.jpg&#34;
 	width=&#34;484&#34;
 	height=&#34;369&#34;
 	
@@ -131,7 +131,7 @@ PADS Router：布线&lt;/p&gt;
 	
 &gt;   &lt;br&gt;
 PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选中元件，在空白处右键选择筛选条件，把胶粘元件勾选上。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU5.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/KU5.jpg&#34;
 	width=&#34;722&#34;
 	height=&#34;750&#34;
 	
@@ -146,7 +146,7 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 	
 &gt;   &lt;br&gt;
 一样的操作，全选，覆盖。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU6.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/KU6.jpg&#34;
 	width=&#34;476&#34;
 	height=&#34;427&#34;
 	
@@ -160,7 +160,7 @@ PCB也是如此，在开始时，可能由于有胶粘元件的设置无法选�
 		data-flex-basis=&#34;267px&#34;
 	
 &gt;   &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/KU7.jpg&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/pads%E5%B0%8F%E8%AE%B0/KU7.jpg&#34;
 	width=&#34;619&#34;
 	height=&#34;502&#34;
 	

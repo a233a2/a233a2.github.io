@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Latex笔记-记录Latex常用命令与模板-供自己使用">
-<title>Latex笔记</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="作者本人的FreeRTOS学习笔记">
+<title>FreeRTOS小记</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/latex%E7%AC%94%E8%AE%B0/'>
+<link rel='canonical' href='https://a233a2.github.io/p/freertos%E5%B0%8F%E8%AE%B0/'>
 
-<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Latex笔记">
-<meta property='og:description' content="Latex笔记-记录Latex常用命令与模板-供自己使用">
-<meta property='og:url' content='https://a233a2.github.io/p/latex%E7%AC%94%E8%AE%B0/'>
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="FreeRTOS小记">
+<meta property='og:description' content="作者本人的FreeRTOS学习笔记">
+<meta property='og:url' content='https://a233a2.github.io/p/freertos%E5%B0%8F%E8%AE%B0/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Latex' /><meta property='article:published_time' content='2024-12-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-12-15T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="Latex笔记">
-<meta name="twitter:description" content="Latex笔记-记录Latex常用命令与模板-供自己使用">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='FreeRTOS' /><meta property='article:published_time' content='2024-09-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-09-18T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="FreeRTOS小记">
+<meta name="twitter:description" content="作者本人的FreeRTOS学习笔记">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
   
@@ -284,10 +284,12 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#超简单自用模板">超简单自用模板</a></li>
-    <li><a href="#其他功能">其他功能</a>
+    <li>
       <ol>
-        <li><a href="#插入图片">插入图片</a></li>
+        <li><a href="#freertos">FreeRTOS</a></li>
+        <li><a href="#freertos核心机制">FreeRTOS核心机制</a></li>
+        <li><a href="#freertos延时函数">FreeRTOS延时函数</a></li>
+        <li><a href="#freertos的部署">FreeRTOS的部署</a></li>
       </ol>
     </li>
   </ol>
@@ -308,8 +310,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/" style="background-color: #ff99ff; color: #000;">
-                学术类别
+            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
+                工程类别
             </a>
         
     </header>
@@ -317,12 +319,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/latex%E7%AC%94%E8%AE%B0/">Latex笔记</a>
+            <a href="/p/freertos%E5%B0%8F%E8%AE%B0/">FreeRTOS小记</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Latex笔记-记录Latex常用命令与模板-供自己使用
+            作者本人的FreeRTOS学习笔记
         </h3>
         
     </div>
@@ -343,7 +345,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-12-15</time>
+                <time class="article-time--published">2024-09-18</time>
             </div>
         
 
@@ -373,130 +375,24 @@
     <section class="article-content">
     
     
-    <h2 id="超简单自用模板">超简单自用模板
-</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Latex" data-lang="Latex"><span class="line"><span class="cl"><span class="k">\documentclass</span><span class="na">[11pt]</span><span class="nb">{</span>report<span class="nb">}</span> <span class="c">%设置正文的字体大小 以及文章类型 常用report article IEEEtran等
-</span></span></span><span class="line"><span class="cl"><span class="c">%ASMATH公式  graphicx支持图片IEEEtran
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\usepackage</span><span class="nb">{</span>amsmath, amsthm, amssymb, graphicx<span class="nb">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">\usepackage</span><span class="na">[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]</span><span class="nb">{</span>hyperref<span class="nb">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">\usepackage</span><span class="nb">{</span>cite<span class="nb">}</span><span class="c">% \cite{bibtex1，bibtex2，bibtex3} 饮用后可以变为--&gt; [1]-[3]
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>
-</span></span><span class="line"><span class="cl"><span class="k">\usepackage</span><span class="nb">{</span>multicol<span class="nb">}</span> <span class="c">% 用于实现在同一页中实现不同的分栏,导包
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\setlength\columnsep</span><span class="nb">{</span>0.6cm<span class="nb">}</span>  <span class="c">% 设置两栏之间的间距为0.6cm
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\columnseprule</span>=0.0pt           <span class="c">% 实现插入分隔线，用于分栏
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>multicols<span class="nb">}{</span>2<span class="nb">}</span>         <span class="c">% 分两栏 若花括号中为3则是分三栏
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\end</span><span class="nb">{</span>multicols<span class="nb">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">\usepackage</span><span class="nb">{</span>geometry<span class="nb">}</span><span class="c">% 页面布局设置
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\geometry</span><span class="nb">{</span>left=1.00in,right=1.00in,top=0.75in,bottom=0.75in<span class="nb">}</span>  <span class="c">%页面布局设置
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>
-</span></span><span class="line"><span class="cl"><span class="c">% 导言区 
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
-</span></span><span class="line"><span class="cl"><span class="c">%栏外标题！！！
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\markboth</span><span class="nb">{</span>Random process assignment,~Vol .~1, No.~1,~12~2024<span class="nb">}{</span>Shell <span class="k">\MakeLowercase</span><span class="nb">{</span><span class="k">\textit</span><span class="nb">{</span>et al.<span class="nb">}}</span>: Paper Title<span class="nb">}</span>
-</span></span><span class="line"><span class="cl"><span class="c">% 题目 无人机运动控制中随机控制与优化的发展现状综述
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\title</span><span class="nb">{</span><span class="k">\textbf</span><span class="nb">{</span>A review of the research status of Stochastic and interference in UAV motion control<span class="nb">}}</span><span class="c">%作者 标题加粗
-</span></span></span><span class="line"><span class="cl"><span class="c"></span>
-</span></span><span class="line"><span class="cl"><span class="k">\author</span><span class="nb">{}</span><span class="c">%作者
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\date</span><span class="nb">{</span>2024.12.11<span class="nb">}</span><span class="c">%时间
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\maketitle</span>
-</span></span><span class="line"><span class="cl"><span class="c">%摘要部分
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>abstract<span class="nb">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>abstract<span class="nb">}</span> 
-</span></span><span class="line"><span class="cl"><span class="k">\section</span><span class="nb">{</span>INTRODUCTION<span class="nb">}</span>
-</span></span><span class="line"><span class="cl"><span class="c">%正文部分
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>thebibliography<span class="nb">}{</span>00<span class="nb">}</span><span class="c">%引用
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\end</span><span class="nb">{</span>thebibliography<span class="nb">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="其他功能">其他功能
-</h2><h3 id="插入图片">插入图片
-</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl"><span class="k">\usepackage</span><span class="nb">{</span>graphicx<span class="nb">}</span> <span class="c">%必须要导入这个 尽量使用EPS格式的矢量图片 保证清晰
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>[htbp]
-</span></span><span class="line"><span class="cl">    <span class="k">\centering</span>
-</span></span><span class="line"><span class="cl">    <span class="k">\includegraphics</span><span class="na">[width=8cm]</span><span class="nb">{</span>images/1.1.png<span class="nb">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">\caption</span><span class="nb">{</span>UAV<span class="nb">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">\label</span> <span class="nb">{</span>1<span class="nb">}</span>
-</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><img src="/p/latex%E7%AC%94%E8%AE%B0/1.1.png"
-	width="854"
-	height="430"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="198"
-		data-flex-basis="476px"
-	
->   <br>
-<img src="/p/latex%E7%AC%94%E8%AE%B0/1.2.png"
-	width="1394"
-	height="652"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="213"
-		data-flex-basis="513px"
-	
-></p>
-
+    <h3 id="freertos">FreeRTOS
+</h3><p>FreeRTOS在嵌入式的开发中十分的重要，本人之前对于同一时间进行多种任务的做法普遍都是设置定时器中断程序。这样做或许能解决燃眉之急，但是在大型项目中便有一些捉襟见肘，尤其是使用这种方式对于MCU的任务调度十分的不明确，显得十分的乱。故对于FreeRTOS这种MCU操作系统的应用便显得尤为重要。
+官方文档：https://freertos.org/zh-cn-cmn-s/Documentation/00-Overview</p>
+<h3 id="freertos核心机制">FreeRTOS核心机制
+</h3><p><strong>优先级调度</strong>
+高优先级的准备就绪后，直接抢占CPU。<br>
+<strong>FCFS(先来先服务)</strong><br>
+同优先级，按照准备就绪的先后顺序执行。<br>
+<strong>时间片轮询</strong><br>
+有相同优先级的两个任务，其中一个一直没被抢占，则运行时间达到一个<strong>时间片</strong>则主动让出CPU。<br>
+ps：低优先级的任务对时间的控制较为不精确。高优先级的任务可以做到时间精确控制。</p>
+<h3 id="freertos延时函数">FreeRTOS延时函数
+</h3><p><strong>vTaskDelay(ms);</strong><br>
+当前任务暂时暂停xx ms，程序进入<strong>阻塞态</strong>，其中暂时时间内可以执行其他任务。<br>
+<strong>HAL_Delay(ms);</strong><br>
+CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。</p>
+<h3 id="freertos的部署">FreeRTOS的部署
+</h3>
 </section>
 
 
@@ -504,7 +400,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/latex/">Latex</a>
+            <a href="/tags/freertos/">FreeRTOS</a>
         
     </section>
 
@@ -562,25 +458,12 @@
             
                 
 <article class="">
-    <a href="/p/linux/">
+    <a href="/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">YOLO学习随笔</h2>
+            <h2 class="article-title">YOLO试玩&#43;实例记录</h2>
         </div>
     </a>
 </article>
@@ -611,13 +494,48 @@
 
             
                 
-<article class="">
-    <a href="/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">
+<article class="has-image">
+    <a href="/p/pads%E5%B0%8F%E8%AE%B0/">
         
+        
+            <div class="article-image">
+                <img src="/p/pads%E5%B0%8F%E8%AE%B0/pads.03e7c6b02900484b0fe404c4db2794f7.jpg" 
+                        width="720" 
+                        height="424" 
+                        loading="lazy"
+                        alt="Featured image of post PADS小记"
+                        
+                        data-hash="md5-A&#43;fGsCkASEsP5ATE2yeU9w==">
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">神经网络基础</h2>
+            <h2 class="article-title">PADS小记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/">
+        
+        
+            <div class="article-image">
+                <img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.599617b7531038da7073605e1426dcf4.jpg" 
+                        width="628" 
+                        height="308" 
+                        loading="lazy"
+                        alt="Featured image of post Docker使用小记"
+                        
+                        data-hash="md5-WZYXt1MQONpwc2BeFCbc9A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker使用小记</h2>
         </div>
     </a>
 </article>
@@ -625,12 +543,12 @@
             
                 
 <article class="">
-    <a href="/p/%E7%AE%97%E6%B3%95%E6%8C%96%E5%9D%91%E5%A1%AB%E5%9D%91/">
+    <a href="/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">算法挖坑填坑</h2>
+            <h2 class="article-title">PMSM原理加控制方法以及仿真</h2>
         </div>
     </a>
 </article>

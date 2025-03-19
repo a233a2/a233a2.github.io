@@ -8,16 +8,16 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Wed, 13 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/nerunet/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>神经网络基础</title>
-        <link>https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</link>
+        <title>CNN神经网-自用</title>
+        <link>https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/</link>
         <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</guid>
+        <guid>https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/</guid>
         <description>&lt;h2 id=&#34;基础&#34;&gt;基础
 &lt;/h2&gt;&lt;h3 id=&#34;两层神经网络分析为例&#34;&gt;两层神经网络分析为例
 &lt;/h3&gt;&lt;p&gt;摘自zhihu：&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/65472471&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;神经网络15分钟入门！足够通俗易懂了吧&lt;/a&gt;    &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png&#34;
 	width=&#34;891&#34;
 	height=&#34;562&#34;
 	
@@ -47,7 +47,7 @@ $$ Y=H*W2+b2 $$ &lt;br&gt;
 &lt;h4 id=&#34;激活层&#34;&gt;激活层
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;神经网络中的激活层（Activation Layer）主要负责为网络中的每一层神经元引入非线性因素。没有激活函数，神经网络就只能执行线性变换，而线性变换无法表达复杂的模式和特征。因此，激活函数是神经网络能够处理非线性问题、进行更复杂计算的关键。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;简而言之，激活层是为矩阵运算的结果添加非线性的。常用的激活函数有三种，分别是阶跃函数、Sigmoid和ReLU。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%BF%80%E6%B4%BB%E5%B1%82%E5%87%BD%E6%95%B0%E5%9B%BE.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/%E6%BF%80%E6%B4%BB%E5%B1%82%E5%87%BD%E6%95%B0%E5%9B%BE.png&#34;
 	width=&#34;854&#34;
 	height=&#34;321&#34;
 	
@@ -79,7 +79,7 @@ $$ Y=H*W2+b2 $$ &lt;br&gt;
 还是用90%举例，对数的负数就是：-log0.9=0.046  &lt;br&gt;
 &lt;strong&gt;可以想见，概率越接近100%，该计算结果值越接近于0，说明结果越准确，该输出叫做“交叉熵损失（Cross Entropy Error）”。&lt;/strong&gt;     &lt;br&gt;
 我们训练神经网络的目的，就是尽可能地减少这个“交叉熵损失”。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png&#34;
 	width=&#34;891&#34;
 	height=&#34;562&#34;
 	
@@ -109,7 +109,7 @@ $$ Y=H*W2+b2 $$ &lt;br&gt;
 &lt;h4 id=&#34;从前馈神经网络到cnn&#34;&gt;从前馈神经网络到CNN
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;前馈神经网络（Feedforward Neural Networks）&lt;strong&gt;是最基础的神经网络模型，也被称为&lt;/strong&gt;多层感知机（MLP）。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;它由多个神经元组成，每个神经元与前一层的所有神经元相连，形成一个“全连接”的结构。每个神经元会对其输入数据进行线性变换（通过权重矩阵），然后通过一个非线性函数（如ReLU或Sigmoid）进行激活。这就是前馈神经网络的基本操作。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/%E4%B8%A4%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84.png&#34;
 	width=&#34;891&#34;
 	height=&#34;562&#34;
 	
@@ -126,7 +126,7 @@ $$ Y=H*W2+b2 $$ &lt;br&gt;
 &lt;p&gt;卷积神经网络（Convolutional Neural Network, 简称CNN）开始。很大程度上，是由于CNN的基本组成部分与前馈神经网络有很紧密的关联，甚至可以说，CNN就是一种特殊的前馈神经网络。 &lt;br&gt;
 这两者的主要区别在于，CNN在前馈神经网络的基础上加入了&lt;strong&gt;卷积层&lt;/strong&gt;和&lt;strong&gt;池化层&lt;/strong&gt;（下边会讲到），以便&lt;strong&gt;更好地处理图像等具有空间结构的数据。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;现在画图说明一下。对于前馈神经网络，我们可以将简化后的网络结构如下图表示： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E5%8C%96.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E5%8C%96.png&#34;
 	width=&#34;617&#34;
 	height=&#34;445&#34;
 	
@@ -141,7 +141,7 @@ $$ Y=H*W2+b2 $$ &lt;br&gt;
 	
 &gt;    &lt;br&gt;
 当然，【全连接层-ReLU】可以有多个，此时网络结构可以表示为： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%A4%9A%E5%85%A8%E9%93%BE%E6%8E%A5%E5%B1%82%E7%9A%84%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/%E5%A4%9A%E5%85%A8%E9%93%BE%E6%8E%A5%E5%B1%82%E7%9A%84%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png&#34;
 	width=&#34;880&#34;
 	height=&#34;574&#34;
 	
@@ -156,7 +156,7 @@ $$ Y=H*W2+b2 $$ &lt;br&gt;
 	
 &gt;    &lt;br&gt;
 简单地说，CNN就是在此基础上，将全连接层换成卷积层，并在ReLU层之后加入池化层（非必须），那么一个基本的CNN结构就可以表示成这样： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/N%E5%B1%82%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/N%E5%B1%82%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.png&#34;
 	width=&#34;879&#34;
 	height=&#34;557&#34;
 	
@@ -175,7 +175,7 @@ $$ Y=H*W2+b2 $$ &lt;br&gt;
 卷积的过程，其实是一种滤波的过程，所以卷积核（Convolution Kernel）还有一个别名叫做Filter，也就是滤波器。     &lt;br&gt;
 &lt;strong&gt;当一组数像滑窗一样滑过另外一组数时，将对应的数据相乘并求和得到一组新的数，这个过程必然和卷积有着莫大的关系。&lt;/strong&gt; &lt;br&gt;
 其中权重系数都为1/3，也就是均值滤波的过程。变换不同的权重系数，滤波器将展现出不同的滤波特性。所以我们又可以得到一个结论：当权重系数（卷积核）的参数改变时，它可以提取的特征类型也会改变。所以训练卷积神经网络时，实质上训练的是卷积核的参数。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E5%8D%B7%E7%A7%AF%E6%A0%B8%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B-%E4%BA%8C%E7%BB%B4png.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/%E5%8D%B7%E7%A7%AF%E6%A0%B8%E8%BF%90%E7%AE%97%E8%BF%87%E7%A8%8B-%E4%BA%8C%E7%BB%B4png.png&#34;
 	width=&#34;607&#34;
 	height=&#34;440&#34;
 	
@@ -209,7 +209,7 @@ $$ Y=H*W2+b2 $$ &lt;br&gt;
 &lt;/h4&gt;&lt;p&gt;卷积层和全连接一样，也是一种线性变换，无论进行多少次这样的操作，都只能获得输入数据的线性组合。如果没有非线性的激活函数，那么即使是多层的神经网络，在理论上也可以被一个单层的神经网络所表达，这极大地限制了网络的表达能力。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;ReLU函数是一个非线性函数，只保留正数元素，将负数元素设置为0。这种简单的修正线性单元具有许多优点，例如，它能够缓解梯度消失问题，计算速度快，同时ReLU的输出是稀疏的，这有助于模型的正则化。ReLU的响应函数图像如下： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/RELU.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/RELU.png&#34;
 	width=&#34;390&#34;
 	height=&#34;305&#34;
 	
@@ -228,7 +228,7 @@ $$ Y=H*W2+b2 $$ &lt;br&gt;
 &lt;/h4&gt;&lt;p&gt;ReLU激活层之后就是池化层。 &lt;br&gt;
 池化层的主要作用是对非线性激活后的结果进行降采样，以减少参数的数量，避免过拟合，并提高模型的处理速度。 &lt;br&gt;
 池化层主要采用最大池化（Max Pooling）、平均池化（Average Pooling）等方式，对特征图进行操作。以最常见的最大池化为例，我们选择一个窗口（比如 2x2）在特征图上滑动，每次选取窗口中的最大值作为输出，这就是最大池化的工作方式： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/%E6%B1%A0%E5%8C%96%E5%B1%82.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/%E6%B1%A0%E5%8C%96%E5%B1%82.png&#34;
 	width=&#34;516&#34;
 	height=&#34;300&#34;
 	

@@ -8,13 +8,13 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Sat, 30 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/yolo/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>YOLO学习随笔</title>
-        <link>https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/</link>
+        <title>YOLO试玩&#43;实例记录</title>
+        <link>https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/</link>
         <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/</guid>
+        <guid>https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/</guid>
         <description>&lt;p&gt;YOLO（You Only Look Once）是一种流行的实时目标检测算法，它将目标检测任务作为一个回归问题来处理，直接预测图像中所有目标的位置和类别。与传统的目标检测方法（例如 R-CNN 系列）不同，YOLO 通过一个单一的神经网络在一次前向传播中同时进行目标识别和定位，因此非常高效，能够在实时应用中使用。&lt;/p&gt;
-&lt;h3 id=&#34;yolo-v11-环境配置&#34;&gt;YOLO v11 环境配置
+&lt;h3 id=&#34;yolo-运行环境配置&#34;&gt;YOLO 运行环境配置
 &lt;/h3&gt;&lt;p&gt;参考教程：
 &lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/2401_87734564/article/details/143926961&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;YOLO环境配置&lt;/a&gt;&lt;br&gt;
@@ -33,7 +33,7 @@ Conda创建了虚拟环境。名为yolo_env
 &lt;strong&gt;首先创建并激活虚拟环境。在Anaconda Navagator中操作即可。&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;虚拟环境中pytorch的安装&#34;&gt;虚拟环境中Pytorch的安装
 &lt;/h4&gt;&lt;p&gt;Pytorch的安装：https://pytorch.org/get-started/locally/  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.3.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.3.png&#34;
 	width=&#34;1119&#34;
 	height=&#34;474&#34;
 	
@@ -48,7 +48,7 @@ Conda创建了虚拟环境。名为yolo_env
 选择如上的版本号。在Pycharm终端中输入即可在对于环境中安装。&lt;/p&gt;
 &lt;h4 id=&#34;cuda安装-不是安装在虚拟环境&#34;&gt;CUDA安装-不是安装在虚拟环境
 &lt;/h4&gt;&lt;p&gt;首先安装CUDA toolkit       &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.5.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.5.png&#34;
 	width=&#34;1722&#34;
 	height=&#34;948&#34;
 	
@@ -60,7 +60,7 @@ Conda创建了虚拟环境。名为yolo_env
 		data-flex-basis=&#34;435px&#34;
 	
 &gt; &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.2.png&#34;
 	width=&#34;1326&#34;
 	height=&#34;887&#34;
 	
@@ -84,7 +84,7 @@ Conda创建了虚拟环境。名为yolo_env
 命令行中，测试是否安装成功；
 双击“exe文件”，选择下载路径（推荐默认路径）&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.4.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.4.png&#34;
 	width=&#34;584&#34;
 	height=&#34;399&#34;
 	
@@ -103,7 +103,7 @@ Conda创建了虚拟环境。名为yolo_env
 &lt;p&gt;注意事项：取消勾选Visual Studio Integration（这里解释一下，这个模块是对VS编译的支持，没有安装VS无法征常工作，而需要VS辅助则是需要编译cuda程序，这种编译不建议在Windows下进行，一般Windows下能跑深度学习原生框架的代码就行），其余全部勾选。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;安装完成后查看一下是否有环境变量，没有自己手动添加（9.0之后的版本环境变量是自动配置的，无需添加） &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.8.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.8.png&#34;
 	width=&#34;784&#34;
 	height=&#34;579&#34;
 	
@@ -119,7 +119,7 @@ Conda创建了虚拟环境。名为yolo_env
 &lt;h4 id=&#34;卸载cuda&#34;&gt;卸载CUDA
 &lt;/h4&gt;&lt;p&gt;参考：https://www.jianshu.com/p/c184e270b8d4     &lt;br&gt;
 &lt;strong&gt;保留如下的红色框选 删除其他的 删除顺序任意&lt;/strong&gt;      &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.11.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.11.png&#34;
 	width=&#34;1071&#34;
 	height=&#34;1002&#34;
 	
@@ -137,7 +137,7 @@ Conda创建了虚拟环境。名为yolo_env
 &lt;/blockquote&gt;
 &lt;p&gt;再次安装CUDA时发现CUDA安装失败。    &lt;br&gt;
 在网上查资料发现是驱动错误导致的，之前我是GameReady驱动，现在换成Studio系列。在这个驱动管理软件下能直接更换。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.12.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.12.png&#34;
 	width=&#34;2119&#34;
 	height=&#34;727&#34;
 	
@@ -153,7 +153,7 @@ Conda创建了虚拟环境。名为yolo_env
 &lt;/h4&gt;&lt;p&gt;cuDNN 其实就是 CUDA 的一个补丁而已，专为深度学习运算进行优化的。然后再参加环境变量 &lt;br&gt;
 下载后发现其实cudnn不是一个exe文件，而是一个压缩包，解压后，有三个文件夹，把三个文件夹拷贝到cuda的安装目录下。  &lt;br&gt;
 拷贝时看到，CUDA 的安装目录中，有和 cuDNN 解压缩后的同名文件夹，这里注意，不需要担心，直接复制即可。cuDNN 解压缩后的同名文件夹中的配置文件会添加到 CUDA安装目录中的同名文件夹中。【此处还是建议还是分别把文件夹的内容复制到对应文件夹中去】     &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.9.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.9.png&#34;
 	width=&#34;937&#34;
 	height=&#34;1207&#34;
 	
@@ -166,7 +166,7 @@ Conda创建了虚拟环境。名为yolo_env
 	
 &gt;   &lt;br&gt;
 在系统变量-Paht中添加环境变量  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.10.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.10.png&#34;
 	width=&#34;1420&#34;
 	height=&#34;1060&#34;
 	
@@ -180,7 +180,7 @@ Conda创建了虚拟环境。名为yolo_env
 &gt;&lt;/p&gt;
 &lt;p&gt;如何测试环境是否安装成功？   &lt;br&gt;
 打开cmd，输入nvcc -V查看cuda版本   &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.7.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.7.png&#34;
 	width=&#34;737&#34;
 	height=&#34;312&#34;
 	
@@ -268,7 +268,7 @@ Torch 和 PyTorch 是两个不同的深度学习框架。 &lt;br&gt;
 4、Torch 在一些方面比 PyTorch 更早成为流行的深度学习框架，但 PyTorch 在近年来逐渐取代了 Torch，成为了研究和工业界广泛使用的深度学习框架之一。&lt;/p&gt;
 &lt;h4 id=&#34;pycharm配置虚拟环境&#34;&gt;Pycharm配置虚拟环境
 &lt;/h4&gt;&lt;p&gt;下一步准备使用Pycharm进行开发。感觉相比Vscode好配置很多。     &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.1.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.1.png&#34;
 	width=&#34;1024&#34;
 	height=&#34;398&#34;
 	
@@ -289,7 +289,7 @@ Torch 和 PyTorch 是两个不同的深度学习框架。 &lt;br&gt;
 &lt;h3 id=&#34;yolo-v11-demo&#34;&gt;YOLO v11 Demo
 &lt;/h3&gt;&lt;p&gt;安装ultralytics。运行时提示缺少package的错误就是没安装这个。&lt;br&gt;
 按照官方教程使用Conda安装即可 如下图 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/1.13.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/1.13.png&#34;
 	width=&#34;1033&#34;
 	height=&#34;714&#34;
 	
@@ -333,7 +333,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
     &gt;yolo 锁头 教程&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;数据集获取&#34;&gt;数据集获取
 &lt;/h4&gt;&lt;p&gt;首先下载一个植物大战僵尸经典版本。这个属实是难倒我了。。。最后在植物大战僵尸吧找到了资源,并下载了完美存档。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/2.1.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/2.1.png&#34;
 	width=&#34;806&#34;
 	height=&#34;635&#34;
 	
@@ -346,7 +346,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 	
 &gt;     &lt;br&gt;
 下一步就是先自己玩一把，然后录屏，截图出300张左右的数据集。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/2.2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/2.2.png&#34;
 	width=&#34;1921&#34;
 	height=&#34;1034&#34;
 	
@@ -362,7 +362,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 &lt;/h4&gt;&lt;p&gt;先使用教学视频中UP给出的数据集压缩包进行自己的训练，后续有时间再试试自己标注数据集。&lt;/p&gt;
 &lt;h4 id=&#34;训练数据&#34;&gt;训练数据
 &lt;/h4&gt;&lt;p&gt;设置训练了500次 实际训练了200+次数  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/3.1.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/3.1.png&#34;
 	width=&#34;1790&#34;
 	height=&#34;473&#34;
 	
@@ -374,7 +374,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 		data-flex-basis=&#34;908px&#34;
 	
 &gt;   &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/3.2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/3.2.png&#34;
 	width=&#34;1532&#34;
 	height=&#34;569&#34;
 	
@@ -539,7 +539,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 &lt;/div&gt;&lt;p&gt;之后使用RoboFlow平台进行在线标注。&lt;/p&gt;
 &lt;h4 id=&#34;roboflow平台数据集标注&#34;&gt;RoboFlow平台数据集标注
 &lt;/h4&gt;&lt;p&gt;上传图片到RoboFlow平台，选择人工标注。这里可以选自动标注与平台帮你。这里我们选自己标注。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.1.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/4.1.png&#34;
 	width=&#34;456&#34;
 	height=&#34;554&#34;
 	
@@ -552,7 +552,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 	
 &gt;  &lt;br&gt;
 图片总数100.这里可以团队分工。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.2.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/4.2.png&#34;
 	width=&#34;446&#34;
 	height=&#34;439&#34;
 	
@@ -565,7 +565,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 	
 &gt;  &lt;br&gt;
 在线标注平台   &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.3.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/4.3.png&#34;
 	width=&#34;1871&#34;
 	height=&#34;919&#34;
 	
@@ -580,7 +580,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 标注完成后，选择分别用于训练，验证，以及测试的比例。 &lt;br&gt;
 训练即训练模型用的图片，验证则为在训练中验证的图片。以反馈训练效果。测试即训练完成后的测试。  &lt;br&gt;
 这里选择常用比例7：2：1   &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.4.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/4.4.png&#34;
 	width=&#34;447&#34;
 	height=&#34;526&#34;
 	
@@ -593,7 +593,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 	
 &gt;&lt;br&gt;
 最终如下，有4张图片没有标注，也就是图片中没有目标。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.4.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/4.4.png&#34;
 	width=&#34;447&#34;
 	height=&#34;526&#34;
 	
@@ -607,7 +607,7 @@ PS 也可以替换为双反斜杠，替换为正斜杠。&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;本地训练&#34;&gt;本地训练
 &lt;/h4&gt;&lt;p&gt;训练同上 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/yolo%E5%AD%A6%E4%B9%A0%E9%9A%8F%E7%AC%94/4.6.png&#34;
+&lt;img src=&#34;https://a233a2.github.io/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/4.6.png&#34;
 	width=&#34;1466&#34;
 	height=&#34;1031&#34;
 	
