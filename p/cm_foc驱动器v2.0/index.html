@@ -10,10 +10,10 @@
 <meta property='og:description' content="FOC驱动器">
 <meta property='og:url' content='https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='FOC' /><meta property='article:published_time' content='2025-03-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-19T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/cm_foc_real2.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='FOC' /><meta property='article:published_time' content='2025-03-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-03-19T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/1.4.png' />
 <meta name="twitter:title" content="CM_FOC驱动器V2.0">
 <meta name="twitter:description" content="FOC驱动器"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://a233a2.github.io/cm_foc_real2.png' />
+    <meta name="twitter:image" content='https://a233a2.github.io/1.4.png' />
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
   
@@ -306,7 +306,7 @@
         <div class="article-image">
             <a href="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/">
                 
-                    <img src="/cm_foc_real2.png" loading="lazy" alt="Featured image of post CM_FOC驱动器V2.0" />
+                    <img src="/1.4.png" loading="lazy" alt="Featured image of post CM_FOC驱动器V2.0" />
                 
             </a>
         </div>
@@ -481,12 +481,43 @@ MOS：NEC6050<br>
 问题1：设计出来的<strong>电感出现啸叫</strong>问题，应该是焊接出现了问题，焊接出现了电感空腔，导致电感啸叫。  <br>
 问题2：<strong>DRV8301的BUCK电源输出异常</strong>，应该是电源设计出现了问题，我计划先暂停驱动板的设计，使用手头上的驱动板先完成FOC的实现再去绘制驱动板。  <br>
 问题3：驱动板与控制板合体之后，仅USB供电下出现了<strong>MOS快速发热</strong>，我估计是出现了局部短路情况，在多次修补之后问题解决，但是我没用万用表测出是哪里短路的。。我把这个原因归结于我自己的焊接问题。。。。</p>
-<p>之后的措施：控制板的设计得益于多次的CH32V307芯片板设计经验，是没什么问题的。计划先使用这个控制板搭配之前买的DENGFOC驱动板先移植一下FOC的程序。再后面移植到FreeRTOS系统中。实现FOC电流闭环之后再去设计新的驱动板。总之，这次的设计也是增长了许多经验，但是之后需要更脚踏实地去做项目，没有头绪的乱摸索可能是最浪费时间的行为。</p>
+<p>之后的措施：控制板的设计得益于多次的CH32V307芯片板设计经验，是没什么问题的。计划先使用这个控制板搭配之前买的DENGFOC驱动板先移植一下FOC的程序。再后面移植到FreeRTOS系统中。实现FOC电流闭环之后再去设计新的驱动板。总之，这次的设计也是增长了许多经验，但是之后需要更脚踏实地去做项目，没有头绪的乱摸索可能是最浪费时间的行为。<br>
+闲暇之余，还复刻了<a class="link" href="https://www.bilibili.com/video/BV1tg4y1P7D2"  target="_blank" rel="noopener"
+    >B站的一个FOC开源项目</a>。<br>
+<img src="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/1.1.png"
+	width="632"
+	height="722"
+	
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="87"
+		data-flex-basis="210px"
+	
+><br>
+<img src="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/1.3.png"
+	width="1196"
+	height="1010"
+	
+	loading="lazy"
+	
+		alt="1"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="118"
+		data-flex-basis="284px"
+	
+></p>
 <h2 id="as5600设计">AS5600设计
-</h2><p>这一版使用了上一版V1.0设计的AS5600编码器电机底座，验证完全没有问题。在此开源一个自己写的CH32V307系列芯片的AS5600驱动程序。代码太长，我提前放到了CSDN上，<a class="link" href="https://blog.csdn.net/apple_50191511/article/details/146131385"  target="_blank" rel="noopener"
-    >开源网址</a>在这里，希望能帮到别人。</p>
+</h2><p>这一版使用了上一版V1.0设计的AS5600编码器电机底座，验证完全没有问题。在此开源一个自己写的CH32V307系列芯片的AS5600驱动。代码太长，我提前放到了CSDN上，-&gt;[(https://blog.csdn.net/apple_50191511/article/details/146131385)]&lt;-(<a class="link" href="https://blog.csdn.net/apple_50191511/article/details/146131385"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/apple_50191511/article/details/146131385</a>)网址在这里，希望能帮到别人^ ^。</p>
 <h2 id="foc程序设计">FOC程序设计
-</h2>
+</h2><p>程序移植参考了DENGFOC-FOR-STM32的项目。另外也参考了刚复刻的开源项目。</p>
+
 </section>
 
 

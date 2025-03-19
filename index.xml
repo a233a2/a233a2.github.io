@@ -13,7 +13,7 @@
         <pubDate>Wed, 19 Mar 2025 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/</guid>
-        <description>&lt;img src="https://a233a2.github.io/cm_foc_real2.png" alt="Featured image of post CM_FOC驱动器V2.0" /&gt;&lt;h2 id=&#34;项目概述&#34;&gt;项目概述
+        <description>&lt;img src="https://a233a2.github.io/1.4.png" alt="Featured image of post CM_FOC驱动器V2.0" /&gt;&lt;h2 id=&#34;项目概述&#34;&gt;项目概述
 &lt;/h2&gt;&lt;p&gt;主控芯片：WCH-CH32V307VCT6&lt;br&gt;
 预驱芯片：DRV8301&lt;br&gt;
 MOS：NEC6050&lt;br&gt;
@@ -113,12 +113,43 @@ MOS：NEC6050&lt;br&gt;
 问题1：设计出来的&lt;strong&gt;电感出现啸叫&lt;/strong&gt;问题，应该是焊接出现了问题，焊接出现了电感空腔，导致电感啸叫。  &lt;br&gt;
 问题2：&lt;strong&gt;DRV8301的BUCK电源输出异常&lt;/strong&gt;，应该是电源设计出现了问题，我计划先暂停驱动板的设计，使用手头上的驱动板先完成FOC的实现再去绘制驱动板。  &lt;br&gt;
 问题3：驱动板与控制板合体之后，仅USB供电下出现了&lt;strong&gt;MOS快速发热&lt;/strong&gt;，我估计是出现了局部短路情况，在多次修补之后问题解决，但是我没用万用表测出是哪里短路的。。我把这个原因归结于我自己的焊接问题。。。。&lt;/p&gt;
-&lt;p&gt;之后的措施：控制板的设计得益于多次的CH32V307芯片板设计经验，是没什么问题的。计划先使用这个控制板搭配之前买的DENGFOC驱动板先移植一下FOC的程序。再后面移植到FreeRTOS系统中。实现FOC电流闭环之后再去设计新的驱动板。总之，这次的设计也是增长了许多经验，但是之后需要更脚踏实地去做项目，没有头绪的乱摸索可能是最浪费时间的行为。&lt;/p&gt;
+&lt;p&gt;之后的措施：控制板的设计得益于多次的CH32V307芯片板设计经验，是没什么问题的。计划先使用这个控制板搭配之前买的DENGFOC驱动板先移植一下FOC的程序。再后面移植到FreeRTOS系统中。实现FOC电流闭环之后再去设计新的驱动板。总之，这次的设计也是增长了许多经验，但是之后需要更脚踏实地去做项目，没有头绪的乱摸索可能是最浪费时间的行为。&lt;br&gt;
+闲暇之余，还复刻了&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1tg4y1P7D2&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;B站的一个FOC开源项目&lt;/a&gt;。&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/1.1.png&#34;
+	width=&#34;632&#34;
+	height=&#34;722&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;87&#34;
+		data-flex-basis=&#34;210px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/1.3.png&#34;
+	width=&#34;1196&#34;
+	height=&#34;1010&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;118&#34;
+		data-flex-basis=&#34;284px&#34;
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;as5600设计&#34;&gt;AS5600设计
-&lt;/h2&gt;&lt;p&gt;这一版使用了上一版V1.0设计的AS5600编码器电机底座，验证完全没有问题。在此开源一个自己写的CH32V307系列芯片的AS5600驱动程序。代码太长，我提前放到了CSDN上，&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/apple_50191511/article/details/146131385&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;开源网址&lt;/a&gt;在这里，希望能帮到别人。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;这一版使用了上一版V1.0设计的AS5600编码器电机底座，验证完全没有问题。在此开源一个自己写的CH32V307系列芯片的AS5600驱动。代码太长，我提前放到了CSDN上，-&amp;gt;[(https://blog.csdn.net/apple_50191511/article/details/146131385)]&amp;lt;-(&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/apple_50191511/article/details/146131385&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.csdn.net/apple_50191511/article/details/146131385&lt;/a&gt;)网址在这里，希望能帮到别人^ ^。&lt;/p&gt;
 &lt;h2 id=&#34;foc程序设计&#34;&gt;FOC程序设计
-&lt;/h2&gt;</description>
+&lt;/h2&gt;&lt;p&gt;程序移植参考了DENGFOC-FOR-STM32的项目。另外也参考了刚复刻的开源项目。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Latex小记</title>
@@ -3753,7 +3784,7 @@ $$
         <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/2024%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
-        <description>&lt;h3 id=&#34;hugo博客的个人git部署工作流&#34;&gt;Hugo博客的个人git部署工作流
+        <description>&lt;h3 id=&#34;heading&#34;&gt;
 &lt;/h3&gt;</description>
         </item>
         <item>
