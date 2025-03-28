@@ -112,7 +112,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;\end&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;{&lt;/span&gt;figure&lt;span class=&#34;nb&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/latex%E5%B0%8F%E8%AE%B0/1.1.png&#34;
+&lt;/div&gt;&lt;h3 id=&#34;写论文的话-还是使用overleaf比较好&#34;&gt;写论文的话 还是使用Overleaf比较好
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/latex%E5%B0%8F%E8%AE%B0/1.1.png&#34;
 	width=&#34;854&#34;
 	height=&#34;430&#34;
 	
@@ -3112,112 +3113,6 @@ $$
 </description>
         </item>
         <item>
-        <title>PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶</title>
-        <link>https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/</link>
-        <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&#43;gazebo.png" alt="Featured image of post PX4在Ubuntu下的二次开发以及可视化仿真PX4-2进阶" /&gt;&lt;h3 id=&#34;px4在linux环境下的编译make&#34;&gt;PX4在Linux环境下的编译（make）
-&lt;/h3&gt;&lt;p&gt;使用VM17虚拟机以及Ubuntu20.04对PX4项目进行编译。&lt;br&gt;
-参考了超维空间科技的文章:&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_38768959/article/details/106041494&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;超维空间科技的文章&lt;/a&gt; &lt;br&gt;
-后续配置参考了Xtdrone仿真平台的一键配置，更为简单:&lt;a class=&#34;link&#34; href=&#34;https://www.yuque.com/xtdrone/manual_cn&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Xtdrone仿真平台文档&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;gazebo配合qgc地面站仿真&#34;&gt;Gazebo配合QGC地面站仿真
-&lt;/h3&gt;&lt;h4 id=&#34;linux-qgc的安装&#34;&gt;Linux-QGC的安装：
-&lt;/h4&gt;&lt;p&gt;QGC官网指导下进行配置，之后下载AppImage文件运行QGC地面站即可。 &lt;br&gt;
-仿真中：&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/px4&amp;#43;gazebo.png&#34;
-	width=&#34;2560&#34;
-	height=&#34;1549&#34;
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;PX4工程文件1&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;165&#34;
-		data-flex-basis=&#34;396px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;新建飞行任务antiwindtask&#34;&gt;新建飞行任务AntiWindTask
-&lt;/h3&gt;&lt;p&gt;按照PX4官方指导文档新建自己的一个飞行任务 &lt;a class=&#34;link&#34; href=&#34;https://docs.px4.io/v1.14/en/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;官方新建任务指导&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;最终参考了1.14版本的指导文件，一开始看的main指导文件去配置了XTdrone自动配置的1.13的PX4工程，发现在moduls文件下根本没有飞行任务配置。。。接着去使用1.15的PX4工程，但是在CMakeList文件中有所不同，在每一个版本中都有不同之处。1.15版本也会有bug存在。&lt;br&gt;
-最后使用1.14版本，参考了1.14的指导文档，依然是CmakeList那里不对，文档中的放置位置在官方代码1.14.4版本中根本就没有。&lt;/p&gt;
-&lt;p&gt;1.14.4版本中最后无奈我放到了一个差不多的位置。如下： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/1.png&#34;
-	width=&#34;595&#34;
-	height=&#34;182&#34;
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Error&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;326&#34;
-		data-flex-basis=&#34;784px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;但是在进行FMU-V2构建烧录代码时也会一直出现bug如下，但是很奇怪使用PX4-SITL构建仿真时便没有错误出现，1.15也是如此： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/2.png&#34;
-	width=&#34;751&#34;
-	height=&#34;507&#34;
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;1&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;148&#34;
-		data-flex-basis=&#34;355px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;最后在github工程发表了issues，最终我更换了FMU-V3来构建，这个错误便消除了。最终成功执行了任务。在QGC地面站也可以正常识别。&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/AntiWind.png&#34;
-	width=&#34;1117&#34;
-	height=&#34;579&#34;
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;AntiWind&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;192&#34;
-		data-flex-basis=&#34;463px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h4 id=&#34;newflighttask分析&#34;&gt;NewFlightTask分析：
-&lt;/h4&gt;&lt;p&gt;在指导文件中，其让我们修改了MPC_POS_MOD这个参数，很确定的是此参数决定了飞机在手动-Position定点飞行模式时要执行的实际代码中的任务模式。在源工程中有4中，但只能选择一种。 &lt;br&gt;
-这也在侧面看出PX4的代码很庞大，实际运行只有那么一点。但是要真正简化这个系统也是很麻烦且没必要。&lt;br&gt;
-指导文件默认的效果是控制台输出一段文字。然后实际飞机并不会升高。&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/px4%E5%9C%A8ubuntu%E4%B8%8B%E7%9A%84%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BF%E7%9C%9Fpx4-2%E8%BF%9B%E9%98%B6/%E9%A3%9E%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%9C%80%E5%88%9D%E4%BB%BF%E7%9C%9F%E6%95%88%E6%9E%9C.png&#34;
-	width=&#34;1553&#34;
-	height=&#34;977&#34;
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;飞行模式最初仿真效果&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;158&#34;
-		data-flex-basis=&#34;381px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;manual-position飞行模式分析&#34;&gt;Manual-Position飞行模式分析
-&lt;/h3&gt;&lt;p&gt;下面以Manual-Position飞行模式为例子对PX4原有的飞行模式进行分析，以便我们写出自己的飞行模式。 &lt;br&gt;
-但是在飞行模式中，可以看出并没有PID相关的直接控制。在这些控制代码中，更多的是作为一种高级控制。分析摇杆输入等混合输入，来对SetPoint进行赋值，分发给更底层的PID控制机构。&lt;/p&gt;
-&lt;h3 id=&#34;飞行日志分析&#34;&gt;飞行日志分析
-&lt;/h3&gt;&lt;p&gt;可以使用PX4的在线FlightReview。方便快速查看飞行数据。 &lt;br&gt;
-更详细的可以使用PX4开发的pyulog的Python处理库，可以转为CSV文件，使用Matlab分析。&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>ADRC小记</title>
         <link>https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
@@ -3469,7 +3364,7 @@ $$ &lt;br&gt;
         <item>
         <title>Linux</title>
         <link>https://a233a2.github.io/p/linux/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/linux/</guid>
         <description>&lt;p&gt;学习记录： &lt;a class=&#34;link&#34; href=&#34;https://docs.qq.com/sheet/DQ0lRY2tNb2VIZWVB?newPad=1&amp;amp;newPadType=clone&amp;amp;tab=BB08J4&amp;amp;_t=1728471922939&amp;amp;u=555637143d844e0f8b3d1a7c9c34bebf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

@@ -13,8 +13,8 @@
         <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/freertos%E5%B0%8F%E8%AE%B0/</guid>
-        <description>&lt;h3 id=&#34;freertos&#34;&gt;FreeRTOS
-&lt;/h3&gt;&lt;p&gt;FreeRTOS在嵌入式的开发中十分的重要，本人之前对于同一时间进行多种任务的做法普遍都是设置定时器中断程序。这样做或许能解决燃眉之急，但是在大型项目中便有一些捉襟见肘，尤其是使用这种方式对于MCU的任务调度十分的不明确，显得十分的乱。故对于FreeRTOS这种MCU操作系统的应用便显得尤为重要。
+        <description>&lt;h2 id=&#34;freertos&#34;&gt;FreeRTOS
+&lt;/h2&gt;&lt;p&gt;FreeRTOS在嵌入式的开发中十分的重要，本人之前对于同一时间进行多种任务的做法普遍都是设置定时器中断程序。这样做或许能解决燃眉之急，但是在大型项目中便有一些捉襟见肘，尤其是使用这种方式对于MCU的任务调度十分的不明确，显得十分的乱。故对于FreeRTOS这种MCU操作系统的应用便显得尤为重要。
 官方文档：https://freertos.org/zh-cn-cmn-s/Documentation/00-Overview&lt;/p&gt;
 &lt;h3 id=&#34;freertos核心机制&#34;&gt;FreeRTOS核心机制
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;优先级调度&lt;/strong&gt;
@@ -30,7 +30,8 @@ ps：低优先级的任务对时间的控制较为不精确。高优先级的任
 &lt;strong&gt;HAL_Delay(ms);&lt;/strong&gt;&lt;br&gt;
 CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。&lt;/p&gt;
 &lt;h3 id=&#34;freertos的部署&#34;&gt;FreeRTOS的部署
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;h2 id=&#34;rt-thread&#34;&gt;RT-Thread
+&lt;/h2&gt;</description>
         </item>
         
     </channel>

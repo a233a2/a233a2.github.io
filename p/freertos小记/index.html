@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="作者本人的FreeRTOS学习笔记">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="作者本人的RTOS学习笔记">
 <title>FreeRTOS小记</title>
 
 <link rel='canonical' href='https://a233a2.github.io/p/freertos%E5%B0%8F%E8%AE%B0/'>
 
 <link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="FreeRTOS小记">
-<meta property='og:description' content="作者本人的FreeRTOS学习笔记">
+<meta property='og:description' content="作者本人的RTOS学习笔记">
 <meta property='og:url' content='https://a233a2.github.io/p/freertos%E5%B0%8F%E8%AE%B0/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='FreeRTOS' /><meta property='article:published_time' content='2024-09-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-09-18T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="FreeRTOS小记">
-<meta name="twitter:description" content="作者本人的FreeRTOS学习笔记">
+<meta name="twitter:description" content="作者本人的RTOS学习笔记">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
   
@@ -284,14 +284,14 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
+    <li><a href="#freertos">FreeRTOS</a>
       <ol>
-        <li><a href="#freertos">FreeRTOS</a></li>
         <li><a href="#freertos核心机制">FreeRTOS核心机制</a></li>
         <li><a href="#freertos延时函数">FreeRTOS延时函数</a></li>
         <li><a href="#freertos的部署">FreeRTOS的部署</a></li>
       </ol>
     </li>
+    <li><a href="#rt-thread">RT-Thread</a></li>
   </ol>
 </nav>
         </div>
@@ -324,7 +324,7 @@
     
         
         <h3 class="article-subtitle">
-            作者本人的FreeRTOS学习笔记
+            作者本人的RTOS学习笔记
         </h3>
         
     </div>
@@ -375,8 +375,8 @@
     <section class="article-content">
     
     
-    <h3 id="freertos">FreeRTOS
-</h3><p>FreeRTOS在嵌入式的开发中十分的重要，本人之前对于同一时间进行多种任务的做法普遍都是设置定时器中断程序。这样做或许能解决燃眉之急，但是在大型项目中便有一些捉襟见肘，尤其是使用这种方式对于MCU的任务调度十分的不明确，显得十分的乱。故对于FreeRTOS这种MCU操作系统的应用便显得尤为重要。
+    <h2 id="freertos">FreeRTOS
+</h2><p>FreeRTOS在嵌入式的开发中十分的重要，本人之前对于同一时间进行多种任务的做法普遍都是设置定时器中断程序。这样做或许能解决燃眉之急，但是在大型项目中便有一些捉襟见肘，尤其是使用这种方式对于MCU的任务调度十分的不明确，显得十分的乱。故对于FreeRTOS这种MCU操作系统的应用便显得尤为重要。
 官方文档：https://freertos.org/zh-cn-cmn-s/Documentation/00-Overview</p>
 <h3 id="freertos核心机制">FreeRTOS核心机制
 </h3><p><strong>优先级调度</strong>
@@ -392,7 +392,8 @@ ps：低优先级的任务对时间的控制较为不精确。高优先级的任
 <strong>HAL_Delay(ms);</strong><br>
 CPU暂时挂起xx ms，啥也不执行。类似裸机运行时的delay。</p>
 <h3 id="freertos的部署">FreeRTOS的部署
-</h3>
+</h3><h2 id="rt-thread">RT-Thread
+</h2>
 </section>
 
 
