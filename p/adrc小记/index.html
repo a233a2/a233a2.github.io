@@ -385,7 +385,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 6 分钟
+                    阅读时长: 7 分钟
                 </time>
             </div>
         
@@ -642,16 +642,74 @@ $$ <br>
 对应相等即可求出β123。</p>
 <h2 id="adrc中的fst函数">ADRC中的fst函数
 </h2><p>fst函数是非线性最速控制律（Fastest Control），它是ADRC中跟踪微分器（Tracking Differentiator, TD）里用于计算控制输入（类似“加速度”或“控制力”）的核心函数。<br>
-具体来说，fst函数根据当前的跟踪误差和速度，输出一个加速度控制信号，使得跟踪误差能够以最快速度收敛，同时保证系统的平滑性和鲁棒性。</p>
+具体来说，fst函数根据当前的跟踪误差和速度，输出一个加速度控制信号，使得跟踪误差能够以最快速度收敛，同时保证系统的平滑性和鲁棒性。<br>
+<strong>一个经典ADRC控制中的FST函数</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>out <span class="p">=</span><span class="w"> </span><span class="nf">fst</span><span class="p">(</span>x1, x2, omega, h<span class="p">)</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">%fst Summary of this function goes here</span>
+</span></span><span class="line"><span class="cl"><span class="c">%   最速控制综合函数</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="p">=</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">h</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">d0</span> <span class="p">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">h</span> <span class="o">*</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="p">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">h</span> <span class="o">*</span> <span class="n">x2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">a0</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">d</span> <span class="o">*</span> <span class="n">d</span> <span class="o">+</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">d0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="p">=</span> <span class="n">x2</span> <span class="o">+</span> <span class="p">(</span><span class="n">a0</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">sign</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="p">=</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">y</span> <span class="o">/</span> <span class="n">h</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">d</span>
+</span></span><span class="line"><span class="cl">    <span class="n">out</span> <span class="p">=</span> <span class="o">-</span> <span class="n">omega</span> <span class="o">*</span> <span class="nb">sign</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="n">out</span> <span class="p">=</span> <span class="o">-</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">a</span> <span class="o">/</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="adrc中的fal函数">ADRC中的fal函数
+</div><p>x1：跟踪误差（这里是位置误差，即v1 - v0）<br>
+x2：当前速度（状态变量速度）<br>
+omega：设计参数，控制收敛速度的权重，类似“频率”<br>
+h：采样周期或滤波因子，影响控制平滑程度<br>
+输出 out 是加速度控制量，用于驱动跟踪误差快速收敛。<br>
+<strong>关键步骤说明：</strong><br>
+<strong>参数计算</strong><br>
+d = omega * h：一个阈值，用来区分控制策略<br>
+d0 = x1 + h * d 和 y = x1 + h * x2 是辅助计算量，用于判断当前误差状态</p>
+<p><strong>判断条件if abs(y) &gt; d0</strong>
+这是非线性分段条件，用于区分误差较大和较小时采用不同的控制策略。<br>
+当误差较大时（abs(y) &gt; d0），采用一种非线性控制策略加快收敛。<br>
+当误差较小时，采用线性控制策略平滑收敛。</p>
+<p><strong>计算控制量a</strong><br>
+计算一个加速度控制量a，根据误差和速度调整。<br>
+a越大，控制作用越强，推动误差快速减小。</p>
+<p><strong>输出控制信号out</strong><br>
+根据a大小做饱和处理，保证输出在[-omega, omega]范围内，防止控制信号过大导致振荡。<br>
+输出out就是TD控制器对速度的“加速度控制”，用来驱动状态变量快速收敛。</p>
+<h2 id="adrc中的fal函数">ADRC中的fal函数
 </h2>
 </section>
 
