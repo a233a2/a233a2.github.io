@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>XMC4500 on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/tags/xmc4500/</link>
+        <description>Recent content in XMC4500 on sunjiyi&#39;s Blogggg</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Sunjiyi Make and Design</copyright>
+        <lastBuildDate>Fri, 17 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/xmc4500/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>XMC4500引脚地址-寄存器地址问题</title>
+        <link>https://a233a2.github.io/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/</link>
+        <pubDate>Fri, 17 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/</guid>
+        <description>&lt;p&gt;最近使用XMC4500进行引脚功能初始化配置的时候，由于不清楚XMC4500内部寄存器与实际引脚的关系，摸索了很久，在此将两者的关系搞明白一下&lt;/p&gt;
+&lt;h2 id=&#34;首先确定portx-iocrx在控制哪些引脚&#34;&gt;首先确定PORTx-&amp;gt;IOCRx在控制哪些引脚
+&lt;/h2&gt;&lt;p&gt;每个IOCRx寄存器控制着4个引脚。每个引脚占用一个字节（8bit）。 &lt;br&gt;
+比如IOCR4控制 Px.4 Px.5 Px.6 Px.7 &lt;br&gt;
+更具体，PORT1-&amp;gt;IOCR4 控制着P1.4 P1.5 P1.6 P1.7&lt;br&gt;
+每个引脚占用着8bit。比如PORT1-&amp;gt;IOCR4=0x00009000H &lt;br&gt;
+从右边往左边数，每8bit，控制一个引脚。比如0x90代表控制P1.5引脚。&lt;/p&gt;
+&lt;h2 id=&#34;引脚是如何通过8bit被定义的&#34;&gt;引脚是如何通过8bit被定义的?
+&lt;/h2&gt;&lt;p&gt;比如PORT1-&amp;gt;IOCR4=0x00009000H,其中0x90代表控制P1.5引脚。  &lt;br&gt;
+则0x90H=10010000B。此处，高五位控制引脚状态，低三位一般为000。&lt;br&gt;
+则高五位剔出=10010，前面补0得到高5位为0001 0010，即0x12.然后由端口功能表决定输出功能。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

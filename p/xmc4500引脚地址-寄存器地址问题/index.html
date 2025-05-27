@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="ADRC课程笔记，结合PID从原理入手分析。">
-<title>ADRC小记</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="XMC4500">
+<title>XMC4500引脚地址-寄存器地址问题</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/'>
+<link rel='canonical' href='https://a233a2.github.io/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/'>
 
-<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="ADRC小记">
-<meta property='og:description' content="ADRC课程笔记，结合PID从原理入手分析。">
-<meta property='og:url' content='https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/'>
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="XMC4500引脚地址-寄存器地址问题">
+<meta property='og:description' content="XMC4500">
+<meta property='og:url' content='https://a233a2.github.io/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ADRC' /><meta property='article:published_time' content='2024-09-16T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-09-16T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="ADRC小记">
-<meta name="twitter:description" content="ADRC课程笔记，结合PID从原理入手分析。">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='XMC4500' /><meta property='article:published_time' content='2024-05-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-05-17T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="XMC4500引脚地址-寄存器地址问题">
+<meta name="twitter:description" content="XMC4500">
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
   
@@ -284,39 +284,8 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
-      <ol>
-        <li><a href="#adrc课程笔记">ADRC课程笔记</a>
-          <ol>
-            <li><a href="#生理前馈系统">生理前馈系统</a></li>
-          </ol>
-        </li>
-        <li><a href="#前馈控制">前馈控制</a>
-          <ol>
-            <li></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#从pid到adrc">从PID到ADRC</a>
-      <ol>
-        <li><a href="#积分控制器">积分控制器</a></li>
-        <li><a href="#三种矫正网络">三种矫正网络</a></li>
-        <li><a href="#更进一步---pid控制器">更进一步&mdash;PID控制器</a></li>
-        <li><a href="#积分串联型控制">积分串联型控制</a>
-          <ol>
-            <li><a href="#简单理想发动机转速控制模型">简单理想发动机转速控制模型：</a></li>
-            <li><a href="#简单理想发动机转角控制模型">简单理想发动机转角控制模型：</a></li>
-          </ol>
-        </li>
-        <li><a href="#误差积分被动补偿-创造理想系统">误差积分被动补偿-创造理想系统</a></li>
-        <li><a href="#总扰动的概念">总扰动的概念</a></li>
-        <li><a href="#扩张状态观测器eso-估计总扰动">扩张状态观测器ESO-估计总扰动</a></li>
-        <li><a href="#扩张状态观测器eso-如何选择β123">扩张状态观测器ESO-如何选择β123？</a></li>
-      </ol>
-    </li>
-    <li><a href="#adrc中的fst函数">ADRC中的fst函数</a></li>
-    <li><a href="#adrc中的fal函数">ADRC中的fal函数</a></li>
+    <li><a href="#首先确定portx-iocrx在控制哪些引脚">首先确定PORTx-&gt;IOCRx在控制哪些引脚</a></li>
+    <li><a href="#引脚是如何通过8bit被定义的">引脚是如何通过8bit被定义的?</a></li>
   </ol>
 </nav>
         </div>
@@ -335,8 +304,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/" style="background-color: #ff99ff; color: #000;">
-                学术类别
+            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
+                工程类别
             </a>
         
     </header>
@@ -344,12 +313,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/adrc%E5%B0%8F%E8%AE%B0/">ADRC小记</a>
+            <a href="/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/">XMC4500引脚地址-寄存器地址问题</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            ADRC课程笔记，结合PID从原理入手分析。
+            XMC4500
         </h3>
         
     </div>
@@ -370,7 +339,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-09-16</time>
+                <time class="article-time--published">2024-05-17</time>
             </div>
         
 
@@ -385,7 +354,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 6 分钟
+                    阅读时长: 1 分钟
                 </time>
             </div>
         
@@ -400,259 +369,18 @@
     <section class="article-content">
     
     
-    <h3 id="adrc课程笔记">ADRC课程笔记
-</h3><p>本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些经典与现代控制理论方向的相关知识。</p>
-<h4 id="生理前馈系统">生理前馈系统
-</h4><blockquote>
-<p>在生理学上，前馈控制的例子是在实际体力活动之前，自主神经系统对心跳的正常预期调节。前馈控制可以比作对已知线索的预期反应（预测编码）。心跳的反馈调节为机体提供了进一步对运动的适应性。  &ndash;wiki百科</p>
-</blockquote>
-<p>在前馈系统中，控制变量的调整不是以目标和回授之间的误差为基础，它是以过程<strong>数学模型</strong>的知识和<strong>过程扰动</strong>的知识或测量为基础。</p>
-<p>所以对于数学模型的整体掌握是对系统扰动进行前馈消除的前提。</p>
-<p>正所谓要想系统稳得住，必须得有前馈引入。前馈控制在某些控制场合下是必须项。</p>
-<h3 id="前馈控制">前馈控制
-</h3><h6 id="摘自高志强-自抗扰控制思想探究">摘自《高志强: 自抗扰控制思想探究》
-</h6><p>前馈控制是一种<strong>基于对扰动的预测</strong>进行补偿的控制方法。它通过<strong>测量</strong>可能影响系统输出的扰动变量，并根据扰动变量与系统输出之间的关系，计算出所需的控制量，在<strong>扰动对系统产生影响之前</strong>就进行调节，以抵消扰动的影响。<br>
-在自动控制系统理论中学习过，由传递函数理论数学推导，前馈的引入可以完全的消除系统的扰动误差。现在这显然并不是这么的简单，这需要对系统数学模型有着十分精确的掌握。<br>
-前馈控制在工业界用途广泛, 但是学术界对它很少关心, 认为是开环控制, 没有什么理论可言. 前馈的使用方式主要有两种: 一种是<strong>根据参考输入和对象模型的逆</strong>而得到的控制量, 不依赖对象的实时信息,暂且称之为A类前馈; 另外一种前馈, 是<strong>根据被控量之外的对象信息</strong>所产生的控制量, 即B类前馈。<br>
-前馈控制提出的本意是要区别于上面提到的狭义的反馈控制, 表示控制量的一部分甚至全部都可以完全独立于被控量的量测. Black定义的反馈(feedback)本来就是针对前馈(feedforward)而言的, 表示信号流向反转, 由输出到输入. 这里信号的走向一正一反, 概念很清楚。<br>
-可是当反馈这个通讯工程的概念被借用到控制工程时, 它的反义词前馈的含义便有了两种解释. 比如上面说的A类前馈明显是开环控制, 控制量完全独立于对象的实时信息. 可是B类前馈则不然, 它依赖的还是对象信息, 实际上是前面提到的广义反馈, 只不过反馈的不是输出量而已. B类前馈在文献中也被称为扰动前馈, 它是基于对象扰动信息的实时提取, 就像指南车. 可是同样是基于对象信息的提取, 指南车为什么会被称为开环控制呢？其实B类前馈属于广义反馈, 不应称其为前馈或开环控制. 鉴于前馈的概念和用法前后重叠, 为了概念的清晰, 建议今后可把B类前馈归入抗扰原理讨论; 把前馈狭义地定义为A类前馈.那么这样的前馈有什么意义呢？为什么它的用途这么广呢？主要原因是它降低了快速跟踪的成本。<br>
-一个控制系统要使输出迅速跟踪给定值有两个途径: 1) 高带宽; 2) 前馈. 但是在工业上, 带宽就是成本.高带宽虽然能使跟踪速度提高, 但也带来很多问题:1) 对执行机构的品质要求提高; 2) 激励了对象的高频动态使控制问题复杂化; 3) 闭环系统的稳定裕度下降,对相位滞后和时间延迟更敏感; 4) 对传感器噪声更敏感, 等等.高带宽的成本在20世 50年代就有专门、详细的讨论, 比如文献[46], 但是至今没能在理论界引起重视, 乃至高增益控制器、观测器的文章比比皆是, 而能用上的却寥寥无几. 这反映了不考虑成本的研究, 在工程上是没有多少意义的。<br>
-工程师们在实践中基于对系统物理特性的知识发现了前馈这个办法. 这种独立于反馈回路拟合出的控制量通常是结合参考输入, 以数据或图表形式表示的,常常在控制信号中占主要部分. 同时也使用PID反馈控制器, 发挥微调、纠错的作用. 因此, 工业上的PID控制器常常是与前馈控制结合使用的。<br>
-以上总结的是控制论的基本原理, 是从事自动控制的人们在长期的工程实践中发现、挖掘出来的, 是控制论继续发展的基石. 要系统地、科学地建立和发展一套完整的理论体系, 就需要对基本原理进行提炼、抽象和升华, 使得工程控制的实践能够更加系统,并不断进入更高的层次, 从而“下学而上达”。</p>
-<h2 id="从pid到adrc">从PID到ADRC
-</h2><h3 id="积分控制器">积分控制器
-</h3><h3 id="三种矫正网络">三种矫正网络
-</h3><p>超前校正网络 滞后矫正网络 超前-滞后矫正网络 <br>
-这些都要配合BODE图去确定频率指标 设计较为复古，较为原始。</p>
-<p><strong>wc剪切频率处的中频段宽度对闭环系统特性有至关重要的影响。</strong></p>
-<h3 id="更进一步---pid控制器">更进一步&mdash;PID控制器
-</h3><p>1 极点配置方法调节PID参数  <br>
-确定极点位置来对闭环系统的Kp Ki进行确定。 <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.1.png"
-	width="1151"
-	height="517"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="222"
-		data-flex-basis="534px"
-	
->  <br>
-这里极点配置 根据一阶系统 二阶系统 的阶跃响应曲线来根据期望的TS调节时间根据经验选取。 <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.2.png"
-	width="1779"
-	height="814"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="218"
-		data-flex-basis="524px"
-	
-></p>
-<p><img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.3.png"
-	width="1815"
-	height="865"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="209"
-		data-flex-basis="503px"
-	
-><br>
-2 ZN方法调节PID参数</p>
-<p>3 经验方法</p>
-<h3 id="积分串联型控制">积分串联型控制
-</h3><h4 id="简单理想发动机转速控制模型">简单理想发动机转速控制模型：
-</h4><p>从扭矩 或者电压调整转速 这属于一阶系统。采用比例控制即可很好的进行控制 如下图所示设计控制过程。     <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.5.png"
-	width="1825"
-	height="952"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="191"
-		data-flex-basis="460px"
-	
->  <br>
-从力矩到转速这属于<strong>积分环节</strong>：如下 <br>
-$$
-J\dot{\omega}=M
-$$ <br>
-J是转动惯量，转速由w的导数表示。M为力矩。  <br>
-则可以得到w与M的关系如下   <br>
-$$
-\frac{\omega}{M}=\frac{1}{Js}
-$$ <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.6.png"
-	width="1812"
-	height="787"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="230"
-		data-flex-basis="552px"
-	
->   <br>
-设计如下： <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.4.png"
-	width="1730"
-	height="856"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="202"
-		data-flex-basis="485px"
-	
-></p>
-<h4 id="简单理想发动机转角控制模型">简单理想发动机转角控制模型：
-</h4><p><img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.7.png"
-	width="1722"
-	height="797"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="216"
-		data-flex-basis="518px"
-	
->     <br>
-$$
-\frac{\theta}{M}=\frac{1}{Js^2}
-$$ <br>
-设计比例微分PD控制器。</p>
-<p><img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.8.png"
-	width="1611"
-	height="806"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="199"
-		data-flex-basis="479px"
-	
-></p>
-<p>现实世界中，几乎没有上述两种理想系统。 <br>
-一阶系统有摩擦存在时，二阶系统有摩擦存在时，传统控制方法适用性不再好。 <br>
-积分串联型真的好很容易控制，但是实际系统没有。我们ADRC需要构造这种系统。</p>
-<h3 id="误差积分被动补偿-创造理想系统">误差积分被动补偿-创造理想系统
-</h3><p>传统引入积分控制，便是提高了系统的型别。但是不一定会好用。</p>
-<p>传统发动机控制电脑中，会有几千个PID参数表，用于对应不同的发动机工作环境。</p>
-<h3 id="总扰动的概念">总扰动的概念
-</h3><h3 id="扩张状态观测器eso-估计总扰动">扩张状态观测器ESO-估计总扰动
-</h3><p>个人理解：<strong>扩张状态观测器，即在原本观测器的基础上，加入积分环节（一个积分环节对应一个状态，也就是直观的扩张出来了一个状态）。使得总扰动的估计能够消除稳态误差。</strong>   <br>
-系统类似下图，使用Simulink模块简单画一下，表示一下  <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.13.png"
-	width="1449"
-	height="781"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="185"
-		data-flex-basis="445px"
-	
->  <br>
-果然反步法的设计过程是重要的，这样看来也有一定相似之处。<br>
-观测器，观察每一个状态的演变过程，所以用导数。也就是状态方程。  <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.9.png"
-	width="1495"
-	height="656"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="227"
-		data-flex-basis="546px"
-	
->  <br>
-总扰动f的导不知道，先写一个h。 <br>
-<strong>观测器使用测量的偏差与估计的偏差。分别矫正了所有状态的微分方程。只要参数β123调节好，就可以准确估计总扰动。便可以改造出积分串联型理想系统。进而可以很好的控制系统。</strong>          <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.10.png"
-	width="1517"
-	height="757"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="200"
-		data-flex-basis="480px"
-	
-> <br>
-这样原本Y的二阶导只等于U0 <br>
-此时U0采用比例微分控制即可实现完全控制。</p>
-<h3 id="扩张状态观测器eso-如何选择β123">扩张状态观测器ESO-如何选择β123？
-</h3><p>对于 <br>
-$$
-\dot{y}=ay+bu
-$$ <br>
-给定一个阶跃信号，决定系统调节速度的是a。 <br>
-证明：写出传递函数如下： <br>
-$$
-\frac{Y}{U}=\frac{b}{s+a}
-$$ <br>
-a决定极点的位置。所以很明显决定系统稳定以及收敛速度的是a。 <br>
-对状态空间表达式x导=Ax+bu也是如此。A决定系统稳定性以及各种性能。 <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.11.png"
-	width="1342"
-	height="716"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="187"
-		data-flex-basis="449px"
-	
->   <br>
-特征值决定了状态空间中，每一个状态演变的快与慢。特征值也就是传递函数的极点。这是一个普遍且重要的理论。     <br>
-<img src="/p/adrc%E5%B0%8F%E8%AE%B0/1.12.png"
-	width="1356"
-	height="719"
-	
-	loading="lazy"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="188"
-		data-flex-basis="452px"
-	
->   <br>
-如何调整特征值？ <br>
-A矩阵写出行列式$A-\lambda$。 令行列式等于0得到特征方程。 令特征方程等于 <br>
-$$
-\left( \lambda +\omega _0 \right) ^3=0
-$$ <br>
-对应相等即可求出β123。</p>
-<h2 id="adrc中的fst函数">ADRC中的fst函数
-</h2><p>fst函数是非线性最速控制律（Fastest Control），它是ADRC中跟踪微分器（Tracking Differentiator, TD）里用于计算控制输入（类似“加速度”或“控制力”）的核心函数。<br>
-具体来说，fst函数根据当前的跟踪误差和速度，输出一个加速度控制信号，使得跟踪误差能够以最快速度收敛，同时保证系统的平滑性和鲁棒性。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>out <span class="p">=</span><span class="w"> </span><span class="nf">fst</span><span class="p">(</span>x1, x2, omega, h<span class="p">)</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="adrc中的fal函数">ADRC中的fal函数
-</h2>
+    <p>最近使用XMC4500进行引脚功能初始化配置的时候，由于不清楚XMC4500内部寄存器与实际引脚的关系，摸索了很久，在此将两者的关系搞明白一下</p>
+<h2 id="首先确定portx-iocrx在控制哪些引脚">首先确定PORTx-&gt;IOCRx在控制哪些引脚
+</h2><p>每个IOCRx寄存器控制着4个引脚。每个引脚占用一个字节（8bit）。 <br>
+比如IOCR4控制 Px.4 Px.5 Px.6 Px.7 <br>
+更具体，PORT1-&gt;IOCR4 控制着P1.4 P1.5 P1.6 P1.7<br>
+每个引脚占用着8bit。比如PORT1-&gt;IOCR4=0x00009000H <br>
+从右边往左边数，每8bit，控制一个引脚。比如0x90代表控制P1.5引脚。</p>
+<h2 id="引脚是如何通过8bit被定义的">引脚是如何通过8bit被定义的?
+</h2><p>比如PORT1-&gt;IOCR4=0x00009000H,其中0x90代表控制P1.5引脚。  <br>
+则0x90H=10010000B。此处，高五位控制引脚状态，低三位一般为000。<br>
+则高五位剔出=10010，前面补0得到高5位为0001 0010，即0x12.然后由端口功能表决定输出功能。</p>
+
 </section>
 
 
@@ -660,7 +388,7 @@ $$ <br>
     
     <section class="article-tags">
         
-            <a href="/tags/adrc/">ADRC</a>
+            <a href="/tags/xmc4500/">XMC4500</a>
         
     </section>
 
@@ -717,13 +445,24 @@ $$ <br>
         <div class="flex article-list--tile">
             
                 
-<article class="">
-    <a href="/p/latex%E5%B0%8F%E8%AE%B0/">
+<article class="has-image">
+    <a href="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/">
         
+        
+            <div class="article-image">
+                <img src="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/1.4.ae01da38c57c9b1194a90bf90ab7f422.jpg" 
+                        width="2276" 
+                        height="1280" 
+                        loading="lazy"
+                        alt="Featured image of post CM_FOC驱动器V2.0"
+                        
+                        data-hash="md5-rgHaOMV8mxGUqQv5Crf0Ig==">
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">Latex小记</h2>
+            <h2 class="article-title">CM_FOC驱动器V2.0</h2>
         </div>
     </a>
 </article>
@@ -767,13 +506,24 @@ $$ <br>
 
             
                 
-<article class="">
-    <a href="/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/">
+<article class="has-image">
+    <a href="/p/pads%E5%B0%8F%E8%AE%B0/">
         
+        
+            <div class="article-image">
+                <img src="/p/pads%E5%B0%8F%E8%AE%B0/pads.03e7c6b02900484b0fe404c4db2794f7.jpg" 
+                        width="720" 
+                        height="424" 
+                        loading="lazy"
+                        alt="Featured image of post PADS小记"
+                        
+                        data-hash="md5-A&#43;fGsCkASEsP5ATE2yeU9w==">
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">CNN神经网-自用</h2>
+            <h2 class="article-title">PADS小记</h2>
         </div>
     </a>
 </article>
@@ -781,23 +531,23 @@ $$ <br>
             
                 
 <article class="has-image">
-    <a href="/p/drcan-learn-blog-advance/">
+    <a href="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/">
         
         
             <div class="article-image">
-                <img src="/p/drcan-learn-blog-advance/1-1.2e9be13a68b73fbbf13f6f6ab9df10b4.jpg" 
-                        width="2182" 
-                        height="3086" 
+                <img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.599617b7531038da7073605e1426dcf4.jpg" 
+                        width="628" 
+                        height="308" 
                         loading="lazy"
-                        alt="Featured image of post DRCAN-Learn-Blog-Advance"
+                        alt="Featured image of post Docker使用小记"
                         
-                        data-hash="md5-LpvhOmi3P7vxP29qud8QtA==">
+                        data-hash="md5-WZYXt1MQONpwc2BeFCbc9A==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">DRCAN-Learn-Blog-Advance</h2>
+            <h2 class="article-title">Docker使用小记</h2>
         </div>
     </a>
 </article>
