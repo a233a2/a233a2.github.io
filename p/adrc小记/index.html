@@ -317,6 +317,7 @@
     </li>
     <li><a href="#adrc中的fst函数">ADRC中的fst函数</a></li>
     <li><a href="#adrc中的fal函数">ADRC中的fal函数</a></li>
+    <li><a href="#adrc中的eso">ADRC中的ESO</a></li>
   </ol>
 </nav>
         </div>
@@ -385,7 +386,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 7 分钟
+                    阅读时长: 9 分钟
                 </time>
             </div>
         
@@ -641,8 +642,9 @@ $$
 $$ <br>
 对应相等即可求出β123。</p>
 <h2 id="adrc中的fst函数">ADRC中的fst函数
-</h2><p>fst函数是非线性最速控制律（Fastest Control），它是ADRC中跟踪微分器（Tracking Differentiator, TD）里用于计算控制输入（类似“加速度”或“控制力”）的核心函数。<br>
-具体来说，fst函数根据当前的跟踪误差和速度，输出一个加速度控制信号，使得跟踪误差能够以最快速度收敛，同时保证系统的平滑性和鲁棒性。<br>
+</h2><p><strong>fst函数是ADRC跟踪微分器中的非线性控制器，负责计算加速度控制信号。</strong><br>
+fst函数是非线性最速控制律（Fastest Control），它是ADRC中跟踪微分器（Tracking Differentiator, TD）里用于计算控制输入（类似“加速度”或“控制力”）的核心函数。<br>
+具体来说，fst函数<strong>根据当前的跟踪误差和速度，输出一个加速度控制信号，使得跟踪误差能够以最快速度收敛，同时保证系统的平滑性和鲁棒性。</strong><br>
 <strong>一个经典ADRC控制中的FST函数</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -710,7 +712,113 @@ a越大，控制作用越强，推动误差快速减小。</p>
 根据a大小做饱和处理，保证输出在[-omega, omega]范围内，防止控制信号过大导致振荡。<br>
 输出out就是TD控制器对速度的“加速度控制”，用来驱动状态变量快速收敛。</p>
 <h2 id="adrc中的fal函数">ADRC中的fal函数
-</h2>
+</h2><p>fal函数是ADRC控制器中常用的非线性函数（nonlinear function），它的全称是“fractional power function”或“非线性误差变换函数”。<br>
+它的主要作用是<strong>对误差e做一种平滑且带“非线性幂次”的变换，用于非线性反馈控制中，可以增强控制器对误差的响应速度和稳定性。</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>out <span class="p">=</span><span class="w"> </span><span class="nf">fal</span><span class="p">(</span> e, a, delta <span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">%fal Summary of this function goes here</span>
+</span></span><span class="line"><span class="cl"><span class="c">%   Detailed explanation goes here</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">delta</span>
+</span></span><span class="line"><span class="cl">    <span class="n">out</span> <span class="p">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> ^ <span class="n">a</span> <span class="o">*</span> <span class="nb">sign</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="n">out</span> <span class="p">=</span> <span class="n">e</span> <span class="o">/</span> <span class="p">(</span><span class="n">delta</span> ^ <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">a</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>e：输入误差值，可以是位置误差、速度误差等。<br>
+a：幂次参数，通常0 &lt; a &lt; 1，控制非线性程度。<br>
+delta：临界阈值，用于定义分段非线性函数的范围。<br>
+<strong>分段说明：</strong>
+当误差较大时：|e| &gt; delta<br>
+使用非线性幂次函数 |e|^a * sign(e)。<br>
+这会使误差响应不是线性增长，而是一个小于1次幂的曲线，<br>
+当a&lt;1时，误差较大时输出增长较慢，防止控制量过大。<br>
+当误差较小时：|e| &lt;= delta<br>
+使用线性函数 e / (delta^(1 - a))，保证函数在e=0附近光滑连续，<br>
+防止非线性函数在小误差时过于“死板”，保证控制器灵敏响应。<br>
+<strong>为什么要这样设计？</strong>
+平滑性：函数在e = ±delta处连续且可导，避免了控制器输出跳变。<br>
+非线性控制效果：非线性幂次a让控制器在大误差时减弱输出，避免过冲；在小误差时线性提高灵敏度，保证快速收敛。<br>
+鲁棒性提升：这种设计提高了控制器在面对非线性和扰动时的性能。</p>
+<h2 id="adrc中的eso">ADRC中的ESO
+</h2><p>状态空间方程推导而来的ESO，这个没什么好说的？<br>
+ESO 是ADRC的核心模块之一，主要用来：<br>
+在线估计系统的状态变量和总扰动（包含内部未知动态和外部扰动）。<br>
+实时补偿系统扰动，提高控制系统的鲁棒性和抗扰动能力。<br>
+ESO的设计目标是让观测误差快速收敛，从而准确估计系统的状态和扰动。<br>
+四旋翼中的ESO，二阶。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>[dz1,dz2,dz3] <span class="p">=</span><span class="w"> </span><span class="nf">fcn</span><span class="p">(</span>u,e,z2, z3<span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">%#连续形式的扩张状态观测器(ESO)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">%% 参数赋值</span>
+</span></span><span class="line"><span class="cl"><span class="n">beta01_y</span> <span class="p">=</span> <span class="mi">30</span><span class="p">;</span>     <span class="c">% 可调参数</span>
+</span></span><span class="line"><span class="cl"><span class="n">beta02_y</span> <span class="p">=</span> <span class="mi">300</span><span class="p">;</span>     <span class="c">% 可调参数</span>
+</span></span><span class="line"><span class="cl"><span class="n">beta03_y</span> <span class="p">=</span> <span class="mi">1000</span><span class="p">;</span>   <span class="c">% 可调参数</span>
+</span></span><span class="line"><span class="cl"><span class="n">a1</span> <span class="p">=</span> <span class="mf">0.75</span><span class="p">;</span>         <span class="c">% 可调参数</span>
+</span></span><span class="line"><span class="cl"><span class="n">a2</span> <span class="p">=</span> <span class="mf">0.5</span><span class="p">;</span>          <span class="c">% 可调参数</span>
+</span></span><span class="line"><span class="cl"><span class="n">a3</span> <span class="p">=</span> <span class="mf">0.25</span><span class="p">;</span>         <span class="c">% 可调参数</span>
+</span></span><span class="line"><span class="cl"><span class="n">delta</span> <span class="p">=</span> <span class="mf">0.006</span><span class="p">;</span>     <span class="c">% 线性段的区间长度</span>
+</span></span><span class="line"><span class="cl"><span class="n">b0_y</span> <span class="p">=</span> <span class="mf">0.06</span><span class="p">;</span>       <span class="c">% 决定补偿强弱的“补偿因子”</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dz1</span> <span class="p">=</span> <span class="n">z2</span> <span class="o">-</span> <span class="n">beta01_y</span> <span class="o">*</span> <span class="n">fal</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">delta</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">dz2</span> <span class="p">=</span> <span class="n">z3</span> <span class="o">-</span> <span class="n">beta02_y</span> <span class="o">*</span> <span class="n">fal</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span> <span class="o">+</span> <span class="n">b0_y</span> <span class="o">*</span> <span class="n">u</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">dz3</span> <span class="p">=</span> <span class="o">-</span> <span class="n">beta03_y</span> <span class="o">*</span> <span class="n">fal</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">delta</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输入<br>
+u：控制输入信号（控制器输出的控制量）<br>
+e：观测误差，通常是测量输出与估计输出的误差，e = z1 - y（这里y是系统输出，z1是估计的状态）<br>
+z2, z3：ESO内部状态变量，对应系统速度状态和扰动估计<br>
+输出<br>
+dz1, dz2, dz3：状态变量的导数，供积分器计算下一时刻状态估计值<br>
+<img src="/p/adrc%E5%B0%8F%E8%AE%B0/2.1.png"
+	width="1272"
+	height="841"
+	
+	loading="lazy"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="151"
+		data-flex-basis="362px"
+	
+></p>
+
 </section>
 
 
