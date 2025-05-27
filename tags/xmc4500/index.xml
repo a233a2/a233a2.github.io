@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Fri, 17 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/xmc4500/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/xmc4500/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>XMC4500引脚地址-寄存器地址问题</title>
         <link>https://a233a2.github.io/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/</link>
-        <pubDate>Fri, 17 May 2024 00:00:00 +0000</pubDate>
+        <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/</guid>
         <description>&lt;p&gt;最近使用XMC4500进行引脚功能初始化配置的时候，由于不清楚XMC4500内部寄存器与实际引脚的关系，摸索了很久，在此将两者的关系搞明白一下&lt;/p&gt;
