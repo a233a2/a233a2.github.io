@@ -7,7 +7,446 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 16 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ADRC小记</title>
+        <link>https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/</link>
+        <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/</guid>
+        <description>&lt;h3 id=&#34;adrc课程笔记&#34;&gt;ADRC课程笔记
+&lt;/h3&gt;&lt;p&gt;本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些经典与现代控制理论方向的相关知识。&lt;/p&gt;
+&lt;h4 id=&#34;生理前馈系统&#34;&gt;生理前馈系统
+&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;在生理学上，前馈控制的例子是在实际体力活动之前，自主神经系统对心跳的正常预期调节。前馈控制可以比作对已知线索的预期反应（预测编码）。心跳的反馈调节为机体提供了进一步对运动的适应性。  &amp;ndash;wiki百科&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在前馈系统中，控制变量的调整不是以目标和回授之间的误差为基础，它是以过程&lt;strong&gt;数学模型&lt;/strong&gt;的知识和&lt;strong&gt;过程扰动&lt;/strong&gt;的知识或测量为基础。&lt;/p&gt;
+&lt;p&gt;所以对于数学模型的整体掌握是对系统扰动进行前馈消除的前提。&lt;/p&gt;
+&lt;p&gt;正所谓要想系统稳得住，必须得有前馈引入。前馈控制在某些控制场合下是必须项。&lt;/p&gt;
+&lt;h3 id=&#34;前馈控制&#34;&gt;前馈控制
+&lt;/h3&gt;&lt;h6 id=&#34;摘自高志强-自抗扰控制思想探究&#34;&gt;摘自《高志强: 自抗扰控制思想探究》
+&lt;/h6&gt;&lt;p&gt;前馈控制是一种&lt;strong&gt;基于对扰动的预测&lt;/strong&gt;进行补偿的控制方法。它通过&lt;strong&gt;测量&lt;/strong&gt;可能影响系统输出的扰动变量，并根据扰动变量与系统输出之间的关系，计算出所需的控制量，在&lt;strong&gt;扰动对系统产生影响之前&lt;/strong&gt;就进行调节，以抵消扰动的影响。&lt;br&gt;
+在自动控制系统理论中学习过，由传递函数理论数学推导，前馈的引入可以完全的消除系统的扰动误差。现在这显然并不是这么的简单，这需要对系统数学模型有着十分精确的掌握。&lt;br&gt;
+前馈控制在工业界用途广泛, 但是学术界对它很少关心, 认为是开环控制, 没有什么理论可言. 前馈的使用方式主要有两种: 一种是&lt;strong&gt;根据参考输入和对象模型的逆&lt;/strong&gt;而得到的控制量, 不依赖对象的实时信息,暂且称之为A类前馈; 另外一种前馈, 是&lt;strong&gt;根据被控量之外的对象信息&lt;/strong&gt;所产生的控制量, 即B类前馈。&lt;br&gt;
+前馈控制提出的本意是要区别于上面提到的狭义的反馈控制, 表示控制量的一部分甚至全部都可以完全独立于被控量的量测. Black定义的反馈(feedback)本来就是针对前馈(feedforward)而言的, 表示信号流向反转, 由输出到输入. 这里信号的走向一正一反, 概念很清楚。&lt;br&gt;
+可是当反馈这个通讯工程的概念被借用到控制工程时, 它的反义词前馈的含义便有了两种解释. 比如上面说的A类前馈明显是开环控制, 控制量完全独立于对象的实时信息. 可是B类前馈则不然, 它依赖的还是对象信息, 实际上是前面提到的广义反馈, 只不过反馈的不是输出量而已. B类前馈在文献中也被称为扰动前馈, 它是基于对象扰动信息的实时提取, 就像指南车. 可是同样是基于对象信息的提取, 指南车为什么会被称为开环控制呢？其实B类前馈属于广义反馈, 不应称其为前馈或开环控制. 鉴于前馈的概念和用法前后重叠, 为了概念的清晰, 建议今后可把B类前馈归入抗扰原理讨论; 把前馈狭义地定义为A类前馈.那么这样的前馈有什么意义呢？为什么它的用途这么广呢？主要原因是它降低了快速跟踪的成本。&lt;br&gt;
+一个控制系统要使输出迅速跟踪给定值有两个途径: 1) 高带宽; 2) 前馈. 但是在工业上, 带宽就是成本.高带宽虽然能使跟踪速度提高, 但也带来很多问题:1) 对执行机构的品质要求提高; 2) 激励了对象的高频动态使控制问题复杂化; 3) 闭环系统的稳定裕度下降,对相位滞后和时间延迟更敏感; 4) 对传感器噪声更敏感, 等等.高带宽的成本在20世 50年代就有专门、详细的讨论, 比如文献[46], 但是至今没能在理论界引起重视, 乃至高增益控制器、观测器的文章比比皆是, 而能用上的却寥寥无几. 这反映了不考虑成本的研究, 在工程上是没有多少意义的。&lt;br&gt;
+工程师们在实践中基于对系统物理特性的知识发现了前馈这个办法. 这种独立于反馈回路拟合出的控制量通常是结合参考输入, 以数据或图表形式表示的,常常在控制信号中占主要部分. 同时也使用PID反馈控制器, 发挥微调、纠错的作用. 因此, 工业上的PID控制器常常是与前馈控制结合使用的。&lt;br&gt;
+以上总结的是控制论的基本原理, 是从事自动控制的人们在长期的工程实践中发现、挖掘出来的, 是控制论继续发展的基石. 要系统地、科学地建立和发展一套完整的理论体系, 就需要对基本原理进行提炼、抽象和升华, 使得工程控制的实践能够更加系统,并不断进入更高的层次, 从而“下学而上达”。&lt;/p&gt;
+&lt;h2 id=&#34;从pid到adrc&#34;&gt;从PID到ADRC
+&lt;/h2&gt;&lt;h3 id=&#34;积分控制器&#34;&gt;积分控制器
+&lt;/h3&gt;&lt;h3 id=&#34;三种矫正网络&#34;&gt;三种矫正网络
+&lt;/h3&gt;&lt;p&gt;超前校正网络 滞后矫正网络 超前-滞后矫正网络 &lt;br&gt;
+这些都要配合BODE图去确定频率指标 设计较为复古，较为原始。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;wc剪切频率处的中频段宽度对闭环系统特性有至关重要的影响。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;更进一步---pid控制器&#34;&gt;更进一步&amp;mdash;PID控制器
+&lt;/h3&gt;&lt;p&gt;1 极点配置方法调节PID参数  &lt;br&gt;
+确定极点位置来对闭环系统的Kp Ki进行确定。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.1.png&#34;
+	width=&#34;1151&#34;
+	height=&#34;517&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;222&#34;
+		data-flex-basis=&#34;534px&#34;
+	
+&gt;  &lt;br&gt;
+这里极点配置 根据一阶系统 二阶系统 的阶跃响应曲线来根据期望的TS调节时间根据经验选取。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.2.png&#34;
+	width=&#34;1779&#34;
+	height=&#34;814&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;218&#34;
+		data-flex-basis=&#34;524px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.3.png&#34;
+	width=&#34;1815&#34;
+	height=&#34;865&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;209&#34;
+		data-flex-basis=&#34;503px&#34;
+	
+&gt;&lt;br&gt;
+2 ZN方法调节PID参数&lt;/p&gt;
+&lt;p&gt;3 经验方法&lt;/p&gt;
+&lt;h3 id=&#34;积分串联型控制&#34;&gt;积分串联型控制
+&lt;/h3&gt;&lt;h4 id=&#34;简单理想发动机转速控制模型&#34;&gt;简单理想发动机转速控制模型：
+&lt;/h4&gt;&lt;p&gt;从扭矩 或者电压调整转速 这属于一阶系统。采用比例控制即可很好的进行控制 如下图所示设计控制过程。     &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.5.png&#34;
+	width=&#34;1825&#34;
+	height=&#34;952&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;191&#34;
+		data-flex-basis=&#34;460px&#34;
+	
+&gt;  &lt;br&gt;
+从力矩到转速这属于&lt;strong&gt;积分环节&lt;/strong&gt;：如下 &lt;br&gt;
+$$
+J\dot{\omega}=M
+$$ &lt;br&gt;
+J是转动惯量，转速由w的导数表示。M为力矩。  &lt;br&gt;
+则可以得到w与M的关系如下   &lt;br&gt;
+$$
+\frac{\omega}{M}=\frac{1}{Js}
+$$ &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.6.png&#34;
+	width=&#34;1812&#34;
+	height=&#34;787&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;230&#34;
+		data-flex-basis=&#34;552px&#34;
+	
+&gt;   &lt;br&gt;
+设计如下： &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.4.png&#34;
+	width=&#34;1730&#34;
+	height=&#34;856&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;202&#34;
+		data-flex-basis=&#34;485px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;简单理想发动机转角控制模型&#34;&gt;简单理想发动机转角控制模型：
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.7.png&#34;
+	width=&#34;1722&#34;
+	height=&#34;797&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;216&#34;
+		data-flex-basis=&#34;518px&#34;
+	
+&gt;     &lt;br&gt;
+$$
+\frac{\theta}{M}=\frac{1}{Js^2}
+$$ &lt;br&gt;
+设计比例微分PD控制器。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.8.png&#34;
+	width=&#34;1611&#34;
+	height=&#34;806&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;199&#34;
+		data-flex-basis=&#34;479px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;现实世界中，几乎没有上述两种理想系统。 &lt;br&gt;
+一阶系统有摩擦存在时，二阶系统有摩擦存在时，传统控制方法适用性不再好。 &lt;br&gt;
+积分串联型真的好很容易控制，但是实际系统没有。我们ADRC需要构造这种系统。&lt;/p&gt;
+&lt;h3 id=&#34;误差积分被动补偿-创造理想系统&#34;&gt;误差积分被动补偿-创造理想系统
+&lt;/h3&gt;&lt;p&gt;传统引入积分控制，便是提高了系统的型别。但是不一定会好用。&lt;/p&gt;
+&lt;p&gt;传统发动机控制电脑中，会有几千个PID参数表，用于对应不同的发动机工作环境。&lt;/p&gt;
+&lt;h3 id=&#34;总扰动的概念&#34;&gt;总扰动的概念
+&lt;/h3&gt;&lt;h3 id=&#34;扩张状态观测器eso-估计总扰动&#34;&gt;扩张状态观测器ESO-估计总扰动
+&lt;/h3&gt;&lt;p&gt;个人理解：&lt;strong&gt;扩张状态观测器，即在原本观测器的基础上，加入积分环节（一个积分环节对应一个状态，也就是直观的扩张出来了一个状态）。使得总扰动的估计能够消除稳态误差。&lt;/strong&gt;   &lt;br&gt;
+系统类似下图，使用Simulink模块简单画一下，表示一下  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.13.png&#34;
+	width=&#34;1449&#34;
+	height=&#34;781&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;185&#34;
+		data-flex-basis=&#34;445px&#34;
+	
+&gt;  &lt;br&gt;
+果然反步法的设计过程是重要的，这样看来也有一定相似之处。&lt;br&gt;
+观测器，观察每一个状态的演变过程，所以用导数。也就是状态方程。  &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.9.png&#34;
+	width=&#34;1495&#34;
+	height=&#34;656&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;227&#34;
+		data-flex-basis=&#34;546px&#34;
+	
+&gt;  &lt;br&gt;
+总扰动f的导不知道，先写一个h。 &lt;br&gt;
+&lt;strong&gt;观测器使用测量的偏差与估计的偏差。分别矫正了所有状态的微分方程。只要参数β123调节好，就可以准确估计总扰动。便可以改造出积分串联型理想系统。进而可以很好的控制系统。&lt;/strong&gt;          &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.10.png&#34;
+	width=&#34;1517&#34;
+	height=&#34;757&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;200&#34;
+		data-flex-basis=&#34;480px&#34;
+	
+&gt; &lt;br&gt;
+这样原本Y的二阶导只等于U0 &lt;br&gt;
+此时U0采用比例微分控制即可实现完全控制。&lt;/p&gt;
+&lt;h3 id=&#34;扩张状态观测器eso-如何选择β123&#34;&gt;扩张状态观测器ESO-如何选择β123？
+&lt;/h3&gt;&lt;p&gt;对于 &lt;br&gt;
+$$
+\dot{y}=ay+bu
+$$ &lt;br&gt;
+给定一个阶跃信号，决定系统调节速度的是a。 &lt;br&gt;
+证明：写出传递函数如下： &lt;br&gt;
+$$
+\frac{Y}{U}=\frac{b}{s+a}
+$$ &lt;br&gt;
+a决定极点的位置。所以很明显决定系统稳定以及收敛速度的是a。 &lt;br&gt;
+对状态空间表达式x导=Ax+bu也是如此。A决定系统稳定性以及各种性能。 &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.11.png&#34;
+	width=&#34;1342&#34;
+	height=&#34;716&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;187&#34;
+		data-flex-basis=&#34;449px&#34;
+	
+&gt;   &lt;br&gt;
+特征值决定了状态空间中，每一个状态演变的快与慢。特征值也就是传递函数的极点。这是一个普遍且重要的理论。     &lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.12.png&#34;
+	width=&#34;1356&#34;
+	height=&#34;719&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;188&#34;
+		data-flex-basis=&#34;452px&#34;
+	
+&gt;   &lt;br&gt;
+如何调整特征值？ &lt;br&gt;
+A矩阵写出行列式$A-\lambda$。 令行列式等于0得到特征方程。 令特征方程等于 &lt;br&gt;
+$$
+\left( \lambda +\omega _0 \right) ^3=0
+$$ &lt;br&gt;
+对应相等即可求出β123。&lt;/p&gt;
+&lt;h2 id=&#34;adrc中的fst函数&#34;&gt;ADRC中的fst函数
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;fst函数是ADRC跟踪微分器中的非线性控制器，负责计算加速度控制信号。&lt;/strong&gt;&lt;br&gt;
+fst函数是非线性最速控制律（Fastest Control），它是ADRC中跟踪微分器（Tracking Differentiator, TD）里用于计算控制输入（类似“加速度”或“控制力”）的核心函数。&lt;br&gt;
+具体来说，fst函数&lt;strong&gt;根据当前的跟踪误差和速度，输出一个加速度控制信号，使得跟踪误差能够以最快速度收敛，同时保证系统的平滑性和鲁棒性。&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;一个经典ADRC控制中的FST函数&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-matlab&#34; data-lang=&#34;matlab&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;out &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;fst&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;x1, x2, omega, h&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;%fst Summary of this function goes here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;%   最速控制综合函数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;omega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;d0&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a0&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sqrt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;omega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sign&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;omega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sign&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;omega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;x1：跟踪误差（这里是位置误差，即v1 - v0）&lt;br&gt;
+x2：当前速度（状态变量速度）&lt;br&gt;
+omega：设计参数，控制收敛速度的权重，类似“频率”&lt;br&gt;
+h：采样周期或滤波因子，影响控制平滑程度&lt;br&gt;
+输出 out 是加速度控制量，用于驱动跟踪误差快速收敛。&lt;br&gt;
+&lt;strong&gt;关键步骤说明：&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;参数计算&lt;/strong&gt;&lt;br&gt;
+d = omega * h：一个阈值，用来区分控制策略&lt;br&gt;
+d0 = x1 + h * d 和 y = x1 + h * x2 是辅助计算量，用于判断当前误差状态&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;判断条件if abs(y) &amp;gt; d0&lt;/strong&gt;
+这是非线性分段条件，用于区分误差较大和较小时采用不同的控制策略。&lt;br&gt;
+当误差较大时（abs(y) &amp;gt; d0），采用一种非线性控制策略加快收敛。&lt;br&gt;
+当误差较小时，采用线性控制策略平滑收敛。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;计算控制量a&lt;/strong&gt;&lt;br&gt;
+计算一个加速度控制量a，根据误差和速度调整。&lt;br&gt;
+a越大，控制作用越强，推动误差快速减小。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;输出控制信号out&lt;/strong&gt;&lt;br&gt;
+根据a大小做饱和处理，保证输出在[-omega, omega]范围内，防止控制信号过大导致振荡。&lt;br&gt;
+输出out就是TD控制器对速度的“加速度控制”，用来驱动状态变量快速收敛。&lt;/p&gt;
+&lt;h2 id=&#34;adrc中的fal函数&#34;&gt;ADRC中的fal函数
+&lt;/h2&gt;&lt;p&gt;fal函数是ADRC控制器中常用的非线性函数（nonlinear function），它的全称是“fractional power function”或“非线性误差变换函数”。&lt;br&gt;
+它的主要作用是&lt;strong&gt;对误差e做一种平滑且带“非线性幂次”的变换，用于非线性反馈控制中，可以增强控制器对误差的响应速度和稳定性。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-matlab&#34; data-lang=&#34;matlab&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;out &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;fal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; e, a, delta &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;%fal Summary of this function goes here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;%   Detailed explanation goes here&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; ^ &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sign&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt; ^ &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;e：输入误差值，可以是位置误差、速度误差等。&lt;br&gt;
+a：幂次参数，通常0 &amp;lt; a &amp;lt; 1，控制非线性程度。&lt;br&gt;
+delta：临界阈值，用于定义分段非线性函数的范围。&lt;br&gt;
+&lt;strong&gt;分段说明：&lt;/strong&gt;
+当误差较大时：|e| &amp;gt; delta&lt;br&gt;
+使用非线性幂次函数 |e|^a * sign(e)。&lt;br&gt;
+这会使误差响应不是线性增长，而是一个小于1次幂的曲线，&lt;br&gt;
+当a&amp;lt;1时，误差较大时输出增长较慢，防止控制量过大。&lt;br&gt;
+当误差较小时：|e| &amp;lt;= delta&lt;br&gt;
+使用线性函数 e / (delta^(1 - a))，保证函数在e=0附近光滑连续，&lt;br&gt;
+防止非线性函数在小误差时过于“死板”，保证控制器灵敏响应。&lt;br&gt;
+&lt;strong&gt;为什么要这样设计？&lt;/strong&gt;
+平滑性：函数在e = ±delta处连续且可导，避免了控制器输出跳变。&lt;br&gt;
+非线性控制效果：非线性幂次a让控制器在大误差时减弱输出，避免过冲；在小误差时线性提高灵敏度，保证快速收敛。&lt;br&gt;
+鲁棒性提升：这种设计提高了控制器在面对非线性和扰动时的性能。&lt;/p&gt;
+&lt;h2 id=&#34;adrc中的eso&#34;&gt;ADRC中的ESO
+&lt;/h2&gt;&lt;p&gt;状态空间方程推导而来的ESO，这个没什么好说的？&lt;br&gt;
+ESO 是ADRC的核心模块之一，主要用来：&lt;br&gt;
+在线估计系统的状态变量和总扰动（包含内部未知动态和外部扰动）。&lt;br&gt;
+实时补偿系统扰动，提高控制系统的鲁棒性和抗扰动能力。&lt;br&gt;
+ESO的设计目标是让观测误差快速收敛，从而准确估计系统的状态和扰动。&lt;br&gt;
+四旋翼中的ESO，二阶。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-matlab&#34; data-lang=&#34;matlab&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;[dz1,dz2,dz3] &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;fcn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;u,e,z2, z3&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;%#连续形式的扩张状态观测器(ESO)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;%% 参数赋值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;beta01_y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;beta02_y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;beta03_y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.75&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;         &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;          &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.25&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;         &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.006&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;c&#34;&gt;% 线性段的区间长度&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;b0_y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.06&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;       &lt;span class=&#34;c&#34;&gt;% 决定补偿强弱的“补偿因子”&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;dz1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;beta01_y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;dz2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;beta02_y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b0_y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;dz3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;beta03_y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;输入&lt;br&gt;
+u：控制输入信号（控制器输出的控制量）&lt;br&gt;
+e：观测误差，通常是测量输出与估计输出的误差，e = z1 - y（这里y是系统输出，z1是估计的状态）&lt;br&gt;
+z2, z3：ESO内部状态变量，对应系统速度状态和扰动估计&lt;br&gt;
+输出&lt;br&gt;
+dz1, dz2, dz3：状态变量的导数，供积分器计算下一时刻状态估计值&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/2.1.png&#34;
+	width=&#34;1272&#34;
+	height=&#34;841&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;151&#34;
+		data-flex-basis=&#34;362px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;adrc中参数调节&#34;&gt;ADRC中参数调节
+&lt;/h2&gt;&lt;p&gt;ADRC的高志强老师的ACC2006论文中的ADRC模型如下&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/3.7.png&#34;
+	width=&#34;2654&#34;
+	height=&#34;1426&#34;
+	
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;186&#34;
+		data-flex-basis=&#34;446px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Latex小记</title>
         <link>https://a233a2.github.io/p/latex%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
@@ -3110,431 +3549,6 @@ $$
 高增益1：都差不多。
 高频0.1：都差不多。   &lt;br&gt;
 高频1：都差不多，收敛效果最差。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>ADRC小记</title>
-        <link>https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/</link>
-        <pubDate>Mon, 16 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/</guid>
-        <description>&lt;h3 id=&#34;adrc课程笔记&#34;&gt;ADRC课程笔记
-&lt;/h3&gt;&lt;p&gt;本人对ADRC控制有着深厚的研究兴趣。在讨论研究韩京清先生的ADRC知识之前，我想先给不太专业的自己补习一些经典与现代控制理论方向的相关知识。&lt;/p&gt;
-&lt;h4 id=&#34;生理前馈系统&#34;&gt;生理前馈系统
-&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;在生理学上，前馈控制的例子是在实际体力活动之前，自主神经系统对心跳的正常预期调节。前馈控制可以比作对已知线索的预期反应（预测编码）。心跳的反馈调节为机体提供了进一步对运动的适应性。  &amp;ndash;wiki百科&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;在前馈系统中，控制变量的调整不是以目标和回授之间的误差为基础，它是以过程&lt;strong&gt;数学模型&lt;/strong&gt;的知识和&lt;strong&gt;过程扰动&lt;/strong&gt;的知识或测量为基础。&lt;/p&gt;
-&lt;p&gt;所以对于数学模型的整体掌握是对系统扰动进行前馈消除的前提。&lt;/p&gt;
-&lt;p&gt;正所谓要想系统稳得住，必须得有前馈引入。前馈控制在某些控制场合下是必须项。&lt;/p&gt;
-&lt;h3 id=&#34;前馈控制&#34;&gt;前馈控制
-&lt;/h3&gt;&lt;h6 id=&#34;摘自高志强-自抗扰控制思想探究&#34;&gt;摘自《高志强: 自抗扰控制思想探究》
-&lt;/h6&gt;&lt;p&gt;前馈控制是一种&lt;strong&gt;基于对扰动的预测&lt;/strong&gt;进行补偿的控制方法。它通过&lt;strong&gt;测量&lt;/strong&gt;可能影响系统输出的扰动变量，并根据扰动变量与系统输出之间的关系，计算出所需的控制量，在&lt;strong&gt;扰动对系统产生影响之前&lt;/strong&gt;就进行调节，以抵消扰动的影响。&lt;br&gt;
-在自动控制系统理论中学习过，由传递函数理论数学推导，前馈的引入可以完全的消除系统的扰动误差。现在这显然并不是这么的简单，这需要对系统数学模型有着十分精确的掌握。&lt;br&gt;
-前馈控制在工业界用途广泛, 但是学术界对它很少关心, 认为是开环控制, 没有什么理论可言. 前馈的使用方式主要有两种: 一种是&lt;strong&gt;根据参考输入和对象模型的逆&lt;/strong&gt;而得到的控制量, 不依赖对象的实时信息,暂且称之为A类前馈; 另外一种前馈, 是&lt;strong&gt;根据被控量之外的对象信息&lt;/strong&gt;所产生的控制量, 即B类前馈。&lt;br&gt;
-前馈控制提出的本意是要区别于上面提到的狭义的反馈控制, 表示控制量的一部分甚至全部都可以完全独立于被控量的量测. Black定义的反馈(feedback)本来就是针对前馈(feedforward)而言的, 表示信号流向反转, 由输出到输入. 这里信号的走向一正一反, 概念很清楚。&lt;br&gt;
-可是当反馈这个通讯工程的概念被借用到控制工程时, 它的反义词前馈的含义便有了两种解释. 比如上面说的A类前馈明显是开环控制, 控制量完全独立于对象的实时信息. 可是B类前馈则不然, 它依赖的还是对象信息, 实际上是前面提到的广义反馈, 只不过反馈的不是输出量而已. B类前馈在文献中也被称为扰动前馈, 它是基于对象扰动信息的实时提取, 就像指南车. 可是同样是基于对象信息的提取, 指南车为什么会被称为开环控制呢？其实B类前馈属于广义反馈, 不应称其为前馈或开环控制. 鉴于前馈的概念和用法前后重叠, 为了概念的清晰, 建议今后可把B类前馈归入抗扰原理讨论; 把前馈狭义地定义为A类前馈.那么这样的前馈有什么意义呢？为什么它的用途这么广呢？主要原因是它降低了快速跟踪的成本。&lt;br&gt;
-一个控制系统要使输出迅速跟踪给定值有两个途径: 1) 高带宽; 2) 前馈. 但是在工业上, 带宽就是成本.高带宽虽然能使跟踪速度提高, 但也带来很多问题:1) 对执行机构的品质要求提高; 2) 激励了对象的高频动态使控制问题复杂化; 3) 闭环系统的稳定裕度下降,对相位滞后和时间延迟更敏感; 4) 对传感器噪声更敏感, 等等.高带宽的成本在20世 50年代就有专门、详细的讨论, 比如文献[46], 但是至今没能在理论界引起重视, 乃至高增益控制器、观测器的文章比比皆是, 而能用上的却寥寥无几. 这反映了不考虑成本的研究, 在工程上是没有多少意义的。&lt;br&gt;
-工程师们在实践中基于对系统物理特性的知识发现了前馈这个办法. 这种独立于反馈回路拟合出的控制量通常是结合参考输入, 以数据或图表形式表示的,常常在控制信号中占主要部分. 同时也使用PID反馈控制器, 发挥微调、纠错的作用. 因此, 工业上的PID控制器常常是与前馈控制结合使用的。&lt;br&gt;
-以上总结的是控制论的基本原理, 是从事自动控制的人们在长期的工程实践中发现、挖掘出来的, 是控制论继续发展的基石. 要系统地、科学地建立和发展一套完整的理论体系, 就需要对基本原理进行提炼、抽象和升华, 使得工程控制的实践能够更加系统,并不断进入更高的层次, 从而“下学而上达”。&lt;/p&gt;
-&lt;h2 id=&#34;从pid到adrc&#34;&gt;从PID到ADRC
-&lt;/h2&gt;&lt;h3 id=&#34;积分控制器&#34;&gt;积分控制器
-&lt;/h3&gt;&lt;h3 id=&#34;三种矫正网络&#34;&gt;三种矫正网络
-&lt;/h3&gt;&lt;p&gt;超前校正网络 滞后矫正网络 超前-滞后矫正网络 &lt;br&gt;
-这些都要配合BODE图去确定频率指标 设计较为复古，较为原始。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;wc剪切频率处的中频段宽度对闭环系统特性有至关重要的影响。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;更进一步---pid控制器&#34;&gt;更进一步&amp;mdash;PID控制器
-&lt;/h3&gt;&lt;p&gt;1 极点配置方法调节PID参数  &lt;br&gt;
-确定极点位置来对闭环系统的Kp Ki进行确定。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.1.png&#34;
-	width=&#34;1151&#34;
-	height=&#34;517&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;222&#34;
-		data-flex-basis=&#34;534px&#34;
-	
-&gt;  &lt;br&gt;
-这里极点配置 根据一阶系统 二阶系统 的阶跃响应曲线来根据期望的TS调节时间根据经验选取。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.2.png&#34;
-	width=&#34;1779&#34;
-	height=&#34;814&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;218&#34;
-		data-flex-basis=&#34;524px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.3.png&#34;
-	width=&#34;1815&#34;
-	height=&#34;865&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;209&#34;
-		data-flex-basis=&#34;503px&#34;
-	
-&gt;&lt;br&gt;
-2 ZN方法调节PID参数&lt;/p&gt;
-&lt;p&gt;3 经验方法&lt;/p&gt;
-&lt;h3 id=&#34;积分串联型控制&#34;&gt;积分串联型控制
-&lt;/h3&gt;&lt;h4 id=&#34;简单理想发动机转速控制模型&#34;&gt;简单理想发动机转速控制模型：
-&lt;/h4&gt;&lt;p&gt;从扭矩 或者电压调整转速 这属于一阶系统。采用比例控制即可很好的进行控制 如下图所示设计控制过程。     &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.5.png&#34;
-	width=&#34;1825&#34;
-	height=&#34;952&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;191&#34;
-		data-flex-basis=&#34;460px&#34;
-	
-&gt;  &lt;br&gt;
-从力矩到转速这属于&lt;strong&gt;积分环节&lt;/strong&gt;：如下 &lt;br&gt;
-$$
-J\dot{\omega}=M
-$$ &lt;br&gt;
-J是转动惯量，转速由w的导数表示。M为力矩。  &lt;br&gt;
-则可以得到w与M的关系如下   &lt;br&gt;
-$$
-\frac{\omega}{M}=\frac{1}{Js}
-$$ &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.6.png&#34;
-	width=&#34;1812&#34;
-	height=&#34;787&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;230&#34;
-		data-flex-basis=&#34;552px&#34;
-	
-&gt;   &lt;br&gt;
-设计如下： &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.4.png&#34;
-	width=&#34;1730&#34;
-	height=&#34;856&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;202&#34;
-		data-flex-basis=&#34;485px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;h4 id=&#34;简单理想发动机转角控制模型&#34;&gt;简单理想发动机转角控制模型：
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.7.png&#34;
-	width=&#34;1722&#34;
-	height=&#34;797&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;216&#34;
-		data-flex-basis=&#34;518px&#34;
-	
-&gt;     &lt;br&gt;
-$$
-\frac{\theta}{M}=\frac{1}{Js^2}
-$$ &lt;br&gt;
-设计比例微分PD控制器。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.8.png&#34;
-	width=&#34;1611&#34;
-	height=&#34;806&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;199&#34;
-		data-flex-basis=&#34;479px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;现实世界中，几乎没有上述两种理想系统。 &lt;br&gt;
-一阶系统有摩擦存在时，二阶系统有摩擦存在时，传统控制方法适用性不再好。 &lt;br&gt;
-积分串联型真的好很容易控制，但是实际系统没有。我们ADRC需要构造这种系统。&lt;/p&gt;
-&lt;h3 id=&#34;误差积分被动补偿-创造理想系统&#34;&gt;误差积分被动补偿-创造理想系统
-&lt;/h3&gt;&lt;p&gt;传统引入积分控制，便是提高了系统的型别。但是不一定会好用。&lt;/p&gt;
-&lt;p&gt;传统发动机控制电脑中，会有几千个PID参数表，用于对应不同的发动机工作环境。&lt;/p&gt;
-&lt;h3 id=&#34;总扰动的概念&#34;&gt;总扰动的概念
-&lt;/h3&gt;&lt;h3 id=&#34;扩张状态观测器eso-估计总扰动&#34;&gt;扩张状态观测器ESO-估计总扰动
-&lt;/h3&gt;&lt;p&gt;个人理解：&lt;strong&gt;扩张状态观测器，即在原本观测器的基础上，加入积分环节（一个积分环节对应一个状态，也就是直观的扩张出来了一个状态）。使得总扰动的估计能够消除稳态误差。&lt;/strong&gt;   &lt;br&gt;
-系统类似下图，使用Simulink模块简单画一下，表示一下  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.13.png&#34;
-	width=&#34;1449&#34;
-	height=&#34;781&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;185&#34;
-		data-flex-basis=&#34;445px&#34;
-	
-&gt;  &lt;br&gt;
-果然反步法的设计过程是重要的，这样看来也有一定相似之处。&lt;br&gt;
-观测器，观察每一个状态的演变过程，所以用导数。也就是状态方程。  &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.9.png&#34;
-	width=&#34;1495&#34;
-	height=&#34;656&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;227&#34;
-		data-flex-basis=&#34;546px&#34;
-	
-&gt;  &lt;br&gt;
-总扰动f的导不知道，先写一个h。 &lt;br&gt;
-&lt;strong&gt;观测器使用测量的偏差与估计的偏差。分别矫正了所有状态的微分方程。只要参数β123调节好，就可以准确估计总扰动。便可以改造出积分串联型理想系统。进而可以很好的控制系统。&lt;/strong&gt;          &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.10.png&#34;
-	width=&#34;1517&#34;
-	height=&#34;757&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;200&#34;
-		data-flex-basis=&#34;480px&#34;
-	
-&gt; &lt;br&gt;
-这样原本Y的二阶导只等于U0 &lt;br&gt;
-此时U0采用比例微分控制即可实现完全控制。&lt;/p&gt;
-&lt;h3 id=&#34;扩张状态观测器eso-如何选择β123&#34;&gt;扩张状态观测器ESO-如何选择β123？
-&lt;/h3&gt;&lt;p&gt;对于 &lt;br&gt;
-$$
-\dot{y}=ay+bu
-$$ &lt;br&gt;
-给定一个阶跃信号，决定系统调节速度的是a。 &lt;br&gt;
-证明：写出传递函数如下： &lt;br&gt;
-$$
-\frac{Y}{U}=\frac{b}{s+a}
-$$ &lt;br&gt;
-a决定极点的位置。所以很明显决定系统稳定以及收敛速度的是a。 &lt;br&gt;
-对状态空间表达式x导=Ax+bu也是如此。A决定系统稳定性以及各种性能。 &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.11.png&#34;
-	width=&#34;1342&#34;
-	height=&#34;716&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;187&#34;
-		data-flex-basis=&#34;449px&#34;
-	
-&gt;   &lt;br&gt;
-特征值决定了状态空间中，每一个状态演变的快与慢。特征值也就是传递函数的极点。这是一个普遍且重要的理论。     &lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/1.12.png&#34;
-	width=&#34;1356&#34;
-	height=&#34;719&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;188&#34;
-		data-flex-basis=&#34;452px&#34;
-	
-&gt;   &lt;br&gt;
-如何调整特征值？ &lt;br&gt;
-A矩阵写出行列式$A-\lambda$。 令行列式等于0得到特征方程。 令特征方程等于 &lt;br&gt;
-$$
-\left( \lambda +\omega _0 \right) ^3=0
-$$ &lt;br&gt;
-对应相等即可求出β123。&lt;/p&gt;
-&lt;h2 id=&#34;adrc中的fst函数&#34;&gt;ADRC中的fst函数
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;fst函数是ADRC跟踪微分器中的非线性控制器，负责计算加速度控制信号。&lt;/strong&gt;&lt;br&gt;
-fst函数是非线性最速控制律（Fastest Control），它是ADRC中跟踪微分器（Tracking Differentiator, TD）里用于计算控制输入（类似“加速度”或“控制力”）的核心函数。&lt;br&gt;
-具体来说，fst函数&lt;strong&gt;根据当前的跟踪误差和速度，输出一个加速度控制信号，使得跟踪误差能够以最快速度收敛，同时保证系统的平滑性和鲁棒性。&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;一个经典ADRC控制中的FST函数&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-matlab&#34; data-lang=&#34;matlab&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;out &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;fst&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;x1, x2, omega, h&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;%fst Summary of this function goes here&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;%   最速控制综合函数&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;omega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;d0&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a0&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sqrt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;omega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d0&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sign&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;omega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sign&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;omega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;x1：跟踪误差（这里是位置误差，即v1 - v0）&lt;br&gt;
-x2：当前速度（状态变量速度）&lt;br&gt;
-omega：设计参数，控制收敛速度的权重，类似“频率”&lt;br&gt;
-h：采样周期或滤波因子，影响控制平滑程度&lt;br&gt;
-输出 out 是加速度控制量，用于驱动跟踪误差快速收敛。&lt;br&gt;
-&lt;strong&gt;关键步骤说明：&lt;/strong&gt;&lt;br&gt;
-&lt;strong&gt;参数计算&lt;/strong&gt;&lt;br&gt;
-d = omega * h：一个阈值，用来区分控制策略&lt;br&gt;
-d0 = x1 + h * d 和 y = x1 + h * x2 是辅助计算量，用于判断当前误差状态&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;判断条件if abs(y) &amp;gt; d0&lt;/strong&gt;
-这是非线性分段条件，用于区分误差较大和较小时采用不同的控制策略。&lt;br&gt;
-当误差较大时（abs(y) &amp;gt; d0），采用一种非线性控制策略加快收敛。&lt;br&gt;
-当误差较小时，采用线性控制策略平滑收敛。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;计算控制量a&lt;/strong&gt;&lt;br&gt;
-计算一个加速度控制量a，根据误差和速度调整。&lt;br&gt;
-a越大，控制作用越强，推动误差快速减小。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;输出控制信号out&lt;/strong&gt;&lt;br&gt;
-根据a大小做饱和处理，保证输出在[-omega, omega]范围内，防止控制信号过大导致振荡。&lt;br&gt;
-输出out就是TD控制器对速度的“加速度控制”，用来驱动状态变量快速收敛。&lt;/p&gt;
-&lt;h2 id=&#34;adrc中的fal函数&#34;&gt;ADRC中的fal函数
-&lt;/h2&gt;&lt;p&gt;fal函数是ADRC控制器中常用的非线性函数（nonlinear function），它的全称是“fractional power function”或“非线性误差变换函数”。&lt;br&gt;
-它的主要作用是&lt;strong&gt;对误差e做一种平滑且带“非线性幂次”的变换，用于非线性反馈控制中，可以增强控制器对误差的响应速度和稳定性。&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-matlab&#34; data-lang=&#34;matlab&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;out &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;fal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; e, a, delta &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;%fal Summary of this function goes here&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;%   Detailed explanation goes here&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; ^ &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;sign&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;out&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt; ^ &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;e：输入误差值，可以是位置误差、速度误差等。&lt;br&gt;
-a：幂次参数，通常0 &amp;lt; a &amp;lt; 1，控制非线性程度。&lt;br&gt;
-delta：临界阈值，用于定义分段非线性函数的范围。&lt;br&gt;
-&lt;strong&gt;分段说明：&lt;/strong&gt;
-当误差较大时：|e| &amp;gt; delta&lt;br&gt;
-使用非线性幂次函数 |e|^a * sign(e)。&lt;br&gt;
-这会使误差响应不是线性增长，而是一个小于1次幂的曲线，&lt;br&gt;
-当a&amp;lt;1时，误差较大时输出增长较慢，防止控制量过大。&lt;br&gt;
-当误差较小时：|e| &amp;lt;= delta&lt;br&gt;
-使用线性函数 e / (delta^(1 - a))，保证函数在e=0附近光滑连续，&lt;br&gt;
-防止非线性函数在小误差时过于“死板”，保证控制器灵敏响应。&lt;br&gt;
-&lt;strong&gt;为什么要这样设计？&lt;/strong&gt;
-平滑性：函数在e = ±delta处连续且可导，避免了控制器输出跳变。&lt;br&gt;
-非线性控制效果：非线性幂次a让控制器在大误差时减弱输出，避免过冲；在小误差时线性提高灵敏度，保证快速收敛。&lt;br&gt;
-鲁棒性提升：这种设计提高了控制器在面对非线性和扰动时的性能。&lt;/p&gt;
-&lt;h2 id=&#34;adrc中的eso&#34;&gt;ADRC中的ESO
-&lt;/h2&gt;&lt;p&gt;状态空间方程推导而来的ESO，这个没什么好说的？&lt;br&gt;
-ESO 是ADRC的核心模块之一，主要用来：&lt;br&gt;
-在线估计系统的状态变量和总扰动（包含内部未知动态和外部扰动）。&lt;br&gt;
-实时补偿系统扰动，提高控制系统的鲁棒性和抗扰动能力。&lt;br&gt;
-ESO的设计目标是让观测误差快速收敛，从而准确估计系统的状态和扰动。&lt;br&gt;
-四旋翼中的ESO，二阶。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-matlab&#34; data-lang=&#34;matlab&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;[dz1,dz2,dz3] &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;fcn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;u,e,z2, z3&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c&#34;&gt;%#连续形式的扩张状态观测器(ESO)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;%% 参数赋值&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;beta01_y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;beta02_y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;beta03_y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.75&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;         &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;          &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;a3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.25&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;         &lt;span class=&#34;c&#34;&gt;% 可调参数&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.006&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;c&#34;&gt;% 线性段的区间长度&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;b0_y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.06&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;       &lt;span class=&#34;c&#34;&gt;% 决定补偿强弱的“补偿因子”&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;dz1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;beta01_y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;dz2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;beta02_y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b0_y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;dz3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;beta03_y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;delta&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;输入&lt;br&gt;
-u：控制输入信号（控制器输出的控制量）&lt;br&gt;
-e：观测误差，通常是测量输出与估计输出的误差，e = z1 - y（这里y是系统输出，z1是估计的状态）&lt;br&gt;
-z2, z3：ESO内部状态变量，对应系统速度状态和扰动估计&lt;br&gt;
-输出&lt;br&gt;
-dz1, dz2, dz3：状态变量的导数，供积分器计算下一时刻状态估计值&lt;br&gt;
-&lt;img src=&#34;https://a233a2.github.io/p/adrc%E5%B0%8F%E8%AE%B0/2.1.png&#34;
-	width=&#34;1272&#34;
-	height=&#34;841&#34;
-	
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;151&#34;
-		data-flex-basis=&#34;362px&#34;
-	
-&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
