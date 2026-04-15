@@ -8,13 +8,13 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Pixhawk6C_Simulink开发环境配置-用于算法验证等</title>
-        <link>https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/</link>
+        <title>Pixhawk6C_Simulink开发环境配置-用于算法验证等踩坑记录</title>
+        <link>https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
         <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
         
-        <guid>https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/fengmian.png" alt="Featured image of post Pixhawk6C_Simulink开发环境配置-用于算法验证等" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置与跨系统编译排雷记录&#34;&gt;PX4-Simulink联合环境配置与跨系统编译排雷记录
-&lt;/h3&gt;&lt;p&gt;最近升级了控制器，从老的Pixhawk 2.4.8换到了Pixhawk6c控制器，所以重新配置了Simulink测试实验环境，用了最新的MATLAB2025A版本，PX4版本用的1.14.3。但是遇到了以下很多的问题，大都是这套环境自身的坑（毕竟开发维护人员少之又少），特此记录如下，希望能帮到别人：&lt;/p&gt;
+        <guid>https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/fengmian.png" alt="Featured image of post Pixhawk6C_Simulink开发环境配置-用于算法验证等踩坑记录" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置与跨系统编译排雷记录&#34;&gt;PX4-Simulink联合环境配置与跨系统编译排雷记录
+&lt;/h3&gt;&lt;p&gt;最近升级了控制器，从老的Pixhawk 2.4.8换到了Pixhawk6c控制器，所以重新配置了Simulink测试实验环境，用了新的MATLAB2025A版本，PX4版本用的1.14.3。但是遇到了以下很多的问题，大都是这套环境自身的坑（毕竟开发维护人员少之又少），特此记录如下，希望能帮到别人：&lt;/p&gt;
 &lt;p&gt;在日常的控制算法研究与台架验证中，利用 MATLAB/Simulink 结合 PX4 硬件支持包（UAV Toolbox Support Package for PX4 Autopilots）进行代码自动生成与硬件在环（Connected I/O）测试，是极大地提升开发效率的手段。&lt;/p&gt;
 &lt;p&gt;然而，在 Windows 11 + WSL2 (Ubuntu 22.04) + MATLAB 2025A 的架构下配置 Pixhawk 6C 的联合开发环境时，跨文件系统与工具链缓存往往会引发一些极为顽固的编译错误。本文详细记录了在此次环境搭建中遇到的核心难题及最终的“降维打击”解决方案。&lt;/p&gt;
 &lt;hr&gt;
