@@ -86,8 +86,6 @@ MATLAB 底层使用 Windows 的 &lt;code&gt;cmd.exe&lt;/code&gt; 执行编译脚
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
@@ -110,11 +108,11 @@ MATLAB 底层使用 Windows 的 &lt;code&gt;cmd.exe&lt;/code&gt; 执行编译脚
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 4. 验证符号链接是否生效&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;验证编译器版本：&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++ --version
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;参考来源：&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;CSDN博主 hahaha12139 的文章 / CC 4.0 BY-SA版权&lt;span class=&#34;o&#34;&gt;](&lt;/span&gt;https://blog.csdn.net/hahaha12139/article/details/157299931?spm&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1001.2014.3001.5506&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt;*
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;p&gt;&lt;em&gt;(参考来源：&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/hahaha12139/article/details/157299931?spm=1001.2014.3001.5506&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CSDN博主 hahaha12139 的文章 / CC 4.0 BY-SA版权&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>ADRC小记</title>
