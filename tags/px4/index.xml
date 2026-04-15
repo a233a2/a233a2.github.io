@@ -14,49 +14,56 @@
         
         <guid>https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/</guid>
         <description>&lt;img src="https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/fengmian.png" alt="Featured image of post Pixhawk6C_Simulink开发环境配置-用于算法验证等" /&gt;&lt;h3 id=&#34;px4-simulink联合环境配置与跨系统编译排雷记录&#34;&gt;PX4-Simulink联合环境配置与跨系统编译排雷记录
-&lt;/h3&gt;&lt;p&gt;在日常的控制算法研究与台架验证中，利用 MATLAB/Simulink 结合 PX4 硬件支持包（UAV Toolbox Support Package for PX4 Autopilots）进行代码自动生成与硬件在环（Connected I/O）测试，是极大地提升开发效率的手段。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;最近升级了控制器，从老的Pixhawk 2.4.8换到了Pixhawk6c控制器，所以重新配置了Simulink测试实验环境，用了最新的MATLAB2025A版本，PX4版本用的1.14.3。但是遇到了以下很多的问题，大都是这套环境自身的坑（毕竟开发维护人员少之又少），特此记录如下，希望能帮到别人：&lt;/p&gt;
+&lt;p&gt;在日常的控制算法研究与台架验证中，利用 MATLAB/Simulink 结合 PX4 硬件支持包（UAV Toolbox Support Package for PX4 Autopilots）进行代码自动生成与硬件在环（Connected I/O）测试，是极大地提升开发效率的手段。&lt;/p&gt;
 &lt;p&gt;然而，在 Windows 11 + WSL2 (Ubuntu 22.04) + MATLAB 2025A 的架构下配置 Pixhawk 6C 的联合开发环境时，跨文件系统与工具链缓存往往会引发一些极为顽固的编译错误。本文详细记录了在此次环境搭建中遇到的核心难题及最终的“降维打击”解决方案。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;踩坑一windows与wsl跨文件系统监控警告&#34;&gt;踩坑一：Windows与WSL跨文件系统监控警告
-&lt;/h4&gt;&lt;p&gt;在尝试使用 Simulink 编译处于 WSL 网络路径下的 PX4 源码时，通常会遇到第一个警告：&lt;/p&gt;
+&lt;h4 id=&#34;踩坑一px4-firmware-build-not-done-错误与跨系统句柄警告&#34;&gt;踩坑一：PX4 Firmware build not done 错误与跨系统句柄警告
+&lt;/h4&gt;&lt;p&gt;在尝试使用 Simulink 编译处于 WSL 网络路径下的 PX4 源码时，通常会遇到第一个警告，紧接着编译彻底失败：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;警告: 无法获得 \\wsl.localhost\ubuntu-22.04\home\...\PX4-Autopilot\build\px4_fmu-v6c_default 的更改通知句柄。&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;警告: 无法获得 \\wsl.localhost\ubuntu-22.04\home\...\PX4-Autopilot\build\px4_fmu-v6c_default 的更改通知句柄。&lt;/code&gt;
+&lt;code&gt;错误：PX4 Firmware build not done for the selected cmake config, perform setup screens&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;接着会伴随 cmake与所选编译固件不符合的原因，导致编译失败，进而全部功能受到影响。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;问题根源：&lt;/strong&gt;
-这是一个典型的 Windows 与 WSL2 跨系统交互引发的兼容性警告。Simulink 在运行时会向系统申请一个“更改通知句柄”来实时监控目标文件夹的文件变动。但由于代码存放在 WSL2 的虚拟磁盘中，Windows 通过类似网络共享的协议（&lt;code&gt;\\wsl.localhost\...&lt;/code&gt;）访问，这种协议对底层文件实时监控（inotify）支持不完善，导致 Simulink 申请权限失败。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;处理建议：&lt;/strong&gt;
-如果仅仅是警告，并不打断编译过程，通常可以忽略。若要彻底解决，推荐使用映射网络驱动器（将 &lt;code&gt;\\wsl.localhost\Ubuntu-22.04&lt;/code&gt; 映射为本地磁盘如 &lt;code&gt;Z:&lt;/code&gt; 盘）来缓解跨域路径问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;现象描述：&lt;/strong&gt;
+在 MATLAB 的 Hardware Setup 中可以正常走完验证，在 WSL 终端中敲 &lt;code&gt;make&lt;/code&gt; 也可以正常编译出固件，但一旦回到 Simulink 程序中点击编译或部署，就会直接报上述错误，导致全部功能受阻。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题根源与排雷：&lt;/strong&gt;
+很多时候我们会以为是 &lt;code&gt;\\wsl.localhost&lt;/code&gt; 的跨文件系统监控权限问题，试图通过**映射网络驱动器（如映射为 Z: 盘）**来解决。&lt;strong&gt;但实际上改映射驱动器根本没用！&lt;/strong&gt;
+这个错误的最根本原因在于：&lt;strong&gt;WSL 中的 PX4 交叉编译工具链（Toolchain）版本过旧或缺失。&lt;/strong&gt; 导致 Simulink 底层的脚本在第一步检查固件环境时，无法与当前的 CMake 配置正确匹配。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解决方案：&lt;/strong&gt;
+必须在 WSL 环境中彻底更新 PX4 的 Toolchain（例如安装较新的 &lt;code&gt;gcc-arm-none-eabi&lt;/code&gt;）。只要系统底层的编译器版本满足当前 PX4 固件（如 v6c）的 CMake 要求，Simulink 才能顺利识别固件。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h4 id=&#34;踩坑二cmd不支持unc路径的致命拦截&#34;&gt;踩坑二：CMD不支持UNC路径的致命拦截
-&lt;/h4&gt;&lt;p&gt;在部署编译时，底层调用命令行往往会直接报错并中断：&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;在部署编译时，Windows 底层调用命令行往往会直接报错并中断：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;用作为当前目录的以上路径启动了 CMD.EXE。 UNC 路径不受支持。默认值设为 Windows 目录。&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;问题根源：&lt;/strong&gt;
-MATLAB 底层使用 Windows 的 &lt;code&gt;cmd.exe&lt;/code&gt; 执行编译脚本，但 CMD 原生不支持在网络共享路径（UNC 路径）下执行命令。一旦遇到，会自动掉线回退到 &lt;code&gt;C:\Windows&lt;/code&gt; 目录，导致后续的所有 CMake 和 Make 命令彻底迷失方向。&lt;/p&gt;
+MATLAB 底层使用 Windows 的 &lt;code&gt;cmd.exe&lt;/code&gt; 执行编译脚本，但 CMD 原生不支持在网络共享路径（即 &lt;code&gt;\\wsl.localhost\...&lt;/code&gt; 这样的 UNC 路径）下执行命令。一旦遇到，会自动掉线回退到 &lt;code&gt;C:\Windows&lt;/code&gt; 目录，导致后续的所有 CMake 和 Make 命令彻底迷失方向。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解决方案：修改注册表&lt;/strong&gt;
 为 CMD 强行开启 UNC 路径支持：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;打开注册表编辑器，定位到 &lt;code&gt;HKEY_CURRENT_USER\Software\Microsoft\Command Processor&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;新建一个 &lt;code&gt;DWORD (32位)&lt;/code&gt; 值，命名为 &lt;code&gt;DisableUNCCheck&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;将其数值数据设置为 &lt;code&gt;1&lt;/code&gt;（十六进制）。&lt;/li&gt;
+&lt;li&gt;打开 Windows 注册表编辑器，定位到 &lt;code&gt;HKEY_CURRENT_USER\Software\Microsoft\Command Processor&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;（如果没有 &lt;code&gt;Command Processor&lt;/code&gt; 项，则右键新建该项）。&lt;/li&gt;
+&lt;li&gt;在其中新建一个 &lt;code&gt;DWORD (32位)&lt;/code&gt; 值，命名为 &lt;code&gt;DisableUNCCheck&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;将其数值数据设置为 &lt;code&gt;1&lt;/code&gt;（十六进制），保存后即可解决。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(参考来源：&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/lisayh/article/details/135070389&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CSDN博主 lisayh 的文章 / CC 4.0 BY-SA版权&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;踩坑三极其顽固的-toolchain-路径缓存-bug核心难点&#34;&gt;踩坑三：极其顽固的 Toolchain 路径缓存 Bug（核心难点）
-&lt;/h4&gt;&lt;p&gt;这部分参考了：https://blog.csdn.net/lisayh/article/details/135070389
-以及https://blog.csdn.net/hahaha12139/article/details/157299931?spm=1001.2014.3001.5502&lt;/p&gt;
-&lt;p&gt;在清理完上述网络路径问题，并更新了 WSL 内部的交叉编译工具链（例如换用了新版的 &lt;code&gt;arm-none-eabi-gcc 10.3.1&lt;/code&gt;，路径位于 &lt;code&gt;/usr/bin&lt;/code&gt;）后，Simulink 依然会报出极其离谱的错误：&lt;/p&gt;
+&lt;h4 id=&#34;踩坑三极其顽固的-gcc-toolchain-路径缓存-bug核心难点&#34;&gt;踩坑三：极其顽固的 GCC Toolchain 路径缓存 Bug（核心难点）
+&lt;/h4&gt;&lt;p&gt;在清理完上述网络路径问题，并成功更新了 WSL 内部的交叉编译工具链（换用了新版的 &lt;code&gt;arm-none-eabi-gcc 10.3.1&lt;/code&gt;，真实路径位于 &lt;code&gt;/usr/bin&lt;/code&gt;）后，Simulink 依然会报出极其离谱的版本路径错误：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;Compilation failure for command /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++ ...&lt;/code&gt;
-&lt;code&gt;bash: line 1: /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++: No such file or directory&lt;/code&gt;&lt;/p&gt;
+&lt;code&gt;bash: line 1: /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++: No such file or directory&lt;/code&gt;
+后面跟一大堆。。。核心错误点就是上述内容。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;问题根源：&lt;/strong&gt;
-我在 WSL 终端里自己敲 &lt;code&gt;make&lt;/code&gt; 都能成功调用新编译器，但 MATLAB 只要一介入，就非要去抓 &lt;code&gt;/opt/&lt;/code&gt; 下的旧版编译器。这是因为 &lt;strong&gt;MATLAB/Simulink 的 PX4 支持包底层配置缓存极其顽固&lt;/strong&gt;。哪怕通过Toolbox的设置重新走向导、删除缓存、甚至是清理源码目录，MATLAB 生成的底层 CMake 配置文件依然会“死记硬背”着第一次安装时的旧工具链路径。&lt;/p&gt;
+我在 WSL 终端里自己敲 &lt;code&gt;make&lt;/code&gt; 都能成功调用新编译器，但 MATLAB 只要一介入，就非要去抓 &lt;code&gt;/opt/&lt;/code&gt; 下的旧版编译器。
+这是因为 &lt;strong&gt;MATLAB/Simulink 的 PX4 支持包底层配置缓存极其顽固&lt;/strong&gt;。哪怕通过 Toolbox 的设置重新走向导、删除 slbuild 缓存、甚至是 &lt;code&gt;make clean&lt;/code&gt; 清理源码目录，MATLAB 生成的底层 CMake 配置文件依然会“死记硬背”着第一次安装时的旧工具链路径。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;终极解决方案：软链接“降维打击”&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;既然 MATLAB 内部的代码生成器是个“老顽固”，死活揪着旧路径不放，最高效的解决逻辑是：&lt;strong&gt;不与 MATLAB 的缓存较劲，直接在 Linux 系统层面给它造一个“替身”。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;利用 Linux 的软链接（Symbolic Link）功能，我们在 &lt;code&gt;/opt/&lt;/code&gt; 下创建一个与旧路径完全一致的空壳目录，并将内部指令重定向到系统真实的新版编译器上。&lt;/p&gt;
-&lt;p&gt;在 WSL 终端中执行以下脚本：&lt;/p&gt;
+&lt;p&gt;打开 WSL 终端，直接执行以下脚本代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -79,6 +86,8 @@ MATLAB 底层使用 Windows 的 &lt;code&gt;cmd.exe&lt;/code&gt; 执行编译脚
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
@@ -87,20 +96,22 @@ MATLAB 底层使用 Windows 的 &lt;code&gt;cmd.exe&lt;/code&gt; 执行编译脚
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 1. 创建 MATLAB 死活要找的那个旧目录&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /opt/gcc-arm-none-eabi-9-2020-q2-update/bin
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 2. 把真实的新编译器(例如 /usr/bin 下的)链接过去&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 2. 把真实的新编译器(即你当前生效的 /usr/bin 下的编译器)链接过去&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ln -sf /usr/bin/arm-none-eabi-g++ /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ln -sf /usr/bin/arm-none-eabi-gcc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 3. 顺便把其他工具链工具（链接器、汇编器等）也一并链接过去&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 3. 顺便把其他工具链核心工具（链接器、汇编器等）也一并链接过去&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; tool in ar as ld objcopy objdump strip nm ranlib readelf size strings&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; -f &lt;span class=&#34;s2&#34;&gt;&amp;#34;/usr/bin/arm-none-eabi-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$tool&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;then&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        sudo ln -sf &lt;span class=&#34;s2&#34;&gt;&amp;#34;/usr/bin/arm-none-eabi-&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$tool&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 验证符号链接是否生效&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 4. 验证符号链接是否生效&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;验证编译器版本：&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++ --version
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;参考来源：&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;CSDN博主 hahaha12139 的文章 / CC 4.0 BY-SA版权&lt;span class=&#34;o&#34;&gt;](&lt;/span&gt;https://blog.csdn.net/hahaha12139/article/details/157299931?spm&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1001.2014.3001.5506&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt;*
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>

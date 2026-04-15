@@ -289,9 +289,9 @@
       <ol>
         <li><a href="#px4-simulink联合环境配置与跨系统编译排雷记录">PX4-Simulink联合环境配置与跨系统编译排雷记录</a>
           <ol>
-            <li><a href="#踩坑一windows与wsl跨文件系统监控警告">踩坑一：Windows与WSL跨文件系统监控警告</a></li>
+            <li><a href="#踩坑一px4-firmware-build-not-done-错误与跨系统句柄警告">踩坑一：PX4 Firmware build not done 错误与跨系统句柄警告</a></li>
             <li><a href="#踩坑二cmd不支持unc路径的致命拦截">踩坑二：CMD不支持UNC路径的致命拦截</a></li>
-            <li><a href="#踩坑三极其顽固的-toolchain-路径缓存-bug核心难点">踩坑三：极其顽固的 Toolchain 路径缓存 Bug（核心难点）</a></li>
+            <li><a href="#踩坑三极其顽固的-gcc-toolchain-路径缓存-bug核心难点">踩坑三：极其顽固的 GCC Toolchain 路径缓存 Bug（核心难点）</a></li>
           </ol>
         </li>
       </ol>
@@ -396,49 +396,56 @@
     
     
     <h3 id="px4-simulink联合环境配置与跨系统编译排雷记录">PX4-Simulink联合环境配置与跨系统编译排雷记录
-</h3><p>在日常的控制算法研究与台架验证中，利用 MATLAB/Simulink 结合 PX4 硬件支持包（UAV Toolbox Support Package for PX4 Autopilots）进行代码自动生成与硬件在环（Connected I/O）测试，是极大地提升开发效率的手段。</p>
+</h3><p>最近升级了控制器，从老的Pixhawk 2.4.8换到了Pixhawk6c控制器，所以重新配置了Simulink测试实验环境，用了最新的MATLAB2025A版本，PX4版本用的1.14.3。但是遇到了以下很多的问题，大都是这套环境自身的坑（毕竟开发维护人员少之又少），特此记录如下，希望能帮到别人：</p>
+<p>在日常的控制算法研究与台架验证中，利用 MATLAB/Simulink 结合 PX4 硬件支持包（UAV Toolbox Support Package for PX4 Autopilots）进行代码自动生成与硬件在环（Connected I/O）测试，是极大地提升开发效率的手段。</p>
 <p>然而，在 Windows 11 + WSL2 (Ubuntu 22.04) + MATLAB 2025A 的架构下配置 Pixhawk 6C 的联合开发环境时，跨文件系统与工具链缓存往往会引发一些极为顽固的编译错误。本文详细记录了在此次环境搭建中遇到的核心难题及最终的“降维打击”解决方案。</p>
 <hr>
-<h4 id="踩坑一windows与wsl跨文件系统监控警告">踩坑一：Windows与WSL跨文件系统监控警告
-</h4><p>在尝试使用 Simulink 编译处于 WSL 网络路径下的 PX4 源码时，通常会遇到第一个警告：</p>
+<h4 id="踩坑一px4-firmware-build-not-done-错误与跨系统句柄警告">踩坑一：PX4 Firmware build not done 错误与跨系统句柄警告
+</h4><p>在尝试使用 Simulink 编译处于 WSL 网络路径下的 PX4 源码时，通常会遇到第一个警告，紧接着编译彻底失败：</p>
 <blockquote>
-<p><code>警告: 无法获得 \\wsl.localhost\ubuntu-22.04\home\...\PX4-Autopilot\build\px4_fmu-v6c_default 的更改通知句柄。</code></p>
+<p><code>警告: 无法获得 \\wsl.localhost\ubuntu-22.04\home\...\PX4-Autopilot\build\px4_fmu-v6c_default 的更改通知句柄。</code>
+<code>错误：PX4 Firmware build not done for the selected cmake config, perform setup screens</code></p>
 </blockquote>
-<p>接着会伴随 cmake与所选编译固件不符合的原因，导致编译失败，进而全部功能受到影响。</p>
-<p><strong>问题根源：</strong>
-这是一个典型的 Windows 与 WSL2 跨系统交互引发的兼容性警告。Simulink 在运行时会向系统申请一个“更改通知句柄”来实时监控目标文件夹的文件变动。但由于代码存放在 WSL2 的虚拟磁盘中，Windows 通过类似网络共享的协议（<code>\\wsl.localhost\...</code>）访问，这种协议对底层文件实时监控（inotify）支持不完善，导致 Simulink 申请权限失败。</p>
-<p><strong>处理建议：</strong>
-如果仅仅是警告，并不打断编译过程，通常可以忽略。若要彻底解决，推荐使用映射网络驱动器（将 <code>\\wsl.localhost\Ubuntu-22.04</code> 映射为本地磁盘如 <code>Z:</code> 盘）来缓解跨域路径问题。</p>
+<p><strong>现象描述：</strong>
+在 MATLAB 的 Hardware Setup 中可以正常走完验证，在 WSL 终端中敲 <code>make</code> 也可以正常编译出固件，但一旦回到 Simulink 程序中点击编译或部署，就会直接报上述错误，导致全部功能受阻。</p>
+<p><strong>问题根源与排雷：</strong>
+很多时候我们会以为是 <code>\\wsl.localhost</code> 的跨文件系统监控权限问题，试图通过**映射网络驱动器（如映射为 Z: 盘）**来解决。<strong>但实际上改映射驱动器根本没用！</strong>
+这个错误的最根本原因在于：<strong>WSL 中的 PX4 交叉编译工具链（Toolchain）版本过旧或缺失。</strong> 导致 Simulink 底层的脚本在第一步检查固件环境时，无法与当前的 CMake 配置正确匹配。</p>
+<p><strong>解决方案：</strong>
+必须在 WSL 环境中彻底更新 PX4 的 Toolchain（例如安装较新的 <code>gcc-arm-none-eabi</code>）。只要系统底层的编译器版本满足当前 PX4 固件（如 v6c）的 CMake 要求，Simulink 才能顺利识别固件。</p>
 <hr>
 <h4 id="踩坑二cmd不支持unc路径的致命拦截">踩坑二：CMD不支持UNC路径的致命拦截
-</h4><p>在部署编译时，底层调用命令行往往会直接报错并中断：</p>
+</h4><p>在部署编译时，Windows 底层调用命令行往往会直接报错并中断：</p>
 <blockquote>
 <p><code>用作为当前目录的以上路径启动了 CMD.EXE。 UNC 路径不受支持。默认值设为 Windows 目录。</code></p>
 </blockquote>
 <p><strong>问题根源：</strong>
-MATLAB 底层使用 Windows 的 <code>cmd.exe</code> 执行编译脚本，但 CMD 原生不支持在网络共享路径（UNC 路径）下执行命令。一旦遇到，会自动掉线回退到 <code>C:\Windows</code> 目录，导致后续的所有 CMake 和 Make 命令彻底迷失方向。</p>
+MATLAB 底层使用 Windows 的 <code>cmd.exe</code> 执行编译脚本，但 CMD 原生不支持在网络共享路径（即 <code>\\wsl.localhost\...</code> 这样的 UNC 路径）下执行命令。一旦遇到，会自动掉线回退到 <code>C:\Windows</code> 目录，导致后续的所有 CMake 和 Make 命令彻底迷失方向。</p>
 <p><strong>解决方案：修改注册表</strong>
 为 CMD 强行开启 UNC 路径支持：</p>
 <ol>
-<li>打开注册表编辑器，定位到 <code>HKEY_CURRENT_USER\Software\Microsoft\Command Processor</code>。</li>
-<li>新建一个 <code>DWORD (32位)</code> 值，命名为 <code>DisableUNCCheck</code>。</li>
-<li>将其数值数据设置为 <code>1</code>（十六进制）。</li>
+<li>打开 Windows 注册表编辑器，定位到 <code>HKEY_CURRENT_USER\Software\Microsoft\Command Processor</code>。</li>
+<li>（如果没有 <code>Command Processor</code> 项，则右键新建该项）。</li>
+<li>在其中新建一个 <code>DWORD (32位)</code> 值，命名为 <code>DisableUNCCheck</code>。</li>
+<li>将其数值数据设置为 <code>1</code>（十六进制），保存后即可解决。</li>
 </ol>
+<p><em>(参考来源：<a class="link" href="https://blog.csdn.net/lisayh/article/details/135070389"  target="_blank" rel="noopener"
+    >CSDN博主 lisayh 的文章 / CC 4.0 BY-SA版权</a>)</em></p>
 <hr>
-<h4 id="踩坑三极其顽固的-toolchain-路径缓存-bug核心难点">踩坑三：极其顽固的 Toolchain 路径缓存 Bug（核心难点）
-</h4><p>这部分参考了：https://blog.csdn.net/lisayh/article/details/135070389
-以及https://blog.csdn.net/hahaha12139/article/details/157299931?spm=1001.2014.3001.5502</p>
-<p>在清理完上述网络路径问题，并更新了 WSL 内部的交叉编译工具链（例如换用了新版的 <code>arm-none-eabi-gcc 10.3.1</code>，路径位于 <code>/usr/bin</code>）后，Simulink 依然会报出极其离谱的错误：</p>
+<h4 id="踩坑三极其顽固的-gcc-toolchain-路径缓存-bug核心难点">踩坑三：极其顽固的 GCC Toolchain 路径缓存 Bug（核心难点）
+</h4><p>在清理完上述网络路径问题，并成功更新了 WSL 内部的交叉编译工具链（换用了新版的 <code>arm-none-eabi-gcc 10.3.1</code>，真实路径位于 <code>/usr/bin</code>）后，Simulink 依然会报出极其离谱的版本路径错误：</p>
 <blockquote>
 <p><code>Compilation failure for command /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++ ...</code>
-<code>bash: line 1: /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++: No such file or directory</code></p>
+<code>bash: line 1: /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++: No such file or directory</code>
+后面跟一大堆。。。核心错误点就是上述内容。</p>
 </blockquote>
 <p><strong>问题根源：</strong>
-我在 WSL 终端里自己敲 <code>make</code> 都能成功调用新编译器，但 MATLAB 只要一介入，就非要去抓 <code>/opt/</code> 下的旧版编译器。这是因为 <strong>MATLAB/Simulink 的 PX4 支持包底层配置缓存极其顽固</strong>。哪怕通过Toolbox的设置重新走向导、删除缓存、甚至是清理源码目录，MATLAB 生成的底层 CMake 配置文件依然会“死记硬背”着第一次安装时的旧工具链路径。</p>
+我在 WSL 终端里自己敲 <code>make</code> 都能成功调用新编译器，但 MATLAB 只要一介入，就非要去抓 <code>/opt/</code> 下的旧版编译器。
+这是因为 <strong>MATLAB/Simulink 的 PX4 支持包底层配置缓存极其顽固</strong>。哪怕通过 Toolbox 的设置重新走向导、删除 slbuild 缓存、甚至是 <code>make clean</code> 清理源码目录，MATLAB 生成的底层 CMake 配置文件依然会“死记硬背”着第一次安装时的旧工具链路径。</p>
 <p><strong>终极解决方案：软链接“降维打击”</strong></p>
 <p>既然 MATLAB 内部的代码生成器是个“老顽固”，死活揪着旧路径不放，最高效的解决逻辑是：<strong>不与 MATLAB 的缓存较劲，直接在 Linux 系统层面给它造一个“替身”。</strong></p>
 <p>利用 Linux 的软链接（Symbolic Link）功能，我们在 <code>/opt/</code> 下创建一个与旧路径完全一致的空壳目录，并将内部指令重定向到系统真实的新版编译器上。</p>
-<p>在 WSL 终端中执行以下脚本：</p>
+<p>打开 WSL 终端，直接执行以下脚本代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -461,6 +468,8 @@ MATLAB 底层使用 Windows 的 <code>cmd.exe</code> 执行编译脚本，但 CM
 </span><span class="lnt">18
 </span><span class="lnt">19
 </span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
@@ -469,20 +478,22 @@ MATLAB 底层使用 Windows 的 <code>cmd.exe</code> 执行编译脚本，但 CM
 </span></span><span class="line"><span class="cl"><span class="c1"># 1. 创建 MATLAB 死活要找的那个旧目录</span>
 </span></span><span class="line"><span class="cl">sudo mkdir -p /opt/gcc-arm-none-eabi-9-2020-q2-update/bin
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 2. 把真实的新编译器(例如 /usr/bin 下的)链接过去</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 把真实的新编译器(即你当前生效的 /usr/bin 下的编译器)链接过去</span>
 </span></span><span class="line"><span class="cl">sudo ln -sf /usr/bin/arm-none-eabi-g++ /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/
 </span></span><span class="line"><span class="cl">sudo ln -sf /usr/bin/arm-none-eabi-gcc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 3. 顺便把其他工具链工具（链接器、汇编器等）也一并链接过去</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 顺便把其他工具链核心工具（链接器、汇编器等）也一并链接过去</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> tool in ar as ld objcopy objdump strip nm ranlib readelf size strings<span class="p">;</span> <span class="k">do</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;/usr/bin/arm-none-eabi-</span><span class="nv">$tool</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
 </span></span><span class="line"><span class="cl">        sudo ln -sf <span class="s2">&#34;/usr/bin/arm-none-eabi-</span><span class="nv">$tool</span><span class="s2">&#34;</span> /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/
 </span></span><span class="line"><span class="cl">    <span class="k">fi</span>
 </span></span><span class="line"><span class="cl"><span class="k">done</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 验证符号链接是否生效</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4. 验证符号链接是否生效</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;验证编译器版本：&#34;</span>
 </span></span><span class="line"><span class="cl">/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++ --version
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">*<span class="o">(</span>参考来源：<span class="o">[</span>CSDN博主 hahaha12139 的文章 / CC 4.0 BY-SA版权<span class="o">](</span>https://blog.csdn.net/hahaha12139/article/details/157299931?spm<span class="o">=</span>1001.2014.3001.5506<span class="o">))</span>*
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
