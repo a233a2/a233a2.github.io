@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Docker基础知识笔记 以及个人使用笔记">
-<title>Docker使用小记</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="记录一下在MATLAB2025A环境下Pixhawk6C的开发环境配置过程">
+<title>Pixhawk6C_Simulink开发环境配置-用于算法验证等</title>
 
-<link rel='canonical' href='https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/'>
+<link rel='canonical' href='https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/'>
 
-<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Docker使用小记">
-<meta property='og:description' content="Docker基础知识笔记 以及个人使用笔记">
-<meta property='og:url' content='https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/'>
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Pixhawk6C_Simulink开发环境配置-用于算法验证等">
+<meta property='og:description' content="记录一下在MATLAB2025A环境下Pixhawk6C的开发环境配置过程">
+<meta property='og:url' content='https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Docker' /><meta property='article:published_time' content='2024-11-20T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-20T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.jpg' />
-<meta name="twitter:title" content="Docker使用小记">
-<meta name="twitter:description" content="Docker基础知识笔记 以及个人使用笔记"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://a233a2.github.io/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='PX4' /><meta property='article:published_time' content='2026-04-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-15T00:00:00&#43;00:00'/><meta property='og:image' content='https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/fengmian.png' />
+<meta name="twitter:title" content="Pixhawk6C_Simulink开发环境配置-用于算法验证等">
+<meta name="twitter:description" content="记录一下在MATLAB2025A环境下Pixhawk6C的开发环境配置过程"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/fengmian.png' />
     <link rel="shortcut icon" href="/static/favicon.ico" />
 
   
@@ -285,31 +285,13 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#docker基础的几个概念">Docker基础的几个概念</a>
+    <li>
       <ol>
-        <li><a href="#镜像-image">镜像 Image</a></li>
-        <li><a href="#容器-container">容器 Container</a></li>
-        <li><a href="#容器和镜像的关系">容器和镜像的关系</a>
+        <li><a href="#px4-simulink联合环境配置与跨系统编译排雷记录">PX4-Simulink联合环境配置与跨系统编译排雷记录</a>
           <ol>
-            <li><a href="#dockerfile">Dockerfile</a></li>
-            <li><a href="#docker-仓库-docker-repository">Docker 仓库-Docker Repository</a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
-    <li><a href="#docker容器化">Docker容器化</a></li>
-    <li><a href="#docker简单hellodocker实践">Docker简单HelloDocker实践</a></li>
-    <li><a href="#docker命令小计">Docker命令小计</a></li>
-    <li><a href="#dockerdesktop的使用">DockerDesktop的使用</a></li>
-    <li><a href="#docker-compose">Docker Compose</a></li>
-    <li><a href="#docker部署深度学习项目实例">Docker部署深度学习项目实例</a></li>
-    <li><a href="#docker部署px4开发环境实例">Docker部署PX4开发环境实例</a>
-      <ol>
-        <li>
-          <ol>
-            <li><a href="#1-克隆项目到本地">1 克隆项目到本地</a></li>
-            <li><a href="#2-执行">2 执行</a></li>
-            <li><a href="#3-构建firmware时使用docker环境">3 构建Firmware时使用Docker环境？</a></li>
+            <li><a href="#踩坑一windows与wsl跨文件系统监控警告">踩坑一：Windows与WSL跨文件系统监控警告</a></li>
+            <li><a href="#踩坑二cmd不支持unc路径的致命拦截">踩坑二：CMD不支持UNC路径的致命拦截</a></li>
+            <li><a href="#踩坑三极其顽固的-toolchain-路径缓存-bug核心难点">踩坑三：极其顽固的 Toolchain 路径缓存 Bug（核心难点）</a></li>
           </ol>
         </li>
       </ol>
@@ -328,13 +310,13 @@
     <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <a href="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/">
-                <img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.jpg"
+            <a href="/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/">
+                <img src="/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/fengmian.png"
                         
-                        width="628" 
-                        height="308" 
+                        width="887" 
+                        height="881" 
                         loading="lazy"
-                        alt="Featured image of post Docker使用小记" />
+                        alt="Featured image of post Pixhawk6C_Simulink开发环境配置-用于算法验证等" />
                 
             </a>
         </div>
@@ -343,6 +325,10 @@
     <div class="article-details">
     
     <header class="article-category">
+        
+            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/" style="background-color: #ff99ff; color: #000;">
+                学术类别
+            </a>
         
             <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
                 工程类别
@@ -353,12 +339,12 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/">Docker使用小记</a>
+            <a href="/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/">Pixhawk6C_Simulink开发环境配置-用于算法验证等</a>
         </h2>
     
         
         <h3 class="article-subtitle">
-            Docker基础知识笔记 以及个人使用笔记
+            记录一下在MATLAB2025A环境下Pixhawk6C的开发环境配置过程
         </h3>
         
     </div>
@@ -379,7 +365,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024-11-20</time>
+                <time class="article-time--published">2026-04-15</time>
             </div>
         
 
@@ -394,7 +380,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -409,172 +395,97 @@
     <section class="article-content">
     
     
-    <p>参考：
-<a class="link" href="https://yeasy.gitbook.io/docker_practice"  target="_blank" rel="noopener"
-    >Docker-从入门到实践</a>&mdash;一本书 <br>
-<a class="link" href="https://juejin.cn/post/7021006271818137630?share_token=878fa440-84d9-4d8a-980e-aaba73440daf#heading-4_"  target="_blank" rel="noopener"
-    >求求你了，用Docker吧</a>&mdash;某博客    <br>
-<a class="link" href="https://docs.docker.com/get-started/get-docker/"  target="_blank" rel="noopener"
-    >Docker安装教程</a>&mdash;官方安装教程     <br>
-<a class="link" href="https://www.bilibili.com/video/BV14s4y1i7Vf"  target="_blank" rel="noopener"
-    >GeekHour-30分钟Docker入门教程</a>&mdash;特别棒</p>
-<h2 id="docker基础的几个概念">Docker基础的几个概念
-</h2><h3 id="镜像-image">镜像 Image
-</h3><p>理解为一个虚拟机的快照，内部包含要部署的应用程序以及他所关联的所有库。 <br>
-是一个包含有文件系统的面向Docker引擎的只读模板。镜像是一个模板,装了一些系统的配置文件, 我们可以通过镜像建立更多的容器, 容器从镜像启动时,Docker在镜像的上层创建一个可写层, 镜像本身不变。</p>
-<h3 id="容器-container">容器 Container
-</h3><p>通过镜像Image，可以创建许多不同的容器Container。容器可以比喻为一台台运行起来的虚拟机，容器中运行着要部署的程序。每个容器相互独立运行，互不影响。       <br>
-容器是基于镜像创建, 相互隔离的, 可以理解为小型虚拟机，真正的执行单元。<br>
-相当于每一个实例。<br>
-一台计算机上可以运行几个虚拟机，但是可以运行几百个容器。</p>
-<h3 id="容器和镜像的关系">容器和镜像的关系
-</h3><p>镜像和容器的关系就像java中类和实例的关系一样（我也没学过java..抄的） <br>
-镜像就类似一个食谱，容器就是根据食谱做出来的一道菜。</p>
-<h4 id="dockerfile">Dockerfile
-</h4><p>自动化脚本，用以创建镜像。<br>
-<img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/dockerfile.jpg"
-	width="360"
-	height="447"
-	
-	loading="lazy"
-	
-		alt="dockerfile.jpg"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="80"
-		data-flex-basis="193px"
-	
-></p>
-<h4 id="docker-仓库-docker-repository">Docker 仓库-Docker Repository
-</h4><p>存放镜像的仓库 <br>
-最流行的是DockerHub，是一个公共仓库，集中存储和管理Docker镜像。另外还有Harbor</p>
-<h2 id="docker容器化">Docker容器化
-</h2><p>将应用程序打包成容器，然后在容器中运行程序的过程。 <br>
-1# 创建Dockerfile 告诉Docker构建应用程序镜像所需的步骤以及配置。     <br>
-2# 使用Dockerfile构建镜像。 <br>
-3# 使用镜像创建和运行容器。</p>
-<h2 id="docker简单hellodocker实践">Docker简单HelloDocker实践
-</h2><p>创建HelloDocker文件，创建node.js文件</p>
+    <h3 id="px4-simulink联合环境配置与跨系统编译排雷记录">PX4-Simulink联合环境配置与跨系统编译排雷记录
+</h3><p>在日常的控制算法研究与台架验证中，利用 MATLAB/Simulink 结合 PX4 硬件支持包（UAV Toolbox Support Package for PX4 Autopilots）进行代码自动生成与硬件在环（Connected I/O）测试，是极大地提升开发效率的手段。</p>
+<p>然而，在 Windows 11 + WSL2 (Ubuntu 22.04) + MATLAB 2025A 的架构下配置 Pixhawk 6C 的联合开发环境时，跨文件系统与工具链缓存往往会引发一些极为顽固的编译错误。本文详细记录了在此次环境搭建中遇到的核心难题及最终的“降维打击”解决方案。</p>
+<hr>
+<h4 id="踩坑一windows与wsl跨文件系统监控警告">踩坑一：Windows与WSL跨文件系统监控警告
+</h4><p>在尝试使用 Simulink 编译处于 WSL 网络路径下的 PX4 源码时，通常会遇到第一个警告：</p>
+<blockquote>
+<p><code>警告: 无法获得 \\wsl.localhost\ubuntu-22.04\home\...\PX4-Autopilot\build\px4_fmu-v6c_default 的更改通知句柄。</code></p>
+</blockquote>
+<p>接着会伴随 cmake与所选编译固件不符合的原因，导致编译失败，进而全部功能受到影响。</p>
+<p><strong>问题根源：</strong>
+这是一个典型的 Windows 与 WSL2 跨系统交互引发的兼容性警告。Simulink 在运行时会向系统申请一个“更改通知句柄”来实时监控目标文件夹的文件变动。但由于代码存放在 WSL2 的虚拟磁盘中，Windows 通过类似网络共享的协议（<code>\\wsl.localhost\...</code>）访问，这种协议对底层文件实时监控（inotify）支持不完善，导致 Simulink 申请权限失败。</p>
+<p><strong>处理建议：</strong>
+如果仅仅是警告，并不打断编译过程，通常可以忽略。若要彻底解决，推荐使用映射网络驱动器（将 <code>\\wsl.localhost\Ubuntu-22.04</code> 映射为本地磁盘如 <code>Z:</code> 盘）来缓解跨域路径问题。</p>
+<hr>
+<h4 id="踩坑二cmd不支持unc路径的致命拦截">踩坑二：CMD不支持UNC路径的致命拦截
+</h4><p>在部署编译时，底层调用命令行往往会直接报错并中断：</p>
+<blockquote>
+<p><code>用作为当前目录的以上路径启动了 CMD.EXE。 UNC 路径不受支持。默认值设为 Windows 目录。</code></p>
+</blockquote>
+<p><strong>问题根源：</strong>
+MATLAB 底层使用 Windows 的 <code>cmd.exe</code> 执行编译脚本，但 CMD 原生不支持在网络共享路径（UNC 路径）下执行命令。一旦遇到，会自动掉线回退到 <code>C:\Windows</code> 目录，导致后续的所有 CMake 和 Make 命令彻底迷失方向。</p>
+<p><strong>解决方案：修改注册表</strong>
+为 CMD 强行开启 UNC 路径支持：</p>
+<ol>
+<li>打开注册表编辑器，定位到 <code>HKEY_CURRENT_USER\Software\Microsoft\Command Processor</code>。</li>
+<li>新建一个 <code>DWORD (32位)</code> 值，命名为 <code>DisableUNCCheck</code>。</li>
+<li>将其数值数据设置为 <code>1</code>（十六进制）。</li>
+</ol>
+<hr>
+<h4 id="踩坑三极其顽固的-toolchain-路径缓存-bug核心难点">踩坑三：极其顽固的 Toolchain 路径缓存 Bug（核心难点）
+</h4><p>这部分参考了：https://blog.csdn.net/lisayh/article/details/135070389
+以及https://blog.csdn.net/hahaha12139/article/details/157299931?spm=1001.2014.3001.5502</p>
+<p>在清理完上述网络路径问题，并更新了 WSL 内部的交叉编译工具链（例如换用了新版的 <code>arm-none-eabi-gcc 10.3.1</code>，路径位于 <code>/usr/bin</code>）后，Simulink 依然会报出极其离谱的错误：</p>
+<blockquote>
+<p><code>Compilation failure for command /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++ ...</code>
+<code>bash: line 1: /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++: No such file or directory</code></p>
+</blockquote>
+<p><strong>问题根源：</strong>
+我在 WSL 终端里自己敲 <code>make</code> 都能成功调用新编译器，但 MATLAB 只要一介入，就非要去抓 <code>/opt/</code> 下的旧版编译器。这是因为 <strong>MATLAB/Simulink 的 PX4 支持包底层配置缓存极其顽固</strong>。哪怕通过Toolbox的设置重新走向导、删除缓存、甚至是清理源码目录，MATLAB 生成的底层 CMake 配置文件依然会“死记硬背”着第一次安装时的旧工具链路径。</p>
+<p><strong>终极解决方案：软链接“降维打击”</strong></p>
+<p>既然 MATLAB 内部的代码生成器是个“老顽固”，死活揪着旧路径不放，最高效的解决逻辑是：<strong>不与 MATLAB 的缓存较劲，直接在 Linux 系统层面给它造一个“替身”。</strong></p>
+<p>利用 Linux 的软链接（Symbolic Link）功能，我们在 <code>/opt/</code> 下创建一个与旧路径完全一致的空壳目录，并将内部指令重定向到系统真实的新版编译器上。</p>
+<p>在 WSL 终端中执行以下脚本：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">console.log(&#34;欢迎来到Docker！&#34;)     
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Dockerfile中写入如下的运行流程，交给Docker自动运行。 <br>
-<img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/dockfile1.jpg"
-	width="639"
-	height="330"
-	
-	loading="lazy"
-	
-		alt="dockerfile1.jpg"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="193"
-		data-flex-basis="464px"
-	
->   <br>
-项目根目录创建名为Dockerfile的文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FROM node:14-alpine
-</span></span><span class="line"><span class="cl">COPY index.js /index.js
-</span></span><span class="line"><span class="cl">CMD [&#34;node&#34;,&#34;/index.js&#34;]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>输出结果： <br>
-<img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/dockerrun-1.jpg"
-	width="1557"
-	height="1094"
-	
-	loading="lazy"
-	
-		alt="输出结果："
-	
-	
-		class="gallery-image" 
-		data-flex-grow="142"
-		data-flex-basis="341px"
-	
->   <br>
-有个小Warning,暂时不清楚原因。</p>
-<p>play with docker网站 在线运行docker镜像 <br>
-<a class="link" href="https://labs.play-with-docker.com/"  target="_blank" rel="noopener"
-    >https://labs.play-with-docker.com/</a></p>
-<h2 id="docker命令小计">Docker命令小计
-</h2><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">docker images        #查看安装的镜像
-</span></span><span class="line"><span class="cl">docker image ls      #查看安装的镜像
-</span></span><span class="line"><span class="cl">docker run 镜像名称   #运行程序
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># fix_px4_compiler.sh</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">docker pull xxx   #获取镜像
+</span></span><span class="line"><span class="cl"><span class="c1"># 1. 创建 MATLAB 死活要找的那个旧目录</span>
+</span></span><span class="line"><span class="cl">sudo mkdir -p /opt/gcc-arm-none-eabi-9-2020-q2-update/bin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 2. 把真实的新编译器(例如 /usr/bin 下的)链接过去</span>
+</span></span><span class="line"><span class="cl">sudo ln -sf /usr/bin/arm-none-eabi-g++ /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/
+</span></span><span class="line"><span class="cl">sudo ln -sf /usr/bin/arm-none-eabi-gcc /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 3. 顺便把其他工具链工具（链接器、汇编器等）也一并链接过去</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> tool in ar as ld objcopy objdump strip nm ranlib readelf size strings<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -f <span class="s2">&#34;/usr/bin/arm-none-eabi-</span><span class="nv">$tool</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        sudo ln -sf <span class="s2">&#34;/usr/bin/arm-none-eabi-</span><span class="nv">$tool</span><span class="s2">&#34;</span> /opt/gcc-arm-none-eabi-9-2020-q2-update/bin/
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 验证符号链接是否生效</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;验证编译器版本：&#34;</span>
+</span></span><span class="line"><span class="cl">/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-g++ --version
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="dockerdesktop的使用">DockerDesktop的使用
-</h2><p>DockerDesktop集成了容器日常使用与管理的各种常用功能</p>
-<h2 id="docker-compose">Docker Compose
-</h2><p>统筹各个容器，形成一个项目。 <br>
-使用一个yml文件定义，使用一条命令来自动安装各种依赖以及配置环境。然后在本地运行项目。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ docker compose up
-</span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="docker部署深度学习项目实例">Docker部署深度学习项目实例
-</h2><p>先鸽了</p>
-<h2 id="docker部署px4开发环境实例">Docker部署PX4开发环境实例
-</h2><p>Docker的PX4容器项目地址：https://github.com/PX4/PX4-containers</p>
-<h4 id="1-克隆项目到本地">1 克隆项目到本地
-</h4><h4 id="2-执行">2 执行
-</h4><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd docker
-</span></span><span class="line"><span class="cl">docker build -t px4io/px4-dev-ros-melodic -f Dockerfile_ros-melodic .
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>构建完成镜像大小为6.5GB左右</p>
-<h4 id="3-构建firmware时使用docker环境">3 构建Firmware时使用Docker环境？
-</h4><p><img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/px4-1.png"
-	width="875"
-	height="335"
-	
-	loading="lazy"
-	
-		alt="构建Firmware时使用Docker环境"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="261"
-		data-flex-basis="626px"
-	
-> <br>
-3这个还没试过</p>
-
 </section>
 
 
@@ -582,7 +493,7 @@
     
     <section class="article-tags">
         
-            <a href="/tags/docker/">Docker</a>
+            <a href="/tags/px4/">PX4</a>
         
     </section>
 
@@ -640,60 +551,23 @@
             
                 
 <article class="has-image">
-    <a href="/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/">
+    <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
         
         
             <div class="article-image">
-                <img src="/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89/fengmian.fafbc527d6e9af7d03c3b80a92224796.png" 
-                        width="887" 
-                        height="881" 
+                <img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian.deb6cb9406c642256ecc3694b96a4413.png" 
+                        width="828" 
+                        height="532" 
                         loading="lazy"
-                        alt="Featured image of post Pixhawk6C_Simulink开发环境配置-用于算法验证等"
+                        alt="Featured image of post Simulink-PX4-WSL2仿真环境搭建"
                         
-                        data-hash="md5-&#43;vvFJ9bpr30Dw7gKkiJHlg==">
+                        data-hash="md5-3rbLlAbGQiVuzDaUuWpEEw==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">Pixhawk6C_Simulink开发环境配置-用于算法验证等</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">XMC4500引脚地址-寄存器地址问题</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/">
-        
-        
-            <div class="article-image">
-                <img src="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/1.4.ae01da38c57c9b1194a90bf90ab7f422.jpg" 
-                        width="2276" 
-                        height="1280" 
-                        loading="lazy"
-                        alt="Featured image of post CM_FOC驱动器V2.0"
-                        
-                        data-hash="md5-rgHaOMV8mxGUqQv5Crf0Ig==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">CM_FOC驱动器V2.0</h2>
+            <h2 class="article-title">Simulink-PX4-WSL2仿真环境搭建</h2>
         </div>
     </a>
 </article>
@@ -713,24 +587,39 @@
 
             
                 
-<article class="has-image">
-    <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+<article class="">
+    <a href="/p/linux/">
         
-        
-            <div class="article-image">
-                <img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian.deb6cb9406c642256ecc3694b96a4413.png" 
-                        width="828" 
-                        height="532" 
-                        loading="lazy"
-                        alt="Featured image of post Simulink-PX4-WSL2仿真环境搭建"
-                        
-                        data-hash="md5-3rbLlAbGQiVuzDaUuWpEEw==">
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">Simulink-PX4-WSL2仿真环境搭建</h2>
+            <h2 class="article-title">Linux</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">XMC4500引脚地址-寄存器地址问题</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/adrc%E5%B0%8F%E8%AE%B0/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ADRC小记</h2>
         </div>
     </a>
 </article>
