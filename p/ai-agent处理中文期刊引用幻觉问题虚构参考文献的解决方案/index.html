@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="讨论AI Agent在处理中文期刊引用时出现的幻觉问题（虚构参考文献），以及委托Agent解决此问题的完整方案">
+<title>AI Agent处理中文期刊引用幻觉问题——虚构参考文献的解决方案</title>
+
+<link rel='canonical' href='https://a233a2.github.io/p/ai-agent%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E5%BC%95%E7%94%A8%E5%B9%BB%E8%A7%89%E9%97%AE%E9%A2%98%E8%99%9A%E6%9E%84%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/'>
+
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="AI Agent处理中文期刊引用幻觉问题——虚构参考文献的解决方案">
+<meta property='og:description' content="讨论AI Agent在处理中文期刊引用时出现的幻觉问题（虚构参考文献），以及委托Agent解决此问题的完整方案">
+<meta property='og:url' content='https://a233a2.github.io/p/ai-agent%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E5%BC%95%E7%94%A8%E5%B9%BB%E8%A7%89%E9%97%AE%E9%A2%98%E8%99%9A%E6%9E%84%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/'>
+<meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='Agent' /><meta property='article:tag' content='学术写作' /><meta property='article:published_time' content='2026-04-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-29T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="AI Agent处理中文期刊引用幻觉问题——虚构参考文献的解决方案">
+<meta name="twitter:description" content="讨论AI Agent在处理中文期刊引用时出现的幻觉问题（虚构参考文献），以及委托Agent解决此问题的完整方案">
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu10218222844215111911.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍊</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">sunjiyi&#39;s Blogggg</a></h1>
+            <h2 class="site-description">欢迎你来到这里！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/37767944'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/a233a2'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://x.com/ZKOGn7v98o48240'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li>
+      <ol>
+        <li><a href="#背景">背景</a></li>
+      </ol>
+    </li>
+    <li><a href="#一问题的本质ai生成式幻觉hallucination">一、问题的本质：AI生成式幻觉（Hallucination）</a>
+      <ol>
+        <li><a href="#11-为什么ai会伪造中文文献">1.1 为什么AI会伪造中文文献？</a></li>
+        <li><a href="#12-伪造文献的典型特征">1.2 伪造文献的典型特征</a></li>
+      </ol>
+    </li>
+    <li><a href="#二解决方案路线图完整工作流">二、解决方案路线图（完整工作流）</a></li>
+    <li><a href="#三技术实现细节">三、技术实现细节</a>
+      <ol>
+        <li><a href="#31-为什么选择openalex">3.1 为什么选择OpenAlex？</a></li>
+        <li><a href="#32-api使用方法">3.2 API使用方法</a></li>
+        <li><a href="#33-关键中文期刊的source-id">3.3 关键：中文期刊的Source ID</a></li>
+        <li><a href="#34-针对中文论文的检索技巧">3.4 针对中文论文的检索技巧</a></li>
+      </ol>
+    </li>
+    <li><a href="#四处理流程中的注意事项">四、处理流程中的注意事项</a>
+      <ol>
+        <li><a href="#41-编码问题windows环境">4.1 编码问题（Windows环境）</a></li>
+        <li><a href="#42-代理问题企业网络">4.2 代理问题（企业网络）</a></li>
+        <li><a href="#43-数据解析的关键字段">4.3 数据解析的关键字段</a></li>
+        <li><a href="#44-参考文献格式规范化">4.4 参考文献格式规范化</a></li>
+      </ol>
+    </li>
+    <li><a href="#五时间效率分析">五、时间效率分析</a></li>
+    <li><a href="#六经验教训与最佳实践">六、经验教训与最佳实践</a>
+      <ol>
+        <li><a href="#61-核心原则永远不要相信ai生成的参考文献">6.1 核心原则：<strong>永远不要相信AI生成的参考文献</strong></a></li>
+        <li><a href="#62-推荐工作流">6.2 推荐工作流</a></li>
+        <li><a href="#63-针对不同期刊的验证策略">6.3 针对不同期刊的验证策略</a></li>
+        <li><a href="#64-可复用的工具代码">6.4 可复用的工具代码</a></li>
+      </ol>
+    </li>
+    <li><a href="#七总结">七、总结</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
+                工程类别
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-agent%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E5%BC%95%E7%94%A8%E5%B9%BB%E8%A7%89%E9%97%AE%E9%A2%98%E8%99%9A%E6%9E%84%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">AI Agent处理中文期刊引用幻觉问题——虚构参考文献的解决方案</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            讨论AI Agent在处理中文期刊引用时出现的幻觉问题（虚构参考文献），以及委托Agent解决此问题的完整方案
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-04-29</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 8 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h3 id="背景">背景
+</h3><p>在撰写一篇面向《电光与控制》的中文论文初稿时，AI生成了26条参考文献，其中8条中文文献经用户验证为<strong>伪造（不可在CNKI检索）</strong>。本文总结了从&quot;发现问题→定位工具→批量检索→验证替换&quot;的完整解决方案，旨在帮助其他AI Agent在面对类似学术写作任务时，能够自主解决虚构参考文献的问题。</p>
+<hr>
+<h2 id="一问题的本质ai生成式幻觉hallucination">一、问题的本质：AI生成式幻觉（Hallucination）
+</h2><h3 id="11-为什么ai会伪造中文文献">1.1 为什么AI会伪造中文文献？
+</h3><p>AI大语言模型在生成学术引用时，存在以下结构性问题：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">原因</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>训练数据偏差</strong></td>
+<td style="text-align:left">训练语料中英文论文占比远高于中文，中文期刊的小众论文覆盖不足</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>模式泛化</strong></td>
+<td style="text-align:left">AI学习到&quot;作者+期刊+年份+卷期页&quot;的格式，但用概率填充具体内容</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>缺乏验证机制</strong></td>
+<td style="text-align:left">语言模型本质是&quot;续写器&quot;，而非&quot;数据库查询器&quot;，没有内建事实核查能力</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="12-伪造文献的典型特征">1.2 伪造文献的典型特征
+</h3><p>通过本次任务，总结出AI伪造中文参考文献的常见模式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 伪造特征一：作者名字看似真实但搜索不到
+</span></span><span class="line"><span class="cl">[3] 王树磊, 李强, 刘畅, 等. 小型四旋翼无人飞行器姿态控制研究[J]. 电光与控制, 2016, 23(6): 33-37.
+</span></span><span class="line"><span class="cl">    → 作者、标题、卷期页完全是编造的
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 伪造特征二：标题中的关键词高度合理但不存在
+</span></span><span class="line"><span class="cl">[5] 周超, 张伟, 刘振, 等. 基于自抗扰的无人机光电平台视轴稳定控制[J]. 电光与控制, 2023, 30(5): 67-72.
+</span></span><span class="line"><span class="cl">    → &#34;无人机&#34;&#34;光电平台&#34;&#34;视轴稳定&#34;这些词合理组合，但该论文不存在
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 伪造特征三：权威期刊 + 高相关性标题
+</span></span><span class="line"><span class="cl">[9] 张磊, 方勇纯, 刘佳. 四旋翼无人机鲁棒抗扰控制研究综述[J]. 控制与决策, 2022, 37(10): 2448-2462.
+</span></span><span class="line"><span class="cl">    → &#34;控制与决策&#34;确有此领域论文，&#34;综述&#34;类更是看似可信
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="二解决方案路线图完整工作流">二、解决方案路线图（完整工作流）
+</h2><p>整个流程分为5个阶段，建议AI Agent在处理中文论文引用时严格按此路线执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌─────────────────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│ 阶段1：问题识别与工具选型                             │
+</span></span><span class="line"><span class="cl">│   ├─ 用户反馈 → &#34;CNKI搜不到你引用的文献&#34;              │
+</span></span><span class="line"><span class="cl">│   ├─ 意识到：AI生成的参考文献不可信                    │
+</span></span><span class="line"><span class="cl">│   └─ 选择数据源：OpenAlex（学术开放数据库，无需登录）    │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│ 阶段2：数据源能力评估                                 │
+</span></span><span class="line"><span class="cl">│   ├─ OpenAlex是否收录中文期刊？ → 是                 │
+</span></span><span class="line"><span class="cl">│   ├─ 电光与控制(S4306555234) ✓                       │
+</span></span><span class="line"><span class="cl">│   ├─ 控制与决策(S4306549409) ✓                       │
+</span></span><span class="line"><span class="cl">│   └─ 航空学报(S4306557536) ✓                         │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│ 阶段3：批量API检索                                    │
+</span></span><span class="line"><span class="cl">│   ├─ 按期刊搜索 → 列出该刊所有相关论文                │
+</span></span><span class="line"><span class="cl">│   ├─ 按关键词搜索 → 找到主题匹配的论文                │
+</span></span><span class="line"><span class="cl">│   └─ 下载JSON到本地 → 避免重复API调用                 │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│ 阶段4：候选论文筛选与匹配                              │
+</span></span><span class="line"><span class="cl">│   ├─ 筛除不相关论文（导航、通信、路径规划等）           │
+</span></span><span class="line"><span class="cl">│   ├─ 保留与论文主题（抗扰控制、滑模、观测器）相关的      │
+</span></span><span class="line"><span class="cl">│   └─ 按引用量/年份优选                                │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│ 阶段5：替换与验证                                     │
+</span></span><span class="line"><span class="cl">│   ├─ 在原文中找到所有伪造引用位置                      │
+</span></span><span class="line"><span class="cl">│   ├─ 用真实文献一对一替换                              │
+</span></span><span class="line"><span class="cl">│   └─ 检查替换后的文献能否形成自洽的引用逻辑链           │
+</span></span><span class="line"><span class="cl">└─────────────────────────────────────────────────────┘
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="三技术实现细节">三、技术实现细节
+</h2><h3 id="31-为什么选择openalex">3.1 为什么选择OpenAlex？
+</h3><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">数据源</th>
+<th style="text-align:center">是否需要注册</th>
+<th style="text-align:center">是否收录中文期刊</th>
+<th style="text-align:center">API速率限制</th>
+<th style="text-align:center">数据质量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>OpenAlex</strong></td>
+<td style="text-align:center">❌ 无需</td>
+<td style="text-align:center">✅ 是</td>
+<td style="text-align:center">免费10 req/s</td>
+<td style="text-align:center">高质量</td>
+</tr>
+<tr>
+<td style="text-align:left">CNKI</td>
+<td style="text-align:center">✅ 需注册付费</td>
+<td style="text-align:center">✅ 是</td>
+<td style="text-align:center">严格</td>
+<td style="text-align:center">最全但封闭</td>
+</tr>
+<tr>
+<td style="text-align:left">Google Scholar</td>
+<td style="text-align:center">❌ 无需但被墙</td>
+<td style="text-align:center">⚠️ 部分</td>
+<td style="text-align:center">严格</td>
+<td style="text-align:center">不稳定</td>
+</tr>
+<tr>
+<td style="text-align:left">Semantic Scholar</td>
+<td style="text-align:center">❌ 无需</td>
+<td style="text-align:center">⚠️ 很少</td>
+<td style="text-align:center">较宽松</td>
+<td style="text-align:center">中文覆盖差</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>结论</strong>：OpenAlex是目前AI Agent处理中文论文引用验证的最佳免费数据源。</p>
+<h3 id="32-api使用方法">3.2 API使用方法
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 方式一：按期刊ID搜索（推荐，更精确）</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 电光与控制 的OpenAlex Source ID</span>
+</span></span><span class="line"><span class="cl"><span class="n">source_id</span> <span class="o">=</span> <span class="s2">&#34;S4306555234&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;https://api.openalex.org/works?filter=primary_location.source.id:</span><span class="si">{</span><span class="n">source_id</span><span class="si">}</span><span class="s2">,publication_year:2010-2025&amp;search=四旋翼&amp;per_page=10&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 方式二：按关键词全局搜索（覆盖面更广）</span>
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://api.openalex.org/works?search=四旋翼+无人机+滑模+控制&amp;per_page=20&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 注意：在企业网络环境下可能需要绕过代理</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># proxies = {&#34;http&#34;: None, &#34;https&#34;: None}  # 或使用 --noproxy &#34;*&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="33-关键中文期刊的source-id">3.3 关键：中文期刊的Source ID
+</h3><p>预先查询目标期刊的OpenAlex ID，可以极大提高检索效率：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">期刊名称</th>
+<th style="text-align:center">OpenAlex Source ID</th>
+<th style="text-align:center">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">电光与控制</td>
+<td style="text-align:center">S4306555234</td>
+<td style="text-align:center">中文核心</td>
+</tr>
+<tr>
+<td style="text-align:left">控制与决策</td>
+<td style="text-align:center">S4306549409</td>
+<td style="text-align:center">中文核心/EI</td>
+</tr>
+<tr>
+<td style="text-align:left">航空学报</td>
+<td style="text-align:center">S4306557536</td>
+<td style="text-align:center">中文核心/EI</td>
+</tr>
+<tr>
+<td style="text-align:left">控制理论与应用</td>
+<td style="text-align:center">S4306548778</td>
+<td style="text-align:center">中文核心/EI</td>
+</tr>
+<tr>
+<td style="text-align:left">自动化学报</td>
+<td style="text-align:center">S4306548278</td>
+<td style="text-align:center">中文核心/EI</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="34-针对中文论文的检索技巧">3.4 针对中文论文的检索技巧
+</h3><ol>
+<li>
+<p><strong>中英文混合搜索效果更好</strong></p>
+<ul>
+<li><code>search=四旋翼+quadrotor+滑模+sliding+mode</code></li>
+<li>OpenAlex对中文关键词的索引不如英文完整</li>
+</ul>
+</li>
+<li>
+<p><strong>优先搜期刊而非关键词</strong></p>
+<ul>
+<li>先用期刊过滤（<code>filter=primary_location.source.id:xxx</code>）</li>
+<li>再在结果中做关键词匹配</li>
+</ul>
+</li>
+<li>
+<p><strong>注意DOI验证</strong></p>
+<ul>
+<li>中文期刊不一定都有DOI，但有DOI的文献真实性更高</li>
+<li>控制与决策的DOI格式：<code>10.13195/j.kzyjc.2015.0560</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="四处理流程中的注意事项">四、处理流程中的注意事项
+</h2><h3 id="41-编码问题windows环境">4.1 编码问题（Windows环境）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 在Windows CMD中直接print中文会乱码</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ✅ 正确做法：输出到文件再读取</span>
+</span></span><span class="line"><span class="cl">python script.py &gt; output.txt
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者：在Python中设置编码</span>
+</span></span><span class="line"><span class="cl">sys.stdout.reconfigure<span class="o">(</span><span class="nv">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者直接用文件写入</span>
+</span></span><span class="line"><span class="cl">with open<span class="o">(</span><span class="s1">&#39;output.txt&#39;</span>, <span class="s1">&#39;w&#39;</span>, <span class="nv">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="o">)</span> as f:
+</span></span><span class="line"><span class="cl">    f.write<span class="o">(</span>json_data<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="42-代理问题企业网络">4.2 代理问题（企业网络）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 如果使用了VPN或公司代理，OpenAlex API可能被路由到无法访问的地址</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ✅ 使用 --noproxy 绕过</span>
+</span></span><span class="line"><span class="cl">curl --noproxy <span class="s2">&#34;*&#34;</span> <span class="s2">&#34;https://api.openalex.org/...&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或在Python中设置</span>
+</span></span><span class="line"><span class="cl"><span class="nv">session</span> <span class="o">=</span> requests.Session<span class="o">()</span>
+</span></span><span class="line"><span class="cl">session.trust_env <span class="o">=</span> False  <span class="c1"># 忽略系统代理</span>
+</span></span><span class="line"><span class="cl"><span class="nv">response</span> <span class="o">=</span> session.get<span class="o">(</span>url<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="43-数据解析的关键字段">4.3 数据解析的关键字段
+</h3><p>OpenAlex返回的JSON中，构建参考文献需要提取：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ref</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">work</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;authors&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">][</span><span class="s1">&#39;display_name&#39;</span><span class="p">]</span> 
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">work</span><span class="p">[</span><span class="s1">&#39;authorships&#39;</span><span class="p">][:</span><span class="mi">5</span><span class="p">]],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">work</span><span class="p">[</span><span class="s1">&#39;primary_location&#39;</span><span class="p">][</span><span class="s1">&#39;source&#39;</span><span class="p">][</span><span class="s1">&#39;display_name&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">work</span><span class="p">[</span><span class="s1">&#39;publication_year&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;volume&#39;</span><span class="p">:</span> <span class="n">work</span><span class="p">[</span><span class="s1">&#39;biblio&#39;</span><span class="p">][</span><span class="s1">&#39;volume&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;issue&#39;</span><span class="p">:</span> <span class="n">work</span><span class="p">[</span><span class="s1">&#39;biblio&#39;</span><span class="p">][</span><span class="s1">&#39;issue&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;pages&#39;</span><span class="p">:</span> <span class="n">work</span><span class="p">[</span><span class="s1">&#39;biblio&#39;</span><span class="p">][</span><span class="s1">&#39;pages&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;doi&#39;</span><span class="p">:</span> <span class="n">work</span><span class="p">[</span><span class="s1">&#39;doi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;https://doi.org/&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">work</span><span class="p">[</span><span class="s1">&#39;doi&#39;</span><span class="p">]</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="44-参考文献格式规范化">4.4 参考文献格式规范化
+</h3><p>中文论文的参考文献格式与英文不同，需注意：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 中文论文标准格式（GB/T 7714）
+</span></span><span class="line"><span class="cl">[序号] 作者. 论文标题[J]. 期刊名, 年, 卷(期): 起止页码.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 具体案例
+</span></span><span class="line"><span class="cl">[3] 吴文海, 刘锦涛, Li J, 等. 四旋翼无人机SO(3)快速终端滑模姿态控制器设计[J]. 
+</span></span><span class="line"><span class="cl">    电光与控制, 2015, 22(11): 6-10.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 英文论文标准格式
+</span></span><span class="line"><span class="cl">[5] Shi D, Zhong W, Chou W. Super-twisting extended state observer and sliding mode 
+</span></span><span class="line"><span class="cl">    controller for quadrotor UAV attitude system in presence of wind gust and actuator 
+</span></span><span class="line"><span class="cl">    faults[J]. Electronics, 2018, 7(8): 128.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="五时间效率分析">五、时间效率分析
+</h2><p>本次任务各阶段耗时统计：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">阶段</th>
+<th style="text-align:center">耗时</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">① 问题识别</td>
+<td style="text-align:center">~1min</td>
+<td style="text-align:left">用户反馈→确认伪造</td>
+</tr>
+<tr>
+<td style="text-align:left">② 工具探索</td>
+<td style="text-align:center">~3min</td>
+<td style="text-align:left">尝试CNKI(失败)→发现OpenAlex</td>
+</tr>
+<tr>
+<td style="text-align:left">③ 批量检索</td>
+<td style="text-align:center">~3min</td>
+<td style="text-align:left">6次API调用，下载24个JSON文件</td>
+</tr>
+<tr>
+<td style="text-align:left">④ 候选筛选</td>
+<td style="text-align:center">~2min</td>
+<td style="text-align:left">从返回结果中找出真实相关论文</td>
+</tr>
+<tr>
+<td style="text-align:left">⑤ 替换实施</td>
+<td style="text-align:center">~1min</td>
+<td style="text-align:left">8处replace_in_file操作</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>合计</strong></td>
+<td style="text-align:center"><strong>~10min</strong></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>效率提升建议</strong>：如果一开始就制定好&quot;从OpenAlex获取真实参考文献&quot;的标准流程，可将总耗时缩短至5分钟以内。</p>
+<hr>
+<h2 id="六经验教训与最佳实践">六、经验教训与最佳实践
+</h2><h3 id="61-核心原则永远不要相信ai生成的参考文献">6.1 核心原则：<strong>永远不要相信AI生成的参考文献</strong>
+</h3><p>即使AI能够写出高质量的学术论文正文，其生成的参考文献也有极高的伪造风险。必须有一套独立的验证流程。</p>
+<h3 id="62-推荐工作流">6.2 推荐工作流
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">写作阶段：
+</span></span><span class="line"><span class="cl">  1. AI生成论文正文 + 参考文献（注明：参考文献未经核实）
+</span></span><span class="line"><span class="cl">  2. 人类/AI提取参考文献列表 → 逐条验证
+</span></span><span class="line"><span class="cl">  3. 用真实文献替换伪造文献
+</span></span><span class="line"><span class="cl">  4. 调整正文中的引用标注（如有必要）
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">验证阶段（自动化脚本）：
+</span></span><span class="line"><span class="cl">  1. 对每条中文文献，调用OpenAlex API搜索
+</span></span><span class="line"><span class="cl">  2. 检查是否存在匹配的作者/标题/期刊/年份
+</span></span><span class="line"><span class="cl">  3. 对无法验证的文献，标记为&#34;待替换&#34;
+</span></span><span class="line"><span class="cl">  4. 从OpenAlex检索结果中选择真实文献替代
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="63-针对不同期刊的验证策略">6.3 针对不同期刊的验证策略
+</h3><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">期刊类型</th>
+<th style="text-align:center">验证来源</th>
+<th style="text-align:center">可靠性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">中文核心（EI收录）</td>
+<td style="text-align:center">OpenAlex ✅</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:left">中文核心（非EI）</td>
+<td style="text-align:center">OpenAlex ⚠️（覆盖不全）</td>
+<td style="text-align:center">中</td>
+</tr>
+<tr>
+<td style="text-align:left">普通中文期刊</td>
+<td style="text-align:center">OpenAlex ❌（可能不收录）</td>
+<td style="text-align:center">低→需人工核验</td>
+</tr>
+<tr>
+<td style="text-align:left">英文学术期刊</td>
+<td style="text-align:center">OpenAlex/CrossRef ✅</td>
+<td style="text-align:center">高</td>
+</tr>
+<tr>
+<td style="text-align:left">英文会议论文</td>
+<td style="text-align:center">OpenAlex/Scopus ✅</td>
+<td style="text-align:center">高</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="64-可复用的工具代码">6.4 可复用的工具代码
+</h3><p>建议维护一个<code>verify_refs.py</code>工具脚本，包含：</p>
+<ul>
+<li>OpenAlex API封装</li>
+<li>中文期刊Source ID映射表</li>
+<li>参考文献格式自动生成</li>
+<li>批量验证与报告生成</li>
+</ul>
+<hr>
+<h2 id="七总结">七、总结
+</h2><p>AI Agent在处理中文论文参考文献时，必须打破&quot;AI生成即可信&quot;的思维惯性。核心技术路线是：</p>
+<blockquote>
+<p><strong>利用OpenAlex的开放API → 按期刊ID和关键词检索 → 筛选匹配的真实文献 → 替换伪造引用</strong></p>
+</blockquote>
+<p>这一路线额外需要约5-10分钟，但能够从根本上解决学术引用造假问题，避免投稿后被退稿的严重后果。</p>
+<p>对于未来类似任务，建议：</p>
+<ol>
+<li><strong>在生成参考文献时即标注&quot;未经核实&quot;</strong></li>
+<li><strong>写作完成后立即执行验证流程</strong></li>
+<li><strong>优先引用英文期刊论文（数据覆盖更完整）</strong></li>
+<li><strong>若必须引用中文文献，优先选择有DOI的论文</strong></li>
+</ol>
+<hr>
+<p><em>本文记录于2026年4月29日，基于一次真实的AI Agent修复中文期刊引用幻觉问题的实践经验。</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai/">AI</a>
+        
+            <a href="/tags/agent/">Agent</a>
+        
+            <a href="/tags/%E5%AD%A6%E6%9C%AF%E5%86%99%E4%BD%9C/">学术写作</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed MIT OR GPL3.0 WHATEVERS ON GITHUB_PAGE SHOW YOU</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+        
+        
+            <div class="article-image">
+                <img src="/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/fengmian.fafbc527d6e9af7d03c3b80a92224796.png" 
+                        width="887" 
+                        height="881" 
+                        loading="lazy"
+                        alt="Featured image of post Pixhawk6C_Simulink开发环境配置-用于算法验证等踩坑记录"
+                        
+                        data-hash="md5-&#43;vvFJ9bpr30Dw7gKkiJHlg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Pixhawk6C_Simulink开发环境配置-用于算法验证等踩坑记录</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/xmc4500%E5%BC%95%E8%84%9A%E5%9C%B0%E5%9D%80-%E5%AF%84%E5%AD%98%E5%99%A8%E5%9C%B0%E5%9D%80%E9%97%AE%E9%A2%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">XMC4500引脚地址-寄存器地址问题</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/">
+        
+        
+            <div class="article-image">
+                <img src="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8v2.0/1.4.ae01da38c57c9b1194a90bf90ab7f422.jpg" 
+                        width="2276" 
+                        height="1280" 
+                        loading="lazy"
+                        alt="Featured image of post CM_FOC驱动器V2.0"
+                        
+                        data-hash="md5-rgHaOMV8mxGUqQv5Crf0Ig==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">CM_FOC驱动器V2.0</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/yolo%E8%AF%95%E7%8E%A9-%E5%AE%9E%E4%BE%8B%E8%AE%B0%E5%BD%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">YOLO试玩&#43;实例记录</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+        
+        
+            <div class="article-image">
+                <img src="/p/simulink-px4-wsl2%E4%BB%BF%E7%9C%9F%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/fengmian.deb6cb9406c642256ecc3694b96a4413.png" 
+                        width="828" 
+                        height="532" 
+                        loading="lazy"
+                        alt="Featured image of post Simulink-PX4-WSL2仿真环境搭建"
+                        
+                        data-hash="md5-3rbLlAbGQiVuzDaUuWpEEw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Simulink-PX4-WSL2仿真环境搭建</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="a233a2/a233a2.github.io"
+        issue-term="pathname"
+        
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+<script>
+    let utterancesLoaded = false;
+
+    function setUtterancesTheme(theme) {
+        let utterances = document.querySelector('.utterances iframe');
+        if (utterances) {
+            utterances.contentWindow.postMessage(
+                {
+                    type: 'set-theme',
+                    theme: `github-${theme}`
+                },
+                'https://utteranc.es'
+            );
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://utteranc.es') return;
+
+        
+        utterancesLoaded = true;
+        setUtterancesTheme(document.documentElement.dataset.scheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (!utterancesLoaded) return;
+        setUtterancesTheme(e.detail)
+    })
+</script>
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Sunjiyi Make and Design
+    </section>
+    
+    <section class="powerby">
+        
+            <a href="https://icp.gov.moe/?keyword=20244008" target="_blank">萌ICP备20244008号</a> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
