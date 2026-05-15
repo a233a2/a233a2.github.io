@@ -7,14 +7,131 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Simulink外部模式实验-内层信号监视的bug</title>
+        <link>https://a233a2.github.io/p/simulink%E5%A4%96%E9%83%A8%E6%A8%A1%E5%BC%8F%E5%AE%9E%E9%AA%8C-%E5%86%85%E5%B1%82%E4%BF%A1%E5%8F%B7%E7%9B%91%E8%A7%86%E7%9A%84bug/</link>
+        <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/simulink%E5%A4%96%E9%83%A8%E6%A8%A1%E5%BC%8F%E5%AE%9E%E9%AA%8C-%E5%86%85%E5%B1%82%E4%BF%A1%E5%8F%B7%E7%9B%91%E8%A7%86%E7%9A%84bug/</guid>
+        <description>&lt;h2 id=&#34;外部模式记录深层内部信号可能是不可靠的&#34;&gt;外部模式记录深层内部信号可能是不可靠的。
+&lt;/h2&gt;&lt;h3 id=&#34;问题描述&#34;&gt;问题描述
+&lt;/h3&gt;&lt;p&gt;今天，在使用Simulink外部模式连接C2000实验设备进行仿真的时候，发现电机的iq_ref信号在运行过程中存在一个很奇怪的现象：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/simulink%E5%A4%96%E9%83%A8%E6%A8%A1%E5%BC%8F%E5%AE%9E%E9%AA%8C-%E5%86%85%E5%B1%82%E4%BF%A1%E5%8F%B7%E7%9B%91%E8%A7%86%E7%9A%84bug/iq_ref1.png&#34;
+	width=&#34;1200&#34;
+	height=&#34;800&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第四层模型下的iq_ref外部模式运行图&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;150&#34;
+		data-flex-basis=&#34;360px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;整体的运行图如下：可以看到iqreal大致正常的&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/simulink%E5%A4%96%E9%83%A8%E6%A8%A1%E5%BC%8F%E5%AE%9E%E9%AA%8C-%E5%86%85%E5%B1%82%E4%BF%A1%E5%8F%B7%E7%9B%91%E8%A7%86%E7%9A%84bug/iq_ref3.png&#34;
+	width=&#34;1364&#34;
+	height=&#34;795&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;错误的iq跟踪图&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;171&#34;
+		data-flex-basis=&#34;411px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;很诡异，iqref按理来说是速度控制器的输出，不应该是这么诡异的图啊？这看起来更像是某个Park / inverse Park 里的中间变量，或者某个周期性角度函数，主要我现在总的记录信号也不多。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;而且纯仿真的情况下是完全正常的。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为了验证问题所在，我在外环断开速度控制器到电流环的输入，接入一个开关，令其在0-0.5之间选择。结果出现了更为诡异的现象：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/simulink%E5%A4%96%E9%83%A8%E6%A8%A1%E5%BC%8F%E5%AE%9E%E9%AA%8C-%E5%86%85%E5%B1%82%E4%BF%A1%E5%8F%B7%E7%9B%91%E8%A7%86%E7%9A%84bug/iq_ref2.png&#34;
+	width=&#34;1364&#34;
+	height=&#34;795&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;更为诡异的现象&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;171&#34;
+		data-flex-basis=&#34;411px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这。。。但是此时，iq_real依然是好好的。这就有点。。。&lt;/p&gt;
+&lt;p&gt;之后我怀疑是内存出错的问题，之前我的iq_ref记录信号是接在第四层的Simulink模型的一个MUX模块输出下的如下图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/simulink%E5%A4%96%E9%83%A8%E6%A8%A1%E5%BC%8F%E5%AE%9E%E9%AA%8C-%E5%86%85%E5%B1%82%E4%BF%A1%E5%8F%B7%E7%9B%91%E8%A7%86%E7%9A%84bug/%E5%86%85%E5%B1%82%E4%BF%A1%E5%8F%B7%E8%B0%83%E7%94%A8.png&#34;
+	width=&#34;962&#34;
+	height=&#34;388&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;第一层&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;247&#34;
+		data-flex-basis=&#34;595px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;现在我将其移至第一层模型下，再次外部模式实验，结果发现问题消失：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/simulink%E5%A4%96%E9%83%A8%E6%A8%A1%E5%BC%8F%E5%AE%9E%E9%AA%8C-%E5%86%85%E5%B1%82%E4%BF%A1%E5%8F%B7%E7%9B%91%E8%A7%86%E7%9A%84bug/%E5%AF%B9%E6%AF%94.png&#34;
+	width=&#34;1364&#34;
+	height=&#34;795&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;问题消失&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;171&#34;
+		data-flex-basis=&#34;411px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;我还留着内层的信号，发现两者的差别了。之前那个乱波形大概率是 内部信号被代码生成优化、复用、条件执行子系统影响、或者信号命名混乱导致的外部模式观测错误。&lt;/p&gt;
+&lt;h3 id=&#34;分析原因1&#34;&gt;分析原因1：
+&lt;/h3&gt;&lt;p&gt;我的4层Simulink模型，分别经历了一个 &lt;strong&gt;控制速率换算模块&lt;/strong&gt; &lt;strong&gt;条件执行/Action Subsystem&lt;/strong&gt; 等等，这种复杂结构在代码生成之后，内部信号不是每个采样周期都像普通 Simulink 仿真那样被完整保留。它可能只在某个 action 分支执行时更新；未执行分支的信号可能保持旧值、被复用，或者在外部模式中无法稳定映射到我所看到的那根线。&lt;/p&gt;
+&lt;h3 id=&#34;分析原因2&#34;&gt;分析原因2：
+&lt;/h3&gt;&lt;p&gt;C2000 外部模式运行的是生成后的 C 代码。为了节省 RAM，Simulink Coder 会优化内部信号，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Signal storage reuse
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Block reduction
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Inline parameters
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Local block outputs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;也就是说，第四层内部那根 iq_ref 线在代码里可能没有独立内存。它可能和别的变量共用同一块内存。&lt;/p&gt;
+&lt;p&gt;于是我在 Data Inspector 里看到的 iq_ref，可能不是纯粹的 Constant 0.5，而是某个被复用的临时变量。这个变量可能某些时刻存的是 iq_ref，某些时刻存的是 iq_real、Park 变换中间量、甚至别的控制中间变量。&lt;/p&gt;
+&lt;p&gt;这就解释了为什么我之前看到的 iq_ref 像噪声和尖峰，而不像常数。&lt;/p&gt;
+&lt;h3 id=&#34;搭建模型建议&#34;&gt;搭建模型建议
+&lt;/h3&gt;&lt;p&gt;建议你把所有要用于论文和实验分析的信号都在最外层统一拉出来。&lt;/p&gt;
+&lt;p&gt;例如建立一个专门的 &lt;strong&gt;debug bus&lt;/strong&gt;，这是最专业的搭建方案。&lt;/p&gt;
+&lt;p&gt;不要在第四层、第五层里随手点一根线记录。&lt;/p&gt;
+&lt;p&gt;尤其论文要用的数据，一定要记录这些“接口级信号”：&lt;/p&gt;
+&lt;p&gt;如果确实要记录内部信号，建议拉到最上层。&lt;/p&gt;
+&lt;p&gt;对于关键 debug 信号，可以定义成 Simulink.Signal，设置 storage class。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>AI Agent处理中文期刊引用幻觉问题——虚构参考文献的解决方案</title>
         <link>https://a233a2.github.io/p/ai-agent%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E5%BC%95%E7%94%A8%E5%B9%BB%E8%A7%89%E9%97%AE%E9%A2%98%E8%99%9A%E6%9E%84%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
         <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/ai-agent%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E5%BC%95%E7%94%A8%E5%B9%BB%E8%A7%89%E9%97%AE%E9%A2%98%E8%99%9A%E6%9E%84%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
         <description>&lt;h3 id=&#34;背景&#34;&gt;背景
-&lt;/h3&gt;&lt;p&gt;在撰写一篇面向《电光与控制》的中文论文初稿时，AI生成了26条参考文献，其中8条中文文献经用户验证为&lt;strong&gt;伪造（不可在CNKI检索）&lt;/strong&gt;。本文总结了从&amp;quot;发现问题→定位工具→批量检索→验证替换&amp;quot;的完整解决方案，旨在帮助其他AI Agent在面对类似学术写作任务时，能够自主解决虚构参考文献的问题。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;在撰写一篇中文论文初稿时，AI生成了26条参考文献，其中8条中文文献经用户验证为&lt;strong&gt;伪造（不可在CNKI检索）&lt;/strong&gt;。本文总结了从&amp;quot;发现问题→定位工具→批量检索→验证替换&amp;quot;的完整解决方案，旨在帮助其他AI Agent在面对类似学术写作任务时，能够自主解决虚构参考文献的问题。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;一问题的本质ai生成式幻觉hallucination&#34;&gt;一、问题的本质：AI生成式幻觉（Hallucination）
 &lt;/h2&gt;&lt;h3 id=&#34;11-为什么ai会伪造中文文献&#34;&gt;1.1 为什么AI会伪造中文文献？

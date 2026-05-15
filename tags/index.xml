@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Wed, 29 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 15 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PMSM</title>
+        <link>https://a233a2.github.io/tags/pmsm/</link>
+        <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/tags/pmsm/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Agent</title>
         <link>https://a233a2.github.io/tags/agent/</link>
         <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
@@ -101,14 +109,6 @@
         <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/tags/nerunet/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>PMSM</title>
-        <link>https://a233a2.github.io/tags/pmsm/</link>
-        <pubDate>Sat, 26 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/tags/pmsm/</guid>
         <description></description>
         </item>
         <item>

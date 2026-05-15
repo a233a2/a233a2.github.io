@@ -14,7 +14,7 @@
         
         <guid>https://a233a2.github.io/p/ai-agent%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E5%BC%95%E7%94%A8%E5%B9%BB%E8%A7%89%E9%97%AE%E9%A2%98%E8%99%9A%E6%9E%84%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
         <description>&lt;h3 id=&#34;背景&#34;&gt;背景
-&lt;/h3&gt;&lt;p&gt;在撰写一篇面向《电光与控制》的中文论文初稿时，AI生成了26条参考文献，其中8条中文文献经用户验证为&lt;strong&gt;伪造（不可在CNKI检索）&lt;/strong&gt;。本文总结了从&amp;quot;发现问题→定位工具→批量检索→验证替换&amp;quot;的完整解决方案，旨在帮助其他AI Agent在面对类似学术写作任务时，能够自主解决虚构参考文献的问题。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;在撰写一篇中文论文初稿时，AI生成了26条参考文献，其中8条中文文献经用户验证为&lt;strong&gt;伪造（不可在CNKI检索）&lt;/strong&gt;。本文总结了从&amp;quot;发现问题→定位工具→批量检索→验证替换&amp;quot;的完整解决方案，旨在帮助其他AI Agent在面对类似学术写作任务时，能够自主解决虚构参考文献的问题。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;一问题的本质ai生成式幻觉hallucination&#34;&gt;一、问题的本质：AI生成式幻觉（Hallucination）
 &lt;/h2&gt;&lt;h3 id=&#34;11-为什么ai会伪造中文文献&#34;&gt;1.1 为什么AI会伪造中文文献？
