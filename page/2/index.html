@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://a233a2.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.0e2cdcfcc15cccc704a9150e43bf112a4d6a313325e684460d9894492bce9b6c.css"><meta property='og:title' content="sunjiyi's Blogggg">
+<link rel="stylesheet" href="/scss/style.min.4372a074d2ec7113335517ea909c1635bd125355aa97f19107f39cf0efe05a65.css"><meta property='og:title' content="sunjiyi's Blogggg">
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://a233a2.github.io/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
@@ -73,7 +73,7 @@
     
 
     <section class="home-shell" id="top">
-        <nav class="home-nav" aria-label="Homepage navigation">
+        <nav class="home-nav" data-home-nav aria-hidden="true" inert aria-label="Homepage navigation">
             <a class="home-brand" href="/">sunjiyi&#39;s Blogggg</a>
             <div class="home-nav__links">
                 <a href="/%E5%85%B3%E4%BA%8E/">关于</a>
@@ -154,12 +154,16 @@
                 
                     <div class="home-contact">
                         
+                            
                             <a href="https://github.com/a233a2" target="_blank" rel="me noopener">GitHub</a>
                         
+                            <span class="home-contact__separator" aria-hidden="true">·</span>
                             <a href="https://space.bilibili.com/37767944" target="_blank" rel="me noopener">Bilibili</a>
                         
+                            <span class="home-contact__separator" aria-hidden="true">·</span>
                             <a href="mailto:sunjiyi666@foxmail.com" >Mail</a>
                         
+                            <span class="home-contact__separator" aria-hidden="true">·</span>
                             <a href="mailto:sunjiyi666@gmail.com" >Gmail</a>
                         
                     </div>
@@ -758,6 +762,29 @@
             }, 120);
             window.addEventListener('scroll', requestUpdate, { passive: true });
             window.addEventListener('resize', requestUpdate);
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const nav = document.querySelector('[data-home-nav]');
+            const posts = document.querySelector('#posts');
+            if (!nav || !posts) return;
+
+            const observer = new IntersectionObserver(function (entries) {
+                const postsVisible = entries.some(function (entry) {
+                    return entry.isIntersecting;
+                });
+
+                nav.classList.toggle('is-visible', postsVisible);
+                nav.setAttribute('aria-hidden', postsVisible ? 'false' : 'true');
+                nav.inert = !postsVisible;
+            }, {
+                rootMargin: '-8% 0px -72% 0px',
+                threshold: 0
+            });
+
+            observer.observe(posts);
         })();
     </script>
 
