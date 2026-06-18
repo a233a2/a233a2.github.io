@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://a233a2.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.4372a074d2ec7113335517ea909c1635bd125355aa97f19107f39cf0efe05a65.css"><meta property='og:title' content="sunjiyi's Blogggg">
+<link rel="stylesheet" href="/scss/style.min.74ab08f3e599e93b6bb563612e744ab6e3444b0c4c780b9edf031f48a88db6b3.css"><meta property='og:title' content="sunjiyi's Blogggg">
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://a233a2.github.io/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
@@ -190,15 +190,29 @@
                     <div class="home-orbit home-orbit--sage">FOC</div>
                     <div class="home-orbit home-orbit--oat">PX4</div>
                 </div>
-                <div class="home-card__body">
+                <div class="home-card__body" data-motto-trigger role="button" tabindex="0" aria-label="切换工程状态语录">
                     <span class="home-status">Now focusing</span>
-                    <strong>FOC / PX4</strong>
+                    <strong data-motto-text aria-live="polite">FOC / PX4</strong>
                     
                 </div>
             </aside>
         </div>
 
-        <div class="home-bottom-line" aria-hidden="true"></div>
+        <div class="home-hero-footer">
+            <a class="home-scroll-guide" href="#posts" aria-label="向下查看文章">
+                <span></span>
+            </a>
+            <div class="home-tech-marquee" aria-label="Technical stack">
+                <div class="home-tech-marquee__track">
+                    <div class="home-tech-marquee__group">
+                        <span>MATLAB</span><i>·</i><span>Simulink</span><i>·</i><span>FOC</span><i>·</i><span>PX4</span><i>·</i><span>C++</span><i>·</i><span>FreeRTOS</span><i>·</i><span>STM32</span><i>·</i><span>LaTeX</span><i>·</i><span>Embedded Systems</span><i>·</i>
+                    </div>
+                    <div class="home-tech-marquee__group" aria-hidden="true">
+                        <span>MATLAB</span><i>·</i><span>Simulink</span><i>·</i><span>FOC</span><i>·</i><span>PX4</span><i>·</i><span>C++</span><i>·</i><span>FreeRTOS</span><i>·</i><span>STM32</span><i>·</i><span>LaTeX</span><i>·</i><span>Embedded Systems</span><i>·</i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="home-posts" id="posts">
@@ -1551,6 +1565,55 @@
             });
 
             observer.observe(posts);
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const trigger = document.querySelector('[data-motto-trigger]');
+            const text = document.querySelector('[data-motto-text]');
+            if (!trigger || !text) return;
+
+            const mottos = [
+                'FOC / PX4',
+                'PID 参数死磕中...',
+                'sPMSM 观测器搭建中...',
+                'Simulink 仿真调优中...',
+                '正在与 Agent 深度对线...'
+            ];
+            let current = 0;
+            let changing = false;
+
+            function changeMotto() {
+                if (changing) return;
+                changing = true;
+
+                let next = current;
+                while (next === current) {
+                    next = Math.floor(Math.random() * mottos.length);
+                }
+
+                text.classList.add('is-leaving');
+                window.setTimeout(function () {
+                    current = next;
+                    text.textContent = mottos[current];
+                    text.classList.remove('is-leaving');
+                    text.classList.add('is-entering');
+
+                    window.setTimeout(function () {
+                        text.classList.remove('is-entering');
+                        changing = false;
+                    }, 320);
+                }, 180);
+            }
+
+            trigger.addEventListener('click', changeMotto);
+            trigger.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    changeMotto();
+                }
+            });
         })();
     </script>
 
