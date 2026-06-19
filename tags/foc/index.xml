@@ -30,6 +30,8 @@
 		data-flex-basis=&#34;330px&#34;
 	
 &gt;  &lt;br&gt;
+这个控制器还是不错的，大家可以淘宝搜索购买。另外还有欧拉电子的FOC驱动器，我也深度使用过都很不错，不过这个性价比更高，这个才不到100CNY。此板是双路的FOC控制器，每一路电机都配备了2个&lt;strong&gt;INA240A2&lt;/strong&gt;的电流传感器，线电流电流采样方案，第三相电流可以通过基尔霍夫电流定律计算出来，是foc驱动器的一种常用设计方案。驱动使用的是&lt;strong&gt;两颗ST的L6234PD&lt;/strong&gt;，是集成的DMOS开关管，&lt;strong&gt;5A 峰值&lt;/strong&gt;，并不是预驱+MOSFET的方案，此款驱动器是针对云台电机所优化设计的。
+默认配备的是ESP32的驱动器，当然设计一个底座就可以更换控制器了。很适合自己项目要使用FOC驱动器时选择这款驱动器。
 搭配2208云台电机，控制器是ESP32.使用Vscode端的PlatformIO进行开发。
 &lt;img src=&#34;https://a233a2.github.io/p/dengfocv3p%E5%B0%9D%E8%AF%95%E9%83%A8%E7%BD%B2mfpcc%E7%AE%97%E6%B3%95/Harcware.jpg&#34;
 	width=&#34;1440&#34;
