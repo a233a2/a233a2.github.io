@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://a233a2.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.45dd416f468a12ad271ae60e059cc7ed4a41772fbcc9f615087c6a5438d2c0d4.css"><meta property='og:title' content="sunjiyi's Blogggg">
+<link rel="stylesheet" href="/scss/style.min.06bb2b38e2a2a4a873fbbaf01257b194328f9ff55f020ef24e4a8d86e0a715a3.css"><meta property='og:title' content="sunjiyi's Blogggg">
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://a233a2.github.io/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
@@ -1530,12 +1530,36 @@
                 const opacity = reduceMotion ? 0.46 : 0.08 + presence * 0.92;
                 const scale = 0.82 + presence * 0.18;
                 const drift = progress * 18;
+                const copyShift = reduceMotion ? 0 : progress * -18;
+                const cardShift = reduceMotion ? 0 : progress * -10;
+                const cardScale = reduceMotion ? 1 : 1 - progress * 0.018;
+                const heroFade = reduceMotion ? 1 : 1 - progress * 0.2;
+                const footerFade = reduceMotion ? 1 : Math.max(0, 1 - progress * 1.55);
+                const footerShift = reduceMotion ? 0 : (1 - footerFade) * 10;
+                const floraOpacity = reduceMotion ? 0.6 : Math.max(0.06, presence * 0.94);
+                const haloOpacity = reduceMotion ? 0.42 : 0.12 + presence * 0.76;
+                const floraBlur = reduceMotion ? 0 : progress * 3;
+                const haloBlur = reduceMotion ? 22 : 18 + progress * 20;
+                const orbitOpacity = reduceMotion ? 0.74 : 0.35 + presence * 0.65;
+                const orbitBlur = reduceMotion ? 0 : progress * 1.5;
 
+                shell.style.setProperty('--home-copy-shift', copyShift.toFixed(1) + 'px');
+                shell.style.setProperty('--home-card-shift', cardShift.toFixed(1) + 'px');
+                shell.style.setProperty('--home-card-scale', cardScale.toFixed(3));
+                shell.style.setProperty('--home-hero-opacity', heroFade.toFixed(3));
+                shell.style.setProperty('--home-footer-opacity', footerFade.toFixed(3));
+                shell.style.setProperty('--home-footer-shift', footerShift.toFixed(1) + 'px');
                 card.style.setProperty('--bloom-presence', presence.toFixed(3));
                 card.style.setProperty('--bloom-scroll', progress.toFixed(3));
                 card.style.setProperty('--bloom-opacity', opacity.toFixed(3));
                 card.style.setProperty('--bloom-scale', scale.toFixed(3));
                 card.style.setProperty('--bloom-drift', drift.toFixed(1) + 'px');
+                card.style.setProperty('--flora-opacity', floraOpacity.toFixed(3));
+                card.style.setProperty('--halo-opacity', haloOpacity.toFixed(3));
+                card.style.setProperty('--flora-blur', floraBlur.toFixed(1) + 'px');
+                card.style.setProperty('--halo-blur', haloBlur.toFixed(1) + 'px');
+                card.style.setProperty('--orbit-opacity', orbitOpacity.toFixed(3));
+                card.style.setProperty('--orbit-blur', orbitBlur.toFixed(1) + 'px');
             }
 
             let ticking = false;
@@ -1552,6 +1576,9 @@
             window.setTimeout(function () {
                 card.classList.add('is-bloom-ready');
             }, 120);
+            window.setTimeout(function () {
+                card.classList.add('is-bloom-settled');
+            }, 1320);
             window.addEventListener('scroll', requestUpdate, { passive: true });
             window.addEventListener('resize', requestUpdate);
         })();
@@ -1562,6 +1589,8 @@
             const nav = document.querySelector('[data-home-nav]');
             const posts = document.querySelector('#posts');
             if (!nav || !posts) return;
+
+            document.documentElement.classList.add('home-motion-ready');
 
             const observer = new IntersectionObserver(function (entries) {
                 const postsVisible = entries.some(function (entry) {
@@ -1577,6 +1606,27 @@
             });
 
             observer.observe(posts);
+
+            function revealPosts() {
+                posts.classList.add('is-revealed');
+            }
+
+            if (posts.getBoundingClientRect().top < window.innerHeight + 220) {
+                revealPosts();
+            }
+
+            const revealObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    revealPosts();
+                    revealObserver.disconnect();
+                });
+            }, {
+                rootMargin: '0px 0px 220px 0px',
+                threshold: 0
+            });
+
+            revealObserver.observe(posts);
         })();
     </script>
 
