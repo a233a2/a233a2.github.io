@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://a233a2.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.178acc27f0b99dc398303a381d14bd56c57402e53fcdb8fe59ac0ed3f8407b9a.css"><meta property='og:title' content="sunjiyi's Blogggg">
+<link rel="stylesheet" href="/scss/style.min.f00ceebda4876fc778739c4f3adebb97dba67b34f0f0dcf496dfc50a0552ab9d.css"><meta property='og:title' content="sunjiyi's Blogggg">
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://a233a2.github.io/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
@@ -71,6 +71,82 @@
             
         
     
+
+    <div id="rain-container" aria-hidden="true"></div>
+    <div id="bg-internal-img" aria-hidden="true"></div>
+    <div id="bg-infernal-img" aria-hidden="true"></div>
+    <div id="bg-overlay" aria-hidden="true"></div>
+    <canvas id="splash-mist" aria-hidden="true"></canvas>
+
+    <div id="splash" role="dialog" aria-modal="true" aria-labelledby="splash-title">
+        <div class="splash-glow" id="splash-glow" aria-hidden="true"></div>
+        <canvas id="gw-ripple-bg" aria-hidden="true"></canvas>
+        <div id="gw-slot" aria-label="Interactive glass board">
+            <div id="gw-pane">
+                <div class="gw-ly gw-img" id="gw-img"></div>
+                <canvas id="gw-ripple" class="gw-ly"></canvas>
+                <div class="gw-ly gw-grade-c"></div>
+                <div class="gw-ly gw-grade-s"></div>
+                <div class="gw-ly gw-frost"></div>
+                <div class="gw-ly gw-noise"></div>
+                <div class="gw-ly gw-depth"></div>
+                <canvas id="gw-fogwipe" class="gw-ly"></canvas>
+                <canvas id="gw-draw"></canvas>
+            </div>
+            <div class="gw-ctrl" aria-label="Glass tools">
+                <button type="button" class="gw-cbtn" id="gw-tool-pen" aria-label="White pen">
+                    <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                </button>
+                <button type="button" class="gw-cbtn active" id="gw-tool-finger" aria-label="Clear mist">
+                    <svg viewBox="0 0 24 24"><path d="M2 12a10 10 0 0 1 18-6"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"/><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M2 16h.01"/></svg>
+                </button>
+                <button type="button" class="gw-cbtn" id="gw-clear" aria-label="Reset glass">
+                    <svg viewBox="0 0 24 24"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>
+                </button>
+            </div>
+            <div class="gw-therms">
+                <div class="gw-therm" id="gw-therm-fog" role="slider" aria-label="Mist intensity" tabindex="0">
+                    <span class="gw-therm-label">MIST</span>
+                    <div class="gw-therm-body"><span class="gw-therm-bulb"></span><div class="gw-therm-tube"><div class="gw-therm-fill"></div></div></div>
+                    <span class="gw-therm-val">0C</span>
+                </div>
+                <div class="gw-therm" id="gw-therm-brush" role="slider" aria-label="Brush size" tabindex="0">
+                    <span class="gw-therm-label">BRUSH</span>
+                    <div class="gw-therm-body"><span class="gw-therm-bulb"></span><div class="gw-therm-tube"><div class="gw-therm-fill"></div></div></div>
+                    <span class="gw-therm-val">0F</span>
+                </div>
+            </div>
+        </div>
+        <div class="splash-content" id="splash-welcome">
+            <div class="splash-left">
+                <div class="splash-profile">
+                    
+                        
+                        <img class="splash-avatar" src="/img/Anon1_hu14203520778291266427.jpg" width="160" height="149" alt="sjy avatar">
+                    
+                    <div class="splash-identity">
+                        <span>Control / Embedded / Field Notes</span>
+                        <strong>sjy</strong>
+                    </div>
+                    <button type="button" id="gw-toggle" aria-pressed="true" aria-label="Toggle glass board"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></button>
+                </div>
+                <div class="splash-left-rule"></div>
+                <p class="splash-title" id="splash-title">Welcome to <span class="ib-hl">sjy</span>'s notes</p>
+                <p class="splash-desc">记录控制、嵌入式与<br>那些正在成形的工程笔记。</p>
+                <p class="splash-desc2">FOC 控制、PX4 飞控、硬件小制作、Simulink / MATLAB、<br>嵌入式学习，以及一些工具链和踩坑记录。</p>
+                <div class="splash-focus-tags" aria-label="Focus tags">
+                    
+                        <span>FOC</span><span>PX4</span><span>Embedded</span><span>MATLAB</span>
+                    
+                </div>
+                <div class="splash-buttons">
+                    <button type="button" class="splash-action-btn" onclick="enterSite()">进入主页</button>
+                    <button type="button" class="splash-action-btn" onclick="enterSite('posts')">查看文章</button>
+                </div>
+                <button type="button" class="splash-skip" onclick="enterSite('posts')">跳过，直接看博客</button>
+            </div>
+        </div>
+    </div>
 
     <section class="home-shell" id="top">
         <nav class="home-nav" data-home-nav aria-hidden="true" inert aria-label="Homepage navigation">
@@ -765,7 +841,639 @@
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
+<script>
+        (function () {
+            const splash = document.getElementById('splash');
+            const rain = document.getElementById('rain-container');
+            const slot = document.getElementById('gw-slot');
+            const targetMap = {
+                posts: '#posts',
+                top: '#top'
+            };
 
+            document.documentElement.classList.add('splash-active');
+
+            window.enterSite = function (target) {
+                if (!splash || splash.classList.contains('dissolving')) return;
+                if (slot) slot.classList.add('gw-exit');
+                splash.classList.add('dissolving');
+                if (rain) rain.classList.add('rain-visible');
+
+                window.setTimeout(function () {
+                    splash.classList.add('hidden');
+                    document.documentElement.classList.remove('splash-active');
+                    ['rain-container', 'bg-internal-img', 'bg-infernal-img', 'bg-overlay', 'splash-mist'].forEach(function (id) {
+                        const node = document.getElementById(id);
+                        if (node) node.style.display = 'none';
+                    });
+                    const selector = targetMap[target];
+                    if (selector) {
+                        const node = document.querySelector(selector);
+                        if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 1120);
+            };
+
+            const toggle = document.getElementById('gw-toggle');
+            if (toggle && slot) {
+                toggle.addEventListener('click', function () {
+                    const off = slot.classList.toggle('gw-off');
+                    toggle.classList.toggle('off', off);
+                    toggle.setAttribute('aria-pressed', off ? 'false' : 'true');
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const box = document.getElementById('rain-container');
+            if (!box) return;
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const drops = [];
+            let width = 0;
+            let height = 0;
+            let last = 0;
+            const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+            const random = function (min, max) { return min + Math.random() * (max - min); };
+
+            box.appendChild(canvas);
+
+            function reset(drop) {
+                drop.depth = random(0.36, 1);
+                drop.x = random(-80, width + 80);
+                drop.y = -random(40, height * 1.35);
+                drop.speed = random(430, 820) * drop.depth;
+                drop.wind = random(16, 34) * drop.depth;
+                drop.length = random(38, 78) * drop.depth;
+                drop.width = random(1.1, 2.5) * drop.depth;
+            }
+
+            function resize() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = Math.round(width * dpr);
+                canvas.height = Math.round(height * dpr);
+                canvas.style.width = width + 'px';
+                canvas.style.height = height + 'px';
+                drops.length = 0;
+                for (let i = 0; i < 88; i++) {
+                    const drop = {};
+                    reset(drop);
+                    drops.push(drop);
+                }
+            }
+
+            function draw(timestamp) {
+                window.requestAnimationFrame(draw);
+                const dt = Math.min(0.05, (timestamp - last) / 1000 || 0.016);
+                last = timestamp;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                ctx.clearRect(0, 0, width, height);
+                ctx.lineCap = 'round';
+
+                for (const drop of drops) {
+                    drop.x += drop.wind * dt;
+                    drop.y += drop.speed * dt;
+                    if (drop.y - drop.length > height || drop.x > width + 120) reset(drop);
+                    if (drop.y < -30) continue;
+
+                    const tailX = drop.x - drop.wind * (drop.length / drop.speed);
+                    const tailY = drop.y - drop.length;
+                    const alpha = 0.16 + drop.depth * 0.32;
+                    const gradient = ctx.createLinearGradient(tailX, tailY, drop.x, drop.y);
+                    gradient.addColorStop(0, 'rgba(197, 222, 236, 0)');
+                    gradient.addColorStop(0.62, 'rgba(197, 222, 236, ' + (alpha * 0.55).toFixed(3) + ')');
+                    gradient.addColorStop(1, 'rgba(240, 246, 240, ' + Math.min(0.62, alpha * 1.24).toFixed(3) + ')');
+                    ctx.strokeStyle = gradient;
+                    ctx.lineWidth = drop.width;
+                    ctx.beginPath();
+                    ctx.moveTo(tailX, tailY);
+                    ctx.lineTo(drop.x, drop.y);
+                    ctx.stroke();
+                }
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+            window.requestAnimationFrame(draw);
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const canvas = document.getElementById('splash-mist');
+            const splash = document.getElementById('splash');
+            if (!canvas || !splash) return;
+
+            const ctx = canvas.getContext('2d');
+            const blobs = [];
+            const palette = [
+                [171, 206, 177, 0.2],
+                [211, 202, 152, 0.18],
+                [196, 222, 213, 0.19],
+                [32, 50, 56, 0.14],
+                [19, 30, 40, 0.15]
+            ];
+            let width = 0;
+            let height = 0;
+            let frame = 0;
+
+            function resize() {
+                width = canvas.width = Math.round(window.innerWidth * 1.35);
+                height = canvas.height = Math.round(window.innerHeight * 1.35);
+                canvas.style.width = '100%';
+                canvas.style.height = '100%';
+                blobs.length = 0;
+                for (let i = 0; i < 10; i++) {
+                    const color = palette[i % palette.length];
+                    blobs.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        radius: 180 + Math.random() * 310,
+                        vx: (Math.random() - 0.5) * 0.7,
+                        vy: (Math.random() - 0.5) * 0.55,
+                        phase: Math.random() * Math.PI * 2,
+                        color: color
+                    });
+                }
+            }
+
+            function paintBlob(blob) {
+                blob.x += blob.vx + Math.sin(frame * 0.006 + blob.phase) * 0.08;
+                blob.y += blob.vy + Math.cos(frame * 0.005 + blob.phase) * 0.08;
+                if (blob.x < -blob.radius) blob.x = width + blob.radius;
+                if (blob.x > width + blob.radius) blob.x = -blob.radius;
+                if (blob.y < -blob.radius) blob.y = height + blob.radius;
+                if (blob.y > height + blob.radius) blob.y = -blob.radius;
+
+                const breath = 1 + Math.sin(frame * 0.015 + blob.phase) * 0.16;
+                const r = blob.radius * breath;
+                const gradient = ctx.createRadialGradient(blob.x, blob.y, 0, blob.x, blob.y, r);
+                const c = blob.color;
+                gradient.addColorStop(0, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + c[3] + ')');
+                gradient.addColorStop(0.55, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (c[3] * 0.46) + ')');
+                gradient.addColorStop(1, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0)');
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(blob.x, blob.y, r, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            function draw() {
+                if (splash.classList.contains('hidden')) return;
+                frame++;
+                ctx.clearRect(0, 0, width, height);
+                ctx.globalCompositeOperation = 'source-over';
+                blobs.forEach(paintBlob);
+                ctx.globalCompositeOperation = 'source-over';
+                window.requestAnimationFrame(draw);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+            draw();
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const slot = document.getElementById('gw-slot');
+            const pane = document.getElementById('gw-pane');
+            const drawCanvas = document.getElementById('gw-draw');
+            const fogCanvas = document.getElementById('gw-fogwipe');
+            const imageLayer = document.getElementById('gw-img');
+            const rippleCanvas = document.getElementById('gw-ripple');
+            const rippleBg = document.getElementById('gw-ripple-bg');
+            const splash = document.getElementById('splash');
+            if (!slot || !pane || !drawCanvas || !fogCanvas || !imageLayer || !rippleCanvas || !rippleBg) return;
+
+            const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+            const ink = drawCanvas.getContext('2d');
+            const fog = fogCanvas.getContext('2d');
+            const ripple = rippleCanvas.getContext('2d');
+            const rippleBack = rippleBg.getContext('2d');
+            const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let width = 0;
+            let height = 0;
+            let tool = 'finger';
+            let fogDensity = 1;
+            let activeStroke = null;
+            let currentPointer = null;
+            let penSize = 4;
+            let fingerSize = 26;
+            const inkStrokes = [];
+            const wipeStrokes = [];
+
+            function setCanvas(canvas, ctx, w, h) {
+                canvas.width = Math.round(w * dpr);
+                canvas.height = Math.round(h * dpr);
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+
+            function loadGlassImage() {
+                const image = new Image();
+                image.onload = function () {
+                    imageLayer.style.backgroundImage = 'url("/bg-canvas.png")';
+                    if (image.naturalWidth && image.naturalHeight) {
+                        document.documentElement.style.setProperty('--gw-ar', (image.naturalWidth / image.naturalHeight).toFixed(6));
+                    }
+                    slot.classList.add('gw-has-img');
+                };
+                image.src = '/bg-canvas.png';
+            }
+
+            function paintFogBase() {
+                fog.globalCompositeOperation = 'source-over';
+                fog.clearRect(0, 0, width, height);
+                fog.fillStyle = 'rgba(223, 231, 219, ' + (0.14 * fogDensity).toFixed(3) + ')';
+                fog.fillRect(0, 0, width, height);
+
+                const center = fog.createRadialGradient(width * 0.46, height * 0.42, 0, width * 0.5, height * 0.5, Math.max(width, height) * 0.74);
+                center.addColorStop(0, 'rgba(238, 244, 233, ' + (0.06 * fogDensity).toFixed(3) + ')');
+                center.addColorStop(1, 'rgba(208, 224, 215, ' + (0.22 * fogDensity).toFixed(3) + ')');
+                fog.fillStyle = center;
+                fog.fillRect(0, 0, width, height);
+
+                const edge = fog.createLinearGradient(0, 0, width, height);
+                edge.addColorStop(0, 'rgba(255,255,255,' + (0.16 * fogDensity).toFixed(3) + ')');
+                edge.addColorStop(0.5, 'rgba(255,255,255,0)');
+                edge.addColorStop(1, 'rgba(76,100,68,' + (0.12 * fogDensity).toFixed(3) + ')');
+                fog.fillStyle = edge;
+                fog.fillRect(0, 0, width, height);
+            }
+
+            function renderWipe(points) {
+                if (!points.length) return;
+                fog.globalCompositeOperation = 'destination-out';
+                fog.lineCap = 'round';
+                fog.lineJoin = 'round';
+                fog.strokeStyle = 'rgba(0,0,0,0.92)';
+                fog.lineWidth = points.w || fingerSize;
+                fog.beginPath();
+                fog.moveTo(points[0].x * width, points[0].y * height);
+                for (let i = 1; i < points.length; i++) fog.lineTo(points[i].x * width, points[i].y * height);
+                if (points.length === 1) {
+                    fog.arc(points[0].x * width, points[0].y * height, (points.w || fingerSize) / 2, 0, Math.PI * 2);
+                    fog.fill();
+                } else {
+                    fog.stroke();
+                }
+                fog.globalCompositeOperation = 'source-over';
+            }
+
+            function redrawFog() {
+                paintFogBase();
+                wipeStrokes.forEach(renderWipe);
+            }
+
+            function drawInkPath(points) {
+                if (!points.length) return;
+                ink.lineCap = 'round';
+                ink.lineJoin = 'round';
+                ink.strokeStyle = 'rgba(255, 255, 255, 0.82)';
+                ink.fillStyle = 'rgba(255, 255, 255, 0.82)';
+                ink.lineWidth = points.w || penSize;
+                ink.shadowColor = 'rgba(218, 235, 220, 0.88)';
+                ink.shadowBlur = 14;
+                ink.beginPath();
+                ink.moveTo(points[0].x * width, points[0].y * height);
+                for (let i = 1; i < points.length; i++) ink.lineTo(points[i].x * width, points[i].y * height);
+                if (points.length === 1) {
+                    ink.arc(points[0].x * width, points[0].y * height, (points.w || penSize) / 2, 0, Math.PI * 2);
+                    ink.fill();
+                } else {
+                    ink.stroke();
+                }
+                ink.shadowBlur = 0;
+            }
+
+            function redrawInk() {
+                ink.clearRect(0, 0, width, height);
+                inkStrokes.forEach(drawInkPath);
+            }
+
+            function resize() {
+                const rect = pane.getBoundingClientRect();
+                if (rect.width < 2 || rect.height < 2) return;
+                width = rect.width;
+                height = rect.height;
+                setCanvas(drawCanvas, ink, width, height);
+                setCanvas(fogCanvas, fog, width, height);
+                setCanvas(rippleCanvas, ripple, width, height);
+                setCanvas(rippleBg, rippleBack, window.innerWidth, window.innerHeight);
+                redrawInk();
+                redrawFog();
+            }
+
+            function point(event) {
+                const rect = drawCanvas.getBoundingClientRect();
+                return {
+                    x: Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width)),
+                    y: Math.min(1, Math.max(0, (event.clientY - rect.top) / rect.height))
+                };
+            }
+
+            drawCanvas.addEventListener('pointerdown', function (event) {
+                if (event.button > 0 || slot.classList.contains('gw-exit')) return;
+                drawCanvas.setPointerCapture(event.pointerId);
+                currentPointer = event.pointerId;
+                const points = [point(event)];
+                points.w = tool === 'pen' ? penSize : fingerSize;
+                activeStroke = points;
+                if (tool === 'pen') {
+                    inkStrokes.push(points);
+                    redrawInk();
+                } else {
+                    wipeStrokes.push(points);
+                    renderWipe(points);
+                }
+                event.preventDefault();
+            });
+
+            drawCanvas.addEventListener('pointermove', function (event) {
+                if (!activeStroke || currentPointer !== event.pointerId) return;
+                const next = point(event);
+                const last = activeStroke[activeStroke.length - 1];
+                if (Math.hypot((next.x - last.x) * width, (next.y - last.y) * height) < 1.2) return;
+                activeStroke.push(next);
+                if (tool === 'pen') redrawInk();
+                else renderWipe(activeStroke.slice(-2).map(function (p) { return p; }));
+            });
+
+            function pointerUp() {
+                if (tool === 'finger') redrawFog();
+                activeStroke = null;
+                currentPointer = null;
+            }
+
+            drawCanvas.addEventListener('pointerup', pointerUp);
+            drawCanvas.addEventListener('pointercancel', pointerUp);
+
+            const penButton = document.getElementById('gw-tool-pen');
+            const fingerButton = document.getElementById('gw-tool-finger');
+            const clearButton = document.getElementById('gw-clear');
+            function setTool(next) {
+                tool = next;
+                if (penButton) penButton.classList.toggle('active', tool === 'pen');
+                if (fingerButton) fingerButton.classList.toggle('active', tool === 'finger');
+                paintBrushTherm();
+            }
+
+            if (penButton) penButton.addEventListener('click', function () { setTool('pen'); });
+            if (fingerButton) fingerButton.addEventListener('click', function () { setTool('finger'); });
+            if (clearButton) clearButton.addEventListener('click', function () {
+                inkStrokes.length = 0;
+                wipeStrokes.length = 0;
+                redrawInk();
+                redrawFog();
+            });
+
+            function bindTherm(root, read, write, format) {
+                if (!root) return function () {};
+                const fill = root.querySelector('.gw-therm-fill');
+                const bulb = root.querySelector('.gw-therm-bulb');
+                const value = root.querySelector('.gw-therm-val');
+                const tube = root.querySelector('.gw-therm-tube');
+                let dragging = false;
+
+                function paint() {
+                    const v = read();
+                    if (fill) fill.style.width = (v * 100).toFixed(1) + '%';
+                    if (bulb) bulb.style.opacity = (0.52 + v * 0.48).toFixed(3);
+                    if (value) value.textContent = format(v);
+                }
+
+                function fromX(x) {
+                    const rect = tube.getBoundingClientRect();
+                    write(Math.max(0, Math.min(1, (x - rect.left) / rect.width)));
+                    paint();
+                }
+
+                root.addEventListener('pointerdown', function (event) {
+                    dragging = true;
+                    root.setPointerCapture(event.pointerId);
+                    fromX(event.clientX);
+                    event.preventDefault();
+                    event.stopPropagation();
+                });
+                root.addEventListener('pointermove', function (event) {
+                    if (!dragging) return;
+                    fromX(event.clientX);
+                    event.preventDefault();
+                });
+                root.addEventListener('pointerup', function () { dragging = false; });
+                root.addEventListener('pointercancel', function () { dragging = false; });
+                root.addEventListener('wheel', function (event) {
+                    write(Math.max(0, Math.min(1, read() + (event.deltaY < 0 ? 0.05 : -0.05))));
+                    paint();
+                    event.preventDefault();
+                }, { passive: false });
+                paint();
+                return paint;
+            }
+
+            bindTherm(
+                document.getElementById('gw-therm-fog'),
+                function () { return Math.max(0, Math.min(1, 1 - (fogDensity - 0.35) / 1.9)); },
+                function (v) {
+                    fogDensity = 0.35 + (1 - v) * 1.9;
+                    pane.style.setProperty('--gw-frost-o', (0.1 + (1 - v) * 0.7).toFixed(3));
+                    redrawFog();
+                },
+                function (v) { return Math.round(-13 + 20 * v) + 'C'; }
+            );
+
+            const paintBrushTherm = bindTherm(
+                document.getElementById('gw-therm-brush'),
+                function () { return tool === 'pen' ? (penSize - 1.5) / 8 : (fingerSize - 9) / 36; },
+                function (v) {
+                    if (tool === 'pen') penSize = 1.5 + v * 8;
+                    else fingerSize = 9 + v * 36;
+                },
+                function (v) { return Math.round(-13 + 20 * v) + 'F'; }
+            );
+
+            function makeButterfly(index) {
+                const butterfly = document.createElement('span');
+                butterfly.className = 'gw-butterfly gw-butterfly--' + index;
+                butterfly.innerHTML = '<i></i><i></i>';
+                slot.appendChild(butterfly);
+            }
+            makeButterfly(1);
+            makeButterfly(2);
+
+            let simW = 0;
+            let simH = 0;
+            let h1 = null;
+            let h2 = null;
+            let last = 0;
+            let mode = 'pane';
+            const drops = [];
+            const random = function (min, max) { return min + Math.random() * (max - min); };
+
+            function grid(targetWidth, targetHeight) {
+                simW = Math.min(300, Math.max(120, Math.round(targetWidth / 4)));
+                simH = Math.max(72, Math.round(simW * targetHeight / targetWidth));
+                h1 = new Float32Array(simW * simH);
+                h2 = new Float32Array(simW * simH);
+            }
+
+            function poke(x, y, strength, radius) {
+                const cx = Math.round(x);
+                const cy = Math.round(y);
+                const r = Math.ceil(radius);
+                for (let yy = -r; yy <= r; yy++) {
+                    for (let xx = -r; xx <= r; xx++) {
+                        const px = cx + xx;
+                        const py = cy + yy;
+                        if (px < 1 || py < 1 || px >= simW - 1 || py >= simH - 1) continue;
+                        const falloff = (xx * xx + yy * yy) / (radius * radius);
+                        if (falloff > 1) continue;
+                        h1[py * simW + px] += strength * (0.5 + 0.5 * Math.cos(Math.PI * Math.sqrt(falloff)));
+                    }
+                }
+            }
+
+            function stepWater() {
+                for (let y = 1; y < simH - 1; y++) {
+                    for (let x = 1; x < simW - 1; x++) {
+                        const i = y * simW + x;
+                        h2[i] = ((h1[i - 1] + h1[i + 1] + h1[i - simW] + h1[i + simW]) * 0.5 - h2[i]) * 0.984;
+                    }
+                }
+                const temp = h1;
+                h1 = h2;
+                h2 = temp;
+            }
+
+            function drawRipple(ctx, targetWidth, targetHeight) {
+                ctx.clearRect(0, 0, targetWidth, targetHeight);
+                const cellW = targetWidth / simW;
+                const cellH = targetHeight / simH;
+                ctx.globalCompositeOperation = 'lighter';
+                for (let y = 1; y < simH - 1; y += 2) {
+                    for (let x = 1; x < simW - 1; x += 2) {
+                        const i = y * simW + x;
+                        const gx = h1[i - 1] - h1[i + 1];
+                        const gy = h1[i - simW] - h1[i + simW];
+                        const power = Math.min(0.46, Math.abs(gx + gy) * 18);
+                        if (power < 0.018) continue;
+                        ctx.fillStyle = gy > 0 ? 'rgba(225,242,238,' + power.toFixed(3) + ')' : 'rgba(22,42,50,' + (power * 0.42).toFixed(3) + ')';
+                        ctx.fillRect(x * cellW, y * cellH, cellW * 2.8, cellH * 2.8);
+                    }
+                }
+                ctx.globalCompositeOperation = 'source-over';
+            }
+
+            function spawnDrop() {
+                drops.push({
+                    x: random(0.08, 0.92),
+                    y: -0.1,
+                    target: random(0.18, 0.9),
+                    speed: random(0.74, 1.18),
+                    sway: random(-0.04, 0.05),
+                    strength: random(0.7, 1.45)
+                });
+            }
+
+            function updateDrops(dt, ctx, targetWidth, targetHeight) {
+                for (let i = drops.length - 1; i >= 0; i--) {
+                    const drop = drops[i];
+                    const oldY = drop.y;
+                    drop.y += dt * drop.speed;
+                    drop.x += dt * drop.sway;
+                    if (drop.y >= drop.target) {
+                        poke(drop.x * simW, drop.target * simH, drop.strength, 2.4);
+                        drops.splice(i, 1);
+                        continue;
+                    }
+                    const x = drop.x * targetWidth;
+                    const y = drop.y * targetHeight;
+                    const tailY = oldY * targetHeight - 24;
+                    const gradient = ctx.createLinearGradient(x, tailY, x, y);
+                    gradient.addColorStop(0, 'rgba(220,236,232,0)');
+                    gradient.addColorStop(0.78, 'rgba(220,236,232,0.38)');
+                    gradient.addColorStop(1, 'rgba(248,250,244,0.82)');
+                    ctx.strokeStyle = gradient;
+                    ctx.lineWidth = 1.2;
+                    ctx.beginPath();
+                    ctx.moveTo(x, tailY);
+                    ctx.lineTo(x + drop.sway * 80, y);
+                    ctx.stroke();
+                }
+            }
+
+            function eventToWater(event, backgroundMode) {
+                if (backgroundMode) return { x: event.clientX / window.innerWidth * simW, y: event.clientY / window.innerHeight * simH };
+                const rect = pane.getBoundingClientRect();
+                if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) return null;
+                return { x: (event.clientX - rect.left) / rect.width * simW, y: (event.clientY - rect.top) / rect.height * simH };
+            }
+
+            function stir(event, backgroundMode) {
+                if (!(event.buttons & 1)) return;
+                const p = eventToWater(event, backgroundMode);
+                if (!p) return;
+                poke(p.x, p.y, 0.42, 2.2);
+            }
+
+            drawCanvas.addEventListener('pointerdown', function (event) {
+                const p = eventToWater(event, false);
+                if (p) poke(p.x, p.y, 2.2, 3);
+            });
+            drawCanvas.addEventListener('pointermove', function (event) { stir(event, false); });
+            splash.addEventListener('pointermove', function (event) { if (mode === 'bg') stir(event, true); }, { passive: true });
+
+            function retarget(nextMode) {
+                mode = nextMode;
+                if (mode === 'pane') {
+                    grid(width || pane.clientWidth, height || pane.clientHeight);
+                    rippleBg.classList.remove('on');
+                    slot.classList.add('gw-rippling');
+                } else {
+                    grid(window.innerWidth, window.innerHeight);
+                    setCanvas(rippleBg, rippleBack, window.innerWidth, window.innerHeight);
+                    rippleBg.classList.add('on');
+                }
+            }
+
+            function loop(timestamp) {
+                if (splash.classList.contains('hidden') || reduceMotion) return;
+                window.requestAnimationFrame(loop);
+                const dt = Math.min(0.05, (timestamp - last) / 1000 || 0.016);
+                last = timestamp;
+                if (slot.classList.contains('gw-exit')) return;
+
+                const nextMode = slot.classList.contains('gw-off') || window.innerWidth <= 900 ? 'bg' : 'pane';
+                if (nextMode !== mode || !h1) retarget(nextMode);
+                if (Math.random() < dt * 1.2) spawnDrop();
+                if (Math.random() < dt * 0.6) poke(random(2, simW - 2), random(2, simH - 2), random(0.18, 0.42), 2);
+                for (let i = 0; i < 2; i++) stepWater();
+
+                if (mode === 'pane') {
+                    ripple.setTransform(dpr, 0, 0, dpr, 0, 0);
+                    drawRipple(ripple, width, height);
+                    updateDrops(dt, ripple, width, height);
+                } else {
+                    rippleBack.setTransform(dpr, 0, 0, dpr, 0, 0);
+                    drawRipple(rippleBack, window.innerWidth, window.innerHeight);
+                    updateDrops(dt, rippleBack, window.innerWidth, window.innerHeight);
+                }
+            }
+
+            if (window.ResizeObserver) new ResizeObserver(resize).observe(pane);
+            window.addEventListener('resize', resize);
+            loadGlassImage();
+            resize();
+            retarget(window.innerWidth <= 900 ? 'bg' : 'pane');
+            if (!reduceMotion) window.requestAnimationFrame(loop);
+        })();
+    </script>
+
+    
         <script>
             (function () {
                 const root = document.querySelector('[data-home-clock]');
