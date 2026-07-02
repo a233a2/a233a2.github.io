@@ -287,6 +287,7 @@
   <ol>
     <li><a href="#简述">简述</a></li>
     <li><a href="#2026-6-19一些问题">2026-6-19一些问题：</a></li>
+    <li><a href="#2026-7-2实现效果">2026-7-2实现效果</a></li>
     <li><a href="#mfpcc核心算法实现">MFPCC核心算法实现：</a></li>
     <li><a href="#eso观测器核心算法实现">ESO观测器核心算法实现：</a></li>
     <li><a href="#体验">体验</a></li>
@@ -370,7 +371,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -437,6 +438,45 @@ codex反馈说：</p>
 </div>
 </div><p>即给定速度<strong>100RPM</strong>他却只能够跑到<strong>50RPM</strong>左右。说明MFPCC的实现还存在一些问题。
 我让Codex加了一组实验，即测试一下FOC算法下能否稳定100RPM，结论是完全可以的。说明当前 MFPCC-ESO 工程存在实现或参数问题。后续我会深度探究一下问题所在。</p>
+<h2 id="2026-7-2实现效果">2026-7-2实现效果
+</h2><p>速度从0到600R的曲线，打印保存了CSV数据，使用Python脚本绘制了一下，和经典FOC算法进行对比：</p>
+<p><img src="/p/dengfocv3p%E5%B0%9D%E8%AF%95%E9%83%A8%E7%BD%B2mfpcc%E7%AE%97%E6%B3%95/rpm_0_600_exact_speed_iq_alpha20_ZH_unicode.png"
+	width="2160"
+	height="1440"
+	
+	loading="lazy"
+	
+		alt="MFPCC"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="150"
+		data-flex-basis="360px"
+	
+><br>
+<img src="/p/dengfocv3p%E5%B0%9D%E8%AF%95%E9%83%A8%E7%BD%B2mfpcc%E7%AE%97%E6%B3%95/foc_classic_0_600_speed_iq_ZH.png"
+	width="2160"
+	height="1440"
+	
+	loading="lazy"
+	
+		alt="FOC"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="150"
+		data-flex-basis="360px"
+	
+></p>
+<p>目前的效果是 <strong>明显MFPCC的iq id跟踪效果会更差</strong>，这可能是由于内环电流环的MFPCC算法导致。即使外环都是一样。内环对于外环的响应程度是不一致的。
+FOC的iq id跟踪效果比较好，但是速度会有一点毛刺效果，这可能与没有精细调参有原因。</p>
+<p>讲一下核心实现吧：
+用了 FreeRTOS，不是裸机 Bare Metal。
+当前任务分配是：</p>
+<p>Core0任务是mfpcc_current 实时电流控制任务	5 kHz MFPCC/ESO 电流环、Clarke/Park、预测控制、PWM 写入
+Core1任务是Arduino loop()	串口命令、状态打印、AS5600 I2C 角度读取、速度外环
+Core1的我adc_dma 任务	ADC DMA 读取、两相电流平均、通知 Core0 控制任务</p>
+<p>200 µs 周期下，34 µs / 200 µs ≈ 17% Core0 实时预算。这样看来ESP32的CPU运算速度还是可以的。</p>
 <h2 id="mfpcc核心算法实现">MFPCC核心算法实现：
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

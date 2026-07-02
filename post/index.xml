@@ -65,6 +65,45 @@ codex反馈说：&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;即给定速度&lt;strong&gt;100RPM&lt;/strong&gt;他却只能够跑到&lt;strong&gt;50RPM&lt;/strong&gt;左右。说明MFPCC的实现还存在一些问题。
 我让Codex加了一组实验，即测试一下FOC算法下能否稳定100RPM，结论是完全可以的。说明当前 MFPCC-ESO 工程存在实现或参数问题。后续我会深度探究一下问题所在。&lt;/p&gt;
+&lt;h2 id=&#34;2026-7-2实现效果&#34;&gt;2026-7-2实现效果
+&lt;/h2&gt;&lt;p&gt;速度从0到600R的曲线，打印保存了CSV数据，使用Python脚本绘制了一下，和经典FOC算法进行对比：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/dengfocv3p%E5%B0%9D%E8%AF%95%E9%83%A8%E7%BD%B2mfpcc%E7%AE%97%E6%B3%95/rpm_0_600_exact_speed_iq_alpha20_ZH_unicode.png&#34;
+	width=&#34;2160&#34;
+	height=&#34;1440&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;MFPCC&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;150&#34;
+		data-flex-basis=&#34;360px&#34;
+	
+&gt;&lt;br&gt;
+&lt;img src=&#34;https://a233a2.github.io/p/dengfocv3p%E5%B0%9D%E8%AF%95%E9%83%A8%E7%BD%B2mfpcc%E7%AE%97%E6%B3%95/foc_classic_0_600_speed_iq_ZH.png&#34;
+	width=&#34;2160&#34;
+	height=&#34;1440&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;FOC&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;150&#34;
+		data-flex-basis=&#34;360px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;目前的效果是 &lt;strong&gt;明显MFPCC的iq id跟踪效果会更差&lt;/strong&gt;，这可能是由于内环电流环的MFPCC算法导致。即使外环都是一样。内环对于外环的响应程度是不一致的。
+FOC的iq id跟踪效果比较好，但是速度会有一点毛刺效果，这可能与没有精细调参有原因。&lt;/p&gt;
+&lt;p&gt;讲一下核心实现吧：
+用了 FreeRTOS，不是裸机 Bare Metal。
+当前任务分配是：&lt;/p&gt;
+&lt;p&gt;Core0任务是mfpcc_current 实时电流控制任务	5 kHz MFPCC/ESO 电流环、Clarke/Park、预测控制、PWM 写入
+Core1任务是Arduino loop()	串口命令、状态打印、AS5600 I2C 角度读取、速度外环
+Core1的我adc_dma 任务	ADC DMA 读取、两相电流平均、通知 Core0 控制任务&lt;/p&gt;
+&lt;p&gt;200 µs 周期下，34 µs / 200 µs ≈ 17% Core0 实时预算。这样看来ESP32的CPU运算速度还是可以的。&lt;/p&gt;
 &lt;h2 id=&#34;mfpcc核心算法实现&#34;&gt;MFPCC核心算法实现：
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
