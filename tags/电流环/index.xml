@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>电流环 on sunjiyi&#39;s Blogggg</title>
+        <link>https://a233a2.github.io/tags/%E7%94%B5%E6%B5%81%E7%8E%AF/</link>
+        <description>Recent content in 电流环 on sunjiyi&#39;s Blogggg</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Sunjiyi Make and Design</copyright>
+        <lastBuildDate>Wed, 29 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/%E7%94%B5%E6%B5%81%E7%8E%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>为什么通过阶跃响应可以估算电流环带宽？</title>
+        <link>https://a233a2.github.io/p/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%9A%E8%BF%87%E9%98%B6%E8%B7%83%E5%93%8D%E5%BA%94%E5%8F%AF%E4%BB%A5%E4%BC%B0%E7%AE%97%E7%94%B5%E6%B5%81%E7%8E%AF%E5%B8%A6%E5%AE%BD/</link>
+        <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%9A%E8%BF%87%E9%98%B6%E8%B7%83%E5%93%8D%E5%BA%94%E5%8F%AF%E4%BB%A5%E4%BC%B0%E7%AE%97%E7%94%B5%E6%B5%81%E7%8E%AF%E5%B8%A6%E5%AE%BD/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%9A%E8%BF%87%E9%98%B6%E8%B7%83%E5%93%8D%E5%BA%94%E5%8F%AF%E4%BB%A5%E4%BC%B0%E7%AE%97%E7%94%B5%E6%B5%81%E7%8E%AF%E5%B8%A6%E5%AE%BD/current-loop-step.png" alt="Featured image of post 为什么通过阶跃响应可以估算电流环带宽？" /&gt;&lt;h2 id=&#34;简述&#34;&gt;简述
+&lt;/h2&gt;&lt;p&gt;最近在分析电流环阶跃实验的时候，得到了下面这张图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%9A%E8%BF%87%E9%98%B6%E8%B7%83%E5%93%8D%E5%BA%94%E5%8F%AF%E4%BB%A5%E4%BC%B0%E7%AE%97%E7%94%B5%E6%B5%81%E7%8E%AF%E5%B8%A6%E5%AE%BD/current-loop-step.png&#34;
+	width=&#34;1380&#34;
+	height=&#34;764&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;电流环阶跃响应与带宽估算&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;180&#34;
+		data-flex-basis=&#34;433px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;图中测得电流的上升时间为：&lt;/p&gt;
+&lt;p&gt;$$
+t_r=1999\ \mu s
+$$&lt;/p&gt;
+&lt;p&gt;然后程序直接计算出了：&lt;/p&gt;
+&lt;p&gt;$$
+BW\approx174.9\ Hz
+$$&lt;/p&gt;
+&lt;p&gt;计算公式是：&lt;/p&gt;
+&lt;p&gt;$$
+BW\approx\frac{0.35}{t_r}
+$$&lt;/p&gt;
+&lt;p&gt;刚开始看到这个公式的时候，我其实有很多疑问。为什么拿一个上升时间做一下除法，就可以得到频域里的带宽？为什么常数偏偏是0.35，我直接使用$1/t_r$不行吗？另外带宽为什么又和$-3dB$联系在一起？&lt;/p&gt;
+&lt;p&gt;这篇文章就把我对这些问题的理解记录一下。&lt;/p&gt;
+&lt;h2 id=&#34;为什么上升越快带宽就越高&#34;&gt;为什么上升越快，带宽就越高？
+&lt;/h2&gt;&lt;p&gt;先不看公式，可以把电流环理解成一个有反应速度限制的系统。&lt;/p&gt;
+&lt;p&gt;给定电流从$0A$突然变为$0.4A$，控制器不可能让实际电流在同一个瞬间完成变化。电机电感、电流采样、PWM更新以及控制器计算都需要时间，所以实际电流只能逐渐上升。&lt;/p&gt;
+&lt;p&gt;如果电流环只需要很短的时间就能跟上，说明它能够处理比较快速的电流变化；如果上升很慢，那么给定变化得再快，实际电流也跟不上。&lt;/p&gt;
+&lt;p&gt;而频率描述的其实就是“变化有多快”：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;低频信号变化慢，系统比较容易跟踪；&lt;/li&gt;
+&lt;li&gt;高频信号变化快，系统逐渐跟不上；&lt;/li&gt;
+&lt;li&gt;频率继续提高以后，输出幅值会越来越小，同时还会出现更大的相位滞后。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，上升时间和带宽必然具有相反的变化趋势：&lt;/p&gt;
+&lt;p&gt;$$
+t_r越小\quad\Longleftrightarrow\quad BW越大
+$$&lt;/p&gt;
+&lt;p&gt;不过，只知道它们是反比关系，还不能说明为什么系数一定是0.35。这个系数需要从所采用的系统模型中推导出来。&lt;/p&gt;
+&lt;h2 id=&#34;035到底是怎么来的&#34;&gt;0.35到底是怎么来的？
+&lt;/h2&gt;&lt;p&gt;这里最重要的前提是：&lt;strong&gt;把闭环电流环近似成一个标准一阶低通系统，并且使用10%到90%的上升时间。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;标准一阶闭环传递函数可以写为：&lt;/p&gt;
+&lt;p&gt;$$
+H(s)=\frac{1}{\tau s+1}
+$$&lt;/p&gt;
+&lt;p&gt;其中$\tau$是时间常数，它决定了整个系统响应的快慢。&lt;/p&gt;
+&lt;p&gt;这个系统的单位阶跃响应为：&lt;/p&gt;
+&lt;p&gt;$$
+y(t)=1-e^{-t/\tau}
+$$&lt;/p&gt;
+&lt;p&gt;当输出达到最终值的10%时：&lt;/p&gt;
+&lt;p&gt;$$
+1-e^{-t_{10}/\tau}=0.1
+$$&lt;/p&gt;
+&lt;p&gt;可以得到：&lt;/p&gt;
+&lt;p&gt;$$
+t_{10}=-\tau\ln(0.9)
+$$&lt;/p&gt;
+&lt;p&gt;当输出达到最终值的90%时：&lt;/p&gt;
+&lt;p&gt;$$
+1-e^{-t_{90}/\tau}=0.9
+$$&lt;/p&gt;
+&lt;p&gt;可以得到：&lt;/p&gt;
+&lt;p&gt;$$
+t_{90}=-\tau\ln(0.1)
+$$&lt;/p&gt;
+&lt;p&gt;所以10%到90%的上升时间为：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+t_r&amp;amp;=t_{90}-t_{10}\
+&amp;amp;=\tau\ln(9)\
+&amp;amp;\approx2.1972\tau
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;也就是说，我们从阶跃波形中测出$t_r$以后，其实相当于间接测出了这个系统的时间常数$\tau$。&lt;/p&gt;
+&lt;p&gt;接着再从频域看同一个一阶系统。令$s=j\omega$，它的幅值为：&lt;/p&gt;
+&lt;p&gt;$$
+|H(j\omega)|=\frac{1}{\sqrt{1+(\omega\tau)^2}}
+$$&lt;/p&gt;
+&lt;p&gt;当输出与输入的幅值比下降到：&lt;/p&gt;
+&lt;p&gt;$$
+\frac{1}{\sqrt{2}}\approx0.707
+$$&lt;/p&gt;
+&lt;p&gt;也就是下降到$-3dB$时，有：&lt;/p&gt;
+&lt;p&gt;$$
+\omega_c\tau=1
+$$&lt;/p&gt;
+&lt;p&gt;因此：&lt;/p&gt;
+&lt;p&gt;$$
+\omega_c=\frac{1}{\tau}
+$$&lt;/p&gt;
+&lt;p&gt;普通频率$f$与角频率$\omega$之间还差一个$2\pi$：&lt;/p&gt;
+&lt;p&gt;$$
+\omega=2\pi f
+$$&lt;/p&gt;
+&lt;p&gt;所以一阶系统的$-3dB$截止频率为：&lt;/p&gt;
+&lt;p&gt;$$
+f_c=\frac{1}{2\pi\tau}
+$$&lt;/p&gt;
+&lt;p&gt;现在，把时域中的$t_r=\ln(9)\tau$和频域中的$f_c=1/(2\pi\tau)$放在一起，$\tau$刚好可以消掉：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+f_ct_r
+&amp;amp;=\frac{1}{2\pi\tau}\cdot\ln(9)\tau\
+&amp;amp;=\frac{\ln(9)}{2\pi}\
+&amp;amp;\approx0.3497
+\end{aligned}
+$$&lt;/p&gt;
+&lt;p&gt;于是最终得到：&lt;/p&gt;
+&lt;p&gt;$$
+\boxed{f_c\approx\frac{0.35}{t_r}}
+$$&lt;/p&gt;
+&lt;p&gt;所以0.35不是人为随便设置的经验值，而是由“一阶系统”“$-3dB$带宽”和“10%到90%上升时间”这三个条件共同推导出来的换算系数。&lt;/p&gt;
+&lt;h2 id=&#34;为什么不能直接使用1除以上升时间&#34;&gt;为什么不能直接使用1除以上升时间？
+&lt;/h2&gt;&lt;p&gt;使用$1/t_r$当然也能得到一个单位为Hz的数，而且它同样可以反映系统响应速度的变化趋势。上升时间越短，$1/t_r$也越大。&lt;/p&gt;
+&lt;p&gt;但是它不再等于标准一阶系统的$-3dB$带宽。&lt;/p&gt;
+&lt;p&gt;例如这次测得：&lt;/p&gt;
+&lt;p&gt;$$
+t_r=1999\ \mu s=0.001999\ s
+$$&lt;/p&gt;
+&lt;p&gt;如果直接计算$1/t_r$：&lt;/p&gt;
+&lt;p&gt;$$
+\frac{1}{0.001999}\approx500.3\ Hz
+$$&lt;/p&gt;
+&lt;p&gt;而按照一阶系统的$-3dB$定义计算：&lt;/p&gt;
+&lt;p&gt;$$
+\frac{0.3497}{0.001999}\approx174.9\ Hz
+$$&lt;/p&gt;
+&lt;p&gt;两个数都能表达“快慢”，但是代表的指标不一样。$1/t_r$相当于自己定义了一个响应速度指标；$0.35/t_r$则是在特定前提下，把时域上升时间换算成大家通常所说的$-3dB$闭环带宽。&lt;/p&gt;
+&lt;p&gt;因此，问题并不在于能不能使用1，而在于计算出来的数还能不能被称为同一个“带宽”。&lt;/p&gt;
+&lt;h2 id=&#34;为什么使用-3db定义带宽&#34;&gt;为什么使用-3dB定义带宽？
+&lt;/h2&gt;&lt;p&gt;系统的频率响应并不会在某一个频率处突然从“完全通过”变成“完全不通过”，实际曲线是逐渐下降的。所以工程上必须选择一条统一的分界线。&lt;/p&gt;
+&lt;p&gt;幅值的分贝表示为：&lt;/p&gt;
+&lt;p&gt;$$
+20\log_{10}\left|\frac{Y}{U}\right|
+$$&lt;/p&gt;
+&lt;p&gt;当幅值比为$1/\sqrt{2}$时：&lt;/p&gt;
+&lt;p&gt;$$
+20\log_{10}\left(\frac{1}{\sqrt{2}}\right)\approx-3.01\ dB
+$$&lt;/p&gt;
+&lt;p&gt;如果这个幅值对应的是同一个电阻上的电压或电流，那么功率与幅值的平方成正比：&lt;/p&gt;
+&lt;p&gt;$$
+P=\frac{U^2}{R}\qquad 或者\qquad P=I^2R
+$$&lt;/p&gt;
+&lt;p&gt;所以幅值变为0.707倍时，功率比例为：&lt;/p&gt;
+&lt;p&gt;$$
+(0.707)^2\approx0.5
+$$&lt;/p&gt;
+&lt;p&gt;这就是$-3dB$也被叫作半功率点的原因。&lt;/p&gt;
+&lt;p&gt;反过来也一样：在负载条件不变时，如果电压或电流幅值变成原来的2倍，对应功率就会变成原来的4倍。这里的平方关系来自功率公式，并不是人为定义出来的。&lt;/p&gt;
+&lt;p&gt;那么为什么带宽使用“衰减到$-3dB$”，而不使用“放大到$+3dB$”进行测试？因为这里讨论的是相对于低频增益归一化的一阶低通系统。低频时它最容易跟随，增益接近1；随着频率提高，幅值只会逐渐下降，并不会先增加到1.414倍。因此$+3dB$这个交点在标准一阶低通响应中根本不存在。某些带谐振峰的高阶系统确实可能在局部频率出现放大，但这个峰值表达的是谐振，而不是通常意义上的低通带宽。&lt;/p&gt;
+&lt;p&gt;不过放到电流环测试中，要稍微注意一下这个概念。我们真正测量的是“实际电流幅值/电流指令幅值”的闭环增益，并不是说到了带宽频率以后，电机中的总能量就真的只剩下一半。半功率点解释了$-3dB$这个标准的来源，而电流环带宽使用的是它对应的&lt;strong&gt;幅值下降到低频增益的0.707倍&lt;/strong&gt;这个定义。&lt;/p&gt;
+&lt;p&gt;同时，$-3dB$也不是“完全无失真”和“完全不能用”的绝对边界。系统在带宽以内仍然会存在幅值误差和相位滞后，超过带宽以后也不是立刻变成0。它只是一个统一、方便比较的工程指标。&lt;/p&gt;
+&lt;h2 id=&#34;为什么给一个阶跃就能估算频域带宽&#34;&gt;为什么给一个阶跃，就能估算频域带宽？
+&lt;/h2&gt;&lt;p&gt;我一开始比较不理解的一点是，带宽明明应该拿不同频率的正弦波进行扫频测试，为什么现在只给一个阶跃信号就开始计算了？&lt;/p&gt;
+&lt;p&gt;从傅里叶变换的角度看，理想阶跃并不是单一频率信号。它可以分解成直流以及很多不同频率的正弦成分。阶跃边沿越陡，需要的高频成分就越多；系统如果把高频成分衰减掉，输出边沿就会被“磨圆”，表现为更长的上升时间。&lt;/p&gt;
+&lt;p&gt;但更直接的理解其实还是时间常数$\tau$。&lt;/p&gt;
+&lt;p&gt;对于一阶系统：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;阶跃响应的快慢由$\tau$决定；&lt;/li&gt;
+&lt;li&gt;正弦扫频时的$-3dB$频率也由同一个$\tau$决定。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以我们只要通过阶跃响应测出$\tau$，就可以推算频域带宽。阶跃测试相当于用一次很简单的时域实验，代替比较麻烦的逐点正弦扫频。&lt;/p&gt;
+&lt;p&gt;这里也不能把“阶跃包含所有频率”理解成所有频率的强度都一样。理想阶跃的频谱会随频率升高而下降，真实系统发出的阶跃还会受到采样率、PWM、限幅以及给定斜率的限制。因此阶跃法适合做快速估算，但不能完全替代正规的频率响应测试。&lt;/p&gt;
+&lt;h2 id=&#34;为什么近似为一阶系统而不是二阶&#34;&gt;为什么近似为一阶系统，而不是二阶？
+&lt;/h2&gt;&lt;p&gt;电机电流对象本身通常带有明显的$RL$一阶特性，PI控制器合理整定以后，闭环电流响应也经常可以由一个主导极点近似成一阶系统。如果实验波形单调上升、超调很小，那么用一阶模型进行快速估算还是比较方便的。&lt;/p&gt;
+&lt;p&gt;但是实际数字电流环肯定不是真正的纯一阶系统。它还包含：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;电流采样滤波；&lt;/li&gt;
+&lt;li&gt;控制器计算延迟；&lt;/li&gt;
+&lt;li&gt;PWM更新延迟；&lt;/li&gt;
+&lt;li&gt;反电动势与轴间耦合；&lt;/li&gt;
+&lt;li&gt;电压、电流以及控制量限幅；&lt;/li&gt;
+&lt;li&gt;其他高阶电气与机械因素。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果阶跃波形存在明显超调、振荡或者多段不同斜率，那么二阶甚至更高阶动态已经不能忽略。二阶系统的上升时间不仅与自然频率有关，还与阻尼比有关，此时不再存在统一的0.35系数。&lt;/p&gt;
+&lt;p&gt;所以，$0.35/t_r$不是对所有系统都成立的普遍公式。它比较适合下面这些条件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;闭环响应接近一阶并且基本单调；&lt;/li&gt;
+&lt;li&gt;上升时间明确采用10%到90%的定义；&lt;/li&gt;
+&lt;li&gt;测试过程中没有进入电压、电流或控制量饱和；&lt;/li&gt;
+&lt;li&gt;阶跃幅值处于系统近似线性的工作范围；&lt;/li&gt;
+&lt;li&gt;采样速度足够高，能够比较可靠地找到10%和90%的交点。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;不满足这些条件时，最好直接做正弦扫频得到闭环Bode图，或者先对阶跃数据进行二阶/高阶模型拟合，再从模型计算带宽。&lt;/p&gt;
+&lt;h2 id=&#34;回到这次电流环实验&#34;&gt;回到这次电流环实验
+&lt;/h2&gt;&lt;p&gt;本次阶跃电流大约从$0A$变化到$0.4A$。如果以变化量$\Delta I$为基准，那么10%和90%阈值大约为：&lt;/p&gt;
+&lt;p&gt;$$
+I_{10}=0.04A,\qquad I_{90}=0.36A
+$$&lt;/p&gt;
+&lt;p&gt;图中的两条紫色虚线对应电流穿过这两个阈值的时间，两者之差为：&lt;/p&gt;
+&lt;p&gt;$$
+t_r=1999\ \mu s
+$$&lt;/p&gt;
+&lt;p&gt;代入更准确的系数：&lt;/p&gt;
+&lt;p&gt;$$
+BW\approx\frac{0.3497}{1999\times10^{-6}}\approx174.9\ Hz
+$$&lt;/p&gt;
+&lt;p&gt;这个结果可以理解为：&lt;strong&gt;假设当前闭环电流环可以近似成一阶低通，那么使用正弦电流指令进行扫频时，在大约174.9Hz附近，实际电流的幅值可能下降到低频幅值的0.707倍。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里用了“可能”两个字，因为它毕竟是根据阶跃响应和一阶假设得到的估算值，并不是直接扫频测得的结果。&lt;/p&gt;
+&lt;p&gt;另外，图中的采样率约为$3997.5Hz$，而1999微秒的上升过程大约只有8个采样点。它足够进行初步判断，但阈值交点很容易受到采样量化与电流噪声影响。后续如果希望这个结果更可靠，可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重复多次阶跃并进行平均；&lt;/li&gt;
+&lt;li&gt;使用插值估计10%和90%的穿越时刻；&lt;/li&gt;
+&lt;li&gt;分别测试不同阶跃幅值，确认结果是否基本一致；&lt;/li&gt;
+&lt;li&gt;检查测试期间是否触发了电压限幅或电流限幅；&lt;/li&gt;
+&lt;li&gt;最后再用小信号正弦扫频验证174.9Hz附近的闭环幅值是否真的下降到$-3dB$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;最后总结&#34;&gt;最后总结
+&lt;/h2&gt;&lt;p&gt;现在回头看，$-3dB$、0.35、阶跃响应和电流环带宽其实是在描述同一件事情，只是观察角度不同。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\tau$描述一阶系统本身的响应快慢；&lt;/li&gt;
+&lt;li&gt;$t_r=\ln(9)\tau$是在时域中测量10%到90%的上升时间；&lt;/li&gt;
+&lt;li&gt;$f_c=1/(2\pi\tau)$是在频域中寻找幅值下降到0.707倍的位置；&lt;/li&gt;
+&lt;li&gt;消去共同的$\tau$，就得到了$f_c\approx0.35/t_r$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，阶跃测试不是凭空“算出”了带宽，而是先利用一阶模型从阶跃波形中估计时间常数，再把同一个时间常数换算成$-3dB$截止频率。&lt;/p&gt;
+&lt;p&gt;这个方法的优点是简单、快速，很适合调参时进行初步判断；它的限制也同样明显：一旦实际电流环不像一阶系统，或者阶跃过程中出现饱和、超调和振荡，0.35这个换算关系就不一定可靠了。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
