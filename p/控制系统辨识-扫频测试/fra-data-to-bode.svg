@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1040" viewBox="0 0 1760 1040" role="img" aria-labelledby="title desc">
+  <title id="title">从扫频激励和同步采集到 Bode 图与相干性的处理流程</title>
+  <desc id="desc">展示激励设计、同步采集、校验分段、频响估计以及 Bode 图和相干性输出的通用处理链路。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#145A4A"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#253238" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font: 700 48px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #233138; }
+      .subtitle { font: 400 23px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #5A666B; }
+      .step-no { font: 700 20px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #FFFFFF; }
+      .step-title { font: 700 25px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #233138; }
+      .step-text { font: 400 18px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #59666C; }
+      .section { font: 700 28px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #233138; }
+      .body { font: 400 20px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #3C4A50; }
+      .tiny { font: 400 17px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #647177; }
+      .math { font: 600 20px "Consolas", "Noto Sans SC", monospace; fill: #1F3932; }
+      .axis { font: 400 15px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #6B767B; }
+      .pill { font: 700 18px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #FFFFFF; }
+    </style>
+  </defs>
+
+  <rect width="1760" height="1040" fill="#F6F5EF"/>
+  <rect x="0" y="0" width="1760" height="14" fill="#145A4A"/>
+  <text x="90" y="82" class="title">从扫频数据到 Bode 图：一条可校验的数据链</text>
+  <text x="92" y="123" class="subtitle">真正重要的不只是“画出曲线”，而是知道每个频点是否可信</text>
+  <rect x="1410" y="55" width="270" height="46" rx="23" fill="#E8D6AE"/>
+  <text x="1545" y="86" text-anchor="middle" class="body" fill="#765719">通用示意 · 不对应具体设备</text>
+
+  <!-- pipeline -->
+  <rect x="70" y="165" width="1620" height="285" rx="28" fill="#FFFFFF" stroke="#DCE2DF" stroke-width="2" filter="url(#shadow)"/>
+
+  <g transform="translate(102 205)">
+    <rect width="266" height="205" rx="20" fill="#EEF6F2" stroke="#B9D0C6" stroke-width="2"/>
+    <circle cx="37" cy="38" r="22" fill="#145A4A"/>
+    <text x="37" y="45" text-anchor="middle" class="step-no">1</text>
+    <text x="73" y="47" class="step-title">激励设计</text>
+    <text x="24" y="91" class="step-text">逐点正弦 / 对数扫频</text>
+    <text x="24" y="124" class="step-text">先幅值安全，再保证信噪比</text>
+    <text x="24" y="157" class="step-text">低频留足周期，高频留足采样</text>
+    <rect x="24" y="173" width="138" height="24" rx="12" fill="#C28B2C"/>
+    <text x="93" y="190" text-anchor="middle" class="pill">频点与幅值表</text>
+  </g>
+  <line x1="373" y1="307" x2="401" y2="307" stroke="#145A4A" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(414 205)">
+    <rect width="266" height="205" rx="20" fill="#F7F8F5" stroke="#CDD5D1" stroke-width="2"/>
+    <circle cx="37" cy="38" r="22" fill="#145A4A"/>
+    <text x="37" y="45" text-anchor="middle" class="step-no">2</text>
+    <text x="73" y="47" class="step-title">同步采集</text>
+    <text x="24" y="91" class="step-text">记录实际输入 u 与输出 y</text>
+    <text x="24" y="124" class="step-text">统一时间戳、采样率、量纲</text>
+    <text x="24" y="157" class="step-text">附带频点 / 状态 / 饱和标志</text>
+    <rect x="24" y="173" width="138" height="24" rx="12" fill="#6A777C"/>
+    <text x="93" y="190" text-anchor="middle" class="pill">结构化原始数据</text>
+  </g>
+  <line x1="685" y1="307" x2="713" y2="307" stroke="#145A4A" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(726 205)">
+    <rect width="266" height="205" rx="20" fill="#FCF6E9" stroke="#DFC99D" stroke-width="2"/>
+    <circle cx="37" cy="38" r="22" fill="#C28B2C"/>
+    <text x="37" y="45" text-anchor="middle" class="step-no">3</text>
+    <text x="73" y="47" class="step-title">校验与分段</text>
+    <text x="24" y="91" class="step-text">剔除启动过渡与异常帧</text>
+    <text x="24" y="124" class="step-text">检查削顶、丢包、漂移、泄漏</text>
+    <text x="24" y="157" class="step-text">按频点切出稳态有效窗口</text>
+    <rect x="24" y="173" width="138" height="24" rx="12" fill="#C28B2C"/>
+    <text x="93" y="190" text-anchor="middle" class="pill">质量门禁</text>
+  </g>
+  <line x1="997" y1="307" x2="1025" y2="307" stroke="#145A4A" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(1038 205)">
+    <rect width="266" height="205" rx="20" fill="#EEF6F2" stroke="#B9D0C6" stroke-width="2"/>
+    <circle cx="37" cy="38" r="22" fill="#145A4A"/>
+    <text x="37" y="45" text-anchor="middle" class="step-no">4</text>
+    <text x="73" y="47" class="step-title">频响估计</text>
+    <text x="24" y="91" class="step-text">宽带数据：H₁ 谱估计</text>
+    <text x="24" y="124" class="step-text">逐点正弦：同步解调</text>
+    <text x="24" y="157" class="step-text">平均降低随机噪声影响</text>
+    <rect x="24" y="173" width="138" height="24" rx="12" fill="#145A4A"/>
+    <text x="93" y="190" text-anchor="middle" class="pill">复数 FRF</text>
+  </g>
+  <line x1="1309" y1="307" x2="1337" y2="307" stroke="#145A4A" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g transform="translate(1350 205)">
+    <rect width="306" height="205" rx="20" fill="#26373D"/>
+    <circle cx="37" cy="38" r="22" fill="#C28B2C"/>
+    <text x="37" y="45" text-anchor="middle" class="step-no">5</text>
+    <text x="73" y="47" class="step-title" style="fill:#FFFFFF">Bode 与可信度</text>
+    <text x="24" y="91" class="step-text" style="fill:#E2E9E6">幅频：20 log₁₀ |Ĝ|</text>
+    <text x="24" y="124" class="step-text" style="fill:#E2E9E6">相频：unwrap ∠Ĝ</text>
+    <text x="24" y="157" class="step-text" style="fill:#E2E9E6">同时呈现相干性 / 置信区间</text>
+    <rect x="24" y="173" width="178" height="24" rx="12" fill="#C28B2C"/>
+    <text x="113" y="190" text-anchor="middle" class="pill">曲线 + 质量信息</text>
+  </g>
+
+  <!-- Estimator explanation -->
+  <rect x="70" y="490" width="820" height="445" rx="28" fill="#FFFFFF" stroke="#DCE2DF" stroke-width="2" filter="url(#shadow)"/>
+  <text x="110" y="542" class="section">两种常见估计路径</text>
+
+  <rect x="110" y="575" width="350" height="160" rx="18" fill="#EEF6F2"/>
+  <text x="136" y="614" class="step-title">H₁ 频响估计</text>
+  <text x="136" y="653" class="math">Ĝₕ₁(f) = Sᵧᵤ(f) / Sᵤᵤ(f)</text>
+  <text x="136" y="690" class="step-text">适合随机 / 多正弦 / 经合理分段的扫频</text>
+  <text x="136" y="718" class="step-text">配合分段、加窗、重叠与平均</text>
+
+  <rect x="480" y="575" width="370" height="160" rx="18" fill="#FCF6E9"/>
+  <text x="506" y="614" class="step-title">逐点同步解调</text>
+  <text x="506" y="653" class="math">Ĝ(jωₖ) = Ỹ(ωₖ) / Ũ(ωₖ)</text>
+  <text x="506" y="690" class="step-text">用同频正交基提取复幅值</text>
+  <text x="506" y="718" class="step-text">每个频点等待稳态后取整周期</text>
+
+  <line x1="110" y1="776" x2="850" y2="776" stroke="#D6DDDA" stroke-width="2"/>
+  <text x="110" y="819" class="section">数据文件建议最少包含</text>
+  <rect x="110" y="848" width="116" height="38" rx="19" fill="#145A4A"/><text x="168" y="874" text-anchor="middle" class="pill">timestamp</text>
+  <rect x="238" y="848" width="70" height="38" rx="19" fill="#145A4A"/><text x="273" y="874" text-anchor="middle" class="pill">u</text>
+  <rect x="320" y="848" width="70" height="38" rx="19" fill="#145A4A"/><text x="355" y="874" text-anchor="middle" class="pill">y</text>
+  <rect x="402" y="848" width="112" height="38" rx="19" fill="#6A777C"/><text x="458" y="874" text-anchor="middle" class="pill">frequency</text>
+  <rect x="526" y="848" width="108" height="38" rx="19" fill="#6A777C"/><text x="580" y="874" text-anchor="middle" class="pill">segment</text>
+  <rect x="646" y="848" width="94" height="38" rx="19" fill="#C28B2C"/><text x="693" y="874" text-anchor="middle" class="pill">flags</text>
+  <text x="110" y="914" class="tiny">另建议保存采样率、量纲、工作点和配置版本，以保证结果可复现。</text>
+
+  <!-- Generic mini bode panel -->
+  <rect x="930" y="490" width="760" height="445" rx="28" fill="#FFFFFF" stroke="#DCE2DF" stroke-width="2" filter="url(#shadow)"/>
+  <text x="970" y="542" class="section">输出不仅是一张“漂亮曲线”</text>
+
+  <!-- magnitude plot -->
+  <g transform="translate(1000 582)">
+    <text x="0" y="-12" class="tiny">幅值 / dB</text>
+    <line x1="0" y1="0" x2="570" y2="0" stroke="#E3E7E4"/>
+    <line x1="0" y1="55" x2="570" y2="55" stroke="#E3E7E4"/>
+    <line x1="0" y1="110" x2="570" y2="110" stroke="#E3E7E4"/>
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#7D898E" stroke-width="2"/>
+    <line x1="0" y1="120" x2="570" y2="120" stroke="#7D898E" stroke-width="2"/>
+    <path d="M0 40 C75 39, 125 44, 180 51 S275 80, 340 50 S430 43, 570 102" fill="none" stroke="#145A4A" stroke-width="5"/>
+    <circle cx="340" cy="50" r="7" fill="#C28B2C"/>
+    <text x="356" y="42" class="axis">通用峰值示意</text>
+  </g>
+
+  <!-- phase plot -->
+  <g transform="translate(1000 748)">
+    <text x="0" y="-12" class="tiny">相位 / °</text>
+    <line x1="0" y1="0" x2="570" y2="0" stroke="#E3E7E4"/>
+    <line x1="0" y1="55" x2="570" y2="55" stroke="#E3E7E4"/>
+    <line x1="0" y1="110" x2="570" y2="110" stroke="#E3E7E4"/>
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#7D898E" stroke-width="2"/>
+    <line x1="0" y1="120" x2="570" y2="120" stroke="#7D898E" stroke-width="2"/>
+    <path d="M0 19 C85 22, 150 31, 210 51 S300 87, 370 78 S455 72, 570 110" fill="none" stroke="#C28B2C" stroke-width="5"/>
+    <text x="502" y="145" class="axis">频率 / Hz（对数轴）</text>
+  </g>
+
+  <rect x="985" y="895" width="630" height="26" rx="13" fill="#E7EFEB"/>
+  <rect x="985" y="895" width="505" height="26" rx="13" fill="#145A4A"/>
+  <text x="1300" y="914" text-anchor="middle" class="pill">相干性 γ²：用于辅助判断频点可信度</text>
+
+  <text x="90" y="996" class="tiny">提示：低相干并不自动等于“对象没有响应”，也可能来自激励太小、非线性、时变、未充分稳态或采集链路问题。</text>
+</svg>

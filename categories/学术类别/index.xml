@@ -7,7 +7,524 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>我的CEP研究论文分享-一种新型MFPCC无感控制方案</title>
+        <link>https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/</link>
+        <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/PAGE.png" alt="Featured image of post 我的CEP研究论文分享-一种新型MFPCC无感控制方案" /&gt;&lt;h2 id=&#34;论文链接&#34;&gt;论文链接
+&lt;/h2&gt;&lt;p&gt;论文题目：&lt;strong&gt;Sensorless Model-Free Predictive Current Control for SPMSM Based on a Resonant Dual-Observer Fusion Strategy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1016/j.conengprac.2026.107173&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://doi.org/10.1016/j.conengprac.2026.107173&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Elsevier 限时免费分享链接（50 天内有效）：&lt;a class=&#34;link&#34; href=&#34;https://kwnsfk27.r.eu-west-1.awstrack.me/L0/https:%2F%2Fauthors.elsevier.com%2Fa%2F1nV9t3RugWwY-8/1/0102019f99ef1645-c9619d70-a008-4660-9f71-f35dfa466b2f-000000/h-UAoycMu5_MKofI53uTBW_td2I=473&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击这里阅读全文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;分享链接失效以后，仍然可以通过上面的 DOI 链接查看论文信息。&lt;/p&gt;
+&lt;h2 id=&#34;简单说几句&#34;&gt;简单说几句
+&lt;/h2&gt;&lt;p&gt;这篇论文主要就是我自己研究方向的一次延伸：把 MFPCC 扩展到无位置传感器控制，也就是把 MFPCC 参数鲁棒性高的优点和无感控制不需要位置传感器的优点结合起来。&lt;/p&gt;
+&lt;p&gt;传统模型预测电流控制通常比较依赖电机参数，参数不准确时，预测结果和控制效果都会受到影响。MFPCC 使用超局部模型，把参数失配以及其他难以准确建模的信息统一放到扰动项中进行估计，因此对电机参数的依赖更小，也更容易移植到不同的电机上。但是当 MFPCC 进一步扩展到无感控制时，问题就不只是把位置传感器拿掉这么简单了，还要从观测信号中稳定地提取转子位置信息。&lt;/p&gt;
+&lt;p&gt;至于为什么要使用 DOF-MFPCC 这种双观测器架构，其实也和我前几次投稿时没有把问题说清楚有关。单独使用 ESO 的方案并不是不能运行，实际上也可以正常带动电机。但是 ESO 在补偿 MFPCC 未建模信息的同时，还要给 DO-PLL 提供反电动势信息，这两类信息混在一起后就会显得“不够干净”。未建模信息对锁相环的位置提取干扰比较大，同时还存在观测带宽与相位滞后之间的矛盾。&lt;/p&gt;
+&lt;p&gt;所以这篇论文采用了 LESO 和 ROQR-ESO 并行的双观测器架构。LESO 主要处理低频未建模动态，为 MFPCC 提供预测补偿；ROQR-ESO 内部加入了旋转谐振模型，主要负责提取基波反电动势，为转子位置观测提供相位滞后更小的信号。两路观测结果再经过分离和融合，尽量避免把过多的未建模信息直接送入 PLL。&lt;/p&gt;
+&lt;p&gt;简单来说，就是不再让一个 ESO 同时承担所有任务，而是让两个观测器各自处理更擅长的部分。这样既保留了 MFPCC 对未建模动态的补偿能力，也让无感位置提取所使用的信号更加干净。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/dof-mfpcc-structure.png&#34;
+	width=&#34;3010&#34;
+	height=&#34;1255&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;DOF-MFPCC 双观测器融合架构&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;239&#34;
+		data-flex-basis=&#34;575px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在这个基础上，论文还做了一些偏工程化的改进。例如加入同步旋转坐标系离散积分器，用来减小电流稳态误差；设计带自适应陷波器的 NDO-PLL，用来减弱空间谐波对速度和位置估计的影响。这些内容不一定是整个方法最显眼的部分，但对于实验系统能否稳定、连续地运行还是比较重要的。&lt;/p&gt;
+&lt;h2 id=&#34;实验与一点想法&#34;&gt;实验与一点想法
+&lt;/h2&gt;&lt;p&gt;论文最后在 SPMSM 实验平台上验证了稳态、变速、突加负载、低速运行以及参数失配等工况。其中也包括 50 r/min 的低速实验，以及输入增益发生偏差时的对比实验。实验的重点不是追求某一个特别夸张的性能指标，而是说明这套双观测器无感 MFPCC 架构能够在不同工况下连续运行，并且相比单 ESO 方案具有更稳定的位置观测效果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/experimental-platform.png&#34;
+	width=&#34;993&#34;
+	height=&#34;642&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;论文实验平台&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;154&#34;
+		data-flex-basis=&#34;371px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;很感谢 &lt;em&gt;Control Engineering Practice&lt;/em&gt; 对这篇论文的接收，也欢迎大家阅读和引用。&lt;/p&gt;
+&lt;p&gt;我觉得无感 MFPCC 还是一个很新的方向。一方面，无感控制可以减少位置传感器及其安装和连接成本；另一方面，MFPCC 又可以减弱控制器对精确电机参数的依赖。这两点结合起来，对于更换电机、参数变化或者不方便安装编码器的系统，理论上还是有一定吸引力的。&lt;/p&gt;
+&lt;p&gt;它目前的应用面看起来可能比较窄，尤其是反电动势类无感方法在零速和极低速区域仍然存在天然困难。不过在一些中高速电动工具，或者其他对成本、体积和参数鲁棒性都有要求的场景中，未来也许会有具体的应用价值。&lt;/p&gt;
+&lt;p&gt;我比较期待的最终状态，可以简单概括成“无模型 + 无感”的“双无”：接上电机就能转，而且转得很好，不再需要复杂的参数辨识过程。当然，距离这个目标还有不少问题需要继续研究，但我认为这个方向还是很值得做下去的。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>控制系统辨识-扫频测试</title>
+        <link>https://a233a2.github.io/p/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E8%BE%A8%E8%AF%86-%E6%89%AB%E9%A2%91%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E8%BE%A8%E8%AF%86-%E6%89%AB%E9%A2%91%E6%B5%8B%E8%AF%95/</guid>
+        <description>&lt;p&gt;嵌入式调参中有一个很常见的误区：&lt;strong&gt;能画出 Bode 图，就等于已经得到了被控对象模型。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;实际上，扫频测试、频率响应分析和系统辨识是前后衔接、但并不相同的三件事。扫频负责激励系统，FRA 负责从输入输出中估计复频率响应，系统辨识则进一步把离散的频响点拟合成传递函数或状态空间模型。只有把这三层分清楚，后续的 Simulink 仿真、补偿器设计和嵌入式部署才不容易走偏。&lt;/p&gt;
+&lt;p&gt;这篇文章尝试把整条工程链路串起来：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;定义测量通道 → 设计安全激励 → 板端同步采集 → 估计 FRF/Bode → 拟合并验证模型 → Simulink 设计 → 离散化部署 → 按正确通道复测&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;1-扫频fra-与系统辨识分别在做什么&#34;&gt;1. 扫频、FRA 与系统辨识分别在做什么？
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;本质&lt;/th&gt;
+&lt;th&gt;主要产物&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;扫频测试（Sweep Test）&lt;/td&gt;
+&lt;td&gt;向系统注入频率随时间变化或逐点变化的已知激励&lt;/td&gt;
+&lt;td&gt;同步的输入、输出与状态数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;频率响应分析（FRA）&lt;/td&gt;
+&lt;td&gt;估计不同频率下输出相对输入的复数增益&lt;/td&gt;
+&lt;td&gt;FRF/FRD、Bode 图、相干性与置信信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;系统辨识（System Identification）&lt;/td&gt;
+&lt;td&gt;选择模型结构并利用数据估计参数，再用独立数据验证&lt;/td&gt;
+&lt;td&gt;传递函数、状态空间或其他参数模型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;对于稳定、近似线性时不变的系统，单频正弦进入稳态后，输出仍以同一频率为主，变化体现在幅值和相位上：&lt;/p&gt;
+&lt;p&gt;$$
+u(t)=A\sin(\omega t),\qquad
+y(t)=B\sin(\omega t+\varphi)
+$$&lt;/p&gt;
+&lt;p&gt;于是该频率下的响应可以写成：&lt;/p&gt;
+&lt;p&gt;$$
+G(j\omega)=\frac{Y(j\omega)}{U(j\omega)}
+$$&lt;/p&gt;
+&lt;p&gt;扫过一组频率，便得到幅频和相频曲线。它们可以揭示有效带宽、相位滞后、共振与反共振、执行器或传感器滚降，以及不同工况下动态特性的变化。&lt;/p&gt;
+&lt;p&gt;但 FRF 仍然只是一组非参数频响点。它不天然对应唯一的传递函数，也不能直接完成普通的阶跃、饱和恢复等时域仿真。系统辨识的价值，就是用尽可能简单、又足以解释目标频段的模型，把频域证据转换成可供时域分析、观测器设计和控制器实现使用的数学对象。如果只做频域环路整形，也可以不急着拟合参数模型，直接使用 FRD 数据。&lt;/p&gt;
+&lt;h3 id=&#34;2-什么样的系统适合扫频辨识&#34;&gt;2. 什么样的系统适合扫频辨识？
+&lt;/h3&gt;&lt;p&gt;经典的小信号 SISO FRA 比较适合以下情况：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;条件&lt;/th&gt;
+&lt;th&gt;基本要求&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;工作点&lt;/td&gt;
+&lt;td&gt;测试期间基本固定，或变化速度远慢于扫频过程&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;线性度&lt;/td&gt;
+&lt;td&gt;小幅激励下近似线性，多次测试能够重复&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;稳定性&lt;/td&gt;
+&lt;td&gt;对象本身稳定，或能由已知闭环可靠稳定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;可观测性&lt;/td&gt;
+&lt;td&gt;注入量和响应量都能测量，单位、符号与测量位置明确&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;信噪比&lt;/td&gt;
+&lt;td&gt;激励能够超过噪声、量化和背景扰动，又不触发非线性&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;安全性&lt;/td&gt;
+&lt;td&gt;具备独立的电流、速度、行程、温升、急停和异常退出限制&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;耦合性&lt;/td&gt;
+&lt;td&gt;单一通道占主导；强耦合对象应转向 MIMO FRA 或先做解耦&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;伺服轴、柔性传动、机器人关节、执行机构、电机试验台以及部分电力电子控制环路，在满足小信号、稳定性与可测量性条件时，常可采用 FRA 分析其局部动态。&lt;/p&gt;
+&lt;p&gt;相对地，以下对象&lt;strong&gt;不适合直接套用一次 SISO Chirp 小信号辨识&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;饱和、死区、摩擦、迟滞、间隙或碰撞占主导；&lt;/li&gt;
+&lt;li&gt;工作点快速变化，参数在测试过程中明显漂移；&lt;/li&gt;
+&lt;li&gt;开环不稳定，又没有可靠的闭环保护与退出路径；&lt;/li&gt;
+&lt;li&gt;多通道耦合很强，却只激励和观察其中一个通道；&lt;/li&gt;
+&lt;li&gt;测试可能触发电气、机械或人员安全风险；&lt;/li&gt;
+&lt;li&gt;时间尺度极慢，逐频扫完的成本远高于阶跃、PRBS 或多正弦试验。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里的“不适合”并不等于“完全不能辨识”。非线性或时变系统可以考虑多工作点局部线性化、增益调度、非线性模型或专门的闭环/MIMO 辨识方法，只是不能再把一条 Bode 曲线当成全工况下唯一的系统真相。&lt;/p&gt;
+&lt;h3 id=&#34;3-扫频之前先定义到底在测哪一段系统&#34;&gt;3. 扫频之前，先定义到底在测哪一段系统
+&lt;/h3&gt;&lt;p&gt;注入点决定测量结果。参考输入到输出、执行器前扰动到输出、实际对象输入到输出，得到的并不是同一个传递关系。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E8%BE%A8%E8%AF%86-%E6%89%AB%E9%A2%91%E6%B5%8B%E8%AF%95/fra-principle-and-applicability.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;扫频注入点、测量边界与适用条件&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 1：闭环中的扫频注入、实际输入与输出测量关系。图片为通用示意，不对应具体设备。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;若控制器为 $C$、对象为 $P$、测量环节为 $H$，则有：&lt;/p&gt;
+&lt;p&gt;$$
+L=CPH,\qquad
+S=\frac{1}{1+L},\qquad
+T=\frac{L}{1+L}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若把输出定义为传感器反馈量 $Hy$，则参考到反馈量为 $T=L/(1+L)$；若输出指对象的物理输出 $y$，则 $r\rightarrow y$ 为 $CP/(1+CPH)$；&lt;/li&gt;
+&lt;li&gt;在对象前注入扰动 $d$，从 $d$ 到输出得到的往往与 $P/(1+L)$ 有关，并不是裸对象 $P$；&lt;/li&gt;
+&lt;li&gt;若同步记录对象真正收到的输入 $u$ 与对象输出 $y$，才更接近对象边界上的 $Y/U$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，嵌入式端最好同时保存 &lt;code&gt;excitation_cmd&lt;/code&gt;、经过叠加和限幅后的 &lt;code&gt;plant_input&lt;/code&gt;，以及对应的 &lt;code&gt;plant_output&lt;/code&gt;。只记录“计划注入的正弦量”，一旦中途发生限幅或内环没有完全跟随，后续计算就会把错误的输入当成真实输入。&lt;/p&gt;
+&lt;p&gt;闭环数据还有一个额外问题：反馈可能使对象输入与噪声、扰动相关，简单的谱相除会产生偏差。专业的闭环辨识必须结合正确的注入点、已知环路结构和合适的估计方法，不能只看公式表面上的 $Y/U$。&lt;/p&gt;
+&lt;h3 id=&#34;4-扫频信号如何选择&#34;&gt;4. 扫频信号如何选择？
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;激励类型&lt;/th&gt;
+&lt;th&gt;优点&lt;/th&gt;
+&lt;th&gt;局限&lt;/th&gt;
+&lt;th&gt;常见用途&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;分段定频正弦（Stepped Sine）&lt;/td&gt;
+&lt;td&gt;每个频点都能等待稳态，幅相精度高&lt;/td&gt;
+&lt;td&gt;测试时间较长&lt;/td&gt;
+&lt;td&gt;精细 FRA、共振附近复核&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;对数 Chirp&lt;/td&gt;
+&lt;td&gt;跨越多个数量级时频率分配合理&lt;/td&gt;
+&lt;td&gt;需要处理瞬态、泄漏和扫速&lt;/td&gt;
+&lt;td&gt;宽频段试探性扫描&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;线性 Chirp&lt;/td&gt;
+&lt;td&gt;生成逻辑简单&lt;/td&gt;
+&lt;td&gt;跨倍频程时低频和高频分配不均&lt;/td&gt;
+&lt;td&gt;频率跨度较窄的测试&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;多正弦 / PRBS&lt;/td&gt;
+&lt;td&gt;可同时激励多个频率，效率高&lt;/td&gt;
+&lt;td&gt;峰均比、谱设计与非线性判断更复杂&lt;/td&gt;
+&lt;td&gt;成熟的自动化测试系统&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;频率范围不应照搬一个固定数字：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$f_{min}$ 要覆盖最慢的关注动态，并给低频留出足够周期；&lt;/li&gt;
+&lt;li&gt;$f_{max}$ 要越过目标交越频率和关注模态，同时受执行器、传感器、抗混叠滤波器、采样率与数据链路限制；&lt;/li&gt;
+&lt;li&gt;Nyquist 频率只是数学上的绝对边界，不是推荐测试上限，实际可信频段通常要低得多；&lt;/li&gt;
+&lt;li&gt;弱阻尼模态需要建立响应的时间，扫得过快可能把峰值和相位“抹平”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;振幅选择可以概括成一句话：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大到能够超过噪声，小到不触发饱和、限位和显著非线性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;工程上应先做小幅、窄频、短时的 pilot sweep，再逐步扩展。若不同幅值下归一化后的 FRF 明显变化，说明局部线性假设已经开始失效。低相干性也不能简单归因于“振幅太小”：外部扰动、频谱泄漏、响应零点、时间变化、非线性和错误同步都可能造成相干性下降。&lt;/p&gt;
+&lt;h3 id=&#34;5-嵌入式-c-代码怎样生成扫频&#34;&gt;5. 嵌入式 C 代码怎样生成扫频？
+&lt;/h3&gt;&lt;p&gt;连续扫频的核心不是直接计算 &lt;code&gt;sin(2π × 当前频率 × 总时间)&lt;/code&gt;，而是对瞬时频率做相位积分：&lt;/p&gt;
+&lt;p&gt;$$
+u_{exc}[k]=A(f_k)w[k]\sin\phi[k]
+$$&lt;/p&gt;
+&lt;p&gt;$$
+\phi[k+1]=\phi[k]+2\pi f_kT_s
+$$&lt;/p&gt;
+&lt;p&gt;对数扫频可以在初始化阶段计算频率倍率：&lt;/p&gt;
+&lt;p&gt;$$
+r=\left(\frac{f_1}{f_0}\right)^{1/(N-1)},\qquad f_{k+1}=rf_k
+$$&lt;/p&gt;
+&lt;p&gt;下面是一段只表达核心逻辑的 C 代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;phase&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;frequency&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;frequency_ratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;uint32_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;uint32_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;total&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FraSweep&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fra_step&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;FraSweep&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;amplitude&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;envelope&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fra_envelope&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;total&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;excitation&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;amplitude&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;envelope&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sinf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phase&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phase&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fmodf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;phase&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;2.0f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PI&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;frequency&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                     &lt;span class=&#34;mf&#34;&gt;2.0f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;PI&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;frequency&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;frequency_ratio&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;excitation&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;真正接入控制板时，还应补上这些工程细节：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用淡入、淡出包络避免开始和结束处的突变形成宽带冲击；&lt;/li&gt;
+&lt;li&gt;用 &lt;code&gt;IDLE → RAMP_IN → SWEEP → RAMP_OUT → DONE/ABORT&lt;/code&gt; 状态机管理过程；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;powf&lt;/code&gt;、&lt;code&gt;expf&lt;/code&gt; 等尽量在初始化阶段完成，算力紧张时可使用 DDS 或查表；&lt;/li&gt;
+&lt;li&gt;采样、控制计算和数据入队保持确定周期；&lt;/li&gt;
+&lt;li&gt;不要在高优先级控制中断里逐点 &lt;code&gt;printf&lt;/code&gt;，应使用环形缓冲区，并在低优先级任务或 DMA 中发送；&lt;/li&gt;
+&lt;li&gt;每帧至少保留 &lt;code&gt;seq&lt;/code&gt;、板端时间戳、频率、请求激励、实际输入、输出和状态标志；&lt;/li&gt;
+&lt;li&gt;原型阶段可以使用 CSV 文本帧，高数据率时应换成带版本、序号和校验的二进制协议。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;电脑收到串口数据的时间不能替代板端采样时间。网络、USB 和串口缓存都会引入不确定延迟，真正用于幅相计算的时间基准必须来自控制板。&lt;/p&gt;
+&lt;h3 id=&#34;6-扫频数据怎样形成-bode-图&#34;&gt;6. 扫频数据怎样形成 Bode 图？
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E8%BE%A8%E8%AF%86-%E6%89%AB%E9%A2%91%E6%B5%8B%E8%AF%95/fra-data-to-bode.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从扫频数据到Bode图的处理流程&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 2：从激励设计、同步采集到 FRF/Bode 与质量信息的处理链。图片为通用示意。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;对于适合宽带谱估计的数据，常用 H1 估计器：&lt;/p&gt;
+&lt;p&gt;$$
+\hat G_{H1}(f)=\frac{S_{yu}(f)}{S_{uu}(f)},\qquad
+S_{yu}(f)=\mathbb{E}!\left[Y(f)U^*(f)\right]
+$$&lt;/p&gt;
+&lt;p&gt;这里采用 $S_{yu}=\mathbb{E}[YU^*]$ 的记号。SciPy 的 &lt;code&gt;csd(x, y)&lt;/code&gt; 按 $\mathbb{E}[X^*Y]$ 定义，因此代码中仍调用 &lt;code&gt;csd(u, y)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;然后计算：&lt;/p&gt;
+&lt;p&gt;$$
+M(f)=20\log_{10}|\hat G(f)|,\qquad
+\Phi(f)=\operatorname{unwrap}(\angle\hat G(f))
+$$&lt;/p&gt;
+&lt;p&gt;幅值平方相干性可作为数据质量指标之一：&lt;/p&gt;
+&lt;p&gt;$$
+\gamma^2(f)=\frac{|S_{yu}(f)|^2}{S_{uu}(f)S_{yy}(f)}
+$$&lt;/p&gt;
+&lt;p&gt;MATLAB 中可以使用 &lt;code&gt;tfestimate&lt;/code&gt; 与 &lt;code&gt;mscohere&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-matlab&#34; data-lang=&#34;matlab&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tfestimate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;win&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;overlap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nfft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;coh&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mscohere&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;win&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;overlap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nfft&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;mag_db&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mag2db&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;phase_deg&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rad2deg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;unwrap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;angle&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)));&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Python/SciPy 中可以使用互功率谱和 Welch 功率谱：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;scipy&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;signal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;numpy&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;np&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Syu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;signal&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;csd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;hann&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &lt;span class=&#34;n&#34;&gt;nperseg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nseg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;noverlap&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;noverlap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Suu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;signal&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;welch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;hann&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      &lt;span class=&#34;n&#34;&gt;nperseg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nseg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;noverlap&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;noverlap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;H&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Syu&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Suu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;coherence&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;signal&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;coherence&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                &lt;span class=&#34;n&#34;&gt;nperseg&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nseg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;noverlap&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;noverlap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;mag_db&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;log10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;maximum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1e-12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;phase_deg&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rad2deg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unwrap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;np&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;angle&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;连续 Chirp 是非平稳信号，不能机械地认为“做一次 FFT 再相除”就一定可靠。精细测试可以采用分频处理，或者使用分段定频正弦，在每个频点舍弃过渡段后用同步解调、正余弦最小二乘估计输入与输出的复相量。&lt;/p&gt;
+&lt;p&gt;一份可信的分析结果至少应同时保留：原始数据、采样率与单位、频率响应复数值、幅值、相位、相干性、重复性、异常频点和处理配置。曲线能画出来，与曲线值得相信，仍然是两回事。&lt;/p&gt;
+&lt;h3 id=&#34;7-从-frf-到-simulink-被控对象模型&#34;&gt;7. 从 FRF 到 Simulink 被控对象模型
+&lt;/h3&gt;&lt;p&gt;FRD/IDFRD 可以直接用于 Bode 分析、环路整形和参数模型拟合，但要做阶跃、扰动、饱和、状态观测等普通时域分析，仍然需要拟合传递函数或状态空间模型。&lt;/p&gt;
+&lt;p&gt;一个比较稳妥的过程是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用一组数据拟合尽可能低阶的模型；&lt;/li&gt;
+&lt;li&gt;保留另一组扫频或时域数据作为验证集；&lt;/li&gt;
+&lt;li&gt;同时比较幅值、相位、时域输出、残差和延迟；&lt;/li&gt;
+&lt;li&gt;只要求模型在控制设计关注的频段内可信，不追求用高阶模型拟合全频段噪声；&lt;/li&gt;
+&lt;li&gt;若测量结果已经包含传感器滤波和延迟，不要在 Simulink 中重复叠加。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;MATLAB 中可以把复频响整理成 &lt;code&gt;idfrd&lt;/code&gt;，再用 &lt;code&gt;tfest&lt;/code&gt; 或 &lt;code&gt;ssest&lt;/code&gt; 估计模型：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-matlab&#34; data-lang=&#34;matlab&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;frData&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;idfrd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;reshape&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[]),&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;pi&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Ts&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;plant&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tfest&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;frData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pole_count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;zero_count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Simulink 中建议至少保留这些环节：参考输入与预滤波、控制器、补偿环节、饱和与抗积分饱和、被控对象、传感器/采样/计算延迟、输入扰动、测量噪声，以及控制量和状态记录。&lt;/p&gt;
+&lt;p&gt;时域分析也不应只看一个“好看的阶跃”。还要检查轨迹跟踪、低频扰动、窄带扰动、控制量峰值、饱和恢复、参数变化和噪声放大。&lt;/p&gt;
+&lt;h3 id=&#34;8-根据频域证据选择补偿结构&#34;&gt;8. 根据频域证据选择补偿结构
+&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;频域现象或目标&lt;/th&gt;
+&lt;th&gt;候选措施&lt;/th&gt;
+&lt;th&gt;需要付出的代价&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;可重复的窄带柔性模态&lt;/td&gt;
+&lt;td&gt;优先结构排查、降低带宽或加入陷波器&lt;/td&gt;
+&lt;td&gt;频率漂移、附加相位与中心偏差&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;恒值或慢变低频扰动&lt;/td&gt;
+&lt;td&gt;积分环节、扰动观测器&lt;/td&gt;
+&lt;td&gt;相位裕度、积分饱和、模型误差&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;交越附近相位不足&lt;/td&gt;
+&lt;td&gt;超前环节或 PID 重新整形&lt;/td&gt;
+&lt;td&gt;高频噪声和控制量增加&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;希望提高低频增益并压低交越&lt;/td&gt;
+&lt;td&gt;滞后环节&lt;/td&gt;
+&lt;td&gt;带宽下降、瞬态响应变慢&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;高频测量噪声&lt;/td&gt;
+&lt;td&gt;低通滤波&lt;/td&gt;
+&lt;td&gt;新增延迟、降低可达带宽&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;陷波器不是修复机械松动、装配和结构刚度问题的“橡皮擦”；积分环节提高低频增益的同时会增加相位滞后，并需要抗积分饱和。扰动观测器也不是简单串联一个滤波器，它通常由名义模型逆、$Q$ 滤波器和扰动估计反馈组成，其有效带宽不能超过模型可信的范围。&lt;/p&gt;
+&lt;p&gt;因此，不应把 Notch、DOB、积分和低通一股脑堆进系统，而应从跟踪、扰动、噪声、控制量和鲁棒性目标反推所需结构。&lt;/p&gt;
+&lt;h3 id=&#34;9-离散化c-代码部署与复测&#34;&gt;9. 离散化、C 代码部署与复测
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E8%BE%A8%E8%AF%86-%E6%89%AB%E9%A2%91%E6%B5%8B%E8%AF%95/fra-model-to-firmware-loop.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;从辨识模型到嵌入式固件的闭环流程&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 3：从 FRF、参数辨识到控制设计、离散化、C 实现与正确通道复测。图片为通用示意。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;连续域并不是必经步骤。连续模型便于解释质量、阻尼、固有频率等物理含义；直接辨识离散模型则更贴近数字控制器实际看到的采样系统。若从连续域切回离散域，应明确采样周期和离散化方法：物理对象常结合 ZOH，控制器和滤波器可考虑 Tustin 或关键频率预畸变，但都不能当成固定规则。&lt;/p&gt;
+&lt;p&gt;以二阶数字环节为例：&lt;/p&gt;
+&lt;p&gt;$$
+H(z)=\frac{b_0+b_1z^{-1}+b_2z^{-2}}
+{1+a_1z^{-1}+a_2z^{-2}}
+$$&lt;/p&gt;
+&lt;p&gt;对应差分方程为：&lt;/p&gt;
+&lt;p&gt;$$
+y[k]=b_0x[k]+b_1x[k-1]+b_2x[k-2]-a_1y[k-1]-a_2y[k-2]
+$$&lt;/p&gt;
+&lt;p&gt;部署前需要逐项核对：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;设计时的 $T_s$ 与真实控制任务周期一致；&lt;/li&gt;
+&lt;li&gt;计算、PWM、传感器与通信延迟已经纳入分析；&lt;/li&gt;
+&lt;li&gt;$a_0$ 归一化、分母符号和系数顺序与 C 实现一致；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;float32&lt;/code&gt; 或定点量化后，极点与频响仍然满足要求；&lt;/li&gt;
+&lt;li&gt;状态初始化、复位、限幅、溢出和异常退出行为正确；&lt;/li&gt;
+&lt;li&gt;使用已知测试向量逐样本对比 MATLAB/Python 与 C 输出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后还要注意“复测的对象”。如果前后都用实际对象输入 $u$ 到输出 $y$ 计算 FRF，那么只更换控制器并不会改变物理对象 $P$。要验证补偿是否有效，应比较正确的环路传递、闭环 $T/S$、扰动响应、时域指标、噪声和控制量，而不是看到“对象 Bode 变平了”就宣布成功。&lt;/p&gt;
+&lt;h3 id=&#34;10-agent_sfra_skills把重复工作串成流水线&#34;&gt;10. Agent_SFRA_Skills：把重复工作串成流水线
+&lt;/h3&gt;&lt;p&gt;本文配套提供一个初版开源项目：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/a233a2/Agent_SFRA_Skills&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub：a233a2/Agent_SFRA_Skills&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;它目前以 Codex Skill 的形式组织，当前初版提供：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无 HAL 依赖的嵌入式 C 扫频与遥测模板；&lt;/li&gt;
+&lt;li&gt;串口采集、文本回放、丢帧与状态标志检查；&lt;/li&gt;
+&lt;li&gt;Python 的 stepped-sine 复相量估计与 Welch H1 分析；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fra.csv&lt;/code&gt;、质量报告和 Bode 图输出；&lt;/li&gt;
+&lt;li&gt;基础陷波器、泄漏积分器、超前/滞后环节的离散系数与 C 头文件导出；&lt;/li&gt;
+&lt;li&gt;MATLAB/Simulink 被控对象拟合与闭环模型脚手架；&lt;/li&gt;
+&lt;li&gt;基准与候选结果的复扫对比。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/a233a2/Agent_SFRA_Skills.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这个初版的目标，是让 AI 逐步承担“生成代码—采集数据—估计 FRF—拟合模型—提出补偿—离散化—回灌验证”中的重复工作，同时让每次运行都能留下配置、代码差异、原始数据和分析报告。&lt;/p&gt;
+&lt;p&gt;但“自动化”不等于让 AI 在没有边界的情况下直接驱动实物。激励范围、烧录、上电、使能和系数回写仍应由操作者确认；硬件限幅、急停、看门狗和异常退出也必须独立于 Agent。当前版本已经用通用合成数据跑通基础链路，真实硬件、不同控制架构和不同工具链还需要后续逐步验证。&lt;/p&gt;
+&lt;h3 id=&#34;写在最后&#34;&gt;写在最后
+&lt;/h3&gt;&lt;p&gt;扫频测试真正有价值的地方，不只是找到一两个共振峰，而是建立一条可复现的证据链：&lt;strong&gt;知道测了什么、数据是否可信、模型在哪个频段有效、补偿为什么这样设计，以及回到 MCU 后该如何验证。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;参数并不是脱离采样周期、工作点和测量边界的几个孤立数字。把这些上下文一起记录下来，频域调参才能从一次性的经验操作，逐渐变成可以复用、比较和自动化的工程流程。&lt;/p&gt;
+&lt;h3 id=&#34;参考资料&#34;&gt;参考资料
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.mathworks.com/help/slcontrol/ug/what-is-a-frequency-response-model.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MathWorks：Frequency Response Estimation Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.mathworks.com/help/ident/gs/about-system-identification.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MathWorks：System Identification Overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.mathworks.com/help/ident/ref/idfrd.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MathWorks：idfrd — Frequency response data or model&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.chirp.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SciPy：chirp&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.csd.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;csd&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.coherence.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;coherence&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Pixhawk6C_Simulink开发环境配置-用于算法验证等踩坑记录</title>
         <link>https://a233a2.github.io/p/pixhawk6c_simulink%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-%E7%94%A8%E4%BA%8E%E7%AE%97%E6%B3%95%E9%AA%8C%E8%AF%81%E7%AD%89%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
         <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>

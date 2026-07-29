@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1100" viewBox="0 0 1760 1100" role="img" aria-labelledby="title desc">
+  <title id="title">从频率响应到模型、控制器设计、固件回灌和复测的闭环流程</title>
+  <desc id="desc">展示频响数据经过模型辨识、Simulink 时频域验证、补偿设计、离散化、C 代码实现与正确通道复测后回流迭代的通用流程。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#145A4A"/>
+    </marker>
+    <marker id="arrow-gold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#C28B2C"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#253238" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font: 700 48px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #233138; }
+      .subtitle { font: 400 23px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #5A666B; }
+      .step { font: 700 20px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #FFFFFF; }
+      .card-title { font: 700 27px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #233138; }
+      .card-text { font: 400 18px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #58656B; }
+      .section { font: 700 27px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #233138; }
+      .body { font: 400 20px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #3C4A50; }
+      .tiny { font: 400 17px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #647177; }
+      .pill { font: 700 18px "Noto Sans SC", "Microsoft YaHei", sans-serif; fill: #FFFFFF; }
+      .math { font: 600 19px "Consolas", "Noto Sans SC", monospace; fill: #1F3932; }
+    </style>
+  </defs>
+
+  <rect width="1760" height="1100" fill="#F6F5EF"/>
+  <rect x="0" y="0" width="1760" height="14" fill="#145A4A"/>
+  <text x="90" y="82" class="title">从模型到固件：控制设计需要闭环验证</text>
+  <text x="92" y="123" class="subtitle">FRF 给出频域证据，模型帮助推演；最终仍要回到正确通道复测</text>
+  <rect x="1410" y="55" width="270" height="46" rx="23" fill="#E8D6AE"/>
+  <text x="1545" y="86" text-anchor="middle" class="body" fill="#765719">通用示意 · 不对应具体设备</text>
+
+  <!-- Loop background -->
+  <rect x="70" y="165" width="1620" height="685" rx="30" fill="#FFFFFF" stroke="#DCE2DF" stroke-width="2" filter="url(#shadow)"/>
+
+  <!-- top row -->
+  <g transform="translate(105 225)">
+    <rect width="330" height="210" rx="22" fill="#EEF6F2" stroke="#B9D0C6" stroke-width="2"/>
+    <circle cx="42" cy="42" r="24" fill="#145A4A"/><text x="42" y="49" text-anchor="middle" class="step">1</text>
+    <text x="82" y="51" class="card-title">可信 FRF</text>
+    <text x="28" y="99" class="card-text">输入 / 输出通道明确</text>
+    <text x="28" y="132" class="card-text">幅频、相频、相干性与工况</text>
+    <text x="28" y="165" class="card-text">先标注可信频带和异常频点</text>
+    <rect x="28" y="181" width="160" height="24" rx="12" fill="#145A4A"/><text x="108" y="198" text-anchor="middle" class="pill">频域事实基线</text>
+  </g>
+  <line x1="442" y1="330" x2="486" y2="330" stroke="#145A4A" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(500 225)">
+    <rect width="330" height="210" rx="22" fill="#F7F8F5" stroke="#CDD5D1" stroke-width="2"/>
+    <circle cx="42" cy="42" r="24" fill="#145A4A"/><text x="42" y="49" text-anchor="middle" class="step">2</text>
+    <text x="82" y="51" class="card-title">模型辨识</text>
+    <text x="28" y="99" class="card-text">选择足够简单的低阶结构</text>
+    <text x="28" y="132" class="card-text">拟合极点、零点、增益与延迟</text>
+    <text x="28" y="165" class="card-text">用保留数据检查模型误差</text>
+    <rect x="28" y="181" width="180" height="24" rx="12" fill="#6A777C"/><text x="118" y="198" text-anchor="middle" class="pill">模型是近似，不是事实</text>
+  </g>
+  <line x1="837" y1="330" x2="881" y2="330" stroke="#145A4A" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(895 225)">
+    <rect width="330" height="210" rx="22" fill="#EEF6F2" stroke="#B9D0C6" stroke-width="2"/>
+    <circle cx="42" cy="42" r="24" fill="#145A4A"/><text x="42" y="49" text-anchor="middle" class="step">3</text>
+    <text x="82" y="51" class="card-title">Simulink 验证</text>
+    <text x="28" y="99" class="card-text">频域：裕度、带宽、峰值</text>
+    <text x="28" y="132" class="card-text">时域：跟踪、扰动、饱和</text>
+    <text x="28" y="165" class="card-text">加入采样、延迟、限幅与噪声</text>
+    <rect x="28" y="181" width="188" height="24" rx="12" fill="#145A4A"/><text x="122" y="198" text-anchor="middle" class="pill">时域 + 频域互相校验</text>
+  </g>
+  <line x1="1232" y1="330" x2="1276" y2="330" stroke="#145A4A" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(1290 225)">
+    <rect width="330" height="210" rx="22" fill="#FCF6E9" stroke="#DFC99D" stroke-width="2"/>
+    <circle cx="42" cy="42" r="24" fill="#C28B2C"/><text x="42" y="49" text-anchor="middle" class="step">4</text>
+    <text x="82" y="51" class="card-title">设计补偿环节</text>
+    <text x="28" y="99" class="card-text">Notch：抑制窄带共振</text>
+    <text x="28" y="132" class="card-text">DOB：改善特定频段扰动抑制</text>
+    <text x="28" y="165" class="card-text">积分 / 超前滞后：塑造低中频</text>
+    <rect x="28" y="181" width="173" height="24" rx="12" fill="#C28B2C"/><text x="114" y="198" text-anchor="middle" class="pill">按证据选择结构</text>
+  </g>
+
+  <!-- down arrow -->
+  <path d="M1455 442 L1455 520" fill="none" stroke="#C28B2C" stroke-width="5" marker-end="url(#arrow-gold)"/>
+
+  <!-- bottom row, right to left -->
+  <g transform="translate(1290 540)">
+    <rect width="330" height="210" rx="22" fill="#FCF6E9" stroke="#DFC99D" stroke-width="2"/>
+    <circle cx="42" cy="42" r="24" fill="#C28B2C"/><text x="42" y="49" text-anchor="middle" class="step">5</text>
+    <text x="82" y="51" class="card-title">离散化与复核</text>
+    <text x="28" y="99" class="card-text">固定采样周期与离散化方法</text>
+    <text x="28" y="132" class="card-text">检查频率预畸变和数值条件</text>
+    <text x="28" y="165" class="card-text">重新计算离散域极点与频响</text>
+    <rect x="28" y="181" width="170" height="24" rx="12" fill="#C28B2C"/><text x="113" y="198" text-anchor="middle" class="pill">连续域 ≠ 离散域</text>
+  </g>
+  <line x1="1282" y1="645" x2="1238" y2="645" stroke="#145A4A" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(895 540)">
+    <rect width="330" height="210" rx="22" fill="#F7F8F5" stroke="#CDD5D1" stroke-width="2"/>
+    <circle cx="42" cy="42" r="24" fill="#145A4A"/><text x="42" y="49" text-anchor="middle" class="step">6</text>
+    <text x="82" y="51" class="card-title">C 代码回灌</text>
+    <text x="28" y="99" class="card-text">实现差分方程与状态更新</text>
+    <text x="28" y="132" class="card-text">处理初始化、限幅、量化和溢出</text>
+    <text x="28" y="165" class="card-text">核对执行顺序、周期与计算量</text>
+    <rect x="28" y="181" width="195" height="24" rx="12" fill="#6A777C"/><text x="125" y="198" text-anchor="middle" class="pill">系数一致只是第一步</text>
+  </g>
+  <line x1="887" y1="645" x2="843" y2="645" stroke="#145A4A" stroke-width="5" marker-end="url(#arrow)"/>
+
+  <g transform="translate(500 540)">
+    <rect width="330" height="210" rx="22" fill="#26373D"/>
+    <circle cx="42" cy="42" r="24" fill="#C28B2C"/><text x="42" y="49" text-anchor="middle" class="step">7</text>
+    <text x="82" y="51" class="card-title" style="fill:#FFFFFF">正确通道复测</text>
+    <text x="28" y="99" class="card-text" style="fill:#E2E9E6">保持前后工况与定义一致</text>
+    <text x="28" y="132" class="card-text" style="fill:#E2E9E6">辨清对象、开环与闭环测量点</text>
+    <text x="28" y="165" class="card-text" style="fill:#E2E9E6">比较改善、代价和新的风险</text>
+    <rect x="28" y="181" width="197" height="24" rx="12" fill="#C28B2C"/><text x="126" y="198" text-anchor="middle" class="pill">实测结果决定下一轮</text>
+  </g>
+
+  <!-- feedback to step 1 -->
+  <path d="M492 645 L315 645 L315 495 L270 495 L270 445" fill="none" stroke="#C28B2C" stroke-width="5" stroke-dasharray="10 8" marker-end="url(#arrow-gold)"/>
+  <rect x="105" y="540" width="325" height="210" rx="22" fill="#EEF6F2" stroke="#B9D0C6" stroke-width="2"/>
+  <text x="135" y="586" class="section">复测比较的是同一问题</text>
+  <text x="135" y="626" class="card-text">• 同一注入点与实际输入定义</text>
+  <text x="135" y="660" class="card-text">• 同一输出、工作点与负载范围</text>
+  <text x="135" y="694" class="card-text">• 同一频段、幅值与质量规则</text>
+  <rect x="135" y="714" width="241" height="25" rx="12" fill="#145A4A"/>
+  <text x="255" y="732" text-anchor="middle" class="pill">否则前后曲线不可直接比较</text>
+
+  <!-- engineering gates -->
+  <rect x="70" y="890" width="1620" height="145" rx="26" fill="#EEF3F1" stroke="#CAD8D2" stroke-width="2"/>
+  <text x="110" y="938" class="section">贯穿全流程的工程约束</text>
+  <rect x="110" y="970" width="180" height="38" rx="19" fill="#145A4A"/><text x="200" y="996" text-anchor="middle" class="pill">稳定裕度</text>
+  <rect x="310" y="970" width="180" height="38" rx="19" fill="#145A4A"/><text x="400" y="996" text-anchor="middle" class="pill">限幅 / 抗饱和</text>
+  <rect x="510" y="970" width="180" height="38" rx="19" fill="#6A777C"/><text x="600" y="996" text-anchor="middle" class="pill">采样与延迟</text>
+  <rect x="710" y="970" width="180" height="38" rx="19" fill="#6A777C"/><text x="800" y="996" text-anchor="middle" class="pill">噪声与量化</text>
+  <rect x="910" y="970" width="180" height="38" rx="19" fill="#C28B2C"/><text x="1000" y="996" text-anchor="middle" class="pill">计算量 / 内存</text>
+  <rect x="1110" y="970" width="180" height="38" rx="19" fill="#C28B2C"/><text x="1200" y="996" text-anchor="middle" class="pill">保护与回退</text>
+  <rect x="1310" y="970" width="300" height="38" rx="19" fill="#26373D"/><text x="1460" y="996" text-anchor="middle" class="pill">配置、数据、固件版本可追溯</text>
+
+  <text x="90" y="1073" class="tiny">结论：仿真通过只是进入固件验证的条件；是否改善，应由同口径的闭环复测给出答案。</text>
+</svg>

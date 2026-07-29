@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Fri, 19 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Latex</title>
+        <link>https://a233a2.github.io/tags/latex/</link>
+        <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/tags/latex/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>调参</title>
+        <link>https://a233a2.github.io/tags/%E8%B0%83%E5%8F%82/</link>
+        <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/tags/%E8%B0%83%E5%8F%82/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>FOC</title>
         <link>https://a233a2.github.io/tags/foc/</link>
         <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
@@ -69,14 +85,6 @@
         <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/tags/adrc/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Latex</title>
-        <link>https://a233a2.github.io/tags/latex/</link>
-        <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/tags/latex/</guid>
         <description></description>
         </item>
         <item>

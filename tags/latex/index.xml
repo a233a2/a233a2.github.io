@@ -7,7 +7,63 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/latex/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>我的CEP研究论文分享-一种新型MFPCC无感控制方案</title>
+        <link>https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/</link>
+        <pubDate>Tue, 28 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/PAGE.png" alt="Featured image of post 我的CEP研究论文分享-一种新型MFPCC无感控制方案" /&gt;&lt;h2 id=&#34;论文链接&#34;&gt;论文链接
+&lt;/h2&gt;&lt;p&gt;论文题目：&lt;strong&gt;Sensorless Model-Free Predictive Current Control for SPMSM Based on a Resonant Dual-Observer Fusion Strategy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;论文链接：&lt;a class=&#34;link&#34; href=&#34;https://doi.org/10.1016/j.conengprac.2026.107173&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://doi.org/10.1016/j.conengprac.2026.107173&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Elsevier 限时免费分享链接（50 天内有效）：&lt;a class=&#34;link&#34; href=&#34;https://kwnsfk27.r.eu-west-1.awstrack.me/L0/https:%2F%2Fauthors.elsevier.com%2Fa%2F1nV9t3RugWwY-8/1/0102019f99ef1645-c9619d70-a008-4660-9f71-f35dfa466b2f-000000/h-UAoycMu5_MKofI53uTBW_td2I=473&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击这里阅读全文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;分享链接失效以后，仍然可以通过上面的 DOI 链接查看论文信息。&lt;/p&gt;
+&lt;h2 id=&#34;简单说几句&#34;&gt;简单说几句
+&lt;/h2&gt;&lt;p&gt;这篇论文主要就是我自己研究方向的一次延伸：把 MFPCC 扩展到无位置传感器控制，也就是把 MFPCC 参数鲁棒性高的优点和无感控制不需要位置传感器的优点结合起来。&lt;/p&gt;
+&lt;p&gt;传统模型预测电流控制通常比较依赖电机参数，参数不准确时，预测结果和控制效果都会受到影响。MFPCC 使用超局部模型，把参数失配以及其他难以准确建模的信息统一放到扰动项中进行估计，因此对电机参数的依赖更小，也更容易移植到不同的电机上。但是当 MFPCC 进一步扩展到无感控制时，问题就不只是把位置传感器拿掉这么简单了，还要从观测信号中稳定地提取转子位置信息。&lt;/p&gt;
+&lt;p&gt;至于为什么要使用 DOF-MFPCC 这种双观测器架构，其实也和我前几次投稿时没有把问题说清楚有关。单独使用 ESO 的方案并不是不能运行，实际上也可以正常带动电机。但是 ESO 在补偿 MFPCC 未建模信息的同时，还要给 DO-PLL 提供反电动势信息，这两类信息混在一起后就会显得“不够干净”。未建模信息对锁相环的位置提取干扰比较大，同时还存在观测带宽与相位滞后之间的矛盾。&lt;/p&gt;
+&lt;p&gt;所以这篇论文采用了 LESO 和 ROQR-ESO 并行的双观测器架构。LESO 主要处理低频未建模动态，为 MFPCC 提供预测补偿；ROQR-ESO 内部加入了旋转谐振模型，主要负责提取基波反电动势，为转子位置观测提供相位滞后更小的信号。两路观测结果再经过分离和融合，尽量避免把过多的未建模信息直接送入 PLL。&lt;/p&gt;
+&lt;p&gt;简单来说，就是不再让一个 ESO 同时承担所有任务，而是让两个观测器各自处理更擅长的部分。这样既保留了 MFPCC 对未建模动态的补偿能力，也让无感位置提取所使用的信号更加干净。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/dof-mfpcc-structure.png&#34;
+	width=&#34;3010&#34;
+	height=&#34;1255&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;DOF-MFPCC 双观测器融合架构&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;239&#34;
+		data-flex-basis=&#34;575px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在这个基础上，论文还做了一些偏工程化的改进。例如加入同步旋转坐标系离散积分器，用来减小电流稳态误差；设计带自适应陷波器的 NDO-PLL，用来减弱空间谐波对速度和位置估计的影响。这些内容不一定是整个方法最显眼的部分，但对于实验系统能否稳定、连续地运行还是比较重要的。&lt;/p&gt;
+&lt;h2 id=&#34;实验与一点想法&#34;&gt;实验与一点想法
+&lt;/h2&gt;&lt;p&gt;论文最后在 SPMSM 实验平台上验证了稳态、变速、突加负载、低速运行以及参数失配等工况。其中也包括 50 r/min 的低速实验，以及输入增益发生偏差时的对比实验。实验的重点不是追求某一个特别夸张的性能指标，而是说明这套双观测器无感 MFPCC 架构能够在不同工况下连续运行，并且相比单 ESO 方案具有更稳定的位置观测效果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/%E6%88%91%E7%9A%84cep%E7%A0%94%E7%A9%B6%E8%AE%BA%E6%96%87%E5%88%86%E4%BA%AB-%E4%B8%80%E7%A7%8D%E6%96%B0%E5%9E%8Bmfpcc%E6%97%A0%E6%84%9F%E6%8E%A7%E5%88%B6%E6%96%B9%E6%A1%88/experimental-platform.png&#34;
+	width=&#34;993&#34;
+	height=&#34;642&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;论文实验平台&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;154&#34;
+		data-flex-basis=&#34;371px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;很感谢 &lt;em&gt;Control Engineering Practice&lt;/em&gt; 对这篇论文的接收，也欢迎大家阅读和引用。&lt;/p&gt;
+&lt;p&gt;我觉得无感 MFPCC 还是一个很新的方向。一方面，无感控制可以减少位置传感器及其安装和连接成本；另一方面，MFPCC 又可以减弱控制器对精确电机参数的依赖。这两点结合起来，对于更换电机、参数变化或者不方便安装编码器的系统，理论上还是有一定吸引力的。&lt;/p&gt;
+&lt;p&gt;它目前的应用面看起来可能比较窄，尤其是反电动势类无感方法在零速和极低速区域仍然存在天然困难。不过在一些中高速电动工具，或者其他对成本、体积和参数鲁棒性都有要求的场景中，未来也许会有具体的应用价值。&lt;/p&gt;
+&lt;p&gt;我比较期待的最终状态，可以简单概括成“无模型 + 无感”的“双无”：接上电机就能转，而且转得很好，不再需要复杂的参数辨识过程。当然，距离这个目标还有不少问题需要继续研究，但我认为这个方向还是很值得做下去的。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Latex小记</title>
         <link>https://a233a2.github.io/p/latex%E5%B0%8F%E8%AE%B0/</link>
         <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
