@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Wed, 29 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 31 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI</title>
+        <link>https://a233a2.github.io/tags/ai/</link>
+        <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/tags/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>C语言</title>
+        <link>https://a233a2.github.io/tags/c%E8%AF%AD%E8%A8%80/</link>
+        <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/tags/c%E8%AF%AD%E8%A8%80/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>FOC</title>
+        <link>https://a233a2.github.io/tags/foc/</link>
+        <pubDate>Fri, 31 Jul 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/tags/foc/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>电流环</title>
         <link>https://a233a2.github.io/tags/%E7%94%B5%E6%B5%81%E7%8E%AF/</link>
         <pubDate>Wed, 29 Jul 2026 00:00:00 +0000</pubDate>
@@ -32,14 +56,6 @@
         <description></description>
         </item>
         <item>
-        <title>FOC</title>
-        <link>https://a233a2.github.io/tags/foc/</link>
-        <pubDate>Fri, 19 Jun 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/tags/foc/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>PMSM</title>
         <link>https://a233a2.github.io/tags/pmsm/</link>
         <pubDate>Fri, 15 May 2026 00:00:00 +0000</pubDate>
@@ -53,14 +69,6 @@
         <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/tags/agent/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>AI</title>
-        <link>https://a233a2.github.io/tags/ai/</link>
-        <pubDate>Wed, 29 Apr 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://a233a2.github.io/tags/ai/</guid>
         <description></description>
         </item>
         <item>
