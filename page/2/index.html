@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://a233a2.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.b55b4e384ea3dd27cabc721a2a0c1ae7bb22640ecbd265cb9e3b3d4f9aba26ec.css"><meta property='og:title' content="sunjiyi's Blogggg">
+<link rel="stylesheet" href="/scss/style.min.bd3d1d1f9a64cb6a07052244a91e620d3735f15acbd49b2f6bc90fbc9e1b12f1.css"><meta property='og:title' content="sunjiyi's Blogggg">
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://a233a2.github.io/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
@@ -74,7 +74,13 @@
     
 
     <section class="home-shell" id="top">
-        <nav class="home-nav" data-home-nav aria-hidden="true" inert aria-label="Homepage navigation">
+        <div class="home-atmosphere" aria-hidden="true">
+            <div class="home-atmosphere__glow home-atmosphere__glow--blue"></div>
+            <div class="home-atmosphere__glow home-atmosphere__glow--pearl"></div>
+            <div class="home-atmosphere__lines"></div>
+            <div class="home-atmosphere__ring"></div>
+        </div>
+        <nav class="home-nav" data-home-nav aria-label="Homepage navigation">
             <a class="home-brand" href="/">sunjiyi&#39;s Blogggg</a>
             <div class="home-nav__links">
                 <a href="/%E5%85%B3%E4%BA%8E/">关于</a>
@@ -176,27 +182,15 @@
             </div>
 
             <aside class="home-card" data-home-card aria-label="Profile card">
-                <div class="home-bloom" aria-hidden="true">
-                    <span class="home-halo"></span>
-                    <span class="home-flower home-flower--one"><i></i><i></i><i></i><i></i><i></i></span>
-                    <span class="home-flower home-flower--two"><i></i><i></i><i></i><i></i><i></i></span>
-                    <span class="home-flower home-flower--three"><i></i><i></i><i></i><i></i><i></i></span>
-                    <span class="home-sprig home-sprig--one"><i></i><i></i><i></i></span>
-                    <span class="home-sprig home-sprig--two"><i></i><i></i><i></i></span>
-                    <span class="home-sprig home-sprig--three"><i></i><i></i><i></i></span>
-                </div>
-                <div class="home-card__surface"></div>
+                <div class="home-card__label"><span>THE PERSON BEHIND THE NOTES</span><span>01 / SJY</span></div>
                 <div class="home-card__media">
                     
                         
-                        <img class="home-avatar" src="/img/Anon1_hu6623302229672683193.jpg" width="260" height="242" alt="sunjiyi avatar">
+                        <img class="home-avatar" src="/img/Anon111_hu11139122218055402930.webp" width="720" height="720" alt="sunjiyi 的头像" fetchpriority="high" decoding="async">
                     
-                    <span class="home-avatar-name">sjy</span>
-                    <div class="home-orbit home-orbit--sage">FOC</div>
-                    <div class="home-orbit home-orbit--oat">PX4</div>
                 </div>
                 <div class="home-card__body" data-motto-trigger role="button" tabindex="0" aria-label="切换工程状态语录">
-                    <span class="home-status">Now focusing</span>
+                    <span class="home-status">Now focusing<span class="home-status__arrow" aria-hidden="true">↗</span></span>
                     <strong data-motto-text aria-live="polite">FOC / PX4</strong>
                     
                 </div>
@@ -996,7 +990,7 @@
             <aside class="home-reading-panel" aria-label="Reading tools">
                 <p>Reading panel</p>
                 <h3>25 篇笔记</h3>
-                <span>快速进入搜索、归档和标签。文章内容仍由 Stack 原生列表渲染。</span>
+                <span>从一个问题出发，记录思考与实践。</span>
 
                 <div class="home-panel-actions">
                     <a href="/search/">搜索</a>
@@ -1106,9 +1100,6 @@
                     const now = new Date();
                     dateTarget.textContent = dateFormatter.format(now).replace(/\//g, '.').replace(/(周|星期)/, ' $1');
                     timeTarget.textContent = timeFormatter.format(now);
-                    root.classList.remove('is-ticking');
-                    void root.offsetWidth;
-                    root.classList.add('is-ticking');
                 }
 
                 tick();
@@ -1119,120 +1110,27 @@
 
     <script>
         (function () {
-            const card = document.querySelector('[data-home-card]');
             const shell = document.querySelector('.home-shell');
-            if (!card || !shell) return;
-
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            const clamp = function (value, min, max) {
-                return Math.min(max, Math.max(min, value));
-            };
-
-            function updateBloom() {
-                const rect = shell.getBoundingClientRect();
-                const travel = Math.max(1, rect.height - window.innerHeight * 0.28);
-                const progress = clamp((0 - rect.top) / travel, 0, 1);
-                const presence = reduceMotion ? 0.72 : 1 - progress;
-                const opacity = reduceMotion ? 0.46 : 0.08 + presence * 0.92;
-                const scale = 0.82 + presence * 0.18;
-                const drift = progress * 18;
-                const copyShift = reduceMotion ? 0 : progress * -18;
-                const cardShift = reduceMotion ? 0 : progress * -10;
-                const cardScale = reduceMotion ? 1 : 1 - progress * 0.018;
-                const heroFade = reduceMotion ? 1 : 1 - progress * 0.2;
-                const footerFade = reduceMotion ? 1 : Math.max(0, 1 - progress * 1.55);
-                const footerShift = reduceMotion ? 0 : (1 - footerFade) * 10;
-                const floraOpacity = reduceMotion ? 0.6 : Math.max(0.06, presence * 0.94);
-                const haloOpacity = reduceMotion ? 0.42 : 0.12 + presence * 0.76;
-                const floraBlur = reduceMotion ? 0 : progress * 3;
-                const haloBlur = reduceMotion ? 22 : 18 + progress * 20;
-                const orbitOpacity = reduceMotion ? 0.74 : 0.35 + presence * 0.65;
-                const orbitBlur = reduceMotion ? 0 : progress * 1.5;
-
-                shell.style.setProperty('--home-copy-shift', copyShift.toFixed(1) + 'px');
-                shell.style.setProperty('--home-card-shift', cardShift.toFixed(1) + 'px');
-                shell.style.setProperty('--home-card-scale', cardScale.toFixed(3));
-                shell.style.setProperty('--home-hero-opacity', heroFade.toFixed(3));
-                shell.style.setProperty('--home-footer-opacity', footerFade.toFixed(3));
-                shell.style.setProperty('--home-footer-shift', footerShift.toFixed(1) + 'px');
-                card.style.setProperty('--bloom-presence', presence.toFixed(3));
-                card.style.setProperty('--bloom-scroll', progress.toFixed(3));
-                card.style.setProperty('--bloom-opacity', opacity.toFixed(3));
-                card.style.setProperty('--bloom-scale', scale.toFixed(3));
-                card.style.setProperty('--bloom-drift', drift.toFixed(1) + 'px');
-                card.style.setProperty('--flora-opacity', floraOpacity.toFixed(3));
-                card.style.setProperty('--halo-opacity', haloOpacity.toFixed(3));
-                card.style.setProperty('--flora-blur', floraBlur.toFixed(1) + 'px');
-                card.style.setProperty('--halo-blur', haloBlur.toFixed(1) + 'px');
-                card.style.setProperty('--orbit-opacity', orbitOpacity.toFixed(3));
-                card.style.setProperty('--orbit-blur', orbitBlur.toFixed(1) + 'px');
-            }
-
-            let ticking = false;
-            function requestUpdate() {
-                if (ticking) return;
-                ticking = true;
-                window.requestAnimationFrame(function () {
-                    updateBloom();
-                    ticking = false;
-                });
-            }
-
-            updateBloom();
-            window.setTimeout(function () {
-                card.classList.add('is-bloom-ready');
-            }, 120);
-            window.setTimeout(function () {
-                card.classList.add('is-bloom-settled');
-            }, 1320);
-            window.addEventListener('scroll', requestUpdate, { passive: true });
-            window.addEventListener('resize', requestUpdate);
-        })();
-    </script>
-
-    <script>
-        (function () {
             const nav = document.querySelector('[data-home-nav]');
-            const posts = document.querySelector('#posts');
-            if (!nav || !posts) return;
-
-            document.documentElement.classList.add('home-motion-ready');
-
-            const observer = new IntersectionObserver(function (entries) {
-                const postsVisible = entries.some(function (entry) {
-                    return entry.isIntersecting;
-                });
-
-                nav.classList.toggle('is-visible', postsVisible);
-                nav.setAttribute('aria-hidden', postsVisible ? 'false' : 'true');
-                nav.inert = !postsVisible;
-            }, {
-                rootMargin: '-8% 0px -72% 0px',
-                threshold: 0
+            const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const visibility = new IntersectionObserver(function (entries) {
+                shell.classList.toggle('is-paused', !entries[0].isIntersecting);
             });
-
-            observer.observe(posts);
-
-            function revealPosts() {
-                posts.classList.add('is-revealed');
-            }
-
-            if (posts.getBoundingClientRect().top < window.innerHeight + 220) {
-                revealPosts();
-            }
-
-            const revealObserver = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (!entry.isIntersecting) return;
-                    revealPosts();
-                    revealObserver.disconnect();
-                });
-            }, {
-                rootMargin: '0px 0px 220px 0px',
-                threshold: 0
+            visibility.observe(shell);
+            document.addEventListener('visibilitychange', function () {
+                shell.classList.toggle('is-page-hidden', document.hidden);
             });
-
-            revealObserver.observe(posts);
+            let scheduled = false;
+            function update() {
+                nav.classList.toggle('is-scrolled', window.scrollY > 24);
+                shell.style.setProperty('--atmosphere-shift', motion.matches ? '0px' : Math.min(window.scrollY * 0.12, 80) + 'px');
+                scheduled = false;
+            }
+            window.addEventListener('scroll', function () {
+                if (!scheduled) { scheduled = true; window.requestAnimationFrame(update); }
+            }, { passive: true });
+            motion.addEventListener('change', update);
+            update();
         })();
     </script>
 
