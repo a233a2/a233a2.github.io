@@ -1125,54 +1125,8 @@
     
     <script src="/js/home-motion.min.62db85ae5305ee36f2fb2a706070fe498217501cf3c121a5000afff9c5108677.js" defer></script>
 
-    <script>
-        (function () {
-            const trigger = document.querySelector('[data-motto-trigger]');
-            const text = document.querySelector('[data-motto-text]');
-            if (!trigger || !text) return;
-
-            const mottos = [
-                'FOC / PX4',
-                'PID 参数死磕中...',
-                'sPMSM 观测器搭建中...',
-                'Simulink 仿真调优中...',
-                '正在与 Agent 深度对线...'
-            ];
-            let current = 0;
-            let changing = false;
-
-            function changeMotto() {
-                if (changing) return;
-                changing = true;
-
-                let next = current;
-                while (next === current) {
-                    next = Math.floor(Math.random() * mottos.length);
-                }
-
-                text.classList.add('is-leaving');
-                window.setTimeout(function () {
-                    current = next;
-                    text.textContent = mottos[current];
-                    text.classList.remove('is-leaving');
-                    text.classList.add('is-entering');
-
-                    window.setTimeout(function () {
-                        text.classList.remove('is-entering');
-                        changing = false;
-                    }, 320);
-                }, 180);
-            }
-
-            trigger.addEventListener('click', changeMotto);
-            trigger.addEventListener('keydown', function (event) {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    changeMotto();
-                }
-            });
-        })();
-    </script>
+    
+    <script src="/js/home-motto.min.601b9b962a75709fe6834e0a5e35b88425409b14586a7a4ed22a762bbf7d55b5.js" defer></script>
 
             </main>
         </div>
