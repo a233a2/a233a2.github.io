@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://a233a2.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.bd3d1d1f9a64cb6a07052244a91e620d3735f15acbd49b2f6bc90fbc9e1b12f1.css"><meta property='og:title' content="sunjiyi's Blogggg">
+<link rel="stylesheet" href="/scss/style.min.d2b363360123daba92204ef16bdbafa18bc966ddadf9aad31be58eb4399dfe1f.css"><meta property='og:title' content="sunjiyi's Blogggg">
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://a233a2.github.io/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
@@ -73,25 +73,23 @@
         
     
 
-    <section class="home-shell" id="top">
-        <div class="home-atmosphere" aria-hidden="true">
-            <div class="home-atmosphere__glow home-atmosphere__glow--blue"></div>
-            <div class="home-atmosphere__glow home-atmosphere__glow--pearl"></div>
-            <div class="home-atmosphere__lines"></div>
-            <div class="home-atmosphere__ring"></div>
-        </div>
-        <nav class="home-nav" data-home-nav aria-label="Homepage navigation">
-            <a class="home-brand" href="/">sunjiyi&#39;s Blogggg</a>
-            <div class="home-nav__links">
-                <a href="/%E5%85%B3%E4%BA%8E/">关于</a>
-                <a href="/resume/">简历</a>
-                <a href="/archives/">归档</a>
-                <a href="/search/">搜索</a>
-                <a href="/%E5%8F%8B%E9%93%BE/">友链</a>
-                <a href="#posts">文章</a>
-                
-                    <button class="home-theme-toggle" id="dark-mode-toggle" type="button" aria-label="切换暗色模式">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <div class="home-reading-progress" aria-hidden="true"><span></span></div>
+    <nav class="home-nav" data-home-nav aria-label="Homepage navigation">
+        <a class="home-brand" href="/">sunjiyi&#39;s Blogggg</a>
+        <div class="home-nav__links">
+            <a href="/%E5%85%B3%E4%BA%8E/">关于</a>
+            <a href="/resume/">简历</a>
+            <a href="/archives/">归档</a>
+            <a href="/search/">搜索</a>
+            <a href="/%E5%8F%8B%E9%93%BE/">友链</a>
+            <a href="#posts">文章</a>
+            <button class="home-motion-toggle" data-motion-toggle type="button" aria-label="暂停装饰动效" aria-pressed="false" title="暂停装饰动效" hidden>
+                <svg class="motion-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
+                <svg class="motion-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>
+            </button>
+            
+                <button class="home-theme-toggle" id="dark-mode-toggle" type="button" aria-label="切换暗色模式">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -99,7 +97,7 @@
 
 
 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
@@ -107,17 +105,30 @@
 
 
 
-                    </button>
-                
+                </button>
+            
+        </div>
+    </nav>
+
+    <section class="home-shell" id="top">
+        <div class="home-atmosphere" aria-hidden="true">
+            <div class="home-atmosphere__glow home-atmosphere__glow--blue"></div>
+            <div class="home-atmosphere__glow home-atmosphere__glow--pearl"></div>
+            <div class="home-atmosphere__glow home-atmosphere__glow--ice"></div>
+            <div class="home-atmosphere__lines"></div>
+            <div class="home-atmosphere__ring">
+                <div class="home-atmosphere__orbit"><i></i><i></i></div>
             </div>
-        </nav>
+        </div>
 
         <div class="home-hero">
             <div class="home-hero__copy">
                 <p class="home-kicker">Control / Embedded / Field Notes</p>
                 <h1>
-                    <span>sjy</span>
-                    <em>记录控制、嵌入式与那些正在成形的工程笔记。</em>
+                    <span class="home-name">sjy<i aria-hidden="true">.</i></span>
+                    
+                        <em><span class="home-headline__line">记录控制、嵌入式</span><span class="home-headline__line">与那些正在成形的</span><span class="home-headline__line">工程笔记。</span></em>
+                    
                 </h1>
                 
 
@@ -148,6 +159,8 @@
                     
                         <a class="home-button" href="/search/">站内搜索</a>
                     
+                </div>
+                <div class="home-quicklinks" aria-label="更多页面">
                     
                         <a class="home-button ghost" href="/%E5%85%B3%E4%BA%8E/">关于</a>
                     
@@ -181,7 +194,9 @@
                 
             </div>
 
-            <aside class="home-card" data-home-card aria-label="Profile card">
+            <div class="home-card-stage">
+                <div class="home-card-aura" aria-hidden="true"></div>
+                <aside class="home-card" data-home-card aria-label="Profile card">
                 <div class="home-card__label"><span>THE PERSON BEHIND THE NOTES</span><span>01 / SJY</span></div>
                 <div class="home-card__media">
                     
@@ -194,7 +209,9 @@
                     <strong data-motto-text aria-live="polite">FOC / PX4</strong>
                     
                 </div>
-            </aside>
+                </aside>
+                <div class="home-card-caption" aria-hidden="true"><span>CONTROL / EMBEDDED</span><span>不断探索，持续构建</span></div>
+            </div>
         </div>
 
         <div class="home-hero-footer">
@@ -204,9 +221,6 @@
             <div class="home-tech-marquee" aria-label="Technical stack">
                 <div class="home-tech-marquee__track">
                     <div class="home-tech-marquee__group">
-                        <span>MATLAB</span><i>·</i><span>Simulink</span><i>·</i><span>FOC</span><i>·</i><span>PX4</span><i>·</i><span>C++</span><i>·</i><span>FreeRTOS</span><i>·</i><span>STM32</span><i>·</i><span>LaTeX</span><i>·</i><span>Embedded Systems</span><i>·</i>
-                    </div>
-                    <div class="home-tech-marquee__group" aria-hidden="true">
                         <span>MATLAB</span><i>·</i><span>Simulink</span><i>·</i><span>FOC</span><i>·</i><span>PX4</span><i>·</i><span>C++</span><i>·</i><span>FreeRTOS</span><i>·</i><span>STM32</span><i>·</i><span>LaTeX</span><i>·</i><span>Embedded Systems</span><i>·</i>
                     </div>
                 </div>
@@ -1515,31 +1529,8 @@
         </script>
     
 
-    <script>
-        (function () {
-            const shell = document.querySelector('.home-shell');
-            const nav = document.querySelector('[data-home-nav]');
-            const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
-            const visibility = new IntersectionObserver(function (entries) {
-                shell.classList.toggle('is-paused', !entries[0].isIntersecting);
-            });
-            visibility.observe(shell);
-            document.addEventListener('visibilitychange', function () {
-                shell.classList.toggle('is-page-hidden', document.hidden);
-            });
-            let scheduled = false;
-            function update() {
-                nav.classList.toggle('is-scrolled', window.scrollY > 24);
-                shell.style.setProperty('--atmosphere-shift', motion.matches ? '0px' : Math.min(window.scrollY * 0.12, 80) + 'px');
-                scheduled = false;
-            }
-            window.addEventListener('scroll', function () {
-                if (!scheduled) { scheduled = true; window.requestAnimationFrame(update); }
-            }, { passive: true });
-            motion.addEventListener('change', update);
-            update();
-        })();
-    </script>
+    
+    <script src="/js/home-motion.min.62db85ae5305ee36f2fb2a706070fe498217501cf3c121a5000afff9c5108677.js" defer></script>
 
     <script>
         (function () {
