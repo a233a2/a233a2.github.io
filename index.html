@@ -7,14 +7,14 @@
 
 <link rel='canonical' href='https://a233a2.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.d2b363360123daba92204ef16bdbafa18bc966ddadf9aad31be58eb4399dfe1f.css"><meta property='og:title' content="sunjiyi's Blogggg">
+<link rel="stylesheet" href="/scss/style.min.cc07dd9ef8eb3c230533d78da63ae75f05a1a81bb482f576a8be7297c8518f46.css"><meta property='og:title' content="sunjiyi's Blogggg">
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://a233a2.github.io/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
 <meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-08-10T00:00:00&#43;00:00 '/>
 <meta name="twitter:title" content="sunjiyi's Blogggg">
 <meta name="twitter:description" content="演示说明"><link rel="alternate" type="application/rss&#43;xml" href="https://a233a2.github.io/index.xml">
-    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 
   
 
@@ -50,7 +50,6 @@
     
     
     
-    
 
     
     
@@ -65,24 +64,18 @@
     
 
     
-    
-    
-    
-        
-            
-        
-    
-
     <div class="home-reading-progress" aria-hidden="true"><span></span></div>
-    <nav class="home-nav" data-home-nav aria-label="Homepage navigation">
+    <nav class="home-nav" data-home-nav aria-label="主导航">
         <a class="home-brand" href="/">sunjiyi&#39;s Blogggg</a>
-        <div class="home-nav__links">
+        <div class="home-nav__links" id="home-nav-links" data-nav-links>
             <a href="/%E5%85%B3%E4%BA%8E/">关于</a>
             <a href="/resume/">简历</a>
             <a href="/archives/">归档</a>
             <a href="/search/">搜索</a>
             <a href="/%E5%8F%8B%E9%93%BE/">友链</a>
             <a href="#posts">文章</a>
+        </div>
+        <div class="home-nav__controls">
             <button class="home-motion-toggle" data-motion-toggle type="button" aria-label="暂停装饰动效" aria-pressed="false" title="暂停装饰动效" hidden>
                 <svg class="motion-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
                 <svg class="motion-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>
@@ -107,6 +100,9 @@
 
                 </button>
             
+            <button class="home-menu-toggle" data-nav-menu-toggle type="button" aria-expanded="false" aria-controls="home-nav-links" aria-label="展开导航" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 8h14M5 16h14"/></svg>
+            </button>
         </div>
     </nav>
 
@@ -121,110 +117,107 @@
             </div>
         </div>
 
-        <div class="home-hero">
-            <div class="home-hero__copy">
-                <p class="home-kicker">Control / Embedded / Field Notes</p>
-                <h1>
-                    <span class="home-name">sjy<i aria-hidden="true">.</i></span>
-                    
-                        <em><span class="home-headline__line">记录控制、嵌入式</span><span class="home-headline__line">与那些正在成形的</span><span class="home-headline__line">工程笔记。</span></em>
-                    
-                </h1>
-                
-
-                
-                    <div class="home-clock" data-home-clock data-time-zone="Asia/Shanghai">
-                        <span class="home-clock__label">Local time</span>
-                        <span class="home-clock__date" data-clock-date>----</span>
-                        <strong class="home-clock__time" data-clock-time>--:--:--</strong>
-                    </div>
-                
-
-                
-                    <div class="home-focus-tags" aria-label="Research tags">
-                        
-                            <span>FOC</span>
-                        
-                            <span>PX4</span>
-                        
-                            <span>Embedded</span>
-                        
-                            <span>MATLAB</span>
-                        
-                    </div>
-                
-
-                <div class="home-actions">
-                    <a class="home-button primary" href="#posts">查看博客</a>
-                    
-                        <a class="home-button" href="/search/">站内搜索</a>
-                    
-                </div>
-                <div class="home-quicklinks" aria-label="更多页面">
-                    
-                        <a class="home-button ghost" href="/%E5%85%B3%E4%BA%8E/">关于</a>
-                    
-                    
-                        <a class="home-button ghost" href="/resume/">简历</a>
-                    
-                    
-                        <a class="home-button ghost" href="/archives/">归档</a>
-                    
-                    
-                        <a class="home-button ghost" href="/%E5%8F%8B%E9%93%BE/">友情链接</a>
-                    
-                </div>
-
-                
-                    <div class="home-contact">
+        <div class="home-constellation" aria-label="个人主页">
+            <div class="home-constellation__guide" aria-hidden="true"></div>
+            <div class="home-card-stage" data-entrance="center">
+                <div class="home-card-aura" aria-hidden="true"></div>
+                <article class="home-card" data-home-card aria-label="个人名片">
+                    <div class="home-card__media">
                         
                             
-                            <a href="https://github.com/a233a2" target="_blank" rel="me noopener">GitHub</a>
+                            <img class="home-avatar" src="/img/Anon111_hu11139122218055402930.webp" width="720" height="720" alt="sunjiyi 的头像" fetchpriority="high" decoding="async">
                         
-                            <span class="home-contact__separator" aria-hidden="true">·</span>
-                            <a href="https://space.bilibili.com/37767944" target="_blank" rel="me noopener">Bilibili</a>
-                        
-                            <span class="home-contact__separator" aria-hidden="true">·</span>
-                            <a href="mailto:sunjiyi666@foxmail.com" >Mail</a>
-                        
-                            <span class="home-contact__separator" aria-hidden="true">·</span>
-                            <a href="mailto:sunjiyi666@gmail.com" >Gmail</a>
-                        
+                    </div>
+                    <h1 class="home-card__name">sjy<span aria-hidden="true">.</span></h1>
+                    <button class="home-card__body" data-motto-trigger type="button" aria-label="切换动态语录">
+                        <span class="home-status" aria-hidden="true"></span>
+                        <strong data-motto-text aria-live="off">持续探索中…</strong>
+                    </button>
+                </article>
+            </div>
+
+            
+            
+                
+                
+                    <div class="home-satellite home-satellite--resume" data-entrance="satellite">
+                        <div class="home-satellite__float">
+                            <a class="home-satellite__card" href="/resume/">
+                                <span class="home-satellite__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>
+</span>
+                                <span class="home-satellite__title">简历</span>
+                                <span class="home-satellite__arrow" aria-hidden="true">↗</span>
+                            </a>
+                        </div>
                     </div>
                 
-            </div>
+            
+                
+                
+                    <div class="home-satellite home-satellite--about" data-entrance="satellite">
+                        <div class="home-satellite__float">
+                            <a class="home-satellite__card" href="/%E5%85%B3%E4%BA%8E/">
+                                <span class="home-satellite__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
 
-            <div class="home-card-stage">
-                <div class="home-card-aura" aria-hidden="true"></div>
-                <aside class="home-card" data-home-card aria-label="Profile card">
-                <div class="home-card__label"><span>THE PERSON BEHIND THE NOTES</span><span>01 / SJY</span></div>
-                <div class="home-card__media">
-                    
-                        
-                        <img class="home-avatar" src="/img/Anon111_hu11139122218055402930.webp" width="720" height="720" alt="sunjiyi 的头像" fetchpriority="high" decoding="async">
-                    
-                </div>
-                <div class="home-card__body" data-motto-trigger role="button" tabindex="0" aria-label="切换工程状态语录">
-                    <span class="home-status">Now focusing<span class="home-status__arrow" aria-hidden="true">↗</span></span>
-                    <strong data-motto-text aria-live="polite">FOC / PX4</strong>
-                    
-                </div>
-                </aside>
-                <div class="home-card-caption" aria-hidden="true"><span>CONTROL / EMBEDDED</span><span>不断探索，持续构建</span></div>
-            </div>
+
+</span>
+                                <span class="home-satellite__title">关于</span>
+                                <span class="home-satellite__arrow" aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                
+            
+                
+                
+                    <div class="home-satellite home-satellite--archives" data-entrance="satellite">
+                        <div class="home-satellite__float">
+                            <a class="home-satellite__card" href="/archives/">
+                                <span class="home-satellite__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+</span>
+                                <span class="home-satellite__title">归档</span>
+                                <span class="home-satellite__arrow" aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                
+            
+                
+                
+                    <div class="home-satellite home-satellite--links" data-entrance="satellite">
+                        <div class="home-satellite__float">
+                            <a class="home-satellite__card" href="/%E5%8F%8B%E9%93%BE/">
+                                <span class="home-satellite__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+</span>
+                                <span class="home-satellite__title">友情链接</span>
+                                <span class="home-satellite__arrow" aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                
+            
         </div>
 
-        <div class="home-hero-footer">
-            <a class="home-scroll-guide" href="#posts" aria-label="向下查看文章">
-                <span></span>
-            </a>
-            <div class="home-tech-marquee" aria-label="Technical stack">
-                <div class="home-tech-marquee__track">
-                    <div class="home-tech-marquee__group">
-                        <span>MATLAB</span><i>·</i><span>Simulink</span><i>·</i><span>FOC</span><i>·</i><span>PX4</span><i>·</i><span>C++</span><i>·</i><span>FreeRTOS</span><i>·</i><span>STM32</span><i>·</i><span>LaTeX</span><i>·</i><span>Embedded Systems</span><i>·</i>
-                    </div>
-                </div>
-            </div>
+        <div class="home-portal-action" data-entrance="action">
+            <a class="home-blog-link" href="#posts"><span>查看博客</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a>
+            <span class="home-portal-action__line" aria-hidden="true"></span>
         </div>
     </section>
 
@@ -1477,7 +1470,21 @@
             
     </nav>
 
-</section><footer class="site-footer">
+</section>
+
+    
+        <div class="home-contact home-contact--footer" aria-label="联系我">
+            
+                <a href="https://github.com/a233a2" target="_blank" rel="me noopener">GitHub</a>
+            
+                <a href="https://space.bilibili.com/37767944" target="_blank" rel="me noopener">Bilibili</a>
+            
+                <a href="mailto:sunjiyi666@foxmail.com" >Mail</a>
+            
+                <a href="mailto:sunjiyi666@gmail.com" >Gmail</a>
+            
+        </div>
+    <footer class="site-footer">
     <section class="copyright">
         &copy; 
         
@@ -1494,46 +1501,10 @@
     </section>
 </footer>
 
-        <script>
-            (function () {
-                const root = document.querySelector('[data-home-clock]');
-                if (!root) return;
-
-                const timeZone = root.dataset.timeZone || 'Asia/Shanghai';
-                const dateTarget = root.querySelector('[data-clock-date]');
-                const timeTarget = root.querySelector('[data-clock-time]');
-                const dateFormatter = new Intl.DateTimeFormat('zh-CN', {
-                    timeZone,
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit',
-                    weekday: 'short'
-                });
-                const timeFormatter = new Intl.DateTimeFormat('zh-CN', {
-                    timeZone,
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: false
-                });
-
-                function tick() {
-                    const now = new Date();
-                    dateTarget.textContent = dateFormatter.format(now).replace(/\//g, '.').replace(/(周|星期)/, ' $1');
-                    timeTarget.textContent = timeFormatter.format(now);
-                }
-
-                tick();
-                window.setInterval(tick, 1000);
-            })();
-        </script>
-    
+    <script src="/js/home-motion.min.aabcd97e48e6075225d28fb8a66c3c4f8b4bd068cf8f39f8a349a8ac8e2edefa.js" defer></script>
 
     
-    <script src="/js/home-motion.min.62db85ae5305ee36f2fb2a706070fe498217501cf3c121a5000afff9c5108677.js" defer></script>
-
-    
-    <script src="/js/home-motto.min.601b9b962a75709fe6834e0a5e35b88425409b14586a7a4ed22a762bbf7d55b5.js" defer></script>
+    <script src="/js/home-motto.min.a9af641c6d3888e1d9a3f9fe0cfccde8d917f84757a1ef9ee033f5a48c2d602c.js" defer></script>
 
             </main>
         </div>
