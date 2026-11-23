@@ -56,6 +56,36 @@
 		data-flex-basis=&#34;320px&#34;
 	
 &gt;&lt;/p&gt;
+&lt;h2 id=&#34;裸板渲染&#34;&gt;裸板渲染
+&lt;/h2&gt;&lt;p&gt;用新版 STEP 渲了两个角度，走线和丝印从 Gerber 图层补上。一张看整板布局，另一张看接线端子和功率器件的细节~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/pcb-render-overview.webp&#34;
+	width=&#34;2600&#34;
+	height=&#34;1800&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 裸板斜俯视渲染&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;144&#34;
+		data-flex-basis=&#34;346px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/pcb-render-terminals.webp&#34;
+	width=&#34;2400&#34;
+	height=&#34;2100&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 接线端子侧渲染&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;114&#34;
+		data-flex-basis=&#34;274px&#34;
+	
+&gt;&lt;/p&gt;
 &lt;h2 id=&#34;双路无感现在跑得怎么样&#34;&gt;双路无感现在跑得怎么样？
 &lt;/h2&gt;&lt;p&gt;这次我先用 15 V 电源带两台 2212 航模电机做空载测试。两路电流环都是 20 kHz，启动的时候先对齐，再开环把转速拉起来，等 SMO 锁住了再切闭环。现在两台电机可以同时转，转速也可以各调各的~&lt;/p&gt;
 &lt;p&gt;比如我给 M1 设 1225 rpm，给 M2 设 1350 rpm，两路稳定之后，SMO 估算的平均转速分别是 1224 和 1349 rpm。再单独把 M1 停掉，M2 还能继续转。串口接上 VOFA+ 就能看两路的电流和转速，也能拖滑块调速，这样调起来方便多了！&lt;/p&gt;
