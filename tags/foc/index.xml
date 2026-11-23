@@ -7,7 +7,69 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
-        <lastBuildDate>Mon, 10 Aug 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/foc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 23 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/tags/foc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>控驱一体双路高性能无刷电机驱动器CMFOC3.0来了~</title>
+        <link>https://a233a2.github.io/p/cmfoc-3-0/</link>
+        <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://a233a2.github.io/p/cmfoc-3-0/</guid>
+        <description>&lt;img src="https://a233a2.github.io/p/cmfoc-3-0/CMFOC1.jpg" alt="Featured image of post 控驱一体双路高性能无刷电机驱动器CMFOC3.0来了~" /&gt;&lt;p&gt;经过前两代的CMFOC1和CMFOC2。我的个人项目CMFOC迎来了第三次的重大升级。&lt;br&gt;
+前两个版本因为经验不足，踩了很多的坑。尤其是电源/电流采样/驱动部分。需要注意的点非常多，选型，原理图方案，PCB布局，还有Layout等，坑真的数不胜数。&lt;br&gt;
+实习期间做的是一款FOC云台电机驱动器，积累了足够的经验。最近也是比较有时间，所以完善推出了新一代FOC驱动器，CMFOC3.0！&lt;br&gt;
+此次3,0升级很多，依然是CMFOC坚持的2路FOC驱动方案（2代CMFOC采用了单路，这只是验证）。&lt;br&gt;
+主控采用GD32F527RMT7高性能国产MCU。电机控制定时器等完善，非常适合电机控制。（我其实很想用CH32的,但是CH32我发现其不太适合电机控制这种，反倒是更适合工业互联控制）另外兆易创新作为国内MCU大厂供货相对而言更为稳定。&lt;br&gt;
+驱动以及采样部分方案选择了：DRV8300（1+￥3.81）+INA181A1（1+￥3.21）的方案，性价比高，考虑了一些成本。另外如果使用国产替代件那成本会进一步下降。&lt;br&gt;
+另外配备了母线电压过流保护，母线输入防反接，刹车电阻接口，CAN通讯，SPI以及I2C磁编码器都可以适配！&lt;br&gt;
+目前正在测试，双路无刷电机的SMO无感已经验证过了。MCU算力充足无压力~&lt;br&gt;
+电流采样噪声非常优秀&lt;br&gt;
+最大驱动能力还有待测试&lt;/p&gt;
+&lt;p&gt;这款驱动器，适配的方向是：机器人关节电机驱动 / 双路动力电机驱动 / 以及白色家电领域 / 扫地机器人 反正应用广泛！ 他的特点是可以适配不同电机 但需要适配编码器（SPI I2C等协议都支持！也有配套CAN输出！支持CANFD~MIT控制协议后期也可以支持~）应用广泛~~~~&lt;/p&gt;
+&lt;p&gt;先不开源~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/CMFOC1.jpg&#34;
+	width=&#34;4032&#34;
+	height=&#34;3024&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 台架接线实拍&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;这次在硬件上改了什么&#34;&gt;这次在硬件上改了什么？
+&lt;/h2&gt;&lt;p&gt;这次把主控和两组三相桥放到了同一块 PCB 上，两路共用一组母线。电流采样每路采两相，用 10 mΩ 分流电阻加 INA181A1，第三相靠软件算。画 Layout 的时候，我花了不少时间看电流从哪儿回去。取样线从分流电阻两端单独引出来，采样参考地也要避开功率桥的回流。这些地方看原理图感觉都差不多，真到布线的时候就知道为什么前两版踩了那么多坑了~&lt;/p&gt;
+&lt;p&gt;保护这块也补充一下。板上做了母线过压保护，台架固件用相电流采样做过流停机，硬件母线过流电路留了选装位。两路共用母线，固件也把启动错开了。调试的时候我可以先单独跑一路，电流波形看顺了再开第二路。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/CMFOC2.jpg&#34;
+	width=&#34;4032&#34;
+	height=&#34;3024&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 驱动板侧面特写&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;双路无感现在跑得怎么样&#34;&gt;双路无感现在跑得怎么样？
+&lt;/h2&gt;&lt;p&gt;这次我先用 15 V 电源带两台 2212 航模电机做空载测试。两路电流环都是 20 kHz，启动的时候先对齐，再开环把转速拉起来，等 SMO 锁住了再切闭环。现在两台电机可以同时转，转速也可以各调各的~&lt;/p&gt;
+&lt;p&gt;比如我给 M1 设 1225 rpm，给 M2 设 1350 rpm，两路稳定之后，SMO 估算的平均转速分别是 1224 和 1349 rpm。再单独把 M1 停掉，M2 还能继续转。串口接上 VOFA+ 就能看两路的电流和转速，也能拖滑块调速，这样调起来方便多了！&lt;/p&gt;
+&lt;p&gt;前面说电流采样噪声不错，这次也抓了点数据。桥臂关断时，两路一共四个采样通道，零点波动大概在 4～4.5 mA RMS。电机跑起来之后，采样时刻和控制参数也挺关键。我把 M1 的采样往前挪了一点，又关掉了软件死区补偿，同样是 15 V 空载，Id 和 Iq 的波动就从 400 多 mA 降到了 50 多 mA RMS。前后波形差得还挺明显~&lt;/p&gt;
+&lt;h2 id=&#34;这次也踩了个坑&#34;&gt;这次也踩了个坑
+&lt;/h2&gt;&lt;p&gt;M2 一开始升速到一半就报过流。我先把启动放慢，又把电流环增益降了一点，结果还是在差不多的位置停机。后来把两台电机对调着试，又做了几组静态励磁，发现 M2 的 W 相正向给 0.4 A，用另外两相电流算出来只有 0.2 A 出头，反向倒是能到 0.4 A。&lt;/p&gt;
+&lt;p&gt;最后查到是 W 相高侧预驱的两个引脚焊短了。补焊之后，还是用原来的启动参数，M2 就能跑进闭环了。前面试了几轮参数，最后还是拿起了烙铁（笑）。&lt;/p&gt;
+&lt;h2 id=&#34;后面还想测什么&#34;&gt;后面还想测什么？
+&lt;/h2&gt;&lt;p&gt;我现在最想知道的是，两路一起带载的时候，这块板到底能持续跑多大电流。下一步先加负载看温升，再看看两台电机一起减速时母线电压会抬多高，把刹车电阻也一起测了。&lt;/p&gt;
+&lt;p&gt;编码器这边准备先挑一款磁编码器跑通有感闭环，看看低速表现怎么样。板上 CAN FD 硬件已经有了，后面再联调收发，MIT 控制协议也可以接着做。&lt;/p&gt;
+&lt;p&gt;这次先写到这里，等双路带载的数据出来，再来更新一波~&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>抗齿槽转矩算法的一次实现(Cogging Compensation)</title>
         <link>https://a233a2.github.io/p/%E6%8A%97%E9%BD%BF%E6%A7%BD%E8%BD%AC%E7%9F%A9%E7%AE%97%E6%B3%95%E7%9A%84%E4%B8%80%E6%AC%A1%E5%AE%9E%E7%8E%B0cogging-compensation/</link>
         <pubDate>Mon, 10 Aug 2026 00:00:00 +0000</pubDate>
