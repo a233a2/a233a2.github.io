@@ -8,23 +8,63 @@
         <language>zh-cn</language>
         <copyright>Sunjiyi Make and Design</copyright>
         <lastBuildDate>Mon, 23 Nov 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://a233a2.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>控驱一体双路高性能无刷电机驱动器CMFOC3.0来了~</title>
+        <title>控驱一体双路高性能无刷电机驱动器 CMFOC3.0 来了~</title>
         <link>https://a233a2.github.io/p/cmfoc-3-0/</link>
         <pubDate>Mon, 23 Nov 2026 00:00:00 +0000</pubDate>
         
         <guid>https://a233a2.github.io/p/cmfoc-3-0/</guid>
-        <description>&lt;img src="https://a233a2.github.io/p/cmfoc-3-0/CMFOC1.jpg" alt="Featured image of post 控驱一体双路高性能无刷电机驱动器CMFOC3.0来了~" /&gt;&lt;p&gt;经过前两代的CMFOC1和CMFOC2。我的个人项目CMFOC迎来了第三次的重大升级。&lt;br&gt;
-前两个版本因为经验不足，踩了很多的坑。尤其是电源/电流采样/驱动部分。需要注意的点非常多，选型，原理图方案，PCB布局，还有Layout等，坑真的数不胜数。&lt;br&gt;
-实习期间做的是一款FOC云台电机驱动器，积累了足够的经验。最近也是比较有时间，所以完善推出了新一代FOC驱动器，CMFOC3.0！&lt;br&gt;
-此次3,0升级很多，依然是CMFOC坚持的2路FOC驱动方案（2代CMFOC采用了单路，这只是验证）。&lt;br&gt;
-主控采用GD32F527RMT7高性能国产MCU。电机控制定时器等完善，非常适合电机控制。（我其实很想用CH32的,但是CH32我发现其不太适合电机控制这种，反倒是更适合工业互联控制）另外兆易创新作为国内MCU大厂供货相对而言更为稳定。&lt;br&gt;
-驱动以及采样部分方案选择了：DRV8300（1+￥3.81）+INA181A1（1+￥3.21）的方案，性价比高，考虑了一些成本。另外如果使用国产替代件那成本会进一步下降。&lt;br&gt;
-另外配备了母线电压过流保护，母线输入防反接，刹车电阻接口，CAN通讯，SPI以及I2C磁编码器都可以适配！&lt;br&gt;
-目前正在测试，双路无刷电机的SMO无感已经验证过了。MCU算力充足无压力~&lt;br&gt;
-电流采样噪声非常优秀&lt;br&gt;
-最大驱动能力还有待测试&lt;/p&gt;
-&lt;p&gt;这款驱动器，适配的方向是：机器人关节电机驱动 / 双路动力电机驱动 / 以及白色家电领域 / 扫地机器人 反正应用广泛！ 他的特点是可以适配不同电机 但需要适配编码器（SPI I2C等协议都支持！也有配套CAN输出！支持CANFD~MIT控制协议后期也可以支持~）应用广泛~~~~&lt;/p&gt;
-&lt;p&gt;先不开源~&lt;/p&gt;
+        <description>&lt;img src="https://a233a2.github.io/p/cmfoc-3-0/CMFOC1.jpg" alt="Featured image of post 控驱一体双路高性能无刷电机驱动器 CMFOC3.0 来了~" /&gt;&lt;p&gt;经过前两代的 CMFOC1 和 CMFOC2，我的个人项目 CMFOC 终于迎来了第三次重大升级。
+前两个版本因为经验不足，踩了数不清的坑，尤其是电源、电流采样和栅极驱动部分——从器件选型、原理图拓扑，到 PCB 布局、功率回流与 Layout，每一步都是血泪教训。
+实习期间做了一款 FOC 云台电机驱动器，攒下了不少工程经验；最近刚好有时间，就把这套经验沉淀下来，推出了新一代控驱一体双路无刷驱动器：&lt;strong&gt;CMFOC3.0&lt;/strong&gt;！&lt;/p&gt;
+&lt;p&gt;这次 3.0 升级幅度很大，重新回归了我一直坚持的&lt;strong&gt;双路 FOC 控驱一体方案&lt;/strong&gt;（2 代 CMFOC 采用单路主要是为了验证局部电路）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主控 MCU&lt;/strong&gt;：选用国产高性能 &lt;code&gt;GD32F527RMT7&lt;/code&gt;（Cortex-M33 + FPU，120 MHz）。双高级电机定时器（&lt;code&gt;TIMER0&lt;/code&gt; / &lt;code&gt;TIMER7&lt;/code&gt;）+ 三路独立高速 ADC，非常契合双轴 FOC（我其实很想用 CH32，但实测下来 CH32 更偏工业互联控制，电机外设生态上 GD32 顺手不少，而且兆易创新供货也稳）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;驱动与采样&lt;/strong&gt;：&lt;code&gt;DRV8300&lt;/code&gt;（1+ ￥3.81）+ &lt;code&gt;INA181A1&lt;/code&gt;（1+ ￥3.21）+ &lt;code&gt;DOD2606&lt;/code&gt;（60 V / 68 A TO-252 MOSFET）的组合，兼顾性能与成本；如果后续切国产替代件，BOM 还能继续下探。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;电源与保护&lt;/strong&gt;：标称 24–25 V 输入（单路设计 4 A 连续 / 5 A 峰值），配备双 PMOS 防反接、10 A 保险丝、TVS、母线过压硬件刹车锁存、双路功率级 NTC 测温、刹车电阻接口，以及预留硬件母线过流保护位。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;通讯与编码器&lt;/strong&gt;：板载 CAN FD、UART 调试口，双路同时兼容 SPI 与 I2C 磁编码器（实测已跑通双路 AS5600），后期也可以直接上 MIT 关节控制协议。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;模块&lt;/th&gt;
+&lt;th&gt;核心配置&lt;/th&gt;
+&lt;th&gt;关键指标 / 备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;主控芯片&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;GD32F527RMT7&lt;/code&gt; (LQFP64)&lt;/td&gt;
+&lt;td&gt;120 MHz Cortex-M33 + FPU，Bank 0 跑固件，Bank 1 存校准参数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;双路功率级&lt;/td&gt;
+&lt;td&gt;2× &lt;code&gt;DRV8300&lt;/code&gt; + 12× &lt;code&gt;DOD2606&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;TIMER0&lt;/code&gt; / &lt;code&gt;TIMER7&lt;/code&gt; 20 kHz 居中 PWM，500 ns 硬件死区，支持 180° 错相&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;相电流采样&lt;/td&gt;
+&lt;td&gt;每路两相 &lt;code&gt;10 mΩ / 3 W&lt;/code&gt; + &lt;code&gt;INA181A1&lt;/code&gt; (20 V/V)&lt;/td&gt;
+&lt;td&gt;灵敏度 &lt;code&gt;0.20 V/A&lt;/code&gt;，线性量程约 &lt;code&gt;±7.75 A&lt;/code&gt;，第三相软件重构&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电压与测温&lt;/td&gt;
+&lt;td&gt;母线分压（13.4:1）+ 双路 &lt;code&gt;NTC&lt;/code&gt; (&lt;code&gt;10 kΩ / B=3950&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;实时监测母线电压及 M1 / M2 功率区温升，85 °C 过温停机&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;硬件保护&lt;/td&gt;
+&lt;td&gt;双 PMOS 防反接 + &lt;code&gt;30 V&lt;/code&gt; 硬件过压锁存 + 刹车电阻口&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;FAULT_N&lt;/code&gt; 直连 &lt;code&gt;TIMER0/7&lt;/code&gt; 硬件 &lt;code&gt;BKIN&lt;/code&gt;，逐周期软件 OCP + 独立看门狗&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;扩展与通讯&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;CAN FD&lt;/code&gt; + &lt;code&gt;USART2&lt;/code&gt; + 双路 &lt;code&gt;I2C / SPI&lt;/code&gt; 编码器口&lt;/td&gt;
+&lt;td&gt;适配关节电机、双路动力电机、云台、扫地机及白电等多场景&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;目前这块板子已经完成了&lt;strong&gt;双路无感 SMO 联调、Simulink MBD + XCP 实机闭环、24 V 高速大功率与带桨加载摸底、以及双路有感 1–30 RPM 超低速抗齿槽开发&lt;/strong&gt;。先把阶段性成果和踩过的硬核坑完整整理出来分享一波，代码和硬件先不开源~&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/CMFOC1.jpg&#34;
 	width=&#34;4032&#34;
 	height=&#34;3024&#34;
@@ -39,9 +79,11 @@
 		data-flex-basis=&#34;320px&#34;
 	
 &gt;&lt;/p&gt;
+&lt;hr&gt;
 &lt;h2 id=&#34;这次在硬件上改了什么&#34;&gt;这次在硬件上改了什么？
-&lt;/h2&gt;&lt;p&gt;这次把主控和两组三相桥放到了同一块 PCB 上，两路共用一组母线。电流采样每路采两相，用 10 mΩ 分流电阻加 INA181A1，第三相靠软件算。画 Layout 的时候，我花了不少时间看电流从哪儿回去。取样线从分流电阻两端单独引出来，采样参考地也要避开功率桥的回流。这些地方看原理图感觉都差不多，真到布线的时候就知道为什么前两版踩了那么多坑了~&lt;/p&gt;
-&lt;p&gt;保护这块也补充一下。板上做了母线过压保护，台架固件用相电流采样做过流停机，硬件母线过流电路留了选装位。两路共用母线，固件也把启动错开了。调试的时候我可以先单独跑一路，电流波形看顺了再开第二路。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;这次直接把主控 MCU 和两组三相逆变桥整合到了同一块 PCB 上，两路共用一组母线（共 &lt;code&gt;3 × 470 µF / 50 V&lt;/code&gt; 电解电容 + 多颗陶瓷退耦），省去了堆叠排针带来的寄生电感和接触风险。&lt;/p&gt;
+&lt;p&gt;电流采样每路采 U、V 两相，采用 &lt;code&gt;10 mΩ / 3 W&lt;/code&gt;（2512 封装）低感分流电阻配合 &lt;code&gt;INA181A1&lt;/code&gt;（20 V/V 增益，1.65 V 中点偏置），W 相电流由基尔霍夫电流定律软件重构。画 Layout 的时候，我花了不少精力去盯大电流到底从哪条路径回流：分流电阻两端单独拉开尔文差分取样线，模拟参考地（&lt;code&gt;AGND&lt;/code&gt;）与功率地（&lt;code&gt;PGND&lt;/code&gt;）严格分区并在单点通过 &lt;code&gt;0 Ω&lt;/code&gt; 电阻汇合到 &lt;code&gt;GND&lt;/code&gt;，彻底避开功率桥大电流地弹。这些地方看原理图觉得大家都差不多，真到布线和上电看采样底噪的时候，才明白前两版为什么踩了那么多坑~&lt;/p&gt;
+&lt;p&gt;保护链路也做得比较全：主电源入口上了 &lt;code&gt;10 A&lt;/code&gt; 保险丝、双 &lt;code&gt;SP60P11P8&lt;/code&gt; PMOS 防反接和 &lt;code&gt;SMBJ26A&lt;/code&gt; TVS；板上带 &lt;code&gt;28.5 V&lt;/code&gt; 开启 / &lt;code&gt;27.2 V&lt;/code&gt; 关断的泄放刹车电路，超过 &lt;code&gt;30.0 V&lt;/code&gt; 会直接由硬件比较器拉低 &lt;code&gt;FAULT_N&lt;/code&gt; 锁存关断两路定时器；固件层再叠加 20 kHz 逐周期相电流过流保护、NTC 85 °C 过温停机和看门狗。两路共用母线，固件也做了启动错峰，调试时可以先单跑一路把波形看顺，再开第二路。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/CMFOC2.jpg&#34;
 	width=&#34;4032&#34;
 	height=&#34;3024&#34;
@@ -56,8 +98,9 @@
 		data-flex-basis=&#34;320px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;裸板渲染&#34;&gt;裸板渲染
-&lt;/h2&gt;&lt;p&gt;用新版 STEP 渲了两个角度，走线和丝印从 Gerber 图层补上。一张看整板布局，另一张看接线端子和功率器件的细节~&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;裸板渲染与配套外壳&#34;&gt;裸板渲染与配套外壳
+&lt;/h2&gt;&lt;p&gt;用新版 STEP 模型渲了几个角度，走线和丝印直接从 Gerber 图层叠加上去：一张看整板分区布局，一张看大电流接线端子和功率器件排布，另外还顺手画了一套散热开槽外壳做整体装配预览~&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/pcb-render-overview.webp&#34;
 	width=&#34;2600&#34;
 	height=&#34;1800&#34;
@@ -86,22 +129,348 @@
 		data-flex-basis=&#34;274px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;双路无感现在跑得怎么样&#34;&gt;双路无感现在跑得怎么样？
-&lt;/h2&gt;&lt;p&gt;这次我先用 15 V 电源带两台 2212 航模电机做空载测试。两路电流环都是 20 kHz，启动的时候先对齐，再开环把转速拉起来，等 SMO 锁住了再切闭环。现在两台电机可以同时转，转速也可以各调各的~&lt;/p&gt;
-&lt;p&gt;比如我给 M1 设 1225 rpm，给 M2 设 1350 rpm，两路稳定之后，SMO 估算的平均转速分别是 1224 和 1349 rpm。再单独把 M1 停掉，M2 还能继续转。串口接上 VOFA+ 就能看两路的电流和转速，也能拖滑块调速，这样调起来方便多了！&lt;/p&gt;
-&lt;p&gt;前面说电流采样噪声不错，这次也抓了点数据。桥臂关断时，两路一共四个采样通道，零点波动大概在 4～4.5 mA RMS。电机跑起来之后，采样时刻和控制参数也挺关键。我把 M1 的采样往前挪了一点，又关掉了软件死区补偿，同样是 15 V 空载，Id 和 Iq 的波动就从 400 多 mA 降到了 50 多 mA RMS。前后波形差得还挺明显~&lt;/p&gt;
-&lt;h2 id=&#34;这次也踩了个坑&#34;&gt;这次也踩了个坑
-&lt;/h2&gt;&lt;p&gt;M2 一开始升速到一半就报过流。我先把启动放慢，又把电流环增益降了一点，结果还是在差不多的位置停机。后来把两台电机对调着试，又做了几组静态励磁，发现 M2 的 W 相正向给 0.4 A，用另外两相电流算出来只有 0.2 A 出头，反向倒是能到 0.4 A。&lt;/p&gt;
-&lt;p&gt;最后查到是 W 相高侧预驱的两个引脚焊短了。补焊之后，还是用原来的启动参数，M2 就能跑进闭环了。前面试了几轮参数，最后还是拿起了烙铁（笑）。&lt;/p&gt;
-&lt;h2 id=&#34;这次还把-simulink-跑到了板子上&#34;&gt;这次还把 Simulink 跑到了板子上
-&lt;/h2&gt;&lt;p&gt;最开始拿板载 LED 做了个小 demo。在 Simulink 里把 0 改成 1，板子上的灯就亮了，Scope 里也能读到板子回传的状态。把串口 XCP 的 External Mode 跑通之后，我就把 M1 的无感 FOC 接了进去。&lt;/p&gt;
-&lt;p&gt;同一套控制器，在电脑上用 Normal 模式接 PMSM 电机模型做仿真，也能生成 C 代码放到 GD32F527 上跑实机。电流环和 SMO 跟着 PWM 同步采样跑 20 kHz，速度环跑 1 kHz，板上的数据通过串口以 50 Hz 回传。这里也有个坑，最开始 XCP 后台处理有时会拖过 1 ms，导致板上的监督任务漏步。后来改了串口缓冲和任务调度，桥臂关断的那轮测试里，控制周期在 49.83～50.17 µs，1 ms 的任务也没有漏步。&lt;/p&gt;
-&lt;p&gt;参数沿用了我之前 C2000 工程里 &lt;code&gt;PreRUN.m&lt;/code&gt; 的写法。每台电机的电阻、电感、启动和接管参数放一组，重新连接可以把这组整定值下发给板子。电机跑起来之后，转速给定直接在模型里改就行。有一次我从 1286 rpm 调到 1120 rpm，又调到 1410 rpm，AS5600 测到的转速也跟着变了。这套无感控制里，AS5600 只做独立测速，Scope 上可以把给定、SMO 估算和实测转速放在一起看。&lt;/p&gt;
-&lt;p&gt;换成低 KV 的 DengFOC-2208，这套流程就派上用场了。一开始沿用原来的启动频率，电机转了一小段就停，波形上能看到 SMO 等到超时也没锁上。降频后能判锁，但接管的时候又失锁了。后来我拿实机对齐阶段的电流和占空比重新估了一下相电阻，再回仿真里试启动频率、接管时间和电流环参数。最后在 M1 的 15 V 空载台架上，给定 274 rpm，闭环跑了 10.8 秒后主动停机，AS5600 测到的转速大小约 275 rpm。换电机时能这么来回对照着调，心里有底多了~&lt;/p&gt;
-&lt;h2 id=&#34;后面还想测什么&#34;&gt;后面还想测什么？
-&lt;/h2&gt;&lt;p&gt;我现在最想知道的是，两路一起带载的时候，这块板到底能持续跑多大电流。下一步先加负载看温升，再看看两台电机一起减速时母线电压会抬多高，把刹车电阻也一起测了。&lt;/p&gt;
-&lt;p&gt;AS5600 已经用来对照无感估速了，接下来再继续测有感速度闭环，看看低速表现怎么样。板上 CAN FD 硬件已经有了，后面再联调收发，MIT 控制协议也可以接着做。&lt;/p&gt;
-&lt;p&gt;这次先写到这里，等双路带载的数据出来，再来更新一波~&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/enclosure-render.png&#34;
+	width=&#34;1600&#34;
+	height=&#34;1070&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 配套外壳整机渲染&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;149&#34;
+		data-flex-basis=&#34;358px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;双路无感现在跑得怎么样顺便聊聊采样时序和焊点坑&#34;&gt;双路无感现在跑得怎么样？顺便聊聊采样时序和焊点坑
+&lt;/h2&gt;&lt;p&gt;硬件回板焊接完成后，我先用 15 V 电源带两台 2212 航模电机做了双路空载无感验证。两路电流环同跑 &lt;code&gt;20 kHz&lt;/code&gt;，启动流程是经典的 &lt;code&gt;对齐 → I/f 开环拉速 → SMO 判锁 → 平滑切入闭环&lt;/code&gt;。实测两台电机可以同时稳定运行，转速完全独立互不干扰：比如给 M1 设 &lt;code&gt;1225 rpm&lt;/code&gt;、M2 设 &lt;code&gt;1350 rpm&lt;/code&gt;，稳态后 SMO 估算均值分别是 &lt;code&gt;1224&lt;/code&gt; 和 &lt;code&gt;1349 rpm&lt;/code&gt;；单独停掉 M1，M2 依然纹丝不动。串口接上 VOFA+ 就能实时看两路电流与转速，拖滑块直接调速，体验很顺手。&lt;/p&gt;
+&lt;h3 id=&#34;1-电流采样底噪与时序优化idiq-纹波直降-7-倍&#34;&gt;1. 电流采样底噪与时序优化：Id/Iq 纹波直降 7 倍
+&lt;/h3&gt;&lt;p&gt;前面提到这次 Layout 在采样地回流上花了不少心思，实测数据很争气：&lt;strong&gt;桥臂关断时，两路共四个相电流采样通道的零点底噪只有 &lt;code&gt;4～4.5 mA RMS&lt;/code&gt;&lt;/strong&gt;，静态给 U 相 &lt;code&gt;+0.40 A&lt;/code&gt; 指令时三相电流重建非常干净。&lt;/p&gt;
+&lt;p&gt;但电机一旦转起来，&lt;strong&gt;ADC 采样时刻和控制策略&lt;/strong&gt;对电流波形的影响就暴露出来了。一开始 15 V 空载闭环时，&lt;code&gt;Id&lt;/code&gt; 和 &lt;code&gt;Iq&lt;/code&gt; 的纹波高达 &lt;code&gt;400+ mA RMS&lt;/code&gt;。后面做了四组对照实验：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把双 ADC 同步采样点挪到 PWM 顶点前 &lt;code&gt;1 µs&lt;/code&gt;（确保处于低侧导通最干净的中心窗口）；&lt;/li&gt;
+&lt;li&gt;采用 PWM 前后半周期平均电压重构；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关闭软件死区前馈补偿&lt;/strong&gt;（在低占空比小电流工况下，过补的死区前馈反而会激发剧烈的 6 次谐波畸变）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;三步做完，同一工况下 &lt;code&gt;Id / Iq&lt;/code&gt; 波动直接从 &lt;strong&gt;&lt;code&gt;400+ mA&lt;/code&gt; 断崖式降到 &lt;code&gt;50+ mA RMS&lt;/code&gt;&lt;/strong&gt;，波形清爽了一个数量级！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/m1-timing-waveforms.png&#34;
+	width=&#34;1888&#34;
+	height=&#34;1088&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 采样时序与死区前馈对照波形&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;173&#34;
+		data-flex-basis=&#34;416px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-顺手踩的一个经典硬件坑&#34;&gt;2. 顺手踩的一个经典硬件坑
+&lt;/h3&gt;&lt;p&gt;双路联调时，M2 一开始升速到一半就稳定报过流。我按常规思路把启动加速度放慢、电流环增益调保守，结果还是在几乎相同的位置停机。把两台电机对调后故障依然跟着 M2 通道走，于是上静态矢量励磁排查：给 6 个方向静态电流，发现只有当 &lt;strong&gt;M2 的 W 相正向给 &lt;code&gt;+0.40 A&lt;/code&gt;&lt;/strong&gt; 时，由 U、V 两相推算出的 W 相电流只有 &lt;code&gt;+0.258 A&lt;/code&gt; 出头，反向 &lt;code&gt;-0.40 A&lt;/code&gt; 却完全正常。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/current-bench.png&#34;
+	width=&#34;1920&#34;
+	height=&#34;1216&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 电流底噪、空载波形与 M2 W 相异常定位&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;157&#34;
+		data-flex-basis=&#34;378px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;顺藤摸瓜量了一下 M2 的 W 相高侧预驱，果然是 &lt;code&gt;DRV8300&lt;/code&gt; 相邻两个引脚焊锡微微连锡了。补焊清干净之后，原封不动用回最初的启动参数，M2 一次丝滑进闭环。折腾了半天控制参数，最后解决问题靠的还是烙铁（笑）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;这次还把-simulink-跑到了板子上mbd--xcp&#34;&gt;这次还把 Simulink 跑到了板子上（MBD + XCP）
+&lt;/h2&gt;&lt;p&gt;除了手写纯 C 固件，我也顺便把 &lt;strong&gt;Simulink 基于模型设计（MBD）+ 串口 XCP External Mode&lt;/strong&gt; 在 GD32F527 上打通了。&lt;/p&gt;
+&lt;p&gt;最开始拿板载 LED 跑通了最小闭环：在 Simulink 里把开关从 0 拨到 1，板子上的灯立刻亮，Scope 里同步回传状态。链路打通后，就直接把 M1 的无感 FOC 控制器接了进去：同一套控制器模型，在电脑上选 Normal 模式就能接 PMSM 数学模型跑离线仿真，切一下配置直接生成 C 代码下到 GD32F527 上跑实机。电流环和 SMO 跟着 PWM 跑 &lt;code&gt;20 kHz&lt;/code&gt;，速度环跑 &lt;code&gt;1 kHz&lt;/code&gt;，关键观测量通过串口以 &lt;code&gt;50 Hz&lt;/code&gt; 回传到 Simulink Scope。&lt;/p&gt;
+&lt;p&gt;这里也踩过一个实时性坑：初版 XCP 后台解析偶尔会拖过 &lt;code&gt;1 ms&lt;/code&gt;，把板上的 1 ms 监督任务挤漏步。重构串口环形缓冲和任务调度优先级后，实测控制周期稳在 &lt;code&gt;49.83～50.17 µs&lt;/code&gt;，&lt;code&gt;1 ms&lt;/code&gt; 任务全程零漏步。&lt;/p&gt;
+&lt;p&gt;整定参数沿用了我以前 C2000 工程里 &lt;code&gt;PreRUN.m&lt;/code&gt; 的管理习惯，每台电机的 &lt;code&gt;Rs / Ls / Flux&lt;/code&gt;、启动与接管参数独立成组。实机运行时直接在模型里改给定转速，比如从 &lt;code&gt;1286 rpm → 1120 rpm → 1410 rpm&lt;/code&gt;，Scope 里能同屏看到给定转速、SMO 估算转速和 AS5600 独立测速紧紧贴合。换上低 KV 的 &lt;code&gt;DengFOC-2208&lt;/code&gt; 时这套流程尤其好用——直接拿实机对齐阶段的占空比和电流反推相电阻，回仿真里调好启动频率与接管时间再下板，15 V 空载给定 &lt;code&gt;274 rpm&lt;/code&gt; 稳跑 10.8 秒后主动停机，AS5600 实测约 &lt;code&gt;275 rpm&lt;/code&gt;。换电机调试能这么“仿真—实机”来回对照，心里踏实多了~&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;大功率与高速无感开发9732-rpm45-a-热拷机与-182-w-硬件破案&#34;&gt;大功率与高速无感开发：9,732 rpm、4.5 A 热拷机与 18.2 W 硬件“破案”
+&lt;/h2&gt;&lt;p&gt;前几轮都在 15 V 空载下验证功能，接下来最关键的问题就是：&lt;strong&gt;这块板子在 24 V 母线下，高速能跑多快？满额电流发不发烫？带真实负载到底能顶到多少瓦？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为此我专门开了一个纯嵌入式 C 的大功率验证分支，M1 挂 &lt;strong&gt;SunnySky X2212-13 KV980&lt;/strong&gt;（7 极对，&lt;code&gt;Rs = 65 mΩ&lt;/code&gt;，&lt;code&gt;Ld = Lq = 45 µH&lt;/code&gt;，实测校准永磁磁链 &lt;code&gt;ψ_f = 0.00082 Wb&lt;/code&gt;），供电切到 &lt;code&gt;24 V&lt;/code&gt;，阶段目标先冲 &lt;strong&gt;20 W&lt;/strong&gt;、上限控在 &lt;strong&gt;40 W&lt;/strong&gt; 以内。AS5600 磁编码器依然只做独立测速校验，不参与无感主闭环。&lt;/p&gt;
+&lt;h3 id=&#34;1-高速无感算法升级怎么从-5300-rpm-突破到-9732-rpm&#34;&gt;1. 高速无感算法升级：怎么从 5,300 rpm 突破到 9,732 rpm？
+&lt;/h3&gt;&lt;p&gt;旧版固定增益 SMO 在 3,000 rpm 以下很稳，但拉到 5,000 rpm 以上就开始饱和、相移发散。为了覆盖 &lt;code&gt;800～14,000+ rpm&lt;/code&gt; 的宽速域，固件做了四项关键升级：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;2-Substep 自适应 SMO + 精确相移补偿&lt;/strong&gt;：每个 &lt;code&gt;50 µs&lt;/code&gt; PWM 周期内拆成 2 次 &lt;code&gt;25 µs&lt;/code&gt; 子步积分；滑模增益 &lt;code&gt;K_smo&lt;/code&gt;（&lt;code&gt;2.8～14.0 V&lt;/code&gt;）和反电势滤波截止频率 &lt;code&gt;EMF_WC&lt;/code&gt;（&lt;code&gt;700～3,500 Hz&lt;/code&gt;）随转速自适应扩展，边界层同步按比例放大保证离散子步增益 &lt;code&gt;&amp;lt; 1&lt;/code&gt; 绝不数值发散，并用精确 &lt;code&gt;atanf(ω / ω_c)&lt;/code&gt; 替代泰勒近似补偿滤波滞后。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;占空比限幅留足采样窗&lt;/strong&gt;：占空比严控在 &lt;code&gt;[0.10, 0.90]&lt;/code&gt;（&lt;code&gt;MAX_DUTY_SPREAD = 0.80&lt;/code&gt;），在 24 V 母线下提供高达 &lt;code&gt;11.1 V&lt;/code&gt; 的相电压峰值，同时保证 &lt;code&gt;≥ 4.5 µs&lt;/code&gt; 的低侧干净采样窗口。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;逆 Park 零相移实测标定&lt;/strong&gt;：在 4,000 rpm 下通过 &lt;code&gt;vd&lt;/code&gt; 线性扫描，标定出最佳离散延迟角补偿为 &lt;strong&gt;&lt;code&gt;+0.45·Ts·ωe&lt;/code&gt;&lt;/strong&gt;（实测 &lt;code&gt;vd = -45 mV&lt;/code&gt;，与理论 &lt;code&gt;-ω·L·iq = -40 mV&lt;/code&gt; 几乎严丝合缝）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;最关键的突破——参考电流交叉解耦&lt;/strong&gt;：高速冲关时一度卡在 5,300 rpm 附近振荡失锁。分析后发现，当转速超过 5,500 rpm 时，交叉解耦增益 &lt;code&gt;ω·L&lt;/code&gt; 超过了电流环比例增益 &lt;code&gt;Kp&lt;/code&gt;，使用&lt;strong&gt;实测电流&lt;/strong&gt;做解耦（&lt;code&gt;±ω·L·i_meas&lt;/code&gt;）叠加上一拍的离散延迟，反而形成了正反馈！把解耦项改为&lt;strong&gt;参考电流前馈&lt;/strong&gt;（&lt;code&gt;±ω·L·i_ref&lt;/code&gt;）之后，高速振荡瞬间消失，24 V 空载稳态一路冲过 &lt;code&gt;7,000 ± 2 rpm&lt;/code&gt;，最高追踪到 &lt;strong&gt;&lt;code&gt;9,732 rpm&lt;/code&gt;（电频率 &lt;code&gt;1.14 kHz&lt;/code&gt;）&lt;/strong&gt;！此时 20 kHz ISR 最长耗时仅 &lt;code&gt;14.4 µs&lt;/code&gt;，PWM 寄存器写入余量还有 &lt;code&gt;6.9 µs&lt;/code&gt;，GD32F527 算力非常从容。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;顺便记三个高速联调里排掉的底层小坑：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;串口发送 45-word 遥测结构时原本关中断拷贝耗时 &lt;code&gt;~4.3 µs&lt;/code&gt;，刚好擦到 20 kHz 中断节拍门限触发 &lt;code&gt;TIMING&lt;/code&gt; 报警，改成&lt;strong&gt;无锁序列快照&lt;/strong&gt;后彻底零抖动；&lt;/li&gt;
+&lt;li&gt;把双路 NTC 采样挪到主循环 &lt;code&gt;10 Hz&lt;/code&gt; 触发的 &lt;code&gt;ADC1&lt;/code&gt;，让高速 &lt;code&gt;ADC2&lt;/code&gt; 保持纯单通道采 &lt;code&gt;M1_IB&lt;/code&gt;，兼顾了高速采样与精准测温；&lt;/li&gt;
+&lt;li&gt;实测顺带验证了硬件保护：某次 7,000 rpm 超调失锁反灌瞬间，&lt;strong&gt;板载 30 V 硬件过压 &lt;code&gt;DRIVER_BKIN&lt;/code&gt; 锁存瞬间拉闸&lt;/strong&gt;，板卡毫发无损。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;2-满额-45-a-连续--495-a-峰值相电流热应力测试&#34;&gt;2. 满额 4.5 A 连续 / 4.95 A 峰值相电流热应力测试
+&lt;/h3&gt;&lt;p&gt;空载高速即使飙到近万转，风阻电功率也只有 &lt;code&gt;~5 W&lt;/code&gt;，测不出功率级的真实载流和发热水平。所以在加螺旋桨之前，我先在 &lt;strong&gt;5,000 rpm 无感闭环&lt;/strong&gt;下，通过向 d 轴阶梯注入无功正弦相电流（&lt;code&gt;Id = 0 → 1.5 → 2.5 → 3.5 → 4.0 → 4.5 A&lt;/code&gt;）来做满额电流热应力拷机：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Id = 4.5 A&lt;/code&gt; 阶段&lt;strong&gt;连续保持 14 秒&lt;/strong&gt;，瞬时峰值相电流达到 &lt;strong&gt;&lt;code&gt;4.95 A&lt;/code&gt;&lt;/strong&gt;（紧贴单路 5 A MAX 设计指标），整段带电运行 &lt;code&gt;31.9 秒&lt;/code&gt; 全程零故障；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;温升结果非常惊喜&lt;/strong&gt;：M1 功率区 &lt;code&gt;NTC1&lt;/code&gt; 仅仅从 &lt;strong&gt;&lt;code&gt;25.2 °C&lt;/code&gt; 升到 &lt;code&gt;27.3 °C&lt;/code&gt;（只涨了 &lt;code&gt;+2.1 °C&lt;/code&gt;！）&lt;/strong&gt;，相邻未工作的 M2 参考区 &lt;code&gt;NTC2&lt;/code&gt; 从 &lt;code&gt;26.1 °C&lt;/code&gt; 到 &lt;code&gt;26.4 °C&lt;/code&gt;（&lt;code&gt;+0.3 °C&lt;/code&gt;）。这说明 6 颗 &lt;code&gt;DOD2606&lt;/code&gt; + &lt;code&gt;10 mΩ / 3 W&lt;/code&gt; 采样电阻 + 四层板铺铜的散热和载流裕度非常充裕！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/high-power-speed-thermal.png&#34;
+	width=&#34;2376&#34;
+	height=&#34;882&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 24 V 高速无感扫频与满额相电流热应力实测&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;269&#34;
+		data-flex-basis=&#34;646px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-带螺旋桨加载测试--182-w-硬件-ocp-误触发破案记&#34;&gt;3. 带螺旋桨加载测试 &amp;amp; 18.2 W 硬件 OCP 误触发“破案记”
+&lt;/h3&gt;&lt;p&gt;接下来把电源限流放到 &lt;code&gt;24 V / 2 A&lt;/code&gt;，给 2212 装上螺旋桨做真实机械功率加载。带桨的 I/f 起转与 SMO 接管一次成功，整个测试过程 AS5600 累计读取 &lt;strong&gt;135,474 次零错误&lt;/strong&gt;。实测阶梯工况如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;实测转速 (rpm)&lt;/th&gt;
+&lt;th&gt;SMO / AS5600&lt;/th&gt;
+&lt;th&gt;母线电压 (V)&lt;/th&gt;
+&lt;th&gt;输出电功率 (W)&lt;/th&gt;
+&lt;th&gt;估算母线电流 (A)&lt;/th&gt;
+&lt;th&gt;&lt;code&gt;Iq&lt;/code&gt; / 峰值相电流 (A)&lt;/th&gt;
+&lt;th&gt;M1 &lt;code&gt;NTC1&lt;/code&gt;&lt;/th&gt;
+&lt;th&gt;状态&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1,500&lt;/td&gt;
+&lt;td&gt;1503 / 1503&lt;/td&gt;
+&lt;td&gt;23.94&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;1.49 W&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.06&lt;/td&gt;
+&lt;td&gt;0.78 / 1.82&lt;/td&gt;
+&lt;td&gt;24.4 °C&lt;/td&gt;
+&lt;td&gt;稳态通过&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2,500&lt;/td&gt;
+&lt;td&gt;2495 / 2506&lt;/td&gt;
+&lt;td&gt;23.92&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;5.69 W&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.24&lt;/td&gt;
+&lt;td&gt;1.60 / 2.39&lt;/td&gt;
+&lt;td&gt;24.6 °C&lt;/td&gt;
+&lt;td&gt;稳态通过&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3,000&lt;/td&gt;
+&lt;td&gt;3001 / 3000&lt;/td&gt;
+&lt;td&gt;23.91&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;9.72 W&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.41&lt;/td&gt;
+&lt;td&gt;2.60 / 3.03&lt;/td&gt;
+&lt;td&gt;24.6 °C&lt;/td&gt;
+&lt;td&gt;稳态通过&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3,500&lt;/td&gt;
+&lt;td&gt;3499 / 3502&lt;/td&gt;
+&lt;td&gt;23.88&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;15.46 W&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;0.65&lt;/td&gt;
+&lt;td&gt;3.65 / 3.98&lt;/td&gt;
+&lt;td&gt;24.8 °C&lt;/td&gt;
+&lt;td&gt;稳态通过&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;3,550（8 s 拷机）&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;3549 / 3551&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;23.90&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;16.13 W&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;0.68&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;3.80 / 4.11&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;24.9 → 25.2 °C&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;稳态通过&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;3,673–3,682&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;3682 / 3684&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;23.94&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;18.20–18.23 W&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;0.76&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;4.30 / 4.39&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;25.4 °C&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;硬件 &lt;code&gt;DRIVER_BKIN&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;在 &lt;code&gt;3,550 rpm&lt;/code&gt; 持续跑 &lt;strong&gt;&lt;code&gt;16.13 W&lt;/code&gt;&lt;/strong&gt; 拷机 8 秒，波形稳如直线，NTC 温度只涨了 &lt;code&gt;+0.3 °C&lt;/code&gt;。但奇怪的事来了：只要继续往上爬到 &lt;strong&gt;&lt;code&gt;18.2 W&lt;/code&gt;&lt;/strong&gt;，就会瞬间触发硬件刹车 &lt;code&gt;DRIVER_BKIN&lt;/code&gt;！更离谱的是重复性极高——两轮独立实验（Stage 3B 和 Stage 3C），母线稳在 &lt;code&gt;23.94 V&lt;/code&gt; 纹丝不动、电流环毫无振荡、板温才 &lt;code&gt;25.4 °C&lt;/code&gt;，却分别在 &lt;strong&gt;&lt;code&gt;Ipeak = 4.391 A (18.23 W)&lt;/code&gt;&lt;/strong&gt; 和 &lt;strong&gt;&lt;code&gt;Ipeak = 4.387 A (18.20 W)&lt;/code&gt;&lt;/strong&gt; 锁存停机，两次门限误差竟然只有 &lt;strong&gt;&lt;code&gt;4 mA&lt;/code&gt;（&lt;code&gt;0.09%&lt;/code&gt;）&lt;/strong&gt;！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/high-power-prop-bkin.png&#34;
+	width=&#34;2376&#34;
+	height=&#34;882&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 带螺旋桨 24 V/2 A 功率爬坡与 18.2 W 硬件 OCP 门限定位&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;269&#34;
+		data-flex-basis=&#34;646px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这么高的复现精度，一定是某个模拟硬件比较器被精准打穿了。翻出原理图和嘉立创 SMT 贴片清单逐一核对，真相立刻水落石出：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;原本规划为默认 DNP 的硬件母线 OCP 电路被实际贴装启用了&lt;/strong&gt;：&lt;code&gt;RS5 (10 mΩ) + INA193 + LMV393X&lt;/code&gt; 以及输出滤波 &lt;code&gt;R1107 (100 Ω) / C1104 (1 nF)&lt;/code&gt; 全在板上；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;母线电容位置是“罪魁祸首”&lt;/strong&gt;：原理图里所有母线电容（&lt;code&gt;470 µF&lt;/code&gt; 电解 + &lt;code&gt;3×1 µF&lt;/code&gt; 陶瓷）全部放在了母线采样电阻 &lt;code&gt;RS5&lt;/code&gt; 的&lt;strong&gt;上游&lt;/strong&gt;，&lt;code&gt;RS5&lt;/code&gt; 下游直连上桥臂 MOSFET 漏极，没有任何本地高频退耦电容；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有效矢量脉冲 + 反向恢复尖峰叠加&lt;/strong&gt;：带桨纯有功出力时，&lt;code&gt;Iq&lt;/code&gt; 与相电压同相，每个 20 kHz 有效矢量导通瞬间，流过 &lt;code&gt;RS5&lt;/code&gt; 的根本不是平均母线电流 &lt;code&gt;0.76 A&lt;/code&gt;，而是&lt;strong&gt;完整相电流峰值 &lt;code&gt;4.39 A&lt;/code&gt; + 下管体二极管反向恢复/开关尖峰（约 &lt;code&gt;1.85 A&lt;/code&gt;、宽 &lt;code&gt;~150 ns&lt;/code&gt;）≈ &lt;code&gt;6.24 A&lt;/code&gt;&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;滤波时间常数太短&lt;/strong&gt;：&lt;code&gt;R1107 (100 Ω) × C1104 (1 nF)&lt;/code&gt; 的 RC 时间常数只有 &lt;strong&gt;&lt;code&gt;100 ns&lt;/code&gt;&lt;/strong&gt;（带宽 &lt;code&gt;1.59 MHz&lt;/code&gt;），完全滤不掉 &lt;code&gt;150 ns&lt;/code&gt; 的开关尖峰，导致比较器在 &lt;code&gt;1.2475 V&lt;/code&gt;（对应 &lt;code&gt;6.24 A&lt;/code&gt;）处瞬时拉低 &lt;code&gt;FAULT_N&lt;/code&gt;，而 GD32F527 的 &lt;code&gt;TIMER0_BKIN&lt;/code&gt; 没有数字滤波，瞬间硬锁存停机！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个机理也完美解释了前面那个反直觉的现象：&lt;strong&gt;为什么空载注入 &lt;code&gt;Id = 4.5 A&lt;/code&gt;（峰值 &lt;code&gt;4.95 A&lt;/code&gt;）时一点事没有？&lt;/strong&gt; 因为纯 &lt;code&gt;Id&lt;/code&gt; 是无功电流，与相电压正交，在 PWM 有效矢量导通期间母线瞬时脉冲电流远小于相电流峰值；而带桨输出机械功时全是同相有功电流 &lt;code&gt;Iq&lt;/code&gt;，脉冲峰值直接叠加尖峰打穿了比较器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;怎么改？思路非常明确&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;当前板子秒解 20–40 W&lt;/strong&gt;：把 &lt;code&gt;C1104&lt;/code&gt;（0805）从 &lt;code&gt;1 nF&lt;/code&gt; 换成 &lt;code&gt;47 nF～100 nF&lt;/code&gt;（或者把 &lt;code&gt;R1107&lt;/code&gt; 换成 &lt;code&gt;4.7 kΩ～10 kΩ&lt;/code&gt;），把滤波时间常数拉到 &lt;code&gt;4.7～10 µs&lt;/code&gt;，既能干净滤掉 150 ns 开关尖峰，又完整保留微秒级硬短路保护；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;下一版 Rev A.6 彻底根治&lt;/strong&gt;：把局部高频母线电容挪到 &lt;code&gt;RS5 / RS6&lt;/code&gt; &lt;strong&gt;下游靠近上桥臂漏极&lt;/strong&gt;，让 &lt;code&gt;RS5&lt;/code&gt; 测到真正平滑的母线电流，同时大幅降低功率换流环路的寄生电感与开关振铃。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;双路有感超低速开发130-rpm-丝滑运行迭代抗齿槽与-web-控制台&#34;&gt;双路有感超低速开发：1–30 RPM 丝滑运行、迭代抗齿槽与 Web 控制台
+&lt;/h2&gt;&lt;p&gt;测完高速和大功率，另一条很重要的应用路线是&lt;strong&gt;机器人关节、云台与低速精密伺服&lt;/strong&gt;。我拿两台低 KV 的 &lt;strong&gt;DengFOC-2208（KV130，7 极对，&lt;code&gt;Rs = 7.8 Ω&lt;/code&gt;，&lt;code&gt;Ls = 4.25 mH&lt;/code&gt;）&lt;/strong&gt; 配上两颗 &lt;strong&gt;AS5600 I2C 磁编码器&lt;/strong&gt;，专门啃了一轮&lt;strong&gt;双路有感超低速控制（1–30 RPM 无顿挫）&lt;/strong&gt;，顺便给后续的高精度位置闭环打好了底子。&lt;/p&gt;
+&lt;h3 id=&#34;1-双轴硬件资源调度180-错相-pwm--双-i2c-并发读&#34;&gt;1. 双轴硬件资源调度：180° 错相 PWM + 双 I2C 并发读
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;双定时器错相 180°&lt;/strong&gt;：M1（&lt;code&gt;TIMER0&lt;/code&gt;）与 M2（&lt;code&gt;TIMER7&lt;/code&gt;）同跑 &lt;code&gt;20 kHz&lt;/code&gt; 居中 PWM，但相位严格错开 &lt;strong&gt;180°（&lt;code&gt;25 µs&lt;/code&gt;）&lt;/strong&gt;。这样既能削弱两路共用母线时的瞬时电流纹波，又能把两路的 ADC 采样与电流环中断均匀错开，CPU 负载非常平稳；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;双 I2C 硬件总线 2 kHz 并发读取&lt;/strong&gt;：M1 走 &lt;code&gt;I2C0 (PB6/PB7)&lt;/code&gt;，M2 走 &lt;code&gt;I2C1 (PB10/PB11)&lt;/code&gt;，均跑 &lt;code&gt;200 kHz&lt;/code&gt;。固件里写了双总线并发状态机，每帧显式发送 &lt;code&gt;Write(0x0C) + Repeated-START + 2-byte Read&lt;/code&gt;，并带 &lt;strong&gt;9 时钟总线卡死恢复机制&lt;/strong&gt;。双路同步读完一次总耗时约 &lt;code&gt;290 µs&lt;/code&gt;（远小于 &lt;code&gt;500 µs&lt;/code&gt; 采样周期），彻底杜绝了强 EMI 干扰下可能出现的寄存器指针错位或高低字节倒置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-让-130-rpm-彻底告别一顿一顿的五项算法设计&#34;&gt;2. 让 1–30 RPM 彻底告别“一顿一顿”的五项算法设计
+&lt;/h3&gt;&lt;p&gt;低速 FOC 最大的敌人不是算力，而是&lt;strong&gt;低分辨率量化阶梯、延时滞后，以及无刷电机与生俱来的齿槽转矩（Cogging Torque）&lt;/strong&gt;。在 1～3 RPM 这种慢到肉眼一格一格数转角的转速下，不加补偿的电机走起来就像步进电机一样一卡一顿。这套固件用了五招组合拳：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;离散临界阻尼 α-β Luenberger 观测器&lt;/strong&gt;：替代传统 Euler PLL，双实极点 &lt;code&gt;z = exp(-ω_n T)&lt;/code&gt; 全带宽无条件稳定、零超调、恒速零稳态滞后；同时用 &lt;code&gt;int32_t turns + float frac_rad&lt;/code&gt; 维护多圈绝对位置，长时间连续运转不会丢浮点精度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;20 kHz 角度线性插值 + 250 µs 延时补偿&lt;/strong&gt;：在 &lt;code&gt;2 kHz&lt;/code&gt; 编码器采样间隔里，20 kHz 电流环每 &lt;code&gt;50 µs&lt;/code&gt; 按当前角速度线性外推机械角，并补偿 AS5600 2× 内部滤波与 I2C 传输延迟（默认 &lt;code&gt;250 µs&lt;/code&gt;），抹平低速阶梯脉动。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;往返双扫自动校准（&lt;code&gt;CAL&lt;/code&gt;）&lt;/strong&gt;：&lt;code&gt;0.40 A&lt;/code&gt; 定子电流正转 1 圈自动识别极对数与编码器方向，接着反转 + 正转各扫 1 机械圈取圆均值，一次性抵消磁铁偏心、齿槽转矩和机械摩擦滞后。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;双向扫频 + 迭代学习抗齿槽前馈（256 点 ILC LUT，&lt;code&gt;COGCAL&lt;/code&gt;）&lt;/strong&gt;：以极低速双向扫过整圈记录位置—力矩曲线，正反平均自动抵消库仑摩擦与粘性摩擦，剥离出纯粹与机械角度相关的齿槽转矩表（256 点）；而且支持&lt;strong&gt;二轮迭代学习（ILC）残差精修&lt;/strong&gt;，把残余谐波再削平一轮！运行中在 &lt;code&gt;20 kHz&lt;/code&gt; 电流环内实时线性插值叠加前馈电流，提前把齿槽吸力抵消掉。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Bank 1 独立 Flash 持久化存储&lt;/strong&gt;：校准零点和 256 点抗齿槽 LUT 经 CRC32 校验后，以 64-bit 双字（兼容 GD32F527 Flash ECC）写入 &lt;strong&gt;Bank 1（&lt;code&gt;0x08200000&lt;/code&gt;）&lt;/strong&gt;，与 Bank 0 固件区物理隔离——以后反复烧录新固件，校准和抗齿槽数据全都在，上电直接丝滑开转！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;3-实测-ab-对比位置误差狂降-68841-rpm-逼近-12-位编码器极限&#34;&gt;3. 实测 A/B 对比：位置误差狂降 68–84%，1 RPM 逼近 12 位编码器极限
+&lt;/h3&gt;&lt;p&gt;在台架上跑了完整的双轴 &lt;code&gt;1 RPM → 3 RPM → +10/-10 RPM（反相）→ 30 RPM&lt;/code&gt; 抗齿槽开关 A/B 对照实测，数据非常有说服力：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;测试工况&lt;/th&gt;
+&lt;th&gt;通道&lt;/th&gt;
+&lt;th&gt;转速标准差 OFF → ON (RPM)&lt;/th&gt;
+&lt;th&gt;标准差降幅&lt;/th&gt;
+&lt;th&gt;位置线性度 RMS 误差 OFF → ON (°)&lt;/th&gt;
+&lt;th&gt;位置误差降幅&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;1 RPM&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;M1&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;2.87 → 2.49&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-13.1%&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1.22° → 0.28°&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-76.7%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;1 RPM&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;M2&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1.17 → 1.24&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;—&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0.19° → 0.11°&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-40.3%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;3 RPM&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;M1&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;5.15 → 1.77&lt;/code&gt;（峰峰 &lt;code&gt;42.3 → 10.5&lt;/code&gt;）&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-65.7%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;2.01° → 0.33°&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-83.6%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;3 RPM&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;M2&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1.72 → 1.45&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;-15.4%&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0.89° → 0.15°&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-83.6%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;+10 / -10 RPM&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;M1&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;11.78 → 3.44&lt;/code&gt;（峰峰 &lt;code&gt;65.8 → 20.7&lt;/code&gt;）&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-70.8%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1.81° → 0.42°&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-76.9%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;+10 / -10 RPM&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;M2&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;3.26 → 1.90&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-41.8%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0.93° → 0.30°&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-67.6%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;30 RPM&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;M1&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;26.11 → 8.53&lt;/code&gt;（峰峰 &lt;code&gt;126.2 → 41.0&lt;/code&gt;）&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-67.3%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1.88° → 0.98°&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-48.0%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;30 RPM&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;M2&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;7.67 → 3.85&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-49.8%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1.14° → 0.85°&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;-25.7%&lt;/code&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;几个最直观的亮点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;齿槽偏大的 M1 在 &lt;code&gt;3 RPM&lt;/code&gt; 和 &lt;code&gt;10 RPM&lt;/code&gt; 下，开启 256 点 ILC 抗齿槽前馈后，&lt;strong&gt;转速标准差直接砍掉 &lt;code&gt;65.7%～70.8%&lt;/code&gt;&lt;/strong&gt;，原本剧烈的周期性卡顿尖峰几乎完全消失；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3 RPM&lt;/code&gt; 下两路的位置跟踪线性度 RMS 误差双双&lt;strong&gt;暴降 &lt;code&gt;83.6%&lt;/code&gt;&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;M2 在 &lt;strong&gt;&lt;code&gt;1 RPM&lt;/code&gt; 超低速下位置线性度误差达到 &lt;code&gt;0.11° RMS&lt;/code&gt;&lt;/strong&gt;，要知道 12 位 AS5600 的单步分辨率本身就是 &lt;code&gt;360° / 4096 ≈ 0.088°&lt;/code&gt;，这基本已经把这颗廉价磁编码器的机械潜力榨干了~&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://a233a2.github.io/p/cmfoc-3-0/low-speed-anticogging.png&#34;
+	width=&#34;2376&#34;
+	height=&#34;1548&#34;
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CMFOC3.0 双路有感超低速控制与迭代抗齿槽前馈实测对比&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;153&#34;
+		data-flex-basis=&#34;368px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-顺手撸了一套零依赖本地-web-上位机&#34;&gt;4. 顺手撸了一套零依赖本地 Web 上位机
+&lt;/h3&gt;&lt;p&gt;调双路有感和抗齿槽时，老敲串口命令实在太累，干脆用 &lt;strong&gt;Python 标准库 + &lt;code&gt;pyserial&lt;/code&gt;&lt;/strong&gt; 撸了个零第三方 Web 框架依赖的本地控制台（HTTP + SSE 推送，&lt;code&gt;USART2 @ 460800 bps&lt;/code&gt;）。浏览器打开即用，集成了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一键双路编码器校准（&lt;code&gt;CAL ALL&lt;/code&gt;，约 6.8 s）与抗齿槽 ILC 标定（&lt;code&gt;COGCAL ALL&lt;/code&gt;，约 12 s，点两次即完成二轮精修）；&lt;/li&gt;
+&lt;li&gt;双轴实时角度盘 + 60 fps 示波器，运行中随时一键切换 &lt;strong&gt;抗齿槽 ON / OFF&lt;/strong&gt; 肉眼对比波形；&lt;/li&gt;
+&lt;li&gt;在线修改电流环/速度环参数、一键 CSV 录波、以及&lt;strong&gt;空格键（Space）全局急停&lt;/strong&gt;立刻关断双路桥臂。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;后面还想做什么&#34;&gt;后面还想做什么？
+&lt;/h2&gt;&lt;p&gt;这一轮把 CMFOC3.0 的&lt;strong&gt;高速大功率边界&lt;/strong&gt;和&lt;strong&gt;双路超低速精度&lt;/strong&gt;都摸得比较透了，接下来计划继续推进三件事：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;解锁 20 W → 40 W 满功率拷机与 Rev A.6 硬件优化&lt;/strong&gt;：先给当前板换大 &lt;code&gt;C1104&lt;/code&gt;（或 &lt;code&gt;R1107&lt;/code&gt;）解除 18.2 W 的 OCP 误触发，配小一号桨把 40 W 工作点落在 &lt;code&gt;7,000～8,500 rpm / ≤5 A&lt;/code&gt; 额定区内做完整热稳态测试，同时把双路减速泵升和&lt;strong&gt;刹车电阻泄放&lt;/strong&gt;也一起测完；下一版 Rev A.6 把高频母线退耦电容移到 &lt;code&gt;RS5/RS6&lt;/code&gt; 下游根治开关尖峰。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;双路有感高精度位置闭环&lt;/strong&gt;：底层多圈位置维护、Bank 1 掉电保存和抗齿槽前馈都已经就位，接下来直接把位置环和 S 曲线轨迹规划接进来。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CAN FD 与 MIT 协议联调&lt;/strong&gt;：板载 CAN FD 硬件已经就绪，打通高速总线收发后，就能正式作为双轴机器人关节驱动器接入上层控制框架了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这次先整理到这里，等 40 W 满功率热拷机和位置闭环数据出来，再来继续更新一波~&lt;/p&gt;
 </description>
         </item>
         <item>
