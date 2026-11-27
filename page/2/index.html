@@ -7,7 +7,7 @@
 
 <link rel='canonical' href='https://a233a2.github.io/'>
 
-<link rel="stylesheet" href="/scss/style.min.6bb5390c1e5597accc8eb749de3c2bbd211a42c7669bba3d12d986f6d31c0414.css"><meta property='og:title' content="sunjiyi's Blogggg">
+<link rel="stylesheet" href="/scss/style.min.35bfa67cf5995b5b2bb4ef76ef9c50fc19d899a5d8a426a9e1128835fc5a1fe0.css"><meta property='og:title' content="sunjiyi's Blogggg">
 <meta property='og:description' content="演示说明">
 <meta property='og:url' content='https://a233a2.github.io/'>
 <meta property='og:site_name' content='sunjiyi&#39;s Blogggg'>
@@ -18,9 +18,15 @@
 
   
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'">
+<noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+</noscript>
 
     </head>
-    <body class="home-landing">
+    <body class="site-body page-home">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -43,1072 +49,635 @@
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column extended">
-            <main class="main full-width">
-    
-    
-    
-    
-    
+<div class="site-progress" aria-hidden="true"><span data-reading-progress></span></div>
+        <div class="site-backdrop" aria-hidden="true"></div>
 
-    
-    
-    
-    
 
-    
-    
-    
-    
-    
 
-    
-    <div class="home-reading-progress" aria-hidden="true"><span></span></div>
-    <nav class="home-nav" data-home-nav aria-label="主导航">
-        <a class="home-brand" href="/">sunjiyi&#39;s Blogggg</a>
-        <div class="home-nav__links" id="home-nav-links" data-nav-links>
-            <a href="/%E5%85%B3%E4%BA%8E/">关于</a>
-            <a href="/archives/">归档</a>
-            <a href="/search/">搜索</a>
-            <a href="/%E5%8F%8B%E9%93%BE/">友链</a>
-            <a href="#posts">文章</a>
-        </div>
-        <div class="home-nav__controls">
-            <button class="home-motion-toggle" data-motion-toggle type="button" aria-label="暂停装饰动效" aria-pressed="false" title="暂停装饰动效" hidden>
-                <svg class="motion-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg>
-                <svg class="motion-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m9 5 10 7-10 7Z"/></svg>
-            </button>
+
+
+
+
+
+
+<header class="site-header" data-site-header>
+    <div class="site-header__inner">
+        <a class="site-brand" href="/" aria-label="返回首页">
             
-                <button class="home-theme-toggle" id="dark-mode-toggle" type="button" aria-label="切换暗色模式">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
+                
+                <img class="site-brand__avatar" src="/img/Anon111_hu2630865209500699253.webp" width="96" height="96" alt="" decoding="async">
+            
+            <span class="site-brand__name">sunjiyi</span>
+            <span class="site-brand__tag" aria-hidden="true">/ notes</span>
+        </a>
 
+        <nav class="site-nav" id="site-nav" data-site-nav aria-label="主导航">
+            <a class="site-nav__link is-active" href="/" aria-current="page">文章</a>
+            
+                <a class="site-nav__link" href="/archives/">归档</a>
+            
+            
+                <a class="site-nav__link" href="/%E5%85%B3%E4%BA%8E/">关于</a>
+            
+            
+                <a class="site-nav__link" href="/%E5%8F%8B%E9%93%BE/">友链</a>
+            
+        </nav>
 
+        <div class="site-header__actions">
+            
+                <a class="site-search-trigger" href="/search/" data-search-shortcut-link aria-label="搜索文章">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    <span class="site-search-trigger__label">搜索</span>
+                    <kbd class="site-search-trigger__kbd" aria-hidden="true">/</kbd>
+                </a>
+            
 
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
+            <a class="site-icon-btn site-icon-btn--github" href="https://github.com/a233a2" target="_blank" rel="me noopener" aria-label="GitHub">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            </a>
 
-
-
+            
+                <button class="site-icon-btn site-theme-toggle" data-theme-toggle type="button" aria-label="切换浅色或深色主题" title="切换主题">
+                    <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                    <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
                 </button>
             
-            <button class="home-menu-toggle" data-nav-menu-toggle type="button" aria-expanded="false" aria-controls="home-nav-links" aria-label="展开导航" hidden>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 8h14M5 16h14"/></svg>
+
+            <button class="site-icon-btn site-menu-toggle" type="button" data-mobile-menu-toggle aria-expanded="false" aria-controls="site-mobile-drawer" aria-label="展开导航菜单">
+                <svg class="icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
             </button>
         </div>
-    </nav>
+    </div>
 
-    <section class="home-shell" id="top">
-        <div class="home-atmosphere" aria-hidden="true">
-            <canvas class="home-atmosphere__canvas" data-aurora-canvas aria-hidden="true"></canvas>
-            <div class="home-atmosphere__texture"></div>
-        </div>
+    <div class="site-mobile-drawer" id="site-mobile-drawer" data-mobile-drawer hidden>
+        <nav class="site-mobile-drawer__nav" aria-label="移动端导航">
+            <a class="site-mobile-drawer__link is-active" href="/">文章</a>
+            <a class="site-mobile-drawer__link" href="/archives/">归档</a>
+            <a class="site-mobile-drawer__link" href="/search/">搜索</a>
+            <a class="site-mobile-drawer__link" href="/%E5%85%B3%E4%BA%8E/">关于</a>
+            <a class="site-mobile-drawer__link" href="/%E5%8F%8B%E9%93%BE/">友链</a>
+        </nav>
+    </div>
+</header>
+<div class="site-wrapper">
+            <main class="site-main">
+    
+    
+    
+    
+    
 
-        <div class="home-constellation" aria-label="个人主页">
-            <div class="home-card-stage" data-entrance="center">
-                <div class="home-card-aura" aria-hidden="true"></div>
-                <article class="home-card" data-home-card aria-label="个人名片">
-                    <div class="home-card__media">
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+    <section class="home-posts-section" id="posts">
+        
+
+        <div class="home-feed" aria-labelledby="feed-heading">
+            <div class="home-feed__layout">
+                <div class="home-feed__primary">
+                    <div class="section-header-bar section-header-bar--feed">
+                        <div class="section-header-bar__left">
+                            <span class="section-kicker">PAGE 2</span>
+                            <h2 id="feed-heading">更多文章</h2>
+                        </div>
+
                         
-                            
-                            <img class="home-avatar" src="/img/Anon111_hu11139122218055402930.webp" width="720" height="720" alt="sunjiyi 的头像" fetchpriority="high" decoding="async">
+                            <div class="category-pills" aria-label="按分类浏览">
+                                <a class="category-pill is-active" href="/#posts">全部 <span>26</span></a>
+                                
+                                    <a class="category-pill" href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">工程类别 <span>20</span></a>
+                                
+                                    <a class="category-pill" href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/">学术类别 <span>11</span></a>
+                                
+                                    <a class="category-pill" href="/categories/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%88%AB/">其他类别 <span>1</span></a>
+                                
+                            </div>
                         
                     </div>
-                    <h1 class="home-card__name">sjy<span aria-hidden="true">.</span></h1>
-                    <button class="home-card__body" data-motto-trigger type="button" aria-label="切换动态语录">
-                        <span class="home-status" aria-hidden="true"></span>
-                        <strong data-motto-text aria-live="off">持续探索中…</strong>
-                    </button>
-                </article>
-            </div>
 
+                    <div class="post-stream">
+                        
+                        
+                        
+                            <article class="post-row has-thumb">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-11-21T00:00:00Z'>2024-11-21</time>
             
-            
-                
-                
-                    <div class="home-satellite home-satellite--about" data-entrance="satellite">
-                        <div class="home-satellite__float">
-                            <a class="home-satellite__card" href="/%E5%85%B3%E4%BA%8E/">
-                                <span class="home-satellite__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="7" r="4" />
-  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-
-</span>
-                                <span class="home-satellite__title">关于</span>
-                                <span class="home-satellite__arrow" aria-hidden="true">↗</span>
-                            </a>
-                        </div>
-                    </div>
-                
-            
-                
-                
-                    <div class="home-satellite home-satellite--archives" data-entrance="satellite">
-                        <div class="home-satellite__float">
-                            <a class="home-satellite__card" href="/archives/">
-                                <span class="home-satellite__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <rect x="3" y="4" width="18" height="4" rx="2" />
-  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
-  <line x1="10" y1="12" x2="14" y2="12" />
-</svg>
-
-
-</span>
-                                <span class="home-satellite__title">归档</span>
-                                <span class="home-satellite__arrow" aria-hidden="true">↗</span>
-                            </a>
-                        </div>
-                    </div>
-                
-            
-                
-                
-                    <div class="home-satellite home-satellite--links" data-entrance="satellite">
-                        <div class="home-satellite__float">
-                            <a class="home-satellite__card" href="/%E5%8F%8B%E9%93%BE/">
-                                <span class="home-satellite__icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
-  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
-</svg>
-
-
-</span>
-                                <span class="home-satellite__title">友情链接</span>
-                                <span class="home-satellite__arrow" aria-hidden="true">↗</span>
-                            </a>
-                        </div>
-                    </div>
-                
-            
-        </div>
-
-        <div class="home-portal-action" data-entrance="action">
-            <a class="home-blog-link" href="#posts"><span>查看博客</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6"/></svg></a>
-            <span class="home-portal-action__line" aria-hidden="true"></span>
-        </div>
-    </section>
-
-    <section class="home-posts" id="posts">
-        <div class="home-section-heading">
-            <p>Latest writing</p>
-            <h2>最近文章</h2>
-        </div>
-
-        <div class="home-posts-grid">
-            <section class="article-list">
-                
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
                     
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
+                        <a class="cat-badge" href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">工程类别</a>
+                    
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 2 分钟</span>
+            
+        </div>
+
+        <h3 class="post-row__title">
             <a href="/p/pads%E5%B0%8F%E8%AE%B0/">
-                <img src="/p/pads%E5%B0%8F%E8%AE%B0/pads.jpg"
-                        
-                        width="720" 
-                        height="424" 
-                        loading="lazy"
-                        alt="Featured image of post PADS小记" />
-                
+                <span>PADS小记</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-        </div>
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/pads%E5%B0%8F%E8%AE%B0/">PADS小记</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            PADS学习与使用日记-PADS version VX2.7
         </h3>
+
+        
+            <p class="post-row__desc">PADS学习与使用日记-PADS version VX2.7</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/pads/">#PADS</a>
+                
+            </div>
         
     </div>
 
     
+        <a class="post-row__thumb" href="/p/pads%E5%B0%8F%E8%AE%B0/" tabindex="-1" aria-hidden="true">
+            
+                <img src="/p/pads%E5%B0%8F%E8%AE%B0/pads.jpg" width="720" height="424" alt="" loading="lazy" decoding="async">
+            
+        </a>
     
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-11-21</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 2 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
 </article>
-                
+
+                        
+                            <article class="post-row has-thumb">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-11-20T00:00:00Z'>2024-11-20</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
                     
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
+                        <a class="cat-badge" href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">工程类别</a>
+                    
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 3 分钟</span>
+            
+        </div>
+
+        <h3 class="post-row__title">
             <a href="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/">
-                <img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.jpg"
+                <span>Docker使用小记</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+        </h3>
+
+        
+            <p class="post-row__desc">Docker基础知识笔记 以及个人使用笔记</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/docker/">#Docker</a>
+                
+            </div>
+        
+    </div>
+
+    
+        <a class="post-row__thumb" href="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/" tabindex="-1" aria-hidden="true">
+            
+                <img src="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/11.jpg" width="628" height="308" alt="" loading="lazy" decoding="async">
+            
+        </a>
+    
+</article>
+
                         
-                        width="628" 
-                        height="308" 
-                        loading="lazy"
-                        alt="Featured image of post Docker使用小记" />
-                
-            </a>
+                            <article class="post-row">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-11-13T00:00:00Z'>2024-11-13</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
+                    
+                        <a class="cat-badge" href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/">学术类别</a>
+                    
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 14 分钟</span>
+            
         </div>
-    
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
+        <h3 class="post-row__title">
+            <a href="/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/">
+                <span>CNN神经网-自用</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/docker%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/">Docker使用小记</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            Docker基础知识笔记 以及个人使用笔记
         </h3>
+
+        
+            <p class="post-row__desc">自编写神经网络笔记用</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/nerunet/">#NeruNet</a>
+                
+            </div>
         
     </div>
 
     
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-11-20</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 3 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
 </article>
-                
+
+                        
+                            <article class="post-row">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-10-26T00:00:00Z'>2024-10-26</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
                     
-<article class="">
-    <header class="article-header">
+                        <a class="cat-badge" href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">工程类别</a>
+                    
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 3 分钟</span>
+            
+        </div>
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/" style="background-color: #ff99ff; color: #000;">
-                学术类别
+        <h3 class="post-row__title">
+            <a href="/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/">
+                <span>PMSM原理加控制方法以及仿真</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/cnn%E7%A5%9E%E7%BB%8F%E7%BD%91-%E8%87%AA%E7%94%A8/">CNN神经网-自用</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            自编写神经网络笔记用
         </h3>
+
+        
+            <p class="post-row__desc">变频器设计之前的基础知识补习包括各种控制方法的简单叙述以及学习</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/pmsm/">#PMSM</a>
+                
+            </div>
         
     </div>
 
     
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-11-13</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 14 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
 </article>
-                
+
+                        
+                            <article class="post-row has-thumb">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-10-23T00:00:00Z'>2024-10-23</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
                     
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/pmsm%E5%8E%9F%E7%90%86%E5%8A%A0%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E4%BB%BF%E7%9C%9F/">PMSM原理加控制方法以及仿真</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            变频器设计之前的基础知识补习包括各种控制方法的简单叙述以及学习
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-10-26</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 3 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-                
+                        <a class="cat-badge" href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/">学术类别</a>
                     
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 8 分钟</span>
+            
+        </div>
+
+        <h3 class="post-row__title">
             <a href="/p/drcan-learn-blog-advance/">
-                <img src="/p/drcan-learn-blog-advance/1-1.jpg"
+                <span>DRCAN-Learn-Blog-Advance</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+        </h3>
+
+        
+            <p class="post-row__desc">DRCAN-视频学习笔记-进阶篇</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/drcan/">#DRCAN</a>
+                
+                    <a href="/tags/%E8%87%AA%E6%8E%A7%E5%8E%9F%E7%90%86/">#自控原理</a>
+                
+                    <a href="/tags/%E7%8E%B0%E4%BB%A3%E6%8E%A7%E5%88%B6/">#现代控制</a>
+                
+                    <a href="/tags/matlab/">#Matlab</a>
+                
+            </div>
+        
+    </div>
+
+    
+        <a class="post-row__thumb" href="/p/drcan-learn-blog-advance/" tabindex="-1" aria-hidden="true">
+            
+                <img src="/p/drcan-learn-blog-advance/1-1.jpg" width="2182" height="3086" alt="" loading="lazy" decoding="async">
+            
+        </a>
+    
+</article>
+
                         
-                        width="2182" 
-                        height="3086" 
-                        loading="lazy"
-                        alt="Featured image of post DRCAN-Learn-Blog-Advance" />
-                
-            </a>
+                            <article class="post-row">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-10-14T00:00:00Z'>2024-10-14</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
+                    
+                        <a class="cat-badge" href="/categories/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%88%AB/">其他类别</a>
+                    
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 3 分钟</span>
+            
         </div>
-    
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/" style="background-color: #ff99ff; color: #000;">
-                学术类别
+        <h3 class="post-row__title">
+            <a href="/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/">
+                <span>Hugo博客的个人git部署工作流</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/drcan-learn-blog-advance/">DRCAN-Learn-Blog-Advance</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            DRCAN-视频学习笔记-进阶篇
         </h3>
+
+        
+            <p class="post-row__desc">记录个人部署网站相关的，个人记录使用。</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/hugo/">#Hugo</a>
+                
+            </div>
         
     </div>
 
     
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-10-23</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 8 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
 </article>
-                
+
+                        
+                            <article class="post-row">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-09-18T00:00:00Z'>2024-09-18</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
                     
-<article class="">
-    <header class="article-header">
+                        <a class="cat-badge" href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">工程类别</a>
+                    
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 1 分钟</span>
+            
+        </div>
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%88%AB/" style="background-color: #66ff66; color: #000;">
-                其他类别
+        <h3 class="post-row__title">
+            <a href="/p/freertos%E5%B0%8F%E8%AE%B0/">
+                <span>FreeRTOS小记</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/hugo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%AA%E4%BA%BAgit%E9%83%A8%E7%BD%B2%E5%B7%A5%E4%BD%9C%E6%B5%81/">Hugo博客的个人git部署工作流</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            记录个人部署网站相关的，个人记录使用。
         </h3>
+
+        
+            <p class="post-row__desc">作者本人的RTOS学习笔记</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/freertos/">#FreeRTOS</a>
+                
+            </div>
         
     </div>
 
     
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-10-14</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 3 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
 </article>
-                
+
+                        
+                            <article class="post-row">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-09-16T00:00:00Z'>2024-09-16</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
                     
-<article class="">
-    <header class="article-header">
+                        <a class="cat-badge" href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">工程类别</a>
+                    
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 3 分钟</span>
+            
+        </div>
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
+        <h3 class="post-row__title">
+            <a href="/p/kicad%E5%B0%8F%E8%AE%B0/">
+                <span>KiCad小记</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/freertos%E5%B0%8F%E8%AE%B0/">FreeRTOS小记</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            作者本人的RTOS学习笔记
         </h3>
+
+        
+            <p class="post-row__desc">KiCad学习与使用日记-Kicad version8.0</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/kicad/">#KiCad</a>
+                
+            </div>
         
     </div>
 
     
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-09-18</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 1 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
 </article>
-                
+
+                        
+                            <article class="post-row">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-09-16T00:00:00Z'>2024-09-16</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
                     
-<article class="">
-    <header class="article-header">
+                        <a class="cat-badge" href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/">学术类别</a>
+                    
+                        <a class="cat-badge" href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">工程类别</a>
+                    
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 6 分钟</span>
+            
+        </div>
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
+        <h3 class="post-row__title">
+            <a href="/p/linux/">
+                <span>Linux</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/kicad%E5%B0%8F%E8%AE%B0/">KiCad小记</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            KiCad学习与使用日记-Kicad version8.0
         </h3>
+
+        
+            <p class="post-row__desc">在此记录本人在学习YSYX项目时遇到的难题与解决方式。</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/ysyx/">#YSYX</a>
+                
+            </div>
         
     </div>
 
     
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-09-16</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 3 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
 </article>
-                
+
+                        
+                            <article class="post-row has-thumb">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-09-15T00:00:00Z'>2024-09-15</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
                     
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/" style="background-color: #ff99ff; color: #000;">
-                学术类别
-            </a>
-        
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/linux/">Linux</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            在此记录本人在学习YSYX项目时遇到的难题与解决方式。
-        </h3>
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-09-16</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 6 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-                
+                        <a class="cat-badge" href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">工程类别</a>
                     
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 5 分钟</span>
+            
+        </div>
+
+        <h3 class="post-row__title">
             <a href="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/">
-                <img src="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cm_foc_real2.png"
-                        
-                        width="1056" 
-                        height="672" 
-                        loading="lazy"
-                        alt="Featured image of post CM_FOC驱动器" />
-                
+                <span>CM_FOC驱动器</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-        </div>
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/">CM_FOC驱动器</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            FOC驱动器
         </h3>
+
+        
+            <p class="post-row__desc">FOC驱动器</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/foc/">#FOC</a>
+                
+            </div>
         
     </div>
 
     
+        <a class="post-row__thumb" href="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/" tabindex="-1" aria-hidden="true">
+            
+                <img src="/p/cm_foc%E9%A9%B1%E5%8A%A8%E5%99%A8/cm_foc_real2.png" width="1056" height="672" alt="" loading="lazy" decoding="async">
+            
+        </a>
     
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-09-15</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 5 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
 </article>
-                
+
+                        
+                            <article class="post-row has-thumb">
+    <div class="post-row__main">
+        <div class="post-meta-line">
+            <time class="mono-meta" datetime='2024-07-15T00:00:00Z'>2024-07-15</time>
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="post-meta-line__cats">
                     
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
-            <a href="/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/">
-                <img src="/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/mainboard.JPG"
-                        
-                        width="4032" 
-                        height="2268" 
-                        loading="lazy"
-                        alt="Featured image of post CH32平衡车开发板" />
-                
-            </a>
+                        <a class="cat-badge" href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">工程类别</a>
+                    
+                </span>
+            
+            
+                <span class="meta-dot" aria-hidden="true">·</span>
+                <span class="mono-meta">阅读时长: 1 分钟</span>
+            
         </div>
-    
 
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/" style="background-color: #000099; color: #fff;">
-                工程类别
+        <h3 class="post-row__title">
+            <a href="/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/">
+                <span>CH32平衡车开发板</span>
+                <svg class="post-row__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
             </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/">CH32平衡车开发板</a>
-        </h2>
-    
-        
-        <h3 class="article-subtitle">
-            两轮平衡车使用的开发板
         </h3>
+
+        
+            <p class="post-row__desc">两轮平衡车使用的开发板</p>
+        
+
+        
+            <div class="mini-tags">
+                
+                    <a href="/tags/%E7%9B%B4%E6%B5%81%E7%94%B5%E6%9C%BA%E6%96%B9%E6%A1%88/">#直流电机方案</a>
+                
+                    <a href="/tags/balance/">#Balance</a>
+                
+            </div>
         
     </div>
 
     
+        <a class="post-row__thumb" href="/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/" tabindex="-1" aria-hidden="true">
+            
+                <img src="/p/ch32%E5%B9%B3%E8%A1%A1%E8%BD%A6%E5%BC%80%E5%8F%91%E6%9D%BF/mainboard.JPG" width="4032" height="2268" alt="" loading="lazy" decoding="async">
+            
+        </a>
     
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2024-07-15</time>
-            </div>
-        
-
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time class="article-time--reading">
-                    阅读时长: 1 分钟
-                </time>
-            </div>
-        
-    </footer>
-    
-
-    
-</div>
-
-</header>
 </article>
-                
-            </section>
 
-            <aside class="home-reading-panel" aria-label="Reading tools">
-                <p>Reading panel</p>
-                <h3>26 篇笔记</h3>
-                <span>从一个问题出发，记录思考与实践。</span>
-
-                <div class="home-panel-actions">
-                    <a href="/search/">搜索</a>
-                    <a href="/archives/">归档</a>
-                    <a href="/%E5%8F%8B%E9%93%BE/">友链</a>
-                </div>
-
-                
-                    <div class="home-panel-tags">
-                        
-                            <a href="/tags/foc/">FOC</a>
-                        
-                            <a href="/tags/latex/">Latex</a>
-                        
-                            <a href="/tags/pmsm/">PMSM</a>
-                        
-                            <a href="/tags/px4/">PX4</a>
-                        
-                            <a href="/tags/%E8%B0%83%E5%8F%82/">调参</a>
-                        
-                            <a href="/tags/adrc/">ADRC</a>
-                        
-                            <a href="/tags/ai/">AI</a>
-                        
-                            <a href="/tags/balance/">Balance</a>
-                        
-                            <a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>
-                        
-                            <a href="/tags/docker/">Docker</a>
-                        
-                            <a href="/tags/drcan/">DRCAN</a>
-                        
-                            <a href="/tags/freertos/">FreeRTOS</a>
-                        
-                            <a href="/tags/hugo/">Hugo</a>
-                        
-                            <a href="/tags/kicad/">KiCad</a>
-                        
-                            <a href="/tags/matlab/">Matlab</a>
-                        
-                            <a href="/tags/nerunet/">NeruNet</a>
-                        
-                            <a href="/tags/odrive/">ODrive</a>
-                        
-                            <a href="/tags/pads/">PADS</a>
                         
                     </div>
-                
-            </aside>
-        </div>
     <nav class='pagination'>
         
         
@@ -1124,63 +693,199 @@
             
     </nav>
 
-</section>
+</div>
 
-    
-        <div class="home-contact home-contact--footer" aria-label="联系我">
+                <aside class="home-rail" aria-label="站内检索与导航">
+                    
+                    <div class="rail-block">
+                        <h3 class="rail-block__title">SEARCH</h3>
+                        <form class="rail-search" action="/search/" method="get" role="search">
+                            <label class="sr-only" for="home-rail-search">搜索文章</label>
+                            <input id="home-rail-search" name="keyword" type="search" placeholder="搜索文章或关键词…" autocomplete="off">
+                            <button type="submit" aria-label="搜索">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                            </button>
+                        </form>
+                    </div>
+                    
+
+                    
+                    <div class="rail-block">
+                        <h3 class="rail-block__title">CATEGORIES</h3>
+                        <ul class="rail-list">
+                            
+                                <li>
+                                    <a href="/categories/%E5%B7%A5%E7%A8%8B%E7%B1%BB%E5%88%AB/">
+                                        <span>工程类别</span>
+                                        <span class="rail-count">20</span>
+                                    </a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/categories/%E5%AD%A6%E6%9C%AF%E7%B1%BB%E5%88%AB/">
+                                        <span>学术类别</span>
+                                        <span class="rail-count">11</span>
+                                    </a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/categories/%E5%85%B6%E4%BB%96%E7%B1%BB%E5%88%AB/">
+                                        <span>其他类别</span>
+                                        <span class="rail-count">1</span>
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                    
+
+                    
+                    <div class="rail-block">
+                        <h3 class="rail-block__title">TOPICS</h3>
+                        <div class="rail-tags">
+                            
+                                <a href="/tags/foc/">FOC</a>
+                            
+                                <a href="/tags/latex/">Latex</a>
+                            
+                                <a href="/tags/pmsm/">PMSM</a>
+                            
+                                <a href="/tags/px4/">PX4</a>
+                            
+                                <a href="/tags/%E8%B0%83%E5%8F%82/">调参</a>
+                            
+                                <a href="/tags/adrc/">ADRC</a>
+                            
+                                <a href="/tags/ai/">AI</a>
+                            
+                                <a href="/tags/balance/">Balance</a>
+                            
+                                <a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>
+                            
+                                <a href="/tags/docker/">Docker</a>
+                            
+                                <a href="/tags/drcan/">DRCAN</a>
+                            
+                                <a href="/tags/freertos/">FreeRTOS</a>
+                            
+                                <a href="/tags/hugo/">Hugo</a>
+                            
+                                <a href="/tags/kicad/">KiCad</a>
+                            
+                                <a href="/tags/matlab/">Matlab</a>
+                            
+                                <a href="/tags/nerunet/">NeruNet</a>
+                            
+                                <a href="/tags/odrive/">ODrive</a>
+                            
+                                <a href="/tags/pads/">PADS</a>
+                            
+                        </div>
+                    </div>
+                    
+
+                    
+                        
+                        <div class="rail-block">
+                            <div class="rail-block__head">
+                                <h3 class="rail-block__title">LINKS</h3>
+                                <a class="rail-block__more" href="/%E5%8F%8B%E9%93%BE/">全部 →</a>
+                            </div>
+                            <ul class="rail-list rail-list--compact">
+                                
+                                    <li>
+                                        <a href="https://a233a2.github.io" target="_blank" rel="noopener">
+                                            <span>sunjiyi</span>
+                                            <span class="rail-ext" aria-hidden="true">↗</span>
+                                        </a>
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://a233a2.github.io/blog2" target="_blank" rel="noopener">
+                                            <span>sunjiyi-blog2</span>
+                                            <span class="rail-ext" aria-hidden="true">↗</span>
+                                        </a>
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://arc.canmi.icu/" target="_blank" rel="noopener">
+                                            <span>Canmi</span>
+                                            <span class="rail-ext" aria-hidden="true">↗</span>
+                                        </a>
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://www.040304.xyz" target="_blank" rel="noopener">
+                                            <span>Xeron</span>
+                                            <span class="rail-ext" aria-hidden="true">↗</span>
+                                        </a>
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://moontung.top" target="_blank" rel="noopener">
+                                            <span>shee­tung</span>
+                                            <span class="rail-ext" aria-hidden="true">↗</span>
+                                        </a>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+                        
+                    
+                </aside>
+            </div>
+        </div>
+    </section>
+
+            </main>
+        </div>
+
+
+<footer class="site-footer-modern">
+    <div class="site-footer-modern__inner">
+        <div class="site-footer-modern__left">
+            <p class="site-footer-modern__copyright">
+                &copy;
+                
+                    2024&ndash;
+                
+                2026 Sunjiyi Make and Design
+            </p>
+            <p class="site-footer-modern__meta">
+                
+                    <span><a href="https://icp.gov.moe/?keyword=20244008" target="_blank">萌ICP备20244008号</a></span>
+                    <span class="sep" aria-hidden="true">·</span>
+                
+                <span>Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a></span>
+            </p>
+        </div>
+
+        <div class="site-footer-modern__links" aria-label="联系方式与订阅">
             
                 <a href="https://github.com/a233a2" target="_blank" rel="me noopener">GitHub</a>
             
                 <a href="https://space.bilibili.com/37767944" target="_blank" rel="me noopener">Bilibili</a>
             
-                <a href="mailto:sunjiyi666@foxmail.com" >Mail</a>
+                <a href="mailto:sunjiyi666@foxmail.com">Mail</a>
             
-                <a href="mailto:sunjiyi666@gmail.com" >Gmail</a>
+                <a href="mailto:sunjiyi666@gmail.com">Gmail</a>
+            
+            
+                <a href="/index.xml" target="_blank" rel="noopener">RSS</a>
             
         </div>
-    <footer class="site-footer">
-    <section class="copyright">
-        &copy; 
-        
-            2024 - 
-        
-        2026 Sunjiyi Make and Design
-    </section>
-    
-    <section class="powerby">
-        
-            <a href="https://icp.gov.moe/?keyword=20244008" target="_blank">萌ICP备20244008号</a> <br/>
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
-    </section>
+    </div>
 </footer>
-
-    <script src="/js/home-motion.min.32db0c9ef677c1611d9f390a17f924abf1e5a9e394861e83fc7f5b64151e5f39.js" defer></script>
-
-    
-    <script src="/js/home-atmosphere.min.a6cdd1026597b11101df6ee3ab4e2675a04dbee92070579bc67dcc3224f4bba4.js" defer></script>
-
-    
-    <script src="/js/home-motto.min.a9af641c6d3888e1d9a3f9fe0cfccde8d917f84757a1ef9ee033f5a48c2d602c.js" defer></script>
-
-            </main>
-        </div>
-        <script 
+<script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
             </script><script type="text/javascript" src="/ts/main.js" defer></script>
-<script>
-    (function () {
-        const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
 
-        customFont.type = "text/css";
-        customFont.rel = "stylesheet";
 
-        document.head.appendChild(customFont);
-    }());
-</script>
 
+
+        
+        <script src="/js/site-ui.min.121ffa748c5576c1bbb8bd936d0f1c715b7bf090748bea3a65e9cf9cc8e60909.js" defer></script>
     </body>
 </html>
